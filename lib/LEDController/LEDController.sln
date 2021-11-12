@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDController", "LEDController\LEDController.csproj", "{7D584D5F-B34E-481C-B1A9-8F723CAB5DEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDControllerTest", "LEDControllerTest\LEDControllerTest.csproj", "{BDECFF7D-C047-46EA-92B0-B851FCD2BC6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D584D5F-B34E-481C-B1A9-8F723CAB5DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D584D5F-B34E-481C-B1A9-8F723CAB5DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D584D5F-B34E-481C-B1A9-8F723CAB5DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D584D5F-B34E-481C-B1A9-8F723CAB5DEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDECFF7D-C047-46EA-92B0-B851FCD2BC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDECFF7D-C047-46EA-92B0-B851FCD2BC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDECFF7D-C047-46EA-92B0-B851FCD2BC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDECFF7D-C047-46EA-92B0-B851FCD2BC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {301FFBBB-6EF0-41E0-A1C2-246AE585242C}
+	EndGlobalSection
+EndGlobal
