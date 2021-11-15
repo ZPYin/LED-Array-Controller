@@ -11,7 +11,7 @@ using System.Collections;
 namespace LEDController.Model
 {
 
-    struct LEDStats
+    struct LEDStatus
     {
         public double[] fixLEDPower;
         public double[] dimLEDPower;
@@ -101,6 +101,8 @@ namespace LEDController.Model
         private const double LEDCurrentConvertFactor = 1;
         private const double LEDPowerConvertFactor = 1;
         private const double TempConvertFactor = 1;
+        private const int NumFixLED = 120;
+        private const int NumDimLED = 12;
 
         public LEDBoardCom(string SlaveIP, string SlavePort)
         {
@@ -172,9 +174,10 @@ namespace LEDController.Model
             return "00";
         }
 
-        public LEDStats ParseStats()
+        public LEDStatus ParseStatus(byte[] receiveMsg)
         {
-            LEDStats currentLEDStats;
+
+            LEDStatus currentLEDStats;
             currentLEDStats.dimLEDCurrent = new double[] {1, 2, 3};
             currentLEDStats.fixLEDCurrent = new double[] {1, 2, 3};
             currentLEDStats.fixLEDVoltage = new double[] {1, 2, 3};
@@ -184,27 +187,6 @@ namespace LEDController.Model
             currentLEDStats.temperature = new double[] {1, 2, 3};
 
             return currentLEDStats;
-        }
-
-        private IPAddress GetLocalIPv4Address()
-        {
-            IPAddress localIPv4 = null;
-            // Get all IP addresses
-            IPAddress[] ipAddressList = Dns.GetHostAddresses(Dns.GetHostName());
-            foreach (IPAddress ipAddress in ipAddressList)
-            {
-                // Iterate all IP addresses
-                if (ipAddress.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    localIPv4 = ipAddress;
-                }
-                else
-                {
-                    continue;
-                }
-            }
-
-            return localIPv4;
         }
 
     }

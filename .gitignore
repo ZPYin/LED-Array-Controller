@@ -2,3 +2,6 @@
 lib/LEDController/TestResults
 lib/LEDController/obj
 lib/LEDControllerTest/obj
+
+# editor configuration
+lib/.vs

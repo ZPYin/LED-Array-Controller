@@ -29,14 +29,14 @@ namespace LEDController.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LEDControllerViewer));
+            this.toolStripLEDStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件 = new System.Windows.Forms.ToolStripMenuItem();
-            this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.另存为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.关闭ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.连接测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,70 +80,82 @@ namespace LEDController.View
             this.button124 = new System.Windows.Forms.Button();
             this.button123 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lblDarkRedLEDMinLeft = new System.Windows.Forms.Label();
+            this.lblDarkRedLEDMinRight = new System.Windows.Forms.Label();
+            this.lblDarkRedLEDMaxLeft = new System.Windows.Forms.Label();
+            this.tbxDimLED12 = new System.Windows.Forms.TextBox();
+            this.lblDarkRedLEDMaxRight = new System.Windows.Forms.Label();
+            this.tbxDimLED11 = new System.Windows.Forms.TextBox();
+            this.tbxDimLED10 = new System.Windows.Forms.TextBox();
+            this.tbxDimLED9 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.button115 = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.trackBar9 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED12 = new System.Windows.Forms.TrackBar();
             this.btnDimLED12 = new System.Windows.Forms.Button();
             this.button117 = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.trackBar10 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED11 = new System.Windows.Forms.TrackBar();
             this.btnDimLED11 = new System.Windows.Forms.Button();
             this.button119 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.trackBar11 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED10 = new System.Windows.Forms.TrackBar();
             this.btnDimLED10 = new System.Windows.Forms.Button();
             this.button121 = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.trackBar12 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED9 = new System.Windows.Forms.TrackBar();
             this.btnDimLED9 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblRedLEDMinLeft = new System.Windows.Forms.Label();
+            this.lblRedLEDMinRight = new System.Windows.Forms.Label();
+            this.lblRedLEDMaxLeft = new System.Windows.Forms.Label();
+            this.tbxDimLED8 = new System.Windows.Forms.TextBox();
+            this.lblRedLEDMaxRight = new System.Windows.Forms.Label();
+            this.tbxDimLED7 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.tbxDimLED6 = new System.Windows.Forms.TextBox();
             this.button107 = new System.Windows.Forms.Button();
+            this.tbxDimLED5 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.trackBar5 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED8 = new System.Windows.Forms.TrackBar();
             this.btnDimLED8 = new System.Windows.Forms.Button();
             this.button109 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.trackBar6 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED7 = new System.Windows.Forms.TrackBar();
             this.btnDimLED7 = new System.Windows.Forms.Button();
             this.button111 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.trackBar7 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED6 = new System.Windows.Forms.TrackBar();
             this.btnDimLED6 = new System.Windows.Forms.Button();
             this.button113 = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.trackBar8 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED5 = new System.Windows.Forms.TrackBar();
             this.btnDimLED5 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblGreenLEDMinRight = new System.Windows.Forms.Label();
+            this.lblGreenLEDMaxRight = new System.Windows.Forms.Label();
+            this.lblGreenLEDMinLeft = new System.Windows.Forms.Label();
+            this.lblGreenLEDMaxLeft = new System.Windows.Forms.Label();
+            this.tbxDimLED4 = new System.Windows.Forms.TextBox();
+            this.tbxDimLED3 = new System.Windows.Forms.TextBox();
+            this.tbxDimLED2 = new System.Windows.Forms.TextBox();
+            this.tbxDimLED1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button105 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.trackBar4 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED4 = new System.Windows.Forms.TrackBar();
             this.btnDimLED4 = new System.Windows.Forms.Button();
             this.button103 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED3 = new System.Windows.Forms.TrackBar();
             this.btnDimLED3 = new System.Windows.Forms.Button();
             this.button101 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED2 = new System.Windows.Forms.TrackBar();
             this.btnDimLED2 = new System.Windows.Forms.Button();
             this.button100 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.sbarDimLED1 = new System.Windows.Forms.TrackBar();
             this.btnDimLED1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -447,26 +459,30 @@ namespace LEDController.View
             this.btnRecStatus1 = new System.Windows.Forms.Label();
             this.btnRecStatus3 = new System.Windows.Forms.Label();
             this.btnRecStatus2 = new System.Windows.Forms.Label();
-            toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnSendStatus2 = new System.Windows.Forms.Label();
+            this.btnSendStatus3 = new System.Windows.Forms.Label();
+            this.btnSendStatus1 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED9)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED5)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -476,11 +492,11 @@ namespace LEDController.View
             this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // toolStripStatusLabel3
+            // toolStripLEDStatus
             // 
-            toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            toolStripStatusLabel3.Size = new System.Drawing.Size(54, 17);
-            toolStripStatusLabel3.Text = "LED状态";
+            this.toolStripLEDStatus.Name = "toolStripLEDStatus";
+            this.toolStripLEDStatus.Size = new System.Drawing.Size(54, 17);
+            this.toolStripLEDStatus.Text = "LED状态";
             // 
             // menuStrip1
             // 
@@ -498,37 +514,38 @@ namespace LEDController.View
             // 文件
             // 
             this.文件.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.打开ToolStripMenuItem,
-            this.保存ToolStripMenuItem,
-            this.另存为ToolStripMenuItem,
-            this.关闭ToolStripMenuItem});
+            this.ToolStripMenuItemOpen,
+            this.ToolStripMenuItemSave,
+            this.ToolStripMenuItemSaveAs,
+            this.ToolStripMenuItemClose});
             this.文件.Name = "文件";
             this.文件.Size = new System.Drawing.Size(44, 21);
             this.文件.Text = "文件";
             // 
-            // 打开ToolStripMenuItem
+            // ToolStripMenuItemOpen
             // 
-            this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.打开ToolStripMenuItem.Text = "打开";
+            this.ToolStripMenuItemOpen.Name = "ToolStripMenuItemOpen";
+            this.ToolStripMenuItemOpen.Size = new System.Drawing.Size(121, 22);
+            this.ToolStripMenuItemOpen.Text = "打开";
             // 
-            // 保存ToolStripMenuItem
+            // ToolStripMenuItemSave
             // 
-            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.保存ToolStripMenuItem.Text = "保存";
+            this.ToolStripMenuItemSave.Name = "ToolStripMenuItemSave";
+            this.ToolStripMenuItemSave.Size = new System.Drawing.Size(121, 22);
+            this.ToolStripMenuItemSave.Text = "保存";
             // 
-            // 另存为ToolStripMenuItem
+            // ToolStripMenuItemSaveAs
             // 
-            this.另存为ToolStripMenuItem.Name = "另存为ToolStripMenuItem";
-            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.另存为ToolStripMenuItem.Text = "另存为...";
+            this.ToolStripMenuItemSaveAs.Name = "ToolStripMenuItemSaveAs";
+            this.ToolStripMenuItemSaveAs.Size = new System.Drawing.Size(121, 22);
+            this.ToolStripMenuItemSaveAs.Text = "另存为...";
             // 
-            // 关闭ToolStripMenuItem
+            // ToolStripMenuItemClose
             // 
-            this.关闭ToolStripMenuItem.Name = "关闭ToolStripMenuItem";
-            this.关闭ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.关闭ToolStripMenuItem.Text = "关闭";
+            this.ToolStripMenuItemClose.Name = "ToolStripMenuItemClose";
+            this.ToolStripMenuItemClose.Size = new System.Drawing.Size(121, 22);
+            this.ToolStripMenuItemClose.Text = "关闭";
+            this.ToolStripMenuItemClose.Click += new System.EventHandler(this.CloseApplication);
             // 
             // 连接ToolStripMenuItem
             // 
@@ -958,31 +975,115 @@ namespace LEDController.View
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel6.Controls.Add(this.lblDarkRedLEDMinLeft);
+            this.panel6.Controls.Add(this.lblDarkRedLEDMinRight);
+            this.panel6.Controls.Add(this.lblDarkRedLEDMaxLeft);
+            this.panel6.Controls.Add(this.tbxDimLED12);
+            this.panel6.Controls.Add(this.lblDarkRedLEDMaxRight);
+            this.panel6.Controls.Add(this.tbxDimLED11);
+            this.panel6.Controls.Add(this.tbxDimLED10);
+            this.panel6.Controls.Add(this.tbxDimLED9);
             this.panel6.Controls.Add(this.label33);
             this.panel6.Controls.Add(this.button115);
             this.panel6.Controls.Add(this.label34);
-            this.panel6.Controls.Add(this.label35);
-            this.panel6.Controls.Add(this.trackBar9);
+            this.panel6.Controls.Add(this.sbarDimLED12);
             this.panel6.Controls.Add(this.btnDimLED12);
             this.panel6.Controls.Add(this.button117);
             this.panel6.Controls.Add(this.label36);
-            this.panel6.Controls.Add(this.label37);
-            this.panel6.Controls.Add(this.trackBar10);
+            this.panel6.Controls.Add(this.sbarDimLED11);
             this.panel6.Controls.Add(this.btnDimLED11);
             this.panel6.Controls.Add(this.button119);
             this.panel6.Controls.Add(this.label38);
-            this.panel6.Controls.Add(this.label39);
-            this.panel6.Controls.Add(this.trackBar11);
+            this.panel6.Controls.Add(this.sbarDimLED10);
             this.panel6.Controls.Add(this.btnDimLED10);
             this.panel6.Controls.Add(this.button121);
             this.panel6.Controls.Add(this.label40);
-            this.panel6.Controls.Add(this.label41);
-            this.panel6.Controls.Add(this.trackBar12);
+            this.panel6.Controls.Add(this.sbarDimLED9);
             this.panel6.Controls.Add(this.btnDimLED9);
             this.panel6.Location = new System.Drawing.Point(685, 307);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(307, 152);
             this.panel6.TabIndex = 85;
+            // 
+            // lblDarkRedLEDMinLeft
+            // 
+            this.lblDarkRedLEDMinLeft.AutoSize = true;
+            this.lblDarkRedLEDMinLeft.Location = new System.Drawing.Point(37, 103);
+            this.lblDarkRedLEDMinLeft.Name = "lblDarkRedLEDMinLeft";
+            this.lblDarkRedLEDMinLeft.Size = new System.Drawing.Size(11, 12);
+            this.lblDarkRedLEDMinLeft.TabIndex = 96;
+            this.lblDarkRedLEDMinLeft.Text = "0";
+            // 
+            // lblDarkRedLEDMinRight
+            // 
+            this.lblDarkRedLEDMinRight.AutoSize = true;
+            this.lblDarkRedLEDMinRight.Location = new System.Drawing.Point(280, 102);
+            this.lblDarkRedLEDMinRight.Name = "lblDarkRedLEDMinRight";
+            this.lblDarkRedLEDMinRight.Size = new System.Drawing.Size(11, 12);
+            this.lblDarkRedLEDMinRight.TabIndex = 96;
+            this.lblDarkRedLEDMinRight.Text = "0";
+            // 
+            // lblDarkRedLEDMaxLeft
+            // 
+            this.lblDarkRedLEDMaxLeft.AutoSize = true;
+            this.lblDarkRedLEDMaxLeft.Location = new System.Drawing.Point(31, 51);
+            this.lblDarkRedLEDMaxLeft.Name = "lblDarkRedLEDMaxLeft";
+            this.lblDarkRedLEDMaxLeft.Size = new System.Drawing.Size(17, 12);
+            this.lblDarkRedLEDMaxLeft.TabIndex = 95;
+            this.lblDarkRedLEDMaxLeft.Text = "10";
+            // 
+            // tbxDimLED12
+            // 
+            this.tbxDimLED12.Location = new System.Drawing.Point(232, 26);
+            this.tbxDimLED12.Name = "tbxDimLED12";
+            this.tbxDimLED12.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED12.TabIndex = 92;
+            this.tbxDimLED12.Tag = "12";
+            this.tbxDimLED12.Text = "0";
+            this.tbxDimLED12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
+            // 
+            // lblDarkRedLEDMaxRight
+            // 
+            this.lblDarkRedLEDMaxRight.AutoSize = true;
+            this.lblDarkRedLEDMaxRight.Location = new System.Drawing.Point(280, 50);
+            this.lblDarkRedLEDMaxRight.Name = "lblDarkRedLEDMaxRight";
+            this.lblDarkRedLEDMaxRight.Size = new System.Drawing.Size(17, 12);
+            this.lblDarkRedLEDMaxRight.TabIndex = 95;
+            this.lblDarkRedLEDMaxRight.Text = "10";
+            // 
+            // tbxDimLED11
+            // 
+            this.tbxDimLED11.Location = new System.Drawing.Point(170, 26);
+            this.tbxDimLED11.Name = "tbxDimLED11";
+            this.tbxDimLED11.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED11.TabIndex = 91;
+            this.tbxDimLED11.Tag = "11";
+            this.tbxDimLED11.Text = "0";
+            this.tbxDimLED11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
+            // 
+            // tbxDimLED10
+            // 
+            this.tbxDimLED10.Location = new System.Drawing.Point(109, 26);
+            this.tbxDimLED10.Name = "tbxDimLED10";
+            this.tbxDimLED10.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED10.TabIndex = 90;
+            this.tbxDimLED10.Tag = "10";
+            this.tbxDimLED10.Text = "0";
+            this.tbxDimLED10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
+            // 
+            // tbxDimLED9
+            // 
+            this.tbxDimLED9.Location = new System.Drawing.Point(49, 26);
+            this.tbxDimLED9.Name = "tbxDimLED9";
+            this.tbxDimLED9.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED9.TabIndex = 89;
+            this.tbxDimLED9.Tag = "9";
+            this.tbxDimLED9.Text = "0";
+            this.tbxDimLED9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
             // 
             // label33
             // 
@@ -1011,34 +1112,36 @@ namespace LEDController.View
             this.label34.TabIndex = 82;
             this.label34.Text = "W";
             // 
-            // label35
+            // sbarDimLED12
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(248, 29);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(11, 12);
-            this.label35.TabIndex = 81;
-            this.label35.Text = "0";
-            // 
-            // trackBar9
-            // 
-            this.trackBar9.Location = new System.Drawing.Point(235, 44);
-            this.trackBar9.Name = "trackBar9";
-            this.trackBar9.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar9.Size = new System.Drawing.Size(45, 80);
-            this.trackBar9.TabIndex = 80;
+            this.sbarDimLED12.LargeChange = 20;
+            this.sbarDimLED12.Location = new System.Drawing.Point(235, 44);
+            this.sbarDimLED12.Maximum = 50;
+            this.sbarDimLED12.Name = "sbarDimLED12";
+            this.sbarDimLED12.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED12.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED12.TabIndex = 80;
+            this.sbarDimLED12.Tag = "12";
+            this.sbarDimLED12.TickFrequency = 5;
+            this.sbarDimLED12.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED12.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED12
             // 
             this.btnDimLED12.AutoSize = true;
             this.btnDimLED12.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED12.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED12.Location = new System.Drawing.Point(243, 3);
             this.btnDimLED12.Name = "btnDimLED12";
             this.btnDimLED12.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED12.TabIndex = 79;
+            this.btnDimLED12.Tag = "132";
             this.btnDimLED12.UseVisualStyleBackColor = false;
+            this.btnDimLED12.Click += new System.EventHandler(this.btnDimLED9_Click);
+            this.btnDimLED12.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
+            this.btnDimLED12.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
             // 
             // button117
             // 
@@ -1058,34 +1161,36 @@ namespace LEDController.View
             this.label36.TabIndex = 77;
             this.label36.Text = "W";
             // 
-            // label37
+            // sbarDimLED11
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(186, 29);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(11, 12);
-            this.label37.TabIndex = 76;
-            this.label37.Text = "0";
-            // 
-            // trackBar10
-            // 
-            this.trackBar10.Location = new System.Drawing.Point(173, 44);
-            this.trackBar10.Name = "trackBar10";
-            this.trackBar10.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar10.Size = new System.Drawing.Size(45, 80);
-            this.trackBar10.TabIndex = 75;
+            this.sbarDimLED11.LargeChange = 20;
+            this.sbarDimLED11.Location = new System.Drawing.Point(173, 44);
+            this.sbarDimLED11.Maximum = 50;
+            this.sbarDimLED11.Name = "sbarDimLED11";
+            this.sbarDimLED11.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED11.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED11.TabIndex = 75;
+            this.sbarDimLED11.Tag = "11";
+            this.sbarDimLED11.TickFrequency = 5;
+            this.sbarDimLED11.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED11.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED11
             // 
             this.btnDimLED11.AutoSize = true;
             this.btnDimLED11.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED11.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED11.Location = new System.Drawing.Point(181, 3);
             this.btnDimLED11.Name = "btnDimLED11";
             this.btnDimLED11.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED11.TabIndex = 74;
+            this.btnDimLED11.Tag = "131";
             this.btnDimLED11.UseVisualStyleBackColor = false;
+            this.btnDimLED11.Click += new System.EventHandler(this.btnDimLED9_Click);
+            this.btnDimLED11.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
+            this.btnDimLED11.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
             // 
             // button119
             // 
@@ -1105,34 +1210,36 @@ namespace LEDController.View
             this.label38.TabIndex = 72;
             this.label38.Text = "W";
             // 
-            // label39
+            // sbarDimLED10
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(125, 29);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(11, 12);
-            this.label39.TabIndex = 71;
-            this.label39.Text = "0";
-            // 
-            // trackBar11
-            // 
-            this.trackBar11.Location = new System.Drawing.Point(112, 44);
-            this.trackBar11.Name = "trackBar11";
-            this.trackBar11.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar11.Size = new System.Drawing.Size(45, 80);
-            this.trackBar11.TabIndex = 70;
+            this.sbarDimLED10.LargeChange = 20;
+            this.sbarDimLED10.Location = new System.Drawing.Point(112, 44);
+            this.sbarDimLED10.Maximum = 50;
+            this.sbarDimLED10.Name = "sbarDimLED10";
+            this.sbarDimLED10.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED10.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED10.TabIndex = 70;
+            this.sbarDimLED10.Tag = "10";
+            this.sbarDimLED10.TickFrequency = 5;
+            this.sbarDimLED10.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED10.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED10
             // 
             this.btnDimLED10.AutoSize = true;
             this.btnDimLED10.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED10.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED10.Location = new System.Drawing.Point(120, 3);
             this.btnDimLED10.Name = "btnDimLED10";
             this.btnDimLED10.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED10.TabIndex = 69;
+            this.btnDimLED10.Tag = "130";
             this.btnDimLED10.UseVisualStyleBackColor = false;
+            this.btnDimLED10.Click += new System.EventHandler(this.btnDimLED9_Click);
+            this.btnDimLED10.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
+            this.btnDimLED10.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
             // 
             // button121
             // 
@@ -1152,63 +1259,127 @@ namespace LEDController.View
             this.label40.TabIndex = 67;
             this.label40.Text = "W";
             // 
-            // label41
+            // sbarDimLED9
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(64, 29);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(11, 12);
-            this.label41.TabIndex = 66;
-            this.label41.Text = "0";
-            // 
-            // trackBar12
-            // 
-            this.trackBar12.Location = new System.Drawing.Point(51, 44);
-            this.trackBar12.Name = "trackBar12";
-            this.trackBar12.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar12.Size = new System.Drawing.Size(45, 80);
-            this.trackBar12.TabIndex = 65;
+            this.sbarDimLED9.LargeChange = 20;
+            this.sbarDimLED9.Location = new System.Drawing.Point(51, 44);
+            this.sbarDimLED9.Maximum = 50;
+            this.sbarDimLED9.Name = "sbarDimLED9";
+            this.sbarDimLED9.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED9.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED9.TabIndex = 65;
+            this.sbarDimLED9.Tag = "9";
+            this.sbarDimLED9.TickFrequency = 5;
+            this.sbarDimLED9.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED9.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED9
             // 
             this.btnDimLED9.AutoSize = true;
             this.btnDimLED9.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED9.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED9.Location = new System.Drawing.Point(59, 3);
             this.btnDimLED9.Name = "btnDimLED9";
             this.btnDimLED9.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED9.TabIndex = 64;
+            this.btnDimLED9.Tag = "129";
             this.btnDimLED9.UseVisualStyleBackColor = false;
+            this.btnDimLED9.Click += new System.EventHandler(this.btnDimLED9_Click);
+            this.btnDimLED9.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
+            this.btnDimLED9.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Controls.Add(this.lblRedLEDMinLeft);
+            this.panel5.Controls.Add(this.lblRedLEDMinRight);
+            this.panel5.Controls.Add(this.lblRedLEDMaxLeft);
+            this.panel5.Controls.Add(this.tbxDimLED8);
+            this.panel5.Controls.Add(this.lblRedLEDMaxRight);
+            this.panel5.Controls.Add(this.tbxDimLED7);
             this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.tbxDimLED6);
             this.panel5.Controls.Add(this.button107);
+            this.panel5.Controls.Add(this.tbxDimLED5);
             this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.trackBar5);
+            this.panel5.Controls.Add(this.sbarDimLED8);
             this.panel5.Controls.Add(this.btnDimLED8);
             this.panel5.Controls.Add(this.button109);
             this.panel5.Controls.Add(this.label27);
-            this.panel5.Controls.Add(this.label28);
-            this.panel5.Controls.Add(this.trackBar6);
+            this.panel5.Controls.Add(this.sbarDimLED7);
             this.panel5.Controls.Add(this.btnDimLED7);
             this.panel5.Controls.Add(this.button111);
             this.panel5.Controls.Add(this.label29);
-            this.panel5.Controls.Add(this.label30);
-            this.panel5.Controls.Add(this.trackBar7);
+            this.panel5.Controls.Add(this.sbarDimLED6);
             this.panel5.Controls.Add(this.btnDimLED6);
             this.panel5.Controls.Add(this.button113);
             this.panel5.Controls.Add(this.label31);
-            this.panel5.Controls.Add(this.label32);
-            this.panel5.Controls.Add(this.trackBar8);
+            this.panel5.Controls.Add(this.sbarDimLED5);
             this.panel5.Controls.Add(this.btnDimLED5);
             this.panel5.Location = new System.Drawing.Point(363, 307);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(307, 152);
             this.panel5.TabIndex = 85;
+            // 
+            // lblRedLEDMinLeft
+            // 
+            this.lblRedLEDMinLeft.AutoSize = true;
+            this.lblRedLEDMinLeft.Location = new System.Drawing.Point(37, 103);
+            this.lblRedLEDMinLeft.Name = "lblRedLEDMinLeft";
+            this.lblRedLEDMinLeft.Size = new System.Drawing.Size(11, 12);
+            this.lblRedLEDMinLeft.TabIndex = 94;
+            this.lblRedLEDMinLeft.Text = "0";
+            // 
+            // lblRedLEDMinRight
+            // 
+            this.lblRedLEDMinRight.AutoSize = true;
+            this.lblRedLEDMinRight.Location = new System.Drawing.Point(279, 102);
+            this.lblRedLEDMinRight.Name = "lblRedLEDMinRight";
+            this.lblRedLEDMinRight.Size = new System.Drawing.Size(11, 12);
+            this.lblRedLEDMinRight.TabIndex = 94;
+            this.lblRedLEDMinRight.Text = "0";
+            // 
+            // lblRedLEDMaxLeft
+            // 
+            this.lblRedLEDMaxLeft.AutoSize = true;
+            this.lblRedLEDMaxLeft.Location = new System.Drawing.Point(31, 51);
+            this.lblRedLEDMaxLeft.Name = "lblRedLEDMaxLeft";
+            this.lblRedLEDMaxLeft.Size = new System.Drawing.Size(17, 12);
+            this.lblRedLEDMaxLeft.TabIndex = 93;
+            this.lblRedLEDMaxLeft.Text = "10";
+            // 
+            // tbxDimLED8
+            // 
+            this.tbxDimLED8.Location = new System.Drawing.Point(233, 26);
+            this.tbxDimLED8.Name = "tbxDimLED8";
+            this.tbxDimLED8.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED8.TabIndex = 92;
+            this.tbxDimLED8.Tag = "8";
+            this.tbxDimLED8.Text = "0";
+            this.tbxDimLED8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
+            // 
+            // lblRedLEDMaxRight
+            // 
+            this.lblRedLEDMaxRight.AutoSize = true;
+            this.lblRedLEDMaxRight.Location = new System.Drawing.Point(279, 50);
+            this.lblRedLEDMaxRight.Name = "lblRedLEDMaxRight";
+            this.lblRedLEDMaxRight.Size = new System.Drawing.Size(17, 12);
+            this.lblRedLEDMaxRight.TabIndex = 93;
+            this.lblRedLEDMaxRight.Text = "10";
+            // 
+            // tbxDimLED7
+            // 
+            this.tbxDimLED7.Location = new System.Drawing.Point(171, 26);
+            this.tbxDimLED7.Name = "tbxDimLED7";
+            this.tbxDimLED7.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED7.TabIndex = 91;
+            this.tbxDimLED7.Tag = "7";
+            this.tbxDimLED7.Text = "0";
+            this.tbxDimLED7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
             // 
             // label11
             // 
@@ -1219,6 +1390,17 @@ namespace LEDController.View
             this.label11.TabIndex = 84;
             this.label11.Text = "功率";
             // 
+            // tbxDimLED6
+            // 
+            this.tbxDimLED6.Location = new System.Drawing.Point(110, 26);
+            this.tbxDimLED6.Name = "tbxDimLED6";
+            this.tbxDimLED6.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED6.TabIndex = 90;
+            this.tbxDimLED6.Tag = "6";
+            this.tbxDimLED6.Text = "0";
+            this.tbxDimLED6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
+            // 
             // button107
             // 
             this.button107.Location = new System.Drawing.Point(235, 126);
@@ -1227,6 +1409,17 @@ namespace LEDController.View
             this.button107.TabIndex = 83;
             this.button107.Text = "设置";
             this.button107.UseVisualStyleBackColor = true;
+            // 
+            // tbxDimLED5
+            // 
+            this.tbxDimLED5.Location = new System.Drawing.Point(50, 26);
+            this.tbxDimLED5.Name = "tbxDimLED5";
+            this.tbxDimLED5.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED5.TabIndex = 89;
+            this.tbxDimLED5.Tag = "5";
+            this.tbxDimLED5.Text = "0";
+            this.tbxDimLED5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
             // 
             // label12
             // 
@@ -1237,34 +1430,36 @@ namespace LEDController.View
             this.label12.TabIndex = 82;
             this.label12.Text = "W";
             // 
-            // label13
+            // sbarDimLED8
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(248, 29);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(11, 12);
-            this.label13.TabIndex = 81;
-            this.label13.Text = "0";
-            // 
-            // trackBar5
-            // 
-            this.trackBar5.Location = new System.Drawing.Point(235, 44);
-            this.trackBar5.Name = "trackBar5";
-            this.trackBar5.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar5.Size = new System.Drawing.Size(45, 80);
-            this.trackBar5.TabIndex = 80;
+            this.sbarDimLED8.LargeChange = 20;
+            this.sbarDimLED8.Location = new System.Drawing.Point(235, 44);
+            this.sbarDimLED8.Maximum = 50;
+            this.sbarDimLED8.Name = "sbarDimLED8";
+            this.sbarDimLED8.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED8.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED8.TabIndex = 80;
+            this.sbarDimLED8.Tag = "8";
+            this.sbarDimLED8.TickFrequency = 5;
+            this.sbarDimLED8.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED8.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED8
             // 
             this.btnDimLED8.AutoSize = true;
             this.btnDimLED8.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED8.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED8.Location = new System.Drawing.Point(243, 3);
             this.btnDimLED8.Name = "btnDimLED8";
             this.btnDimLED8.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED8.TabIndex = 79;
+            this.btnDimLED8.Tag = "128";
             this.btnDimLED8.UseVisualStyleBackColor = false;
+            this.btnDimLED8.Click += new System.EventHandler(this.btnDimLED5_Click);
+            this.btnDimLED8.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
+            this.btnDimLED8.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
             // 
             // button109
             // 
@@ -1284,34 +1479,36 @@ namespace LEDController.View
             this.label27.TabIndex = 77;
             this.label27.Text = "W";
             // 
-            // label28
+            // sbarDimLED7
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(186, 29);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(11, 12);
-            this.label28.TabIndex = 76;
-            this.label28.Text = "0";
-            // 
-            // trackBar6
-            // 
-            this.trackBar6.Location = new System.Drawing.Point(173, 44);
-            this.trackBar6.Name = "trackBar6";
-            this.trackBar6.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar6.Size = new System.Drawing.Size(45, 80);
-            this.trackBar6.TabIndex = 75;
+            this.sbarDimLED7.LargeChange = 20;
+            this.sbarDimLED7.Location = new System.Drawing.Point(173, 44);
+            this.sbarDimLED7.Maximum = 50;
+            this.sbarDimLED7.Name = "sbarDimLED7";
+            this.sbarDimLED7.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED7.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED7.TabIndex = 75;
+            this.sbarDimLED7.Tag = "7";
+            this.sbarDimLED7.TickFrequency = 5;
+            this.sbarDimLED7.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED7.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED7
             // 
             this.btnDimLED7.AutoSize = true;
             this.btnDimLED7.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED7.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED7.Location = new System.Drawing.Point(181, 3);
             this.btnDimLED7.Name = "btnDimLED7";
             this.btnDimLED7.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED7.TabIndex = 74;
+            this.btnDimLED7.Tag = "127";
             this.btnDimLED7.UseVisualStyleBackColor = false;
+            this.btnDimLED7.Click += new System.EventHandler(this.btnDimLED5_Click);
+            this.btnDimLED7.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
+            this.btnDimLED7.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
             // 
             // button111
             // 
@@ -1331,34 +1528,36 @@ namespace LEDController.View
             this.label29.TabIndex = 72;
             this.label29.Text = "W";
             // 
-            // label30
+            // sbarDimLED6
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(125, 29);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(11, 12);
-            this.label30.TabIndex = 71;
-            this.label30.Text = "0";
-            // 
-            // trackBar7
-            // 
-            this.trackBar7.Location = new System.Drawing.Point(112, 44);
-            this.trackBar7.Name = "trackBar7";
-            this.trackBar7.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar7.Size = new System.Drawing.Size(45, 80);
-            this.trackBar7.TabIndex = 70;
+            this.sbarDimLED6.LargeChange = 20;
+            this.sbarDimLED6.Location = new System.Drawing.Point(112, 44);
+            this.sbarDimLED6.Maximum = 50;
+            this.sbarDimLED6.Name = "sbarDimLED6";
+            this.sbarDimLED6.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED6.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED6.TabIndex = 70;
+            this.sbarDimLED6.Tag = "6";
+            this.sbarDimLED6.TickFrequency = 5;
+            this.sbarDimLED6.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED6.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED6
             // 
             this.btnDimLED6.AutoSize = true;
             this.btnDimLED6.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED6.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED6.Location = new System.Drawing.Point(120, 3);
             this.btnDimLED6.Name = "btnDimLED6";
             this.btnDimLED6.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED6.TabIndex = 69;
+            this.btnDimLED6.Tag = "126";
             this.btnDimLED6.UseVisualStyleBackColor = false;
+            this.btnDimLED6.Click += new System.EventHandler(this.btnDimLED5_Click);
+            this.btnDimLED6.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
+            this.btnDimLED6.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
             // 
             // button113
             // 
@@ -1378,63 +1577,149 @@ namespace LEDController.View
             this.label31.TabIndex = 67;
             this.label31.Text = "W";
             // 
-            // label32
+            // sbarDimLED5
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(64, 29);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(11, 12);
-            this.label32.TabIndex = 66;
-            this.label32.Text = "0";
-            // 
-            // trackBar8
-            // 
-            this.trackBar8.Location = new System.Drawing.Point(51, 44);
-            this.trackBar8.Name = "trackBar8";
-            this.trackBar8.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar8.Size = new System.Drawing.Size(45, 80);
-            this.trackBar8.TabIndex = 65;
+            this.sbarDimLED5.LargeChange = 20;
+            this.sbarDimLED5.Location = new System.Drawing.Point(51, 44);
+            this.sbarDimLED5.Maximum = 50;
+            this.sbarDimLED5.Name = "sbarDimLED5";
+            this.sbarDimLED5.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED5.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED5.TabIndex = 65;
+            this.sbarDimLED5.Tag = "5";
+            this.sbarDimLED5.TickFrequency = 5;
+            this.sbarDimLED5.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED5.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED5
             // 
             this.btnDimLED5.AutoSize = true;
             this.btnDimLED5.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED5.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED5.Location = new System.Drawing.Point(59, 3);
             this.btnDimLED5.Name = "btnDimLED5";
             this.btnDimLED5.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED5.TabIndex = 64;
+            this.btnDimLED5.Tag = "125";
             this.btnDimLED5.UseVisualStyleBackColor = false;
+            this.btnDimLED5.Click += new System.EventHandler(this.btnDimLED5_Click);
+            this.btnDimLED5.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
+            this.btnDimLED5.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.lblGreenLEDMinRight);
+            this.panel4.Controls.Add(this.lblGreenLEDMaxRight);
+            this.panel4.Controls.Add(this.lblGreenLEDMinLeft);
+            this.panel4.Controls.Add(this.lblGreenLEDMaxLeft);
+            this.panel4.Controls.Add(this.tbxDimLED4);
+            this.panel4.Controls.Add(this.tbxDimLED3);
+            this.panel4.Controls.Add(this.tbxDimLED2);
+            this.panel4.Controls.Add(this.tbxDimLED1);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.button105);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.trackBar4);
+            this.panel4.Controls.Add(this.sbarDimLED4);
             this.panel4.Controls.Add(this.btnDimLED4);
             this.panel4.Controls.Add(this.button103);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.trackBar3);
+            this.panel4.Controls.Add(this.sbarDimLED3);
             this.panel4.Controls.Add(this.btnDimLED3);
             this.panel4.Controls.Add(this.button101);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.trackBar2);
+            this.panel4.Controls.Add(this.sbarDimLED2);
             this.panel4.Controls.Add(this.btnDimLED2);
             this.panel4.Controls.Add(this.button100);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.trackBar1);
+            this.panel4.Controls.Add(this.sbarDimLED1);
             this.panel4.Controls.Add(this.btnDimLED1);
             this.panel4.Location = new System.Drawing.Point(44, 307);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(307, 152);
             this.panel4.TabIndex = 82;
+            // 
+            // lblGreenLEDMinRight
+            // 
+            this.lblGreenLEDMinRight.AutoSize = true;
+            this.lblGreenLEDMinRight.Location = new System.Drawing.Point(278, 102);
+            this.lblGreenLEDMinRight.Name = "lblGreenLEDMinRight";
+            this.lblGreenLEDMinRight.Size = new System.Drawing.Size(11, 12);
+            this.lblGreenLEDMinRight.TabIndex = 92;
+            this.lblGreenLEDMinRight.Text = "0";
+            // 
+            // lblGreenLEDMaxRight
+            // 
+            this.lblGreenLEDMaxRight.AutoSize = true;
+            this.lblGreenLEDMaxRight.Location = new System.Drawing.Point(278, 50);
+            this.lblGreenLEDMaxRight.Name = "lblGreenLEDMaxRight";
+            this.lblGreenLEDMaxRight.Size = new System.Drawing.Size(17, 12);
+            this.lblGreenLEDMaxRight.TabIndex = 91;
+            this.lblGreenLEDMaxRight.Text = "10";
+            // 
+            // lblGreenLEDMinLeft
+            // 
+            this.lblGreenLEDMinLeft.AutoSize = true;
+            this.lblGreenLEDMinLeft.Location = new System.Drawing.Point(39, 102);
+            this.lblGreenLEDMinLeft.Name = "lblGreenLEDMinLeft";
+            this.lblGreenLEDMinLeft.Size = new System.Drawing.Size(11, 12);
+            this.lblGreenLEDMinLeft.TabIndex = 90;
+            this.lblGreenLEDMinLeft.Text = "0";
+            // 
+            // lblGreenLEDMaxLeft
+            // 
+            this.lblGreenLEDMaxLeft.AutoSize = true;
+            this.lblGreenLEDMaxLeft.Location = new System.Drawing.Point(33, 50);
+            this.lblGreenLEDMaxLeft.Name = "lblGreenLEDMaxLeft";
+            this.lblGreenLEDMaxLeft.Size = new System.Drawing.Size(17, 12);
+            this.lblGreenLEDMaxLeft.TabIndex = 89;
+            this.lblGreenLEDMaxLeft.Text = "10";
+            // 
+            // tbxDimLED4
+            // 
+            this.tbxDimLED4.Location = new System.Drawing.Point(233, 26);
+            this.tbxDimLED4.Name = "tbxDimLED4";
+            this.tbxDimLED4.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED4.TabIndex = 88;
+            this.tbxDimLED4.Tag = "4";
+            this.tbxDimLED4.Text = "0";
+            this.tbxDimLED4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
+            // 
+            // tbxDimLED3
+            // 
+            this.tbxDimLED3.Location = new System.Drawing.Point(171, 26);
+            this.tbxDimLED3.Name = "tbxDimLED3";
+            this.tbxDimLED3.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED3.TabIndex = 87;
+            this.tbxDimLED3.Tag = "3";
+            this.tbxDimLED3.Text = "0";
+            this.tbxDimLED3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
+            // 
+            // tbxDimLED2
+            // 
+            this.tbxDimLED2.Location = new System.Drawing.Point(110, 26);
+            this.tbxDimLED2.Name = "tbxDimLED2";
+            this.tbxDimLED2.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED2.TabIndex = 86;
+            this.tbxDimLED2.Tag = "2";
+            this.tbxDimLED2.Text = "0";
+            this.tbxDimLED2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
+            // 
+            // tbxDimLED1
+            // 
+            this.tbxDimLED1.Location = new System.Drawing.Point(50, 26);
+            this.tbxDimLED1.Name = "tbxDimLED1";
+            this.tbxDimLED1.Size = new System.Drawing.Size(30, 21);
+            this.tbxDimLED1.TabIndex = 85;
+            this.tbxDimLED1.Tag = "1";
+            this.tbxDimLED1.Text = "0";
+            this.tbxDimLED1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxDimLED1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
             // 
             // label10
             // 
@@ -1463,34 +1748,36 @@ namespace LEDController.View
             this.label8.TabIndex = 82;
             this.label8.Text = "W";
             // 
-            // label9
+            // sbarDimLED4
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(248, 29);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(11, 12);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "0";
-            // 
-            // trackBar4
-            // 
-            this.trackBar4.Location = new System.Drawing.Point(235, 44);
-            this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar4.Size = new System.Drawing.Size(45, 80);
-            this.trackBar4.TabIndex = 80;
+            this.sbarDimLED4.LargeChange = 20;
+            this.sbarDimLED4.Location = new System.Drawing.Point(235, 44);
+            this.sbarDimLED4.Maximum = 50;
+            this.sbarDimLED4.Name = "sbarDimLED4";
+            this.sbarDimLED4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED4.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED4.TabIndex = 80;
+            this.sbarDimLED4.Tag = "4";
+            this.sbarDimLED4.TickFrequency = 5;
+            this.sbarDimLED4.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED4.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED4
             // 
             this.btnDimLED4.AutoSize = true;
             this.btnDimLED4.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED4.Location = new System.Drawing.Point(243, 3);
             this.btnDimLED4.Name = "btnDimLED4";
             this.btnDimLED4.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED4.TabIndex = 79;
+            this.btnDimLED4.Tag = "124";
             this.btnDimLED4.UseVisualStyleBackColor = false;
+            this.btnDimLED4.Click += new System.EventHandler(this.btnDimLED1_Click);
+            this.btnDimLED4.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
+            this.btnDimLED4.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
             // 
             // button103
             // 
@@ -1510,34 +1797,36 @@ namespace LEDController.View
             this.label6.TabIndex = 77;
             this.label6.Text = "W";
             // 
-            // label7
+            // sbarDimLED3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(186, 29);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 12);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "0";
-            // 
-            // trackBar3
-            // 
-            this.trackBar3.Location = new System.Drawing.Point(173, 44);
-            this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar3.Size = new System.Drawing.Size(45, 80);
-            this.trackBar3.TabIndex = 75;
+            this.sbarDimLED3.LargeChange = 20;
+            this.sbarDimLED3.Location = new System.Drawing.Point(173, 44);
+            this.sbarDimLED3.Maximum = 50;
+            this.sbarDimLED3.Name = "sbarDimLED3";
+            this.sbarDimLED3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED3.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED3.TabIndex = 75;
+            this.sbarDimLED3.Tag = "3";
+            this.sbarDimLED3.TickFrequency = 5;
+            this.sbarDimLED3.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED3.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED3
             // 
             this.btnDimLED3.AutoSize = true;
             this.btnDimLED3.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED3.Location = new System.Drawing.Point(181, 3);
             this.btnDimLED3.Name = "btnDimLED3";
             this.btnDimLED3.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED3.TabIndex = 74;
+            this.btnDimLED3.Tag = "123";
             this.btnDimLED3.UseVisualStyleBackColor = false;
+            this.btnDimLED3.Click += new System.EventHandler(this.btnDimLED1_Click);
+            this.btnDimLED3.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
+            this.btnDimLED3.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
             // 
             // button101
             // 
@@ -1557,34 +1846,36 @@ namespace LEDController.View
             this.label3.TabIndex = 72;
             this.label3.Text = "W";
             // 
-            // label4
+            // sbarDimLED2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(125, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(11, 12);
-            this.label4.TabIndex = 71;
-            this.label4.Text = "0";
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.Location = new System.Drawing.Point(112, 44);
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar2.Size = new System.Drawing.Size(45, 80);
-            this.trackBar2.TabIndex = 70;
+            this.sbarDimLED2.LargeChange = 20;
+            this.sbarDimLED2.Location = new System.Drawing.Point(112, 44);
+            this.sbarDimLED2.Maximum = 50;
+            this.sbarDimLED2.Name = "sbarDimLED2";
+            this.sbarDimLED2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED2.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED2.TabIndex = 70;
+            this.sbarDimLED2.Tag = "2";
+            this.sbarDimLED2.TickFrequency = 5;
+            this.sbarDimLED2.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED2.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED2
             // 
             this.btnDimLED2.AutoSize = true;
             this.btnDimLED2.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED2.Location = new System.Drawing.Point(120, 3);
             this.btnDimLED2.Name = "btnDimLED2";
             this.btnDimLED2.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED2.TabIndex = 69;
+            this.btnDimLED2.Tag = "122";
             this.btnDimLED2.UseVisualStyleBackColor = false;
+            this.btnDimLED2.Click += new System.EventHandler(this.btnDimLED1_Click);
+            this.btnDimLED2.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
+            this.btnDimLED2.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
             // 
             // button100
             // 
@@ -1604,34 +1895,36 @@ namespace LEDController.View
             this.label2.TabIndex = 67;
             this.label2.Text = "W";
             // 
-            // label1
+            // sbarDimLED1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 12);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "0";
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(51, 44);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 80);
-            this.trackBar1.TabIndex = 65;
+            this.sbarDimLED1.LargeChange = 20;
+            this.sbarDimLED1.Location = new System.Drawing.Point(51, 44);
+            this.sbarDimLED1.Maximum = 50;
+            this.sbarDimLED1.Name = "sbarDimLED1";
+            this.sbarDimLED1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sbarDimLED1.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED1.TabIndex = 65;
+            this.sbarDimLED1.Tag = "1";
+            this.sbarDimLED1.TickFrequency = 5;
+            this.sbarDimLED1.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.sbarDimLED1.Scroll += new System.EventHandler(this.sbarDimLED1_Scroll);
             // 
             // btnDimLED1
             // 
             this.btnDimLED1.AutoSize = true;
             this.btnDimLED1.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDimLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimLED1.Location = new System.Drawing.Point(59, 3);
             this.btnDimLED1.Name = "btnDimLED1";
             this.btnDimLED1.Size = new System.Drawing.Size(20, 20);
             this.btnDimLED1.TabIndex = 64;
+            this.btnDimLED1.Tag = "121";
             this.btnDimLED1.UseVisualStyleBackColor = false;
+            this.btnDimLED1.Click += new System.EventHandler(this.btnDimLED1_Click);
+            this.btnDimLED1.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
+            this.btnDimLED1.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
             // 
             // statusStrip1
             // 
@@ -1897,481 +2190,681 @@ namespace LEDController.View
             // 
             this.btnLED120.AutoSize = true;
             this.btnLED120.BackColor = System.Drawing.Color.Gray;
+            this.btnLED120.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED120.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED120.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED120.Location = new System.Drawing.Point(266, 168);
             this.btnLED120.Name = "btnLED120";
             this.btnLED120.Size = new System.Drawing.Size(20, 20);
             this.btnLED120.TabIndex = 113;
+            this.btnLED120.Tag = "120";
             this.btnLED120.UseVisualStyleBackColor = false;
+            this.btnLED120.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED120.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED120.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED112
             // 
             this.btnLED112.AutoSize = true;
             this.btnLED112.BackColor = System.Drawing.Color.Gray;
+            this.btnLED112.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED112.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED112.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED112.Location = new System.Drawing.Point(266, 128);
             this.btnLED112.Name = "btnLED112";
             this.btnLED112.Size = new System.Drawing.Size(20, 20);
             this.btnLED112.TabIndex = 112;
+            this.btnLED112.Tag = "112";
             this.btnLED112.UseVisualStyleBackColor = false;
+            this.btnLED112.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED112.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED112.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED104
             // 
             this.btnLED104.AutoSize = true;
             this.btnLED104.BackColor = System.Drawing.Color.Gray;
+            this.btnLED104.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED104.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED104.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED104.Location = new System.Drawing.Point(266, 92);
             this.btnLED104.Name = "btnLED104";
             this.btnLED104.Size = new System.Drawing.Size(20, 20);
             this.btnLED104.TabIndex = 111;
+            this.btnLED104.Tag = "104";
             this.btnLED104.UseVisualStyleBackColor = false;
+            this.btnLED104.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED104.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED104.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED96
             // 
             this.btnLED96.AutoSize = true;
             this.btnLED96.BackColor = System.Drawing.Color.Gray;
+            this.btnLED96.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED96.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED96.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED96.Location = new System.Drawing.Point(266, 55);
             this.btnLED96.Name = "btnLED96";
             this.btnLED96.Size = new System.Drawing.Size(20, 20);
             this.btnLED96.TabIndex = 110;
+            this.btnLED96.Tag = "96";
             this.btnLED96.UseVisualStyleBackColor = false;
+            this.btnLED96.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED96.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED96.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED88
             // 
             this.btnLED88.AutoSize = true;
             this.btnLED88.BackColor = System.Drawing.Color.Gray;
+            this.btnLED88.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED88.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED88.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED88.Location = new System.Drawing.Point(266, 19);
             this.btnLED88.Name = "btnLED88";
             this.btnLED88.Size = new System.Drawing.Size(20, 20);
             this.btnLED88.TabIndex = 109;
+            this.btnLED88.Tag = "88";
             this.btnLED88.UseVisualStyleBackColor = false;
+            this.btnLED88.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED88.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED88.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED116
             // 
             this.btnLED116.AutoSize = true;
             this.btnLED116.BackColor = System.Drawing.Color.Gray;
+            this.btnLED116.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED116.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED116.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED116.Location = new System.Drawing.Point(126, 168);
             this.btnLED116.Name = "btnLED116";
             this.btnLED116.Size = new System.Drawing.Size(20, 20);
             this.btnLED116.TabIndex = 108;
+            this.btnLED116.Tag = "116";
             this.btnLED116.UseVisualStyleBackColor = false;
+            this.btnLED116.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED116.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED116.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED108
             // 
             this.btnLED108.AutoSize = true;
             this.btnLED108.BackColor = System.Drawing.Color.Gray;
+            this.btnLED108.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED108.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED108.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED108.Location = new System.Drawing.Point(126, 128);
             this.btnLED108.Name = "btnLED108";
             this.btnLED108.Size = new System.Drawing.Size(20, 20);
             this.btnLED108.TabIndex = 107;
+            this.btnLED108.Tag = "108";
             this.btnLED108.UseVisualStyleBackColor = false;
+            this.btnLED108.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED108.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED108.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED100
             // 
             this.btnLED100.AutoSize = true;
             this.btnLED100.BackColor = System.Drawing.Color.Gray;
+            this.btnLED100.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED100.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED100.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED100.Location = new System.Drawing.Point(126, 92);
             this.btnLED100.Name = "btnLED100";
             this.btnLED100.Size = new System.Drawing.Size(20, 20);
             this.btnLED100.TabIndex = 106;
+            this.btnLED100.Tag = "100";
             this.btnLED100.UseVisualStyleBackColor = false;
+            this.btnLED100.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED100.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED100.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED92
             // 
             this.btnLED92.AutoSize = true;
             this.btnLED92.BackColor = System.Drawing.Color.Gray;
+            this.btnLED92.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED92.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED92.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED92.Location = new System.Drawing.Point(126, 55);
             this.btnLED92.Name = "btnLED92";
             this.btnLED92.Size = new System.Drawing.Size(20, 20);
             this.btnLED92.TabIndex = 105;
+            this.btnLED92.Tag = "92";
             this.btnLED92.UseVisualStyleBackColor = false;
+            this.btnLED92.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED92.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED92.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED84
             // 
             this.btnLED84.AutoSize = true;
             this.btnLED84.BackColor = System.Drawing.Color.Gray;
+            this.btnLED84.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED84.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED84.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED84.Location = new System.Drawing.Point(126, 19);
             this.btnLED84.Name = "btnLED84";
             this.btnLED84.Size = new System.Drawing.Size(20, 20);
             this.btnLED84.TabIndex = 104;
+            this.btnLED84.Tag = "84";
             this.btnLED84.UseVisualStyleBackColor = false;
+            this.btnLED84.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED84.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED84.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED119
             // 
             this.btnLED119.AutoSize = true;
             this.btnLED119.BackColor = System.Drawing.Color.Gray;
+            this.btnLED119.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED119.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED119.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED119.Location = new System.Drawing.Point(231, 168);
             this.btnLED119.Name = "btnLED119";
             this.btnLED119.Size = new System.Drawing.Size(20, 20);
             this.btnLED119.TabIndex = 103;
+            this.btnLED119.Tag = "119";
             this.btnLED119.UseVisualStyleBackColor = false;
+            this.btnLED119.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED119.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED119.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED118
             // 
             this.btnLED118.AutoSize = true;
             this.btnLED118.BackColor = System.Drawing.Color.Gray;
+            this.btnLED118.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED118.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED118.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED118.Location = new System.Drawing.Point(196, 168);
             this.btnLED118.Name = "btnLED118";
             this.btnLED118.Size = new System.Drawing.Size(20, 20);
             this.btnLED118.TabIndex = 102;
+            this.btnLED118.Tag = "118";
             this.btnLED118.UseVisualStyleBackColor = false;
+            this.btnLED118.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED118.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED118.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED117
             // 
             this.btnLED117.AutoSize = true;
             this.btnLED117.BackColor = System.Drawing.Color.Gray;
+            this.btnLED117.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED117.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED117.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED117.Location = new System.Drawing.Point(161, 168);
             this.btnLED117.Name = "btnLED117";
             this.btnLED117.Size = new System.Drawing.Size(20, 20);
             this.btnLED117.TabIndex = 101;
+            this.btnLED117.Tag = "117";
             this.btnLED117.UseVisualStyleBackColor = false;
+            this.btnLED117.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED117.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED117.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED115
             // 
             this.btnLED115.AutoSize = true;
             this.btnLED115.BackColor = System.Drawing.Color.Gray;
+            this.btnLED115.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED115.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED115.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED115.Location = new System.Drawing.Point(91, 168);
             this.btnLED115.Name = "btnLED115";
             this.btnLED115.Size = new System.Drawing.Size(20, 20);
             this.btnLED115.TabIndex = 100;
+            this.btnLED115.Tag = "115";
             this.btnLED115.UseVisualStyleBackColor = false;
+            this.btnLED115.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED115.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED115.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED114
             // 
             this.btnLED114.AutoSize = true;
             this.btnLED114.BackColor = System.Drawing.Color.Gray;
+            this.btnLED114.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED114.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED114.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED114.Location = new System.Drawing.Point(56, 168);
             this.btnLED114.Name = "btnLED114";
             this.btnLED114.Size = new System.Drawing.Size(20, 20);
             this.btnLED114.TabIndex = 99;
+            this.btnLED114.Tag = "114";
             this.btnLED114.UseVisualStyleBackColor = false;
+            this.btnLED114.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED114.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED114.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED113
             // 
             this.btnLED113.AutoSize = true;
             this.btnLED113.BackColor = System.Drawing.Color.Gray;
+            this.btnLED113.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED113.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED113.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED113.Location = new System.Drawing.Point(21, 168);
             this.btnLED113.Name = "btnLED113";
             this.btnLED113.Size = new System.Drawing.Size(20, 20);
             this.btnLED113.TabIndex = 98;
+            this.btnLED113.Tag = "113";
             this.btnLED113.UseVisualStyleBackColor = false;
+            this.btnLED113.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED113.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED113.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED111
             // 
             this.btnLED111.AutoSize = true;
             this.btnLED111.BackColor = System.Drawing.Color.Gray;
+            this.btnLED111.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED111.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED111.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED111.Location = new System.Drawing.Point(231, 128);
             this.btnLED111.Name = "btnLED111";
             this.btnLED111.Size = new System.Drawing.Size(20, 20);
             this.btnLED111.TabIndex = 97;
+            this.btnLED111.Tag = "111";
             this.btnLED111.UseVisualStyleBackColor = false;
+            this.btnLED111.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED111.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED111.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED110
             // 
             this.btnLED110.AutoSize = true;
             this.btnLED110.BackColor = System.Drawing.Color.Gray;
+            this.btnLED110.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED110.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED110.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED110.Location = new System.Drawing.Point(196, 128);
             this.btnLED110.Name = "btnLED110";
             this.btnLED110.Size = new System.Drawing.Size(20, 20);
             this.btnLED110.TabIndex = 96;
+            this.btnLED110.Tag = "110";
             this.btnLED110.UseVisualStyleBackColor = false;
+            this.btnLED110.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED110.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED110.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED109
             // 
             this.btnLED109.AutoSize = true;
             this.btnLED109.BackColor = System.Drawing.Color.Gray;
+            this.btnLED109.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED109.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED109.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED109.Location = new System.Drawing.Point(161, 128);
             this.btnLED109.Name = "btnLED109";
             this.btnLED109.Size = new System.Drawing.Size(20, 20);
             this.btnLED109.TabIndex = 95;
+            this.btnLED109.Tag = "109";
             this.btnLED109.UseVisualStyleBackColor = false;
+            this.btnLED109.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED109.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED109.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED107
             // 
             this.btnLED107.AutoSize = true;
             this.btnLED107.BackColor = System.Drawing.Color.Gray;
+            this.btnLED107.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED107.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED107.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED107.Location = new System.Drawing.Point(91, 128);
             this.btnLED107.Name = "btnLED107";
             this.btnLED107.Size = new System.Drawing.Size(20, 20);
             this.btnLED107.TabIndex = 94;
+            this.btnLED107.Tag = "107";
             this.btnLED107.UseVisualStyleBackColor = false;
+            this.btnLED107.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED107.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED107.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED106
             // 
             this.btnLED106.AutoSize = true;
             this.btnLED106.BackColor = System.Drawing.Color.Gray;
+            this.btnLED106.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED106.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED106.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED106.Location = new System.Drawing.Point(56, 128);
             this.btnLED106.Name = "btnLED106";
             this.btnLED106.Size = new System.Drawing.Size(20, 20);
             this.btnLED106.TabIndex = 93;
+            this.btnLED106.Tag = "106";
             this.btnLED106.UseVisualStyleBackColor = false;
+            this.btnLED106.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED106.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED106.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED105
             // 
             this.btnLED105.AutoSize = true;
             this.btnLED105.BackColor = System.Drawing.Color.Gray;
+            this.btnLED105.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED105.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED105.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED105.Location = new System.Drawing.Point(21, 128);
             this.btnLED105.Name = "btnLED105";
             this.btnLED105.Size = new System.Drawing.Size(20, 20);
             this.btnLED105.TabIndex = 92;
+            this.btnLED105.Tag = "105";
             this.btnLED105.UseVisualStyleBackColor = false;
+            this.btnLED105.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED105.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED105.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED103
             // 
             this.btnLED103.AutoSize = true;
             this.btnLED103.BackColor = System.Drawing.Color.Gray;
+            this.btnLED103.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED103.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED103.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED103.Location = new System.Drawing.Point(231, 92);
             this.btnLED103.Name = "btnLED103";
             this.btnLED103.Size = new System.Drawing.Size(20, 20);
             this.btnLED103.TabIndex = 91;
+            this.btnLED103.Tag = "103";
             this.btnLED103.UseVisualStyleBackColor = false;
+            this.btnLED103.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED103.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED103.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED102
             // 
             this.btnLED102.AutoSize = true;
             this.btnLED102.BackColor = System.Drawing.Color.Gray;
+            this.btnLED102.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED102.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED102.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED102.Location = new System.Drawing.Point(196, 92);
             this.btnLED102.Name = "btnLED102";
             this.btnLED102.Size = new System.Drawing.Size(20, 20);
             this.btnLED102.TabIndex = 90;
+            this.btnLED102.Tag = "102";
             this.btnLED102.UseVisualStyleBackColor = false;
+            this.btnLED102.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED102.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED102.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED101
             // 
             this.btnLED101.AutoSize = true;
             this.btnLED101.BackColor = System.Drawing.Color.Gray;
+            this.btnLED101.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED101.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED101.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED101.Location = new System.Drawing.Point(161, 92);
             this.btnLED101.Name = "btnLED101";
             this.btnLED101.Size = new System.Drawing.Size(20, 20);
             this.btnLED101.TabIndex = 89;
+            this.btnLED101.Tag = "101";
             this.btnLED101.UseVisualStyleBackColor = false;
+            this.btnLED101.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED101.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED101.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED99
             // 
             this.btnLED99.AutoSize = true;
             this.btnLED99.BackColor = System.Drawing.Color.Gray;
+            this.btnLED99.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED99.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED99.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED99.Location = new System.Drawing.Point(91, 92);
             this.btnLED99.Name = "btnLED99";
             this.btnLED99.Size = new System.Drawing.Size(20, 20);
             this.btnLED99.TabIndex = 88;
+            this.btnLED99.Tag = "99";
             this.btnLED99.UseVisualStyleBackColor = false;
+            this.btnLED99.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED99.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED99.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED98
             // 
             this.btnLED98.AutoSize = true;
             this.btnLED98.BackColor = System.Drawing.Color.Gray;
+            this.btnLED98.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED98.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED98.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED98.Location = new System.Drawing.Point(56, 92);
             this.btnLED98.Name = "btnLED98";
             this.btnLED98.Size = new System.Drawing.Size(20, 20);
             this.btnLED98.TabIndex = 87;
+            this.btnLED98.Tag = "98";
             this.btnLED98.UseVisualStyleBackColor = false;
+            this.btnLED98.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED98.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED98.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED97
             // 
             this.btnLED97.AutoSize = true;
             this.btnLED97.BackColor = System.Drawing.Color.Gray;
+            this.btnLED97.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED97.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED97.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED97.Location = new System.Drawing.Point(21, 92);
             this.btnLED97.Name = "btnLED97";
             this.btnLED97.Size = new System.Drawing.Size(20, 20);
             this.btnLED97.TabIndex = 86;
+            this.btnLED97.Tag = "97";
             this.btnLED97.UseVisualStyleBackColor = false;
+            this.btnLED97.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED97.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED97.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED95
             // 
             this.btnLED95.AutoSize = true;
             this.btnLED95.BackColor = System.Drawing.Color.Gray;
+            this.btnLED95.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED95.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED95.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED95.Location = new System.Drawing.Point(231, 55);
             this.btnLED95.Name = "btnLED95";
             this.btnLED95.Size = new System.Drawing.Size(20, 20);
             this.btnLED95.TabIndex = 85;
+            this.btnLED95.Tag = "95";
             this.btnLED95.UseVisualStyleBackColor = false;
+            this.btnLED95.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED95.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED95.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED94
             // 
             this.btnLED94.AutoSize = true;
             this.btnLED94.BackColor = System.Drawing.Color.Gray;
+            this.btnLED94.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED94.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED94.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED94.Location = new System.Drawing.Point(196, 55);
             this.btnLED94.Name = "btnLED94";
             this.btnLED94.Size = new System.Drawing.Size(20, 20);
             this.btnLED94.TabIndex = 84;
+            this.btnLED94.Tag = "94";
             this.btnLED94.UseVisualStyleBackColor = false;
+            this.btnLED94.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED94.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED94.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED93
             // 
             this.btnLED93.AutoSize = true;
             this.btnLED93.BackColor = System.Drawing.Color.Gray;
+            this.btnLED93.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED93.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED93.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED93.Location = new System.Drawing.Point(161, 55);
             this.btnLED93.Name = "btnLED93";
             this.btnLED93.Size = new System.Drawing.Size(20, 20);
             this.btnLED93.TabIndex = 83;
+            this.btnLED93.Tag = "93";
             this.btnLED93.UseVisualStyleBackColor = false;
+            this.btnLED93.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED93.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED93.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED91
             // 
             this.btnLED91.AutoSize = true;
             this.btnLED91.BackColor = System.Drawing.Color.Gray;
+            this.btnLED91.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED91.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED91.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED91.Location = new System.Drawing.Point(91, 55);
             this.btnLED91.Name = "btnLED91";
             this.btnLED91.Size = new System.Drawing.Size(20, 20);
             this.btnLED91.TabIndex = 82;
+            this.btnLED91.Tag = "91";
             this.btnLED91.UseVisualStyleBackColor = false;
+            this.btnLED91.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED91.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED91.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED90
             // 
             this.btnLED90.AutoSize = true;
             this.btnLED90.BackColor = System.Drawing.Color.Gray;
+            this.btnLED90.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED90.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED90.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED90.Location = new System.Drawing.Point(56, 55);
             this.btnLED90.Name = "btnLED90";
             this.btnLED90.Size = new System.Drawing.Size(20, 20);
             this.btnLED90.TabIndex = 81;
+            this.btnLED90.Tag = "90";
             this.btnLED90.UseVisualStyleBackColor = false;
+            this.btnLED90.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED90.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED90.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED89
             // 
             this.btnLED89.AutoSize = true;
             this.btnLED89.BackColor = System.Drawing.Color.Gray;
+            this.btnLED89.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED89.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED89.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED89.Location = new System.Drawing.Point(21, 55);
             this.btnLED89.Name = "btnLED89";
             this.btnLED89.Size = new System.Drawing.Size(20, 20);
             this.btnLED89.TabIndex = 80;
+            this.btnLED89.Tag = "89";
             this.btnLED89.UseVisualStyleBackColor = false;
+            this.btnLED89.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED89.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED89.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED87
             // 
             this.btnLED87.AutoSize = true;
             this.btnLED87.BackColor = System.Drawing.Color.Gray;
+            this.btnLED87.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED87.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED87.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED87.Location = new System.Drawing.Point(231, 19);
             this.btnLED87.Name = "btnLED87";
             this.btnLED87.Size = new System.Drawing.Size(20, 20);
             this.btnLED87.TabIndex = 79;
+            this.btnLED87.Tag = "87";
             this.btnLED87.UseVisualStyleBackColor = false;
+            this.btnLED87.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED87.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED87.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED86
             // 
             this.btnLED86.AutoSize = true;
             this.btnLED86.BackColor = System.Drawing.Color.Gray;
+            this.btnLED86.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED86.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED86.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED86.Location = new System.Drawing.Point(196, 19);
             this.btnLED86.Name = "btnLED86";
             this.btnLED86.Size = new System.Drawing.Size(20, 20);
             this.btnLED86.TabIndex = 78;
+            this.btnLED86.Tag = "86";
             this.btnLED86.UseVisualStyleBackColor = false;
+            this.btnLED86.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED86.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED86.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED85
             // 
             this.btnLED85.AutoSize = true;
             this.btnLED85.BackColor = System.Drawing.Color.Gray;
+            this.btnLED85.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED85.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED85.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED85.Location = new System.Drawing.Point(161, 19);
             this.btnLED85.Name = "btnLED85";
             this.btnLED85.Size = new System.Drawing.Size(20, 20);
             this.btnLED85.TabIndex = 77;
+            this.btnLED85.Tag = "85";
             this.btnLED85.UseVisualStyleBackColor = false;
+            this.btnLED85.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED85.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED85.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED83
             // 
             this.btnLED83.AutoSize = true;
             this.btnLED83.BackColor = System.Drawing.Color.Gray;
+            this.btnLED83.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED83.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED83.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED83.Location = new System.Drawing.Point(91, 19);
             this.btnLED83.Name = "btnLED83";
             this.btnLED83.Size = new System.Drawing.Size(20, 20);
             this.btnLED83.TabIndex = 76;
+            this.btnLED83.Tag = "83";
             this.btnLED83.UseVisualStyleBackColor = false;
+            this.btnLED83.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED83.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED83.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED82
             // 
             this.btnLED82.AutoSize = true;
             this.btnLED82.BackColor = System.Drawing.Color.Gray;
+            this.btnLED82.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED82.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED82.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED82.Location = new System.Drawing.Point(56, 19);
             this.btnLED82.Name = "btnLED82";
             this.btnLED82.Size = new System.Drawing.Size(20, 20);
             this.btnLED82.TabIndex = 75;
+            this.btnLED82.Tag = "82";
             this.btnLED82.UseVisualStyleBackColor = false;
+            this.btnLED82.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED82.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED82.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // btnLED81
             // 
             this.btnLED81.AutoSize = true;
             this.btnLED81.BackColor = System.Drawing.Color.Gray;
+            this.btnLED81.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED81.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED81.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED81.Location = new System.Drawing.Point(21, 19);
             this.btnLED81.Name = "btnLED81";
             this.btnLED81.Size = new System.Drawing.Size(20, 20);
             this.btnLED81.TabIndex = 74;
+            this.btnLED81.Tag = "81";
             this.btnLED81.UseVisualStyleBackColor = false;
+            this.btnLED81.Click += new System.EventHandler(this.btnLED81_Click);
+            this.btnLED81.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
+            this.btnLED81.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
             // panel2
             // 
@@ -2425,481 +2918,681 @@ namespace LEDController.View
             // 
             this.btnLED80.AutoSize = true;
             this.btnLED80.BackColor = System.Drawing.Color.Gray;
+            this.btnLED80.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED80.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED80.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED80.Location = new System.Drawing.Point(266, 168);
             this.btnLED80.Name = "btnLED80";
             this.btnLED80.Size = new System.Drawing.Size(20, 20);
             this.btnLED80.TabIndex = 113;
+            this.btnLED80.Tag = "80";
             this.btnLED80.UseVisualStyleBackColor = false;
+            this.btnLED80.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED80.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED80.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED72
             // 
             this.btnLED72.AutoSize = true;
             this.btnLED72.BackColor = System.Drawing.Color.Gray;
+            this.btnLED72.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED72.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED72.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED72.Location = new System.Drawing.Point(266, 128);
             this.btnLED72.Name = "btnLED72";
             this.btnLED72.Size = new System.Drawing.Size(20, 20);
             this.btnLED72.TabIndex = 112;
+            this.btnLED72.Tag = "72";
             this.btnLED72.UseVisualStyleBackColor = false;
+            this.btnLED72.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED72.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED72.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED64
             // 
             this.btnLED64.AutoSize = true;
             this.btnLED64.BackColor = System.Drawing.Color.Gray;
+            this.btnLED64.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED64.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED64.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED64.Location = new System.Drawing.Point(266, 92);
             this.btnLED64.Name = "btnLED64";
             this.btnLED64.Size = new System.Drawing.Size(20, 20);
             this.btnLED64.TabIndex = 111;
+            this.btnLED64.Tag = "64";
             this.btnLED64.UseVisualStyleBackColor = false;
+            this.btnLED64.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED64.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED64.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED56
             // 
             this.btnLED56.AutoSize = true;
             this.btnLED56.BackColor = System.Drawing.Color.Gray;
+            this.btnLED56.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED56.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED56.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED56.Location = new System.Drawing.Point(266, 55);
             this.btnLED56.Name = "btnLED56";
             this.btnLED56.Size = new System.Drawing.Size(20, 20);
             this.btnLED56.TabIndex = 110;
+            this.btnLED56.Tag = "56";
             this.btnLED56.UseVisualStyleBackColor = false;
+            this.btnLED56.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED56.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED56.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED48
             // 
             this.btnLED48.AutoSize = true;
             this.btnLED48.BackColor = System.Drawing.Color.Gray;
+            this.btnLED48.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED48.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED48.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED48.Location = new System.Drawing.Point(266, 19);
             this.btnLED48.Name = "btnLED48";
             this.btnLED48.Size = new System.Drawing.Size(20, 20);
             this.btnLED48.TabIndex = 109;
+            this.btnLED48.Tag = "48";
             this.btnLED48.UseVisualStyleBackColor = false;
+            this.btnLED48.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED48.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED48.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED76
             // 
             this.btnLED76.AutoSize = true;
             this.btnLED76.BackColor = System.Drawing.Color.Gray;
+            this.btnLED76.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED76.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED76.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED76.Location = new System.Drawing.Point(126, 168);
             this.btnLED76.Name = "btnLED76";
             this.btnLED76.Size = new System.Drawing.Size(20, 20);
             this.btnLED76.TabIndex = 108;
+            this.btnLED76.Tag = "76";
             this.btnLED76.UseVisualStyleBackColor = false;
+            this.btnLED76.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED76.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED76.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED68
             // 
             this.btnLED68.AutoSize = true;
             this.btnLED68.BackColor = System.Drawing.Color.Gray;
+            this.btnLED68.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED68.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED68.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED68.Location = new System.Drawing.Point(126, 128);
             this.btnLED68.Name = "btnLED68";
             this.btnLED68.Size = new System.Drawing.Size(20, 20);
             this.btnLED68.TabIndex = 107;
+            this.btnLED68.Tag = "68";
             this.btnLED68.UseVisualStyleBackColor = false;
+            this.btnLED68.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED68.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED68.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED60
             // 
             this.btnLED60.AutoSize = true;
             this.btnLED60.BackColor = System.Drawing.Color.Gray;
+            this.btnLED60.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED60.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED60.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED60.Location = new System.Drawing.Point(126, 92);
             this.btnLED60.Name = "btnLED60";
             this.btnLED60.Size = new System.Drawing.Size(20, 20);
             this.btnLED60.TabIndex = 106;
+            this.btnLED60.Tag = "60";
             this.btnLED60.UseVisualStyleBackColor = false;
+            this.btnLED60.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED60.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED60.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED52
             // 
             this.btnLED52.AutoSize = true;
             this.btnLED52.BackColor = System.Drawing.Color.Gray;
+            this.btnLED52.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED52.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED52.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED52.Location = new System.Drawing.Point(126, 55);
             this.btnLED52.Name = "btnLED52";
             this.btnLED52.Size = new System.Drawing.Size(20, 20);
             this.btnLED52.TabIndex = 105;
+            this.btnLED52.Tag = "52";
             this.btnLED52.UseVisualStyleBackColor = false;
+            this.btnLED52.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED52.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED52.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED44
             // 
             this.btnLED44.AutoSize = true;
             this.btnLED44.BackColor = System.Drawing.Color.Gray;
+            this.btnLED44.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED44.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED44.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED44.Location = new System.Drawing.Point(126, 19);
             this.btnLED44.Name = "btnLED44";
             this.btnLED44.Size = new System.Drawing.Size(20, 20);
             this.btnLED44.TabIndex = 104;
+            this.btnLED44.Tag = "44";
             this.btnLED44.UseVisualStyleBackColor = false;
+            this.btnLED44.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED44.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED44.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED79
             // 
             this.btnLED79.AutoSize = true;
             this.btnLED79.BackColor = System.Drawing.Color.Gray;
+            this.btnLED79.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED79.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED79.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED79.Location = new System.Drawing.Point(231, 168);
             this.btnLED79.Name = "btnLED79";
             this.btnLED79.Size = new System.Drawing.Size(20, 20);
             this.btnLED79.TabIndex = 103;
+            this.btnLED79.Tag = "79";
             this.btnLED79.UseVisualStyleBackColor = false;
+            this.btnLED79.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED79.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED79.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED78
             // 
             this.btnLED78.AutoSize = true;
             this.btnLED78.BackColor = System.Drawing.Color.Gray;
+            this.btnLED78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED78.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED78.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED78.Location = new System.Drawing.Point(196, 168);
             this.btnLED78.Name = "btnLED78";
             this.btnLED78.Size = new System.Drawing.Size(20, 20);
             this.btnLED78.TabIndex = 102;
+            this.btnLED78.Tag = "78";
             this.btnLED78.UseVisualStyleBackColor = false;
+            this.btnLED78.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED78.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED78.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED77
             // 
             this.btnLED77.AutoSize = true;
             this.btnLED77.BackColor = System.Drawing.Color.Gray;
+            this.btnLED77.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED77.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED77.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED77.Location = new System.Drawing.Point(161, 168);
             this.btnLED77.Name = "btnLED77";
             this.btnLED77.Size = new System.Drawing.Size(20, 20);
             this.btnLED77.TabIndex = 101;
+            this.btnLED77.Tag = "77";
             this.btnLED77.UseVisualStyleBackColor = false;
+            this.btnLED77.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED77.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED77.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED75
             // 
             this.btnLED75.AutoSize = true;
             this.btnLED75.BackColor = System.Drawing.Color.Gray;
+            this.btnLED75.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED75.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED75.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED75.Location = new System.Drawing.Point(91, 168);
             this.btnLED75.Name = "btnLED75";
             this.btnLED75.Size = new System.Drawing.Size(20, 20);
             this.btnLED75.TabIndex = 100;
+            this.btnLED75.Tag = "75";
             this.btnLED75.UseVisualStyleBackColor = false;
+            this.btnLED75.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED75.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED75.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED74
             // 
             this.btnLED74.AutoSize = true;
             this.btnLED74.BackColor = System.Drawing.Color.Gray;
+            this.btnLED74.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED74.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED74.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED74.Location = new System.Drawing.Point(56, 168);
             this.btnLED74.Name = "btnLED74";
             this.btnLED74.Size = new System.Drawing.Size(20, 20);
             this.btnLED74.TabIndex = 99;
+            this.btnLED74.Tag = "74";
             this.btnLED74.UseVisualStyleBackColor = false;
+            this.btnLED74.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED74.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED74.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED73
             // 
             this.btnLED73.AutoSize = true;
             this.btnLED73.BackColor = System.Drawing.Color.Gray;
+            this.btnLED73.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED73.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED73.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED73.Location = new System.Drawing.Point(21, 168);
             this.btnLED73.Name = "btnLED73";
             this.btnLED73.Size = new System.Drawing.Size(20, 20);
             this.btnLED73.TabIndex = 98;
+            this.btnLED73.Tag = "73";
             this.btnLED73.UseVisualStyleBackColor = false;
+            this.btnLED73.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED73.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED73.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED71
             // 
             this.btnLED71.AutoSize = true;
             this.btnLED71.BackColor = System.Drawing.Color.Gray;
+            this.btnLED71.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED71.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED71.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED71.Location = new System.Drawing.Point(231, 128);
             this.btnLED71.Name = "btnLED71";
             this.btnLED71.Size = new System.Drawing.Size(20, 20);
             this.btnLED71.TabIndex = 97;
+            this.btnLED71.Tag = "71";
             this.btnLED71.UseVisualStyleBackColor = false;
+            this.btnLED71.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED71.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED71.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED70
             // 
             this.btnLED70.AutoSize = true;
             this.btnLED70.BackColor = System.Drawing.Color.Gray;
+            this.btnLED70.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED70.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED70.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED70.Location = new System.Drawing.Point(196, 128);
             this.btnLED70.Name = "btnLED70";
             this.btnLED70.Size = new System.Drawing.Size(20, 20);
             this.btnLED70.TabIndex = 96;
+            this.btnLED70.Tag = "70";
             this.btnLED70.UseVisualStyleBackColor = false;
+            this.btnLED70.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED70.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED70.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED69
             // 
             this.btnLED69.AutoSize = true;
             this.btnLED69.BackColor = System.Drawing.Color.Gray;
+            this.btnLED69.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED69.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED69.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED69.Location = new System.Drawing.Point(161, 128);
             this.btnLED69.Name = "btnLED69";
             this.btnLED69.Size = new System.Drawing.Size(20, 20);
             this.btnLED69.TabIndex = 95;
+            this.btnLED69.Tag = "69";
             this.btnLED69.UseVisualStyleBackColor = false;
+            this.btnLED69.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED69.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED69.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED67
             // 
             this.btnLED67.AutoSize = true;
             this.btnLED67.BackColor = System.Drawing.Color.Gray;
+            this.btnLED67.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED67.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED67.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED67.Location = new System.Drawing.Point(91, 128);
             this.btnLED67.Name = "btnLED67";
             this.btnLED67.Size = new System.Drawing.Size(20, 20);
             this.btnLED67.TabIndex = 94;
+            this.btnLED67.Tag = "67";
             this.btnLED67.UseVisualStyleBackColor = false;
+            this.btnLED67.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED67.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED67.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED66
             // 
             this.btnLED66.AutoSize = true;
             this.btnLED66.BackColor = System.Drawing.Color.Gray;
+            this.btnLED66.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED66.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED66.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED66.Location = new System.Drawing.Point(56, 128);
             this.btnLED66.Name = "btnLED66";
             this.btnLED66.Size = new System.Drawing.Size(20, 20);
             this.btnLED66.TabIndex = 93;
+            this.btnLED66.Tag = "66";
             this.btnLED66.UseVisualStyleBackColor = false;
+            this.btnLED66.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED66.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED66.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED65
             // 
             this.btnLED65.AutoSize = true;
             this.btnLED65.BackColor = System.Drawing.Color.Gray;
+            this.btnLED65.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED65.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED65.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED65.Location = new System.Drawing.Point(21, 128);
             this.btnLED65.Name = "btnLED65";
             this.btnLED65.Size = new System.Drawing.Size(20, 20);
             this.btnLED65.TabIndex = 92;
+            this.btnLED65.Tag = "65";
             this.btnLED65.UseVisualStyleBackColor = false;
+            this.btnLED65.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED65.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED65.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED63
             // 
             this.btnLED63.AutoSize = true;
             this.btnLED63.BackColor = System.Drawing.Color.Gray;
+            this.btnLED63.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED63.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED63.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED63.Location = new System.Drawing.Point(231, 92);
             this.btnLED63.Name = "btnLED63";
             this.btnLED63.Size = new System.Drawing.Size(20, 20);
             this.btnLED63.TabIndex = 91;
+            this.btnLED63.Tag = "63";
             this.btnLED63.UseVisualStyleBackColor = false;
+            this.btnLED63.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED63.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED63.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED62
             // 
             this.btnLED62.AutoSize = true;
             this.btnLED62.BackColor = System.Drawing.Color.Gray;
+            this.btnLED62.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED62.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED62.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED62.Location = new System.Drawing.Point(196, 92);
             this.btnLED62.Name = "btnLED62";
             this.btnLED62.Size = new System.Drawing.Size(20, 20);
             this.btnLED62.TabIndex = 90;
+            this.btnLED62.Tag = "62";
             this.btnLED62.UseVisualStyleBackColor = false;
+            this.btnLED62.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED62.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED62.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED61
             // 
             this.btnLED61.AutoSize = true;
             this.btnLED61.BackColor = System.Drawing.Color.Gray;
+            this.btnLED61.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED61.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED61.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED61.Location = new System.Drawing.Point(161, 92);
             this.btnLED61.Name = "btnLED61";
             this.btnLED61.Size = new System.Drawing.Size(20, 20);
             this.btnLED61.TabIndex = 89;
+            this.btnLED61.Tag = "61";
             this.btnLED61.UseVisualStyleBackColor = false;
+            this.btnLED61.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED61.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED61.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED59
             // 
             this.btnLED59.AutoSize = true;
             this.btnLED59.BackColor = System.Drawing.Color.Gray;
+            this.btnLED59.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED59.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED59.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED59.Location = new System.Drawing.Point(91, 92);
             this.btnLED59.Name = "btnLED59";
             this.btnLED59.Size = new System.Drawing.Size(20, 20);
             this.btnLED59.TabIndex = 88;
+            this.btnLED59.Tag = "59";
             this.btnLED59.UseVisualStyleBackColor = false;
+            this.btnLED59.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED59.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED59.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED58
             // 
             this.btnLED58.AutoSize = true;
             this.btnLED58.BackColor = System.Drawing.Color.Gray;
+            this.btnLED58.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED58.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED58.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED58.Location = new System.Drawing.Point(56, 92);
             this.btnLED58.Name = "btnLED58";
             this.btnLED58.Size = new System.Drawing.Size(20, 20);
             this.btnLED58.TabIndex = 87;
+            this.btnLED58.Tag = "58";
             this.btnLED58.UseVisualStyleBackColor = false;
+            this.btnLED58.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED58.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED58.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED57
             // 
             this.btnLED57.AutoSize = true;
             this.btnLED57.BackColor = System.Drawing.Color.Gray;
+            this.btnLED57.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED57.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED57.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED57.Location = new System.Drawing.Point(21, 92);
             this.btnLED57.Name = "btnLED57";
             this.btnLED57.Size = new System.Drawing.Size(20, 20);
             this.btnLED57.TabIndex = 86;
+            this.btnLED57.Tag = "57";
             this.btnLED57.UseVisualStyleBackColor = false;
+            this.btnLED57.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED57.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED57.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED55
             // 
             this.btnLED55.AutoSize = true;
             this.btnLED55.BackColor = System.Drawing.Color.Gray;
+            this.btnLED55.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED55.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED55.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED55.Location = new System.Drawing.Point(231, 55);
             this.btnLED55.Name = "btnLED55";
             this.btnLED55.Size = new System.Drawing.Size(20, 20);
             this.btnLED55.TabIndex = 85;
+            this.btnLED55.Tag = "55";
             this.btnLED55.UseVisualStyleBackColor = false;
+            this.btnLED55.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED55.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED55.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED54
             // 
             this.btnLED54.AutoSize = true;
             this.btnLED54.BackColor = System.Drawing.Color.Gray;
+            this.btnLED54.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED54.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED54.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED54.Location = new System.Drawing.Point(196, 55);
             this.btnLED54.Name = "btnLED54";
             this.btnLED54.Size = new System.Drawing.Size(20, 20);
             this.btnLED54.TabIndex = 84;
+            this.btnLED54.Tag = "54";
             this.btnLED54.UseVisualStyleBackColor = false;
+            this.btnLED54.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED54.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED54.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED53
             // 
             this.btnLED53.AutoSize = true;
             this.btnLED53.BackColor = System.Drawing.Color.Gray;
+            this.btnLED53.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED53.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED53.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED53.Location = new System.Drawing.Point(161, 55);
             this.btnLED53.Name = "btnLED53";
             this.btnLED53.Size = new System.Drawing.Size(20, 20);
             this.btnLED53.TabIndex = 83;
+            this.btnLED53.Tag = "53";
             this.btnLED53.UseVisualStyleBackColor = false;
+            this.btnLED53.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED53.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED53.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED51
             // 
             this.btnLED51.AutoSize = true;
             this.btnLED51.BackColor = System.Drawing.Color.Gray;
+            this.btnLED51.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED51.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED51.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED51.Location = new System.Drawing.Point(91, 55);
             this.btnLED51.Name = "btnLED51";
             this.btnLED51.Size = new System.Drawing.Size(20, 20);
             this.btnLED51.TabIndex = 82;
+            this.btnLED51.Tag = "51";
             this.btnLED51.UseVisualStyleBackColor = false;
+            this.btnLED51.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED51.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED51.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED50
             // 
             this.btnLED50.AutoSize = true;
             this.btnLED50.BackColor = System.Drawing.Color.Gray;
+            this.btnLED50.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED50.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED50.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED50.Location = new System.Drawing.Point(56, 55);
             this.btnLED50.Name = "btnLED50";
             this.btnLED50.Size = new System.Drawing.Size(20, 20);
             this.btnLED50.TabIndex = 81;
+            this.btnLED50.Tag = "50";
             this.btnLED50.UseVisualStyleBackColor = false;
+            this.btnLED50.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED50.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED50.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED49
             // 
             this.btnLED49.AutoSize = true;
             this.btnLED49.BackColor = System.Drawing.Color.Gray;
+            this.btnLED49.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED49.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED49.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED49.Location = new System.Drawing.Point(21, 55);
             this.btnLED49.Name = "btnLED49";
             this.btnLED49.Size = new System.Drawing.Size(20, 20);
             this.btnLED49.TabIndex = 80;
+            this.btnLED49.Tag = "49";
             this.btnLED49.UseVisualStyleBackColor = false;
+            this.btnLED49.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED49.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED49.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED47
             // 
             this.btnLED47.AutoSize = true;
             this.btnLED47.BackColor = System.Drawing.Color.Gray;
+            this.btnLED47.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED47.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED47.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED47.Location = new System.Drawing.Point(231, 19);
             this.btnLED47.Name = "btnLED47";
             this.btnLED47.Size = new System.Drawing.Size(20, 20);
             this.btnLED47.TabIndex = 79;
+            this.btnLED47.Tag = "47";
             this.btnLED47.UseVisualStyleBackColor = false;
+            this.btnLED47.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED47.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED47.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED46
             // 
             this.btnLED46.AutoSize = true;
             this.btnLED46.BackColor = System.Drawing.Color.Gray;
+            this.btnLED46.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED46.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED46.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED46.Location = new System.Drawing.Point(196, 19);
             this.btnLED46.Name = "btnLED46";
             this.btnLED46.Size = new System.Drawing.Size(20, 20);
             this.btnLED46.TabIndex = 78;
+            this.btnLED46.Tag = "46";
             this.btnLED46.UseVisualStyleBackColor = false;
+            this.btnLED46.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED46.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED46.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED45
             // 
             this.btnLED45.AutoSize = true;
             this.btnLED45.BackColor = System.Drawing.Color.Gray;
+            this.btnLED45.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED45.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED45.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED45.Location = new System.Drawing.Point(161, 19);
             this.btnLED45.Name = "btnLED45";
             this.btnLED45.Size = new System.Drawing.Size(20, 20);
             this.btnLED45.TabIndex = 77;
+            this.btnLED45.Tag = "45";
             this.btnLED45.UseVisualStyleBackColor = false;
+            this.btnLED45.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED45.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED45.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED43
             // 
             this.btnLED43.AutoSize = true;
             this.btnLED43.BackColor = System.Drawing.Color.Gray;
+            this.btnLED43.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED43.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED43.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED43.Location = new System.Drawing.Point(91, 19);
             this.btnLED43.Name = "btnLED43";
             this.btnLED43.Size = new System.Drawing.Size(20, 20);
             this.btnLED43.TabIndex = 76;
+            this.btnLED43.Tag = "43";
             this.btnLED43.UseVisualStyleBackColor = false;
+            this.btnLED43.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED43.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED43.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED42
             // 
             this.btnLED42.AutoSize = true;
             this.btnLED42.BackColor = System.Drawing.Color.Gray;
+            this.btnLED42.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED42.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED42.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED42.Location = new System.Drawing.Point(56, 19);
             this.btnLED42.Name = "btnLED42";
             this.btnLED42.Size = new System.Drawing.Size(20, 20);
             this.btnLED42.TabIndex = 75;
+            this.btnLED42.Tag = "42";
             this.btnLED42.UseVisualStyleBackColor = false;
+            this.btnLED42.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED42.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED42.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // btnLED41
             // 
             this.btnLED41.AutoSize = true;
             this.btnLED41.BackColor = System.Drawing.Color.Gray;
+            this.btnLED41.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED41.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED41.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED41.Location = new System.Drawing.Point(21, 19);
             this.btnLED41.Name = "btnLED41";
             this.btnLED41.Size = new System.Drawing.Size(20, 20);
             this.btnLED41.TabIndex = 74;
+            this.btnLED41.Tag = "41";
             this.btnLED41.UseVisualStyleBackColor = false;
+            this.btnLED41.Click += new System.EventHandler(this.btnLED41_Click);
+            this.btnLED41.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
+            this.btnLED41.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
             // panel1
             // 
@@ -2953,481 +3646,681 @@ namespace LEDController.View
             // 
             this.btnLED40.AutoSize = true;
             this.btnLED40.BackColor = System.Drawing.Color.Gray;
+            this.btnLED40.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED40.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED40.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED40.Location = new System.Drawing.Point(267, 168);
             this.btnLED40.Name = "btnLED40";
             this.btnLED40.Size = new System.Drawing.Size(20, 20);
             this.btnLED40.TabIndex = 73;
+            this.btnLED40.Tag = "40";
             this.btnLED40.UseVisualStyleBackColor = false;
+            this.btnLED40.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED40.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED40.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED32
             // 
             this.btnLED32.AutoSize = true;
             this.btnLED32.BackColor = System.Drawing.Color.Gray;
+            this.btnLED32.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED32.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED32.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED32.Location = new System.Drawing.Point(267, 128);
             this.btnLED32.Name = "btnLED32";
             this.btnLED32.Size = new System.Drawing.Size(20, 20);
             this.btnLED32.TabIndex = 72;
+            this.btnLED32.Tag = "32";
             this.btnLED32.UseVisualStyleBackColor = false;
+            this.btnLED32.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED32.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED32.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED24
             // 
             this.btnLED24.AutoSize = true;
             this.btnLED24.BackColor = System.Drawing.Color.Gray;
+            this.btnLED24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED24.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED24.Location = new System.Drawing.Point(267, 92);
             this.btnLED24.Name = "btnLED24";
             this.btnLED24.Size = new System.Drawing.Size(20, 20);
             this.btnLED24.TabIndex = 71;
+            this.btnLED24.Tag = "24";
             this.btnLED24.UseVisualStyleBackColor = false;
+            this.btnLED24.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED24.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED24.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED16
             // 
             this.btnLED16.AutoSize = true;
             this.btnLED16.BackColor = System.Drawing.Color.Gray;
+            this.btnLED16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED16.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED16.Location = new System.Drawing.Point(267, 55);
             this.btnLED16.Name = "btnLED16";
             this.btnLED16.Size = new System.Drawing.Size(20, 20);
             this.btnLED16.TabIndex = 70;
+            this.btnLED16.Tag = "16";
             this.btnLED16.UseVisualStyleBackColor = false;
+            this.btnLED16.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED16.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED16.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED8
             // 
             this.btnLED8.AutoSize = true;
             this.btnLED8.BackColor = System.Drawing.Color.Gray;
+            this.btnLED8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED8.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED8.Location = new System.Drawing.Point(267, 19);
             this.btnLED8.Name = "btnLED8";
             this.btnLED8.Size = new System.Drawing.Size(20, 20);
             this.btnLED8.TabIndex = 69;
+            this.btnLED8.Tag = "8";
             this.btnLED8.UseVisualStyleBackColor = false;
+            this.btnLED8.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED8.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED8.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED36
             // 
             this.btnLED36.AutoSize = true;
             this.btnLED36.BackColor = System.Drawing.Color.Gray;
+            this.btnLED36.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED36.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED36.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED36.Location = new System.Drawing.Point(127, 168);
             this.btnLED36.Name = "btnLED36";
             this.btnLED36.Size = new System.Drawing.Size(20, 20);
             this.btnLED36.TabIndex = 68;
+            this.btnLED36.Tag = "36";
             this.btnLED36.UseVisualStyleBackColor = false;
+            this.btnLED36.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED36.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED36.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED28
             // 
             this.btnLED28.AutoSize = true;
             this.btnLED28.BackColor = System.Drawing.Color.Gray;
+            this.btnLED28.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED28.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED28.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED28.Location = new System.Drawing.Point(127, 128);
             this.btnLED28.Name = "btnLED28";
             this.btnLED28.Size = new System.Drawing.Size(20, 20);
             this.btnLED28.TabIndex = 67;
+            this.btnLED28.Tag = "28";
             this.btnLED28.UseVisualStyleBackColor = false;
+            this.btnLED28.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED28.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED28.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED20
             // 
             this.btnLED20.AutoSize = true;
             this.btnLED20.BackColor = System.Drawing.Color.Gray;
+            this.btnLED20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED20.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED20.Location = new System.Drawing.Point(127, 92);
             this.btnLED20.Name = "btnLED20";
             this.btnLED20.Size = new System.Drawing.Size(20, 20);
             this.btnLED20.TabIndex = 66;
+            this.btnLED20.Tag = "20";
             this.btnLED20.UseVisualStyleBackColor = false;
+            this.btnLED20.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED20.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED20.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED12
             // 
             this.btnLED12.AutoSize = true;
             this.btnLED12.BackColor = System.Drawing.Color.Gray;
+            this.btnLED12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED12.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED12.Location = new System.Drawing.Point(127, 55);
             this.btnLED12.Name = "btnLED12";
             this.btnLED12.Size = new System.Drawing.Size(20, 20);
             this.btnLED12.TabIndex = 65;
+            this.btnLED12.Tag = "12";
             this.btnLED12.UseVisualStyleBackColor = false;
+            this.btnLED12.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED12.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED12.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED4
             // 
             this.btnLED4.AutoSize = true;
             this.btnLED4.BackColor = System.Drawing.Color.Gray;
+            this.btnLED4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED4.Location = new System.Drawing.Point(127, 19);
             this.btnLED4.Name = "btnLED4";
             this.btnLED4.Size = new System.Drawing.Size(20, 20);
             this.btnLED4.TabIndex = 64;
+            this.btnLED4.Tag = "4";
             this.btnLED4.UseVisualStyleBackColor = false;
+            this.btnLED4.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED4.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED4.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED39
             // 
             this.btnLED39.AutoSize = true;
             this.btnLED39.BackColor = System.Drawing.Color.Gray;
+            this.btnLED39.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED39.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED39.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED39.Location = new System.Drawing.Point(232, 168);
             this.btnLED39.Name = "btnLED39";
             this.btnLED39.Size = new System.Drawing.Size(20, 20);
             this.btnLED39.TabIndex = 63;
+            this.btnLED39.Tag = "39";
             this.btnLED39.UseVisualStyleBackColor = false;
+            this.btnLED39.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED39.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED39.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED38
             // 
             this.btnLED38.AutoSize = true;
             this.btnLED38.BackColor = System.Drawing.Color.Gray;
+            this.btnLED38.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED38.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED38.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED38.Location = new System.Drawing.Point(197, 168);
             this.btnLED38.Name = "btnLED38";
             this.btnLED38.Size = new System.Drawing.Size(20, 20);
             this.btnLED38.TabIndex = 62;
+            this.btnLED38.Tag = "38";
             this.btnLED38.UseVisualStyleBackColor = false;
+            this.btnLED38.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED38.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED38.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED37
             // 
             this.btnLED37.AutoSize = true;
             this.btnLED37.BackColor = System.Drawing.Color.Gray;
+            this.btnLED37.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED37.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED37.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED37.Location = new System.Drawing.Point(162, 168);
             this.btnLED37.Name = "btnLED37";
             this.btnLED37.Size = new System.Drawing.Size(20, 20);
             this.btnLED37.TabIndex = 61;
+            this.btnLED37.Tag = "37";
             this.btnLED37.UseVisualStyleBackColor = false;
+            this.btnLED37.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED37.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED37.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED35
             // 
             this.btnLED35.AutoSize = true;
             this.btnLED35.BackColor = System.Drawing.Color.Gray;
+            this.btnLED35.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED35.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED35.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED35.Location = new System.Drawing.Point(92, 168);
             this.btnLED35.Name = "btnLED35";
             this.btnLED35.Size = new System.Drawing.Size(20, 20);
             this.btnLED35.TabIndex = 60;
+            this.btnLED35.Tag = "35";
             this.btnLED35.UseVisualStyleBackColor = false;
+            this.btnLED35.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED35.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED35.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED34
             // 
             this.btnLED34.AutoSize = true;
             this.btnLED34.BackColor = System.Drawing.Color.Gray;
+            this.btnLED34.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED34.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED34.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED34.Location = new System.Drawing.Point(57, 168);
             this.btnLED34.Name = "btnLED34";
             this.btnLED34.Size = new System.Drawing.Size(20, 20);
             this.btnLED34.TabIndex = 59;
+            this.btnLED34.Tag = "34";
             this.btnLED34.UseVisualStyleBackColor = false;
+            this.btnLED34.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED34.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED34.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED33
             // 
             this.btnLED33.AutoSize = true;
             this.btnLED33.BackColor = System.Drawing.Color.Gray;
+            this.btnLED33.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED33.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED33.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED33.Location = new System.Drawing.Point(22, 168);
             this.btnLED33.Name = "btnLED33";
             this.btnLED33.Size = new System.Drawing.Size(20, 20);
             this.btnLED33.TabIndex = 58;
+            this.btnLED33.Tag = "33";
             this.btnLED33.UseVisualStyleBackColor = false;
+            this.btnLED33.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED33.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED33.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED31
             // 
             this.btnLED31.AutoSize = true;
             this.btnLED31.BackColor = System.Drawing.Color.Gray;
+            this.btnLED31.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED31.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED31.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED31.Location = new System.Drawing.Point(232, 128);
             this.btnLED31.Name = "btnLED31";
             this.btnLED31.Size = new System.Drawing.Size(20, 20);
             this.btnLED31.TabIndex = 57;
+            this.btnLED31.Tag = "31";
             this.btnLED31.UseVisualStyleBackColor = false;
+            this.btnLED31.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED31.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED31.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED30
             // 
             this.btnLED30.AutoSize = true;
             this.btnLED30.BackColor = System.Drawing.Color.Gray;
+            this.btnLED30.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED30.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED30.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED30.Location = new System.Drawing.Point(197, 128);
             this.btnLED30.Name = "btnLED30";
             this.btnLED30.Size = new System.Drawing.Size(20, 20);
             this.btnLED30.TabIndex = 56;
+            this.btnLED30.Tag = "30";
             this.btnLED30.UseVisualStyleBackColor = false;
+            this.btnLED30.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED30.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED30.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED29
             // 
             this.btnLED29.AutoSize = true;
             this.btnLED29.BackColor = System.Drawing.Color.Gray;
+            this.btnLED29.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED29.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED29.Location = new System.Drawing.Point(162, 128);
             this.btnLED29.Name = "btnLED29";
             this.btnLED29.Size = new System.Drawing.Size(20, 20);
             this.btnLED29.TabIndex = 55;
+            this.btnLED29.Tag = "29";
             this.btnLED29.UseVisualStyleBackColor = false;
+            this.btnLED29.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED29.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED29.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED27
             // 
             this.btnLED27.AutoSize = true;
             this.btnLED27.BackColor = System.Drawing.Color.Gray;
+            this.btnLED27.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED27.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED27.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED27.Location = new System.Drawing.Point(92, 128);
             this.btnLED27.Name = "btnLED27";
             this.btnLED27.Size = new System.Drawing.Size(20, 20);
             this.btnLED27.TabIndex = 54;
+            this.btnLED27.Tag = "27";
             this.btnLED27.UseVisualStyleBackColor = false;
+            this.btnLED27.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED27.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED27.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED26
             // 
             this.btnLED26.AutoSize = true;
             this.btnLED26.BackColor = System.Drawing.Color.Gray;
+            this.btnLED26.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED26.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED26.Location = new System.Drawing.Point(57, 128);
             this.btnLED26.Name = "btnLED26";
             this.btnLED26.Size = new System.Drawing.Size(20, 20);
             this.btnLED26.TabIndex = 53;
+            this.btnLED26.Tag = "26";
             this.btnLED26.UseVisualStyleBackColor = false;
+            this.btnLED26.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED26.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED26.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED25
             // 
             this.btnLED25.AutoSize = true;
             this.btnLED25.BackColor = System.Drawing.Color.Gray;
+            this.btnLED25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED25.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED25.Location = new System.Drawing.Point(22, 128);
             this.btnLED25.Name = "btnLED25";
             this.btnLED25.Size = new System.Drawing.Size(20, 20);
             this.btnLED25.TabIndex = 52;
+            this.btnLED25.Tag = "25";
             this.btnLED25.UseVisualStyleBackColor = false;
+            this.btnLED25.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED25.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED25.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED23
             // 
             this.btnLED23.AutoSize = true;
             this.btnLED23.BackColor = System.Drawing.Color.Gray;
+            this.btnLED23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED23.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED23.Location = new System.Drawing.Point(232, 92);
             this.btnLED23.Name = "btnLED23";
             this.btnLED23.Size = new System.Drawing.Size(20, 20);
             this.btnLED23.TabIndex = 51;
+            this.btnLED23.Tag = "23";
             this.btnLED23.UseVisualStyleBackColor = false;
+            this.btnLED23.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED23.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED23.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED22
             // 
             this.btnLED22.AutoSize = true;
             this.btnLED22.BackColor = System.Drawing.Color.Gray;
+            this.btnLED22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED22.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED22.Location = new System.Drawing.Point(197, 92);
             this.btnLED22.Name = "btnLED22";
             this.btnLED22.Size = new System.Drawing.Size(20, 20);
             this.btnLED22.TabIndex = 50;
+            this.btnLED22.Tag = "22";
             this.btnLED22.UseVisualStyleBackColor = false;
+            this.btnLED22.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED22.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED22.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED21
             // 
             this.btnLED21.AutoSize = true;
             this.btnLED21.BackColor = System.Drawing.Color.Gray;
+            this.btnLED21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED21.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED21.Location = new System.Drawing.Point(162, 92);
             this.btnLED21.Name = "btnLED21";
             this.btnLED21.Size = new System.Drawing.Size(20, 20);
             this.btnLED21.TabIndex = 49;
+            this.btnLED21.Tag = "21";
             this.btnLED21.UseVisualStyleBackColor = false;
+            this.btnLED21.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED21.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED21.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED19
             // 
             this.btnLED19.AutoSize = true;
             this.btnLED19.BackColor = System.Drawing.Color.Gray;
+            this.btnLED19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED19.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED19.Location = new System.Drawing.Point(92, 92);
             this.btnLED19.Name = "btnLED19";
             this.btnLED19.Size = new System.Drawing.Size(20, 20);
             this.btnLED19.TabIndex = 48;
+            this.btnLED19.Tag = "19";
             this.btnLED19.UseVisualStyleBackColor = false;
+            this.btnLED19.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED19.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED19.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED18
             // 
             this.btnLED18.AutoSize = true;
             this.btnLED18.BackColor = System.Drawing.Color.Gray;
+            this.btnLED18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED18.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED18.Location = new System.Drawing.Point(57, 92);
             this.btnLED18.Name = "btnLED18";
             this.btnLED18.Size = new System.Drawing.Size(20, 20);
             this.btnLED18.TabIndex = 47;
+            this.btnLED18.Tag = "18";
             this.btnLED18.UseVisualStyleBackColor = false;
+            this.btnLED18.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED18.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED18.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED17
             // 
             this.btnLED17.AutoSize = true;
             this.btnLED17.BackColor = System.Drawing.Color.Gray;
+            this.btnLED17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED17.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED17.Location = new System.Drawing.Point(22, 92);
             this.btnLED17.Name = "btnLED17";
             this.btnLED17.Size = new System.Drawing.Size(20, 20);
             this.btnLED17.TabIndex = 46;
+            this.btnLED17.Tag = "17";
             this.btnLED17.UseVisualStyleBackColor = false;
+            this.btnLED17.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED17.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED17.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED15
             // 
             this.btnLED15.AutoSize = true;
             this.btnLED15.BackColor = System.Drawing.Color.Gray;
+            this.btnLED15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED15.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED15.Location = new System.Drawing.Point(232, 55);
             this.btnLED15.Name = "btnLED15";
             this.btnLED15.Size = new System.Drawing.Size(20, 20);
             this.btnLED15.TabIndex = 45;
+            this.btnLED15.Tag = "15";
             this.btnLED15.UseVisualStyleBackColor = false;
+            this.btnLED15.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED15.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED15.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED14
             // 
             this.btnLED14.AutoSize = true;
             this.btnLED14.BackColor = System.Drawing.Color.Gray;
+            this.btnLED14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED14.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED14.Location = new System.Drawing.Point(197, 55);
             this.btnLED14.Name = "btnLED14";
             this.btnLED14.Size = new System.Drawing.Size(20, 20);
             this.btnLED14.TabIndex = 44;
+            this.btnLED14.Tag = "14";
             this.btnLED14.UseVisualStyleBackColor = false;
+            this.btnLED14.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED14.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED14.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED13
             // 
             this.btnLED13.AutoSize = true;
             this.btnLED13.BackColor = System.Drawing.Color.Gray;
+            this.btnLED13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED13.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED13.Location = new System.Drawing.Point(162, 55);
             this.btnLED13.Name = "btnLED13";
             this.btnLED13.Size = new System.Drawing.Size(20, 20);
             this.btnLED13.TabIndex = 43;
+            this.btnLED13.Tag = "13";
             this.btnLED13.UseVisualStyleBackColor = false;
+            this.btnLED13.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED13.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED13.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED11
             // 
             this.btnLED11.AutoSize = true;
             this.btnLED11.BackColor = System.Drawing.Color.Gray;
+            this.btnLED11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED11.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED11.Location = new System.Drawing.Point(92, 55);
             this.btnLED11.Name = "btnLED11";
             this.btnLED11.Size = new System.Drawing.Size(20, 20);
             this.btnLED11.TabIndex = 42;
+            this.btnLED11.Tag = "11";
             this.btnLED11.UseVisualStyleBackColor = false;
+            this.btnLED11.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED11.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED11.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED10
             // 
             this.btnLED10.AutoSize = true;
             this.btnLED10.BackColor = System.Drawing.Color.Gray;
+            this.btnLED10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED10.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED10.Location = new System.Drawing.Point(57, 55);
             this.btnLED10.Name = "btnLED10";
             this.btnLED10.Size = new System.Drawing.Size(20, 20);
             this.btnLED10.TabIndex = 41;
+            this.btnLED10.Tag = "10";
             this.btnLED10.UseVisualStyleBackColor = false;
+            this.btnLED10.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED10.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED10.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED9
             // 
             this.btnLED9.AutoSize = true;
             this.btnLED9.BackColor = System.Drawing.Color.Gray;
+            this.btnLED9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED9.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED9.Location = new System.Drawing.Point(22, 55);
             this.btnLED9.Name = "btnLED9";
             this.btnLED9.Size = new System.Drawing.Size(20, 20);
             this.btnLED9.TabIndex = 40;
+            this.btnLED9.Tag = "9";
             this.btnLED9.UseVisualStyleBackColor = false;
+            this.btnLED9.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED9.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED9.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED7
             // 
             this.btnLED7.AutoSize = true;
             this.btnLED7.BackColor = System.Drawing.Color.Gray;
+            this.btnLED7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED7.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED7.Location = new System.Drawing.Point(232, 19);
             this.btnLED7.Name = "btnLED7";
             this.btnLED7.Size = new System.Drawing.Size(20, 20);
             this.btnLED7.TabIndex = 39;
+            this.btnLED7.Tag = "7";
             this.btnLED7.UseVisualStyleBackColor = false;
+            this.btnLED7.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED7.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED7.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED6
             // 
             this.btnLED6.AutoSize = true;
             this.btnLED6.BackColor = System.Drawing.Color.Gray;
+            this.btnLED6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED6.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED6.Location = new System.Drawing.Point(197, 19);
             this.btnLED6.Name = "btnLED6";
             this.btnLED6.Size = new System.Drawing.Size(20, 20);
             this.btnLED6.TabIndex = 38;
+            this.btnLED6.Tag = "6";
             this.btnLED6.UseVisualStyleBackColor = false;
+            this.btnLED6.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED6.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED6.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED5
             // 
             this.btnLED5.AutoSize = true;
             this.btnLED5.BackColor = System.Drawing.Color.Gray;
+            this.btnLED5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED5.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED5.Location = new System.Drawing.Point(162, 19);
             this.btnLED5.Name = "btnLED5";
             this.btnLED5.Size = new System.Drawing.Size(20, 20);
             this.btnLED5.TabIndex = 37;
+            this.btnLED5.Tag = "5";
             this.btnLED5.UseVisualStyleBackColor = false;
+            this.btnLED5.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED5.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED5.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED3
             // 
             this.btnLED3.AutoSize = true;
             this.btnLED3.BackColor = System.Drawing.Color.Gray;
+            this.btnLED3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED3.Location = new System.Drawing.Point(92, 19);
             this.btnLED3.Name = "btnLED3";
             this.btnLED3.Size = new System.Drawing.Size(20, 20);
             this.btnLED3.TabIndex = 36;
+            this.btnLED3.Tag = "3";
             this.btnLED3.UseVisualStyleBackColor = false;
+            this.btnLED3.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED3.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED3.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED2
             // 
             this.btnLED2.AutoSize = true;
             this.btnLED2.BackColor = System.Drawing.Color.Gray;
+            this.btnLED2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED2.Location = new System.Drawing.Point(57, 19);
             this.btnLED2.Name = "btnLED2";
             this.btnLED2.Size = new System.Drawing.Size(20, 20);
             this.btnLED2.TabIndex = 35;
+            this.btnLED2.Tag = "2";
             this.btnLED2.UseVisualStyleBackColor = false;
+            this.btnLED2.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED2.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED2.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // btnLED1
             // 
             this.btnLED1.AutoSize = true;
             this.btnLED1.BackColor = System.Drawing.Color.Gray;
+            this.btnLED1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnLED1.Location = new System.Drawing.Point(22, 19);
             this.btnLED1.Name = "btnLED1";
             this.btnLED1.Size = new System.Drawing.Size(20, 20);
             this.btnLED1.TabIndex = 34;
+            this.btnLED1.Tag = "1";
             this.btnLED1.UseVisualStyleBackColor = false;
+            this.btnLED1.Click += new System.EventHandler(this.btnLED1_Click);
+            this.btnLED1.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
+            this.btnLED1.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
             // tabPage3
             // 
@@ -5364,7 +6257,7 @@ namespace LEDController.View
             // 
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripConnectionStatus,
-            toolStripStatusLabel3});
+            this.toolStripLEDStatus});
             this.statusStrip2.Location = new System.Drawing.Point(0, 575);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Size = new System.Drawing.Size(1068, 22);
@@ -5382,7 +6275,7 @@ namespace LEDController.View
             this.btnRecStatus1.BackColor = System.Drawing.Color.DarkRed;
             this.btnRecStatus1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnRecStatus1.Enabled = false;
-            this.btnRecStatus1.Location = new System.Drawing.Point(904, 580);
+            this.btnRecStatus1.Location = new System.Drawing.Point(891, 580);
             this.btnRecStatus1.Name = "btnRecStatus1";
             this.btnRecStatus1.Size = new System.Drawing.Size(12, 12);
             this.btnRecStatus1.TabIndex = 8;
@@ -5392,7 +6285,7 @@ namespace LEDController.View
             this.btnRecStatus3.BackColor = System.Drawing.Color.DarkRed;
             this.btnRecStatus3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnRecStatus3.Enabled = false;
-            this.btnRecStatus3.Location = new System.Drawing.Point(940, 580);
+            this.btnRecStatus3.Location = new System.Drawing.Point(927, 580);
             this.btnRecStatus3.Name = "btnRecStatus3";
             this.btnRecStatus3.Size = new System.Drawing.Size(12, 12);
             this.btnRecStatus3.TabIndex = 9;
@@ -5402,16 +6295,69 @@ namespace LEDController.View
             this.btnRecStatus2.BackColor = System.Drawing.Color.DarkRed;
             this.btnRecStatus2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnRecStatus2.Enabled = false;
-            this.btnRecStatus2.Location = new System.Drawing.Point(922, 580);
+            this.btnRecStatus2.Location = new System.Drawing.Point(909, 580);
             this.btnRecStatus2.Name = "btnRecStatus2";
             this.btnRecStatus2.Size = new System.Drawing.Size(12, 12);
             this.btnRecStatus2.TabIndex = 10;
+            // 
+            // btnSendStatus2
+            // 
+            this.btnSendStatus2.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSendStatus2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnSendStatus2.Enabled = false;
+            this.btnSendStatus2.Location = new System.Drawing.Point(1009, 580);
+            this.btnSendStatus2.Name = "btnSendStatus2";
+            this.btnSendStatus2.Size = new System.Drawing.Size(12, 12);
+            this.btnSendStatus2.TabIndex = 13;
+            // 
+            // btnSendStatus3
+            // 
+            this.btnSendStatus3.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSendStatus3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnSendStatus3.Enabled = false;
+            this.btnSendStatus3.Location = new System.Drawing.Point(1027, 580);
+            this.btnSendStatus3.Name = "btnSendStatus3";
+            this.btnSendStatus3.Size = new System.Drawing.Size(12, 12);
+            this.btnSendStatus3.TabIndex = 12;
+            // 
+            // btnSendStatus1
+            // 
+            this.btnSendStatus1.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSendStatus1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnSendStatus1.Enabled = false;
+            this.btnSendStatus1.Location = new System.Drawing.Point(991, 580);
+            this.btnSendStatus1.Name = "btnSendStatus1";
+            this.btnSendStatus1.Size = new System.Drawing.Size(12, 12);
+            this.btnSendStatus1.TabIndex = 11;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(857, 580);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(29, 12);
+            this.label52.TabIndex = 14;
+            this.label52.Text = "接收";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(956, 580);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(29, 12);
+            this.label53.TabIndex = 15;
+            this.label53.Text = "发送";
             // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 597);
+            this.Controls.Add(this.label53);
+            this.Controls.Add(this.label52);
+            this.Controls.Add(this.btnSendStatus2);
+            this.Controls.Add(this.btnSendStatus3);
+            this.Controls.Add(this.btnSendStatus1);
             this.Controls.Add(this.btnRecStatus2);
             this.Controls.Add(this.btnRecStatus3);
             this.Controls.Add(this.btnRecStatus1);
@@ -5435,22 +6381,22 @@ namespace LEDController.View
             this.tabPage2.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED9)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED5)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -5569,16 +6515,15 @@ namespace LEDController.View
         private System.Windows.Forms.ToolStripStatusLabel toolStripConnectionStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar sbarDimLED1;
         private System.Windows.Forms.Button btnDimLED1;
         private System.Windows.Forms.ToolStripMenuItem 文件;
-        private System.Windows.Forms.ToolStripMenuItem 打开ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 另存为ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 关闭ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOpen;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSave;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveAs;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClose;
         private System.Windows.Forms.Button button100;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button127;
         private System.Windows.Forms.Button button128;
         private System.Windows.Forms.Button button125;
@@ -5589,61 +6534,50 @@ namespace LEDController.View
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button button115;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TrackBar trackBar9;
+        private System.Windows.Forms.TrackBar sbarDimLED12;
         private System.Windows.Forms.Button btnDimLED12;
         private System.Windows.Forms.Button button117;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TrackBar trackBar10;
+        private System.Windows.Forms.TrackBar sbarDimLED11;
         private System.Windows.Forms.Button btnDimLED11;
         private System.Windows.Forms.Button button119;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TrackBar trackBar11;
+        private System.Windows.Forms.TrackBar sbarDimLED10;
         private System.Windows.Forms.Button btnDimLED10;
         private System.Windows.Forms.Button button121;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TrackBar trackBar12;
+        private System.Windows.Forms.TrackBar sbarDimLED9;
         private System.Windows.Forms.Button btnDimLED9;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button107;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TrackBar trackBar5;
+        private System.Windows.Forms.TrackBar sbarDimLED8;
         private System.Windows.Forms.Button btnDimLED8;
         private System.Windows.Forms.Button button109;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TrackBar trackBar6;
+        private System.Windows.Forms.TrackBar sbarDimLED7;
         private System.Windows.Forms.Button btnDimLED7;
         private System.Windows.Forms.Button button111;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TrackBar trackBar7;
+        private System.Windows.Forms.TrackBar sbarDimLED6;
         private System.Windows.Forms.Button btnDimLED6;
         private System.Windows.Forms.Button button113;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TrackBar trackBar8;
+        private System.Windows.Forms.TrackBar sbarDimLED5;
         private System.Windows.Forms.Button btnDimLED5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button105;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TrackBar trackBar4;
+        private System.Windows.Forms.TrackBar sbarDimLED4;
         private System.Windows.Forms.Button btnDimLED4;
         private System.Windows.Forms.Button button103;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.TrackBar sbarDimLED3;
         private System.Windows.Forms.Button btnDimLED3;
         private System.Windows.Forms.Button button101;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar sbarDimLED2;
         private System.Windows.Forms.Button btnDimLED2;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Button button130;
@@ -5888,6 +6822,36 @@ namespace LEDController.View
         private System.Windows.Forms.Label btnRecStatus1;
         private System.Windows.Forms.Label btnRecStatus3;
         private System.Windows.Forms.Label btnRecStatus2;
+        private System.Windows.Forms.Label btnSendStatus2;
+        private System.Windows.Forms.Label btnSendStatus3;
+        private System.Windows.Forms.Label btnSendStatus1;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripLEDStatus;
+        private System.Windows.Forms.TextBox tbxDimLED1;
+        private System.Windows.Forms.TextBox tbxDimLED12;
+        private System.Windows.Forms.TextBox tbxDimLED11;
+        private System.Windows.Forms.TextBox tbxDimLED10;
+        private System.Windows.Forms.TextBox tbxDimLED9;
+        private System.Windows.Forms.TextBox tbxDimLED8;
+        private System.Windows.Forms.TextBox tbxDimLED7;
+        private System.Windows.Forms.TextBox tbxDimLED6;
+        private System.Windows.Forms.TextBox tbxDimLED5;
+        private System.Windows.Forms.TextBox tbxDimLED4;
+        private System.Windows.Forms.TextBox tbxDimLED3;
+        private System.Windows.Forms.TextBox tbxDimLED2;
+        private System.Windows.Forms.Label lblDarkRedLEDMinLeft;
+        private System.Windows.Forms.Label lblDarkRedLEDMinRight;
+        private System.Windows.Forms.Label lblDarkRedLEDMaxLeft;
+        private System.Windows.Forms.Label lblDarkRedLEDMaxRight;
+        private System.Windows.Forms.Label lblRedLEDMinLeft;
+        private System.Windows.Forms.Label lblRedLEDMinRight;
+        private System.Windows.Forms.Label lblRedLEDMaxLeft;
+        private System.Windows.Forms.Label lblRedLEDMaxRight;
+        private System.Windows.Forms.Label lblGreenLEDMinRight;
+        private System.Windows.Forms.Label lblGreenLEDMaxRight;
+        private System.Windows.Forms.Label lblGreenLEDMinLeft;
+        private System.Windows.Forms.Label lblGreenLEDMaxLeft;
     }
 }
 
