@@ -95,10 +95,7 @@ namespace LEDController.Model
     {
         private string slaveIP;
         private string slavePort;
-        private const int SendBufferSize = 2 * 1024;
-        private const int RecBufferSize = 8 * 1024;
-        Socket socketHost = null;
-        Thread threadHost = null;
+        public Socket socketHost = null;
         public string strRecMsg = null;
         private const double LEDVoltageConvertFactor = 1;
         private const double LEDCurrentConvertFactor = 1;
@@ -113,7 +110,7 @@ namespace LEDController.Model
             slavePort = SlavePort;
         }
 
-        private void Connect()
+        public void Connect(int timeout = 2)
         {
             // Start TCP connection
 
@@ -124,49 +121,21 @@ namespace LEDController.Model
             IPEndPoint endPoint = new IPEndPoint(slaveIPAddress, int.Parse(slavePort));
 
             // Send connection request
-            socketHost.Connect(endPoint);
-
-            // Create a new thread for watching coming messages
-            threadHost = new Thread(ReceiveMsg);
-            threadHost.IsBackground = true;
-
-            // Start thread for listening
-            threadHost.Start();
+            var result = socketHost.BeginConnect(endPoint, null, null);
+            bool isSuccess = result.AsyncWaitHandle.WaitOne(timeout, true);
+            if (! isSuccess)
+            {
+                socketHost.Close();
+                throw new SocketException(10060);
+            }
         }
 
-        private void Close()
+        public void Close()
         {
             socketHost.Close(1);
         }
 
-        private void ReceiveMsg(object socketHostObj)
-        {
-            // Socket socketSlave = socketHostObj as Socket;
-            byte[] buffer = new byte[SendBufferSize];
-
-            while (true)   // Receiving message from slave
-            {
-                int msgLen = 0;
-
-                try
-                {
-                    if (socketHost != null) msgLen = socketHost.Receive(buffer);
-
-                    if (msgLen > 0)
-                    {
-                        // TODO add timestamp
-                        strRecMsg = Encoding.UTF8.GetString(buffer);
-                    }
-                }
-                catch (SocketException ex)
-                {
-                    // TODO: Write Log
-                    throw ex;
-                }
-            }
-        }
-
-        private void SendCmd(string sendMsg)
+        public void SendCmd(string sendMsg)
         {
             try
             {
@@ -238,15 +207,6 @@ namespace LEDController.Model
             return localIPv4;
         }
 
-
-        private DateTime GetCurrentTime()
-        {
-            // Get current timestamp
-            DateTime currentTime = new DateTime();
-            currentTime = DateTime.Now;
-
-            return currentTime;
-        }
     }
 
 }

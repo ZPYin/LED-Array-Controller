@@ -7,4 +7,4 @@ D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDControl
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.csproj.CoreCompileInputs.cache
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.exe
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.pdb
-D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.LEDControllerViewer.resources
+D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.View.LEDControllerViewer.resources

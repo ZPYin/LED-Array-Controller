@@ -1,0 +1,4 @@
+# build
+lib/LEDController/TestResults
+lib/LEDController/obj
+lib/LEDControllerTest/obj

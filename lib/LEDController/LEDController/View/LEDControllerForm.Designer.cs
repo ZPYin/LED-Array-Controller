@@ -38,10 +38,6 @@ namespace LEDController.View
             this.另存为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关闭ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.网口连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.网口断开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.连接测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lED控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,17 +50,22 @@ namespace LEDController.View
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.使用帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.版本信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.网口连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.网口断开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.btnConnect = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tbxTestRec = new System.Windows.Forms.TextBox();
+            this.tbxTestCmd = new System.Windows.Forms.TextBox();
+            this.btnSendTestMsg = new System.Windows.Forms.Button();
+            this.tbxConnectMsg = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tbxPort = new System.Windows.Forms.TextBox();
+            this.tbxIP = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -84,66 +85,66 @@ namespace LEDController.View
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.trackBar9 = new System.Windows.Forms.TrackBar();
-            this.button116 = new System.Windows.Forms.Button();
+            this.btnDimLED12 = new System.Windows.Forms.Button();
             this.button117 = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.trackBar10 = new System.Windows.Forms.TrackBar();
-            this.button118 = new System.Windows.Forms.Button();
+            this.btnDimLED11 = new System.Windows.Forms.Button();
             this.button119 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.trackBar11 = new System.Windows.Forms.TrackBar();
-            this.button120 = new System.Windows.Forms.Button();
+            this.btnDimLED10 = new System.Windows.Forms.Button();
             this.button121 = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.trackBar12 = new System.Windows.Forms.TrackBar();
-            this.button122 = new System.Windows.Forms.Button();
+            this.btnDimLED9 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.button107 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.trackBar5 = new System.Windows.Forms.TrackBar();
-            this.button108 = new System.Windows.Forms.Button();
+            this.btnDimLED8 = new System.Windows.Forms.Button();
             this.button109 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.trackBar6 = new System.Windows.Forms.TrackBar();
-            this.button110 = new System.Windows.Forms.Button();
+            this.btnDimLED7 = new System.Windows.Forms.Button();
             this.button111 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.trackBar7 = new System.Windows.Forms.TrackBar();
-            this.button112 = new System.Windows.Forms.Button();
+            this.btnDimLED6 = new System.Windows.Forms.Button();
             this.button113 = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.trackBar8 = new System.Windows.Forms.TrackBar();
-            this.button114 = new System.Windows.Forms.Button();
+            this.btnDimLED5 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.button105 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.trackBar4 = new System.Windows.Forms.TrackBar();
-            this.button106 = new System.Windows.Forms.Button();
+            this.btnDimLED4 = new System.Windows.Forms.Button();
             this.button103 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
-            this.button104 = new System.Windows.Forms.Button();
+            this.btnDimLED3 = new System.Windows.Forms.Button();
             this.button101 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.button102 = new System.Windows.Forms.Button();
+            this.btnDimLED2 = new System.Windows.Forms.Button();
             this.button100 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.button99 = new System.Windows.Forms.Button();
+            this.btnDimLED1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -168,128 +169,128 @@ namespace LEDController.View
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button63 = new System.Windows.Forms.Button();
-            this.button64 = new System.Windows.Forms.Button();
-            this.button65 = new System.Windows.Forms.Button();
-            this.button66 = new System.Windows.Forms.Button();
-            this.button67 = new System.Windows.Forms.Button();
-            this.button68 = new System.Windows.Forms.Button();
-            this.button69 = new System.Windows.Forms.Button();
-            this.button70 = new System.Windows.Forms.Button();
-            this.button71 = new System.Windows.Forms.Button();
-            this.button72 = new System.Windows.Forms.Button();
-            this.button73 = new System.Windows.Forms.Button();
-            this.button74 = new System.Windows.Forms.Button();
-            this.button75 = new System.Windows.Forms.Button();
-            this.button76 = new System.Windows.Forms.Button();
-            this.button77 = new System.Windows.Forms.Button();
-            this.button78 = new System.Windows.Forms.Button();
-            this.button79 = new System.Windows.Forms.Button();
-            this.button80 = new System.Windows.Forms.Button();
-            this.button81 = new System.Windows.Forms.Button();
-            this.button82 = new System.Windows.Forms.Button();
-            this.button83 = new System.Windows.Forms.Button();
-            this.button84 = new System.Windows.Forms.Button();
-            this.button85 = new System.Windows.Forms.Button();
-            this.button86 = new System.Windows.Forms.Button();
-            this.button87 = new System.Windows.Forms.Button();
-            this.button88 = new System.Windows.Forms.Button();
-            this.button89 = new System.Windows.Forms.Button();
-            this.button90 = new System.Windows.Forms.Button();
-            this.button91 = new System.Windows.Forms.Button();
-            this.button92 = new System.Windows.Forms.Button();
-            this.button171 = new System.Windows.Forms.Button();
-            this.button172 = new System.Windows.Forms.Button();
-            this.button173 = new System.Windows.Forms.Button();
-            this.button174 = new System.Windows.Forms.Button();
-            this.button175 = new System.Windows.Forms.Button();
-            this.button176 = new System.Windows.Forms.Button();
-            this.button177 = new System.Windows.Forms.Button();
-            this.button178 = new System.Windows.Forms.Button();
-            this.button179 = new System.Windows.Forms.Button();
-            this.button180 = new System.Windows.Forms.Button();
+            this.btnLED120 = new System.Windows.Forms.Button();
+            this.btnLED112 = new System.Windows.Forms.Button();
+            this.btnLED104 = new System.Windows.Forms.Button();
+            this.btnLED96 = new System.Windows.Forms.Button();
+            this.btnLED88 = new System.Windows.Forms.Button();
+            this.btnLED116 = new System.Windows.Forms.Button();
+            this.btnLED108 = new System.Windows.Forms.Button();
+            this.btnLED100 = new System.Windows.Forms.Button();
+            this.btnLED92 = new System.Windows.Forms.Button();
+            this.btnLED84 = new System.Windows.Forms.Button();
+            this.btnLED119 = new System.Windows.Forms.Button();
+            this.btnLED118 = new System.Windows.Forms.Button();
+            this.btnLED117 = new System.Windows.Forms.Button();
+            this.btnLED115 = new System.Windows.Forms.Button();
+            this.btnLED114 = new System.Windows.Forms.Button();
+            this.btnLED113 = new System.Windows.Forms.Button();
+            this.btnLED111 = new System.Windows.Forms.Button();
+            this.btnLED110 = new System.Windows.Forms.Button();
+            this.btnLED109 = new System.Windows.Forms.Button();
+            this.btnLED107 = new System.Windows.Forms.Button();
+            this.btnLED106 = new System.Windows.Forms.Button();
+            this.btnLED105 = new System.Windows.Forms.Button();
+            this.btnLED103 = new System.Windows.Forms.Button();
+            this.btnLED102 = new System.Windows.Forms.Button();
+            this.btnLED101 = new System.Windows.Forms.Button();
+            this.btnLED99 = new System.Windows.Forms.Button();
+            this.btnLED98 = new System.Windows.Forms.Button();
+            this.btnLED97 = new System.Windows.Forms.Button();
+            this.btnLED95 = new System.Windows.Forms.Button();
+            this.btnLED94 = new System.Windows.Forms.Button();
+            this.btnLED93 = new System.Windows.Forms.Button();
+            this.btnLED91 = new System.Windows.Forms.Button();
+            this.btnLED90 = new System.Windows.Forms.Button();
+            this.btnLED89 = new System.Windows.Forms.Button();
+            this.btnLED87 = new System.Windows.Forms.Button();
+            this.btnLED86 = new System.Windows.Forms.Button();
+            this.btnLED85 = new System.Windows.Forms.Button();
+            this.btnLED83 = new System.Windows.Forms.Button();
+            this.btnLED82 = new System.Windows.Forms.Button();
+            this.btnLED81 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
-            this.button39 = new System.Windows.Forms.Button();
-            this.button40 = new System.Windows.Forms.Button();
-            this.button41 = new System.Windows.Forms.Button();
-            this.button42 = new System.Windows.Forms.Button();
-            this.button43 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
-            this.button45 = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
-            this.button47 = new System.Windows.Forms.Button();
-            this.button48 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
-            this.button51 = new System.Windows.Forms.Button();
-            this.button52 = new System.Windows.Forms.Button();
-            this.button53 = new System.Windows.Forms.Button();
-            this.button54 = new System.Windows.Forms.Button();
-            this.button55 = new System.Windows.Forms.Button();
-            this.button56 = new System.Windows.Forms.Button();
-            this.button57 = new System.Windows.Forms.Button();
-            this.button58 = new System.Windows.Forms.Button();
-            this.button59 = new System.Windows.Forms.Button();
-            this.button60 = new System.Windows.Forms.Button();
-            this.button61 = new System.Windows.Forms.Button();
-            this.button62 = new System.Windows.Forms.Button();
-            this.button161 = new System.Windows.Forms.Button();
-            this.button162 = new System.Windows.Forms.Button();
-            this.button163 = new System.Windows.Forms.Button();
-            this.button164 = new System.Windows.Forms.Button();
-            this.button165 = new System.Windows.Forms.Button();
-            this.button166 = new System.Windows.Forms.Button();
-            this.button167 = new System.Windows.Forms.Button();
-            this.button168 = new System.Windows.Forms.Button();
-            this.button169 = new System.Windows.Forms.Button();
-            this.button170 = new System.Windows.Forms.Button();
+            this.btnLED80 = new System.Windows.Forms.Button();
+            this.btnLED72 = new System.Windows.Forms.Button();
+            this.btnLED64 = new System.Windows.Forms.Button();
+            this.btnLED56 = new System.Windows.Forms.Button();
+            this.btnLED48 = new System.Windows.Forms.Button();
+            this.btnLED76 = new System.Windows.Forms.Button();
+            this.btnLED68 = new System.Windows.Forms.Button();
+            this.btnLED60 = new System.Windows.Forms.Button();
+            this.btnLED52 = new System.Windows.Forms.Button();
+            this.btnLED44 = new System.Windows.Forms.Button();
+            this.btnLED79 = new System.Windows.Forms.Button();
+            this.btnLED78 = new System.Windows.Forms.Button();
+            this.btnLED77 = new System.Windows.Forms.Button();
+            this.btnLED75 = new System.Windows.Forms.Button();
+            this.btnLED74 = new System.Windows.Forms.Button();
+            this.btnLED73 = new System.Windows.Forms.Button();
+            this.btnLED71 = new System.Windows.Forms.Button();
+            this.btnLED70 = new System.Windows.Forms.Button();
+            this.btnLED69 = new System.Windows.Forms.Button();
+            this.btnLED67 = new System.Windows.Forms.Button();
+            this.btnLED66 = new System.Windows.Forms.Button();
+            this.btnLED65 = new System.Windows.Forms.Button();
+            this.btnLED63 = new System.Windows.Forms.Button();
+            this.btnLED62 = new System.Windows.Forms.Button();
+            this.btnLED61 = new System.Windows.Forms.Button();
+            this.btnLED59 = new System.Windows.Forms.Button();
+            this.btnLED58 = new System.Windows.Forms.Button();
+            this.btnLED57 = new System.Windows.Forms.Button();
+            this.btnLED55 = new System.Windows.Forms.Button();
+            this.btnLED54 = new System.Windows.Forms.Button();
+            this.btnLED53 = new System.Windows.Forms.Button();
+            this.btnLED51 = new System.Windows.Forms.Button();
+            this.btnLED50 = new System.Windows.Forms.Button();
+            this.btnLED49 = new System.Windows.Forms.Button();
+            this.btnLED47 = new System.Windows.Forms.Button();
+            this.btnLED46 = new System.Windows.Forms.Button();
+            this.btnLED45 = new System.Windows.Forms.Button();
+            this.btnLED43 = new System.Windows.Forms.Button();
+            this.btnLED42 = new System.Windows.Forms.Button();
+            this.btnLED41 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button156 = new System.Windows.Forms.Button();
-            this.button157 = new System.Windows.Forms.Button();
-            this.button158 = new System.Windows.Forms.Button();
-            this.button159 = new System.Windows.Forms.Button();
-            this.button160 = new System.Windows.Forms.Button();
-            this.button151 = new System.Windows.Forms.Button();
-            this.button152 = new System.Windows.Forms.Button();
-            this.button153 = new System.Windows.Forms.Button();
-            this.button154 = new System.Windows.Forms.Button();
-            this.button155 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnLED40 = new System.Windows.Forms.Button();
+            this.btnLED32 = new System.Windows.Forms.Button();
+            this.btnLED24 = new System.Windows.Forms.Button();
+            this.btnLED16 = new System.Windows.Forms.Button();
+            this.btnLED8 = new System.Windows.Forms.Button();
+            this.btnLED36 = new System.Windows.Forms.Button();
+            this.btnLED28 = new System.Windows.Forms.Button();
+            this.btnLED20 = new System.Windows.Forms.Button();
+            this.btnLED12 = new System.Windows.Forms.Button();
+            this.btnLED4 = new System.Windows.Forms.Button();
+            this.btnLED39 = new System.Windows.Forms.Button();
+            this.btnLED38 = new System.Windows.Forms.Button();
+            this.btnLED37 = new System.Windows.Forms.Button();
+            this.btnLED35 = new System.Windows.Forms.Button();
+            this.btnLED34 = new System.Windows.Forms.Button();
+            this.btnLED33 = new System.Windows.Forms.Button();
+            this.btnLED31 = new System.Windows.Forms.Button();
+            this.btnLED30 = new System.Windows.Forms.Button();
+            this.btnLED29 = new System.Windows.Forms.Button();
+            this.btnLED27 = new System.Windows.Forms.Button();
+            this.btnLED26 = new System.Windows.Forms.Button();
+            this.btnLED25 = new System.Windows.Forms.Button();
+            this.btnLED23 = new System.Windows.Forms.Button();
+            this.btnLED22 = new System.Windows.Forms.Button();
+            this.btnLED21 = new System.Windows.Forms.Button();
+            this.btnLED19 = new System.Windows.Forms.Button();
+            this.btnLED18 = new System.Windows.Forms.Button();
+            this.btnLED17 = new System.Windows.Forms.Button();
+            this.btnLED15 = new System.Windows.Forms.Button();
+            this.btnLED14 = new System.Windows.Forms.Button();
+            this.btnLED13 = new System.Windows.Forms.Button();
+            this.btnLED11 = new System.Windows.Forms.Button();
+            this.btnLED10 = new System.Windows.Forms.Button();
+            this.btnLED9 = new System.Windows.Forms.Button();
+            this.btnLED7 = new System.Windows.Forms.Button();
+            this.btnLED6 = new System.Windows.Forms.Button();
+            this.btnLED5 = new System.Windows.Forms.Button();
+            this.btnLED3 = new System.Windows.Forms.Button();
+            this.btnLED2 = new System.Windows.Forms.Button();
+            this.btnLED1 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button291 = new System.Windows.Forms.Button();
@@ -442,8 +443,10 @@ namespace LEDController.View
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.toolStripConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnRecStatus1 = new System.Windows.Forms.Label();
+            this.btnRecStatus3 = new System.Windows.Forms.Label();
+            this.btnRecStatus2 = new System.Windows.Forms.Label();
             toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -529,41 +532,8 @@ namespace LEDController.View
             // 
             // 连接ToolStripMenuItem
             // 
-            this.连接ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.网口连接ToolStripMenuItem,
-            this.网口断开ToolStripMenuItem,
-            this.退出ToolStripMenuItem,
-            this.退出ToolStripMenuItem1});
             this.连接ToolStripMenuItem.Name = "连接ToolStripMenuItem";
-            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.连接ToolStripMenuItem.Text = "连接";
-            this.连接ToolStripMenuItem.Click += new System.EventHandler(this.连接ToolStripMenuItem_Click);
-            // 
-            // 网口连接ToolStripMenuItem
-            // 
-            this.网口连接ToolStripMenuItem.Name = "网口连接ToolStripMenuItem";
-            this.网口连接ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.网口连接ToolStripMenuItem.Text = "网口连接";
-            // 
-            // 网口断开ToolStripMenuItem
-            // 
-            this.网口断开ToolStripMenuItem.Name = "网口断开ToolStripMenuItem";
-            this.网口断开ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.网口断开ToolStripMenuItem.Text = "网口断开";
-            // 
-            // 退出ToolStripMenuItem
-            // 
-            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.退出ToolStripMenuItem.Text = "远程连接(暂无)";
-            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
-            // 
-            // 退出ToolStripMenuItem1
-            // 
-            this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
-            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
-            this.退出ToolStripMenuItem1.Text = "远程断开(暂无)";
-            this.退出ToolStripMenuItem1.Click += new System.EventHandler(this.退出ToolStripMenuItem1_Click);
+            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(12, 21);
             // 
             // 窗口ToolStripMenuItem
             // 
@@ -649,6 +619,26 @@ namespace LEDController.View
             this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.版本信息ToolStripMenuItem.Text = "版本信息";
             // 
+            // 网口连接ToolStripMenuItem
+            // 
+            this.网口连接ToolStripMenuItem.Name = "网口连接ToolStripMenuItem";
+            this.网口连接ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // 网口断开ToolStripMenuItem
+            // 
+            this.网口断开ToolStripMenuItem.Name = "网口断开ToolStripMenuItem";
+            this.网口断开ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // 退出ToolStripMenuItem
+            // 
+            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // 退出ToolStripMenuItem1
+            // 
+            this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
+            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
+            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -670,26 +660,50 @@ namespace LEDController.View
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnConnect);
             this.tabPage1.Controls.Add(this.btnClose);
             this.tabPage1.Controls.Add(this.label17);
-            this.tabPage1.Controls.Add(this.textBox5);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.tbxTestRec);
+            this.tabPage1.Controls.Add(this.tbxTestCmd);
+            this.tabPage1.Controls.Add(this.btnSendTestMsg);
+            this.tabPage1.Controls.Add(this.tbxConnectMsg);
             this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.btnConnect);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.tbxPort);
+            this.tabPage1.Controls.Add(this.tbxIP);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1045, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "连接测试";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.BackColor = System.Drawing.Color.Transparent;
+            this.btnConnect.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnConnect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnConnect.Location = new System.Drawing.Point(52, 91);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(110, 29);
+            this.btnConnect.TabIndex = 12;
+            this.btnConnect.Text = "连接";
+            this.btnConnect.UseVisualStyleBackColor = false;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnClose.Location = new System.Drawing.Point(52, 126);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(110, 29);
+            this.btnClose.TabIndex = 11;
+            this.btnClose.Text = "断开";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label17
             // 
@@ -699,50 +713,51 @@ namespace LEDController.View
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(72, 16);
             this.label17.TabIndex = 10;
-            this.label17.Text = "状态信息";
+            this.label17.Text = "接收数据";
             // 
-            // textBox5
+            // tbxTestRec
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbxTestRec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox5.Location = new System.Drawing.Point(190, 307);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(842, 93);
-            this.textBox5.TabIndex = 9;
+            this.tbxTestRec.Location = new System.Drawing.Point(190, 307);
+            this.tbxTestRec.Multiline = true;
+            this.tbxTestRec.Name = "tbxTestRec";
+            this.tbxTestRec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbxTestRec.Size = new System.Drawing.Size(842, 93);
+            this.tbxTestRec.TabIndex = 9;
             // 
-            // textBox4
+            // tbxTestCmd
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbxTestCmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox4.Location = new System.Drawing.Point(190, 173);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(842, 93);
-            this.textBox4.TabIndex = 8;
+            this.tbxTestCmd.Location = new System.Drawing.Point(190, 173);
+            this.tbxTestCmd.Multiline = true;
+            this.tbxTestCmd.Name = "tbxTestCmd";
+            this.tbxTestCmd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbxTestCmd.Size = new System.Drawing.Size(842, 93);
+            this.tbxTestCmd.TabIndex = 8;
             // 
-            // button2
+            // btnSendTestMsg
             // 
-            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(62, 178);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 83);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "发送";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSendTestMsg.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSendTestMsg.Location = new System.Drawing.Point(62, 178);
+            this.btnSendTestMsg.Name = "btnSendTestMsg";
+            this.btnSendTestMsg.Size = new System.Drawing.Size(100, 83);
+            this.btnSendTestMsg.TabIndex = 7;
+            this.btnSendTestMsg.Text = "发送";
+            this.btnSendTestMsg.UseVisualStyleBackColor = true;
+            this.btnSendTestMsg.Click += new System.EventHandler(this.btnSendTestMsg_Click);
             // 
-            // textBox3
+            // tbxConnectMsg
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbxConnectMsg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox3.Location = new System.Drawing.Point(190, 42);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(842, 113);
-            this.textBox3.TabIndex = 6;
+            this.tbxConnectMsg.Location = new System.Drawing.Point(190, 42);
+            this.tbxConnectMsg.Multiline = true;
+            this.tbxConnectMsg.Name = "tbxConnectMsg";
+            this.tbxConnectMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbxConnectMsg.Size = new System.Drawing.Size(842, 113);
+            this.tbxConnectMsg.TabIndex = 6;
             // 
             // label16
             // 
@@ -750,27 +765,27 @@ namespace LEDController.View
             this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(187, 23);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 16);
+            this.label16.Size = new System.Drawing.Size(72, 16);
             this.label16.TabIndex = 5;
-            this.label16.Text = "信息";
+            this.label16.Text = "状态信息";
             // 
-            // textBox2
+            // tbxPort
             // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(62, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "1001";
+            this.tbxPort.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxPort.Location = new System.Drawing.Point(62, 59);
+            this.tbxPort.Name = "tbxPort";
+            this.tbxPort.Size = new System.Drawing.Size(100, 26);
+            this.tbxPort.TabIndex = 3;
+            this.tbxPort.Text = "8080";
             // 
-            // textBox1
+            // tbxIP
             // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(62, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "1.0.0.127";
+            this.tbxIP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxIP.Location = new System.Drawing.Point(62, 27);
+            this.tbxIP.Name = "tbxIP";
+            this.tbxIP.Size = new System.Drawing.Size(100, 26);
+            this.tbxIP.TabIndex = 2;
+            this.tbxIP.Text = "192.168.100.36";
             // 
             // label15
             // 
@@ -832,7 +847,7 @@ namespace LEDController.View
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1045, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = " LED控制";
@@ -948,22 +963,22 @@ namespace LEDController.View
             this.panel6.Controls.Add(this.label34);
             this.panel6.Controls.Add(this.label35);
             this.panel6.Controls.Add(this.trackBar9);
-            this.panel6.Controls.Add(this.button116);
+            this.panel6.Controls.Add(this.btnDimLED12);
             this.panel6.Controls.Add(this.button117);
             this.panel6.Controls.Add(this.label36);
             this.panel6.Controls.Add(this.label37);
             this.panel6.Controls.Add(this.trackBar10);
-            this.panel6.Controls.Add(this.button118);
+            this.panel6.Controls.Add(this.btnDimLED11);
             this.panel6.Controls.Add(this.button119);
             this.panel6.Controls.Add(this.label38);
             this.panel6.Controls.Add(this.label39);
             this.panel6.Controls.Add(this.trackBar11);
-            this.panel6.Controls.Add(this.button120);
+            this.panel6.Controls.Add(this.btnDimLED10);
             this.panel6.Controls.Add(this.button121);
             this.panel6.Controls.Add(this.label40);
             this.panel6.Controls.Add(this.label41);
             this.panel6.Controls.Add(this.trackBar12);
-            this.panel6.Controls.Add(this.button122);
+            this.panel6.Controls.Add(this.btnDimLED9);
             this.panel6.Location = new System.Drawing.Point(685, 307);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(307, 152);
@@ -1013,17 +1028,17 @@ namespace LEDController.View
             this.trackBar9.Size = new System.Drawing.Size(45, 80);
             this.trackBar9.TabIndex = 80;
             // 
-            // button116
+            // btnDimLED12
             // 
-            this.button116.AutoSize = true;
-            this.button116.BackColor = System.Drawing.Color.Gray;
-            this.button116.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button116.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button116.Location = new System.Drawing.Point(243, 3);
-            this.button116.Name = "button116";
-            this.button116.Size = new System.Drawing.Size(20, 20);
-            this.button116.TabIndex = 79;
-            this.button116.UseVisualStyleBackColor = false;
+            this.btnDimLED12.AutoSize = true;
+            this.btnDimLED12.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED12.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED12.Location = new System.Drawing.Point(243, 3);
+            this.btnDimLED12.Name = "btnDimLED12";
+            this.btnDimLED12.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED12.TabIndex = 79;
+            this.btnDimLED12.UseVisualStyleBackColor = false;
             // 
             // button117
             // 
@@ -1060,17 +1075,17 @@ namespace LEDController.View
             this.trackBar10.Size = new System.Drawing.Size(45, 80);
             this.trackBar10.TabIndex = 75;
             // 
-            // button118
+            // btnDimLED11
             // 
-            this.button118.AutoSize = true;
-            this.button118.BackColor = System.Drawing.Color.Gray;
-            this.button118.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button118.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button118.Location = new System.Drawing.Point(181, 3);
-            this.button118.Name = "button118";
-            this.button118.Size = new System.Drawing.Size(20, 20);
-            this.button118.TabIndex = 74;
-            this.button118.UseVisualStyleBackColor = false;
+            this.btnDimLED11.AutoSize = true;
+            this.btnDimLED11.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED11.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED11.Location = new System.Drawing.Point(181, 3);
+            this.btnDimLED11.Name = "btnDimLED11";
+            this.btnDimLED11.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED11.TabIndex = 74;
+            this.btnDimLED11.UseVisualStyleBackColor = false;
             // 
             // button119
             // 
@@ -1107,17 +1122,17 @@ namespace LEDController.View
             this.trackBar11.Size = new System.Drawing.Size(45, 80);
             this.trackBar11.TabIndex = 70;
             // 
-            // button120
+            // btnDimLED10
             // 
-            this.button120.AutoSize = true;
-            this.button120.BackColor = System.Drawing.Color.Gray;
-            this.button120.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button120.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button120.Location = new System.Drawing.Point(120, 3);
-            this.button120.Name = "button120";
-            this.button120.Size = new System.Drawing.Size(20, 20);
-            this.button120.TabIndex = 69;
-            this.button120.UseVisualStyleBackColor = false;
+            this.btnDimLED10.AutoSize = true;
+            this.btnDimLED10.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED10.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED10.Location = new System.Drawing.Point(120, 3);
+            this.btnDimLED10.Name = "btnDimLED10";
+            this.btnDimLED10.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED10.TabIndex = 69;
+            this.btnDimLED10.UseVisualStyleBackColor = false;
             // 
             // button121
             // 
@@ -1154,17 +1169,17 @@ namespace LEDController.View
             this.trackBar12.Size = new System.Drawing.Size(45, 80);
             this.trackBar12.TabIndex = 65;
             // 
-            // button122
+            // btnDimLED9
             // 
-            this.button122.AutoSize = true;
-            this.button122.BackColor = System.Drawing.Color.Gray;
-            this.button122.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button122.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button122.Location = new System.Drawing.Point(59, 3);
-            this.button122.Name = "button122";
-            this.button122.Size = new System.Drawing.Size(20, 20);
-            this.button122.TabIndex = 64;
-            this.button122.UseVisualStyleBackColor = false;
+            this.btnDimLED9.AutoSize = true;
+            this.btnDimLED9.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED9.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED9.Location = new System.Drawing.Point(59, 3);
+            this.btnDimLED9.Name = "btnDimLED9";
+            this.btnDimLED9.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED9.TabIndex = 64;
+            this.btnDimLED9.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -1174,22 +1189,22 @@ namespace LEDController.View
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.trackBar5);
-            this.panel5.Controls.Add(this.button108);
+            this.panel5.Controls.Add(this.btnDimLED8);
             this.panel5.Controls.Add(this.button109);
             this.panel5.Controls.Add(this.label27);
             this.panel5.Controls.Add(this.label28);
             this.panel5.Controls.Add(this.trackBar6);
-            this.panel5.Controls.Add(this.button110);
+            this.panel5.Controls.Add(this.btnDimLED7);
             this.panel5.Controls.Add(this.button111);
             this.panel5.Controls.Add(this.label29);
             this.panel5.Controls.Add(this.label30);
             this.panel5.Controls.Add(this.trackBar7);
-            this.panel5.Controls.Add(this.button112);
+            this.panel5.Controls.Add(this.btnDimLED6);
             this.panel5.Controls.Add(this.button113);
             this.panel5.Controls.Add(this.label31);
             this.panel5.Controls.Add(this.label32);
             this.panel5.Controls.Add(this.trackBar8);
-            this.panel5.Controls.Add(this.button114);
+            this.panel5.Controls.Add(this.btnDimLED5);
             this.panel5.Location = new System.Drawing.Point(363, 307);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(307, 152);
@@ -1239,17 +1254,17 @@ namespace LEDController.View
             this.trackBar5.Size = new System.Drawing.Size(45, 80);
             this.trackBar5.TabIndex = 80;
             // 
-            // button108
+            // btnDimLED8
             // 
-            this.button108.AutoSize = true;
-            this.button108.BackColor = System.Drawing.Color.Gray;
-            this.button108.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button108.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button108.Location = new System.Drawing.Point(243, 3);
-            this.button108.Name = "button108";
-            this.button108.Size = new System.Drawing.Size(20, 20);
-            this.button108.TabIndex = 79;
-            this.button108.UseVisualStyleBackColor = false;
+            this.btnDimLED8.AutoSize = true;
+            this.btnDimLED8.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED8.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED8.Location = new System.Drawing.Point(243, 3);
+            this.btnDimLED8.Name = "btnDimLED8";
+            this.btnDimLED8.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED8.TabIndex = 79;
+            this.btnDimLED8.UseVisualStyleBackColor = false;
             // 
             // button109
             // 
@@ -1286,17 +1301,17 @@ namespace LEDController.View
             this.trackBar6.Size = new System.Drawing.Size(45, 80);
             this.trackBar6.TabIndex = 75;
             // 
-            // button110
+            // btnDimLED7
             // 
-            this.button110.AutoSize = true;
-            this.button110.BackColor = System.Drawing.Color.Gray;
-            this.button110.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button110.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button110.Location = new System.Drawing.Point(181, 3);
-            this.button110.Name = "button110";
-            this.button110.Size = new System.Drawing.Size(20, 20);
-            this.button110.TabIndex = 74;
-            this.button110.UseVisualStyleBackColor = false;
+            this.btnDimLED7.AutoSize = true;
+            this.btnDimLED7.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED7.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED7.Location = new System.Drawing.Point(181, 3);
+            this.btnDimLED7.Name = "btnDimLED7";
+            this.btnDimLED7.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED7.TabIndex = 74;
+            this.btnDimLED7.UseVisualStyleBackColor = false;
             // 
             // button111
             // 
@@ -1333,17 +1348,17 @@ namespace LEDController.View
             this.trackBar7.Size = new System.Drawing.Size(45, 80);
             this.trackBar7.TabIndex = 70;
             // 
-            // button112
+            // btnDimLED6
             // 
-            this.button112.AutoSize = true;
-            this.button112.BackColor = System.Drawing.Color.Gray;
-            this.button112.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button112.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button112.Location = new System.Drawing.Point(120, 3);
-            this.button112.Name = "button112";
-            this.button112.Size = new System.Drawing.Size(20, 20);
-            this.button112.TabIndex = 69;
-            this.button112.UseVisualStyleBackColor = false;
+            this.btnDimLED6.AutoSize = true;
+            this.btnDimLED6.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED6.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED6.Location = new System.Drawing.Point(120, 3);
+            this.btnDimLED6.Name = "btnDimLED6";
+            this.btnDimLED6.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED6.TabIndex = 69;
+            this.btnDimLED6.UseVisualStyleBackColor = false;
             // 
             // button113
             // 
@@ -1380,17 +1395,17 @@ namespace LEDController.View
             this.trackBar8.Size = new System.Drawing.Size(45, 80);
             this.trackBar8.TabIndex = 65;
             // 
-            // button114
+            // btnDimLED5
             // 
-            this.button114.AutoSize = true;
-            this.button114.BackColor = System.Drawing.Color.Gray;
-            this.button114.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button114.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button114.Location = new System.Drawing.Point(59, 3);
-            this.button114.Name = "button114";
-            this.button114.Size = new System.Drawing.Size(20, 20);
-            this.button114.TabIndex = 64;
-            this.button114.UseVisualStyleBackColor = false;
+            this.btnDimLED5.AutoSize = true;
+            this.btnDimLED5.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED5.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED5.Location = new System.Drawing.Point(59, 3);
+            this.btnDimLED5.Name = "btnDimLED5";
+            this.btnDimLED5.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED5.TabIndex = 64;
+            this.btnDimLED5.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -1400,22 +1415,22 @@ namespace LEDController.View
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.trackBar4);
-            this.panel4.Controls.Add(this.button106);
+            this.panel4.Controls.Add(this.btnDimLED4);
             this.panel4.Controls.Add(this.button103);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.trackBar3);
-            this.panel4.Controls.Add(this.button104);
+            this.panel4.Controls.Add(this.btnDimLED3);
             this.panel4.Controls.Add(this.button101);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.trackBar2);
-            this.panel4.Controls.Add(this.button102);
+            this.panel4.Controls.Add(this.btnDimLED2);
             this.panel4.Controls.Add(this.button100);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.trackBar1);
-            this.panel4.Controls.Add(this.button99);
+            this.panel4.Controls.Add(this.btnDimLED1);
             this.panel4.Location = new System.Drawing.Point(44, 307);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(307, 152);
@@ -1465,17 +1480,17 @@ namespace LEDController.View
             this.trackBar4.Size = new System.Drawing.Size(45, 80);
             this.trackBar4.TabIndex = 80;
             // 
-            // button106
+            // btnDimLED4
             // 
-            this.button106.AutoSize = true;
-            this.button106.BackColor = System.Drawing.Color.Gray;
-            this.button106.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button106.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button106.Location = new System.Drawing.Point(243, 3);
-            this.button106.Name = "button106";
-            this.button106.Size = new System.Drawing.Size(20, 20);
-            this.button106.TabIndex = 79;
-            this.button106.UseVisualStyleBackColor = false;
+            this.btnDimLED4.AutoSize = true;
+            this.btnDimLED4.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED4.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED4.Location = new System.Drawing.Point(243, 3);
+            this.btnDimLED4.Name = "btnDimLED4";
+            this.btnDimLED4.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED4.TabIndex = 79;
+            this.btnDimLED4.UseVisualStyleBackColor = false;
             // 
             // button103
             // 
@@ -1512,17 +1527,17 @@ namespace LEDController.View
             this.trackBar3.Size = new System.Drawing.Size(45, 80);
             this.trackBar3.TabIndex = 75;
             // 
-            // button104
+            // btnDimLED3
             // 
-            this.button104.AutoSize = true;
-            this.button104.BackColor = System.Drawing.Color.Gray;
-            this.button104.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button104.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button104.Location = new System.Drawing.Point(181, 3);
-            this.button104.Name = "button104";
-            this.button104.Size = new System.Drawing.Size(20, 20);
-            this.button104.TabIndex = 74;
-            this.button104.UseVisualStyleBackColor = false;
+            this.btnDimLED3.AutoSize = true;
+            this.btnDimLED3.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED3.Location = new System.Drawing.Point(181, 3);
+            this.btnDimLED3.Name = "btnDimLED3";
+            this.btnDimLED3.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED3.TabIndex = 74;
+            this.btnDimLED3.UseVisualStyleBackColor = false;
             // 
             // button101
             // 
@@ -1559,17 +1574,17 @@ namespace LEDController.View
             this.trackBar2.Size = new System.Drawing.Size(45, 80);
             this.trackBar2.TabIndex = 70;
             // 
-            // button102
+            // btnDimLED2
             // 
-            this.button102.AutoSize = true;
-            this.button102.BackColor = System.Drawing.Color.Gray;
-            this.button102.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button102.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button102.Location = new System.Drawing.Point(120, 3);
-            this.button102.Name = "button102";
-            this.button102.Size = new System.Drawing.Size(20, 20);
-            this.button102.TabIndex = 69;
-            this.button102.UseVisualStyleBackColor = false;
+            this.btnDimLED2.AutoSize = true;
+            this.btnDimLED2.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED2.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED2.Location = new System.Drawing.Point(120, 3);
+            this.btnDimLED2.Name = "btnDimLED2";
+            this.btnDimLED2.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED2.TabIndex = 69;
+            this.btnDimLED2.UseVisualStyleBackColor = false;
             // 
             // button100
             // 
@@ -1606,17 +1621,17 @@ namespace LEDController.View
             this.trackBar1.Size = new System.Drawing.Size(45, 80);
             this.trackBar1.TabIndex = 65;
             // 
-            // button99
+            // btnDimLED1
             // 
-            this.button99.AutoSize = true;
-            this.button99.BackColor = System.Drawing.Color.Gray;
-            this.button99.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button99.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button99.Location = new System.Drawing.Point(59, 3);
-            this.button99.Name = "button99";
-            this.button99.Size = new System.Drawing.Size(20, 20);
-            this.button99.TabIndex = 64;
-            this.button99.UseVisualStyleBackColor = false;
+            this.btnDimLED1.AutoSize = true;
+            this.btnDimLED1.BackColor = System.Drawing.Color.Gray;
+            this.btnDimLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDimLED1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDimLED1.Location = new System.Drawing.Point(59, 3);
+            this.btnDimLED1.Name = "btnDimLED1";
+            this.btnDimLED1.Size = new System.Drawing.Size(20, 20);
+            this.btnDimLED1.TabIndex = 64;
+            this.btnDimLED1.UseVisualStyleBackColor = false;
             // 
             // statusStrip1
             // 
@@ -1833,1586 +1848,1586 @@ namespace LEDController.View
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.button63);
-            this.panel3.Controls.Add(this.button64);
-            this.panel3.Controls.Add(this.button65);
-            this.panel3.Controls.Add(this.button66);
-            this.panel3.Controls.Add(this.button67);
-            this.panel3.Controls.Add(this.button68);
-            this.panel3.Controls.Add(this.button69);
-            this.panel3.Controls.Add(this.button70);
-            this.panel3.Controls.Add(this.button71);
-            this.panel3.Controls.Add(this.button72);
-            this.panel3.Controls.Add(this.button73);
-            this.panel3.Controls.Add(this.button74);
-            this.panel3.Controls.Add(this.button75);
-            this.panel3.Controls.Add(this.button76);
-            this.panel3.Controls.Add(this.button77);
-            this.panel3.Controls.Add(this.button78);
-            this.panel3.Controls.Add(this.button79);
-            this.panel3.Controls.Add(this.button80);
-            this.panel3.Controls.Add(this.button81);
-            this.panel3.Controls.Add(this.button82);
-            this.panel3.Controls.Add(this.button83);
-            this.panel3.Controls.Add(this.button84);
-            this.panel3.Controls.Add(this.button85);
-            this.panel3.Controls.Add(this.button86);
-            this.panel3.Controls.Add(this.button87);
-            this.panel3.Controls.Add(this.button88);
-            this.panel3.Controls.Add(this.button89);
-            this.panel3.Controls.Add(this.button90);
-            this.panel3.Controls.Add(this.button91);
-            this.panel3.Controls.Add(this.button92);
-            this.panel3.Controls.Add(this.button171);
-            this.panel3.Controls.Add(this.button172);
-            this.panel3.Controls.Add(this.button173);
-            this.panel3.Controls.Add(this.button174);
-            this.panel3.Controls.Add(this.button175);
-            this.panel3.Controls.Add(this.button176);
-            this.panel3.Controls.Add(this.button177);
-            this.panel3.Controls.Add(this.button178);
-            this.panel3.Controls.Add(this.button179);
-            this.panel3.Controls.Add(this.button180);
+            this.panel3.Controls.Add(this.btnLED120);
+            this.panel3.Controls.Add(this.btnLED112);
+            this.panel3.Controls.Add(this.btnLED104);
+            this.panel3.Controls.Add(this.btnLED96);
+            this.panel3.Controls.Add(this.btnLED88);
+            this.panel3.Controls.Add(this.btnLED116);
+            this.panel3.Controls.Add(this.btnLED108);
+            this.panel3.Controls.Add(this.btnLED100);
+            this.panel3.Controls.Add(this.btnLED92);
+            this.panel3.Controls.Add(this.btnLED84);
+            this.panel3.Controls.Add(this.btnLED119);
+            this.panel3.Controls.Add(this.btnLED118);
+            this.panel3.Controls.Add(this.btnLED117);
+            this.panel3.Controls.Add(this.btnLED115);
+            this.panel3.Controls.Add(this.btnLED114);
+            this.panel3.Controls.Add(this.btnLED113);
+            this.panel3.Controls.Add(this.btnLED111);
+            this.panel3.Controls.Add(this.btnLED110);
+            this.panel3.Controls.Add(this.btnLED109);
+            this.panel3.Controls.Add(this.btnLED107);
+            this.panel3.Controls.Add(this.btnLED106);
+            this.panel3.Controls.Add(this.btnLED105);
+            this.panel3.Controls.Add(this.btnLED103);
+            this.panel3.Controls.Add(this.btnLED102);
+            this.panel3.Controls.Add(this.btnLED101);
+            this.panel3.Controls.Add(this.btnLED99);
+            this.panel3.Controls.Add(this.btnLED98);
+            this.panel3.Controls.Add(this.btnLED97);
+            this.panel3.Controls.Add(this.btnLED95);
+            this.panel3.Controls.Add(this.btnLED94);
+            this.panel3.Controls.Add(this.btnLED93);
+            this.panel3.Controls.Add(this.btnLED91);
+            this.panel3.Controls.Add(this.btnLED90);
+            this.panel3.Controls.Add(this.btnLED89);
+            this.panel3.Controls.Add(this.btnLED87);
+            this.panel3.Controls.Add(this.btnLED86);
+            this.panel3.Controls.Add(this.btnLED85);
+            this.panel3.Controls.Add(this.btnLED83);
+            this.panel3.Controls.Add(this.btnLED82);
+            this.panel3.Controls.Add(this.btnLED81);
             this.panel3.Location = new System.Drawing.Point(685, 61);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(307, 207);
             this.panel3.TabIndex = 64;
             // 
-            // button63
-            // 
-            this.button63.AutoSize = true;
-            this.button63.BackColor = System.Drawing.Color.Gray;
-            this.button63.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button63.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button63.Location = new System.Drawing.Point(266, 168);
-            this.button63.Name = "button63";
-            this.button63.Size = new System.Drawing.Size(20, 20);
-            this.button63.TabIndex = 113;
-            this.button63.UseVisualStyleBackColor = false;
-            // 
-            // button64
-            // 
-            this.button64.AutoSize = true;
-            this.button64.BackColor = System.Drawing.Color.Gray;
-            this.button64.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button64.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button64.Location = new System.Drawing.Point(266, 128);
-            this.button64.Name = "button64";
-            this.button64.Size = new System.Drawing.Size(20, 20);
-            this.button64.TabIndex = 112;
-            this.button64.UseVisualStyleBackColor = false;
-            // 
-            // button65
-            // 
-            this.button65.AutoSize = true;
-            this.button65.BackColor = System.Drawing.Color.Gray;
-            this.button65.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button65.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button65.Location = new System.Drawing.Point(266, 92);
-            this.button65.Name = "button65";
-            this.button65.Size = new System.Drawing.Size(20, 20);
-            this.button65.TabIndex = 111;
-            this.button65.UseVisualStyleBackColor = false;
-            // 
-            // button66
-            // 
-            this.button66.AutoSize = true;
-            this.button66.BackColor = System.Drawing.Color.Gray;
-            this.button66.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button66.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button66.Location = new System.Drawing.Point(266, 55);
-            this.button66.Name = "button66";
-            this.button66.Size = new System.Drawing.Size(20, 20);
-            this.button66.TabIndex = 110;
-            this.button66.UseVisualStyleBackColor = false;
-            // 
-            // button67
-            // 
-            this.button67.AutoSize = true;
-            this.button67.BackColor = System.Drawing.Color.Gray;
-            this.button67.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button67.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button67.Location = new System.Drawing.Point(266, 19);
-            this.button67.Name = "button67";
-            this.button67.Size = new System.Drawing.Size(20, 20);
-            this.button67.TabIndex = 109;
-            this.button67.UseVisualStyleBackColor = false;
-            // 
-            // button68
-            // 
-            this.button68.AutoSize = true;
-            this.button68.BackColor = System.Drawing.Color.Gray;
-            this.button68.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button68.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button68.Location = new System.Drawing.Point(126, 168);
-            this.button68.Name = "button68";
-            this.button68.Size = new System.Drawing.Size(20, 20);
-            this.button68.TabIndex = 108;
-            this.button68.UseVisualStyleBackColor = false;
-            // 
-            // button69
-            // 
-            this.button69.AutoSize = true;
-            this.button69.BackColor = System.Drawing.Color.Gray;
-            this.button69.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button69.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button69.Location = new System.Drawing.Point(126, 128);
-            this.button69.Name = "button69";
-            this.button69.Size = new System.Drawing.Size(20, 20);
-            this.button69.TabIndex = 107;
-            this.button69.UseVisualStyleBackColor = false;
-            // 
-            // button70
-            // 
-            this.button70.AutoSize = true;
-            this.button70.BackColor = System.Drawing.Color.Gray;
-            this.button70.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button70.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button70.Location = new System.Drawing.Point(126, 92);
-            this.button70.Name = "button70";
-            this.button70.Size = new System.Drawing.Size(20, 20);
-            this.button70.TabIndex = 106;
-            this.button70.UseVisualStyleBackColor = false;
-            // 
-            // button71
-            // 
-            this.button71.AutoSize = true;
-            this.button71.BackColor = System.Drawing.Color.Gray;
-            this.button71.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button71.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button71.Location = new System.Drawing.Point(126, 55);
-            this.button71.Name = "button71";
-            this.button71.Size = new System.Drawing.Size(20, 20);
-            this.button71.TabIndex = 105;
-            this.button71.UseVisualStyleBackColor = false;
-            // 
-            // button72
-            // 
-            this.button72.AutoSize = true;
-            this.button72.BackColor = System.Drawing.Color.Gray;
-            this.button72.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button72.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button72.Location = new System.Drawing.Point(126, 19);
-            this.button72.Name = "button72";
-            this.button72.Size = new System.Drawing.Size(20, 20);
-            this.button72.TabIndex = 104;
-            this.button72.UseVisualStyleBackColor = false;
-            // 
-            // button73
-            // 
-            this.button73.AutoSize = true;
-            this.button73.BackColor = System.Drawing.Color.Gray;
-            this.button73.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button73.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button73.Location = new System.Drawing.Point(231, 168);
-            this.button73.Name = "button73";
-            this.button73.Size = new System.Drawing.Size(20, 20);
-            this.button73.TabIndex = 103;
-            this.button73.UseVisualStyleBackColor = false;
-            // 
-            // button74
-            // 
-            this.button74.AutoSize = true;
-            this.button74.BackColor = System.Drawing.Color.Gray;
-            this.button74.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button74.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button74.Location = new System.Drawing.Point(196, 168);
-            this.button74.Name = "button74";
-            this.button74.Size = new System.Drawing.Size(20, 20);
-            this.button74.TabIndex = 102;
-            this.button74.UseVisualStyleBackColor = false;
-            // 
-            // button75
-            // 
-            this.button75.AutoSize = true;
-            this.button75.BackColor = System.Drawing.Color.Gray;
-            this.button75.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button75.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button75.Location = new System.Drawing.Point(161, 168);
-            this.button75.Name = "button75";
-            this.button75.Size = new System.Drawing.Size(20, 20);
-            this.button75.TabIndex = 101;
-            this.button75.UseVisualStyleBackColor = false;
-            // 
-            // button76
-            // 
-            this.button76.AutoSize = true;
-            this.button76.BackColor = System.Drawing.Color.Gray;
-            this.button76.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button76.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button76.Location = new System.Drawing.Point(91, 168);
-            this.button76.Name = "button76";
-            this.button76.Size = new System.Drawing.Size(20, 20);
-            this.button76.TabIndex = 100;
-            this.button76.UseVisualStyleBackColor = false;
-            // 
-            // button77
-            // 
-            this.button77.AutoSize = true;
-            this.button77.BackColor = System.Drawing.Color.Gray;
-            this.button77.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button77.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button77.Location = new System.Drawing.Point(56, 168);
-            this.button77.Name = "button77";
-            this.button77.Size = new System.Drawing.Size(20, 20);
-            this.button77.TabIndex = 99;
-            this.button77.UseVisualStyleBackColor = false;
-            // 
-            // button78
-            // 
-            this.button78.AutoSize = true;
-            this.button78.BackColor = System.Drawing.Color.Gray;
-            this.button78.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button78.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button78.Location = new System.Drawing.Point(21, 168);
-            this.button78.Name = "button78";
-            this.button78.Size = new System.Drawing.Size(20, 20);
-            this.button78.TabIndex = 98;
-            this.button78.UseVisualStyleBackColor = false;
-            // 
-            // button79
-            // 
-            this.button79.AutoSize = true;
-            this.button79.BackColor = System.Drawing.Color.Gray;
-            this.button79.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button79.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button79.Location = new System.Drawing.Point(231, 128);
-            this.button79.Name = "button79";
-            this.button79.Size = new System.Drawing.Size(20, 20);
-            this.button79.TabIndex = 97;
-            this.button79.UseVisualStyleBackColor = false;
-            // 
-            // button80
-            // 
-            this.button80.AutoSize = true;
-            this.button80.BackColor = System.Drawing.Color.Gray;
-            this.button80.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button80.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button80.Location = new System.Drawing.Point(196, 128);
-            this.button80.Name = "button80";
-            this.button80.Size = new System.Drawing.Size(20, 20);
-            this.button80.TabIndex = 96;
-            this.button80.UseVisualStyleBackColor = false;
-            // 
-            // button81
-            // 
-            this.button81.AutoSize = true;
-            this.button81.BackColor = System.Drawing.Color.Gray;
-            this.button81.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button81.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button81.Location = new System.Drawing.Point(161, 128);
-            this.button81.Name = "button81";
-            this.button81.Size = new System.Drawing.Size(20, 20);
-            this.button81.TabIndex = 95;
-            this.button81.UseVisualStyleBackColor = false;
-            // 
-            // button82
-            // 
-            this.button82.AutoSize = true;
-            this.button82.BackColor = System.Drawing.Color.Gray;
-            this.button82.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button82.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button82.Location = new System.Drawing.Point(91, 128);
-            this.button82.Name = "button82";
-            this.button82.Size = new System.Drawing.Size(20, 20);
-            this.button82.TabIndex = 94;
-            this.button82.UseVisualStyleBackColor = false;
-            // 
-            // button83
-            // 
-            this.button83.AutoSize = true;
-            this.button83.BackColor = System.Drawing.Color.Gray;
-            this.button83.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button83.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button83.Location = new System.Drawing.Point(56, 128);
-            this.button83.Name = "button83";
-            this.button83.Size = new System.Drawing.Size(20, 20);
-            this.button83.TabIndex = 93;
-            this.button83.UseVisualStyleBackColor = false;
-            // 
-            // button84
-            // 
-            this.button84.AutoSize = true;
-            this.button84.BackColor = System.Drawing.Color.Gray;
-            this.button84.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button84.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button84.Location = new System.Drawing.Point(21, 128);
-            this.button84.Name = "button84";
-            this.button84.Size = new System.Drawing.Size(20, 20);
-            this.button84.TabIndex = 92;
-            this.button84.UseVisualStyleBackColor = false;
-            // 
-            // button85
-            // 
-            this.button85.AutoSize = true;
-            this.button85.BackColor = System.Drawing.Color.Gray;
-            this.button85.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button85.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button85.Location = new System.Drawing.Point(231, 92);
-            this.button85.Name = "button85";
-            this.button85.Size = new System.Drawing.Size(20, 20);
-            this.button85.TabIndex = 91;
-            this.button85.UseVisualStyleBackColor = false;
-            // 
-            // button86
-            // 
-            this.button86.AutoSize = true;
-            this.button86.BackColor = System.Drawing.Color.Gray;
-            this.button86.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button86.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button86.Location = new System.Drawing.Point(196, 92);
-            this.button86.Name = "button86";
-            this.button86.Size = new System.Drawing.Size(20, 20);
-            this.button86.TabIndex = 90;
-            this.button86.UseVisualStyleBackColor = false;
-            // 
-            // button87
-            // 
-            this.button87.AutoSize = true;
-            this.button87.BackColor = System.Drawing.Color.Gray;
-            this.button87.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button87.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button87.Location = new System.Drawing.Point(161, 92);
-            this.button87.Name = "button87";
-            this.button87.Size = new System.Drawing.Size(20, 20);
-            this.button87.TabIndex = 89;
-            this.button87.UseVisualStyleBackColor = false;
-            // 
-            // button88
-            // 
-            this.button88.AutoSize = true;
-            this.button88.BackColor = System.Drawing.Color.Gray;
-            this.button88.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button88.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button88.Location = new System.Drawing.Point(91, 92);
-            this.button88.Name = "button88";
-            this.button88.Size = new System.Drawing.Size(20, 20);
-            this.button88.TabIndex = 88;
-            this.button88.UseVisualStyleBackColor = false;
-            // 
-            // button89
-            // 
-            this.button89.AutoSize = true;
-            this.button89.BackColor = System.Drawing.Color.Gray;
-            this.button89.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button89.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button89.Location = new System.Drawing.Point(56, 92);
-            this.button89.Name = "button89";
-            this.button89.Size = new System.Drawing.Size(20, 20);
-            this.button89.TabIndex = 87;
-            this.button89.UseVisualStyleBackColor = false;
-            // 
-            // button90
-            // 
-            this.button90.AutoSize = true;
-            this.button90.BackColor = System.Drawing.Color.Gray;
-            this.button90.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button90.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button90.Location = new System.Drawing.Point(21, 92);
-            this.button90.Name = "button90";
-            this.button90.Size = new System.Drawing.Size(20, 20);
-            this.button90.TabIndex = 86;
-            this.button90.UseVisualStyleBackColor = false;
-            // 
-            // button91
-            // 
-            this.button91.AutoSize = true;
-            this.button91.BackColor = System.Drawing.Color.Gray;
-            this.button91.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button91.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button91.Location = new System.Drawing.Point(231, 55);
-            this.button91.Name = "button91";
-            this.button91.Size = new System.Drawing.Size(20, 20);
-            this.button91.TabIndex = 85;
-            this.button91.UseVisualStyleBackColor = false;
-            // 
-            // button92
-            // 
-            this.button92.AutoSize = true;
-            this.button92.BackColor = System.Drawing.Color.Gray;
-            this.button92.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button92.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button92.Location = new System.Drawing.Point(196, 55);
-            this.button92.Name = "button92";
-            this.button92.Size = new System.Drawing.Size(20, 20);
-            this.button92.TabIndex = 84;
-            this.button92.UseVisualStyleBackColor = false;
-            // 
-            // button171
-            // 
-            this.button171.AutoSize = true;
-            this.button171.BackColor = System.Drawing.Color.Gray;
-            this.button171.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button171.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button171.Location = new System.Drawing.Point(161, 55);
-            this.button171.Name = "button171";
-            this.button171.Size = new System.Drawing.Size(20, 20);
-            this.button171.TabIndex = 83;
-            this.button171.UseVisualStyleBackColor = false;
-            // 
-            // button172
-            // 
-            this.button172.AutoSize = true;
-            this.button172.BackColor = System.Drawing.Color.Gray;
-            this.button172.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button172.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button172.Location = new System.Drawing.Point(91, 55);
-            this.button172.Name = "button172";
-            this.button172.Size = new System.Drawing.Size(20, 20);
-            this.button172.TabIndex = 82;
-            this.button172.UseVisualStyleBackColor = false;
-            // 
-            // button173
-            // 
-            this.button173.AutoSize = true;
-            this.button173.BackColor = System.Drawing.Color.Gray;
-            this.button173.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button173.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button173.Location = new System.Drawing.Point(56, 55);
-            this.button173.Name = "button173";
-            this.button173.Size = new System.Drawing.Size(20, 20);
-            this.button173.TabIndex = 81;
-            this.button173.UseVisualStyleBackColor = false;
-            // 
-            // button174
-            // 
-            this.button174.AutoSize = true;
-            this.button174.BackColor = System.Drawing.Color.Gray;
-            this.button174.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button174.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button174.Location = new System.Drawing.Point(21, 55);
-            this.button174.Name = "button174";
-            this.button174.Size = new System.Drawing.Size(20, 20);
-            this.button174.TabIndex = 80;
-            this.button174.UseVisualStyleBackColor = false;
-            // 
-            // button175
-            // 
-            this.button175.AutoSize = true;
-            this.button175.BackColor = System.Drawing.Color.Gray;
-            this.button175.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button175.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button175.Location = new System.Drawing.Point(231, 19);
-            this.button175.Name = "button175";
-            this.button175.Size = new System.Drawing.Size(20, 20);
-            this.button175.TabIndex = 79;
-            this.button175.UseVisualStyleBackColor = false;
-            // 
-            // button176
-            // 
-            this.button176.AutoSize = true;
-            this.button176.BackColor = System.Drawing.Color.Gray;
-            this.button176.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button176.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button176.Location = new System.Drawing.Point(196, 19);
-            this.button176.Name = "button176";
-            this.button176.Size = new System.Drawing.Size(20, 20);
-            this.button176.TabIndex = 78;
-            this.button176.UseVisualStyleBackColor = false;
-            // 
-            // button177
-            // 
-            this.button177.AutoSize = true;
-            this.button177.BackColor = System.Drawing.Color.Gray;
-            this.button177.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button177.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button177.Location = new System.Drawing.Point(161, 19);
-            this.button177.Name = "button177";
-            this.button177.Size = new System.Drawing.Size(20, 20);
-            this.button177.TabIndex = 77;
-            this.button177.UseVisualStyleBackColor = false;
-            // 
-            // button178
-            // 
-            this.button178.AutoSize = true;
-            this.button178.BackColor = System.Drawing.Color.Gray;
-            this.button178.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button178.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button178.Location = new System.Drawing.Point(91, 19);
-            this.button178.Name = "button178";
-            this.button178.Size = new System.Drawing.Size(20, 20);
-            this.button178.TabIndex = 76;
-            this.button178.UseVisualStyleBackColor = false;
-            // 
-            // button179
-            // 
-            this.button179.AutoSize = true;
-            this.button179.BackColor = System.Drawing.Color.Gray;
-            this.button179.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button179.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button179.Location = new System.Drawing.Point(56, 19);
-            this.button179.Name = "button179";
-            this.button179.Size = new System.Drawing.Size(20, 20);
-            this.button179.TabIndex = 75;
-            this.button179.UseVisualStyleBackColor = false;
-            // 
-            // button180
-            // 
-            this.button180.AutoSize = true;
-            this.button180.BackColor = System.Drawing.Color.Gray;
-            this.button180.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button180.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button180.Location = new System.Drawing.Point(21, 19);
-            this.button180.Name = "button180";
-            this.button180.Size = new System.Drawing.Size(20, 20);
-            this.button180.TabIndex = 74;
-            this.button180.UseVisualStyleBackColor = false;
+            // btnLED120
+            // 
+            this.btnLED120.AutoSize = true;
+            this.btnLED120.BackColor = System.Drawing.Color.Gray;
+            this.btnLED120.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED120.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED120.Location = new System.Drawing.Point(266, 168);
+            this.btnLED120.Name = "btnLED120";
+            this.btnLED120.Size = new System.Drawing.Size(20, 20);
+            this.btnLED120.TabIndex = 113;
+            this.btnLED120.UseVisualStyleBackColor = false;
+            // 
+            // btnLED112
+            // 
+            this.btnLED112.AutoSize = true;
+            this.btnLED112.BackColor = System.Drawing.Color.Gray;
+            this.btnLED112.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED112.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED112.Location = new System.Drawing.Point(266, 128);
+            this.btnLED112.Name = "btnLED112";
+            this.btnLED112.Size = new System.Drawing.Size(20, 20);
+            this.btnLED112.TabIndex = 112;
+            this.btnLED112.UseVisualStyleBackColor = false;
+            // 
+            // btnLED104
+            // 
+            this.btnLED104.AutoSize = true;
+            this.btnLED104.BackColor = System.Drawing.Color.Gray;
+            this.btnLED104.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED104.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED104.Location = new System.Drawing.Point(266, 92);
+            this.btnLED104.Name = "btnLED104";
+            this.btnLED104.Size = new System.Drawing.Size(20, 20);
+            this.btnLED104.TabIndex = 111;
+            this.btnLED104.UseVisualStyleBackColor = false;
+            // 
+            // btnLED96
+            // 
+            this.btnLED96.AutoSize = true;
+            this.btnLED96.BackColor = System.Drawing.Color.Gray;
+            this.btnLED96.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED96.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED96.Location = new System.Drawing.Point(266, 55);
+            this.btnLED96.Name = "btnLED96";
+            this.btnLED96.Size = new System.Drawing.Size(20, 20);
+            this.btnLED96.TabIndex = 110;
+            this.btnLED96.UseVisualStyleBackColor = false;
+            // 
+            // btnLED88
+            // 
+            this.btnLED88.AutoSize = true;
+            this.btnLED88.BackColor = System.Drawing.Color.Gray;
+            this.btnLED88.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED88.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED88.Location = new System.Drawing.Point(266, 19);
+            this.btnLED88.Name = "btnLED88";
+            this.btnLED88.Size = new System.Drawing.Size(20, 20);
+            this.btnLED88.TabIndex = 109;
+            this.btnLED88.UseVisualStyleBackColor = false;
+            // 
+            // btnLED116
+            // 
+            this.btnLED116.AutoSize = true;
+            this.btnLED116.BackColor = System.Drawing.Color.Gray;
+            this.btnLED116.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED116.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED116.Location = new System.Drawing.Point(126, 168);
+            this.btnLED116.Name = "btnLED116";
+            this.btnLED116.Size = new System.Drawing.Size(20, 20);
+            this.btnLED116.TabIndex = 108;
+            this.btnLED116.UseVisualStyleBackColor = false;
+            // 
+            // btnLED108
+            // 
+            this.btnLED108.AutoSize = true;
+            this.btnLED108.BackColor = System.Drawing.Color.Gray;
+            this.btnLED108.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED108.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED108.Location = new System.Drawing.Point(126, 128);
+            this.btnLED108.Name = "btnLED108";
+            this.btnLED108.Size = new System.Drawing.Size(20, 20);
+            this.btnLED108.TabIndex = 107;
+            this.btnLED108.UseVisualStyleBackColor = false;
+            // 
+            // btnLED100
+            // 
+            this.btnLED100.AutoSize = true;
+            this.btnLED100.BackColor = System.Drawing.Color.Gray;
+            this.btnLED100.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED100.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED100.Location = new System.Drawing.Point(126, 92);
+            this.btnLED100.Name = "btnLED100";
+            this.btnLED100.Size = new System.Drawing.Size(20, 20);
+            this.btnLED100.TabIndex = 106;
+            this.btnLED100.UseVisualStyleBackColor = false;
+            // 
+            // btnLED92
+            // 
+            this.btnLED92.AutoSize = true;
+            this.btnLED92.BackColor = System.Drawing.Color.Gray;
+            this.btnLED92.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED92.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED92.Location = new System.Drawing.Point(126, 55);
+            this.btnLED92.Name = "btnLED92";
+            this.btnLED92.Size = new System.Drawing.Size(20, 20);
+            this.btnLED92.TabIndex = 105;
+            this.btnLED92.UseVisualStyleBackColor = false;
+            // 
+            // btnLED84
+            // 
+            this.btnLED84.AutoSize = true;
+            this.btnLED84.BackColor = System.Drawing.Color.Gray;
+            this.btnLED84.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED84.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED84.Location = new System.Drawing.Point(126, 19);
+            this.btnLED84.Name = "btnLED84";
+            this.btnLED84.Size = new System.Drawing.Size(20, 20);
+            this.btnLED84.TabIndex = 104;
+            this.btnLED84.UseVisualStyleBackColor = false;
+            // 
+            // btnLED119
+            // 
+            this.btnLED119.AutoSize = true;
+            this.btnLED119.BackColor = System.Drawing.Color.Gray;
+            this.btnLED119.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED119.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED119.Location = new System.Drawing.Point(231, 168);
+            this.btnLED119.Name = "btnLED119";
+            this.btnLED119.Size = new System.Drawing.Size(20, 20);
+            this.btnLED119.TabIndex = 103;
+            this.btnLED119.UseVisualStyleBackColor = false;
+            // 
+            // btnLED118
+            // 
+            this.btnLED118.AutoSize = true;
+            this.btnLED118.BackColor = System.Drawing.Color.Gray;
+            this.btnLED118.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED118.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED118.Location = new System.Drawing.Point(196, 168);
+            this.btnLED118.Name = "btnLED118";
+            this.btnLED118.Size = new System.Drawing.Size(20, 20);
+            this.btnLED118.TabIndex = 102;
+            this.btnLED118.UseVisualStyleBackColor = false;
+            // 
+            // btnLED117
+            // 
+            this.btnLED117.AutoSize = true;
+            this.btnLED117.BackColor = System.Drawing.Color.Gray;
+            this.btnLED117.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED117.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED117.Location = new System.Drawing.Point(161, 168);
+            this.btnLED117.Name = "btnLED117";
+            this.btnLED117.Size = new System.Drawing.Size(20, 20);
+            this.btnLED117.TabIndex = 101;
+            this.btnLED117.UseVisualStyleBackColor = false;
+            // 
+            // btnLED115
+            // 
+            this.btnLED115.AutoSize = true;
+            this.btnLED115.BackColor = System.Drawing.Color.Gray;
+            this.btnLED115.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED115.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED115.Location = new System.Drawing.Point(91, 168);
+            this.btnLED115.Name = "btnLED115";
+            this.btnLED115.Size = new System.Drawing.Size(20, 20);
+            this.btnLED115.TabIndex = 100;
+            this.btnLED115.UseVisualStyleBackColor = false;
+            // 
+            // btnLED114
+            // 
+            this.btnLED114.AutoSize = true;
+            this.btnLED114.BackColor = System.Drawing.Color.Gray;
+            this.btnLED114.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED114.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED114.Location = new System.Drawing.Point(56, 168);
+            this.btnLED114.Name = "btnLED114";
+            this.btnLED114.Size = new System.Drawing.Size(20, 20);
+            this.btnLED114.TabIndex = 99;
+            this.btnLED114.UseVisualStyleBackColor = false;
+            // 
+            // btnLED113
+            // 
+            this.btnLED113.AutoSize = true;
+            this.btnLED113.BackColor = System.Drawing.Color.Gray;
+            this.btnLED113.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED113.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED113.Location = new System.Drawing.Point(21, 168);
+            this.btnLED113.Name = "btnLED113";
+            this.btnLED113.Size = new System.Drawing.Size(20, 20);
+            this.btnLED113.TabIndex = 98;
+            this.btnLED113.UseVisualStyleBackColor = false;
+            // 
+            // btnLED111
+            // 
+            this.btnLED111.AutoSize = true;
+            this.btnLED111.BackColor = System.Drawing.Color.Gray;
+            this.btnLED111.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED111.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED111.Location = new System.Drawing.Point(231, 128);
+            this.btnLED111.Name = "btnLED111";
+            this.btnLED111.Size = new System.Drawing.Size(20, 20);
+            this.btnLED111.TabIndex = 97;
+            this.btnLED111.UseVisualStyleBackColor = false;
+            // 
+            // btnLED110
+            // 
+            this.btnLED110.AutoSize = true;
+            this.btnLED110.BackColor = System.Drawing.Color.Gray;
+            this.btnLED110.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED110.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED110.Location = new System.Drawing.Point(196, 128);
+            this.btnLED110.Name = "btnLED110";
+            this.btnLED110.Size = new System.Drawing.Size(20, 20);
+            this.btnLED110.TabIndex = 96;
+            this.btnLED110.UseVisualStyleBackColor = false;
+            // 
+            // btnLED109
+            // 
+            this.btnLED109.AutoSize = true;
+            this.btnLED109.BackColor = System.Drawing.Color.Gray;
+            this.btnLED109.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED109.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED109.Location = new System.Drawing.Point(161, 128);
+            this.btnLED109.Name = "btnLED109";
+            this.btnLED109.Size = new System.Drawing.Size(20, 20);
+            this.btnLED109.TabIndex = 95;
+            this.btnLED109.UseVisualStyleBackColor = false;
+            // 
+            // btnLED107
+            // 
+            this.btnLED107.AutoSize = true;
+            this.btnLED107.BackColor = System.Drawing.Color.Gray;
+            this.btnLED107.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED107.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED107.Location = new System.Drawing.Point(91, 128);
+            this.btnLED107.Name = "btnLED107";
+            this.btnLED107.Size = new System.Drawing.Size(20, 20);
+            this.btnLED107.TabIndex = 94;
+            this.btnLED107.UseVisualStyleBackColor = false;
+            // 
+            // btnLED106
+            // 
+            this.btnLED106.AutoSize = true;
+            this.btnLED106.BackColor = System.Drawing.Color.Gray;
+            this.btnLED106.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED106.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED106.Location = new System.Drawing.Point(56, 128);
+            this.btnLED106.Name = "btnLED106";
+            this.btnLED106.Size = new System.Drawing.Size(20, 20);
+            this.btnLED106.TabIndex = 93;
+            this.btnLED106.UseVisualStyleBackColor = false;
+            // 
+            // btnLED105
+            // 
+            this.btnLED105.AutoSize = true;
+            this.btnLED105.BackColor = System.Drawing.Color.Gray;
+            this.btnLED105.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED105.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED105.Location = new System.Drawing.Point(21, 128);
+            this.btnLED105.Name = "btnLED105";
+            this.btnLED105.Size = new System.Drawing.Size(20, 20);
+            this.btnLED105.TabIndex = 92;
+            this.btnLED105.UseVisualStyleBackColor = false;
+            // 
+            // btnLED103
+            // 
+            this.btnLED103.AutoSize = true;
+            this.btnLED103.BackColor = System.Drawing.Color.Gray;
+            this.btnLED103.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED103.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED103.Location = new System.Drawing.Point(231, 92);
+            this.btnLED103.Name = "btnLED103";
+            this.btnLED103.Size = new System.Drawing.Size(20, 20);
+            this.btnLED103.TabIndex = 91;
+            this.btnLED103.UseVisualStyleBackColor = false;
+            // 
+            // btnLED102
+            // 
+            this.btnLED102.AutoSize = true;
+            this.btnLED102.BackColor = System.Drawing.Color.Gray;
+            this.btnLED102.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED102.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED102.Location = new System.Drawing.Point(196, 92);
+            this.btnLED102.Name = "btnLED102";
+            this.btnLED102.Size = new System.Drawing.Size(20, 20);
+            this.btnLED102.TabIndex = 90;
+            this.btnLED102.UseVisualStyleBackColor = false;
+            // 
+            // btnLED101
+            // 
+            this.btnLED101.AutoSize = true;
+            this.btnLED101.BackColor = System.Drawing.Color.Gray;
+            this.btnLED101.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED101.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED101.Location = new System.Drawing.Point(161, 92);
+            this.btnLED101.Name = "btnLED101";
+            this.btnLED101.Size = new System.Drawing.Size(20, 20);
+            this.btnLED101.TabIndex = 89;
+            this.btnLED101.UseVisualStyleBackColor = false;
+            // 
+            // btnLED99
+            // 
+            this.btnLED99.AutoSize = true;
+            this.btnLED99.BackColor = System.Drawing.Color.Gray;
+            this.btnLED99.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED99.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED99.Location = new System.Drawing.Point(91, 92);
+            this.btnLED99.Name = "btnLED99";
+            this.btnLED99.Size = new System.Drawing.Size(20, 20);
+            this.btnLED99.TabIndex = 88;
+            this.btnLED99.UseVisualStyleBackColor = false;
+            // 
+            // btnLED98
+            // 
+            this.btnLED98.AutoSize = true;
+            this.btnLED98.BackColor = System.Drawing.Color.Gray;
+            this.btnLED98.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED98.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED98.Location = new System.Drawing.Point(56, 92);
+            this.btnLED98.Name = "btnLED98";
+            this.btnLED98.Size = new System.Drawing.Size(20, 20);
+            this.btnLED98.TabIndex = 87;
+            this.btnLED98.UseVisualStyleBackColor = false;
+            // 
+            // btnLED97
+            // 
+            this.btnLED97.AutoSize = true;
+            this.btnLED97.BackColor = System.Drawing.Color.Gray;
+            this.btnLED97.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED97.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED97.Location = new System.Drawing.Point(21, 92);
+            this.btnLED97.Name = "btnLED97";
+            this.btnLED97.Size = new System.Drawing.Size(20, 20);
+            this.btnLED97.TabIndex = 86;
+            this.btnLED97.UseVisualStyleBackColor = false;
+            // 
+            // btnLED95
+            // 
+            this.btnLED95.AutoSize = true;
+            this.btnLED95.BackColor = System.Drawing.Color.Gray;
+            this.btnLED95.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED95.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED95.Location = new System.Drawing.Point(231, 55);
+            this.btnLED95.Name = "btnLED95";
+            this.btnLED95.Size = new System.Drawing.Size(20, 20);
+            this.btnLED95.TabIndex = 85;
+            this.btnLED95.UseVisualStyleBackColor = false;
+            // 
+            // btnLED94
+            // 
+            this.btnLED94.AutoSize = true;
+            this.btnLED94.BackColor = System.Drawing.Color.Gray;
+            this.btnLED94.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED94.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED94.Location = new System.Drawing.Point(196, 55);
+            this.btnLED94.Name = "btnLED94";
+            this.btnLED94.Size = new System.Drawing.Size(20, 20);
+            this.btnLED94.TabIndex = 84;
+            this.btnLED94.UseVisualStyleBackColor = false;
+            // 
+            // btnLED93
+            // 
+            this.btnLED93.AutoSize = true;
+            this.btnLED93.BackColor = System.Drawing.Color.Gray;
+            this.btnLED93.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED93.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED93.Location = new System.Drawing.Point(161, 55);
+            this.btnLED93.Name = "btnLED93";
+            this.btnLED93.Size = new System.Drawing.Size(20, 20);
+            this.btnLED93.TabIndex = 83;
+            this.btnLED93.UseVisualStyleBackColor = false;
+            // 
+            // btnLED91
+            // 
+            this.btnLED91.AutoSize = true;
+            this.btnLED91.BackColor = System.Drawing.Color.Gray;
+            this.btnLED91.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED91.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED91.Location = new System.Drawing.Point(91, 55);
+            this.btnLED91.Name = "btnLED91";
+            this.btnLED91.Size = new System.Drawing.Size(20, 20);
+            this.btnLED91.TabIndex = 82;
+            this.btnLED91.UseVisualStyleBackColor = false;
+            // 
+            // btnLED90
+            // 
+            this.btnLED90.AutoSize = true;
+            this.btnLED90.BackColor = System.Drawing.Color.Gray;
+            this.btnLED90.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED90.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED90.Location = new System.Drawing.Point(56, 55);
+            this.btnLED90.Name = "btnLED90";
+            this.btnLED90.Size = new System.Drawing.Size(20, 20);
+            this.btnLED90.TabIndex = 81;
+            this.btnLED90.UseVisualStyleBackColor = false;
+            // 
+            // btnLED89
+            // 
+            this.btnLED89.AutoSize = true;
+            this.btnLED89.BackColor = System.Drawing.Color.Gray;
+            this.btnLED89.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED89.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED89.Location = new System.Drawing.Point(21, 55);
+            this.btnLED89.Name = "btnLED89";
+            this.btnLED89.Size = new System.Drawing.Size(20, 20);
+            this.btnLED89.TabIndex = 80;
+            this.btnLED89.UseVisualStyleBackColor = false;
+            // 
+            // btnLED87
+            // 
+            this.btnLED87.AutoSize = true;
+            this.btnLED87.BackColor = System.Drawing.Color.Gray;
+            this.btnLED87.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED87.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED87.Location = new System.Drawing.Point(231, 19);
+            this.btnLED87.Name = "btnLED87";
+            this.btnLED87.Size = new System.Drawing.Size(20, 20);
+            this.btnLED87.TabIndex = 79;
+            this.btnLED87.UseVisualStyleBackColor = false;
+            // 
+            // btnLED86
+            // 
+            this.btnLED86.AutoSize = true;
+            this.btnLED86.BackColor = System.Drawing.Color.Gray;
+            this.btnLED86.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED86.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED86.Location = new System.Drawing.Point(196, 19);
+            this.btnLED86.Name = "btnLED86";
+            this.btnLED86.Size = new System.Drawing.Size(20, 20);
+            this.btnLED86.TabIndex = 78;
+            this.btnLED86.UseVisualStyleBackColor = false;
+            // 
+            // btnLED85
+            // 
+            this.btnLED85.AutoSize = true;
+            this.btnLED85.BackColor = System.Drawing.Color.Gray;
+            this.btnLED85.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED85.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED85.Location = new System.Drawing.Point(161, 19);
+            this.btnLED85.Name = "btnLED85";
+            this.btnLED85.Size = new System.Drawing.Size(20, 20);
+            this.btnLED85.TabIndex = 77;
+            this.btnLED85.UseVisualStyleBackColor = false;
+            // 
+            // btnLED83
+            // 
+            this.btnLED83.AutoSize = true;
+            this.btnLED83.BackColor = System.Drawing.Color.Gray;
+            this.btnLED83.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED83.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED83.Location = new System.Drawing.Point(91, 19);
+            this.btnLED83.Name = "btnLED83";
+            this.btnLED83.Size = new System.Drawing.Size(20, 20);
+            this.btnLED83.TabIndex = 76;
+            this.btnLED83.UseVisualStyleBackColor = false;
+            // 
+            // btnLED82
+            // 
+            this.btnLED82.AutoSize = true;
+            this.btnLED82.BackColor = System.Drawing.Color.Gray;
+            this.btnLED82.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED82.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED82.Location = new System.Drawing.Point(56, 19);
+            this.btnLED82.Name = "btnLED82";
+            this.btnLED82.Size = new System.Drawing.Size(20, 20);
+            this.btnLED82.TabIndex = 75;
+            this.btnLED82.UseVisualStyleBackColor = false;
+            // 
+            // btnLED81
+            // 
+            this.btnLED81.AutoSize = true;
+            this.btnLED81.BackColor = System.Drawing.Color.Gray;
+            this.btnLED81.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED81.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED81.Location = new System.Drawing.Point(21, 19);
+            this.btnLED81.Name = "btnLED81";
+            this.btnLED81.Size = new System.Drawing.Size(20, 20);
+            this.btnLED81.TabIndex = 74;
+            this.btnLED81.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button10);
-            this.panel2.Controls.Add(this.button11);
-            this.panel2.Controls.Add(this.button12);
-            this.panel2.Controls.Add(this.button37);
-            this.panel2.Controls.Add(this.button38);
-            this.panel2.Controls.Add(this.button39);
-            this.panel2.Controls.Add(this.button40);
-            this.panel2.Controls.Add(this.button41);
-            this.panel2.Controls.Add(this.button42);
-            this.panel2.Controls.Add(this.button43);
-            this.panel2.Controls.Add(this.button44);
-            this.panel2.Controls.Add(this.button45);
-            this.panel2.Controls.Add(this.button46);
-            this.panel2.Controls.Add(this.button47);
-            this.panel2.Controls.Add(this.button48);
-            this.panel2.Controls.Add(this.button49);
-            this.panel2.Controls.Add(this.button50);
-            this.panel2.Controls.Add(this.button51);
-            this.panel2.Controls.Add(this.button52);
-            this.panel2.Controls.Add(this.button53);
-            this.panel2.Controls.Add(this.button54);
-            this.panel2.Controls.Add(this.button55);
-            this.panel2.Controls.Add(this.button56);
-            this.panel2.Controls.Add(this.button57);
-            this.panel2.Controls.Add(this.button58);
-            this.panel2.Controls.Add(this.button59);
-            this.panel2.Controls.Add(this.button60);
-            this.panel2.Controls.Add(this.button61);
-            this.panel2.Controls.Add(this.button62);
-            this.panel2.Controls.Add(this.button161);
-            this.panel2.Controls.Add(this.button162);
-            this.panel2.Controls.Add(this.button163);
-            this.panel2.Controls.Add(this.button164);
-            this.panel2.Controls.Add(this.button165);
-            this.panel2.Controls.Add(this.button166);
-            this.panel2.Controls.Add(this.button167);
-            this.panel2.Controls.Add(this.button168);
-            this.panel2.Controls.Add(this.button169);
-            this.panel2.Controls.Add(this.button170);
+            this.panel2.Controls.Add(this.btnLED80);
+            this.panel2.Controls.Add(this.btnLED72);
+            this.panel2.Controls.Add(this.btnLED64);
+            this.panel2.Controls.Add(this.btnLED56);
+            this.panel2.Controls.Add(this.btnLED48);
+            this.panel2.Controls.Add(this.btnLED76);
+            this.panel2.Controls.Add(this.btnLED68);
+            this.panel2.Controls.Add(this.btnLED60);
+            this.panel2.Controls.Add(this.btnLED52);
+            this.panel2.Controls.Add(this.btnLED44);
+            this.panel2.Controls.Add(this.btnLED79);
+            this.panel2.Controls.Add(this.btnLED78);
+            this.panel2.Controls.Add(this.btnLED77);
+            this.panel2.Controls.Add(this.btnLED75);
+            this.panel2.Controls.Add(this.btnLED74);
+            this.panel2.Controls.Add(this.btnLED73);
+            this.panel2.Controls.Add(this.btnLED71);
+            this.panel2.Controls.Add(this.btnLED70);
+            this.panel2.Controls.Add(this.btnLED69);
+            this.panel2.Controls.Add(this.btnLED67);
+            this.panel2.Controls.Add(this.btnLED66);
+            this.panel2.Controls.Add(this.btnLED65);
+            this.panel2.Controls.Add(this.btnLED63);
+            this.panel2.Controls.Add(this.btnLED62);
+            this.panel2.Controls.Add(this.btnLED61);
+            this.panel2.Controls.Add(this.btnLED59);
+            this.panel2.Controls.Add(this.btnLED58);
+            this.panel2.Controls.Add(this.btnLED57);
+            this.panel2.Controls.Add(this.btnLED55);
+            this.panel2.Controls.Add(this.btnLED54);
+            this.panel2.Controls.Add(this.btnLED53);
+            this.panel2.Controls.Add(this.btnLED51);
+            this.panel2.Controls.Add(this.btnLED50);
+            this.panel2.Controls.Add(this.btnLED49);
+            this.panel2.Controls.Add(this.btnLED47);
+            this.panel2.Controls.Add(this.btnLED46);
+            this.panel2.Controls.Add(this.btnLED45);
+            this.panel2.Controls.Add(this.btnLED43);
+            this.panel2.Controls.Add(this.btnLED42);
+            this.panel2.Controls.Add(this.btnLED41);
             this.panel2.Location = new System.Drawing.Point(363, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(307, 207);
             this.panel2.TabIndex = 64;
             // 
-            // button9
-            // 
-            this.button9.AutoSize = true;
-            this.button9.BackColor = System.Drawing.Color.Gray;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button9.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button9.Location = new System.Drawing.Point(266, 168);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(20, 20);
-            this.button9.TabIndex = 113;
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button10
-            // 
-            this.button10.AutoSize = true;
-            this.button10.BackColor = System.Drawing.Color.Gray;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button10.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button10.Location = new System.Drawing.Point(266, 128);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(20, 20);
-            this.button10.TabIndex = 112;
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.AutoSize = true;
-            this.button11.BackColor = System.Drawing.Color.Gray;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button11.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button11.Location = new System.Drawing.Point(266, 92);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(20, 20);
-            this.button11.TabIndex = 111;
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.AutoSize = true;
-            this.button12.BackColor = System.Drawing.Color.Gray;
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button12.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button12.Location = new System.Drawing.Point(266, 55);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(20, 20);
-            this.button12.TabIndex = 110;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // button37
-            // 
-            this.button37.AutoSize = true;
-            this.button37.BackColor = System.Drawing.Color.Gray;
-            this.button37.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button37.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button37.Location = new System.Drawing.Point(266, 19);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(20, 20);
-            this.button37.TabIndex = 109;
-            this.button37.UseVisualStyleBackColor = false;
-            // 
-            // button38
-            // 
-            this.button38.AutoSize = true;
-            this.button38.BackColor = System.Drawing.Color.Gray;
-            this.button38.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button38.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button38.Location = new System.Drawing.Point(126, 168);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(20, 20);
-            this.button38.TabIndex = 108;
-            this.button38.UseVisualStyleBackColor = false;
-            // 
-            // button39
-            // 
-            this.button39.AutoSize = true;
-            this.button39.BackColor = System.Drawing.Color.Gray;
-            this.button39.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button39.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button39.Location = new System.Drawing.Point(126, 128);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(20, 20);
-            this.button39.TabIndex = 107;
-            this.button39.UseVisualStyleBackColor = false;
-            // 
-            // button40
-            // 
-            this.button40.AutoSize = true;
-            this.button40.BackColor = System.Drawing.Color.Gray;
-            this.button40.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button40.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button40.Location = new System.Drawing.Point(126, 92);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(20, 20);
-            this.button40.TabIndex = 106;
-            this.button40.UseVisualStyleBackColor = false;
-            // 
-            // button41
-            // 
-            this.button41.AutoSize = true;
-            this.button41.BackColor = System.Drawing.Color.Gray;
-            this.button41.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button41.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button41.Location = new System.Drawing.Point(126, 55);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(20, 20);
-            this.button41.TabIndex = 105;
-            this.button41.UseVisualStyleBackColor = false;
-            // 
-            // button42
-            // 
-            this.button42.AutoSize = true;
-            this.button42.BackColor = System.Drawing.Color.Gray;
-            this.button42.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button42.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button42.Location = new System.Drawing.Point(126, 19);
-            this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(20, 20);
-            this.button42.TabIndex = 104;
-            this.button42.UseVisualStyleBackColor = false;
-            // 
-            // button43
-            // 
-            this.button43.AutoSize = true;
-            this.button43.BackColor = System.Drawing.Color.Gray;
-            this.button43.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button43.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button43.Location = new System.Drawing.Point(231, 168);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(20, 20);
-            this.button43.TabIndex = 103;
-            this.button43.UseVisualStyleBackColor = false;
-            // 
-            // button44
-            // 
-            this.button44.AutoSize = true;
-            this.button44.BackColor = System.Drawing.Color.Gray;
-            this.button44.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button44.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button44.Location = new System.Drawing.Point(196, 168);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(20, 20);
-            this.button44.TabIndex = 102;
-            this.button44.UseVisualStyleBackColor = false;
-            // 
-            // button45
-            // 
-            this.button45.AutoSize = true;
-            this.button45.BackColor = System.Drawing.Color.Gray;
-            this.button45.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button45.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button45.Location = new System.Drawing.Point(161, 168);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(20, 20);
-            this.button45.TabIndex = 101;
-            this.button45.UseVisualStyleBackColor = false;
-            // 
-            // button46
-            // 
-            this.button46.AutoSize = true;
-            this.button46.BackColor = System.Drawing.Color.Gray;
-            this.button46.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button46.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button46.Location = new System.Drawing.Point(91, 168);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(20, 20);
-            this.button46.TabIndex = 100;
-            this.button46.UseVisualStyleBackColor = false;
-            // 
-            // button47
-            // 
-            this.button47.AutoSize = true;
-            this.button47.BackColor = System.Drawing.Color.Gray;
-            this.button47.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button47.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button47.Location = new System.Drawing.Point(56, 168);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(20, 20);
-            this.button47.TabIndex = 99;
-            this.button47.UseVisualStyleBackColor = false;
-            // 
-            // button48
-            // 
-            this.button48.AutoSize = true;
-            this.button48.BackColor = System.Drawing.Color.Gray;
-            this.button48.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button48.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button48.Location = new System.Drawing.Point(21, 168);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(20, 20);
-            this.button48.TabIndex = 98;
-            this.button48.UseVisualStyleBackColor = false;
-            // 
-            // button49
-            // 
-            this.button49.AutoSize = true;
-            this.button49.BackColor = System.Drawing.Color.Gray;
-            this.button49.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button49.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button49.Location = new System.Drawing.Point(231, 128);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(20, 20);
-            this.button49.TabIndex = 97;
-            this.button49.UseVisualStyleBackColor = false;
-            // 
-            // button50
-            // 
-            this.button50.AutoSize = true;
-            this.button50.BackColor = System.Drawing.Color.Gray;
-            this.button50.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button50.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button50.Location = new System.Drawing.Point(196, 128);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(20, 20);
-            this.button50.TabIndex = 96;
-            this.button50.UseVisualStyleBackColor = false;
-            // 
-            // button51
-            // 
-            this.button51.AutoSize = true;
-            this.button51.BackColor = System.Drawing.Color.Gray;
-            this.button51.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button51.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button51.Location = new System.Drawing.Point(161, 128);
-            this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(20, 20);
-            this.button51.TabIndex = 95;
-            this.button51.UseVisualStyleBackColor = false;
-            // 
-            // button52
-            // 
-            this.button52.AutoSize = true;
-            this.button52.BackColor = System.Drawing.Color.Gray;
-            this.button52.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button52.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button52.Location = new System.Drawing.Point(91, 128);
-            this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(20, 20);
-            this.button52.TabIndex = 94;
-            this.button52.UseVisualStyleBackColor = false;
-            // 
-            // button53
-            // 
-            this.button53.AutoSize = true;
-            this.button53.BackColor = System.Drawing.Color.Gray;
-            this.button53.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button53.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button53.Location = new System.Drawing.Point(56, 128);
-            this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(20, 20);
-            this.button53.TabIndex = 93;
-            this.button53.UseVisualStyleBackColor = false;
-            // 
-            // button54
-            // 
-            this.button54.AutoSize = true;
-            this.button54.BackColor = System.Drawing.Color.Gray;
-            this.button54.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button54.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button54.Location = new System.Drawing.Point(21, 128);
-            this.button54.Name = "button54";
-            this.button54.Size = new System.Drawing.Size(20, 20);
-            this.button54.TabIndex = 92;
-            this.button54.UseVisualStyleBackColor = false;
-            // 
-            // button55
-            // 
-            this.button55.AutoSize = true;
-            this.button55.BackColor = System.Drawing.Color.Gray;
-            this.button55.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button55.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button55.Location = new System.Drawing.Point(231, 92);
-            this.button55.Name = "button55";
-            this.button55.Size = new System.Drawing.Size(20, 20);
-            this.button55.TabIndex = 91;
-            this.button55.UseVisualStyleBackColor = false;
-            // 
-            // button56
-            // 
-            this.button56.AutoSize = true;
-            this.button56.BackColor = System.Drawing.Color.Gray;
-            this.button56.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button56.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button56.Location = new System.Drawing.Point(196, 92);
-            this.button56.Name = "button56";
-            this.button56.Size = new System.Drawing.Size(20, 20);
-            this.button56.TabIndex = 90;
-            this.button56.UseVisualStyleBackColor = false;
-            // 
-            // button57
-            // 
-            this.button57.AutoSize = true;
-            this.button57.BackColor = System.Drawing.Color.Gray;
-            this.button57.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button57.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button57.Location = new System.Drawing.Point(161, 92);
-            this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(20, 20);
-            this.button57.TabIndex = 89;
-            this.button57.UseVisualStyleBackColor = false;
-            // 
-            // button58
-            // 
-            this.button58.AutoSize = true;
-            this.button58.BackColor = System.Drawing.Color.Gray;
-            this.button58.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button58.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button58.Location = new System.Drawing.Point(91, 92);
-            this.button58.Name = "button58";
-            this.button58.Size = new System.Drawing.Size(20, 20);
-            this.button58.TabIndex = 88;
-            this.button58.UseVisualStyleBackColor = false;
-            // 
-            // button59
-            // 
-            this.button59.AutoSize = true;
-            this.button59.BackColor = System.Drawing.Color.Gray;
-            this.button59.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button59.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button59.Location = new System.Drawing.Point(56, 92);
-            this.button59.Name = "button59";
-            this.button59.Size = new System.Drawing.Size(20, 20);
-            this.button59.TabIndex = 87;
-            this.button59.UseVisualStyleBackColor = false;
-            // 
-            // button60
-            // 
-            this.button60.AutoSize = true;
-            this.button60.BackColor = System.Drawing.Color.Gray;
-            this.button60.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button60.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button60.Location = new System.Drawing.Point(21, 92);
-            this.button60.Name = "button60";
-            this.button60.Size = new System.Drawing.Size(20, 20);
-            this.button60.TabIndex = 86;
-            this.button60.UseVisualStyleBackColor = false;
-            // 
-            // button61
-            // 
-            this.button61.AutoSize = true;
-            this.button61.BackColor = System.Drawing.Color.Gray;
-            this.button61.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button61.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button61.Location = new System.Drawing.Point(231, 55);
-            this.button61.Name = "button61";
-            this.button61.Size = new System.Drawing.Size(20, 20);
-            this.button61.TabIndex = 85;
-            this.button61.UseVisualStyleBackColor = false;
-            // 
-            // button62
-            // 
-            this.button62.AutoSize = true;
-            this.button62.BackColor = System.Drawing.Color.Gray;
-            this.button62.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button62.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button62.Location = new System.Drawing.Point(196, 55);
-            this.button62.Name = "button62";
-            this.button62.Size = new System.Drawing.Size(20, 20);
-            this.button62.TabIndex = 84;
-            this.button62.UseVisualStyleBackColor = false;
-            // 
-            // button161
-            // 
-            this.button161.AutoSize = true;
-            this.button161.BackColor = System.Drawing.Color.Gray;
-            this.button161.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button161.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button161.Location = new System.Drawing.Point(161, 55);
-            this.button161.Name = "button161";
-            this.button161.Size = new System.Drawing.Size(20, 20);
-            this.button161.TabIndex = 83;
-            this.button161.UseVisualStyleBackColor = false;
-            // 
-            // button162
-            // 
-            this.button162.AutoSize = true;
-            this.button162.BackColor = System.Drawing.Color.Gray;
-            this.button162.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button162.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button162.Location = new System.Drawing.Point(91, 55);
-            this.button162.Name = "button162";
-            this.button162.Size = new System.Drawing.Size(20, 20);
-            this.button162.TabIndex = 82;
-            this.button162.UseVisualStyleBackColor = false;
-            // 
-            // button163
-            // 
-            this.button163.AutoSize = true;
-            this.button163.BackColor = System.Drawing.Color.Gray;
-            this.button163.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button163.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button163.Location = new System.Drawing.Point(56, 55);
-            this.button163.Name = "button163";
-            this.button163.Size = new System.Drawing.Size(20, 20);
-            this.button163.TabIndex = 81;
-            this.button163.UseVisualStyleBackColor = false;
-            // 
-            // button164
-            // 
-            this.button164.AutoSize = true;
-            this.button164.BackColor = System.Drawing.Color.Gray;
-            this.button164.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button164.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button164.Location = new System.Drawing.Point(21, 55);
-            this.button164.Name = "button164";
-            this.button164.Size = new System.Drawing.Size(20, 20);
-            this.button164.TabIndex = 80;
-            this.button164.UseVisualStyleBackColor = false;
-            // 
-            // button165
-            // 
-            this.button165.AutoSize = true;
-            this.button165.BackColor = System.Drawing.Color.Gray;
-            this.button165.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button165.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button165.Location = new System.Drawing.Point(231, 19);
-            this.button165.Name = "button165";
-            this.button165.Size = new System.Drawing.Size(20, 20);
-            this.button165.TabIndex = 79;
-            this.button165.UseVisualStyleBackColor = false;
-            // 
-            // button166
-            // 
-            this.button166.AutoSize = true;
-            this.button166.BackColor = System.Drawing.Color.Gray;
-            this.button166.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button166.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button166.Location = new System.Drawing.Point(196, 19);
-            this.button166.Name = "button166";
-            this.button166.Size = new System.Drawing.Size(20, 20);
-            this.button166.TabIndex = 78;
-            this.button166.UseVisualStyleBackColor = false;
-            // 
-            // button167
-            // 
-            this.button167.AutoSize = true;
-            this.button167.BackColor = System.Drawing.Color.Gray;
-            this.button167.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button167.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button167.Location = new System.Drawing.Point(161, 19);
-            this.button167.Name = "button167";
-            this.button167.Size = new System.Drawing.Size(20, 20);
-            this.button167.TabIndex = 77;
-            this.button167.UseVisualStyleBackColor = false;
-            // 
-            // button168
-            // 
-            this.button168.AutoSize = true;
-            this.button168.BackColor = System.Drawing.Color.Gray;
-            this.button168.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button168.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button168.Location = new System.Drawing.Point(91, 19);
-            this.button168.Name = "button168";
-            this.button168.Size = new System.Drawing.Size(20, 20);
-            this.button168.TabIndex = 76;
-            this.button168.UseVisualStyleBackColor = false;
-            // 
-            // button169
-            // 
-            this.button169.AutoSize = true;
-            this.button169.BackColor = System.Drawing.Color.Gray;
-            this.button169.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button169.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button169.Location = new System.Drawing.Point(56, 19);
-            this.button169.Name = "button169";
-            this.button169.Size = new System.Drawing.Size(20, 20);
-            this.button169.TabIndex = 75;
-            this.button169.UseVisualStyleBackColor = false;
-            // 
-            // button170
-            // 
-            this.button170.AutoSize = true;
-            this.button170.BackColor = System.Drawing.Color.Gray;
-            this.button170.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button170.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button170.Location = new System.Drawing.Point(21, 19);
-            this.button170.Name = "button170";
-            this.button170.Size = new System.Drawing.Size(20, 20);
-            this.button170.TabIndex = 74;
-            this.button170.UseVisualStyleBackColor = false;
+            // btnLED80
+            // 
+            this.btnLED80.AutoSize = true;
+            this.btnLED80.BackColor = System.Drawing.Color.Gray;
+            this.btnLED80.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED80.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED80.Location = new System.Drawing.Point(266, 168);
+            this.btnLED80.Name = "btnLED80";
+            this.btnLED80.Size = new System.Drawing.Size(20, 20);
+            this.btnLED80.TabIndex = 113;
+            this.btnLED80.UseVisualStyleBackColor = false;
+            // 
+            // btnLED72
+            // 
+            this.btnLED72.AutoSize = true;
+            this.btnLED72.BackColor = System.Drawing.Color.Gray;
+            this.btnLED72.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED72.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED72.Location = new System.Drawing.Point(266, 128);
+            this.btnLED72.Name = "btnLED72";
+            this.btnLED72.Size = new System.Drawing.Size(20, 20);
+            this.btnLED72.TabIndex = 112;
+            this.btnLED72.UseVisualStyleBackColor = false;
+            // 
+            // btnLED64
+            // 
+            this.btnLED64.AutoSize = true;
+            this.btnLED64.BackColor = System.Drawing.Color.Gray;
+            this.btnLED64.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED64.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED64.Location = new System.Drawing.Point(266, 92);
+            this.btnLED64.Name = "btnLED64";
+            this.btnLED64.Size = new System.Drawing.Size(20, 20);
+            this.btnLED64.TabIndex = 111;
+            this.btnLED64.UseVisualStyleBackColor = false;
+            // 
+            // btnLED56
+            // 
+            this.btnLED56.AutoSize = true;
+            this.btnLED56.BackColor = System.Drawing.Color.Gray;
+            this.btnLED56.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED56.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED56.Location = new System.Drawing.Point(266, 55);
+            this.btnLED56.Name = "btnLED56";
+            this.btnLED56.Size = new System.Drawing.Size(20, 20);
+            this.btnLED56.TabIndex = 110;
+            this.btnLED56.UseVisualStyleBackColor = false;
+            // 
+            // btnLED48
+            // 
+            this.btnLED48.AutoSize = true;
+            this.btnLED48.BackColor = System.Drawing.Color.Gray;
+            this.btnLED48.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED48.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED48.Location = new System.Drawing.Point(266, 19);
+            this.btnLED48.Name = "btnLED48";
+            this.btnLED48.Size = new System.Drawing.Size(20, 20);
+            this.btnLED48.TabIndex = 109;
+            this.btnLED48.UseVisualStyleBackColor = false;
+            // 
+            // btnLED76
+            // 
+            this.btnLED76.AutoSize = true;
+            this.btnLED76.BackColor = System.Drawing.Color.Gray;
+            this.btnLED76.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED76.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED76.Location = new System.Drawing.Point(126, 168);
+            this.btnLED76.Name = "btnLED76";
+            this.btnLED76.Size = new System.Drawing.Size(20, 20);
+            this.btnLED76.TabIndex = 108;
+            this.btnLED76.UseVisualStyleBackColor = false;
+            // 
+            // btnLED68
+            // 
+            this.btnLED68.AutoSize = true;
+            this.btnLED68.BackColor = System.Drawing.Color.Gray;
+            this.btnLED68.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED68.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED68.Location = new System.Drawing.Point(126, 128);
+            this.btnLED68.Name = "btnLED68";
+            this.btnLED68.Size = new System.Drawing.Size(20, 20);
+            this.btnLED68.TabIndex = 107;
+            this.btnLED68.UseVisualStyleBackColor = false;
+            // 
+            // btnLED60
+            // 
+            this.btnLED60.AutoSize = true;
+            this.btnLED60.BackColor = System.Drawing.Color.Gray;
+            this.btnLED60.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED60.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED60.Location = new System.Drawing.Point(126, 92);
+            this.btnLED60.Name = "btnLED60";
+            this.btnLED60.Size = new System.Drawing.Size(20, 20);
+            this.btnLED60.TabIndex = 106;
+            this.btnLED60.UseVisualStyleBackColor = false;
+            // 
+            // btnLED52
+            // 
+            this.btnLED52.AutoSize = true;
+            this.btnLED52.BackColor = System.Drawing.Color.Gray;
+            this.btnLED52.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED52.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED52.Location = new System.Drawing.Point(126, 55);
+            this.btnLED52.Name = "btnLED52";
+            this.btnLED52.Size = new System.Drawing.Size(20, 20);
+            this.btnLED52.TabIndex = 105;
+            this.btnLED52.UseVisualStyleBackColor = false;
+            // 
+            // btnLED44
+            // 
+            this.btnLED44.AutoSize = true;
+            this.btnLED44.BackColor = System.Drawing.Color.Gray;
+            this.btnLED44.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED44.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED44.Location = new System.Drawing.Point(126, 19);
+            this.btnLED44.Name = "btnLED44";
+            this.btnLED44.Size = new System.Drawing.Size(20, 20);
+            this.btnLED44.TabIndex = 104;
+            this.btnLED44.UseVisualStyleBackColor = false;
+            // 
+            // btnLED79
+            // 
+            this.btnLED79.AutoSize = true;
+            this.btnLED79.BackColor = System.Drawing.Color.Gray;
+            this.btnLED79.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED79.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED79.Location = new System.Drawing.Point(231, 168);
+            this.btnLED79.Name = "btnLED79";
+            this.btnLED79.Size = new System.Drawing.Size(20, 20);
+            this.btnLED79.TabIndex = 103;
+            this.btnLED79.UseVisualStyleBackColor = false;
+            // 
+            // btnLED78
+            // 
+            this.btnLED78.AutoSize = true;
+            this.btnLED78.BackColor = System.Drawing.Color.Gray;
+            this.btnLED78.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED78.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED78.Location = new System.Drawing.Point(196, 168);
+            this.btnLED78.Name = "btnLED78";
+            this.btnLED78.Size = new System.Drawing.Size(20, 20);
+            this.btnLED78.TabIndex = 102;
+            this.btnLED78.UseVisualStyleBackColor = false;
+            // 
+            // btnLED77
+            // 
+            this.btnLED77.AutoSize = true;
+            this.btnLED77.BackColor = System.Drawing.Color.Gray;
+            this.btnLED77.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED77.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED77.Location = new System.Drawing.Point(161, 168);
+            this.btnLED77.Name = "btnLED77";
+            this.btnLED77.Size = new System.Drawing.Size(20, 20);
+            this.btnLED77.TabIndex = 101;
+            this.btnLED77.UseVisualStyleBackColor = false;
+            // 
+            // btnLED75
+            // 
+            this.btnLED75.AutoSize = true;
+            this.btnLED75.BackColor = System.Drawing.Color.Gray;
+            this.btnLED75.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED75.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED75.Location = new System.Drawing.Point(91, 168);
+            this.btnLED75.Name = "btnLED75";
+            this.btnLED75.Size = new System.Drawing.Size(20, 20);
+            this.btnLED75.TabIndex = 100;
+            this.btnLED75.UseVisualStyleBackColor = false;
+            // 
+            // btnLED74
+            // 
+            this.btnLED74.AutoSize = true;
+            this.btnLED74.BackColor = System.Drawing.Color.Gray;
+            this.btnLED74.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED74.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED74.Location = new System.Drawing.Point(56, 168);
+            this.btnLED74.Name = "btnLED74";
+            this.btnLED74.Size = new System.Drawing.Size(20, 20);
+            this.btnLED74.TabIndex = 99;
+            this.btnLED74.UseVisualStyleBackColor = false;
+            // 
+            // btnLED73
+            // 
+            this.btnLED73.AutoSize = true;
+            this.btnLED73.BackColor = System.Drawing.Color.Gray;
+            this.btnLED73.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED73.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED73.Location = new System.Drawing.Point(21, 168);
+            this.btnLED73.Name = "btnLED73";
+            this.btnLED73.Size = new System.Drawing.Size(20, 20);
+            this.btnLED73.TabIndex = 98;
+            this.btnLED73.UseVisualStyleBackColor = false;
+            // 
+            // btnLED71
+            // 
+            this.btnLED71.AutoSize = true;
+            this.btnLED71.BackColor = System.Drawing.Color.Gray;
+            this.btnLED71.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED71.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED71.Location = new System.Drawing.Point(231, 128);
+            this.btnLED71.Name = "btnLED71";
+            this.btnLED71.Size = new System.Drawing.Size(20, 20);
+            this.btnLED71.TabIndex = 97;
+            this.btnLED71.UseVisualStyleBackColor = false;
+            // 
+            // btnLED70
+            // 
+            this.btnLED70.AutoSize = true;
+            this.btnLED70.BackColor = System.Drawing.Color.Gray;
+            this.btnLED70.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED70.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED70.Location = new System.Drawing.Point(196, 128);
+            this.btnLED70.Name = "btnLED70";
+            this.btnLED70.Size = new System.Drawing.Size(20, 20);
+            this.btnLED70.TabIndex = 96;
+            this.btnLED70.UseVisualStyleBackColor = false;
+            // 
+            // btnLED69
+            // 
+            this.btnLED69.AutoSize = true;
+            this.btnLED69.BackColor = System.Drawing.Color.Gray;
+            this.btnLED69.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED69.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED69.Location = new System.Drawing.Point(161, 128);
+            this.btnLED69.Name = "btnLED69";
+            this.btnLED69.Size = new System.Drawing.Size(20, 20);
+            this.btnLED69.TabIndex = 95;
+            this.btnLED69.UseVisualStyleBackColor = false;
+            // 
+            // btnLED67
+            // 
+            this.btnLED67.AutoSize = true;
+            this.btnLED67.BackColor = System.Drawing.Color.Gray;
+            this.btnLED67.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED67.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED67.Location = new System.Drawing.Point(91, 128);
+            this.btnLED67.Name = "btnLED67";
+            this.btnLED67.Size = new System.Drawing.Size(20, 20);
+            this.btnLED67.TabIndex = 94;
+            this.btnLED67.UseVisualStyleBackColor = false;
+            // 
+            // btnLED66
+            // 
+            this.btnLED66.AutoSize = true;
+            this.btnLED66.BackColor = System.Drawing.Color.Gray;
+            this.btnLED66.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED66.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED66.Location = new System.Drawing.Point(56, 128);
+            this.btnLED66.Name = "btnLED66";
+            this.btnLED66.Size = new System.Drawing.Size(20, 20);
+            this.btnLED66.TabIndex = 93;
+            this.btnLED66.UseVisualStyleBackColor = false;
+            // 
+            // btnLED65
+            // 
+            this.btnLED65.AutoSize = true;
+            this.btnLED65.BackColor = System.Drawing.Color.Gray;
+            this.btnLED65.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED65.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED65.Location = new System.Drawing.Point(21, 128);
+            this.btnLED65.Name = "btnLED65";
+            this.btnLED65.Size = new System.Drawing.Size(20, 20);
+            this.btnLED65.TabIndex = 92;
+            this.btnLED65.UseVisualStyleBackColor = false;
+            // 
+            // btnLED63
+            // 
+            this.btnLED63.AutoSize = true;
+            this.btnLED63.BackColor = System.Drawing.Color.Gray;
+            this.btnLED63.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED63.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED63.Location = new System.Drawing.Point(231, 92);
+            this.btnLED63.Name = "btnLED63";
+            this.btnLED63.Size = new System.Drawing.Size(20, 20);
+            this.btnLED63.TabIndex = 91;
+            this.btnLED63.UseVisualStyleBackColor = false;
+            // 
+            // btnLED62
+            // 
+            this.btnLED62.AutoSize = true;
+            this.btnLED62.BackColor = System.Drawing.Color.Gray;
+            this.btnLED62.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED62.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED62.Location = new System.Drawing.Point(196, 92);
+            this.btnLED62.Name = "btnLED62";
+            this.btnLED62.Size = new System.Drawing.Size(20, 20);
+            this.btnLED62.TabIndex = 90;
+            this.btnLED62.UseVisualStyleBackColor = false;
+            // 
+            // btnLED61
+            // 
+            this.btnLED61.AutoSize = true;
+            this.btnLED61.BackColor = System.Drawing.Color.Gray;
+            this.btnLED61.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED61.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED61.Location = new System.Drawing.Point(161, 92);
+            this.btnLED61.Name = "btnLED61";
+            this.btnLED61.Size = new System.Drawing.Size(20, 20);
+            this.btnLED61.TabIndex = 89;
+            this.btnLED61.UseVisualStyleBackColor = false;
+            // 
+            // btnLED59
+            // 
+            this.btnLED59.AutoSize = true;
+            this.btnLED59.BackColor = System.Drawing.Color.Gray;
+            this.btnLED59.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED59.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED59.Location = new System.Drawing.Point(91, 92);
+            this.btnLED59.Name = "btnLED59";
+            this.btnLED59.Size = new System.Drawing.Size(20, 20);
+            this.btnLED59.TabIndex = 88;
+            this.btnLED59.UseVisualStyleBackColor = false;
+            // 
+            // btnLED58
+            // 
+            this.btnLED58.AutoSize = true;
+            this.btnLED58.BackColor = System.Drawing.Color.Gray;
+            this.btnLED58.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED58.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED58.Location = new System.Drawing.Point(56, 92);
+            this.btnLED58.Name = "btnLED58";
+            this.btnLED58.Size = new System.Drawing.Size(20, 20);
+            this.btnLED58.TabIndex = 87;
+            this.btnLED58.UseVisualStyleBackColor = false;
+            // 
+            // btnLED57
+            // 
+            this.btnLED57.AutoSize = true;
+            this.btnLED57.BackColor = System.Drawing.Color.Gray;
+            this.btnLED57.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED57.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED57.Location = new System.Drawing.Point(21, 92);
+            this.btnLED57.Name = "btnLED57";
+            this.btnLED57.Size = new System.Drawing.Size(20, 20);
+            this.btnLED57.TabIndex = 86;
+            this.btnLED57.UseVisualStyleBackColor = false;
+            // 
+            // btnLED55
+            // 
+            this.btnLED55.AutoSize = true;
+            this.btnLED55.BackColor = System.Drawing.Color.Gray;
+            this.btnLED55.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED55.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED55.Location = new System.Drawing.Point(231, 55);
+            this.btnLED55.Name = "btnLED55";
+            this.btnLED55.Size = new System.Drawing.Size(20, 20);
+            this.btnLED55.TabIndex = 85;
+            this.btnLED55.UseVisualStyleBackColor = false;
+            // 
+            // btnLED54
+            // 
+            this.btnLED54.AutoSize = true;
+            this.btnLED54.BackColor = System.Drawing.Color.Gray;
+            this.btnLED54.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED54.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED54.Location = new System.Drawing.Point(196, 55);
+            this.btnLED54.Name = "btnLED54";
+            this.btnLED54.Size = new System.Drawing.Size(20, 20);
+            this.btnLED54.TabIndex = 84;
+            this.btnLED54.UseVisualStyleBackColor = false;
+            // 
+            // btnLED53
+            // 
+            this.btnLED53.AutoSize = true;
+            this.btnLED53.BackColor = System.Drawing.Color.Gray;
+            this.btnLED53.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED53.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED53.Location = new System.Drawing.Point(161, 55);
+            this.btnLED53.Name = "btnLED53";
+            this.btnLED53.Size = new System.Drawing.Size(20, 20);
+            this.btnLED53.TabIndex = 83;
+            this.btnLED53.UseVisualStyleBackColor = false;
+            // 
+            // btnLED51
+            // 
+            this.btnLED51.AutoSize = true;
+            this.btnLED51.BackColor = System.Drawing.Color.Gray;
+            this.btnLED51.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED51.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED51.Location = new System.Drawing.Point(91, 55);
+            this.btnLED51.Name = "btnLED51";
+            this.btnLED51.Size = new System.Drawing.Size(20, 20);
+            this.btnLED51.TabIndex = 82;
+            this.btnLED51.UseVisualStyleBackColor = false;
+            // 
+            // btnLED50
+            // 
+            this.btnLED50.AutoSize = true;
+            this.btnLED50.BackColor = System.Drawing.Color.Gray;
+            this.btnLED50.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED50.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED50.Location = new System.Drawing.Point(56, 55);
+            this.btnLED50.Name = "btnLED50";
+            this.btnLED50.Size = new System.Drawing.Size(20, 20);
+            this.btnLED50.TabIndex = 81;
+            this.btnLED50.UseVisualStyleBackColor = false;
+            // 
+            // btnLED49
+            // 
+            this.btnLED49.AutoSize = true;
+            this.btnLED49.BackColor = System.Drawing.Color.Gray;
+            this.btnLED49.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED49.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED49.Location = new System.Drawing.Point(21, 55);
+            this.btnLED49.Name = "btnLED49";
+            this.btnLED49.Size = new System.Drawing.Size(20, 20);
+            this.btnLED49.TabIndex = 80;
+            this.btnLED49.UseVisualStyleBackColor = false;
+            // 
+            // btnLED47
+            // 
+            this.btnLED47.AutoSize = true;
+            this.btnLED47.BackColor = System.Drawing.Color.Gray;
+            this.btnLED47.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED47.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED47.Location = new System.Drawing.Point(231, 19);
+            this.btnLED47.Name = "btnLED47";
+            this.btnLED47.Size = new System.Drawing.Size(20, 20);
+            this.btnLED47.TabIndex = 79;
+            this.btnLED47.UseVisualStyleBackColor = false;
+            // 
+            // btnLED46
+            // 
+            this.btnLED46.AutoSize = true;
+            this.btnLED46.BackColor = System.Drawing.Color.Gray;
+            this.btnLED46.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED46.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED46.Location = new System.Drawing.Point(196, 19);
+            this.btnLED46.Name = "btnLED46";
+            this.btnLED46.Size = new System.Drawing.Size(20, 20);
+            this.btnLED46.TabIndex = 78;
+            this.btnLED46.UseVisualStyleBackColor = false;
+            // 
+            // btnLED45
+            // 
+            this.btnLED45.AutoSize = true;
+            this.btnLED45.BackColor = System.Drawing.Color.Gray;
+            this.btnLED45.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED45.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED45.Location = new System.Drawing.Point(161, 19);
+            this.btnLED45.Name = "btnLED45";
+            this.btnLED45.Size = new System.Drawing.Size(20, 20);
+            this.btnLED45.TabIndex = 77;
+            this.btnLED45.UseVisualStyleBackColor = false;
+            // 
+            // btnLED43
+            // 
+            this.btnLED43.AutoSize = true;
+            this.btnLED43.BackColor = System.Drawing.Color.Gray;
+            this.btnLED43.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED43.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED43.Location = new System.Drawing.Point(91, 19);
+            this.btnLED43.Name = "btnLED43";
+            this.btnLED43.Size = new System.Drawing.Size(20, 20);
+            this.btnLED43.TabIndex = 76;
+            this.btnLED43.UseVisualStyleBackColor = false;
+            // 
+            // btnLED42
+            // 
+            this.btnLED42.AutoSize = true;
+            this.btnLED42.BackColor = System.Drawing.Color.Gray;
+            this.btnLED42.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED42.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED42.Location = new System.Drawing.Point(56, 19);
+            this.btnLED42.Name = "btnLED42";
+            this.btnLED42.Size = new System.Drawing.Size(20, 20);
+            this.btnLED42.TabIndex = 75;
+            this.btnLED42.UseVisualStyleBackColor = false;
+            // 
+            // btnLED41
+            // 
+            this.btnLED41.AutoSize = true;
+            this.btnLED41.BackColor = System.Drawing.Color.Gray;
+            this.btnLED41.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED41.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED41.Location = new System.Drawing.Point(21, 19);
+            this.btnLED41.Name = "btnLED41";
+            this.btnLED41.Size = new System.Drawing.Size(20, 20);
+            this.btnLED41.TabIndex = 74;
+            this.btnLED41.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.button156);
-            this.panel1.Controls.Add(this.button157);
-            this.panel1.Controls.Add(this.button158);
-            this.panel1.Controls.Add(this.button159);
-            this.panel1.Controls.Add(this.button160);
-            this.panel1.Controls.Add(this.button151);
-            this.panel1.Controls.Add(this.button152);
-            this.panel1.Controls.Add(this.button153);
-            this.panel1.Controls.Add(this.button154);
-            this.panel1.Controls.Add(this.button155);
-            this.panel1.Controls.Add(this.button31);
-            this.panel1.Controls.Add(this.button32);
-            this.panel1.Controls.Add(this.button33);
-            this.panel1.Controls.Add(this.button34);
-            this.panel1.Controls.Add(this.button35);
-            this.panel1.Controls.Add(this.button36);
-            this.panel1.Controls.Add(this.button25);
-            this.panel1.Controls.Add(this.button26);
-            this.panel1.Controls.Add(this.button27);
-            this.panel1.Controls.Add(this.button28);
-            this.panel1.Controls.Add(this.button29);
-            this.panel1.Controls.Add(this.button30);
-            this.panel1.Controls.Add(this.button19);
-            this.panel1.Controls.Add(this.button20);
-            this.panel1.Controls.Add(this.button21);
-            this.panel1.Controls.Add(this.button22);
-            this.panel1.Controls.Add(this.button23);
-            this.panel1.Controls.Add(this.button24);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button15);
-            this.panel1.Controls.Add(this.button16);
-            this.panel1.Controls.Add(this.button17);
-            this.panel1.Controls.Add(this.button18);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnLED40);
+            this.panel1.Controls.Add(this.btnLED32);
+            this.panel1.Controls.Add(this.btnLED24);
+            this.panel1.Controls.Add(this.btnLED16);
+            this.panel1.Controls.Add(this.btnLED8);
+            this.panel1.Controls.Add(this.btnLED36);
+            this.panel1.Controls.Add(this.btnLED28);
+            this.panel1.Controls.Add(this.btnLED20);
+            this.panel1.Controls.Add(this.btnLED12);
+            this.panel1.Controls.Add(this.btnLED4);
+            this.panel1.Controls.Add(this.btnLED39);
+            this.panel1.Controls.Add(this.btnLED38);
+            this.panel1.Controls.Add(this.btnLED37);
+            this.panel1.Controls.Add(this.btnLED35);
+            this.panel1.Controls.Add(this.btnLED34);
+            this.panel1.Controls.Add(this.btnLED33);
+            this.panel1.Controls.Add(this.btnLED31);
+            this.panel1.Controls.Add(this.btnLED30);
+            this.panel1.Controls.Add(this.btnLED29);
+            this.panel1.Controls.Add(this.btnLED27);
+            this.panel1.Controls.Add(this.btnLED26);
+            this.panel1.Controls.Add(this.btnLED25);
+            this.panel1.Controls.Add(this.btnLED23);
+            this.panel1.Controls.Add(this.btnLED22);
+            this.panel1.Controls.Add(this.btnLED21);
+            this.panel1.Controls.Add(this.btnLED19);
+            this.panel1.Controls.Add(this.btnLED18);
+            this.panel1.Controls.Add(this.btnLED17);
+            this.panel1.Controls.Add(this.btnLED15);
+            this.panel1.Controls.Add(this.btnLED14);
+            this.panel1.Controls.Add(this.btnLED13);
+            this.panel1.Controls.Add(this.btnLED11);
+            this.panel1.Controls.Add(this.btnLED10);
+            this.panel1.Controls.Add(this.btnLED9);
+            this.panel1.Controls.Add(this.btnLED7);
+            this.panel1.Controls.Add(this.btnLED6);
+            this.panel1.Controls.Add(this.btnLED5);
+            this.panel1.Controls.Add(this.btnLED3);
+            this.panel1.Controls.Add(this.btnLED2);
+            this.panel1.Controls.Add(this.btnLED1);
             this.panel1.Location = new System.Drawing.Point(44, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(307, 207);
             this.panel1.TabIndex = 34;
             // 
-            // button156
-            // 
-            this.button156.AutoSize = true;
-            this.button156.BackColor = System.Drawing.Color.Gray;
-            this.button156.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button156.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button156.Location = new System.Drawing.Point(267, 168);
-            this.button156.Name = "button156";
-            this.button156.Size = new System.Drawing.Size(20, 20);
-            this.button156.TabIndex = 73;
-            this.button156.UseVisualStyleBackColor = false;
-            // 
-            // button157
-            // 
-            this.button157.AutoSize = true;
-            this.button157.BackColor = System.Drawing.Color.Gray;
-            this.button157.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button157.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button157.Location = new System.Drawing.Point(267, 128);
-            this.button157.Name = "button157";
-            this.button157.Size = new System.Drawing.Size(20, 20);
-            this.button157.TabIndex = 72;
-            this.button157.UseVisualStyleBackColor = false;
-            // 
-            // button158
-            // 
-            this.button158.AutoSize = true;
-            this.button158.BackColor = System.Drawing.Color.Gray;
-            this.button158.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button158.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button158.Location = new System.Drawing.Point(267, 92);
-            this.button158.Name = "button158";
-            this.button158.Size = new System.Drawing.Size(20, 20);
-            this.button158.TabIndex = 71;
-            this.button158.UseVisualStyleBackColor = false;
-            // 
-            // button159
-            // 
-            this.button159.AutoSize = true;
-            this.button159.BackColor = System.Drawing.Color.Gray;
-            this.button159.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button159.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button159.Location = new System.Drawing.Point(267, 55);
-            this.button159.Name = "button159";
-            this.button159.Size = new System.Drawing.Size(20, 20);
-            this.button159.TabIndex = 70;
-            this.button159.UseVisualStyleBackColor = false;
-            // 
-            // button160
-            // 
-            this.button160.AutoSize = true;
-            this.button160.BackColor = System.Drawing.Color.Gray;
-            this.button160.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button160.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button160.Location = new System.Drawing.Point(267, 19);
-            this.button160.Name = "button160";
-            this.button160.Size = new System.Drawing.Size(20, 20);
-            this.button160.TabIndex = 69;
-            this.button160.UseVisualStyleBackColor = false;
-            // 
-            // button151
-            // 
-            this.button151.AutoSize = true;
-            this.button151.BackColor = System.Drawing.Color.Gray;
-            this.button151.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button151.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button151.Location = new System.Drawing.Point(127, 168);
-            this.button151.Name = "button151";
-            this.button151.Size = new System.Drawing.Size(20, 20);
-            this.button151.TabIndex = 68;
-            this.button151.UseVisualStyleBackColor = false;
-            // 
-            // button152
-            // 
-            this.button152.AutoSize = true;
-            this.button152.BackColor = System.Drawing.Color.Gray;
-            this.button152.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button152.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button152.Location = new System.Drawing.Point(127, 128);
-            this.button152.Name = "button152";
-            this.button152.Size = new System.Drawing.Size(20, 20);
-            this.button152.TabIndex = 67;
-            this.button152.UseVisualStyleBackColor = false;
-            // 
-            // button153
-            // 
-            this.button153.AutoSize = true;
-            this.button153.BackColor = System.Drawing.Color.Gray;
-            this.button153.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button153.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button153.Location = new System.Drawing.Point(127, 92);
-            this.button153.Name = "button153";
-            this.button153.Size = new System.Drawing.Size(20, 20);
-            this.button153.TabIndex = 66;
-            this.button153.UseVisualStyleBackColor = false;
-            // 
-            // button154
-            // 
-            this.button154.AutoSize = true;
-            this.button154.BackColor = System.Drawing.Color.Gray;
-            this.button154.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button154.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button154.Location = new System.Drawing.Point(127, 55);
-            this.button154.Name = "button154";
-            this.button154.Size = new System.Drawing.Size(20, 20);
-            this.button154.TabIndex = 65;
-            this.button154.UseVisualStyleBackColor = false;
-            // 
-            // button155
-            // 
-            this.button155.AutoSize = true;
-            this.button155.BackColor = System.Drawing.Color.Gray;
-            this.button155.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button155.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button155.Location = new System.Drawing.Point(127, 19);
-            this.button155.Name = "button155";
-            this.button155.Size = new System.Drawing.Size(20, 20);
-            this.button155.TabIndex = 64;
-            this.button155.UseVisualStyleBackColor = false;
-            // 
-            // button31
-            // 
-            this.button31.AutoSize = true;
-            this.button31.BackColor = System.Drawing.Color.Gray;
-            this.button31.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button31.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button31.Location = new System.Drawing.Point(232, 168);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(20, 20);
-            this.button31.TabIndex = 63;
-            this.button31.UseVisualStyleBackColor = false;
-            // 
-            // button32
-            // 
-            this.button32.AutoSize = true;
-            this.button32.BackColor = System.Drawing.Color.Gray;
-            this.button32.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button32.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button32.Location = new System.Drawing.Point(197, 168);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(20, 20);
-            this.button32.TabIndex = 62;
-            this.button32.UseVisualStyleBackColor = false;
-            // 
-            // button33
-            // 
-            this.button33.AutoSize = true;
-            this.button33.BackColor = System.Drawing.Color.Gray;
-            this.button33.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button33.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button33.Location = new System.Drawing.Point(162, 168);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(20, 20);
-            this.button33.TabIndex = 61;
-            this.button33.UseVisualStyleBackColor = false;
-            // 
-            // button34
-            // 
-            this.button34.AutoSize = true;
-            this.button34.BackColor = System.Drawing.Color.Gray;
-            this.button34.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button34.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button34.Location = new System.Drawing.Point(92, 168);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(20, 20);
-            this.button34.TabIndex = 60;
-            this.button34.UseVisualStyleBackColor = false;
-            // 
-            // button35
-            // 
-            this.button35.AutoSize = true;
-            this.button35.BackColor = System.Drawing.Color.Gray;
-            this.button35.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button35.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button35.Location = new System.Drawing.Point(57, 168);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(20, 20);
-            this.button35.TabIndex = 59;
-            this.button35.UseVisualStyleBackColor = false;
-            // 
-            // button36
-            // 
-            this.button36.AutoSize = true;
-            this.button36.BackColor = System.Drawing.Color.Gray;
-            this.button36.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button36.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button36.Location = new System.Drawing.Point(22, 168);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(20, 20);
-            this.button36.TabIndex = 58;
-            this.button36.UseVisualStyleBackColor = false;
-            // 
-            // button25
-            // 
-            this.button25.AutoSize = true;
-            this.button25.BackColor = System.Drawing.Color.Gray;
-            this.button25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button25.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button25.Location = new System.Drawing.Point(232, 128);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(20, 20);
-            this.button25.TabIndex = 57;
-            this.button25.UseVisualStyleBackColor = false;
-            // 
-            // button26
-            // 
-            this.button26.AutoSize = true;
-            this.button26.BackColor = System.Drawing.Color.Gray;
-            this.button26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button26.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button26.Location = new System.Drawing.Point(197, 128);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(20, 20);
-            this.button26.TabIndex = 56;
-            this.button26.UseVisualStyleBackColor = false;
-            // 
-            // button27
-            // 
-            this.button27.AutoSize = true;
-            this.button27.BackColor = System.Drawing.Color.Gray;
-            this.button27.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button27.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button27.Location = new System.Drawing.Point(162, 128);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(20, 20);
-            this.button27.TabIndex = 55;
-            this.button27.UseVisualStyleBackColor = false;
-            // 
-            // button28
-            // 
-            this.button28.AutoSize = true;
-            this.button28.BackColor = System.Drawing.Color.Gray;
-            this.button28.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button28.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button28.Location = new System.Drawing.Point(92, 128);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(20, 20);
-            this.button28.TabIndex = 54;
-            this.button28.UseVisualStyleBackColor = false;
-            // 
-            // button29
-            // 
-            this.button29.AutoSize = true;
-            this.button29.BackColor = System.Drawing.Color.Gray;
-            this.button29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button29.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button29.Location = new System.Drawing.Point(57, 128);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(20, 20);
-            this.button29.TabIndex = 53;
-            this.button29.UseVisualStyleBackColor = false;
-            // 
-            // button30
-            // 
-            this.button30.AutoSize = true;
-            this.button30.BackColor = System.Drawing.Color.Gray;
-            this.button30.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button30.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button30.Location = new System.Drawing.Point(22, 128);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(20, 20);
-            this.button30.TabIndex = 52;
-            this.button30.UseVisualStyleBackColor = false;
-            // 
-            // button19
-            // 
-            this.button19.AutoSize = true;
-            this.button19.BackColor = System.Drawing.Color.Gray;
-            this.button19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button19.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button19.Location = new System.Drawing.Point(232, 92);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(20, 20);
-            this.button19.TabIndex = 51;
-            this.button19.UseVisualStyleBackColor = false;
-            // 
-            // button20
-            // 
-            this.button20.AutoSize = true;
-            this.button20.BackColor = System.Drawing.Color.Gray;
-            this.button20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button20.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button20.Location = new System.Drawing.Point(197, 92);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(20, 20);
-            this.button20.TabIndex = 50;
-            this.button20.UseVisualStyleBackColor = false;
-            // 
-            // button21
-            // 
-            this.button21.AutoSize = true;
-            this.button21.BackColor = System.Drawing.Color.Gray;
-            this.button21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button21.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button21.Location = new System.Drawing.Point(162, 92);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(20, 20);
-            this.button21.TabIndex = 49;
-            this.button21.UseVisualStyleBackColor = false;
-            // 
-            // button22
-            // 
-            this.button22.AutoSize = true;
-            this.button22.BackColor = System.Drawing.Color.Gray;
-            this.button22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button22.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button22.Location = new System.Drawing.Point(92, 92);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(20, 20);
-            this.button22.TabIndex = 48;
-            this.button22.UseVisualStyleBackColor = false;
-            // 
-            // button23
-            // 
-            this.button23.AutoSize = true;
-            this.button23.BackColor = System.Drawing.Color.Gray;
-            this.button23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button23.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button23.Location = new System.Drawing.Point(57, 92);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(20, 20);
-            this.button23.TabIndex = 47;
-            this.button23.UseVisualStyleBackColor = false;
-            // 
-            // button24
-            // 
-            this.button24.AutoSize = true;
-            this.button24.BackColor = System.Drawing.Color.Gray;
-            this.button24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button24.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button24.Location = new System.Drawing.Point(22, 92);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(20, 20);
-            this.button24.TabIndex = 46;
-            this.button24.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.AutoSize = true;
-            this.button13.BackColor = System.Drawing.Color.Gray;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button13.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button13.Location = new System.Drawing.Point(232, 55);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(20, 20);
-            this.button13.TabIndex = 45;
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // button14
-            // 
-            this.button14.AutoSize = true;
-            this.button14.BackColor = System.Drawing.Color.Gray;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button14.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button14.Location = new System.Drawing.Point(197, 55);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(20, 20);
-            this.button14.TabIndex = 44;
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // button15
-            // 
-            this.button15.AutoSize = true;
-            this.button15.BackColor = System.Drawing.Color.Gray;
-            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button15.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button15.Location = new System.Drawing.Point(162, 55);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(20, 20);
-            this.button15.TabIndex = 43;
-            this.button15.UseVisualStyleBackColor = false;
-            // 
-            // button16
-            // 
-            this.button16.AutoSize = true;
-            this.button16.BackColor = System.Drawing.Color.Gray;
-            this.button16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button16.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button16.Location = new System.Drawing.Point(92, 55);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(20, 20);
-            this.button16.TabIndex = 42;
-            this.button16.UseVisualStyleBackColor = false;
-            // 
-            // button17
-            // 
-            this.button17.AutoSize = true;
-            this.button17.BackColor = System.Drawing.Color.Gray;
-            this.button17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button17.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button17.Location = new System.Drawing.Point(57, 55);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(20, 20);
-            this.button17.TabIndex = 41;
-            this.button17.UseVisualStyleBackColor = false;
-            // 
-            // button18
-            // 
-            this.button18.AutoSize = true;
-            this.button18.BackColor = System.Drawing.Color.Gray;
-            this.button18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button18.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button18.Location = new System.Drawing.Point(22, 55);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(20, 20);
-            this.button18.TabIndex = 40;
-            this.button18.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.AutoSize = true;
-            this.button8.BackColor = System.Drawing.Color.Gray;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button8.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button8.Location = new System.Drawing.Point(232, 19);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(20, 20);
-            this.button8.TabIndex = 39;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.AutoSize = true;
-            this.button7.BackColor = System.Drawing.Color.Gray;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button7.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button7.Location = new System.Drawing.Point(197, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(20, 20);
-            this.button7.TabIndex = 38;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.AutoSize = true;
-            this.button6.BackColor = System.Drawing.Color.Gray;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button6.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button6.Location = new System.Drawing.Point(162, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(20, 20);
-            this.button6.TabIndex = 37;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.AutoSize = true;
-            this.button5.BackColor = System.Drawing.Color.Gray;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button5.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button5.Location = new System.Drawing.Point(92, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(20, 20);
-            this.button5.TabIndex = 36;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button4.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button4.Location = new System.Drawing.Point(57, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(20, 20);
-            this.button4.TabIndex = 35;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.Gray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button3.Location = new System.Drawing.Point(22, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(20, 20);
-            this.button3.TabIndex = 34;
-            this.button3.UseVisualStyleBackColor = false;
+            // btnLED40
+            // 
+            this.btnLED40.AutoSize = true;
+            this.btnLED40.BackColor = System.Drawing.Color.Gray;
+            this.btnLED40.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED40.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED40.Location = new System.Drawing.Point(267, 168);
+            this.btnLED40.Name = "btnLED40";
+            this.btnLED40.Size = new System.Drawing.Size(20, 20);
+            this.btnLED40.TabIndex = 73;
+            this.btnLED40.UseVisualStyleBackColor = false;
+            // 
+            // btnLED32
+            // 
+            this.btnLED32.AutoSize = true;
+            this.btnLED32.BackColor = System.Drawing.Color.Gray;
+            this.btnLED32.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED32.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED32.Location = new System.Drawing.Point(267, 128);
+            this.btnLED32.Name = "btnLED32";
+            this.btnLED32.Size = new System.Drawing.Size(20, 20);
+            this.btnLED32.TabIndex = 72;
+            this.btnLED32.UseVisualStyleBackColor = false;
+            // 
+            // btnLED24
+            // 
+            this.btnLED24.AutoSize = true;
+            this.btnLED24.BackColor = System.Drawing.Color.Gray;
+            this.btnLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED24.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED24.Location = new System.Drawing.Point(267, 92);
+            this.btnLED24.Name = "btnLED24";
+            this.btnLED24.Size = new System.Drawing.Size(20, 20);
+            this.btnLED24.TabIndex = 71;
+            this.btnLED24.UseVisualStyleBackColor = false;
+            // 
+            // btnLED16
+            // 
+            this.btnLED16.AutoSize = true;
+            this.btnLED16.BackColor = System.Drawing.Color.Gray;
+            this.btnLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED16.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED16.Location = new System.Drawing.Point(267, 55);
+            this.btnLED16.Name = "btnLED16";
+            this.btnLED16.Size = new System.Drawing.Size(20, 20);
+            this.btnLED16.TabIndex = 70;
+            this.btnLED16.UseVisualStyleBackColor = false;
+            // 
+            // btnLED8
+            // 
+            this.btnLED8.AutoSize = true;
+            this.btnLED8.BackColor = System.Drawing.Color.Gray;
+            this.btnLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED8.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED8.Location = new System.Drawing.Point(267, 19);
+            this.btnLED8.Name = "btnLED8";
+            this.btnLED8.Size = new System.Drawing.Size(20, 20);
+            this.btnLED8.TabIndex = 69;
+            this.btnLED8.UseVisualStyleBackColor = false;
+            // 
+            // btnLED36
+            // 
+            this.btnLED36.AutoSize = true;
+            this.btnLED36.BackColor = System.Drawing.Color.Gray;
+            this.btnLED36.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED36.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED36.Location = new System.Drawing.Point(127, 168);
+            this.btnLED36.Name = "btnLED36";
+            this.btnLED36.Size = new System.Drawing.Size(20, 20);
+            this.btnLED36.TabIndex = 68;
+            this.btnLED36.UseVisualStyleBackColor = false;
+            // 
+            // btnLED28
+            // 
+            this.btnLED28.AutoSize = true;
+            this.btnLED28.BackColor = System.Drawing.Color.Gray;
+            this.btnLED28.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED28.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED28.Location = new System.Drawing.Point(127, 128);
+            this.btnLED28.Name = "btnLED28";
+            this.btnLED28.Size = new System.Drawing.Size(20, 20);
+            this.btnLED28.TabIndex = 67;
+            this.btnLED28.UseVisualStyleBackColor = false;
+            // 
+            // btnLED20
+            // 
+            this.btnLED20.AutoSize = true;
+            this.btnLED20.BackColor = System.Drawing.Color.Gray;
+            this.btnLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED20.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED20.Location = new System.Drawing.Point(127, 92);
+            this.btnLED20.Name = "btnLED20";
+            this.btnLED20.Size = new System.Drawing.Size(20, 20);
+            this.btnLED20.TabIndex = 66;
+            this.btnLED20.UseVisualStyleBackColor = false;
+            // 
+            // btnLED12
+            // 
+            this.btnLED12.AutoSize = true;
+            this.btnLED12.BackColor = System.Drawing.Color.Gray;
+            this.btnLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED12.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED12.Location = new System.Drawing.Point(127, 55);
+            this.btnLED12.Name = "btnLED12";
+            this.btnLED12.Size = new System.Drawing.Size(20, 20);
+            this.btnLED12.TabIndex = 65;
+            this.btnLED12.UseVisualStyleBackColor = false;
+            // 
+            // btnLED4
+            // 
+            this.btnLED4.AutoSize = true;
+            this.btnLED4.BackColor = System.Drawing.Color.Gray;
+            this.btnLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED4.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED4.Location = new System.Drawing.Point(127, 19);
+            this.btnLED4.Name = "btnLED4";
+            this.btnLED4.Size = new System.Drawing.Size(20, 20);
+            this.btnLED4.TabIndex = 64;
+            this.btnLED4.UseVisualStyleBackColor = false;
+            // 
+            // btnLED39
+            // 
+            this.btnLED39.AutoSize = true;
+            this.btnLED39.BackColor = System.Drawing.Color.Gray;
+            this.btnLED39.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED39.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED39.Location = new System.Drawing.Point(232, 168);
+            this.btnLED39.Name = "btnLED39";
+            this.btnLED39.Size = new System.Drawing.Size(20, 20);
+            this.btnLED39.TabIndex = 63;
+            this.btnLED39.UseVisualStyleBackColor = false;
+            // 
+            // btnLED38
+            // 
+            this.btnLED38.AutoSize = true;
+            this.btnLED38.BackColor = System.Drawing.Color.Gray;
+            this.btnLED38.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED38.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED38.Location = new System.Drawing.Point(197, 168);
+            this.btnLED38.Name = "btnLED38";
+            this.btnLED38.Size = new System.Drawing.Size(20, 20);
+            this.btnLED38.TabIndex = 62;
+            this.btnLED38.UseVisualStyleBackColor = false;
+            // 
+            // btnLED37
+            // 
+            this.btnLED37.AutoSize = true;
+            this.btnLED37.BackColor = System.Drawing.Color.Gray;
+            this.btnLED37.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED37.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED37.Location = new System.Drawing.Point(162, 168);
+            this.btnLED37.Name = "btnLED37";
+            this.btnLED37.Size = new System.Drawing.Size(20, 20);
+            this.btnLED37.TabIndex = 61;
+            this.btnLED37.UseVisualStyleBackColor = false;
+            // 
+            // btnLED35
+            // 
+            this.btnLED35.AutoSize = true;
+            this.btnLED35.BackColor = System.Drawing.Color.Gray;
+            this.btnLED35.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED35.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED35.Location = new System.Drawing.Point(92, 168);
+            this.btnLED35.Name = "btnLED35";
+            this.btnLED35.Size = new System.Drawing.Size(20, 20);
+            this.btnLED35.TabIndex = 60;
+            this.btnLED35.UseVisualStyleBackColor = false;
+            // 
+            // btnLED34
+            // 
+            this.btnLED34.AutoSize = true;
+            this.btnLED34.BackColor = System.Drawing.Color.Gray;
+            this.btnLED34.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED34.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED34.Location = new System.Drawing.Point(57, 168);
+            this.btnLED34.Name = "btnLED34";
+            this.btnLED34.Size = new System.Drawing.Size(20, 20);
+            this.btnLED34.TabIndex = 59;
+            this.btnLED34.UseVisualStyleBackColor = false;
+            // 
+            // btnLED33
+            // 
+            this.btnLED33.AutoSize = true;
+            this.btnLED33.BackColor = System.Drawing.Color.Gray;
+            this.btnLED33.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED33.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED33.Location = new System.Drawing.Point(22, 168);
+            this.btnLED33.Name = "btnLED33";
+            this.btnLED33.Size = new System.Drawing.Size(20, 20);
+            this.btnLED33.TabIndex = 58;
+            this.btnLED33.UseVisualStyleBackColor = false;
+            // 
+            // btnLED31
+            // 
+            this.btnLED31.AutoSize = true;
+            this.btnLED31.BackColor = System.Drawing.Color.Gray;
+            this.btnLED31.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED31.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED31.Location = new System.Drawing.Point(232, 128);
+            this.btnLED31.Name = "btnLED31";
+            this.btnLED31.Size = new System.Drawing.Size(20, 20);
+            this.btnLED31.TabIndex = 57;
+            this.btnLED31.UseVisualStyleBackColor = false;
+            // 
+            // btnLED30
+            // 
+            this.btnLED30.AutoSize = true;
+            this.btnLED30.BackColor = System.Drawing.Color.Gray;
+            this.btnLED30.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED30.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED30.Location = new System.Drawing.Point(197, 128);
+            this.btnLED30.Name = "btnLED30";
+            this.btnLED30.Size = new System.Drawing.Size(20, 20);
+            this.btnLED30.TabIndex = 56;
+            this.btnLED30.UseVisualStyleBackColor = false;
+            // 
+            // btnLED29
+            // 
+            this.btnLED29.AutoSize = true;
+            this.btnLED29.BackColor = System.Drawing.Color.Gray;
+            this.btnLED29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED29.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED29.Location = new System.Drawing.Point(162, 128);
+            this.btnLED29.Name = "btnLED29";
+            this.btnLED29.Size = new System.Drawing.Size(20, 20);
+            this.btnLED29.TabIndex = 55;
+            this.btnLED29.UseVisualStyleBackColor = false;
+            // 
+            // btnLED27
+            // 
+            this.btnLED27.AutoSize = true;
+            this.btnLED27.BackColor = System.Drawing.Color.Gray;
+            this.btnLED27.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED27.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED27.Location = new System.Drawing.Point(92, 128);
+            this.btnLED27.Name = "btnLED27";
+            this.btnLED27.Size = new System.Drawing.Size(20, 20);
+            this.btnLED27.TabIndex = 54;
+            this.btnLED27.UseVisualStyleBackColor = false;
+            // 
+            // btnLED26
+            // 
+            this.btnLED26.AutoSize = true;
+            this.btnLED26.BackColor = System.Drawing.Color.Gray;
+            this.btnLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED26.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED26.Location = new System.Drawing.Point(57, 128);
+            this.btnLED26.Name = "btnLED26";
+            this.btnLED26.Size = new System.Drawing.Size(20, 20);
+            this.btnLED26.TabIndex = 53;
+            this.btnLED26.UseVisualStyleBackColor = false;
+            // 
+            // btnLED25
+            // 
+            this.btnLED25.AutoSize = true;
+            this.btnLED25.BackColor = System.Drawing.Color.Gray;
+            this.btnLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED25.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED25.Location = new System.Drawing.Point(22, 128);
+            this.btnLED25.Name = "btnLED25";
+            this.btnLED25.Size = new System.Drawing.Size(20, 20);
+            this.btnLED25.TabIndex = 52;
+            this.btnLED25.UseVisualStyleBackColor = false;
+            // 
+            // btnLED23
+            // 
+            this.btnLED23.AutoSize = true;
+            this.btnLED23.BackColor = System.Drawing.Color.Gray;
+            this.btnLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED23.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED23.Location = new System.Drawing.Point(232, 92);
+            this.btnLED23.Name = "btnLED23";
+            this.btnLED23.Size = new System.Drawing.Size(20, 20);
+            this.btnLED23.TabIndex = 51;
+            this.btnLED23.UseVisualStyleBackColor = false;
+            // 
+            // btnLED22
+            // 
+            this.btnLED22.AutoSize = true;
+            this.btnLED22.BackColor = System.Drawing.Color.Gray;
+            this.btnLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED22.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED22.Location = new System.Drawing.Point(197, 92);
+            this.btnLED22.Name = "btnLED22";
+            this.btnLED22.Size = new System.Drawing.Size(20, 20);
+            this.btnLED22.TabIndex = 50;
+            this.btnLED22.UseVisualStyleBackColor = false;
+            // 
+            // btnLED21
+            // 
+            this.btnLED21.AutoSize = true;
+            this.btnLED21.BackColor = System.Drawing.Color.Gray;
+            this.btnLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED21.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED21.Location = new System.Drawing.Point(162, 92);
+            this.btnLED21.Name = "btnLED21";
+            this.btnLED21.Size = new System.Drawing.Size(20, 20);
+            this.btnLED21.TabIndex = 49;
+            this.btnLED21.UseVisualStyleBackColor = false;
+            // 
+            // btnLED19
+            // 
+            this.btnLED19.AutoSize = true;
+            this.btnLED19.BackColor = System.Drawing.Color.Gray;
+            this.btnLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED19.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED19.Location = new System.Drawing.Point(92, 92);
+            this.btnLED19.Name = "btnLED19";
+            this.btnLED19.Size = new System.Drawing.Size(20, 20);
+            this.btnLED19.TabIndex = 48;
+            this.btnLED19.UseVisualStyleBackColor = false;
+            // 
+            // btnLED18
+            // 
+            this.btnLED18.AutoSize = true;
+            this.btnLED18.BackColor = System.Drawing.Color.Gray;
+            this.btnLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED18.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED18.Location = new System.Drawing.Point(57, 92);
+            this.btnLED18.Name = "btnLED18";
+            this.btnLED18.Size = new System.Drawing.Size(20, 20);
+            this.btnLED18.TabIndex = 47;
+            this.btnLED18.UseVisualStyleBackColor = false;
+            // 
+            // btnLED17
+            // 
+            this.btnLED17.AutoSize = true;
+            this.btnLED17.BackColor = System.Drawing.Color.Gray;
+            this.btnLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED17.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED17.Location = new System.Drawing.Point(22, 92);
+            this.btnLED17.Name = "btnLED17";
+            this.btnLED17.Size = new System.Drawing.Size(20, 20);
+            this.btnLED17.TabIndex = 46;
+            this.btnLED17.UseVisualStyleBackColor = false;
+            // 
+            // btnLED15
+            // 
+            this.btnLED15.AutoSize = true;
+            this.btnLED15.BackColor = System.Drawing.Color.Gray;
+            this.btnLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED15.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED15.Location = new System.Drawing.Point(232, 55);
+            this.btnLED15.Name = "btnLED15";
+            this.btnLED15.Size = new System.Drawing.Size(20, 20);
+            this.btnLED15.TabIndex = 45;
+            this.btnLED15.UseVisualStyleBackColor = false;
+            // 
+            // btnLED14
+            // 
+            this.btnLED14.AutoSize = true;
+            this.btnLED14.BackColor = System.Drawing.Color.Gray;
+            this.btnLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED14.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED14.Location = new System.Drawing.Point(197, 55);
+            this.btnLED14.Name = "btnLED14";
+            this.btnLED14.Size = new System.Drawing.Size(20, 20);
+            this.btnLED14.TabIndex = 44;
+            this.btnLED14.UseVisualStyleBackColor = false;
+            // 
+            // btnLED13
+            // 
+            this.btnLED13.AutoSize = true;
+            this.btnLED13.BackColor = System.Drawing.Color.Gray;
+            this.btnLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED13.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED13.Location = new System.Drawing.Point(162, 55);
+            this.btnLED13.Name = "btnLED13";
+            this.btnLED13.Size = new System.Drawing.Size(20, 20);
+            this.btnLED13.TabIndex = 43;
+            this.btnLED13.UseVisualStyleBackColor = false;
+            // 
+            // btnLED11
+            // 
+            this.btnLED11.AutoSize = true;
+            this.btnLED11.BackColor = System.Drawing.Color.Gray;
+            this.btnLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED11.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED11.Location = new System.Drawing.Point(92, 55);
+            this.btnLED11.Name = "btnLED11";
+            this.btnLED11.Size = new System.Drawing.Size(20, 20);
+            this.btnLED11.TabIndex = 42;
+            this.btnLED11.UseVisualStyleBackColor = false;
+            // 
+            // btnLED10
+            // 
+            this.btnLED10.AutoSize = true;
+            this.btnLED10.BackColor = System.Drawing.Color.Gray;
+            this.btnLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED10.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED10.Location = new System.Drawing.Point(57, 55);
+            this.btnLED10.Name = "btnLED10";
+            this.btnLED10.Size = new System.Drawing.Size(20, 20);
+            this.btnLED10.TabIndex = 41;
+            this.btnLED10.UseVisualStyleBackColor = false;
+            // 
+            // btnLED9
+            // 
+            this.btnLED9.AutoSize = true;
+            this.btnLED9.BackColor = System.Drawing.Color.Gray;
+            this.btnLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED9.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED9.Location = new System.Drawing.Point(22, 55);
+            this.btnLED9.Name = "btnLED9";
+            this.btnLED9.Size = new System.Drawing.Size(20, 20);
+            this.btnLED9.TabIndex = 40;
+            this.btnLED9.UseVisualStyleBackColor = false;
+            // 
+            // btnLED7
+            // 
+            this.btnLED7.AutoSize = true;
+            this.btnLED7.BackColor = System.Drawing.Color.Gray;
+            this.btnLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED7.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED7.Location = new System.Drawing.Point(232, 19);
+            this.btnLED7.Name = "btnLED7";
+            this.btnLED7.Size = new System.Drawing.Size(20, 20);
+            this.btnLED7.TabIndex = 39;
+            this.btnLED7.UseVisualStyleBackColor = false;
+            // 
+            // btnLED6
+            // 
+            this.btnLED6.AutoSize = true;
+            this.btnLED6.BackColor = System.Drawing.Color.Gray;
+            this.btnLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED6.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED6.Location = new System.Drawing.Point(197, 19);
+            this.btnLED6.Name = "btnLED6";
+            this.btnLED6.Size = new System.Drawing.Size(20, 20);
+            this.btnLED6.TabIndex = 38;
+            this.btnLED6.UseVisualStyleBackColor = false;
+            // 
+            // btnLED5
+            // 
+            this.btnLED5.AutoSize = true;
+            this.btnLED5.BackColor = System.Drawing.Color.Gray;
+            this.btnLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED5.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED5.Location = new System.Drawing.Point(162, 19);
+            this.btnLED5.Name = "btnLED5";
+            this.btnLED5.Size = new System.Drawing.Size(20, 20);
+            this.btnLED5.TabIndex = 37;
+            this.btnLED5.UseVisualStyleBackColor = false;
+            // 
+            // btnLED3
+            // 
+            this.btnLED3.AutoSize = true;
+            this.btnLED3.BackColor = System.Drawing.Color.Gray;
+            this.btnLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED3.Location = new System.Drawing.Point(92, 19);
+            this.btnLED3.Name = "btnLED3";
+            this.btnLED3.Size = new System.Drawing.Size(20, 20);
+            this.btnLED3.TabIndex = 36;
+            this.btnLED3.UseVisualStyleBackColor = false;
+            // 
+            // btnLED2
+            // 
+            this.btnLED2.AutoSize = true;
+            this.btnLED2.BackColor = System.Drawing.Color.Gray;
+            this.btnLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED2.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED2.Location = new System.Drawing.Point(57, 19);
+            this.btnLED2.Name = "btnLED2";
+            this.btnLED2.Size = new System.Drawing.Size(20, 20);
+            this.btnLED2.TabIndex = 35;
+            this.btnLED2.UseVisualStyleBackColor = false;
+            // 
+            // btnLED1
+            // 
+            this.btnLED1.AutoSize = true;
+            this.btnLED1.BackColor = System.Drawing.Color.Gray;
+            this.btnLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLED1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLED1.Location = new System.Drawing.Point(22, 19);
+            this.btnLED1.Name = "btnLED1";
+            this.btnLED1.Size = new System.Drawing.Size(20, 20);
+            this.btnLED1.TabIndex = 34;
+            this.btnLED1.UseVisualStyleBackColor = false;
             // 
             // tabPage3
             // 
@@ -5168,7 +5183,7 @@ namespace LEDController.View
             this.button132.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button132.Location = new System.Drawing.Point(13, 172);
             this.button132.Name = "button132";
-            this.button132.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button132.Padding = new System.Windows.Forms.Padding(1);
             this.button132.Size = new System.Drawing.Size(131, 32);
             this.button132.TabIndex = 10;
             this.button132.Text = "停止获取";
@@ -5179,7 +5194,7 @@ namespace LEDController.View
             this.button131.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button131.Location = new System.Drawing.Point(13, 134);
             this.button131.Name = "button131";
-            this.button131.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button131.Padding = new System.Windows.Forms.Padding(1);
             this.button131.Size = new System.Drawing.Size(131, 32);
             this.button131.TabIndex = 9;
             this.button131.Text = "开始获取";
@@ -5220,7 +5235,7 @@ namespace LEDController.View
             this.label47.BackColor = System.Drawing.Color.Transparent;
             this.label47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label47.Location = new System.Drawing.Point(10, 105);
-            this.label47.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label47.Margin = new System.Windows.Forms.Padding(10);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(76, 16);
             this.label47.TabIndex = 5;
@@ -5259,7 +5274,7 @@ namespace LEDController.View
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label45.Location = new System.Drawing.Point(10, 69);
-            this.label45.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label45.Margin = new System.Windows.Forms.Padding(10);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(76, 16);
             this.label45.TabIndex = 2;
@@ -5286,7 +5301,7 @@ namespace LEDController.View
             this.label44.BackColor = System.Drawing.Color.Transparent;
             this.label44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label44.Location = new System.Drawing.Point(10, 33);
-            this.label44.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label44.Margin = new System.Windows.Forms.Padding(10);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(76, 16);
             this.label44.TabIndex = 0;
@@ -5348,7 +5363,7 @@ namespace LEDController.View
             // statusStrip2
             // 
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel2,
+            this.toolStripConnectionStatus,
             toolStripStatusLabel3});
             this.statusStrip2.Location = new System.Drawing.Point(0, 575);
             this.statusStrip2.Name = "statusStrip2";
@@ -5356,27 +5371,50 @@ namespace LEDController.View
             this.statusStrip2.TabIndex = 7;
             this.statusStrip2.Text = "statusStrip2";
             // 
-            // toolStripStatusLabel2
+            // toolStripConnectionStatus
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(56, 17);
-            this.toolStripStatusLabel2.Text = "连接断开";
+            this.toolStripConnectionStatus.Name = "toolStripConnectionStatus";
+            this.toolStripConnectionStatus.Size = new System.Drawing.Size(56, 17);
+            this.toolStripConnectionStatus.Text = "连接断开";
             // 
-            // btnClose
+            // btnRecStatus1
             // 
-            this.btnClose.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClose.Location = new System.Drawing.Point(52, 126);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(110, 29);
-            this.btnClose.TabIndex = 11;
-            this.btnClose.Text = "断开";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnRecStatus1.BackColor = System.Drawing.Color.DarkRed;
+            this.btnRecStatus1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnRecStatus1.Enabled = false;
+            this.btnRecStatus1.Location = new System.Drawing.Point(904, 580);
+            this.btnRecStatus1.Name = "btnRecStatus1";
+            this.btnRecStatus1.Size = new System.Drawing.Size(12, 12);
+            this.btnRecStatus1.TabIndex = 8;
+            // 
+            // btnRecStatus3
+            // 
+            this.btnRecStatus3.BackColor = System.Drawing.Color.DarkRed;
+            this.btnRecStatus3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnRecStatus3.Enabled = false;
+            this.btnRecStatus3.Location = new System.Drawing.Point(940, 580);
+            this.btnRecStatus3.Name = "btnRecStatus3";
+            this.btnRecStatus3.Size = new System.Drawing.Size(12, 12);
+            this.btnRecStatus3.TabIndex = 9;
+            // 
+            // btnRecStatus2
+            // 
+            this.btnRecStatus2.BackColor = System.Drawing.Color.DarkRed;
+            this.btnRecStatus2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnRecStatus2.Enabled = false;
+            this.btnRecStatus2.Location = new System.Drawing.Point(922, 580);
+            this.btnRecStatus2.Name = "btnRecStatus2";
+            this.btnRecStatus2.Size = new System.Drawing.Size(12, 12);
+            this.btnRecStatus2.TabIndex = 10;
             // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 597);
+            this.Controls.Add(this.btnRecStatus2);
+            this.Controls.Add(this.btnRecStatus3);
+            this.Controls.Add(this.btnRecStatus1);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl1);
@@ -5462,17 +5500,16 @@ namespace LEDController.View
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxPort;
+        private System.Windows.Forms.TextBox tbxIP;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbxConnectMsg;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbxTestRec;
+        private System.Windows.Forms.TextBox tbxTestCmd;
+        private System.Windows.Forms.Button btnSendTestMsg;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -5482,36 +5519,36 @@ namespace LEDController.View
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button36;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLED39;
+        private System.Windows.Forms.Button btnLED38;
+        private System.Windows.Forms.Button btnLED37;
+        private System.Windows.Forms.Button btnLED35;
+        private System.Windows.Forms.Button btnLED34;
+        private System.Windows.Forms.Button btnLED33;
+        private System.Windows.Forms.Button btnLED31;
+        private System.Windows.Forms.Button btnLED30;
+        private System.Windows.Forms.Button btnLED29;
+        private System.Windows.Forms.Button btnLED27;
+        private System.Windows.Forms.Button btnLED26;
+        private System.Windows.Forms.Button btnLED25;
+        private System.Windows.Forms.Button btnLED23;
+        private System.Windows.Forms.Button btnLED22;
+        private System.Windows.Forms.Button btnLED21;
+        private System.Windows.Forms.Button btnLED19;
+        private System.Windows.Forms.Button btnLED18;
+        private System.Windows.Forms.Button btnLED17;
+        private System.Windows.Forms.Button btnLED15;
+        private System.Windows.Forms.Button btnLED14;
+        private System.Windows.Forms.Button btnLED13;
+        private System.Windows.Forms.Button btnLED11;
+        private System.Windows.Forms.Button btnLED10;
+        private System.Windows.Forms.Button btnLED9;
+        private System.Windows.Forms.Button btnLED7;
+        private System.Windows.Forms.Button btnLED6;
+        private System.Windows.Forms.Button btnLED5;
+        private System.Windows.Forms.Button btnLED3;
+        private System.Windows.Forms.Button btnLED2;
+        private System.Windows.Forms.Button btnLED1;
         private System.Windows.Forms.Button button94;
         private System.Windows.Forms.Button button93;
         private System.Windows.Forms.Label label24;
@@ -5529,11 +5566,11 @@ namespace LEDController.View
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
         private System.Windows.Forms.StatusStrip statusStrip2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripConnectionStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Button button99;
+        private System.Windows.Forms.Button btnDimLED1;
         private System.Windows.Forms.ToolStripMenuItem 文件;
         private System.Windows.Forms.ToolStripMenuItem 打开ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
@@ -5554,60 +5591,60 @@ namespace LEDController.View
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TrackBar trackBar9;
-        private System.Windows.Forms.Button button116;
+        private System.Windows.Forms.Button btnDimLED12;
         private System.Windows.Forms.Button button117;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TrackBar trackBar10;
-        private System.Windows.Forms.Button button118;
+        private System.Windows.Forms.Button btnDimLED11;
         private System.Windows.Forms.Button button119;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TrackBar trackBar11;
-        private System.Windows.Forms.Button button120;
+        private System.Windows.Forms.Button btnDimLED10;
         private System.Windows.Forms.Button button121;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TrackBar trackBar12;
-        private System.Windows.Forms.Button button122;
+        private System.Windows.Forms.Button btnDimLED9;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button107;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TrackBar trackBar5;
-        private System.Windows.Forms.Button button108;
+        private System.Windows.Forms.Button btnDimLED8;
         private System.Windows.Forms.Button button109;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TrackBar trackBar6;
-        private System.Windows.Forms.Button button110;
+        private System.Windows.Forms.Button btnDimLED7;
         private System.Windows.Forms.Button button111;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TrackBar trackBar7;
-        private System.Windows.Forms.Button button112;
+        private System.Windows.Forms.Button btnDimLED6;
         private System.Windows.Forms.Button button113;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TrackBar trackBar8;
-        private System.Windows.Forms.Button button114;
+        private System.Windows.Forms.Button btnDimLED5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button105;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TrackBar trackBar4;
-        private System.Windows.Forms.Button button106;
+        private System.Windows.Forms.Button btnDimLED4;
         private System.Windows.Forms.Button button103;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TrackBar trackBar3;
-        private System.Windows.Forms.Button button104;
+        private System.Windows.Forms.Button btnDimLED3;
         private System.Windows.Forms.Button button101;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.Button button102;
+        private System.Windows.Forms.Button btnDimLED2;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Button button130;
         private System.Windows.Forms.Label label42;
@@ -5623,96 +5660,96 @@ namespace LEDController.View
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Button button132;
         private System.Windows.Forms.Button button131;
-        private System.Windows.Forms.Button button63;
-        private System.Windows.Forms.Button button64;
-        private System.Windows.Forms.Button button65;
-        private System.Windows.Forms.Button button66;
-        private System.Windows.Forms.Button button67;
-        private System.Windows.Forms.Button button68;
-        private System.Windows.Forms.Button button69;
-        private System.Windows.Forms.Button button70;
-        private System.Windows.Forms.Button button71;
-        private System.Windows.Forms.Button button72;
-        private System.Windows.Forms.Button button73;
-        private System.Windows.Forms.Button button74;
-        private System.Windows.Forms.Button button75;
-        private System.Windows.Forms.Button button76;
-        private System.Windows.Forms.Button button77;
-        private System.Windows.Forms.Button button78;
-        private System.Windows.Forms.Button button79;
-        private System.Windows.Forms.Button button80;
-        private System.Windows.Forms.Button button81;
-        private System.Windows.Forms.Button button82;
-        private System.Windows.Forms.Button button83;
-        private System.Windows.Forms.Button button84;
-        private System.Windows.Forms.Button button85;
-        private System.Windows.Forms.Button button86;
-        private System.Windows.Forms.Button button87;
-        private System.Windows.Forms.Button button88;
-        private System.Windows.Forms.Button button89;
-        private System.Windows.Forms.Button button90;
-        private System.Windows.Forms.Button button91;
-        private System.Windows.Forms.Button button92;
-        private System.Windows.Forms.Button button171;
-        private System.Windows.Forms.Button button172;
-        private System.Windows.Forms.Button button173;
-        private System.Windows.Forms.Button button174;
-        private System.Windows.Forms.Button button175;
-        private System.Windows.Forms.Button button176;
-        private System.Windows.Forms.Button button177;
-        private System.Windows.Forms.Button button178;
-        private System.Windows.Forms.Button button179;
-        private System.Windows.Forms.Button button180;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.Button button38;
-        private System.Windows.Forms.Button button39;
-        private System.Windows.Forms.Button button40;
-        private System.Windows.Forms.Button button41;
-        private System.Windows.Forms.Button button42;
-        private System.Windows.Forms.Button button43;
-        private System.Windows.Forms.Button button44;
-        private System.Windows.Forms.Button button45;
-        private System.Windows.Forms.Button button46;
-        private System.Windows.Forms.Button button47;
-        private System.Windows.Forms.Button button48;
-        private System.Windows.Forms.Button button49;
-        private System.Windows.Forms.Button button50;
-        private System.Windows.Forms.Button button51;
-        private System.Windows.Forms.Button button52;
-        private System.Windows.Forms.Button button53;
-        private System.Windows.Forms.Button button54;
-        private System.Windows.Forms.Button button55;
-        private System.Windows.Forms.Button button56;
-        private System.Windows.Forms.Button button57;
-        private System.Windows.Forms.Button button58;
-        private System.Windows.Forms.Button button59;
-        private System.Windows.Forms.Button button60;
-        private System.Windows.Forms.Button button61;
-        private System.Windows.Forms.Button button62;
-        private System.Windows.Forms.Button button161;
-        private System.Windows.Forms.Button button162;
-        private System.Windows.Forms.Button button163;
-        private System.Windows.Forms.Button button164;
-        private System.Windows.Forms.Button button165;
-        private System.Windows.Forms.Button button166;
-        private System.Windows.Forms.Button button167;
-        private System.Windows.Forms.Button button168;
-        private System.Windows.Forms.Button button169;
-        private System.Windows.Forms.Button button170;
-        private System.Windows.Forms.Button button156;
-        private System.Windows.Forms.Button button157;
-        private System.Windows.Forms.Button button158;
-        private System.Windows.Forms.Button button159;
-        private System.Windows.Forms.Button button160;
-        private System.Windows.Forms.Button button151;
-        private System.Windows.Forms.Button button152;
-        private System.Windows.Forms.Button button153;
-        private System.Windows.Forms.Button button154;
-        private System.Windows.Forms.Button button155;
+        private System.Windows.Forms.Button btnLED120;
+        private System.Windows.Forms.Button btnLED112;
+        private System.Windows.Forms.Button btnLED104;
+        private System.Windows.Forms.Button btnLED96;
+        private System.Windows.Forms.Button btnLED88;
+        private System.Windows.Forms.Button btnLED116;
+        private System.Windows.Forms.Button btnLED108;
+        private System.Windows.Forms.Button btnLED100;
+        private System.Windows.Forms.Button btnLED92;
+        private System.Windows.Forms.Button btnLED84;
+        private System.Windows.Forms.Button btnLED119;
+        private System.Windows.Forms.Button btnLED118;
+        private System.Windows.Forms.Button btnLED117;
+        private System.Windows.Forms.Button btnLED115;
+        private System.Windows.Forms.Button btnLED114;
+        private System.Windows.Forms.Button btnLED113;
+        private System.Windows.Forms.Button btnLED111;
+        private System.Windows.Forms.Button btnLED110;
+        private System.Windows.Forms.Button btnLED109;
+        private System.Windows.Forms.Button btnLED107;
+        private System.Windows.Forms.Button btnLED106;
+        private System.Windows.Forms.Button btnLED105;
+        private System.Windows.Forms.Button btnLED103;
+        private System.Windows.Forms.Button btnLED102;
+        private System.Windows.Forms.Button btnLED101;
+        private System.Windows.Forms.Button btnLED99;
+        private System.Windows.Forms.Button btnLED98;
+        private System.Windows.Forms.Button btnLED97;
+        private System.Windows.Forms.Button btnLED95;
+        private System.Windows.Forms.Button btnLED94;
+        private System.Windows.Forms.Button btnLED93;
+        private System.Windows.Forms.Button btnLED91;
+        private System.Windows.Forms.Button btnLED90;
+        private System.Windows.Forms.Button btnLED89;
+        private System.Windows.Forms.Button btnLED87;
+        private System.Windows.Forms.Button btnLED86;
+        private System.Windows.Forms.Button btnLED85;
+        private System.Windows.Forms.Button btnLED83;
+        private System.Windows.Forms.Button btnLED82;
+        private System.Windows.Forms.Button btnLED81;
+        private System.Windows.Forms.Button btnLED80;
+        private System.Windows.Forms.Button btnLED72;
+        private System.Windows.Forms.Button btnLED64;
+        private System.Windows.Forms.Button btnLED56;
+        private System.Windows.Forms.Button btnLED48;
+        private System.Windows.Forms.Button btnLED76;
+        private System.Windows.Forms.Button btnLED68;
+        private System.Windows.Forms.Button btnLED60;
+        private System.Windows.Forms.Button btnLED52;
+        private System.Windows.Forms.Button btnLED44;
+        private System.Windows.Forms.Button btnLED79;
+        private System.Windows.Forms.Button btnLED78;
+        private System.Windows.Forms.Button btnLED77;
+        private System.Windows.Forms.Button btnLED75;
+        private System.Windows.Forms.Button btnLED74;
+        private System.Windows.Forms.Button btnLED73;
+        private System.Windows.Forms.Button btnLED71;
+        private System.Windows.Forms.Button btnLED70;
+        private System.Windows.Forms.Button btnLED69;
+        private System.Windows.Forms.Button btnLED67;
+        private System.Windows.Forms.Button btnLED66;
+        private System.Windows.Forms.Button btnLED65;
+        private System.Windows.Forms.Button btnLED63;
+        private System.Windows.Forms.Button btnLED62;
+        private System.Windows.Forms.Button btnLED61;
+        private System.Windows.Forms.Button btnLED59;
+        private System.Windows.Forms.Button btnLED58;
+        private System.Windows.Forms.Button btnLED57;
+        private System.Windows.Forms.Button btnLED55;
+        private System.Windows.Forms.Button btnLED54;
+        private System.Windows.Forms.Button btnLED53;
+        private System.Windows.Forms.Button btnLED51;
+        private System.Windows.Forms.Button btnLED50;
+        private System.Windows.Forms.Button btnLED49;
+        private System.Windows.Forms.Button btnLED47;
+        private System.Windows.Forms.Button btnLED46;
+        private System.Windows.Forms.Button btnLED45;
+        private System.Windows.Forms.Button btnLED43;
+        private System.Windows.Forms.Button btnLED42;
+        private System.Windows.Forms.Button btnLED41;
+        private System.Windows.Forms.Button btnLED40;
+        private System.Windows.Forms.Button btnLED32;
+        private System.Windows.Forms.Button btnLED24;
+        private System.Windows.Forms.Button btnLED16;
+        private System.Windows.Forms.Button btnLED8;
+        private System.Windows.Forms.Button btnLED36;
+        private System.Windows.Forms.Button btnLED28;
+        private System.Windows.Forms.Button btnLED20;
+        private System.Windows.Forms.Button btnLED12;
+        private System.Windows.Forms.Button btnLED4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button291;
         private System.Windows.Forms.Button button292;
@@ -5847,6 +5884,10 @@ namespace LEDController.View
         private System.Windows.Forms.Button button201;
         private System.Windows.Forms.Button button202;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Label btnRecStatus1;
+        private System.Windows.Forms.Label btnRecStatus3;
+        private System.Windows.Forms.Label btnRecStatus2;
     }
 }
 
