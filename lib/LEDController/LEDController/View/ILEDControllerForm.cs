@@ -52,6 +52,13 @@ namespace LEDController.View
         string tbxDimLED10Text { get; set; }
         string tbxDimLED11Text { get; set; }
         string tbxDimLED12Text { get; set; }
+        string tsslGreenLEDTPText { get; set; }
+        string tsslRedLEDTPText { get; set; }
+        string tsslDarkRedTPText { get; set; }
+        string tsslTemp1Text { get; set; }
+        string tsslTemp2Text { get; set; }
+        string tsslTemp3Text { get; set; }
+        string tsslTemp4Text { get; set; }
         Color btnRecStatus1Color { get; set; }
         Color btnRecStatus2Color { get; set; }
         Color btnRecStatus3Color { get; set; }
@@ -70,7 +77,6 @@ namespace LEDController.View
         event EventHandler<EventArgs> CloseDimLED;
         event EventHandler<EventArgs> UpdateScrollBar;
         event EventHandler<EventArgs> UpdateLEDTbx;
-        IAsyncResult BeginInvoke(Delegate method);
         object Invoke(Delegate method);
     }
 }

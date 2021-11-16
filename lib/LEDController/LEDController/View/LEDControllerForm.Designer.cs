@@ -39,14 +39,14 @@ namespace LEDController.View
             this.ToolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.连接测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lED控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lED状态ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.转台控制暂无ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.室内照明暂无ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.空调控制暂无ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.电动天窗暂无ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.摄像头控制暂无ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmConnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmLEDControl = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmLEDStatus = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmRTControl = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmLightControl = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAirConditionerControl = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSkylightControl = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCameraControl = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.使用帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.版本信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +54,8 @@ namespace LEDController.View
             this.网口断开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabCtrlMain = new System.Windows.Forms.TabControl();
+            this.tpgConnect = new System.Windows.Forms.TabPage();
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -68,18 +68,18 @@ namespace LEDController.View
             this.tbxIP = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tpgLEDControl = new System.Windows.Forms.TabPage();
             this.label43 = new System.Windows.Forms.Label();
             this.button130 = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
             this.button129 = new System.Windows.Forms.Button();
-            this.button127 = new System.Windows.Forms.Button();
-            this.button128 = new System.Windows.Forms.Button();
-            this.button125 = new System.Windows.Forms.Button();
-            this.button126 = new System.Windows.Forms.Button();
-            this.button124 = new System.Windows.Forms.Button();
-            this.button123 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnCloseDarkRedDimLED = new System.Windows.Forms.Button();
+            this.btnOpenDarkRedDimLED = new System.Windows.Forms.Button();
+            this.btnCloseRedDimLED = new System.Windows.Forms.Button();
+            this.btnOpenRedDimLED = new System.Windows.Forms.Button();
+            this.btnCloseGreenDimLED = new System.Windows.Forms.Button();
+            this.btnOpenGreenDimLED = new System.Windows.Forms.Button();
+            this.panelDarkRedDimLED = new System.Windows.Forms.Panel();
             this.lblDarkRedLEDMinLeft = new System.Windows.Forms.Label();
             this.lblDarkRedLEDMinRight = new System.Windows.Forms.Label();
             this.lblDarkRedLEDMaxLeft = new System.Windows.Forms.Label();
@@ -89,23 +89,23 @@ namespace LEDController.View
             this.tbxDimLED10 = new System.Windows.Forms.TextBox();
             this.tbxDimLED9 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.button115 = new System.Windows.Forms.Button();
+            this.btnOpenDimDarkRedLED4 = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
             this.sbarDimLED12 = new System.Windows.Forms.TrackBar();
             this.btnDimLED12 = new System.Windows.Forms.Button();
-            this.button117 = new System.Windows.Forms.Button();
+            this.btnOpenDimDarkRedLED3 = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.sbarDimLED11 = new System.Windows.Forms.TrackBar();
             this.btnDimLED11 = new System.Windows.Forms.Button();
-            this.button119 = new System.Windows.Forms.Button();
+            this.btnOpenDimDarkRedLED2 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.sbarDimLED10 = new System.Windows.Forms.TrackBar();
             this.btnDimLED10 = new System.Windows.Forms.Button();
-            this.button121 = new System.Windows.Forms.Button();
+            this.btnOpenDimDarkRedLED1 = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.sbarDimLED9 = new System.Windows.Forms.TrackBar();
             this.btnDimLED9 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelRedDimLED = new System.Windows.Forms.Panel();
             this.lblRedLEDMinLeft = new System.Windows.Forms.Label();
             this.lblRedLEDMinRight = new System.Windows.Forms.Label();
             this.lblRedLEDMaxLeft = new System.Windows.Forms.Label();
@@ -114,24 +114,24 @@ namespace LEDController.View
             this.tbxDimLED7 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tbxDimLED6 = new System.Windows.Forms.TextBox();
-            this.button107 = new System.Windows.Forms.Button();
+            this.btnOpenDimRedLED4 = new System.Windows.Forms.Button();
             this.tbxDimLED5 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.sbarDimLED8 = new System.Windows.Forms.TrackBar();
             this.btnDimLED8 = new System.Windows.Forms.Button();
-            this.button109 = new System.Windows.Forms.Button();
+            this.btnOpenDimRedLED3 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.sbarDimLED7 = new System.Windows.Forms.TrackBar();
             this.btnDimLED7 = new System.Windows.Forms.Button();
-            this.button111 = new System.Windows.Forms.Button();
+            this.btnOpenDimRedLED2 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.sbarDimLED6 = new System.Windows.Forms.TrackBar();
             this.btnDimLED6 = new System.Windows.Forms.Button();
-            this.button113 = new System.Windows.Forms.Button();
+            this.btnOpenDimRedLED1 = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.sbarDimLED5 = new System.Windows.Forms.TrackBar();
             this.btnDimLED5 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelGreenDimLED = new System.Windows.Forms.Panel();
             this.lblGreenLEDMinRight = new System.Windows.Forms.Label();
             this.lblGreenLEDMaxRight = new System.Windows.Forms.Label();
             this.lblGreenLEDMinLeft = new System.Windows.Forms.Label();
@@ -141,36 +141,36 @@ namespace LEDController.View
             this.tbxDimLED2 = new System.Windows.Forms.TextBox();
             this.tbxDimLED1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button105 = new System.Windows.Forms.Button();
+            this.btnOpenDimGreenLED4 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.sbarDimLED4 = new System.Windows.Forms.TrackBar();
             this.btnDimLED4 = new System.Windows.Forms.Button();
-            this.button103 = new System.Windows.Forms.Button();
+            this.btnOpenDimGreenLED3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.sbarDimLED3 = new System.Windows.Forms.TrackBar();
             this.btnDimLED3 = new System.Windows.Forms.Button();
-            this.button101 = new System.Windows.Forms.Button();
+            this.btnOpenDimGreenLED2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.sbarDimLED2 = new System.Windows.Forms.TrackBar();
             this.btnDimLED2 = new System.Windows.Forms.Button();
-            this.button100 = new System.Windows.Forms.Button();
+            this.btnOpenDimGreenLED1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.sbarDimLED1 = new System.Windows.Forms.TrackBar();
             this.btnDimLED1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button97 = new System.Windows.Forms.Button();
-            this.button98 = new System.Windows.Forms.Button();
-            this.button95 = new System.Windows.Forms.Button();
-            this.button96 = new System.Windows.Forms.Button();
-            this.button94 = new System.Windows.Forms.Button();
-            this.button93 = new System.Windows.Forms.Button();
+            this.tsslGreenLEDTotalPower = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslRedLEDTotalPower = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslDarkRedLEDTotalPower = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslTemp1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslTemp2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslTemp3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslTemp4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnCloseDarkRedFixLED = new System.Windows.Forms.Button();
+            this.btnOpenDarkRedFixLED = new System.Windows.Forms.Button();
+            this.btnCloseRedFixLED = new System.Windows.Forms.Button();
+            this.btnOpenRedFixLED = new System.Windows.Forms.Button();
+            this.btnCloseGreenFixLED = new System.Windows.Forms.Button();
+            this.btnOpenGreenFixLED = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -180,7 +180,7 @@ namespace LEDController.View
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelDarkRedFixLED = new System.Windows.Forms.Panel();
             this.btnLED120 = new System.Windows.Forms.Button();
             this.btnLED112 = new System.Windows.Forms.Button();
             this.btnLED104 = new System.Windows.Forms.Button();
@@ -221,7 +221,7 @@ namespace LEDController.View
             this.btnLED83 = new System.Windows.Forms.Button();
             this.btnLED82 = new System.Windows.Forms.Button();
             this.btnLED81 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelRedFixLED = new System.Windows.Forms.Panel();
             this.btnLED80 = new System.Windows.Forms.Button();
             this.btnLED72 = new System.Windows.Forms.Button();
             this.btnLED64 = new System.Windows.Forms.Button();
@@ -262,7 +262,7 @@ namespace LEDController.View
             this.btnLED43 = new System.Windows.Forms.Button();
             this.btnLED42 = new System.Windows.Forms.Button();
             this.btnLED41 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelGreenFixLED = new System.Windows.Forms.Panel();
             this.btnLED40 = new System.Windows.Forms.Button();
             this.btnLED32 = new System.Windows.Forms.Button();
             this.btnLED24 = new System.Windows.Forms.Button();
@@ -303,7 +303,7 @@ namespace LEDController.View
             this.btnLED3 = new System.Windows.Forms.Button();
             this.btnLED2 = new System.Windows.Forms.Button();
             this.btnLED1 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tpgLEDStatus = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button291 = new System.Windows.Forms.Button();
             this.button292 = new System.Windows.Forms.Button();
@@ -448,11 +448,11 @@ namespace LEDController.View
             this.label45 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tpgRTControl = new System.Windows.Forms.TabPage();
+            this.tpgLightControl = new System.Windows.Forms.TabPage();
+            this.tpgAirConditionerControl = new System.Windows.Forms.TabPage();
+            this.tpgSkylightControl = new System.Windows.Forms.TabPage();
+            this.tpgCameraControl = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -465,29 +465,29 @@ namespace LEDController.View
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.tabCtrlMain.SuspendLayout();
+            this.tpgConnect.SuspendLayout();
+            this.tpgLEDControl.SuspendLayout();
+            this.panelDarkRedDimLED.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED9)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.panelRedDimLED.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED5)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.panelGreenDimLED.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED1)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.panelDarkRedFixLED.SuspendLayout();
+            this.panelRedFixLED.SuspendLayout();
+            this.panelGreenFixLED.SuspendLayout();
+            this.tpgLEDStatus.SuspendLayout();
             this.panel7.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -555,65 +555,73 @@ namespace LEDController.View
             // 窗口ToolStripMenuItem
             // 
             this.窗口ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.连接测试ToolStripMenuItem,
-            this.lED控制ToolStripMenuItem,
-            this.lED状态ToolStripMenuItem,
-            this.转台控制暂无ToolStripMenuItem,
-            this.室内照明暂无ToolStripMenuItem,
-            this.空调控制暂无ToolStripMenuItem,
-            this.电动天窗暂无ToolStripMenuItem,
-            this.摄像头控制暂无ToolStripMenuItem});
+            this.tsmConnect,
+            this.tsmLEDControl,
+            this.tsmLEDStatus,
+            this.tsmRTControl,
+            this.tsmLightControl,
+            this.tsmAirConditionerControl,
+            this.tsmSkylightControl,
+            this.tsmCameraControl});
             this.窗口ToolStripMenuItem.Name = "窗口ToolStripMenuItem";
             this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.窗口ToolStripMenuItem.Text = "窗口";
             // 
-            // 连接测试ToolStripMenuItem
+            // tsmConnect
             // 
-            this.连接测试ToolStripMenuItem.Name = "连接测试ToolStripMenuItem";
-            this.连接测试ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.连接测试ToolStripMenuItem.Text = "连接测试";
+            this.tsmConnect.Name = "tsmConnect";
+            this.tsmConnect.Size = new System.Drawing.Size(180, 22);
+            this.tsmConnect.Text = "连接测试";
+            this.tsmConnect.Click += new System.EventHandler(this.tsmConnect_Click);
             // 
-            // lED控制ToolStripMenuItem
+            // tsmLEDControl
             // 
-            this.lED控制ToolStripMenuItem.Name = "lED控制ToolStripMenuItem";
-            this.lED控制ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.lED控制ToolStripMenuItem.Text = "LED控制";
+            this.tsmLEDControl.Name = "tsmLEDControl";
+            this.tsmLEDControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmLEDControl.Text = "LED控制";
+            this.tsmLEDControl.Click += new System.EventHandler(this.tsmLEDControl_Click);
             // 
-            // lED状态ToolStripMenuItem
+            // tsmLEDStatus
             // 
-            this.lED状态ToolStripMenuItem.Name = "lED状态ToolStripMenuItem";
-            this.lED状态ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.lED状态ToolStripMenuItem.Text = "LED状态";
+            this.tsmLEDStatus.Name = "tsmLEDStatus";
+            this.tsmLEDStatus.Size = new System.Drawing.Size(180, 22);
+            this.tsmLEDStatus.Text = "LED状态";
+            this.tsmLEDStatus.Click += new System.EventHandler(this.tsmLEDStatus_Click);
             // 
-            // 转台控制暂无ToolStripMenuItem
+            // tsmRTControl
             // 
-            this.转台控制暂无ToolStripMenuItem.Name = "转台控制暂无ToolStripMenuItem";
-            this.转台控制暂无ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.转台控制暂无ToolStripMenuItem.Text = "转台控制(暂无)";
+            this.tsmRTControl.Name = "tsmRTControl";
+            this.tsmRTControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmRTControl.Text = "转台控制(暂无)";
+            this.tsmRTControl.Click += new System.EventHandler(this.tsmRTControl_Click);
             // 
-            // 室内照明暂无ToolStripMenuItem
+            // tsmLightControl
             // 
-            this.室内照明暂无ToolStripMenuItem.Name = "室内照明暂无ToolStripMenuItem";
-            this.室内照明暂无ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.室内照明暂无ToolStripMenuItem.Text = "室内照明(暂无)";
+            this.tsmLightControl.Name = "tsmLightControl";
+            this.tsmLightControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmLightControl.Text = "室内照明(暂无)";
+            this.tsmLightControl.Click += new System.EventHandler(this.tsmLightControl_Click);
             // 
-            // 空调控制暂无ToolStripMenuItem
+            // tsmAirConditionerControl
             // 
-            this.空调控制暂无ToolStripMenuItem.Name = "空调控制暂无ToolStripMenuItem";
-            this.空调控制暂无ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.空调控制暂无ToolStripMenuItem.Text = "空调控制(暂无)";
+            this.tsmAirConditionerControl.Name = "tsmAirConditionerControl";
+            this.tsmAirConditionerControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmAirConditionerControl.Text = "空调控制(暂无)";
+            this.tsmAirConditionerControl.Click += new System.EventHandler(this.tsmAirConditionerControl_Click);
             // 
-            // 电动天窗暂无ToolStripMenuItem
+            // tsmSkylightControl
             // 
-            this.电动天窗暂无ToolStripMenuItem.Name = "电动天窗暂无ToolStripMenuItem";
-            this.电动天窗暂无ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.电动天窗暂无ToolStripMenuItem.Text = "电动天窗(暂无)";
+            this.tsmSkylightControl.Name = "tsmSkylightControl";
+            this.tsmSkylightControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmSkylightControl.Text = "电动天窗(暂无)";
+            this.tsmSkylightControl.Click += new System.EventHandler(this.tsmSkylightControl_Click);
             // 
-            // 摄像头控制暂无ToolStripMenuItem
+            // tsmCameraControl
             // 
-            this.摄像头控制暂无ToolStripMenuItem.Name = "摄像头控制暂无ToolStripMenuItem";
-            this.摄像头控制暂无ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.摄像头控制暂无ToolStripMenuItem.Text = "摄像头控制(暂无)";
+            this.tsmCameraControl.Name = "tsmCameraControl";
+            this.tsmCameraControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmCameraControl.Text = "摄像头控制(暂无)";
+            this.tsmCameraControl.Click += new System.EventHandler(this.tsmCameraControl_Click);
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -656,47 +664,47 @@ namespace LEDController.View
             this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
             this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
             // 
-            // tabControl1
+            // tabCtrlMain
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabCtrlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Location = new System.Drawing.Point(8, 28);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1053, 545);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 1;
+            this.tabCtrlMain.Controls.Add(this.tpgConnect);
+            this.tabCtrlMain.Controls.Add(this.tpgLEDControl);
+            this.tabCtrlMain.Controls.Add(this.tpgLEDStatus);
+            this.tabCtrlMain.Controls.Add(this.tpgRTControl);
+            this.tabCtrlMain.Controls.Add(this.tpgLightControl);
+            this.tabCtrlMain.Controls.Add(this.tpgAirConditionerControl);
+            this.tabCtrlMain.Controls.Add(this.tpgSkylightControl);
+            this.tabCtrlMain.Controls.Add(this.tpgCameraControl);
+            this.tabCtrlMain.Location = new System.Drawing.Point(8, 28);
+            this.tabCtrlMain.Name = "tabCtrlMain";
+            this.tabCtrlMain.SelectedIndex = 0;
+            this.tabCtrlMain.Size = new System.Drawing.Size(1053, 545);
+            this.tabCtrlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabCtrlMain.TabIndex = 1;
             // 
-            // tabPage1
+            // tpgConnect
             // 
-            this.tabPage1.Controls.Add(this.btnConnect);
-            this.tabPage1.Controls.Add(this.btnClose);
-            this.tabPage1.Controls.Add(this.label17);
-            this.tabPage1.Controls.Add(this.tbxTestRec);
-            this.tabPage1.Controls.Add(this.tbxTestCmd);
-            this.tabPage1.Controls.Add(this.btnSendTestMsg);
-            this.tabPage1.Controls.Add(this.tbxConnectMsg);
-            this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.tbxPort);
-            this.tabPage1.Controls.Add(this.tbxIP);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1045, 519);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "连接测试";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            this.tpgConnect.Controls.Add(this.btnConnect);
+            this.tpgConnect.Controls.Add(this.btnClose);
+            this.tpgConnect.Controls.Add(this.label17);
+            this.tpgConnect.Controls.Add(this.tbxTestRec);
+            this.tpgConnect.Controls.Add(this.tbxTestCmd);
+            this.tpgConnect.Controls.Add(this.btnSendTestMsg);
+            this.tpgConnect.Controls.Add(this.tbxConnectMsg);
+            this.tpgConnect.Controls.Add(this.label16);
+            this.tpgConnect.Controls.Add(this.tbxPort);
+            this.tpgConnect.Controls.Add(this.tbxIP);
+            this.tpgConnect.Controls.Add(this.label15);
+            this.tpgConnect.Controls.Add(this.label14);
+            this.tpgConnect.Location = new System.Drawing.Point(4, 22);
+            this.tpgConnect.Name = "tpgConnect";
+            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgConnect.Size = new System.Drawing.Size(1045, 519);
+            this.tpgConnect.TabIndex = 0;
+            this.tpgConnect.Text = "连接测试";
+            this.tpgConnect.UseVisualStyleBackColor = true;
+            this.tpgConnect.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btnConnect
             // 
@@ -828,47 +836,47 @@ namespace LEDController.View
             this.label14.TabIndex = 0;
             this.label14.Text = "IP:";
             // 
-            // tabPage2
+            // tpgLEDControl
             // 
-            this.tabPage2.Controls.Add(this.label43);
-            this.tabPage2.Controls.Add(this.button130);
-            this.tabPage2.Controls.Add(this.label42);
-            this.tabPage2.Controls.Add(this.button129);
-            this.tabPage2.Controls.Add(this.button127);
-            this.tabPage2.Controls.Add(this.button128);
-            this.tabPage2.Controls.Add(this.button125);
-            this.tabPage2.Controls.Add(this.button126);
-            this.tabPage2.Controls.Add(this.button124);
-            this.tabPage2.Controls.Add(this.button123);
-            this.tabPage2.Controls.Add(this.panel6);
-            this.tabPage2.Controls.Add(this.panel5);
-            this.tabPage2.Controls.Add(this.panel4);
-            this.tabPage2.Controls.Add(this.statusStrip1);
-            this.tabPage2.Controls.Add(this.button97);
-            this.tabPage2.Controls.Add(this.button98);
-            this.tabPage2.Controls.Add(this.button95);
-            this.tabPage2.Controls.Add(this.button96);
-            this.tabPage2.Controls.Add(this.button94);
-            this.tabPage2.Controls.Add(this.button93);
-            this.tabPage2.Controls.Add(this.label24);
-            this.tabPage2.Controls.Add(this.label25);
-            this.tabPage2.Controls.Add(this.label26);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.label23);
-            this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1045, 519);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = " LED控制";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tpgLEDControl.Controls.Add(this.label43);
+            this.tpgLEDControl.Controls.Add(this.button130);
+            this.tpgLEDControl.Controls.Add(this.label42);
+            this.tpgLEDControl.Controls.Add(this.button129);
+            this.tpgLEDControl.Controls.Add(this.btnCloseDarkRedDimLED);
+            this.tpgLEDControl.Controls.Add(this.btnOpenDarkRedDimLED);
+            this.tpgLEDControl.Controls.Add(this.btnCloseRedDimLED);
+            this.tpgLEDControl.Controls.Add(this.btnOpenRedDimLED);
+            this.tpgLEDControl.Controls.Add(this.btnCloseGreenDimLED);
+            this.tpgLEDControl.Controls.Add(this.btnOpenGreenDimLED);
+            this.tpgLEDControl.Controls.Add(this.panelDarkRedDimLED);
+            this.tpgLEDControl.Controls.Add(this.panelRedDimLED);
+            this.tpgLEDControl.Controls.Add(this.panelGreenDimLED);
+            this.tpgLEDControl.Controls.Add(this.statusStrip1);
+            this.tpgLEDControl.Controls.Add(this.btnCloseDarkRedFixLED);
+            this.tpgLEDControl.Controls.Add(this.btnOpenDarkRedFixLED);
+            this.tpgLEDControl.Controls.Add(this.btnCloseRedFixLED);
+            this.tpgLEDControl.Controls.Add(this.btnOpenRedFixLED);
+            this.tpgLEDControl.Controls.Add(this.btnCloseGreenFixLED);
+            this.tpgLEDControl.Controls.Add(this.btnOpenGreenFixLED);
+            this.tpgLEDControl.Controls.Add(this.label24);
+            this.tpgLEDControl.Controls.Add(this.label25);
+            this.tpgLEDControl.Controls.Add(this.label26);
+            this.tpgLEDControl.Controls.Add(this.label21);
+            this.tpgLEDControl.Controls.Add(this.label22);
+            this.tpgLEDControl.Controls.Add(this.label23);
+            this.tpgLEDControl.Controls.Add(this.label20);
+            this.tpgLEDControl.Controls.Add(this.label19);
+            this.tpgLEDControl.Controls.Add(this.label18);
+            this.tpgLEDControl.Controls.Add(this.panelDarkRedFixLED);
+            this.tpgLEDControl.Controls.Add(this.panelRedFixLED);
+            this.tpgLEDControl.Controls.Add(this.panelGreenFixLED);
+            this.tpgLEDControl.Location = new System.Drawing.Point(4, 22);
+            this.tpgLEDControl.Name = "tpgLEDControl";
+            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgLEDControl.Size = new System.Drawing.Size(1045, 519);
+            this.tpgLEDControl.TabIndex = 1;
+            this.tpgLEDControl.Text = " LED控制";
+            this.tpgLEDControl.UseVisualStyleBackColor = true;
             // 
             // label43
             // 
@@ -912,98 +920,104 @@ namespace LEDController.View
             this.button129.TabIndex = 64;
             this.button129.UseVisualStyleBackColor = false;
             // 
-            // button127
+            // btnCloseDarkRedDimLED
             // 
-            this.button127.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button127.Location = new System.Drawing.Point(867, 462);
-            this.button127.Name = "button127";
-            this.button127.Size = new System.Drawing.Size(91, 27);
-            this.button127.TabIndex = 91;
-            this.button127.Text = "红外全关";
-            this.button127.UseVisualStyleBackColor = true;
+            this.btnCloseDarkRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseDarkRedDimLED.Location = new System.Drawing.Point(867, 462);
+            this.btnCloseDarkRedDimLED.Name = "btnCloseDarkRedDimLED";
+            this.btnCloseDarkRedDimLED.Size = new System.Drawing.Size(91, 27);
+            this.btnCloseDarkRedDimLED.TabIndex = 91;
+            this.btnCloseDarkRedDimLED.Text = "红外全关";
+            this.btnCloseDarkRedDimLED.UseVisualStyleBackColor = true;
+            this.btnCloseDarkRedDimLED.Click += new System.EventHandler(this.btnCloseDarkRedDimLED_Click);
             // 
-            // button128
+            // btnOpenDarkRedDimLED
             // 
-            this.button128.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button128.Location = new System.Drawing.Point(718, 462);
-            this.button128.Name = "button128";
-            this.button128.Size = new System.Drawing.Size(91, 27);
-            this.button128.TabIndex = 90;
-            this.button128.Text = "红外全开";
-            this.button128.UseVisualStyleBackColor = true;
+            this.btnOpenDarkRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenDarkRedDimLED.Location = new System.Drawing.Point(718, 462);
+            this.btnOpenDarkRedDimLED.Name = "btnOpenDarkRedDimLED";
+            this.btnOpenDarkRedDimLED.Size = new System.Drawing.Size(91, 27);
+            this.btnOpenDarkRedDimLED.TabIndex = 90;
+            this.btnOpenDarkRedDimLED.Text = "红外全开";
+            this.btnOpenDarkRedDimLED.UseVisualStyleBackColor = true;
+            this.btnOpenDarkRedDimLED.Click += new System.EventHandler(this.btnOpenDarkRedDimLED_Click);
             // 
-            // button125
+            // btnCloseRedDimLED
             // 
-            this.button125.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button125.Location = new System.Drawing.Point(545, 462);
-            this.button125.Name = "button125";
-            this.button125.Size = new System.Drawing.Size(91, 27);
-            this.button125.TabIndex = 89;
-            this.button125.Text = "红光全关";
-            this.button125.UseVisualStyleBackColor = true;
+            this.btnCloseRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseRedDimLED.Location = new System.Drawing.Point(545, 462);
+            this.btnCloseRedDimLED.Name = "btnCloseRedDimLED";
+            this.btnCloseRedDimLED.Size = new System.Drawing.Size(91, 27);
+            this.btnCloseRedDimLED.TabIndex = 89;
+            this.btnCloseRedDimLED.Text = "红光全关";
+            this.btnCloseRedDimLED.UseVisualStyleBackColor = true;
+            this.btnCloseRedDimLED.Click += new System.EventHandler(this.btnCloseRedDimLED_Click);
             // 
-            // button126
+            // btnOpenRedDimLED
             // 
-            this.button126.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button126.Location = new System.Drawing.Point(396, 462);
-            this.button126.Name = "button126";
-            this.button126.Size = new System.Drawing.Size(91, 27);
-            this.button126.TabIndex = 88;
-            this.button126.Text = "红光全开";
-            this.button126.UseVisualStyleBackColor = true;
+            this.btnOpenRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenRedDimLED.Location = new System.Drawing.Point(396, 462);
+            this.btnOpenRedDimLED.Name = "btnOpenRedDimLED";
+            this.btnOpenRedDimLED.Size = new System.Drawing.Size(91, 27);
+            this.btnOpenRedDimLED.TabIndex = 88;
+            this.btnOpenRedDimLED.Text = "红光全开";
+            this.btnOpenRedDimLED.UseVisualStyleBackColor = true;
+            this.btnOpenRedDimLED.Click += new System.EventHandler(this.btnOpenRedDimLED_Click);
             // 
-            // button124
+            // btnCloseGreenDimLED
             // 
-            this.button124.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button124.Location = new System.Drawing.Point(226, 462);
-            this.button124.Name = "button124";
-            this.button124.Size = new System.Drawing.Size(91, 27);
-            this.button124.TabIndex = 87;
-            this.button124.Text = "绿光全关";
-            this.button124.UseVisualStyleBackColor = true;
+            this.btnCloseGreenDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseGreenDimLED.Location = new System.Drawing.Point(226, 462);
+            this.btnCloseGreenDimLED.Name = "btnCloseGreenDimLED";
+            this.btnCloseGreenDimLED.Size = new System.Drawing.Size(91, 27);
+            this.btnCloseGreenDimLED.TabIndex = 87;
+            this.btnCloseGreenDimLED.Text = "绿光全关";
+            this.btnCloseGreenDimLED.UseVisualStyleBackColor = true;
+            this.btnCloseGreenDimLED.Click += new System.EventHandler(this.btnCloseGreenDimLED_Click);
             // 
-            // button123
+            // btnOpenGreenDimLED
             // 
-            this.button123.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button123.Location = new System.Drawing.Point(77, 462);
-            this.button123.Name = "button123";
-            this.button123.Size = new System.Drawing.Size(91, 27);
-            this.button123.TabIndex = 86;
-            this.button123.Text = "绿光全开";
-            this.button123.UseVisualStyleBackColor = true;
+            this.btnOpenGreenDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenGreenDimLED.Location = new System.Drawing.Point(77, 462);
+            this.btnOpenGreenDimLED.Name = "btnOpenGreenDimLED";
+            this.btnOpenGreenDimLED.Size = new System.Drawing.Size(91, 27);
+            this.btnOpenGreenDimLED.TabIndex = 86;
+            this.btnOpenGreenDimLED.Text = "绿光全开";
+            this.btnOpenGreenDimLED.UseVisualStyleBackColor = true;
+            this.btnOpenGreenDimLED.Click += new System.EventHandler(this.btnOpenGreenDimLED_Click);
             // 
-            // panel6
+            // panelDarkRedDimLED
             // 
-            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel6.Controls.Add(this.lblDarkRedLEDMinLeft);
-            this.panel6.Controls.Add(this.lblDarkRedLEDMinRight);
-            this.panel6.Controls.Add(this.lblDarkRedLEDMaxLeft);
-            this.panel6.Controls.Add(this.tbxDimLED12);
-            this.panel6.Controls.Add(this.lblDarkRedLEDMaxRight);
-            this.panel6.Controls.Add(this.tbxDimLED11);
-            this.panel6.Controls.Add(this.tbxDimLED10);
-            this.panel6.Controls.Add(this.tbxDimLED9);
-            this.panel6.Controls.Add(this.label33);
-            this.panel6.Controls.Add(this.button115);
-            this.panel6.Controls.Add(this.label34);
-            this.panel6.Controls.Add(this.sbarDimLED12);
-            this.panel6.Controls.Add(this.btnDimLED12);
-            this.panel6.Controls.Add(this.button117);
-            this.panel6.Controls.Add(this.label36);
-            this.panel6.Controls.Add(this.sbarDimLED11);
-            this.panel6.Controls.Add(this.btnDimLED11);
-            this.panel6.Controls.Add(this.button119);
-            this.panel6.Controls.Add(this.label38);
-            this.panel6.Controls.Add(this.sbarDimLED10);
-            this.panel6.Controls.Add(this.btnDimLED10);
-            this.panel6.Controls.Add(this.button121);
-            this.panel6.Controls.Add(this.label40);
-            this.panel6.Controls.Add(this.sbarDimLED9);
-            this.panel6.Controls.Add(this.btnDimLED9);
-            this.panel6.Location = new System.Drawing.Point(685, 307);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(307, 152);
-            this.panel6.TabIndex = 85;
+            this.panelDarkRedDimLED.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDarkRedDimLED.Controls.Add(this.lblDarkRedLEDMinLeft);
+            this.panelDarkRedDimLED.Controls.Add(this.lblDarkRedLEDMinRight);
+            this.panelDarkRedDimLED.Controls.Add(this.lblDarkRedLEDMaxLeft);
+            this.panelDarkRedDimLED.Controls.Add(this.tbxDimLED12);
+            this.panelDarkRedDimLED.Controls.Add(this.lblDarkRedLEDMaxRight);
+            this.panelDarkRedDimLED.Controls.Add(this.tbxDimLED11);
+            this.panelDarkRedDimLED.Controls.Add(this.tbxDimLED10);
+            this.panelDarkRedDimLED.Controls.Add(this.tbxDimLED9);
+            this.panelDarkRedDimLED.Controls.Add(this.label33);
+            this.panelDarkRedDimLED.Controls.Add(this.btnOpenDimDarkRedLED4);
+            this.panelDarkRedDimLED.Controls.Add(this.label34);
+            this.panelDarkRedDimLED.Controls.Add(this.sbarDimLED12);
+            this.panelDarkRedDimLED.Controls.Add(this.btnDimLED12);
+            this.panelDarkRedDimLED.Controls.Add(this.btnOpenDimDarkRedLED3);
+            this.panelDarkRedDimLED.Controls.Add(this.label36);
+            this.panelDarkRedDimLED.Controls.Add(this.sbarDimLED11);
+            this.panelDarkRedDimLED.Controls.Add(this.btnDimLED11);
+            this.panelDarkRedDimLED.Controls.Add(this.btnOpenDimDarkRedLED2);
+            this.panelDarkRedDimLED.Controls.Add(this.label38);
+            this.panelDarkRedDimLED.Controls.Add(this.sbarDimLED10);
+            this.panelDarkRedDimLED.Controls.Add(this.btnDimLED10);
+            this.panelDarkRedDimLED.Controls.Add(this.btnOpenDimDarkRedLED1);
+            this.panelDarkRedDimLED.Controls.Add(this.label40);
+            this.panelDarkRedDimLED.Controls.Add(this.sbarDimLED9);
+            this.panelDarkRedDimLED.Controls.Add(this.btnDimLED9);
+            this.panelDarkRedDimLED.Location = new System.Drawing.Point(685, 307);
+            this.panelDarkRedDimLED.Name = "panelDarkRedDimLED";
+            this.panelDarkRedDimLED.Size = new System.Drawing.Size(307, 152);
+            this.panelDarkRedDimLED.TabIndex = 85;
             // 
             // lblDarkRedLEDMinLeft
             // 
@@ -1094,14 +1108,16 @@ namespace LEDController.View
             this.label33.TabIndex = 84;
             this.label33.Text = "功率";
             // 
-            // button115
+            // btnOpenDimDarkRedLED4
             // 
-            this.button115.Location = new System.Drawing.Point(235, 126);
-            this.button115.Name = "button115";
-            this.button115.Size = new System.Drawing.Size(45, 23);
-            this.button115.TabIndex = 83;
-            this.button115.Text = "设置";
-            this.button115.UseVisualStyleBackColor = true;
+            this.btnOpenDimDarkRedLED4.Location = new System.Drawing.Point(235, 126);
+            this.btnOpenDimDarkRedLED4.Name = "btnOpenDimDarkRedLED4";
+            this.btnOpenDimDarkRedLED4.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimDarkRedLED4.TabIndex = 83;
+            this.btnOpenDimDarkRedLED4.Tag = "132";
+            this.btnOpenDimDarkRedLED4.Text = "设置";
+            this.btnOpenDimDarkRedLED4.UseVisualStyleBackColor = true;
+            this.btnOpenDimDarkRedLED4.Click += new System.EventHandler(this.btnOpenDimDarkRedLED4_Click);
             // 
             // label34
             // 
@@ -1143,14 +1159,16 @@ namespace LEDController.View
             this.btnDimLED12.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
             this.btnDimLED12.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
             // 
-            // button117
+            // btnOpenDimDarkRedLED3
             // 
-            this.button117.Location = new System.Drawing.Point(173, 126);
-            this.button117.Name = "button117";
-            this.button117.Size = new System.Drawing.Size(45, 23);
-            this.button117.TabIndex = 78;
-            this.button117.Text = "设置";
-            this.button117.UseVisualStyleBackColor = true;
+            this.btnOpenDimDarkRedLED3.Location = new System.Drawing.Point(173, 126);
+            this.btnOpenDimDarkRedLED3.Name = "btnOpenDimDarkRedLED3";
+            this.btnOpenDimDarkRedLED3.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimDarkRedLED3.TabIndex = 78;
+            this.btnOpenDimDarkRedLED3.Tag = "131";
+            this.btnOpenDimDarkRedLED3.Text = "设置";
+            this.btnOpenDimDarkRedLED3.UseVisualStyleBackColor = true;
+            this.btnOpenDimDarkRedLED3.Click += new System.EventHandler(this.btnOpenDimDarkRedLED3_Click);
             // 
             // label36
             // 
@@ -1192,14 +1210,16 @@ namespace LEDController.View
             this.btnDimLED11.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
             this.btnDimLED11.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
             // 
-            // button119
+            // btnOpenDimDarkRedLED2
             // 
-            this.button119.Location = new System.Drawing.Point(112, 126);
-            this.button119.Name = "button119";
-            this.button119.Size = new System.Drawing.Size(45, 23);
-            this.button119.TabIndex = 73;
-            this.button119.Text = "设置";
-            this.button119.UseVisualStyleBackColor = true;
+            this.btnOpenDimDarkRedLED2.Location = new System.Drawing.Point(112, 126);
+            this.btnOpenDimDarkRedLED2.Name = "btnOpenDimDarkRedLED2";
+            this.btnOpenDimDarkRedLED2.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimDarkRedLED2.TabIndex = 73;
+            this.btnOpenDimDarkRedLED2.Tag = "130";
+            this.btnOpenDimDarkRedLED2.Text = "设置";
+            this.btnOpenDimDarkRedLED2.UseVisualStyleBackColor = true;
+            this.btnOpenDimDarkRedLED2.Click += new System.EventHandler(this.btnOpenDimDarkRedLED2_Click);
             // 
             // label38
             // 
@@ -1241,14 +1261,16 @@ namespace LEDController.View
             this.btnDimLED10.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
             this.btnDimLED10.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
             // 
-            // button121
+            // btnOpenDimDarkRedLED1
             // 
-            this.button121.Location = new System.Drawing.Point(51, 126);
-            this.button121.Name = "button121";
-            this.button121.Size = new System.Drawing.Size(45, 23);
-            this.button121.TabIndex = 68;
-            this.button121.Text = "设置";
-            this.button121.UseVisualStyleBackColor = true;
+            this.btnOpenDimDarkRedLED1.Location = new System.Drawing.Point(51, 126);
+            this.btnOpenDimDarkRedLED1.Name = "btnOpenDimDarkRedLED1";
+            this.btnOpenDimDarkRedLED1.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimDarkRedLED1.TabIndex = 68;
+            this.btnOpenDimDarkRedLED1.Tag = "129";
+            this.btnOpenDimDarkRedLED1.Text = "设置";
+            this.btnOpenDimDarkRedLED1.UseVisualStyleBackColor = true;
+            this.btnOpenDimDarkRedLED1.Click += new System.EventHandler(this.btnOpenDimDarkRedLED1_Click);
             // 
             // label40
             // 
@@ -1290,38 +1312,38 @@ namespace LEDController.View
             this.btnDimLED9.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
             this.btnDimLED9.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
             // 
-            // panel5
+            // panelRedDimLED
             // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Controls.Add(this.lblRedLEDMinLeft);
-            this.panel5.Controls.Add(this.lblRedLEDMinRight);
-            this.panel5.Controls.Add(this.lblRedLEDMaxLeft);
-            this.panel5.Controls.Add(this.tbxDimLED8);
-            this.panel5.Controls.Add(this.lblRedLEDMaxRight);
-            this.panel5.Controls.Add(this.tbxDimLED7);
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.tbxDimLED6);
-            this.panel5.Controls.Add(this.button107);
-            this.panel5.Controls.Add(this.tbxDimLED5);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.sbarDimLED8);
-            this.panel5.Controls.Add(this.btnDimLED8);
-            this.panel5.Controls.Add(this.button109);
-            this.panel5.Controls.Add(this.label27);
-            this.panel5.Controls.Add(this.sbarDimLED7);
-            this.panel5.Controls.Add(this.btnDimLED7);
-            this.panel5.Controls.Add(this.button111);
-            this.panel5.Controls.Add(this.label29);
-            this.panel5.Controls.Add(this.sbarDimLED6);
-            this.panel5.Controls.Add(this.btnDimLED6);
-            this.panel5.Controls.Add(this.button113);
-            this.panel5.Controls.Add(this.label31);
-            this.panel5.Controls.Add(this.sbarDimLED5);
-            this.panel5.Controls.Add(this.btnDimLED5);
-            this.panel5.Location = new System.Drawing.Point(363, 307);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(307, 152);
-            this.panel5.TabIndex = 85;
+            this.panelRedDimLED.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelRedDimLED.Controls.Add(this.lblRedLEDMinLeft);
+            this.panelRedDimLED.Controls.Add(this.lblRedLEDMinRight);
+            this.panelRedDimLED.Controls.Add(this.lblRedLEDMaxLeft);
+            this.panelRedDimLED.Controls.Add(this.tbxDimLED8);
+            this.panelRedDimLED.Controls.Add(this.lblRedLEDMaxRight);
+            this.panelRedDimLED.Controls.Add(this.tbxDimLED7);
+            this.panelRedDimLED.Controls.Add(this.label11);
+            this.panelRedDimLED.Controls.Add(this.tbxDimLED6);
+            this.panelRedDimLED.Controls.Add(this.btnOpenDimRedLED4);
+            this.panelRedDimLED.Controls.Add(this.tbxDimLED5);
+            this.panelRedDimLED.Controls.Add(this.label12);
+            this.panelRedDimLED.Controls.Add(this.sbarDimLED8);
+            this.panelRedDimLED.Controls.Add(this.btnDimLED8);
+            this.panelRedDimLED.Controls.Add(this.btnOpenDimRedLED3);
+            this.panelRedDimLED.Controls.Add(this.label27);
+            this.panelRedDimLED.Controls.Add(this.sbarDimLED7);
+            this.panelRedDimLED.Controls.Add(this.btnDimLED7);
+            this.panelRedDimLED.Controls.Add(this.btnOpenDimRedLED2);
+            this.panelRedDimLED.Controls.Add(this.label29);
+            this.panelRedDimLED.Controls.Add(this.sbarDimLED6);
+            this.panelRedDimLED.Controls.Add(this.btnDimLED6);
+            this.panelRedDimLED.Controls.Add(this.btnOpenDimRedLED1);
+            this.panelRedDimLED.Controls.Add(this.label31);
+            this.panelRedDimLED.Controls.Add(this.sbarDimLED5);
+            this.panelRedDimLED.Controls.Add(this.btnDimLED5);
+            this.panelRedDimLED.Location = new System.Drawing.Point(363, 307);
+            this.panelRedDimLED.Name = "panelRedDimLED";
+            this.panelRedDimLED.Size = new System.Drawing.Size(307, 152);
+            this.panelRedDimLED.TabIndex = 85;
             // 
             // lblRedLEDMinLeft
             // 
@@ -1401,14 +1423,16 @@ namespace LEDController.View
             this.tbxDimLED6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbxDimLED6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxDimLED1_KeyDown);
             // 
-            // button107
+            // btnOpenDimRedLED4
             // 
-            this.button107.Location = new System.Drawing.Point(235, 126);
-            this.button107.Name = "button107";
-            this.button107.Size = new System.Drawing.Size(45, 23);
-            this.button107.TabIndex = 83;
-            this.button107.Text = "设置";
-            this.button107.UseVisualStyleBackColor = true;
+            this.btnOpenDimRedLED4.Location = new System.Drawing.Point(235, 126);
+            this.btnOpenDimRedLED4.Name = "btnOpenDimRedLED4";
+            this.btnOpenDimRedLED4.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimRedLED4.TabIndex = 83;
+            this.btnOpenDimRedLED4.Tag = "128";
+            this.btnOpenDimRedLED4.Text = "设置";
+            this.btnOpenDimRedLED4.UseVisualStyleBackColor = true;
+            this.btnOpenDimRedLED4.Click += new System.EventHandler(this.btnOpenDimRedLED4_Click);
             // 
             // tbxDimLED5
             // 
@@ -1461,14 +1485,16 @@ namespace LEDController.View
             this.btnDimLED8.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
             this.btnDimLED8.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
             // 
-            // button109
+            // btnOpenDimRedLED3
             // 
-            this.button109.Location = new System.Drawing.Point(173, 126);
-            this.button109.Name = "button109";
-            this.button109.Size = new System.Drawing.Size(45, 23);
-            this.button109.TabIndex = 78;
-            this.button109.Text = "设置";
-            this.button109.UseVisualStyleBackColor = true;
+            this.btnOpenDimRedLED3.Location = new System.Drawing.Point(173, 126);
+            this.btnOpenDimRedLED3.Name = "btnOpenDimRedLED3";
+            this.btnOpenDimRedLED3.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimRedLED3.TabIndex = 78;
+            this.btnOpenDimRedLED3.Tag = "127";
+            this.btnOpenDimRedLED3.Text = "设置";
+            this.btnOpenDimRedLED3.UseVisualStyleBackColor = true;
+            this.btnOpenDimRedLED3.Click += new System.EventHandler(this.btnOpenDimRedLED3_Click);
             // 
             // label27
             // 
@@ -1510,14 +1536,16 @@ namespace LEDController.View
             this.btnDimLED7.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
             this.btnDimLED7.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
             // 
-            // button111
+            // btnOpenDimRedLED2
             // 
-            this.button111.Location = new System.Drawing.Point(112, 126);
-            this.button111.Name = "button111";
-            this.button111.Size = new System.Drawing.Size(45, 23);
-            this.button111.TabIndex = 73;
-            this.button111.Text = "设置";
-            this.button111.UseVisualStyleBackColor = true;
+            this.btnOpenDimRedLED2.Location = new System.Drawing.Point(112, 126);
+            this.btnOpenDimRedLED2.Name = "btnOpenDimRedLED2";
+            this.btnOpenDimRedLED2.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimRedLED2.TabIndex = 73;
+            this.btnOpenDimRedLED2.Tag = "126";
+            this.btnOpenDimRedLED2.Text = "设置";
+            this.btnOpenDimRedLED2.UseVisualStyleBackColor = true;
+            this.btnOpenDimRedLED2.Click += new System.EventHandler(this.btnOpenDimRedLED2_Click);
             // 
             // label29
             // 
@@ -1559,14 +1587,16 @@ namespace LEDController.View
             this.btnDimLED6.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
             this.btnDimLED6.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
             // 
-            // button113
+            // btnOpenDimRedLED1
             // 
-            this.button113.Location = new System.Drawing.Point(51, 126);
-            this.button113.Name = "button113";
-            this.button113.Size = new System.Drawing.Size(45, 23);
-            this.button113.TabIndex = 68;
-            this.button113.Text = "设置";
-            this.button113.UseVisualStyleBackColor = true;
+            this.btnOpenDimRedLED1.Location = new System.Drawing.Point(51, 126);
+            this.btnOpenDimRedLED1.Name = "btnOpenDimRedLED1";
+            this.btnOpenDimRedLED1.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimRedLED1.TabIndex = 68;
+            this.btnOpenDimRedLED1.Tag = "125";
+            this.btnOpenDimRedLED1.Text = "设置";
+            this.btnOpenDimRedLED1.UseVisualStyleBackColor = true;
+            this.btnOpenDimRedLED1.Click += new System.EventHandler(this.btnOpenDimRedLED1_Click);
             // 
             // label31
             // 
@@ -1608,38 +1638,38 @@ namespace LEDController.View
             this.btnDimLED5.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
             this.btnDimLED5.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
             // 
-            // panel4
+            // panelGreenDimLED
             // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Controls.Add(this.lblGreenLEDMinRight);
-            this.panel4.Controls.Add(this.lblGreenLEDMaxRight);
-            this.panel4.Controls.Add(this.lblGreenLEDMinLeft);
-            this.panel4.Controls.Add(this.lblGreenLEDMaxLeft);
-            this.panel4.Controls.Add(this.tbxDimLED4);
-            this.panel4.Controls.Add(this.tbxDimLED3);
-            this.panel4.Controls.Add(this.tbxDimLED2);
-            this.panel4.Controls.Add(this.tbxDimLED1);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.button105);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.sbarDimLED4);
-            this.panel4.Controls.Add(this.btnDimLED4);
-            this.panel4.Controls.Add(this.button103);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.sbarDimLED3);
-            this.panel4.Controls.Add(this.btnDimLED3);
-            this.panel4.Controls.Add(this.button101);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.sbarDimLED2);
-            this.panel4.Controls.Add(this.btnDimLED2);
-            this.panel4.Controls.Add(this.button100);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.sbarDimLED1);
-            this.panel4.Controls.Add(this.btnDimLED1);
-            this.panel4.Location = new System.Drawing.Point(44, 307);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(307, 152);
-            this.panel4.TabIndex = 82;
+            this.panelGreenDimLED.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelGreenDimLED.Controls.Add(this.lblGreenLEDMinRight);
+            this.panelGreenDimLED.Controls.Add(this.lblGreenLEDMaxRight);
+            this.panelGreenDimLED.Controls.Add(this.lblGreenLEDMinLeft);
+            this.panelGreenDimLED.Controls.Add(this.lblGreenLEDMaxLeft);
+            this.panelGreenDimLED.Controls.Add(this.tbxDimLED4);
+            this.panelGreenDimLED.Controls.Add(this.tbxDimLED3);
+            this.panelGreenDimLED.Controls.Add(this.tbxDimLED2);
+            this.panelGreenDimLED.Controls.Add(this.tbxDimLED1);
+            this.panelGreenDimLED.Controls.Add(this.label10);
+            this.panelGreenDimLED.Controls.Add(this.btnOpenDimGreenLED4);
+            this.panelGreenDimLED.Controls.Add(this.label8);
+            this.panelGreenDimLED.Controls.Add(this.sbarDimLED4);
+            this.panelGreenDimLED.Controls.Add(this.btnDimLED4);
+            this.panelGreenDimLED.Controls.Add(this.btnOpenDimGreenLED3);
+            this.panelGreenDimLED.Controls.Add(this.label6);
+            this.panelGreenDimLED.Controls.Add(this.sbarDimLED3);
+            this.panelGreenDimLED.Controls.Add(this.btnDimLED3);
+            this.panelGreenDimLED.Controls.Add(this.btnOpenDimGreenLED2);
+            this.panelGreenDimLED.Controls.Add(this.label3);
+            this.panelGreenDimLED.Controls.Add(this.sbarDimLED2);
+            this.panelGreenDimLED.Controls.Add(this.btnDimLED2);
+            this.panelGreenDimLED.Controls.Add(this.btnOpenDimGreenLED1);
+            this.panelGreenDimLED.Controls.Add(this.label2);
+            this.panelGreenDimLED.Controls.Add(this.sbarDimLED1);
+            this.panelGreenDimLED.Controls.Add(this.btnDimLED1);
+            this.panelGreenDimLED.Location = new System.Drawing.Point(44, 307);
+            this.panelGreenDimLED.Name = "panelGreenDimLED";
+            this.panelGreenDimLED.Size = new System.Drawing.Size(307, 152);
+            this.panelGreenDimLED.TabIndex = 82;
             // 
             // lblGreenLEDMinRight
             // 
@@ -1730,14 +1760,16 @@ namespace LEDController.View
             this.label10.TabIndex = 84;
             this.label10.Text = "功率";
             // 
-            // button105
+            // btnOpenDimGreenLED4
             // 
-            this.button105.Location = new System.Drawing.Point(235, 126);
-            this.button105.Name = "button105";
-            this.button105.Size = new System.Drawing.Size(45, 23);
-            this.button105.TabIndex = 83;
-            this.button105.Text = "设置";
-            this.button105.UseVisualStyleBackColor = true;
+            this.btnOpenDimGreenLED4.Location = new System.Drawing.Point(235, 126);
+            this.btnOpenDimGreenLED4.Name = "btnOpenDimGreenLED4";
+            this.btnOpenDimGreenLED4.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimGreenLED4.TabIndex = 83;
+            this.btnOpenDimGreenLED4.Tag = "124";
+            this.btnOpenDimGreenLED4.Text = "设置";
+            this.btnOpenDimGreenLED4.UseVisualStyleBackColor = true;
+            this.btnOpenDimGreenLED4.Click += new System.EventHandler(this.btnOpenDimGreenLED4_Click);
             // 
             // label8
             // 
@@ -1779,14 +1811,16 @@ namespace LEDController.View
             this.btnDimLED4.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
             this.btnDimLED4.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
             // 
-            // button103
+            // btnOpenDimGreenLED3
             // 
-            this.button103.Location = new System.Drawing.Point(173, 126);
-            this.button103.Name = "button103";
-            this.button103.Size = new System.Drawing.Size(45, 23);
-            this.button103.TabIndex = 78;
-            this.button103.Text = "设置";
-            this.button103.UseVisualStyleBackColor = true;
+            this.btnOpenDimGreenLED3.Location = new System.Drawing.Point(173, 126);
+            this.btnOpenDimGreenLED3.Name = "btnOpenDimGreenLED3";
+            this.btnOpenDimGreenLED3.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimGreenLED3.TabIndex = 78;
+            this.btnOpenDimGreenLED3.Tag = "123";
+            this.btnOpenDimGreenLED3.Text = "设置";
+            this.btnOpenDimGreenLED3.UseVisualStyleBackColor = true;
+            this.btnOpenDimGreenLED3.Click += new System.EventHandler(this.btnOpenDimGreenLED3_Click);
             // 
             // label6
             // 
@@ -1828,14 +1862,16 @@ namespace LEDController.View
             this.btnDimLED3.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
             this.btnDimLED3.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
             // 
-            // button101
+            // btnOpenDimGreenLED2
             // 
-            this.button101.Location = new System.Drawing.Point(112, 126);
-            this.button101.Name = "button101";
-            this.button101.Size = new System.Drawing.Size(45, 23);
-            this.button101.TabIndex = 73;
-            this.button101.Text = "设置";
-            this.button101.UseVisualStyleBackColor = true;
+            this.btnOpenDimGreenLED2.Location = new System.Drawing.Point(112, 126);
+            this.btnOpenDimGreenLED2.Name = "btnOpenDimGreenLED2";
+            this.btnOpenDimGreenLED2.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimGreenLED2.TabIndex = 73;
+            this.btnOpenDimGreenLED2.Tag = "122";
+            this.btnOpenDimGreenLED2.Text = "设置";
+            this.btnOpenDimGreenLED2.UseVisualStyleBackColor = true;
+            this.btnOpenDimGreenLED2.Click += new System.EventHandler(this.btnOpenDimGreenLED2_Click);
             // 
             // label3
             // 
@@ -1877,14 +1913,16 @@ namespace LEDController.View
             this.btnDimLED2.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
             this.btnDimLED2.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
             // 
-            // button100
+            // btnOpenDimGreenLED1
             // 
-            this.button100.Location = new System.Drawing.Point(51, 126);
-            this.button100.Name = "button100";
-            this.button100.Size = new System.Drawing.Size(45, 23);
-            this.button100.TabIndex = 68;
-            this.button100.Text = "设置";
-            this.button100.UseVisualStyleBackColor = true;
+            this.btnOpenDimGreenLED1.Location = new System.Drawing.Point(51, 126);
+            this.btnOpenDimGreenLED1.Name = "btnOpenDimGreenLED1";
+            this.btnOpenDimGreenLED1.Size = new System.Drawing.Size(45, 23);
+            this.btnOpenDimGreenLED1.TabIndex = 68;
+            this.btnOpenDimGreenLED1.Tag = "121";
+            this.btnOpenDimGreenLED1.Text = "设置";
+            this.btnOpenDimGreenLED1.UseVisualStyleBackColor = true;
+            this.btnOpenDimGreenLED1.Click += new System.EventHandler(this.btnOpenDimGreenLED1_Click);
             // 
             // label2
             // 
@@ -1929,121 +1967,126 @@ namespace LEDController.View
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel4,
-            this.toolStripStatusLabel5,
-            this.toolStripStatusLabel6,
-            this.toolStripStatusLabel7,
-            this.toolStripStatusLabel8,
-            this.toolStripStatusLabel9});
+            this.tsslGreenLEDTotalPower,
+            this.tsslRedLEDTotalPower,
+            this.tsslDarkRedLEDTotalPower,
+            this.tsslTemp1,
+            this.tsslTemp2,
+            this.tsslTemp3,
+            this.tsslTemp4});
             this.statusStrip1.Location = new System.Drawing.Point(3, 494);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1039, 22);
             this.statusStrip1.TabIndex = 80;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // tsslGreenLEDTotalPower
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "绿光实时总功率: 0W";
+            this.tsslGreenLEDTotalPower.Name = "tsslGreenLEDTotalPower";
+            this.tsslGreenLEDTotalPower.Size = new System.Drawing.Size(118, 17);
+            this.tsslGreenLEDTotalPower.Text = "绿光实时总功率: 0W";
             // 
-            // toolStripStatusLabel4
+            // tsslRedLEDTotalPower
             // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel4.Text = "红光实时总功率: 0W";
+            this.tsslRedLEDTotalPower.Name = "tsslRedLEDTotalPower";
+            this.tsslRedLEDTotalPower.Size = new System.Drawing.Size(118, 17);
+            this.tsslRedLEDTotalPower.Text = "红光实时总功率: 0W";
             // 
-            // toolStripStatusLabel5
+            // tsslDarkRedLEDTotalPower
             // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel5.Text = "红外实时总功率: 0W";
+            this.tsslDarkRedLEDTotalPower.Name = "tsslDarkRedLEDTotalPower";
+            this.tsslDarkRedLEDTotalPower.Size = new System.Drawing.Size(118, 17);
+            this.tsslDarkRedLEDTotalPower.Text = "红外实时总功率: 0W";
             // 
-            // toolStripStatusLabel6
+            // tsslTemp1
             // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(87, 17);
-            this.toolStripStatusLabel6.Text = "测温点1： 0°C";
+            this.tsslTemp1.Name = "tsslTemp1";
+            this.tsslTemp1.Size = new System.Drawing.Size(87, 17);
+            this.tsslTemp1.Text = "测温点1： 0°C";
             // 
-            // toolStripStatusLabel7
+            // tsslTemp2
             // 
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(78, 17);
-            this.toolStripStatusLabel7.Text = "测温点2: 0°C";
+            this.tsslTemp2.Name = "tsslTemp2";
+            this.tsslTemp2.Size = new System.Drawing.Size(78, 17);
+            this.tsslTemp2.Text = "测温点2: 0°C";
             // 
-            // toolStripStatusLabel8
+            // tsslTemp3
             // 
-            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(78, 17);
-            this.toolStripStatusLabel8.Text = "测温点3: 0°C";
+            this.tsslTemp3.Name = "tsslTemp3";
+            this.tsslTemp3.Size = new System.Drawing.Size(78, 17);
+            this.tsslTemp3.Text = "测温点3: 0°C";
             // 
-            // toolStripStatusLabel9
+            // tsslTemp4
             // 
-            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
-            this.toolStripStatusLabel9.Size = new System.Drawing.Size(78, 17);
-            this.toolStripStatusLabel9.Text = "测温点4: 0°C";
+            this.tsslTemp4.Name = "tsslTemp4";
+            this.tsslTemp4.Size = new System.Drawing.Size(78, 17);
+            this.tsslTemp4.Text = "测温点4: 0°C";
             // 
-            // button97
+            // btnCloseDarkRedFixLED
             // 
-            this.button97.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button97.Location = new System.Drawing.Point(867, 274);
-            this.button97.Name = "button97";
-            this.button97.Size = new System.Drawing.Size(91, 27);
-            this.button97.TabIndex = 79;
-            this.button97.Text = "红外全关";
-            this.button97.UseVisualStyleBackColor = true;
+            this.btnCloseDarkRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseDarkRedFixLED.Location = new System.Drawing.Point(867, 274);
+            this.btnCloseDarkRedFixLED.Name = "btnCloseDarkRedFixLED";
+            this.btnCloseDarkRedFixLED.Size = new System.Drawing.Size(91, 27);
+            this.btnCloseDarkRedFixLED.TabIndex = 79;
+            this.btnCloseDarkRedFixLED.Text = "红外全关";
+            this.btnCloseDarkRedFixLED.UseVisualStyleBackColor = true;
+            this.btnCloseDarkRedFixLED.Click += new System.EventHandler(this.btnCloseDarkRedFixLED_Click);
             // 
-            // button98
+            // btnOpenDarkRedFixLED
             // 
-            this.button98.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button98.Location = new System.Drawing.Point(718, 274);
-            this.button98.Name = "button98";
-            this.button98.Size = new System.Drawing.Size(91, 27);
-            this.button98.TabIndex = 78;
-            this.button98.Text = "红外全开";
-            this.button98.UseVisualStyleBackColor = true;
+            this.btnOpenDarkRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenDarkRedFixLED.Location = new System.Drawing.Point(718, 274);
+            this.btnOpenDarkRedFixLED.Name = "btnOpenDarkRedFixLED";
+            this.btnOpenDarkRedFixLED.Size = new System.Drawing.Size(91, 27);
+            this.btnOpenDarkRedFixLED.TabIndex = 78;
+            this.btnOpenDarkRedFixLED.Text = "红外全开";
+            this.btnOpenDarkRedFixLED.UseVisualStyleBackColor = true;
+            this.btnOpenDarkRedFixLED.Click += new System.EventHandler(this.btnOpenDarkRedFixLED_Click);
             // 
-            // button95
+            // btnCloseRedFixLED
             // 
-            this.button95.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button95.Location = new System.Drawing.Point(545, 274);
-            this.button95.Name = "button95";
-            this.button95.Size = new System.Drawing.Size(91, 27);
-            this.button95.TabIndex = 77;
-            this.button95.Text = "红光全关";
-            this.button95.UseVisualStyleBackColor = true;
+            this.btnCloseRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseRedFixLED.Location = new System.Drawing.Point(545, 274);
+            this.btnCloseRedFixLED.Name = "btnCloseRedFixLED";
+            this.btnCloseRedFixLED.Size = new System.Drawing.Size(91, 27);
+            this.btnCloseRedFixLED.TabIndex = 77;
+            this.btnCloseRedFixLED.Text = "红光全关";
+            this.btnCloseRedFixLED.UseVisualStyleBackColor = true;
+            this.btnCloseRedFixLED.Click += new System.EventHandler(this.btnCloseRedFixLED_Click);
             // 
-            // button96
+            // btnOpenRedFixLED
             // 
-            this.button96.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button96.Location = new System.Drawing.Point(396, 274);
-            this.button96.Name = "button96";
-            this.button96.Size = new System.Drawing.Size(91, 27);
-            this.button96.TabIndex = 76;
-            this.button96.Text = "红光全开";
-            this.button96.UseVisualStyleBackColor = true;
+            this.btnOpenRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenRedFixLED.Location = new System.Drawing.Point(396, 274);
+            this.btnOpenRedFixLED.Name = "btnOpenRedFixLED";
+            this.btnOpenRedFixLED.Size = new System.Drawing.Size(91, 27);
+            this.btnOpenRedFixLED.TabIndex = 76;
+            this.btnOpenRedFixLED.Text = "红光全开";
+            this.btnOpenRedFixLED.UseVisualStyleBackColor = true;
+            this.btnOpenRedFixLED.Click += new System.EventHandler(this.btnOpenRedFixLED_Click);
             // 
-            // button94
+            // btnCloseGreenFixLED
             // 
-            this.button94.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button94.Location = new System.Drawing.Point(226, 274);
-            this.button94.Name = "button94";
-            this.button94.Size = new System.Drawing.Size(91, 27);
-            this.button94.TabIndex = 75;
-            this.button94.Text = "绿光全关";
-            this.button94.UseVisualStyleBackColor = true;
-            this.button94.Click += new System.EventHandler(this.button94_Click);
+            this.btnCloseGreenFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseGreenFixLED.Location = new System.Drawing.Point(226, 274);
+            this.btnCloseGreenFixLED.Name = "btnCloseGreenFixLED";
+            this.btnCloseGreenFixLED.Size = new System.Drawing.Size(91, 27);
+            this.btnCloseGreenFixLED.TabIndex = 75;
+            this.btnCloseGreenFixLED.Text = "绿光全关";
+            this.btnCloseGreenFixLED.UseVisualStyleBackColor = true;
+            this.btnCloseGreenFixLED.Click += new System.EventHandler(this.btnCloseGreenFixLED_Click);
             // 
-            // button93
+            // btnOpenGreenFixLED
             // 
-            this.button93.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button93.Location = new System.Drawing.Point(77, 274);
-            this.button93.Name = "button93";
-            this.button93.Size = new System.Drawing.Size(91, 27);
-            this.button93.TabIndex = 74;
-            this.button93.Text = "绿光全开";
-            this.button93.UseVisualStyleBackColor = true;
+            this.btnOpenGreenFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenGreenFixLED.Location = new System.Drawing.Point(77, 274);
+            this.btnOpenGreenFixLED.Name = "btnOpenGreenFixLED";
+            this.btnOpenGreenFixLED.Size = new System.Drawing.Size(91, 27);
+            this.btnOpenGreenFixLED.TabIndex = 74;
+            this.btnOpenGreenFixLED.Text = "绿光全开";
+            this.btnOpenGreenFixLED.UseVisualStyleBackColor = true;
+            this.btnOpenGreenFixLED.Click += new System.EventHandler(this.btnOpenGreenFixLED_Click);
             // 
             // label24
             // 
@@ -2138,53 +2181,53 @@ namespace LEDController.View
             this.label18.TabIndex = 65;
             this.label18.Text = "绿光(525 nm)";
             // 
-            // panel3
+            // panelDarkRedFixLED
             // 
-            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.btnLED120);
-            this.panel3.Controls.Add(this.btnLED112);
-            this.panel3.Controls.Add(this.btnLED104);
-            this.panel3.Controls.Add(this.btnLED96);
-            this.panel3.Controls.Add(this.btnLED88);
-            this.panel3.Controls.Add(this.btnLED116);
-            this.panel3.Controls.Add(this.btnLED108);
-            this.panel3.Controls.Add(this.btnLED100);
-            this.panel3.Controls.Add(this.btnLED92);
-            this.panel3.Controls.Add(this.btnLED84);
-            this.panel3.Controls.Add(this.btnLED119);
-            this.panel3.Controls.Add(this.btnLED118);
-            this.panel3.Controls.Add(this.btnLED117);
-            this.panel3.Controls.Add(this.btnLED115);
-            this.panel3.Controls.Add(this.btnLED114);
-            this.panel3.Controls.Add(this.btnLED113);
-            this.panel3.Controls.Add(this.btnLED111);
-            this.panel3.Controls.Add(this.btnLED110);
-            this.panel3.Controls.Add(this.btnLED109);
-            this.panel3.Controls.Add(this.btnLED107);
-            this.panel3.Controls.Add(this.btnLED106);
-            this.panel3.Controls.Add(this.btnLED105);
-            this.panel3.Controls.Add(this.btnLED103);
-            this.panel3.Controls.Add(this.btnLED102);
-            this.panel3.Controls.Add(this.btnLED101);
-            this.panel3.Controls.Add(this.btnLED99);
-            this.panel3.Controls.Add(this.btnLED98);
-            this.panel3.Controls.Add(this.btnLED97);
-            this.panel3.Controls.Add(this.btnLED95);
-            this.panel3.Controls.Add(this.btnLED94);
-            this.panel3.Controls.Add(this.btnLED93);
-            this.panel3.Controls.Add(this.btnLED91);
-            this.panel3.Controls.Add(this.btnLED90);
-            this.panel3.Controls.Add(this.btnLED89);
-            this.panel3.Controls.Add(this.btnLED87);
-            this.panel3.Controls.Add(this.btnLED86);
-            this.panel3.Controls.Add(this.btnLED85);
-            this.panel3.Controls.Add(this.btnLED83);
-            this.panel3.Controls.Add(this.btnLED82);
-            this.panel3.Controls.Add(this.btnLED81);
-            this.panel3.Location = new System.Drawing.Point(685, 61);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(307, 207);
-            this.panel3.TabIndex = 64;
+            this.panelDarkRedFixLED.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED120);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED112);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED104);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED96);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED88);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED116);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED108);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED100);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED92);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED84);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED119);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED118);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED117);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED115);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED114);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED113);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED111);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED110);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED109);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED107);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED106);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED105);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED103);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED102);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED101);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED99);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED98);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED97);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED95);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED94);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED93);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED91);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED90);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED89);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED87);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED86);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED85);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED83);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED82);
+            this.panelDarkRedFixLED.Controls.Add(this.btnLED81);
+            this.panelDarkRedFixLED.Location = new System.Drawing.Point(685, 61);
+            this.panelDarkRedFixLED.Name = "panelDarkRedFixLED";
+            this.panelDarkRedFixLED.Size = new System.Drawing.Size(307, 207);
+            this.panelDarkRedFixLED.TabIndex = 64;
             // 
             // btnLED120
             // 
@@ -2866,53 +2909,53 @@ namespace LEDController.View
             this.btnLED81.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
             this.btnLED81.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
             // 
-            // panel2
+            // panelRedFixLED
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.btnLED80);
-            this.panel2.Controls.Add(this.btnLED72);
-            this.panel2.Controls.Add(this.btnLED64);
-            this.panel2.Controls.Add(this.btnLED56);
-            this.panel2.Controls.Add(this.btnLED48);
-            this.panel2.Controls.Add(this.btnLED76);
-            this.panel2.Controls.Add(this.btnLED68);
-            this.panel2.Controls.Add(this.btnLED60);
-            this.panel2.Controls.Add(this.btnLED52);
-            this.panel2.Controls.Add(this.btnLED44);
-            this.panel2.Controls.Add(this.btnLED79);
-            this.panel2.Controls.Add(this.btnLED78);
-            this.panel2.Controls.Add(this.btnLED77);
-            this.panel2.Controls.Add(this.btnLED75);
-            this.panel2.Controls.Add(this.btnLED74);
-            this.panel2.Controls.Add(this.btnLED73);
-            this.panel2.Controls.Add(this.btnLED71);
-            this.panel2.Controls.Add(this.btnLED70);
-            this.panel2.Controls.Add(this.btnLED69);
-            this.panel2.Controls.Add(this.btnLED67);
-            this.panel2.Controls.Add(this.btnLED66);
-            this.panel2.Controls.Add(this.btnLED65);
-            this.panel2.Controls.Add(this.btnLED63);
-            this.panel2.Controls.Add(this.btnLED62);
-            this.panel2.Controls.Add(this.btnLED61);
-            this.panel2.Controls.Add(this.btnLED59);
-            this.panel2.Controls.Add(this.btnLED58);
-            this.panel2.Controls.Add(this.btnLED57);
-            this.panel2.Controls.Add(this.btnLED55);
-            this.panel2.Controls.Add(this.btnLED54);
-            this.panel2.Controls.Add(this.btnLED53);
-            this.panel2.Controls.Add(this.btnLED51);
-            this.panel2.Controls.Add(this.btnLED50);
-            this.panel2.Controls.Add(this.btnLED49);
-            this.panel2.Controls.Add(this.btnLED47);
-            this.panel2.Controls.Add(this.btnLED46);
-            this.panel2.Controls.Add(this.btnLED45);
-            this.panel2.Controls.Add(this.btnLED43);
-            this.panel2.Controls.Add(this.btnLED42);
-            this.panel2.Controls.Add(this.btnLED41);
-            this.panel2.Location = new System.Drawing.Point(363, 61);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(307, 207);
-            this.panel2.TabIndex = 64;
+            this.panelRedFixLED.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelRedFixLED.Controls.Add(this.btnLED80);
+            this.panelRedFixLED.Controls.Add(this.btnLED72);
+            this.panelRedFixLED.Controls.Add(this.btnLED64);
+            this.panelRedFixLED.Controls.Add(this.btnLED56);
+            this.panelRedFixLED.Controls.Add(this.btnLED48);
+            this.panelRedFixLED.Controls.Add(this.btnLED76);
+            this.panelRedFixLED.Controls.Add(this.btnLED68);
+            this.panelRedFixLED.Controls.Add(this.btnLED60);
+            this.panelRedFixLED.Controls.Add(this.btnLED52);
+            this.panelRedFixLED.Controls.Add(this.btnLED44);
+            this.panelRedFixLED.Controls.Add(this.btnLED79);
+            this.panelRedFixLED.Controls.Add(this.btnLED78);
+            this.panelRedFixLED.Controls.Add(this.btnLED77);
+            this.panelRedFixLED.Controls.Add(this.btnLED75);
+            this.panelRedFixLED.Controls.Add(this.btnLED74);
+            this.panelRedFixLED.Controls.Add(this.btnLED73);
+            this.panelRedFixLED.Controls.Add(this.btnLED71);
+            this.panelRedFixLED.Controls.Add(this.btnLED70);
+            this.panelRedFixLED.Controls.Add(this.btnLED69);
+            this.panelRedFixLED.Controls.Add(this.btnLED67);
+            this.panelRedFixLED.Controls.Add(this.btnLED66);
+            this.panelRedFixLED.Controls.Add(this.btnLED65);
+            this.panelRedFixLED.Controls.Add(this.btnLED63);
+            this.panelRedFixLED.Controls.Add(this.btnLED62);
+            this.panelRedFixLED.Controls.Add(this.btnLED61);
+            this.panelRedFixLED.Controls.Add(this.btnLED59);
+            this.panelRedFixLED.Controls.Add(this.btnLED58);
+            this.panelRedFixLED.Controls.Add(this.btnLED57);
+            this.panelRedFixLED.Controls.Add(this.btnLED55);
+            this.panelRedFixLED.Controls.Add(this.btnLED54);
+            this.panelRedFixLED.Controls.Add(this.btnLED53);
+            this.panelRedFixLED.Controls.Add(this.btnLED51);
+            this.panelRedFixLED.Controls.Add(this.btnLED50);
+            this.panelRedFixLED.Controls.Add(this.btnLED49);
+            this.panelRedFixLED.Controls.Add(this.btnLED47);
+            this.panelRedFixLED.Controls.Add(this.btnLED46);
+            this.panelRedFixLED.Controls.Add(this.btnLED45);
+            this.panelRedFixLED.Controls.Add(this.btnLED43);
+            this.panelRedFixLED.Controls.Add(this.btnLED42);
+            this.panelRedFixLED.Controls.Add(this.btnLED41);
+            this.panelRedFixLED.Location = new System.Drawing.Point(363, 61);
+            this.panelRedFixLED.Name = "panelRedFixLED";
+            this.panelRedFixLED.Size = new System.Drawing.Size(307, 207);
+            this.panelRedFixLED.TabIndex = 64;
             // 
             // btnLED80
             // 
@@ -3594,53 +3637,53 @@ namespace LEDController.View
             this.btnLED41.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
             this.btnLED41.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
             // 
-            // panel1
+            // panelGreenFixLED
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.btnLED40);
-            this.panel1.Controls.Add(this.btnLED32);
-            this.panel1.Controls.Add(this.btnLED24);
-            this.panel1.Controls.Add(this.btnLED16);
-            this.panel1.Controls.Add(this.btnLED8);
-            this.panel1.Controls.Add(this.btnLED36);
-            this.panel1.Controls.Add(this.btnLED28);
-            this.panel1.Controls.Add(this.btnLED20);
-            this.panel1.Controls.Add(this.btnLED12);
-            this.panel1.Controls.Add(this.btnLED4);
-            this.panel1.Controls.Add(this.btnLED39);
-            this.panel1.Controls.Add(this.btnLED38);
-            this.panel1.Controls.Add(this.btnLED37);
-            this.panel1.Controls.Add(this.btnLED35);
-            this.panel1.Controls.Add(this.btnLED34);
-            this.panel1.Controls.Add(this.btnLED33);
-            this.panel1.Controls.Add(this.btnLED31);
-            this.panel1.Controls.Add(this.btnLED30);
-            this.panel1.Controls.Add(this.btnLED29);
-            this.panel1.Controls.Add(this.btnLED27);
-            this.panel1.Controls.Add(this.btnLED26);
-            this.panel1.Controls.Add(this.btnLED25);
-            this.panel1.Controls.Add(this.btnLED23);
-            this.panel1.Controls.Add(this.btnLED22);
-            this.panel1.Controls.Add(this.btnLED21);
-            this.panel1.Controls.Add(this.btnLED19);
-            this.panel1.Controls.Add(this.btnLED18);
-            this.panel1.Controls.Add(this.btnLED17);
-            this.panel1.Controls.Add(this.btnLED15);
-            this.panel1.Controls.Add(this.btnLED14);
-            this.panel1.Controls.Add(this.btnLED13);
-            this.panel1.Controls.Add(this.btnLED11);
-            this.panel1.Controls.Add(this.btnLED10);
-            this.panel1.Controls.Add(this.btnLED9);
-            this.panel1.Controls.Add(this.btnLED7);
-            this.panel1.Controls.Add(this.btnLED6);
-            this.panel1.Controls.Add(this.btnLED5);
-            this.panel1.Controls.Add(this.btnLED3);
-            this.panel1.Controls.Add(this.btnLED2);
-            this.panel1.Controls.Add(this.btnLED1);
-            this.panel1.Location = new System.Drawing.Point(44, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 207);
-            this.panel1.TabIndex = 34;
+            this.panelGreenFixLED.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelGreenFixLED.Controls.Add(this.btnLED40);
+            this.panelGreenFixLED.Controls.Add(this.btnLED32);
+            this.panelGreenFixLED.Controls.Add(this.btnLED24);
+            this.panelGreenFixLED.Controls.Add(this.btnLED16);
+            this.panelGreenFixLED.Controls.Add(this.btnLED8);
+            this.panelGreenFixLED.Controls.Add(this.btnLED36);
+            this.panelGreenFixLED.Controls.Add(this.btnLED28);
+            this.panelGreenFixLED.Controls.Add(this.btnLED20);
+            this.panelGreenFixLED.Controls.Add(this.btnLED12);
+            this.panelGreenFixLED.Controls.Add(this.btnLED4);
+            this.panelGreenFixLED.Controls.Add(this.btnLED39);
+            this.panelGreenFixLED.Controls.Add(this.btnLED38);
+            this.panelGreenFixLED.Controls.Add(this.btnLED37);
+            this.panelGreenFixLED.Controls.Add(this.btnLED35);
+            this.panelGreenFixLED.Controls.Add(this.btnLED34);
+            this.panelGreenFixLED.Controls.Add(this.btnLED33);
+            this.panelGreenFixLED.Controls.Add(this.btnLED31);
+            this.panelGreenFixLED.Controls.Add(this.btnLED30);
+            this.panelGreenFixLED.Controls.Add(this.btnLED29);
+            this.panelGreenFixLED.Controls.Add(this.btnLED27);
+            this.panelGreenFixLED.Controls.Add(this.btnLED26);
+            this.panelGreenFixLED.Controls.Add(this.btnLED25);
+            this.panelGreenFixLED.Controls.Add(this.btnLED23);
+            this.panelGreenFixLED.Controls.Add(this.btnLED22);
+            this.panelGreenFixLED.Controls.Add(this.btnLED21);
+            this.panelGreenFixLED.Controls.Add(this.btnLED19);
+            this.panelGreenFixLED.Controls.Add(this.btnLED18);
+            this.panelGreenFixLED.Controls.Add(this.btnLED17);
+            this.panelGreenFixLED.Controls.Add(this.btnLED15);
+            this.panelGreenFixLED.Controls.Add(this.btnLED14);
+            this.panelGreenFixLED.Controls.Add(this.btnLED13);
+            this.panelGreenFixLED.Controls.Add(this.btnLED11);
+            this.panelGreenFixLED.Controls.Add(this.btnLED10);
+            this.panelGreenFixLED.Controls.Add(this.btnLED9);
+            this.panelGreenFixLED.Controls.Add(this.btnLED7);
+            this.panelGreenFixLED.Controls.Add(this.btnLED6);
+            this.panelGreenFixLED.Controls.Add(this.btnLED5);
+            this.panelGreenFixLED.Controls.Add(this.btnLED3);
+            this.panelGreenFixLED.Controls.Add(this.btnLED2);
+            this.panelGreenFixLED.Controls.Add(this.btnLED1);
+            this.panelGreenFixLED.Location = new System.Drawing.Point(44, 61);
+            this.panelGreenFixLED.Name = "panelGreenFixLED";
+            this.panelGreenFixLED.Size = new System.Drawing.Size(307, 207);
+            this.panelGreenFixLED.TabIndex = 34;
             // 
             // btnLED40
             // 
@@ -4322,26 +4365,26 @@ namespace LEDController.View
             this.btnLED1.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
             this.btnLED1.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
             // 
-            // tabPage3
+            // tpgLEDStatus
             // 
-            this.tabPage3.Controls.Add(this.panel7);
-            this.tabPage3.Controls.Add(this.button132);
-            this.tabPage3.Controls.Add(this.button131);
-            this.tabPage3.Controls.Add(this.label48);
-            this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.label47);
-            this.tabPage3.Controls.Add(this.label46);
-            this.tabPage3.Controls.Add(this.comboBox2);
-            this.tabPage3.Controls.Add(this.label45);
-            this.tabPage3.Controls.Add(this.comboBox1);
-            this.tabPage3.Controls.Add(this.label44);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1045, 519);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "LED状态";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tpgLEDStatus.Controls.Add(this.panel7);
+            this.tpgLEDStatus.Controls.Add(this.button132);
+            this.tpgLEDStatus.Controls.Add(this.button131);
+            this.tpgLEDStatus.Controls.Add(this.label48);
+            this.tpgLEDStatus.Controls.Add(this.textBox7);
+            this.tpgLEDStatus.Controls.Add(this.textBox6);
+            this.tpgLEDStatus.Controls.Add(this.label47);
+            this.tpgLEDStatus.Controls.Add(this.label46);
+            this.tpgLEDStatus.Controls.Add(this.comboBox2);
+            this.tpgLEDStatus.Controls.Add(this.label45);
+            this.tpgLEDStatus.Controls.Add(this.comboBox1);
+            this.tpgLEDStatus.Controls.Add(this.label44);
+            this.tpgLEDStatus.Location = new System.Drawing.Point(4, 22);
+            this.tpgLEDStatus.Name = "tpgLEDStatus";
+            this.tpgLEDStatus.Size = new System.Drawing.Size(1045, 519);
+            this.tpgLEDStatus.TabIndex = 2;
+            this.tpgLEDStatus.Text = "LED状态";
+            this.tpgLEDStatus.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
@@ -6200,50 +6243,50 @@ namespace LEDController.View
             this.label44.TabIndex = 0;
             this.label44.Text = "查询状态";
             // 
-            // tabPage4
+            // tpgRTControl
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1045, 519);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "转台控制";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tpgRTControl.Location = new System.Drawing.Point(4, 22);
+            this.tpgRTControl.Name = "tpgRTControl";
+            this.tpgRTControl.Size = new System.Drawing.Size(1045, 519);
+            this.tpgRTControl.TabIndex = 3;
+            this.tpgRTControl.Text = "转台控制";
+            this.tpgRTControl.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
+            // tpgLightControl
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1045, 519);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "室内照明";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tpgLightControl.Location = new System.Drawing.Point(4, 22);
+            this.tpgLightControl.Name = "tpgLightControl";
+            this.tpgLightControl.Size = new System.Drawing.Size(1045, 519);
+            this.tpgLightControl.TabIndex = 4;
+            this.tpgLightControl.Text = "室内照明";
+            this.tpgLightControl.UseVisualStyleBackColor = true;
             // 
-            // tabPage6
+            // tpgAirConditionerControl
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1045, 519);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "空调控制";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.tpgAirConditionerControl.Location = new System.Drawing.Point(4, 22);
+            this.tpgAirConditionerControl.Name = "tpgAirConditionerControl";
+            this.tpgAirConditionerControl.Size = new System.Drawing.Size(1045, 519);
+            this.tpgAirConditionerControl.TabIndex = 5;
+            this.tpgAirConditionerControl.Text = "空调控制";
+            this.tpgAirConditionerControl.UseVisualStyleBackColor = true;
             // 
-            // tabPage7
+            // tpgSkylightControl
             // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1045, 519);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "电动天窗";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.tpgSkylightControl.Location = new System.Drawing.Point(4, 22);
+            this.tpgSkylightControl.Name = "tpgSkylightControl";
+            this.tpgSkylightControl.Size = new System.Drawing.Size(1045, 519);
+            this.tpgSkylightControl.TabIndex = 6;
+            this.tpgSkylightControl.Text = "电动天窗";
+            this.tpgSkylightControl.UseVisualStyleBackColor = true;
             // 
-            // tabPage8
+            // tpgCameraControl
             // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1045, 519);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "摄像头控制";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.tpgCameraControl.Location = new System.Drawing.Point(4, 22);
+            this.tpgCameraControl.Name = "tpgCameraControl";
+            this.tpgCameraControl.Size = new System.Drawing.Size(1045, 519);
+            this.tpgCameraControl.TabIndex = 7;
+            this.tpgCameraControl.Text = "摄像头控制";
+            this.tpgCameraControl.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -6363,7 +6406,7 @@ namespace LEDController.View
             this.Controls.Add(this.btnRecStatus1);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabCtrlMain);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -6374,39 +6417,39 @@ namespace LEDController.View
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.tabCtrlMain.ResumeLayout(false);
+            this.tpgConnect.ResumeLayout(false);
+            this.tpgConnect.PerformLayout();
+            this.tpgLEDControl.ResumeLayout(false);
+            this.tpgLEDControl.PerformLayout();
+            this.panelDarkRedDimLED.ResumeLayout(false);
+            this.panelDarkRedDimLED.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED9)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelRedDimLED.ResumeLayout(false);
+            this.panelRedDimLED.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED5)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panelGreenDimLED.ResumeLayout(false);
+            this.panelGreenDimLED.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.panelDarkRedFixLED.ResumeLayout(false);
+            this.panelDarkRedFixLED.PerformLayout();
+            this.panelRedFixLED.ResumeLayout(false);
+            this.panelRedFixLED.PerformLayout();
+            this.panelGreenFixLED.ResumeLayout(false);
+            this.panelGreenFixLED.PerformLayout();
+            this.tpgLEDStatus.ResumeLayout(false);
+            this.tpgLEDStatus.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.statusStrip2.ResumeLayout(false);
@@ -6425,26 +6468,26 @@ namespace LEDController.View
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 窗口ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 连接测试ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lED控制ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lED状态ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 转台控制暂无ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 室内照明暂无ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 空调控制暂无ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 电动天窗暂无ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 摄像头控制暂无ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmConnect;
+        private System.Windows.Forms.ToolStripMenuItem tsmLEDControl;
+        private System.Windows.Forms.ToolStripMenuItem tsmLEDStatus;
+        private System.Windows.Forms.ToolStripMenuItem tsmRTControl;
+        private System.Windows.Forms.ToolStripMenuItem tsmLightControl;
+        private System.Windows.Forms.ToolStripMenuItem tsmAirConditionerControl;
+        private System.Windows.Forms.ToolStripMenuItem tsmSkylightControl;
+        private System.Windows.Forms.ToolStripMenuItem tsmCameraControl;
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 使用帮助ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 版本信息ToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabControl tabCtrlMain;
+        private System.Windows.Forms.TabPage tpgConnect;
+        private System.Windows.Forms.TabPage tpgLEDControl;
+        private System.Windows.Forms.TabPage tpgLEDStatus;
+        private System.Windows.Forms.TabPage tpgRTControl;
+        private System.Windows.Forms.TabPage tpgLightControl;
+        private System.Windows.Forms.TabPage tpgAirConditionerControl;
+        private System.Windows.Forms.TabPage tpgSkylightControl;
+        private System.Windows.Forms.TabPage tpgCameraControl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbxPort;
         private System.Windows.Forms.TextBox tbxIP;
@@ -6462,9 +6505,9 @@ namespace LEDController.View
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDarkRedFixLED;
+        private System.Windows.Forms.Panel panelRedFixLED;
+        private System.Windows.Forms.Panel panelGreenFixLED;
         private System.Windows.Forms.Button btnLED39;
         private System.Windows.Forms.Button btnLED38;
         private System.Windows.Forms.Button btnLED37;
@@ -6495,26 +6538,26 @@ namespace LEDController.View
         private System.Windows.Forms.Button btnLED3;
         private System.Windows.Forms.Button btnLED2;
         private System.Windows.Forms.Button btnLED1;
-        private System.Windows.Forms.Button button94;
-        private System.Windows.Forms.Button button93;
+        private System.Windows.Forms.Button btnCloseGreenFixLED;
+        private System.Windows.Forms.Button btnOpenGreenFixLED;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button97;
-        private System.Windows.Forms.Button button98;
-        private System.Windows.Forms.Button button95;
-        private System.Windows.Forms.Button button96;
+        private System.Windows.Forms.Button btnCloseDarkRedFixLED;
+        private System.Windows.Forms.Button btnOpenDarkRedFixLED;
+        private System.Windows.Forms.Button btnCloseRedFixLED;
+        private System.Windows.Forms.Button btnOpenRedFixLED;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
+        private System.Windows.Forms.ToolStripStatusLabel tsslGreenLEDTotalPower;
+        private System.Windows.Forms.ToolStripStatusLabel tsslRedLEDTotalPower;
+        private System.Windows.Forms.ToolStripStatusLabel tsslDarkRedLEDTotalPower;
+        private System.Windows.Forms.ToolStripStatusLabel tsslTemp1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslTemp2;
+        private System.Windows.Forms.ToolStripStatusLabel tsslTemp3;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripConnectionStatus;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ToolStripStatusLabel tsslTemp4;
+        private System.Windows.Forms.Panel panelGreenDimLED;
         private System.Windows.Forms.TrackBar sbarDimLED1;
         private System.Windows.Forms.Button btnDimLED1;
         private System.Windows.Forms.ToolStripMenuItem 文件;
@@ -6522,60 +6565,60 @@ namespace LEDController.View
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSave;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveAs;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClose;
-        private System.Windows.Forms.Button button100;
+        private System.Windows.Forms.Button btnOpenDimGreenLED1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button127;
-        private System.Windows.Forms.Button button128;
-        private System.Windows.Forms.Button button125;
-        private System.Windows.Forms.Button button126;
-        private System.Windows.Forms.Button button124;
-        private System.Windows.Forms.Button button123;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnCloseDarkRedDimLED;
+        private System.Windows.Forms.Button btnOpenDarkRedDimLED;
+        private System.Windows.Forms.Button btnCloseRedDimLED;
+        private System.Windows.Forms.Button btnOpenRedDimLED;
+        private System.Windows.Forms.Button btnCloseGreenDimLED;
+        private System.Windows.Forms.Button btnOpenGreenDimLED;
+        private System.Windows.Forms.Panel panelDarkRedDimLED;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Button button115;
+        private System.Windows.Forms.Button btnOpenDimDarkRedLED4;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TrackBar sbarDimLED12;
         private System.Windows.Forms.Button btnDimLED12;
-        private System.Windows.Forms.Button button117;
+        private System.Windows.Forms.Button btnOpenDimDarkRedLED3;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TrackBar sbarDimLED11;
         private System.Windows.Forms.Button btnDimLED11;
-        private System.Windows.Forms.Button button119;
+        private System.Windows.Forms.Button btnOpenDimDarkRedLED2;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TrackBar sbarDimLED10;
         private System.Windows.Forms.Button btnDimLED10;
-        private System.Windows.Forms.Button button121;
+        private System.Windows.Forms.Button btnOpenDimDarkRedLED1;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TrackBar sbarDimLED9;
         private System.Windows.Forms.Button btnDimLED9;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelRedDimLED;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button107;
+        private System.Windows.Forms.Button btnOpenDimRedLED4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TrackBar sbarDimLED8;
         private System.Windows.Forms.Button btnDimLED8;
-        private System.Windows.Forms.Button button109;
+        private System.Windows.Forms.Button btnOpenDimRedLED3;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TrackBar sbarDimLED7;
         private System.Windows.Forms.Button btnDimLED7;
-        private System.Windows.Forms.Button button111;
+        private System.Windows.Forms.Button btnOpenDimRedLED2;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TrackBar sbarDimLED6;
         private System.Windows.Forms.Button btnDimLED6;
-        private System.Windows.Forms.Button button113;
+        private System.Windows.Forms.Button btnOpenDimRedLED1;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TrackBar sbarDimLED5;
         private System.Windows.Forms.Button btnDimLED5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button105;
+        private System.Windows.Forms.Button btnOpenDimGreenLED4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TrackBar sbarDimLED4;
         private System.Windows.Forms.Button btnDimLED4;
-        private System.Windows.Forms.Button button103;
+        private System.Windows.Forms.Button btnOpenDimGreenLED3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TrackBar sbarDimLED3;
         private System.Windows.Forms.Button btnDimLED3;
-        private System.Windows.Forms.Button button101;
+        private System.Windows.Forms.Button btnOpenDimGreenLED2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TrackBar sbarDimLED2;
         private System.Windows.Forms.Button btnDimLED2;

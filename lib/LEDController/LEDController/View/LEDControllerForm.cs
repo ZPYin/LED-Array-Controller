@@ -35,32 +35,32 @@ namespace LEDController.View
         public Color btnRecStatus1Color
         {
             get { return btnRecStatus1.BackColor; }
-            set { btnRecStatus1.BackColor = value; }
+            set { btnRecStatus1.BackColor = value; btnRecStatus1.Refresh(); }
         }
         public Color btnRecStatus2Color
         {
             get { return btnRecStatus2.BackColor; }
-            set { btnRecStatus2.BackColor = value; }
+            set { btnRecStatus2.BackColor = value; btnRecStatus2.Refresh(); }
         }
         public Color btnRecStatus3Color
         {
             get { return btnRecStatus3.BackColor; }
-            set { btnRecStatus3.BackColor = value; }
+            set { btnRecStatus3.BackColor = value; btnRecStatus3.Refresh(); }
         }
         public Color btnSendStatus1Color
         {
             get { return btnSendStatus1.BackColor; }
-            set { btnSendStatus1.BackColor = value; }
+            set { btnSendStatus1.BackColor = value; btnSendStatus1.Refresh(); }
         }
         public Color btnSendStatus2Color
         {
             get { return btnSendStatus2.BackColor; }
-            set { btnSendStatus2.BackColor = value; }
+            set { btnSendStatus2.BackColor = value; btnSendStatus2.Refresh(); }
         }
         public Color btnSendStatus3Color
         {
             get { return btnSendStatus3.BackColor; }
-            set { btnSendStatus3.BackColor = value; }
+            set { btnSendStatus3.BackColor = value; btnSendStatus3.Refresh(); }
         }
         public string slaveIP
         {
@@ -87,6 +87,42 @@ namespace LEDController.View
         {
             get { return toolStripLEDStatus.Text; }
             set { toolStripLEDStatus.Text = value; }
+        }
+
+        public string tsslGreenLEDTPText
+        {
+            get { return tsslGreenLEDTotalPower.Text; }
+            set { tsslGreenLEDTotalPower.Text = value; }
+        }
+        public string tsslRedLEDTPText
+        {
+            get { return tsslRedLEDTotalPower.Text; }
+            set { tsslRedLEDTotalPower.Text = value; }
+        }
+        public string tsslDarkRedTPText
+        {
+            get { return tsslDarkRedLEDTotalPower.Text; }
+            set { tsslDarkRedLEDTotalPower.Text = value; }
+        }
+        public string tsslTemp1Text
+        {
+            get { return tsslTemp1.Text; }
+            set { tsslTemp1.Text = value; }
+        }
+        public string tsslTemp2Text
+        {
+            get { return tsslTemp2.Text; }
+            set { tsslTemp2.Text = value; }
+        }
+        public string tsslTemp3Text
+        {
+            get { return tsslTemp3.Text; }
+            set { tsslTemp3.Text = value; }
+        }
+        public string tsslTemp4Text
+        {
+            get { return tsslTemp4.Text; }
+            set { tsslTemp4.Text = value; }
         }
         public string testCmdStr
         {
@@ -592,6 +628,458 @@ namespace LEDController.View
         private void btnLED1_MouseHover(object sender, EventArgs e)
         {
             ShowSingleLEDStatus?.Invoke(sender, e);
+        }
+        private void GetAllControl(Control c, List<Control> list)
+        {
+            foreach (Control control in c.Controls)
+            {
+                list.Add(control);
+
+                if (control.GetType() == typeof(Panel))
+                    GetAllControl(control, list);
+            }
+        }
+
+        private void btnOpenGreenFixLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            GetAllControl(this.panelGreenFixLED, list);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    OpenFixLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnCloseGreenFixLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            GetAllControl(this.panelGreenFixLED, list);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    CloseFixLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnOpenRedFixLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            GetAllControl(this.panelRedFixLED, list);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    OpenFixLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnCloseRedFixLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            GetAllControl(this.panelRedFixLED, list);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    CloseFixLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnOpenDarkRedFixLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            GetAllControl(this.panelDarkRedFixLED, list);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    OpenFixLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnCloseDarkRedFixLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            GetAllControl(this.panelDarkRedFixLED, list);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    CloseFixLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnOpenDimGreenLED1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED1;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimGreenLED2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED2;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimGreenLED3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED3;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimGreenLED4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED4;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimRedLED1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED5;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimRedLED2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED6;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimRedLED3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED7;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimRedLED4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED8;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimDarkRedLED1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED9;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimDarkRedLED2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED10;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimDarkRedLED3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED11;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenDimDarkRedLED4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = btnDimLED12;
+                OpenDimLED?.Invoke(btn, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnOpenGreenDimLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            list.Add(btnDimLED1);
+            list.Add(btnDimLED2);
+            list.Add(btnDimLED3);
+            list.Add(btnDimLED4);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    OpenDimLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnCloseGreenDimLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            list.Add(btnDimLED1);
+            list.Add(btnDimLED2);
+            list.Add(btnDimLED3);
+            list.Add(btnDimLED4);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    CloseDimLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnOpenRedDimLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            list.Add(btnDimLED5);
+            list.Add(btnDimLED6);
+            list.Add(btnDimLED7);
+            list.Add(btnDimLED8);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    OpenDimLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnCloseRedDimLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            list.Add(btnDimLED5);
+            list.Add(btnDimLED6);
+            list.Add(btnDimLED7);
+            list.Add(btnDimLED8);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    CloseDimLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnOpenDarkRedDimLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            list.Add(btnDimLED9);
+            list.Add(btnDimLED10);
+            list.Add(btnDimLED11);
+            list.Add(btnDimLED12);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    OpenDimLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnCloseDarkRedDimLED_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<Control> list = new List<Control>();
+
+            list.Add(btnDimLED9);
+            list.Add(btnDimLED10);
+            list.Add(btnDimLED11);
+            list.Add(btnDimLED12);
+
+            foreach (Control control in list)
+            {
+                if (control.GetType() == typeof(Button))
+                {
+
+                    CloseDimLED?.Invoke(control, e);
+                    Thread.Sleep(100);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void tsmConnect_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 0;
+        }
+
+        private void tsmLEDControl_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 1;
+        }
+
+        private void tsmLEDStatus_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 2;
+        }
+
+        private void tsmRTControl_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 3;
+        }
+
+        private void tsmLightControl_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 4;
+        }
+
+        private void tsmAirConditionerControl_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 5;
+        }
+
+        private void tsmSkylightControl_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 6;
+        }
+
+        private void tsmCameraControl_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 7;
         }
     }
 }

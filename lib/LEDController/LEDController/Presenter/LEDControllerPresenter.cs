@@ -241,11 +241,12 @@ namespace LEDController.Presenter
 
         private void OpenDimLED(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            // send command to slave
 
             ShowSendStatus();
 
             // set button color
+            Button btn = sender as Button;
             int tagLED = Int32.Parse(btn.Tag as string);
             if ((tagLED >= 121) && (tagLED <= 124))
             {
@@ -259,25 +260,31 @@ namespace LEDController.Presenter
             {
                 btn.BackColor = Color.DarkRed;
             }
+
+            btn.Refresh();
         }
 
         private void CloseDimLED(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            // send command to slave
 
             ShowSendStatus();
 
             // Change color
+            Button btn = sender as Button;
             btn.BackColor = Color.Gray;
+            btn.Refresh();
         }
 
         private void OpenFixLED(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+
+            // send command to slave 
 
             ShowSendStatus();
 
             // set button color
+            Button btn = sender as Button;
             int tagLED = Int32.Parse(btn.Tag as string);
             if ((tagLED >= 1) && (tagLED <= 40))
             {
@@ -291,6 +298,9 @@ namespace LEDController.Presenter
             {
                 btn.BackColor = Color.DarkRed;
             }
+
+            btn.Refresh();
+
         }
 
         private void CloseFixLED(object sender, EventArgs e)
@@ -301,6 +311,7 @@ namespace LEDController.Presenter
 
             // Change color
             btn.BackColor = Color.Gray;
+            btn.Refresh();
         }
 
         private void ShowSingleLEDStatus(object sender, EventArgs e)
@@ -367,6 +378,17 @@ namespace LEDController.Presenter
                         _view.btnRecStatus1Color = Color.DarkRed;
                         _view.btnRecStatus2Color = Color.DarkRed;
                         _view.btnRecStatus3Color = Color.DarkRed;
+
+                        // showing total power
+                        _view.tsslGreenLEDTPText = "绿光实时总功率: 1W";
+                        _view.tsslRedLEDTPText = "红光实时总功率: 2W";
+                        _view.tsslDarkRedTPText = "红外实时总功率: 3W";
+
+                        // showing temperature sensors
+                        _view.tsslTemp1Text = "测温点1: 20°C";
+                        _view.tsslTemp2Text = "测温点2: 20°C";
+                        _view.tsslTemp3Text = "测温点3: 20°C";
+                        _view.tsslTemp4Text = "测温点4: 20°C";
                     }
                 }
                 catch (SocketException ex)
