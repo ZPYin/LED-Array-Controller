@@ -65,6 +65,8 @@ namespace LEDController.View
         Color btnSendStatus1Color { get; set; }
         Color btnSendStatus2Color { get; set; }
         Color btnSendStatus3Color { get; set; }
+        Color btnConnectColor { get; set; }
+        Color btnCloseColor { get; set; }
         string testMsgRecStr { get; set; }
         event EventHandler<EventArgs> Connect;
         event EventHandler<EventArgs> CloseConnect;
@@ -73,8 +75,10 @@ namespace LEDController.View
         event EventHandler<EventArgs> ClearSingleLEDStatus;
         event EventHandler<EventArgs> OpenFixLED;
         event EventHandler<EventArgs> CloseFixLED;
+        event EventHandler<EventArgs> HandleFixLED;
         event EventHandler<EventArgs> OpenDimLED;
         event EventHandler<EventArgs> CloseDimLED;
+        event EventHandler<EventArgs> HandleDimLED;
         event EventHandler<EventArgs> UpdateScrollBar;
         event EventHandler<EventArgs> UpdateLEDTbx;
         object Invoke(Delegate method);

@@ -500,6 +500,7 @@ namespace LEDController.View
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件,
             this.连接ToolStripMenuItem,
@@ -570,56 +571,56 @@ namespace LEDController.View
             // tsmConnect
             // 
             this.tsmConnect.Name = "tsmConnect";
-            this.tsmConnect.Size = new System.Drawing.Size(180, 22);
+            this.tsmConnect.Size = new System.Drawing.Size(168, 22);
             this.tsmConnect.Text = "连接测试";
             this.tsmConnect.Click += new System.EventHandler(this.tsmConnect_Click);
             // 
             // tsmLEDControl
             // 
             this.tsmLEDControl.Name = "tsmLEDControl";
-            this.tsmLEDControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmLEDControl.Size = new System.Drawing.Size(168, 22);
             this.tsmLEDControl.Text = "LED控制";
             this.tsmLEDControl.Click += new System.EventHandler(this.tsmLEDControl_Click);
             // 
             // tsmLEDStatus
             // 
             this.tsmLEDStatus.Name = "tsmLEDStatus";
-            this.tsmLEDStatus.Size = new System.Drawing.Size(180, 22);
+            this.tsmLEDStatus.Size = new System.Drawing.Size(168, 22);
             this.tsmLEDStatus.Text = "LED状态";
             this.tsmLEDStatus.Click += new System.EventHandler(this.tsmLEDStatus_Click);
             // 
             // tsmRTControl
             // 
             this.tsmRTControl.Name = "tsmRTControl";
-            this.tsmRTControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmRTControl.Size = new System.Drawing.Size(168, 22);
             this.tsmRTControl.Text = "转台控制(暂无)";
             this.tsmRTControl.Click += new System.EventHandler(this.tsmRTControl_Click);
             // 
             // tsmLightControl
             // 
             this.tsmLightControl.Name = "tsmLightControl";
-            this.tsmLightControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmLightControl.Size = new System.Drawing.Size(168, 22);
             this.tsmLightControl.Text = "室内照明(暂无)";
             this.tsmLightControl.Click += new System.EventHandler(this.tsmLightControl_Click);
             // 
             // tsmAirConditionerControl
             // 
             this.tsmAirConditionerControl.Name = "tsmAirConditionerControl";
-            this.tsmAirConditionerControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmAirConditionerControl.Size = new System.Drawing.Size(168, 22);
             this.tsmAirConditionerControl.Text = "空调控制(暂无)";
             this.tsmAirConditionerControl.Click += new System.EventHandler(this.tsmAirConditionerControl_Click);
             // 
             // tsmSkylightControl
             // 
             this.tsmSkylightControl.Name = "tsmSkylightControl";
-            this.tsmSkylightControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmSkylightControl.Size = new System.Drawing.Size(168, 22);
             this.tsmSkylightControl.Text = "电动天窗(暂无)";
             this.tsmSkylightControl.Click += new System.EventHandler(this.tsmSkylightControl_Click);
             // 
             // tsmCameraControl
             // 
             this.tsmCameraControl.Name = "tsmCameraControl";
-            this.tsmCameraControl.Size = new System.Drawing.Size(180, 22);
+            this.tsmCameraControl.Size = new System.Drawing.Size(168, 22);
             this.tsmCameraControl.Text = "摄像头控制(暂无)";
             this.tsmCameraControl.Click += new System.EventHandler(this.tsmCameraControl_Click);
             // 
@@ -704,7 +705,6 @@ namespace LEDController.View
             this.tpgConnect.TabIndex = 0;
             this.tpgConnect.Text = "连接测试";
             this.tpgConnect.UseVisualStyleBackColor = true;
-            this.tpgConnect.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btnConnect
             // 
@@ -1155,9 +1155,9 @@ namespace LEDController.View
             this.btnDimLED12.TabIndex = 79;
             this.btnDimLED12.Tag = "132";
             this.btnDimLED12.UseVisualStyleBackColor = false;
-            this.btnDimLED12.Click += new System.EventHandler(this.btnDimLED9_Click);
-            this.btnDimLED12.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
-            this.btnDimLED12.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
+            this.btnDimLED12.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED12.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED12.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimDarkRedLED3
             // 
@@ -1206,9 +1206,9 @@ namespace LEDController.View
             this.btnDimLED11.TabIndex = 74;
             this.btnDimLED11.Tag = "131";
             this.btnDimLED11.UseVisualStyleBackColor = false;
-            this.btnDimLED11.Click += new System.EventHandler(this.btnDimLED9_Click);
-            this.btnDimLED11.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
-            this.btnDimLED11.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
+            this.btnDimLED11.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED11.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED11.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimDarkRedLED2
             // 
@@ -1257,9 +1257,9 @@ namespace LEDController.View
             this.btnDimLED10.TabIndex = 69;
             this.btnDimLED10.Tag = "130";
             this.btnDimLED10.UseVisualStyleBackColor = false;
-            this.btnDimLED10.Click += new System.EventHandler(this.btnDimLED9_Click);
-            this.btnDimLED10.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
-            this.btnDimLED10.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
+            this.btnDimLED10.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED10.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED10.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimDarkRedLED1
             // 
@@ -1308,9 +1308,9 @@ namespace LEDController.View
             this.btnDimLED9.TabIndex = 64;
             this.btnDimLED9.Tag = "129";
             this.btnDimLED9.UseVisualStyleBackColor = false;
-            this.btnDimLED9.Click += new System.EventHandler(this.btnDimLED9_Click);
-            this.btnDimLED9.MouseLeave += new System.EventHandler(this.btnDimLED9_MouseLeave);
-            this.btnDimLED9.MouseHover += new System.EventHandler(this.btnDimLED9_MouseHover);
+            this.btnDimLED9.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED9.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED9.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // panelRedDimLED
             // 
@@ -1481,9 +1481,9 @@ namespace LEDController.View
             this.btnDimLED8.TabIndex = 79;
             this.btnDimLED8.Tag = "128";
             this.btnDimLED8.UseVisualStyleBackColor = false;
-            this.btnDimLED8.Click += new System.EventHandler(this.btnDimLED5_Click);
-            this.btnDimLED8.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
-            this.btnDimLED8.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
+            this.btnDimLED8.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED8.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED8.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimRedLED3
             // 
@@ -1532,9 +1532,9 @@ namespace LEDController.View
             this.btnDimLED7.TabIndex = 74;
             this.btnDimLED7.Tag = "127";
             this.btnDimLED7.UseVisualStyleBackColor = false;
-            this.btnDimLED7.Click += new System.EventHandler(this.btnDimLED5_Click);
-            this.btnDimLED7.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
-            this.btnDimLED7.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
+            this.btnDimLED7.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED7.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED7.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimRedLED2
             // 
@@ -1583,9 +1583,9 @@ namespace LEDController.View
             this.btnDimLED6.TabIndex = 69;
             this.btnDimLED6.Tag = "126";
             this.btnDimLED6.UseVisualStyleBackColor = false;
-            this.btnDimLED6.Click += new System.EventHandler(this.btnDimLED5_Click);
-            this.btnDimLED6.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
-            this.btnDimLED6.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
+            this.btnDimLED6.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED6.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED6.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimRedLED1
             // 
@@ -1634,9 +1634,9 @@ namespace LEDController.View
             this.btnDimLED5.TabIndex = 64;
             this.btnDimLED5.Tag = "125";
             this.btnDimLED5.UseVisualStyleBackColor = false;
-            this.btnDimLED5.Click += new System.EventHandler(this.btnDimLED5_Click);
-            this.btnDimLED5.MouseLeave += new System.EventHandler(this.btnDimLED5_MouseLeave);
-            this.btnDimLED5.MouseHover += new System.EventHandler(this.btnDimLED5_MouseHover);
+            this.btnDimLED5.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED5.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED5.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // panelGreenDimLED
             // 
@@ -1807,9 +1807,9 @@ namespace LEDController.View
             this.btnDimLED4.TabIndex = 79;
             this.btnDimLED4.Tag = "124";
             this.btnDimLED4.UseVisualStyleBackColor = false;
-            this.btnDimLED4.Click += new System.EventHandler(this.btnDimLED1_Click);
-            this.btnDimLED4.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
-            this.btnDimLED4.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
+            this.btnDimLED4.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED4.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED4.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimGreenLED3
             // 
@@ -1858,9 +1858,9 @@ namespace LEDController.View
             this.btnDimLED3.TabIndex = 74;
             this.btnDimLED3.Tag = "123";
             this.btnDimLED3.UseVisualStyleBackColor = false;
-            this.btnDimLED3.Click += new System.EventHandler(this.btnDimLED1_Click);
-            this.btnDimLED3.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
-            this.btnDimLED3.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
+            this.btnDimLED3.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED3.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED3.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimGreenLED2
             // 
@@ -1909,9 +1909,9 @@ namespace LEDController.View
             this.btnDimLED2.TabIndex = 69;
             this.btnDimLED2.Tag = "122";
             this.btnDimLED2.UseVisualStyleBackColor = false;
-            this.btnDimLED2.Click += new System.EventHandler(this.btnDimLED1_Click);
-            this.btnDimLED2.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
-            this.btnDimLED2.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
+            this.btnDimLED2.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED2.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED2.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // btnOpenDimGreenLED1
             // 
@@ -1960,12 +1960,13 @@ namespace LEDController.View
             this.btnDimLED1.TabIndex = 64;
             this.btnDimLED1.Tag = "121";
             this.btnDimLED1.UseVisualStyleBackColor = false;
-            this.btnDimLED1.Click += new System.EventHandler(this.btnDimLED1_Click);
-            this.btnDimLED1.MouseLeave += new System.EventHandler(this.btnDimLED1_MouseLeave);
-            this.btnDimLED1.MouseHover += new System.EventHandler(this.btnDimLED1_MouseHover);
+            this.btnDimLED1.Click += new System.EventHandler(this.btnDimLED_Click);
+            this.btnDimLED1.MouseLeave += new System.EventHandler(this.btnDimLED_MouseLeave);
+            this.btnDimLED1.MouseHover += new System.EventHandler(this.btnDimLED_MouseHover);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslGreenLEDTotalPower,
             this.tsslRedLEDTotalPower,
@@ -2127,7 +2128,6 @@ namespace LEDController.View
             this.label21.Size = new System.Drawing.Size(17, 16);
             this.label21.TabIndex = 70;
             this.label21.Text = "W";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label22
             // 
@@ -2138,7 +2138,6 @@ namespace LEDController.View
             this.label22.Size = new System.Drawing.Size(35, 16);
             this.label22.TabIndex = 69;
             this.label22.Text = "100";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // label23
             // 
@@ -2149,7 +2148,6 @@ namespace LEDController.View
             this.label23.Size = new System.Drawing.Size(114, 16);
             this.label23.TabIndex = 68;
             this.label23.Text = "红光(630 nm)";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label20
             // 
@@ -2242,9 +2240,9 @@ namespace LEDController.View
             this.btnLED120.TabIndex = 113;
             this.btnLED120.Tag = "120";
             this.btnLED120.UseVisualStyleBackColor = false;
-            this.btnLED120.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED120.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED120.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED120.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED120.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED120.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED112
             // 
@@ -2259,9 +2257,9 @@ namespace LEDController.View
             this.btnLED112.TabIndex = 112;
             this.btnLED112.Tag = "112";
             this.btnLED112.UseVisualStyleBackColor = false;
-            this.btnLED112.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED112.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED112.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED112.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED112.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED112.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED104
             // 
@@ -2276,9 +2274,9 @@ namespace LEDController.View
             this.btnLED104.TabIndex = 111;
             this.btnLED104.Tag = "104";
             this.btnLED104.UseVisualStyleBackColor = false;
-            this.btnLED104.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED104.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED104.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED104.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED104.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED104.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED96
             // 
@@ -2293,9 +2291,9 @@ namespace LEDController.View
             this.btnLED96.TabIndex = 110;
             this.btnLED96.Tag = "96";
             this.btnLED96.UseVisualStyleBackColor = false;
-            this.btnLED96.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED96.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED96.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED96.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED96.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED96.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED88
             // 
@@ -2310,9 +2308,9 @@ namespace LEDController.View
             this.btnLED88.TabIndex = 109;
             this.btnLED88.Tag = "88";
             this.btnLED88.UseVisualStyleBackColor = false;
-            this.btnLED88.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED88.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED88.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED88.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED88.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED88.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED116
             // 
@@ -2327,9 +2325,9 @@ namespace LEDController.View
             this.btnLED116.TabIndex = 108;
             this.btnLED116.Tag = "116";
             this.btnLED116.UseVisualStyleBackColor = false;
-            this.btnLED116.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED116.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED116.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED116.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED116.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED116.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED108
             // 
@@ -2344,9 +2342,9 @@ namespace LEDController.View
             this.btnLED108.TabIndex = 107;
             this.btnLED108.Tag = "108";
             this.btnLED108.UseVisualStyleBackColor = false;
-            this.btnLED108.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED108.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED108.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED108.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED108.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED108.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED100
             // 
@@ -2361,9 +2359,9 @@ namespace LEDController.View
             this.btnLED100.TabIndex = 106;
             this.btnLED100.Tag = "100";
             this.btnLED100.UseVisualStyleBackColor = false;
-            this.btnLED100.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED100.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED100.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED100.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED100.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED100.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED92
             // 
@@ -2378,9 +2376,9 @@ namespace LEDController.View
             this.btnLED92.TabIndex = 105;
             this.btnLED92.Tag = "92";
             this.btnLED92.UseVisualStyleBackColor = false;
-            this.btnLED92.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED92.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED92.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED92.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED92.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED92.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED84
             // 
@@ -2395,9 +2393,9 @@ namespace LEDController.View
             this.btnLED84.TabIndex = 104;
             this.btnLED84.Tag = "84";
             this.btnLED84.UseVisualStyleBackColor = false;
-            this.btnLED84.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED84.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED84.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED84.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED84.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED84.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED119
             // 
@@ -2412,9 +2410,9 @@ namespace LEDController.View
             this.btnLED119.TabIndex = 103;
             this.btnLED119.Tag = "119";
             this.btnLED119.UseVisualStyleBackColor = false;
-            this.btnLED119.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED119.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED119.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED119.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED119.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED119.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED118
             // 
@@ -2429,9 +2427,9 @@ namespace LEDController.View
             this.btnLED118.TabIndex = 102;
             this.btnLED118.Tag = "118";
             this.btnLED118.UseVisualStyleBackColor = false;
-            this.btnLED118.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED118.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED118.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED118.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED118.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED118.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED117
             // 
@@ -2446,9 +2444,9 @@ namespace LEDController.View
             this.btnLED117.TabIndex = 101;
             this.btnLED117.Tag = "117";
             this.btnLED117.UseVisualStyleBackColor = false;
-            this.btnLED117.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED117.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED117.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED117.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED117.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED117.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED115
             // 
@@ -2463,9 +2461,9 @@ namespace LEDController.View
             this.btnLED115.TabIndex = 100;
             this.btnLED115.Tag = "115";
             this.btnLED115.UseVisualStyleBackColor = false;
-            this.btnLED115.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED115.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED115.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED115.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED115.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED115.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED114
             // 
@@ -2480,9 +2478,9 @@ namespace LEDController.View
             this.btnLED114.TabIndex = 99;
             this.btnLED114.Tag = "114";
             this.btnLED114.UseVisualStyleBackColor = false;
-            this.btnLED114.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED114.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED114.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED114.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED114.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED114.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED113
             // 
@@ -2497,9 +2495,9 @@ namespace LEDController.View
             this.btnLED113.TabIndex = 98;
             this.btnLED113.Tag = "113";
             this.btnLED113.UseVisualStyleBackColor = false;
-            this.btnLED113.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED113.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED113.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED113.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED113.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED113.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED111
             // 
@@ -2514,9 +2512,9 @@ namespace LEDController.View
             this.btnLED111.TabIndex = 97;
             this.btnLED111.Tag = "111";
             this.btnLED111.UseVisualStyleBackColor = false;
-            this.btnLED111.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED111.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED111.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED111.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED111.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED111.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED110
             // 
@@ -2531,9 +2529,9 @@ namespace LEDController.View
             this.btnLED110.TabIndex = 96;
             this.btnLED110.Tag = "110";
             this.btnLED110.UseVisualStyleBackColor = false;
-            this.btnLED110.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED110.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED110.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED110.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED110.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED110.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED109
             // 
@@ -2548,9 +2546,9 @@ namespace LEDController.View
             this.btnLED109.TabIndex = 95;
             this.btnLED109.Tag = "109";
             this.btnLED109.UseVisualStyleBackColor = false;
-            this.btnLED109.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED109.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED109.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED109.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED109.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED109.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED107
             // 
@@ -2565,9 +2563,9 @@ namespace LEDController.View
             this.btnLED107.TabIndex = 94;
             this.btnLED107.Tag = "107";
             this.btnLED107.UseVisualStyleBackColor = false;
-            this.btnLED107.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED107.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED107.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED107.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED107.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED107.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED106
             // 
@@ -2582,9 +2580,9 @@ namespace LEDController.View
             this.btnLED106.TabIndex = 93;
             this.btnLED106.Tag = "106";
             this.btnLED106.UseVisualStyleBackColor = false;
-            this.btnLED106.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED106.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED106.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED106.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED106.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED106.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED105
             // 
@@ -2599,9 +2597,9 @@ namespace LEDController.View
             this.btnLED105.TabIndex = 92;
             this.btnLED105.Tag = "105";
             this.btnLED105.UseVisualStyleBackColor = false;
-            this.btnLED105.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED105.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED105.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED105.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED105.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED105.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED103
             // 
@@ -2616,9 +2614,9 @@ namespace LEDController.View
             this.btnLED103.TabIndex = 91;
             this.btnLED103.Tag = "103";
             this.btnLED103.UseVisualStyleBackColor = false;
-            this.btnLED103.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED103.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED103.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED103.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED103.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED103.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED102
             // 
@@ -2633,9 +2631,9 @@ namespace LEDController.View
             this.btnLED102.TabIndex = 90;
             this.btnLED102.Tag = "102";
             this.btnLED102.UseVisualStyleBackColor = false;
-            this.btnLED102.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED102.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED102.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED102.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED102.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED102.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED101
             // 
@@ -2650,9 +2648,9 @@ namespace LEDController.View
             this.btnLED101.TabIndex = 89;
             this.btnLED101.Tag = "101";
             this.btnLED101.UseVisualStyleBackColor = false;
-            this.btnLED101.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED101.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED101.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED101.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED101.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED101.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED99
             // 
@@ -2667,9 +2665,9 @@ namespace LEDController.View
             this.btnLED99.TabIndex = 88;
             this.btnLED99.Tag = "99";
             this.btnLED99.UseVisualStyleBackColor = false;
-            this.btnLED99.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED99.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED99.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED99.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED99.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED99.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED98
             // 
@@ -2684,9 +2682,9 @@ namespace LEDController.View
             this.btnLED98.TabIndex = 87;
             this.btnLED98.Tag = "98";
             this.btnLED98.UseVisualStyleBackColor = false;
-            this.btnLED98.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED98.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED98.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED98.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED98.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED98.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED97
             // 
@@ -2701,9 +2699,9 @@ namespace LEDController.View
             this.btnLED97.TabIndex = 86;
             this.btnLED97.Tag = "97";
             this.btnLED97.UseVisualStyleBackColor = false;
-            this.btnLED97.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED97.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED97.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED97.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED97.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED97.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED95
             // 
@@ -2718,9 +2716,9 @@ namespace LEDController.View
             this.btnLED95.TabIndex = 85;
             this.btnLED95.Tag = "95";
             this.btnLED95.UseVisualStyleBackColor = false;
-            this.btnLED95.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED95.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED95.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED95.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED95.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED95.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED94
             // 
@@ -2735,9 +2733,9 @@ namespace LEDController.View
             this.btnLED94.TabIndex = 84;
             this.btnLED94.Tag = "94";
             this.btnLED94.UseVisualStyleBackColor = false;
-            this.btnLED94.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED94.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED94.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED94.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED94.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED94.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED93
             // 
@@ -2752,9 +2750,9 @@ namespace LEDController.View
             this.btnLED93.TabIndex = 83;
             this.btnLED93.Tag = "93";
             this.btnLED93.UseVisualStyleBackColor = false;
-            this.btnLED93.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED93.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED93.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED93.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED93.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED93.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED91
             // 
@@ -2769,9 +2767,9 @@ namespace LEDController.View
             this.btnLED91.TabIndex = 82;
             this.btnLED91.Tag = "91";
             this.btnLED91.UseVisualStyleBackColor = false;
-            this.btnLED91.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED91.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED91.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED91.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED91.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED91.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED90
             // 
@@ -2786,9 +2784,9 @@ namespace LEDController.View
             this.btnLED90.TabIndex = 81;
             this.btnLED90.Tag = "90";
             this.btnLED90.UseVisualStyleBackColor = false;
-            this.btnLED90.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED90.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED90.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED90.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED90.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED90.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED89
             // 
@@ -2803,9 +2801,9 @@ namespace LEDController.View
             this.btnLED89.TabIndex = 80;
             this.btnLED89.Tag = "89";
             this.btnLED89.UseVisualStyleBackColor = false;
-            this.btnLED89.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED89.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED89.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED89.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED89.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED89.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED87
             // 
@@ -2820,9 +2818,9 @@ namespace LEDController.View
             this.btnLED87.TabIndex = 79;
             this.btnLED87.Tag = "87";
             this.btnLED87.UseVisualStyleBackColor = false;
-            this.btnLED87.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED87.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED87.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED87.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED87.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED87.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED86
             // 
@@ -2837,9 +2835,9 @@ namespace LEDController.View
             this.btnLED86.TabIndex = 78;
             this.btnLED86.Tag = "86";
             this.btnLED86.UseVisualStyleBackColor = false;
-            this.btnLED86.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED86.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED86.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED86.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED86.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED86.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED85
             // 
@@ -2854,9 +2852,9 @@ namespace LEDController.View
             this.btnLED85.TabIndex = 77;
             this.btnLED85.Tag = "85";
             this.btnLED85.UseVisualStyleBackColor = false;
-            this.btnLED85.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED85.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED85.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED85.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED85.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED85.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED83
             // 
@@ -2871,9 +2869,9 @@ namespace LEDController.View
             this.btnLED83.TabIndex = 76;
             this.btnLED83.Tag = "83";
             this.btnLED83.UseVisualStyleBackColor = false;
-            this.btnLED83.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED83.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED83.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED83.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED83.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED83.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED82
             // 
@@ -2888,9 +2886,9 @@ namespace LEDController.View
             this.btnLED82.TabIndex = 75;
             this.btnLED82.Tag = "82";
             this.btnLED82.UseVisualStyleBackColor = false;
-            this.btnLED82.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED82.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED82.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED82.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED82.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED82.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED81
             // 
@@ -2905,9 +2903,9 @@ namespace LEDController.View
             this.btnLED81.TabIndex = 74;
             this.btnLED81.Tag = "81";
             this.btnLED81.UseVisualStyleBackColor = false;
-            this.btnLED81.Click += new System.EventHandler(this.btnLED81_Click);
-            this.btnLED81.MouseLeave += new System.EventHandler(this.btnLED81_MouseLeave);
-            this.btnLED81.MouseHover += new System.EventHandler(this.btnLED81_MouseHover);
+            this.btnLED81.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED81.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED81.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // panelRedFixLED
             // 
@@ -2970,9 +2968,9 @@ namespace LEDController.View
             this.btnLED80.TabIndex = 113;
             this.btnLED80.Tag = "80";
             this.btnLED80.UseVisualStyleBackColor = false;
-            this.btnLED80.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED80.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED80.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED80.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED80.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED80.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED72
             // 
@@ -2987,9 +2985,9 @@ namespace LEDController.View
             this.btnLED72.TabIndex = 112;
             this.btnLED72.Tag = "72";
             this.btnLED72.UseVisualStyleBackColor = false;
-            this.btnLED72.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED72.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED72.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED72.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED72.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED72.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED64
             // 
@@ -3004,9 +3002,9 @@ namespace LEDController.View
             this.btnLED64.TabIndex = 111;
             this.btnLED64.Tag = "64";
             this.btnLED64.UseVisualStyleBackColor = false;
-            this.btnLED64.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED64.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED64.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED64.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED64.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED64.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED56
             // 
@@ -3021,9 +3019,9 @@ namespace LEDController.View
             this.btnLED56.TabIndex = 110;
             this.btnLED56.Tag = "56";
             this.btnLED56.UseVisualStyleBackColor = false;
-            this.btnLED56.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED56.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED56.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED56.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED56.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED56.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED48
             // 
@@ -3038,9 +3036,9 @@ namespace LEDController.View
             this.btnLED48.TabIndex = 109;
             this.btnLED48.Tag = "48";
             this.btnLED48.UseVisualStyleBackColor = false;
-            this.btnLED48.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED48.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED48.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED48.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED48.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED48.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED76
             // 
@@ -3055,9 +3053,9 @@ namespace LEDController.View
             this.btnLED76.TabIndex = 108;
             this.btnLED76.Tag = "76";
             this.btnLED76.UseVisualStyleBackColor = false;
-            this.btnLED76.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED76.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED76.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED76.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED76.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED76.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED68
             // 
@@ -3072,9 +3070,9 @@ namespace LEDController.View
             this.btnLED68.TabIndex = 107;
             this.btnLED68.Tag = "68";
             this.btnLED68.UseVisualStyleBackColor = false;
-            this.btnLED68.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED68.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED68.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED68.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED68.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED68.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED60
             // 
@@ -3089,9 +3087,9 @@ namespace LEDController.View
             this.btnLED60.TabIndex = 106;
             this.btnLED60.Tag = "60";
             this.btnLED60.UseVisualStyleBackColor = false;
-            this.btnLED60.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED60.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED60.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED60.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED60.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED60.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED52
             // 
@@ -3106,9 +3104,9 @@ namespace LEDController.View
             this.btnLED52.TabIndex = 105;
             this.btnLED52.Tag = "52";
             this.btnLED52.UseVisualStyleBackColor = false;
-            this.btnLED52.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED52.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED52.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED52.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED52.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED52.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED44
             // 
@@ -3123,9 +3121,9 @@ namespace LEDController.View
             this.btnLED44.TabIndex = 104;
             this.btnLED44.Tag = "44";
             this.btnLED44.UseVisualStyleBackColor = false;
-            this.btnLED44.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED44.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED44.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED44.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED44.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED44.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED79
             // 
@@ -3140,9 +3138,9 @@ namespace LEDController.View
             this.btnLED79.TabIndex = 103;
             this.btnLED79.Tag = "79";
             this.btnLED79.UseVisualStyleBackColor = false;
-            this.btnLED79.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED79.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED79.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED79.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED79.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED79.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED78
             // 
@@ -3157,9 +3155,9 @@ namespace LEDController.View
             this.btnLED78.TabIndex = 102;
             this.btnLED78.Tag = "78";
             this.btnLED78.UseVisualStyleBackColor = false;
-            this.btnLED78.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED78.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED78.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED78.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED78.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED78.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED77
             // 
@@ -3174,9 +3172,9 @@ namespace LEDController.View
             this.btnLED77.TabIndex = 101;
             this.btnLED77.Tag = "77";
             this.btnLED77.UseVisualStyleBackColor = false;
-            this.btnLED77.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED77.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED77.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED77.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED77.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED77.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED75
             // 
@@ -3191,9 +3189,9 @@ namespace LEDController.View
             this.btnLED75.TabIndex = 100;
             this.btnLED75.Tag = "75";
             this.btnLED75.UseVisualStyleBackColor = false;
-            this.btnLED75.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED75.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED75.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED75.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED75.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED75.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED74
             // 
@@ -3208,9 +3206,9 @@ namespace LEDController.View
             this.btnLED74.TabIndex = 99;
             this.btnLED74.Tag = "74";
             this.btnLED74.UseVisualStyleBackColor = false;
-            this.btnLED74.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED74.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED74.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED74.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED74.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED74.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED73
             // 
@@ -3225,9 +3223,9 @@ namespace LEDController.View
             this.btnLED73.TabIndex = 98;
             this.btnLED73.Tag = "73";
             this.btnLED73.UseVisualStyleBackColor = false;
-            this.btnLED73.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED73.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED73.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED73.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED73.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED73.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED71
             // 
@@ -3242,9 +3240,9 @@ namespace LEDController.View
             this.btnLED71.TabIndex = 97;
             this.btnLED71.Tag = "71";
             this.btnLED71.UseVisualStyleBackColor = false;
-            this.btnLED71.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED71.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED71.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED71.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED71.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED71.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED70
             // 
@@ -3259,9 +3257,9 @@ namespace LEDController.View
             this.btnLED70.TabIndex = 96;
             this.btnLED70.Tag = "70";
             this.btnLED70.UseVisualStyleBackColor = false;
-            this.btnLED70.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED70.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED70.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED70.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED70.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED70.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED69
             // 
@@ -3276,9 +3274,9 @@ namespace LEDController.View
             this.btnLED69.TabIndex = 95;
             this.btnLED69.Tag = "69";
             this.btnLED69.UseVisualStyleBackColor = false;
-            this.btnLED69.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED69.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED69.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED69.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED69.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED69.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED67
             // 
@@ -3293,9 +3291,9 @@ namespace LEDController.View
             this.btnLED67.TabIndex = 94;
             this.btnLED67.Tag = "67";
             this.btnLED67.UseVisualStyleBackColor = false;
-            this.btnLED67.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED67.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED67.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED67.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED67.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED67.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED66
             // 
@@ -3310,9 +3308,9 @@ namespace LEDController.View
             this.btnLED66.TabIndex = 93;
             this.btnLED66.Tag = "66";
             this.btnLED66.UseVisualStyleBackColor = false;
-            this.btnLED66.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED66.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED66.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED66.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED66.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED66.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED65
             // 
@@ -3327,9 +3325,9 @@ namespace LEDController.View
             this.btnLED65.TabIndex = 92;
             this.btnLED65.Tag = "65";
             this.btnLED65.UseVisualStyleBackColor = false;
-            this.btnLED65.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED65.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED65.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED65.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED65.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED65.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED63
             // 
@@ -3344,9 +3342,9 @@ namespace LEDController.View
             this.btnLED63.TabIndex = 91;
             this.btnLED63.Tag = "63";
             this.btnLED63.UseVisualStyleBackColor = false;
-            this.btnLED63.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED63.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED63.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED63.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED63.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED63.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED62
             // 
@@ -3361,9 +3359,9 @@ namespace LEDController.View
             this.btnLED62.TabIndex = 90;
             this.btnLED62.Tag = "62";
             this.btnLED62.UseVisualStyleBackColor = false;
-            this.btnLED62.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED62.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED62.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED62.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED62.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED62.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED61
             // 
@@ -3378,9 +3376,9 @@ namespace LEDController.View
             this.btnLED61.TabIndex = 89;
             this.btnLED61.Tag = "61";
             this.btnLED61.UseVisualStyleBackColor = false;
-            this.btnLED61.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED61.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED61.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED61.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED61.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED61.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED59
             // 
@@ -3395,9 +3393,9 @@ namespace LEDController.View
             this.btnLED59.TabIndex = 88;
             this.btnLED59.Tag = "59";
             this.btnLED59.UseVisualStyleBackColor = false;
-            this.btnLED59.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED59.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED59.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED59.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED59.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED59.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED58
             // 
@@ -3412,9 +3410,9 @@ namespace LEDController.View
             this.btnLED58.TabIndex = 87;
             this.btnLED58.Tag = "58";
             this.btnLED58.UseVisualStyleBackColor = false;
-            this.btnLED58.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED58.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED58.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED58.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED58.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED58.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED57
             // 
@@ -3429,9 +3427,9 @@ namespace LEDController.View
             this.btnLED57.TabIndex = 86;
             this.btnLED57.Tag = "57";
             this.btnLED57.UseVisualStyleBackColor = false;
-            this.btnLED57.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED57.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED57.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED57.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED57.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED57.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED55
             // 
@@ -3446,9 +3444,9 @@ namespace LEDController.View
             this.btnLED55.TabIndex = 85;
             this.btnLED55.Tag = "55";
             this.btnLED55.UseVisualStyleBackColor = false;
-            this.btnLED55.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED55.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED55.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED55.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED55.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED55.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED54
             // 
@@ -3463,9 +3461,9 @@ namespace LEDController.View
             this.btnLED54.TabIndex = 84;
             this.btnLED54.Tag = "54";
             this.btnLED54.UseVisualStyleBackColor = false;
-            this.btnLED54.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED54.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED54.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED54.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED54.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED54.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED53
             // 
@@ -3480,9 +3478,9 @@ namespace LEDController.View
             this.btnLED53.TabIndex = 83;
             this.btnLED53.Tag = "53";
             this.btnLED53.UseVisualStyleBackColor = false;
-            this.btnLED53.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED53.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED53.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED53.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED53.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED53.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED51
             // 
@@ -3497,9 +3495,9 @@ namespace LEDController.View
             this.btnLED51.TabIndex = 82;
             this.btnLED51.Tag = "51";
             this.btnLED51.UseVisualStyleBackColor = false;
-            this.btnLED51.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED51.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED51.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED51.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED51.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED51.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED50
             // 
@@ -3514,9 +3512,9 @@ namespace LEDController.View
             this.btnLED50.TabIndex = 81;
             this.btnLED50.Tag = "50";
             this.btnLED50.UseVisualStyleBackColor = false;
-            this.btnLED50.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED50.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED50.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED50.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED50.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED50.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED49
             // 
@@ -3531,9 +3529,9 @@ namespace LEDController.View
             this.btnLED49.TabIndex = 80;
             this.btnLED49.Tag = "49";
             this.btnLED49.UseVisualStyleBackColor = false;
-            this.btnLED49.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED49.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED49.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED49.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED49.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED49.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED47
             // 
@@ -3548,9 +3546,9 @@ namespace LEDController.View
             this.btnLED47.TabIndex = 79;
             this.btnLED47.Tag = "47";
             this.btnLED47.UseVisualStyleBackColor = false;
-            this.btnLED47.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED47.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED47.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED47.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED47.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED47.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED46
             // 
@@ -3565,9 +3563,9 @@ namespace LEDController.View
             this.btnLED46.TabIndex = 78;
             this.btnLED46.Tag = "46";
             this.btnLED46.UseVisualStyleBackColor = false;
-            this.btnLED46.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED46.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED46.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED46.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED46.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED46.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED45
             // 
@@ -3582,9 +3580,9 @@ namespace LEDController.View
             this.btnLED45.TabIndex = 77;
             this.btnLED45.Tag = "45";
             this.btnLED45.UseVisualStyleBackColor = false;
-            this.btnLED45.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED45.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED45.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED45.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED45.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED45.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED43
             // 
@@ -3599,9 +3597,9 @@ namespace LEDController.View
             this.btnLED43.TabIndex = 76;
             this.btnLED43.Tag = "43";
             this.btnLED43.UseVisualStyleBackColor = false;
-            this.btnLED43.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED43.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED43.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED43.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED43.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED43.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED42
             // 
@@ -3616,9 +3614,9 @@ namespace LEDController.View
             this.btnLED42.TabIndex = 75;
             this.btnLED42.Tag = "42";
             this.btnLED42.UseVisualStyleBackColor = false;
-            this.btnLED42.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED42.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED42.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED42.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED42.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED42.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED41
             // 
@@ -3633,9 +3631,9 @@ namespace LEDController.View
             this.btnLED41.TabIndex = 74;
             this.btnLED41.Tag = "41";
             this.btnLED41.UseVisualStyleBackColor = false;
-            this.btnLED41.Click += new System.EventHandler(this.btnLED41_Click);
-            this.btnLED41.MouseLeave += new System.EventHandler(this.btnLED41_MouseLeave);
-            this.btnLED41.MouseHover += new System.EventHandler(this.btnLED41_MouseHover);
+            this.btnLED41.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED41.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED41.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // panelGreenFixLED
             // 
@@ -3698,9 +3696,9 @@ namespace LEDController.View
             this.btnLED40.TabIndex = 73;
             this.btnLED40.Tag = "40";
             this.btnLED40.UseVisualStyleBackColor = false;
-            this.btnLED40.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED40.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED40.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED40.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED40.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED40.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED32
             // 
@@ -3715,9 +3713,9 @@ namespace LEDController.View
             this.btnLED32.TabIndex = 72;
             this.btnLED32.Tag = "32";
             this.btnLED32.UseVisualStyleBackColor = false;
-            this.btnLED32.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED32.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED32.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED32.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED32.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED32.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED24
             // 
@@ -3732,9 +3730,9 @@ namespace LEDController.View
             this.btnLED24.TabIndex = 71;
             this.btnLED24.Tag = "24";
             this.btnLED24.UseVisualStyleBackColor = false;
-            this.btnLED24.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED24.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED24.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED24.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED24.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED24.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED16
             // 
@@ -3749,9 +3747,9 @@ namespace LEDController.View
             this.btnLED16.TabIndex = 70;
             this.btnLED16.Tag = "16";
             this.btnLED16.UseVisualStyleBackColor = false;
-            this.btnLED16.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED16.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED16.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED16.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED16.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED16.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED8
             // 
@@ -3766,9 +3764,9 @@ namespace LEDController.View
             this.btnLED8.TabIndex = 69;
             this.btnLED8.Tag = "8";
             this.btnLED8.UseVisualStyleBackColor = false;
-            this.btnLED8.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED8.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED8.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED8.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED8.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED8.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED36
             // 
@@ -3783,9 +3781,9 @@ namespace LEDController.View
             this.btnLED36.TabIndex = 68;
             this.btnLED36.Tag = "36";
             this.btnLED36.UseVisualStyleBackColor = false;
-            this.btnLED36.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED36.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED36.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED36.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED36.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED36.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED28
             // 
@@ -3800,9 +3798,9 @@ namespace LEDController.View
             this.btnLED28.TabIndex = 67;
             this.btnLED28.Tag = "28";
             this.btnLED28.UseVisualStyleBackColor = false;
-            this.btnLED28.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED28.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED28.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED28.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED28.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED28.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED20
             // 
@@ -3817,9 +3815,9 @@ namespace LEDController.View
             this.btnLED20.TabIndex = 66;
             this.btnLED20.Tag = "20";
             this.btnLED20.UseVisualStyleBackColor = false;
-            this.btnLED20.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED20.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED20.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED20.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED20.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED20.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED12
             // 
@@ -3834,9 +3832,9 @@ namespace LEDController.View
             this.btnLED12.TabIndex = 65;
             this.btnLED12.Tag = "12";
             this.btnLED12.UseVisualStyleBackColor = false;
-            this.btnLED12.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED12.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED12.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED12.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED12.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED12.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED4
             // 
@@ -3851,9 +3849,9 @@ namespace LEDController.View
             this.btnLED4.TabIndex = 64;
             this.btnLED4.Tag = "4";
             this.btnLED4.UseVisualStyleBackColor = false;
-            this.btnLED4.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED4.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED4.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED4.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED4.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED4.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED39
             // 
@@ -3868,9 +3866,9 @@ namespace LEDController.View
             this.btnLED39.TabIndex = 63;
             this.btnLED39.Tag = "39";
             this.btnLED39.UseVisualStyleBackColor = false;
-            this.btnLED39.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED39.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED39.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED39.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED39.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED39.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED38
             // 
@@ -3885,9 +3883,9 @@ namespace LEDController.View
             this.btnLED38.TabIndex = 62;
             this.btnLED38.Tag = "38";
             this.btnLED38.UseVisualStyleBackColor = false;
-            this.btnLED38.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED38.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED38.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED38.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED38.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED38.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED37
             // 
@@ -3902,9 +3900,9 @@ namespace LEDController.View
             this.btnLED37.TabIndex = 61;
             this.btnLED37.Tag = "37";
             this.btnLED37.UseVisualStyleBackColor = false;
-            this.btnLED37.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED37.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED37.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED37.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED37.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED37.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED35
             // 
@@ -3919,9 +3917,9 @@ namespace LEDController.View
             this.btnLED35.TabIndex = 60;
             this.btnLED35.Tag = "35";
             this.btnLED35.UseVisualStyleBackColor = false;
-            this.btnLED35.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED35.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED35.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED35.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED35.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED35.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED34
             // 
@@ -3936,9 +3934,9 @@ namespace LEDController.View
             this.btnLED34.TabIndex = 59;
             this.btnLED34.Tag = "34";
             this.btnLED34.UseVisualStyleBackColor = false;
-            this.btnLED34.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED34.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED34.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED34.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED34.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED34.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED33
             // 
@@ -3953,9 +3951,9 @@ namespace LEDController.View
             this.btnLED33.TabIndex = 58;
             this.btnLED33.Tag = "33";
             this.btnLED33.UseVisualStyleBackColor = false;
-            this.btnLED33.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED33.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED33.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED33.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED33.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED33.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED31
             // 
@@ -3970,9 +3968,9 @@ namespace LEDController.View
             this.btnLED31.TabIndex = 57;
             this.btnLED31.Tag = "31";
             this.btnLED31.UseVisualStyleBackColor = false;
-            this.btnLED31.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED31.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED31.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED31.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED31.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED31.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED30
             // 
@@ -3987,9 +3985,9 @@ namespace LEDController.View
             this.btnLED30.TabIndex = 56;
             this.btnLED30.Tag = "30";
             this.btnLED30.UseVisualStyleBackColor = false;
-            this.btnLED30.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED30.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED30.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED30.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED30.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED30.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED29
             // 
@@ -4004,9 +4002,9 @@ namespace LEDController.View
             this.btnLED29.TabIndex = 55;
             this.btnLED29.Tag = "29";
             this.btnLED29.UseVisualStyleBackColor = false;
-            this.btnLED29.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED29.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED29.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED29.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED29.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED29.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED27
             // 
@@ -4021,9 +4019,9 @@ namespace LEDController.View
             this.btnLED27.TabIndex = 54;
             this.btnLED27.Tag = "27";
             this.btnLED27.UseVisualStyleBackColor = false;
-            this.btnLED27.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED27.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED27.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED27.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED27.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED27.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED26
             // 
@@ -4038,9 +4036,9 @@ namespace LEDController.View
             this.btnLED26.TabIndex = 53;
             this.btnLED26.Tag = "26";
             this.btnLED26.UseVisualStyleBackColor = false;
-            this.btnLED26.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED26.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED26.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED26.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED26.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED26.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED25
             // 
@@ -4055,9 +4053,9 @@ namespace LEDController.View
             this.btnLED25.TabIndex = 52;
             this.btnLED25.Tag = "25";
             this.btnLED25.UseVisualStyleBackColor = false;
-            this.btnLED25.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED25.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED25.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED25.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED25.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED25.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED23
             // 
@@ -4072,9 +4070,9 @@ namespace LEDController.View
             this.btnLED23.TabIndex = 51;
             this.btnLED23.Tag = "23";
             this.btnLED23.UseVisualStyleBackColor = false;
-            this.btnLED23.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED23.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED23.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED23.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED23.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED23.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED22
             // 
@@ -4089,9 +4087,9 @@ namespace LEDController.View
             this.btnLED22.TabIndex = 50;
             this.btnLED22.Tag = "22";
             this.btnLED22.UseVisualStyleBackColor = false;
-            this.btnLED22.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED22.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED22.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED22.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED22.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED22.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED21
             // 
@@ -4106,9 +4104,9 @@ namespace LEDController.View
             this.btnLED21.TabIndex = 49;
             this.btnLED21.Tag = "21";
             this.btnLED21.UseVisualStyleBackColor = false;
-            this.btnLED21.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED21.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED21.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED21.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED21.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED21.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED19
             // 
@@ -4123,9 +4121,9 @@ namespace LEDController.View
             this.btnLED19.TabIndex = 48;
             this.btnLED19.Tag = "19";
             this.btnLED19.UseVisualStyleBackColor = false;
-            this.btnLED19.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED19.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED19.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED19.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED19.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED19.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED18
             // 
@@ -4140,9 +4138,9 @@ namespace LEDController.View
             this.btnLED18.TabIndex = 47;
             this.btnLED18.Tag = "18";
             this.btnLED18.UseVisualStyleBackColor = false;
-            this.btnLED18.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED18.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED18.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED18.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED18.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED18.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED17
             // 
@@ -4157,9 +4155,9 @@ namespace LEDController.View
             this.btnLED17.TabIndex = 46;
             this.btnLED17.Tag = "17";
             this.btnLED17.UseVisualStyleBackColor = false;
-            this.btnLED17.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED17.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED17.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED17.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED17.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED17.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED15
             // 
@@ -4174,9 +4172,9 @@ namespace LEDController.View
             this.btnLED15.TabIndex = 45;
             this.btnLED15.Tag = "15";
             this.btnLED15.UseVisualStyleBackColor = false;
-            this.btnLED15.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED15.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED15.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED15.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED15.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED15.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED14
             // 
@@ -4191,9 +4189,9 @@ namespace LEDController.View
             this.btnLED14.TabIndex = 44;
             this.btnLED14.Tag = "14";
             this.btnLED14.UseVisualStyleBackColor = false;
-            this.btnLED14.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED14.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED14.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED14.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED14.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED14.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED13
             // 
@@ -4208,9 +4206,9 @@ namespace LEDController.View
             this.btnLED13.TabIndex = 43;
             this.btnLED13.Tag = "13";
             this.btnLED13.UseVisualStyleBackColor = false;
-            this.btnLED13.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED13.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED13.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED13.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED13.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED13.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED11
             // 
@@ -4225,9 +4223,9 @@ namespace LEDController.View
             this.btnLED11.TabIndex = 42;
             this.btnLED11.Tag = "11";
             this.btnLED11.UseVisualStyleBackColor = false;
-            this.btnLED11.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED11.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED11.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED11.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED11.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED11.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED10
             // 
@@ -4242,9 +4240,9 @@ namespace LEDController.View
             this.btnLED10.TabIndex = 41;
             this.btnLED10.Tag = "10";
             this.btnLED10.UseVisualStyleBackColor = false;
-            this.btnLED10.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED10.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED10.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED10.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED10.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED10.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED9
             // 
@@ -4259,9 +4257,9 @@ namespace LEDController.View
             this.btnLED9.TabIndex = 40;
             this.btnLED9.Tag = "9";
             this.btnLED9.UseVisualStyleBackColor = false;
-            this.btnLED9.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED9.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED9.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED9.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED9.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED9.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED7
             // 
@@ -4276,9 +4274,9 @@ namespace LEDController.View
             this.btnLED7.TabIndex = 39;
             this.btnLED7.Tag = "7";
             this.btnLED7.UseVisualStyleBackColor = false;
-            this.btnLED7.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED7.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED7.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED7.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED7.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED7.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED6
             // 
@@ -4293,9 +4291,9 @@ namespace LEDController.View
             this.btnLED6.TabIndex = 38;
             this.btnLED6.Tag = "6";
             this.btnLED6.UseVisualStyleBackColor = false;
-            this.btnLED6.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED6.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED6.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED6.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED6.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED6.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED5
             // 
@@ -4310,9 +4308,9 @@ namespace LEDController.View
             this.btnLED5.TabIndex = 37;
             this.btnLED5.Tag = "5";
             this.btnLED5.UseVisualStyleBackColor = false;
-            this.btnLED5.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED5.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED5.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED5.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED5.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED5.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED3
             // 
@@ -4327,9 +4325,9 @@ namespace LEDController.View
             this.btnLED3.TabIndex = 36;
             this.btnLED3.Tag = "3";
             this.btnLED3.UseVisualStyleBackColor = false;
-            this.btnLED3.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED3.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED3.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED3.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED3.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED3.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED2
             // 
@@ -4344,9 +4342,9 @@ namespace LEDController.View
             this.btnLED2.TabIndex = 35;
             this.btnLED2.Tag = "2";
             this.btnLED2.UseVisualStyleBackColor = false;
-            this.btnLED2.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED2.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED2.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED2.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED2.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED2.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // btnLED1
             // 
@@ -4361,9 +4359,9 @@ namespace LEDController.View
             this.btnLED1.TabIndex = 34;
             this.btnLED1.Tag = "1";
             this.btnLED1.UseVisualStyleBackColor = false;
-            this.btnLED1.Click += new System.EventHandler(this.btnLED1_Click);
-            this.btnLED1.MouseLeave += new System.EventHandler(this.btnLED1_MouseLeave);
-            this.btnLED1.MouseHover += new System.EventHandler(this.btnLED1_MouseHover);
+            this.btnLED1.Click += new System.EventHandler(this.btnLED_Click);
+            this.btnLED1.MouseLeave += new System.EventHandler(this.btnLED_MouseLeave);
+            this.btnLED1.MouseHover += new System.EventHandler(this.btnLED_MouseHover);
             // 
             // tpgLEDStatus
             // 
@@ -6298,6 +6296,7 @@ namespace LEDController.View
             // 
             // statusStrip2
             // 
+            this.statusStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripConnectionStatus,
             this.toolStripLEDStatus});
@@ -6414,7 +6413,6 @@ namespace LEDController.View
             this.Name = "LEDControllerViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LED-Controller";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabCtrlMain.ResumeLayout(false);

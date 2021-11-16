@@ -26,8 +26,10 @@ namespace LEDController.View
         public event EventHandler<EventArgs> SendTestData;
         public event EventHandler<EventArgs> OpenFixLED;
         public event EventHandler<EventArgs> CloseFixLED;
+        public event EventHandler<EventArgs> HandleFixLED;
         public event EventHandler<EventArgs> OpenDimLED;
         public event EventHandler<EventArgs> CloseDimLED;
+        public event EventHandler<EventArgs> HandleDimLED;
         public event EventHandler<EventArgs> ShowSingleLEDStatus;
         public event EventHandler<EventArgs> ClearSingleLEDStatus;
         public event EventHandler<EventArgs> UpdateScrollBar;
@@ -62,6 +64,16 @@ namespace LEDController.View
             get { return btnSendStatus3.BackColor; }
             set { btnSendStatus3.BackColor = value; btnSendStatus3.Refresh(); }
         }
+        public Color btnConnectColor
+        {
+            get { return btnConnect.BackColor; }
+            set { btnConnect.BackColor = value; btnConnect.Refresh(); }
+        }
+        public Color btnCloseColor
+        {
+            get { return btnClose.BackColor; }
+            set { btnClose.BackColor = value; btnClose.Refresh(); }
+        }
         public string slaveIP
         {
             get { return tbxIP.Text; }
@@ -82,13 +94,11 @@ namespace LEDController.View
             get { return toolStripConnectionStatus.Text; }
             set { toolStripConnectionStatus.Text = value; }
         }
-
         public string toolStripLEDStatusText
         {
             get { return toolStripLEDStatus.Text; }
             set { toolStripLEDStatus.Text = value; }
         }
-
         public string tsslGreenLEDTPText
         {
             get { return tsslGreenLEDTotalPower.Text; }
@@ -315,163 +325,38 @@ namespace LEDController.View
             set { lblDarkRedLEDMinRight.Text = value; }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button94_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Connect?.Invoke(this, e);
-                btnConnect.BackColor = Color.Green;
-                btnClose.BackColor = Color.Empty;
-            }
-            catch (Exception ex)
-            {
-                btnConnect.BackColor = Color.Empty;
-            }
+            // Click connect button
+            Connect?.Invoke(sender, e);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            try
-            {
-                CloseConnect?.Invoke(this, e);
-                btnClose.BackColor = Color.Empty;
-                btnConnect.BackColor = Color.Empty;
-            }
-            catch (Exception ex)
-            {
-                btnClose.BackColor = Color.Red;
-            }
+            // Click disconnect button
+            CloseConnect?.Invoke(sender, e);
         }
 
         private void btnSendTestMsg_Click(object sender, EventArgs e)
         {
+            // Click send test data button
             SendTestData?.Invoke(sender, e);
         }
-
 
         private void CloseApplication(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnLED41_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Button btn = sender as Button;
-                if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
-                {
-                    // Send control cmd
-                    OpenFixLED?.Invoke(sender, e);
-                }
-                else if (btn.BackColor.ToArgb().Equals(Color.Red.ToArgb()))
-                {
-                    // Send control cmd
-                    CloseFixLED?.Invoke(sender, e);
-                }
-                else
-                {
-                    // Exceptions
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        private void btnLED41_MouseHover(object sender, EventArgs e)
-        {
-            // show LED status
-            ShowSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnLED41_MouseLeave(object sender, EventArgs e)
-        {
-            ClearSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnLED81_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Button btn = sender as Button;
-                if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
-                {
-                    // Send control cmd
-                    OpenFixLED?.Invoke(sender, e);
-                }
-                else if (btn.BackColor.ToArgb().Equals(Color.DarkRed.ToArgb()))
-                {
-                    // Send control cmd
-                    CloseFixLED?.Invoke(sender, e);
-                }
-                else
-                {
-                    // Exceptions
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        private void btnDimLED9_MouseHover(object sender, EventArgs e)
-        {
-            // show LED status
-            ShowSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnDimLED9_MouseLeave(object sender, EventArgs e)
-        {
-            ClearSingleLEDStatus?.Invoke(sender, e);
-        }
-
         private void sbarDimLED1_Scroll(object sender, EventArgs e)
         {
-            // update LED power textbox
+            // Update LED power textbox
             UpdateLEDTbx?.Invoke(sender, e);
         }
 
         private void sbarDimLED5_Scroll(object sender, EventArgs e)
         {
-            // update LED power textbox
+            // Update LED power textbox
             UpdateLEDTbx?.Invoke(sender, e);
         }
 
@@ -479,158 +364,14 @@ namespace LEDController.View
         {
             if (e.KeyCode == Keys.Enter)
             {
-                // update scroll bar
+                // Update scroll bar
                 UpdateScrollBar?.Invoke(sender, e);
             }
         }
 
-        private void btnLED81_MouseHover(object sender, EventArgs e)
-        {
-            // show LED status
-            ShowSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnLED81_MouseLeave(object sender, EventArgs e)
-        {
-            ClearSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnDimLED1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Button btn = sender as Button;
-                if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
-                {
-                    // Send control cmd
-                    OpenDimLED?.Invoke(sender, e);
-                }
-                else if (btn.BackColor.ToArgb().Equals(Color.Green.ToArgb()))
-                {
-                    // Send control cmd
-                    CloseDimLED?.Invoke(sender, e);
-                }
-                else
-                {
-                    // Exceptions
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        private void btnDimLED1_MouseHover(object sender, EventArgs e)
-        {
-            // show LED status
-            ShowSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnDimLED1_MouseLeave(object sender, EventArgs e)
-        {
-            ClearSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnDimLED5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Button btn = sender as Button;
-                if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
-                {
-                    // Send control cmd
-                    OpenDimLED?.Invoke(sender, e);
-                }
-                else if (btn.BackColor.ToArgb().Equals(Color.Red.ToArgb()))
-                {
-                    // Send control cmd
-                    CloseDimLED?.Invoke(sender, e);
-                }
-                else
-                {
-                    // Exceptions
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        private void btnDimLED5_MouseHover(object sender, EventArgs e)
-        {
-            // show LED status
-            ShowSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnDimLED5_MouseLeave(object sender, EventArgs e)
-        {
-            ClearSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnDimLED9_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Button btn = sender as Button;
-                if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
-                {
-                    // Send control cmd
-                    OpenDimLED?.Invoke(sender, e);
-                }
-                else if (btn.BackColor.ToArgb().Equals(Color.DarkRed.ToArgb()))
-                {
-                    // Send control cmd
-                    CloseDimLED?.Invoke(sender, e);
-                }
-                else
-                {
-                    // Exceptions
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void btnLED1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Button btn = sender as Button;
-                if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
-                {
-                    // Send control cmd
-                    OpenFixLED?.Invoke(sender, e);
-                }
-                else if (btn.BackColor.ToArgb().Equals(Color.Green.ToArgb()))
-                {
-                    // Send control cmd
-                    CloseFixLED?.Invoke(sender, e);
-                }
-                else
-                {
-                    // Exceptions
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        private void btnLED1_MouseLeave(object sender, EventArgs e)
-        {
-            ClearSingleLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnLED1_MouseHover(object sender, EventArgs e)
-        {
-            ShowSingleLEDStatus?.Invoke(sender, e);
-        }
         private void GetAllControl(Control c, List<Control> list)
         {
+            // Get all controls
             foreach (Control control in c.Controls)
             {
                 list.Add(control);
@@ -642,6 +383,7 @@ namespace LEDController.View
 
         private void btnOpenGreenFixLED_Click(object sender, EventArgs e)
         {
+            // Turn on all Green Fix LEDs
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -661,6 +403,7 @@ namespace LEDController.View
 
         private void btnCloseGreenFixLED_Click(object sender, EventArgs e)
         {
+            // Turn off all Green LEDs
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -680,6 +423,7 @@ namespace LEDController.View
 
         private void btnOpenRedFixLED_Click(object sender, EventArgs e)
         {
+            // Turn on all Red Fix LEDs
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -699,6 +443,7 @@ namespace LEDController.View
 
         private void btnCloseRedFixLED_Click(object sender, EventArgs e)
         {
+            // Turn off all Red Fix LEDs
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -718,6 +463,7 @@ namespace LEDController.View
 
         private void btnOpenDarkRedFixLED_Click(object sender, EventArgs e)
         {
+            // Turn on all DarkRed Fix LEDs
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -737,6 +483,7 @@ namespace LEDController.View
 
         private void btnCloseDarkRedFixLED_Click(object sender, EventArgs e)
         {
+            // Turn off all DarkRed LEDs
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -756,6 +503,7 @@ namespace LEDController.View
 
         private void btnOpenDimGreenLED1_Click(object sender, EventArgs e)
         {
+            // Turn on 1st Green Dimmable LED
             try
             {
                 Button btn = btnDimLED1;
@@ -769,6 +517,7 @@ namespace LEDController.View
 
         private void btnOpenDimGreenLED2_Click(object sender, EventArgs e)
         {
+            // Turn off 1st Green Dimmable LED
             try
             {
                 Button btn = btnDimLED2;
@@ -782,6 +531,7 @@ namespace LEDController.View
 
         private void btnOpenDimGreenLED3_Click(object sender, EventArgs e)
         {
+            // Turn on 3 Green Dimmable LED
             try
             {
                 Button btn = btnDimLED3;
@@ -795,6 +545,7 @@ namespace LEDController.View
 
         private void btnOpenDimGreenLED4_Click(object sender, EventArgs e)
         {
+            // Turn off 4 Green Dimmable LED
             try
             {
                 Button btn = btnDimLED4;
@@ -808,6 +559,7 @@ namespace LEDController.View
 
         private void btnOpenDimRedLED1_Click(object sender, EventArgs e)
         {
+            // Turn on 1st Red Dimmable LED
             try
             {
                 Button btn = btnDimLED5;
@@ -821,6 +573,7 @@ namespace LEDController.View
 
         private void btnOpenDimRedLED2_Click(object sender, EventArgs e)
         {
+            // Turn on 2 Red Dimmable LED
             try
             {
                 Button btn = btnDimLED6;
@@ -834,6 +587,7 @@ namespace LEDController.View
 
         private void btnOpenDimRedLED3_Click(object sender, EventArgs e)
         {
+            // Turn on 3 Red Dimmable LED
             try
             {
                 Button btn = btnDimLED7;
@@ -847,6 +601,7 @@ namespace LEDController.View
 
         private void btnOpenDimRedLED4_Click(object sender, EventArgs e)
         {
+            // Turn on 4 Red Dimmable LED
             try
             {
                 Button btn = btnDimLED8;
@@ -860,6 +615,7 @@ namespace LEDController.View
 
         private void btnOpenDimDarkRedLED1_Click(object sender, EventArgs e)
         {
+            // Turn on 1st DarkRed Dimmable LED
             try
             {
                 Button btn = btnDimLED9;
@@ -873,6 +629,7 @@ namespace LEDController.View
 
         private void btnOpenDimDarkRedLED2_Click(object sender, EventArgs e)
         {
+            // Turn on 2 DarkRed Dimmable LED
             try
             {
                 Button btn = btnDimLED10;
@@ -886,6 +643,7 @@ namespace LEDController.View
 
         private void btnOpenDimDarkRedLED3_Click(object sender, EventArgs e)
         {
+            // Turn on 3 DarkRed Dimmable LED
             try
             {
                 Button btn = btnDimLED11;
@@ -899,6 +657,7 @@ namespace LEDController.View
 
         private void btnOpenDimDarkRedLED4_Click(object sender, EventArgs e)
         {
+            // Turn on 4 DarkRed Dimmable LED
             try
             {
                 Button btn = btnDimLED12;
@@ -912,6 +671,7 @@ namespace LEDController.View
 
         private void btnOpenGreenDimLED_Click(object sender, EventArgs e)
         {
+            // Turn on all Green Dimmable LED
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -934,6 +694,7 @@ namespace LEDController.View
 
         private void btnCloseGreenDimLED_Click(object sender, EventArgs e)
         {
+            // Turn off all Green Dimmable LED
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -956,6 +717,7 @@ namespace LEDController.View
 
         private void btnOpenRedDimLED_Click(object sender, EventArgs e)
         {
+            // Turn on all Red Dimmable LED
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -978,6 +740,7 @@ namespace LEDController.View
 
         private void btnCloseRedDimLED_Click(object sender, EventArgs e)
         {
+            // Turn off all Red Dimmable LED
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -1000,6 +763,7 @@ namespace LEDController.View
 
         private void btnOpenDarkRedDimLED_Click(object sender, EventArgs e)
         {
+            // Turn on all DarkRed Dimmable LED
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -1022,6 +786,7 @@ namespace LEDController.View
 
         private void btnCloseDarkRedDimLED_Click(object sender, EventArgs e)
         {
+            // Turn off all DarkRed Dimmable LED
             Cursor.Current = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
 
@@ -1044,42 +809,85 @@ namespace LEDController.View
 
         private void tsmConnect_Click(object sender, EventArgs e)
         {
+            // select first panel through menu
             tabCtrlMain.SelectedIndex = 0;
         }
 
         private void tsmLEDControl_Click(object sender, EventArgs e)
         {
+            // select second panel through menu
             tabCtrlMain.SelectedIndex = 1;
         }
 
         private void tsmLEDStatus_Click(object sender, EventArgs e)
         {
+            // select third panel through menu
             tabCtrlMain.SelectedIndex = 2;
         }
 
         private void tsmRTControl_Click(object sender, EventArgs e)
         {
+            // select 4th panel through menu
             tabCtrlMain.SelectedIndex = 3;
         }
 
         private void tsmLightControl_Click(object sender, EventArgs e)
         {
+            // select 5th panel through menu
             tabCtrlMain.SelectedIndex = 4;
         }
 
         private void tsmAirConditionerControl_Click(object sender, EventArgs e)
         {
+            // select 6th panel through menu
             tabCtrlMain.SelectedIndex = 5;
         }
 
         private void tsmSkylightControl_Click(object sender, EventArgs e)
         {
+            // select 7th panel through menu
             tabCtrlMain.SelectedIndex = 6;
         }
 
         private void tsmCameraControl_Click(object sender, EventArgs e)
         {
+            // select 8th panel through menu
             tabCtrlMain.SelectedIndex = 7;
+        }
+
+        private void btnLED_Click(object sender, EventArgs e)
+        {
+            // Click Fix LED button
+            HandleFixLED?.Invoke(sender, e);
+        }
+
+        private void btnLED_MouseHover(object sender, EventArgs e)
+        {
+            // Show LED status
+            ShowSingleLEDStatus?.Invoke(sender, e);
+        }
+
+        private void btnLED_MouseLeave(object sender, EventArgs e)
+        {
+            // Clear LED status
+            ClearSingleLEDStatus?.Invoke(sender, e);
+        }
+
+        private void btnDimLED_Click(object sender, EventArgs e)
+        {
+            // Turn on Green Dimmable LED
+            HandleDimLED?.Invoke(sender, e);
+        }
+
+        private void btnDimLED_MouseLeave(object sender, EventArgs e)
+        {
+            ClearSingleLEDStatus?.Invoke(sender, e);
+        }
+
+        private void btnDimLED_MouseHover(object sender, EventArgs e)
+        {
+            // Show LED status
+            ShowSingleLEDStatus?.Invoke(sender, e);
         }
     }
 }
