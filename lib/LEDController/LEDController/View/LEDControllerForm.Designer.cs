@@ -304,7 +304,7 @@ namespace LEDController.View
             this.btnLED2 = new System.Windows.Forms.Button();
             this.btnLED1 = new System.Windows.Forms.Button();
             this.tpgLEDStatus = new System.Windows.Forms.TabPage();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelLEDStatus = new System.Windows.Forms.Panel();
             this.button291 = new System.Windows.Forms.Button();
             this.button292 = new System.Windows.Forms.Button();
             this.button293 = new System.Windows.Forms.Button();
@@ -437,16 +437,15 @@ namespace LEDController.View
             this.button200 = new System.Windows.Forms.Button();
             this.button201 = new System.Windows.Forms.Button();
             this.button202 = new System.Windows.Forms.Button();
-            this.button132 = new System.Windows.Forms.Button();
-            this.button131 = new System.Windows.Forms.Button();
+            this.btnShowLEDStatus = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbxMaxValue = new System.Windows.Forms.TextBox();
+            this.tbxMinValue = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxQueryWaitTime = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxQueryParam = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
             this.tpgRTControl = new System.Windows.Forms.TabPage();
             this.tpgLightControl = new System.Windows.Forms.TabPage();
@@ -464,6 +463,9 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
@@ -488,7 +490,7 @@ namespace LEDController.View
             this.panelRedFixLED.SuspendLayout();
             this.panelGreenFixLED.SuspendLayout();
             this.tpgLEDStatus.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panelLEDStatus.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -4365,17 +4367,16 @@ namespace LEDController.View
             // 
             // tpgLEDStatus
             // 
-            this.tpgLEDStatus.Controls.Add(this.panel7);
-            this.tpgLEDStatus.Controls.Add(this.button132);
-            this.tpgLEDStatus.Controls.Add(this.button131);
+            this.tpgLEDStatus.Controls.Add(this.panelLEDStatus);
+            this.tpgLEDStatus.Controls.Add(this.btnShowLEDStatus);
             this.tpgLEDStatus.Controls.Add(this.label48);
-            this.tpgLEDStatus.Controls.Add(this.textBox7);
-            this.tpgLEDStatus.Controls.Add(this.textBox6);
+            this.tpgLEDStatus.Controls.Add(this.tbxMaxValue);
+            this.tpgLEDStatus.Controls.Add(this.tbxMinValue);
             this.tpgLEDStatus.Controls.Add(this.label47);
             this.tpgLEDStatus.Controls.Add(this.label46);
-            this.tpgLEDStatus.Controls.Add(this.comboBox2);
+            this.tpgLEDStatus.Controls.Add(this.cbxQueryWaitTime);
             this.tpgLEDStatus.Controls.Add(this.label45);
-            this.tpgLEDStatus.Controls.Add(this.comboBox1);
+            this.tpgLEDStatus.Controls.Add(this.cbxQueryParam);
             this.tpgLEDStatus.Controls.Add(this.label44);
             this.tpgLEDStatus.Location = new System.Drawing.Point(4, 22);
             this.tpgLEDStatus.Name = "tpgLEDStatus";
@@ -4384,149 +4385,152 @@ namespace LEDController.View
             this.tpgLEDStatus.Text = "LED状态";
             this.tpgLEDStatus.UseVisualStyleBackColor = true;
             // 
-            // panel7
+            // panelLEDStatus
             // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelLEDStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.AutoSize = true;
-            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel7.Controls.Add(this.button291);
-            this.panel7.Controls.Add(this.button292);
-            this.panel7.Controls.Add(this.button293);
-            this.panel7.Controls.Add(this.button294);
-            this.panel7.Controls.Add(this.button287);
-            this.panel7.Controls.Add(this.button288);
-            this.panel7.Controls.Add(this.button289);
-            this.panel7.Controls.Add(this.button290);
-            this.panel7.Controls.Add(this.button286);
-            this.panel7.Controls.Add(this.button285);
-            this.panel7.Controls.Add(this.button284);
-            this.panel7.Controls.Add(this.button283);
-            this.panel7.Controls.Add(this.button243);
-            this.panel7.Controls.Add(this.button244);
-            this.panel7.Controls.Add(this.button245);
-            this.panel7.Controls.Add(this.button246);
-            this.panel7.Controls.Add(this.button247);
-            this.panel7.Controls.Add(this.button248);
-            this.panel7.Controls.Add(this.button249);
-            this.panel7.Controls.Add(this.button250);
-            this.panel7.Controls.Add(this.button251);
-            this.panel7.Controls.Add(this.button252);
-            this.panel7.Controls.Add(this.button253);
-            this.panel7.Controls.Add(this.button254);
-            this.panel7.Controls.Add(this.button255);
-            this.panel7.Controls.Add(this.button256);
-            this.panel7.Controls.Add(this.button257);
-            this.panel7.Controls.Add(this.button258);
-            this.panel7.Controls.Add(this.button259);
-            this.panel7.Controls.Add(this.button260);
-            this.panel7.Controls.Add(this.button261);
-            this.panel7.Controls.Add(this.button262);
-            this.panel7.Controls.Add(this.button263);
-            this.panel7.Controls.Add(this.button264);
-            this.panel7.Controls.Add(this.button265);
-            this.panel7.Controls.Add(this.button266);
-            this.panel7.Controls.Add(this.button267);
-            this.panel7.Controls.Add(this.button268);
-            this.panel7.Controls.Add(this.button269);
-            this.panel7.Controls.Add(this.button270);
-            this.panel7.Controls.Add(this.button271);
-            this.panel7.Controls.Add(this.button272);
-            this.panel7.Controls.Add(this.button273);
-            this.panel7.Controls.Add(this.button274);
-            this.panel7.Controls.Add(this.button275);
-            this.panel7.Controls.Add(this.button276);
-            this.panel7.Controls.Add(this.button277);
-            this.panel7.Controls.Add(this.button278);
-            this.panel7.Controls.Add(this.button279);
-            this.panel7.Controls.Add(this.button280);
-            this.panel7.Controls.Add(this.button281);
-            this.panel7.Controls.Add(this.button282);
-            this.panel7.Controls.Add(this.button221);
-            this.panel7.Controls.Add(this.button222);
-            this.panel7.Controls.Add(this.button223);
-            this.panel7.Controls.Add(this.button224);
-            this.panel7.Controls.Add(this.button225);
-            this.panel7.Controls.Add(this.button226);
-            this.panel7.Controls.Add(this.button227);
-            this.panel7.Controls.Add(this.button228);
-            this.panel7.Controls.Add(this.button229);
-            this.panel7.Controls.Add(this.button230);
-            this.panel7.Controls.Add(this.button231);
-            this.panel7.Controls.Add(this.button232);
-            this.panel7.Controls.Add(this.button233);
-            this.panel7.Controls.Add(this.button234);
-            this.panel7.Controls.Add(this.button235);
-            this.panel7.Controls.Add(this.button236);
-            this.panel7.Controls.Add(this.button203);
-            this.panel7.Controls.Add(this.button204);
-            this.panel7.Controls.Add(this.button205);
-            this.panel7.Controls.Add(this.button206);
-            this.panel7.Controls.Add(this.button208);
-            this.panel7.Controls.Add(this.button209);
-            this.panel7.Controls.Add(this.button210);
-            this.panel7.Controls.Add(this.button211);
-            this.panel7.Controls.Add(this.button213);
-            this.panel7.Controls.Add(this.button214);
-            this.panel7.Controls.Add(this.button215);
-            this.panel7.Controls.Add(this.button216);
-            this.panel7.Controls.Add(this.button217);
-            this.panel7.Controls.Add(this.button218);
-            this.panel7.Controls.Add(this.button219);
-            this.panel7.Controls.Add(this.button220);
-            this.panel7.Controls.Add(this.button181);
-            this.panel7.Controls.Add(this.button182);
-            this.panel7.Controls.Add(this.button183);
-            this.panel7.Controls.Add(this.button184);
-            this.panel7.Controls.Add(this.button185);
-            this.panel7.Controls.Add(this.button186);
-            this.panel7.Controls.Add(this.button187);
-            this.panel7.Controls.Add(this.button188);
-            this.panel7.Controls.Add(this.button189);
-            this.panel7.Controls.Add(this.button190);
-            this.panel7.Controls.Add(this.button191);
-            this.panel7.Controls.Add(this.button192);
-            this.panel7.Controls.Add(this.button193);
-            this.panel7.Controls.Add(this.button194);
-            this.panel7.Controls.Add(this.button195);
-            this.panel7.Controls.Add(this.button196);
-            this.panel7.Controls.Add(this.button133);
-            this.panel7.Controls.Add(this.button134);
-            this.panel7.Controls.Add(this.button135);
-            this.panel7.Controls.Add(this.button136);
-            this.panel7.Controls.Add(this.button138);
-            this.panel7.Controls.Add(this.button139);
-            this.panel7.Controls.Add(this.button140);
-            this.panel7.Controls.Add(this.button141);
-            this.panel7.Controls.Add(this.button143);
-            this.panel7.Controls.Add(this.button144);
-            this.panel7.Controls.Add(this.button145);
-            this.panel7.Controls.Add(this.button146);
-            this.panel7.Controls.Add(this.button147);
-            this.panel7.Controls.Add(this.button148);
-            this.panel7.Controls.Add(this.button149);
-            this.panel7.Controls.Add(this.button150);
-            this.panel7.Controls.Add(this.button207);
-            this.panel7.Controls.Add(this.button212);
-            this.panel7.Controls.Add(this.button237);
-            this.panel7.Controls.Add(this.button238);
-            this.panel7.Controls.Add(this.button239);
-            this.panel7.Controls.Add(this.button240);
-            this.panel7.Controls.Add(this.button241);
-            this.panel7.Controls.Add(this.button242);
-            this.panel7.Controls.Add(this.button137);
-            this.panel7.Controls.Add(this.button142);
-            this.panel7.Controls.Add(this.button197);
-            this.panel7.Controls.Add(this.button198);
-            this.panel7.Controls.Add(this.button199);
-            this.panel7.Controls.Add(this.button200);
-            this.panel7.Controls.Add(this.button201);
-            this.panel7.Controls.Add(this.button202);
-            this.panel7.Location = new System.Drawing.Point(226, 25);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(803, 479);
-            this.panel7.TabIndex = 11;
+            this.panelLEDStatus.AutoSize = true;
+            this.panelLEDStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelLEDStatus.Controls.Add(this.label7);
+            this.panelLEDStatus.Controls.Add(this.label4);
+            this.panelLEDStatus.Controls.Add(this.label1);
+            this.panelLEDStatus.Controls.Add(this.button291);
+            this.panelLEDStatus.Controls.Add(this.button292);
+            this.panelLEDStatus.Controls.Add(this.button293);
+            this.panelLEDStatus.Controls.Add(this.button294);
+            this.panelLEDStatus.Controls.Add(this.button287);
+            this.panelLEDStatus.Controls.Add(this.button288);
+            this.panelLEDStatus.Controls.Add(this.button289);
+            this.panelLEDStatus.Controls.Add(this.button290);
+            this.panelLEDStatus.Controls.Add(this.button286);
+            this.panelLEDStatus.Controls.Add(this.button285);
+            this.panelLEDStatus.Controls.Add(this.button284);
+            this.panelLEDStatus.Controls.Add(this.button283);
+            this.panelLEDStatus.Controls.Add(this.button243);
+            this.panelLEDStatus.Controls.Add(this.button244);
+            this.panelLEDStatus.Controls.Add(this.button245);
+            this.panelLEDStatus.Controls.Add(this.button246);
+            this.panelLEDStatus.Controls.Add(this.button247);
+            this.panelLEDStatus.Controls.Add(this.button248);
+            this.panelLEDStatus.Controls.Add(this.button249);
+            this.panelLEDStatus.Controls.Add(this.button250);
+            this.panelLEDStatus.Controls.Add(this.button251);
+            this.panelLEDStatus.Controls.Add(this.button252);
+            this.panelLEDStatus.Controls.Add(this.button253);
+            this.panelLEDStatus.Controls.Add(this.button254);
+            this.panelLEDStatus.Controls.Add(this.button255);
+            this.panelLEDStatus.Controls.Add(this.button256);
+            this.panelLEDStatus.Controls.Add(this.button257);
+            this.panelLEDStatus.Controls.Add(this.button258);
+            this.panelLEDStatus.Controls.Add(this.button259);
+            this.panelLEDStatus.Controls.Add(this.button260);
+            this.panelLEDStatus.Controls.Add(this.button261);
+            this.panelLEDStatus.Controls.Add(this.button262);
+            this.panelLEDStatus.Controls.Add(this.button263);
+            this.panelLEDStatus.Controls.Add(this.button264);
+            this.panelLEDStatus.Controls.Add(this.button265);
+            this.panelLEDStatus.Controls.Add(this.button266);
+            this.panelLEDStatus.Controls.Add(this.button267);
+            this.panelLEDStatus.Controls.Add(this.button268);
+            this.panelLEDStatus.Controls.Add(this.button269);
+            this.panelLEDStatus.Controls.Add(this.button270);
+            this.panelLEDStatus.Controls.Add(this.button271);
+            this.panelLEDStatus.Controls.Add(this.button272);
+            this.panelLEDStatus.Controls.Add(this.button273);
+            this.panelLEDStatus.Controls.Add(this.button274);
+            this.panelLEDStatus.Controls.Add(this.button275);
+            this.panelLEDStatus.Controls.Add(this.button276);
+            this.panelLEDStatus.Controls.Add(this.button277);
+            this.panelLEDStatus.Controls.Add(this.button278);
+            this.panelLEDStatus.Controls.Add(this.button279);
+            this.panelLEDStatus.Controls.Add(this.button280);
+            this.panelLEDStatus.Controls.Add(this.button281);
+            this.panelLEDStatus.Controls.Add(this.button282);
+            this.panelLEDStatus.Controls.Add(this.button221);
+            this.panelLEDStatus.Controls.Add(this.button222);
+            this.panelLEDStatus.Controls.Add(this.button223);
+            this.panelLEDStatus.Controls.Add(this.button224);
+            this.panelLEDStatus.Controls.Add(this.button225);
+            this.panelLEDStatus.Controls.Add(this.button226);
+            this.panelLEDStatus.Controls.Add(this.button227);
+            this.panelLEDStatus.Controls.Add(this.button228);
+            this.panelLEDStatus.Controls.Add(this.button229);
+            this.panelLEDStatus.Controls.Add(this.button230);
+            this.panelLEDStatus.Controls.Add(this.button231);
+            this.panelLEDStatus.Controls.Add(this.button232);
+            this.panelLEDStatus.Controls.Add(this.button233);
+            this.panelLEDStatus.Controls.Add(this.button234);
+            this.panelLEDStatus.Controls.Add(this.button235);
+            this.panelLEDStatus.Controls.Add(this.button236);
+            this.panelLEDStatus.Controls.Add(this.button203);
+            this.panelLEDStatus.Controls.Add(this.button204);
+            this.panelLEDStatus.Controls.Add(this.button205);
+            this.panelLEDStatus.Controls.Add(this.button206);
+            this.panelLEDStatus.Controls.Add(this.button208);
+            this.panelLEDStatus.Controls.Add(this.button209);
+            this.panelLEDStatus.Controls.Add(this.button210);
+            this.panelLEDStatus.Controls.Add(this.button211);
+            this.panelLEDStatus.Controls.Add(this.button213);
+            this.panelLEDStatus.Controls.Add(this.button214);
+            this.panelLEDStatus.Controls.Add(this.button215);
+            this.panelLEDStatus.Controls.Add(this.button216);
+            this.panelLEDStatus.Controls.Add(this.button217);
+            this.panelLEDStatus.Controls.Add(this.button218);
+            this.panelLEDStatus.Controls.Add(this.button219);
+            this.panelLEDStatus.Controls.Add(this.button220);
+            this.panelLEDStatus.Controls.Add(this.button181);
+            this.panelLEDStatus.Controls.Add(this.button182);
+            this.panelLEDStatus.Controls.Add(this.button183);
+            this.panelLEDStatus.Controls.Add(this.button184);
+            this.panelLEDStatus.Controls.Add(this.button185);
+            this.panelLEDStatus.Controls.Add(this.button186);
+            this.panelLEDStatus.Controls.Add(this.button187);
+            this.panelLEDStatus.Controls.Add(this.button188);
+            this.panelLEDStatus.Controls.Add(this.button189);
+            this.panelLEDStatus.Controls.Add(this.button190);
+            this.panelLEDStatus.Controls.Add(this.button191);
+            this.panelLEDStatus.Controls.Add(this.button192);
+            this.panelLEDStatus.Controls.Add(this.button193);
+            this.panelLEDStatus.Controls.Add(this.button194);
+            this.panelLEDStatus.Controls.Add(this.button195);
+            this.panelLEDStatus.Controls.Add(this.button196);
+            this.panelLEDStatus.Controls.Add(this.button133);
+            this.panelLEDStatus.Controls.Add(this.button134);
+            this.panelLEDStatus.Controls.Add(this.button135);
+            this.panelLEDStatus.Controls.Add(this.button136);
+            this.panelLEDStatus.Controls.Add(this.button138);
+            this.panelLEDStatus.Controls.Add(this.button139);
+            this.panelLEDStatus.Controls.Add(this.button140);
+            this.panelLEDStatus.Controls.Add(this.button141);
+            this.panelLEDStatus.Controls.Add(this.button143);
+            this.panelLEDStatus.Controls.Add(this.button144);
+            this.panelLEDStatus.Controls.Add(this.button145);
+            this.panelLEDStatus.Controls.Add(this.button146);
+            this.panelLEDStatus.Controls.Add(this.button147);
+            this.panelLEDStatus.Controls.Add(this.button148);
+            this.panelLEDStatus.Controls.Add(this.button149);
+            this.panelLEDStatus.Controls.Add(this.button150);
+            this.panelLEDStatus.Controls.Add(this.button207);
+            this.panelLEDStatus.Controls.Add(this.button212);
+            this.panelLEDStatus.Controls.Add(this.button237);
+            this.panelLEDStatus.Controls.Add(this.button238);
+            this.panelLEDStatus.Controls.Add(this.button239);
+            this.panelLEDStatus.Controls.Add(this.button240);
+            this.panelLEDStatus.Controls.Add(this.button241);
+            this.panelLEDStatus.Controls.Add(this.button242);
+            this.panelLEDStatus.Controls.Add(this.button137);
+            this.panelLEDStatus.Controls.Add(this.button142);
+            this.panelLEDStatus.Controls.Add(this.button197);
+            this.panelLEDStatus.Controls.Add(this.button198);
+            this.panelLEDStatus.Controls.Add(this.button199);
+            this.panelLEDStatus.Controls.Add(this.button200);
+            this.panelLEDStatus.Controls.Add(this.button201);
+            this.panelLEDStatus.Controls.Add(this.button202);
+            this.panelLEDStatus.Location = new System.Drawing.Point(226, 25);
+            this.panelLEDStatus.Name = "panelLEDStatus";
+            this.panelLEDStatus.Size = new System.Drawing.Size(803, 479);
+            this.panelLEDStatus.TabIndex = 11;
             // 
             // button291
             // 
@@ -4538,6 +4542,7 @@ namespace LEDController.View
             this.button291.Name = "button291";
             this.button291.Size = new System.Drawing.Size(30, 30);
             this.button291.TabIndex = 265;
+            this.button291.Tag = "132";
             this.button291.UseVisualStyleBackColor = false;
             // 
             // button292
@@ -4550,6 +4555,7 @@ namespace LEDController.View
             this.button292.Name = "button292";
             this.button292.Size = new System.Drawing.Size(30, 30);
             this.button292.TabIndex = 264;
+            this.button292.Tag = "131";
             this.button292.UseVisualStyleBackColor = false;
             // 
             // button293
@@ -4562,6 +4568,7 @@ namespace LEDController.View
             this.button293.Name = "button293";
             this.button293.Size = new System.Drawing.Size(30, 30);
             this.button293.TabIndex = 263;
+            this.button293.Tag = "130";
             this.button293.UseVisualStyleBackColor = false;
             // 
             // button294
@@ -4574,6 +4581,7 @@ namespace LEDController.View
             this.button294.Name = "button294";
             this.button294.Size = new System.Drawing.Size(30, 30);
             this.button294.TabIndex = 262;
+            this.button294.Tag = "129";
             this.button294.UseVisualStyleBackColor = false;
             // 
             // button287
@@ -4586,6 +4594,7 @@ namespace LEDController.View
             this.button287.Name = "button287";
             this.button287.Size = new System.Drawing.Size(30, 30);
             this.button287.TabIndex = 261;
+            this.button287.Tag = "128";
             this.button287.UseVisualStyleBackColor = false;
             // 
             // button288
@@ -4598,6 +4607,7 @@ namespace LEDController.View
             this.button288.Name = "button288";
             this.button288.Size = new System.Drawing.Size(30, 30);
             this.button288.TabIndex = 260;
+            this.button288.Tag = "127";
             this.button288.UseVisualStyleBackColor = false;
             // 
             // button289
@@ -4610,6 +4620,7 @@ namespace LEDController.View
             this.button289.Name = "button289";
             this.button289.Size = new System.Drawing.Size(30, 30);
             this.button289.TabIndex = 259;
+            this.button289.Tag = "126";
             this.button289.UseVisualStyleBackColor = false;
             // 
             // button290
@@ -4622,6 +4633,7 @@ namespace LEDController.View
             this.button290.Name = "button290";
             this.button290.Size = new System.Drawing.Size(30, 30);
             this.button290.TabIndex = 258;
+            this.button290.Tag = "125";
             this.button290.UseVisualStyleBackColor = false;
             // 
             // button286
@@ -4634,6 +4646,7 @@ namespace LEDController.View
             this.button286.Name = "button286";
             this.button286.Size = new System.Drawing.Size(30, 30);
             this.button286.TabIndex = 257;
+            this.button286.Tag = "124";
             this.button286.UseVisualStyleBackColor = false;
             // 
             // button285
@@ -4646,6 +4659,7 @@ namespace LEDController.View
             this.button285.Name = "button285";
             this.button285.Size = new System.Drawing.Size(30, 30);
             this.button285.TabIndex = 256;
+            this.button285.Tag = "123";
             this.button285.UseVisualStyleBackColor = false;
             // 
             // button284
@@ -4658,6 +4672,7 @@ namespace LEDController.View
             this.button284.Name = "button284";
             this.button284.Size = new System.Drawing.Size(30, 30);
             this.button284.TabIndex = 255;
+            this.button284.Tag = "122";
             this.button284.UseVisualStyleBackColor = false;
             // 
             // button283
@@ -4670,6 +4685,7 @@ namespace LEDController.View
             this.button283.Name = "button283";
             this.button283.Size = new System.Drawing.Size(30, 30);
             this.button283.TabIndex = 254;
+            this.button283.Tag = "121";
             this.button283.UseVisualStyleBackColor = false;
             // 
             // button243
@@ -4682,6 +4698,7 @@ namespace LEDController.View
             this.button243.Name = "button243";
             this.button243.Size = new System.Drawing.Size(20, 20);
             this.button243.TabIndex = 253;
+            this.button243.Tag = "120";
             this.button243.UseVisualStyleBackColor = false;
             // 
             // button244
@@ -4694,6 +4711,7 @@ namespace LEDController.View
             this.button244.Name = "button244";
             this.button244.Size = new System.Drawing.Size(20, 20);
             this.button244.TabIndex = 252;
+            this.button244.Tag = "116";
             this.button244.UseVisualStyleBackColor = false;
             // 
             // button245
@@ -4706,6 +4724,7 @@ namespace LEDController.View
             this.button245.Name = "button245";
             this.button245.Size = new System.Drawing.Size(20, 20);
             this.button245.TabIndex = 251;
+            this.button245.Tag = "119";
             this.button245.UseVisualStyleBackColor = false;
             // 
             // button246
@@ -4718,6 +4737,7 @@ namespace LEDController.View
             this.button246.Name = "button246";
             this.button246.Size = new System.Drawing.Size(20, 20);
             this.button246.TabIndex = 250;
+            this.button246.Tag = "118";
             this.button246.UseVisualStyleBackColor = false;
             // 
             // button247
@@ -4730,6 +4750,7 @@ namespace LEDController.View
             this.button247.Name = "button247";
             this.button247.Size = new System.Drawing.Size(20, 20);
             this.button247.TabIndex = 249;
+            this.button247.Tag = "117";
             this.button247.UseVisualStyleBackColor = false;
             // 
             // button248
@@ -4742,6 +4763,7 @@ namespace LEDController.View
             this.button248.Name = "button248";
             this.button248.Size = new System.Drawing.Size(20, 20);
             this.button248.TabIndex = 248;
+            this.button248.Tag = "115";
             this.button248.UseVisualStyleBackColor = false;
             // 
             // button249
@@ -4754,6 +4776,7 @@ namespace LEDController.View
             this.button249.Name = "button249";
             this.button249.Size = new System.Drawing.Size(20, 20);
             this.button249.TabIndex = 247;
+            this.button249.Tag = "114";
             this.button249.UseVisualStyleBackColor = false;
             // 
             // button250
@@ -4766,6 +4789,7 @@ namespace LEDController.View
             this.button250.Name = "button250";
             this.button250.Size = new System.Drawing.Size(20, 20);
             this.button250.TabIndex = 246;
+            this.button250.Tag = "113";
             this.button250.UseVisualStyleBackColor = false;
             // 
             // button251
@@ -4778,6 +4802,7 @@ namespace LEDController.View
             this.button251.Name = "button251";
             this.button251.Size = new System.Drawing.Size(20, 20);
             this.button251.TabIndex = 245;
+            this.button251.Tag = "112";
             this.button251.UseVisualStyleBackColor = false;
             // 
             // button252
@@ -4790,6 +4815,7 @@ namespace LEDController.View
             this.button252.Name = "button252";
             this.button252.Size = new System.Drawing.Size(20, 20);
             this.button252.TabIndex = 244;
+            this.button252.Tag = "108";
             this.button252.UseVisualStyleBackColor = false;
             // 
             // button253
@@ -4802,6 +4828,7 @@ namespace LEDController.View
             this.button253.Name = "button253";
             this.button253.Size = new System.Drawing.Size(20, 20);
             this.button253.TabIndex = 243;
+            this.button253.Tag = "111";
             this.button253.UseVisualStyleBackColor = false;
             // 
             // button254
@@ -4814,6 +4841,7 @@ namespace LEDController.View
             this.button254.Name = "button254";
             this.button254.Size = new System.Drawing.Size(20, 20);
             this.button254.TabIndex = 242;
+            this.button254.Tag = "110";
             this.button254.UseVisualStyleBackColor = false;
             // 
             // button255
@@ -4826,6 +4854,7 @@ namespace LEDController.View
             this.button255.Name = "button255";
             this.button255.Size = new System.Drawing.Size(20, 20);
             this.button255.TabIndex = 241;
+            this.button255.Tag = "109";
             this.button255.UseVisualStyleBackColor = false;
             // 
             // button256
@@ -4838,6 +4867,7 @@ namespace LEDController.View
             this.button256.Name = "button256";
             this.button256.Size = new System.Drawing.Size(20, 20);
             this.button256.TabIndex = 240;
+            this.button256.Tag = "107";
             this.button256.UseVisualStyleBackColor = false;
             // 
             // button257
@@ -4850,6 +4880,7 @@ namespace LEDController.View
             this.button257.Name = "button257";
             this.button257.Size = new System.Drawing.Size(20, 20);
             this.button257.TabIndex = 239;
+            this.button257.Tag = "106";
             this.button257.UseVisualStyleBackColor = false;
             // 
             // button258
@@ -4862,6 +4893,7 @@ namespace LEDController.View
             this.button258.Name = "button258";
             this.button258.Size = new System.Drawing.Size(20, 20);
             this.button258.TabIndex = 238;
+            this.button258.Tag = "105";
             this.button258.UseVisualStyleBackColor = false;
             // 
             // button259
@@ -4874,6 +4906,7 @@ namespace LEDController.View
             this.button259.Name = "button259";
             this.button259.Size = new System.Drawing.Size(20, 20);
             this.button259.TabIndex = 237;
+            this.button259.Tag = "104";
             this.button259.UseVisualStyleBackColor = false;
             // 
             // button260
@@ -4886,6 +4919,7 @@ namespace LEDController.View
             this.button260.Name = "button260";
             this.button260.Size = new System.Drawing.Size(20, 20);
             this.button260.TabIndex = 236;
+            this.button260.Tag = "100";
             this.button260.UseVisualStyleBackColor = false;
             // 
             // button261
@@ -4898,6 +4932,7 @@ namespace LEDController.View
             this.button261.Name = "button261";
             this.button261.Size = new System.Drawing.Size(20, 20);
             this.button261.TabIndex = 235;
+            this.button261.Tag = "103";
             this.button261.UseVisualStyleBackColor = false;
             // 
             // button262
@@ -4910,6 +4945,7 @@ namespace LEDController.View
             this.button262.Name = "button262";
             this.button262.Size = new System.Drawing.Size(20, 20);
             this.button262.TabIndex = 234;
+            this.button262.Tag = "102";
             this.button262.UseVisualStyleBackColor = false;
             // 
             // button263
@@ -4922,6 +4958,7 @@ namespace LEDController.View
             this.button263.Name = "button263";
             this.button263.Size = new System.Drawing.Size(20, 20);
             this.button263.TabIndex = 233;
+            this.button263.Tag = "101";
             this.button263.UseVisualStyleBackColor = false;
             // 
             // button264
@@ -4934,6 +4971,7 @@ namespace LEDController.View
             this.button264.Name = "button264";
             this.button264.Size = new System.Drawing.Size(20, 20);
             this.button264.TabIndex = 232;
+            this.button264.Tag = "99";
             this.button264.UseVisualStyleBackColor = false;
             // 
             // button265
@@ -4946,6 +4984,7 @@ namespace LEDController.View
             this.button265.Name = "button265";
             this.button265.Size = new System.Drawing.Size(20, 20);
             this.button265.TabIndex = 231;
+            this.button265.Tag = "98";
             this.button265.UseVisualStyleBackColor = false;
             // 
             // button266
@@ -4958,6 +4997,7 @@ namespace LEDController.View
             this.button266.Name = "button266";
             this.button266.Size = new System.Drawing.Size(20, 20);
             this.button266.TabIndex = 230;
+            this.button266.Tag = "97";
             this.button266.UseVisualStyleBackColor = false;
             // 
             // button267
@@ -4970,6 +5010,7 @@ namespace LEDController.View
             this.button267.Name = "button267";
             this.button267.Size = new System.Drawing.Size(20, 20);
             this.button267.TabIndex = 229;
+            this.button267.Tag = "96";
             this.button267.UseVisualStyleBackColor = false;
             // 
             // button268
@@ -4982,6 +5023,7 @@ namespace LEDController.View
             this.button268.Name = "button268";
             this.button268.Size = new System.Drawing.Size(20, 20);
             this.button268.TabIndex = 228;
+            this.button268.Tag = "92";
             this.button268.UseVisualStyleBackColor = false;
             // 
             // button269
@@ -4994,6 +5036,7 @@ namespace LEDController.View
             this.button269.Name = "button269";
             this.button269.Size = new System.Drawing.Size(20, 20);
             this.button269.TabIndex = 227;
+            this.button269.Tag = "95";
             this.button269.UseVisualStyleBackColor = false;
             // 
             // button270
@@ -5006,6 +5049,7 @@ namespace LEDController.View
             this.button270.Name = "button270";
             this.button270.Size = new System.Drawing.Size(20, 20);
             this.button270.TabIndex = 226;
+            this.button270.Tag = "94";
             this.button270.UseVisualStyleBackColor = false;
             // 
             // button271
@@ -5018,6 +5062,7 @@ namespace LEDController.View
             this.button271.Name = "button271";
             this.button271.Size = new System.Drawing.Size(20, 20);
             this.button271.TabIndex = 225;
+            this.button271.Tag = "93";
             this.button271.UseVisualStyleBackColor = false;
             // 
             // button272
@@ -5030,6 +5075,7 @@ namespace LEDController.View
             this.button272.Name = "button272";
             this.button272.Size = new System.Drawing.Size(20, 20);
             this.button272.TabIndex = 224;
+            this.button272.Tag = "91";
             this.button272.UseVisualStyleBackColor = false;
             // 
             // button273
@@ -5042,6 +5088,7 @@ namespace LEDController.View
             this.button273.Name = "button273";
             this.button273.Size = new System.Drawing.Size(20, 20);
             this.button273.TabIndex = 223;
+            this.button273.Tag = "90";
             this.button273.UseVisualStyleBackColor = false;
             // 
             // button274
@@ -5054,6 +5101,7 @@ namespace LEDController.View
             this.button274.Name = "button274";
             this.button274.Size = new System.Drawing.Size(20, 20);
             this.button274.TabIndex = 222;
+            this.button274.Tag = "89";
             this.button274.UseVisualStyleBackColor = false;
             // 
             // button275
@@ -5066,6 +5114,7 @@ namespace LEDController.View
             this.button275.Name = "button275";
             this.button275.Size = new System.Drawing.Size(20, 20);
             this.button275.TabIndex = 221;
+            this.button275.Tag = "88";
             this.button275.UseVisualStyleBackColor = false;
             // 
             // button276
@@ -5078,6 +5127,7 @@ namespace LEDController.View
             this.button276.Name = "button276";
             this.button276.Size = new System.Drawing.Size(20, 20);
             this.button276.TabIndex = 220;
+            this.button276.Tag = "84";
             this.button276.UseVisualStyleBackColor = false;
             // 
             // button277
@@ -5090,6 +5140,7 @@ namespace LEDController.View
             this.button277.Name = "button277";
             this.button277.Size = new System.Drawing.Size(20, 20);
             this.button277.TabIndex = 219;
+            this.button277.Tag = "87";
             this.button277.UseVisualStyleBackColor = false;
             // 
             // button278
@@ -5102,6 +5153,7 @@ namespace LEDController.View
             this.button278.Name = "button278";
             this.button278.Size = new System.Drawing.Size(20, 20);
             this.button278.TabIndex = 218;
+            this.button278.Tag = "86";
             this.button278.UseVisualStyleBackColor = false;
             // 
             // button279
@@ -5114,6 +5166,7 @@ namespace LEDController.View
             this.button279.Name = "button279";
             this.button279.Size = new System.Drawing.Size(20, 20);
             this.button279.TabIndex = 217;
+            this.button279.Tag = "85";
             this.button279.UseVisualStyleBackColor = false;
             // 
             // button280
@@ -5126,6 +5179,7 @@ namespace LEDController.View
             this.button280.Name = "button280";
             this.button280.Size = new System.Drawing.Size(20, 20);
             this.button280.TabIndex = 216;
+            this.button280.Tag = "83";
             this.button280.UseVisualStyleBackColor = false;
             // 
             // button281
@@ -5138,6 +5192,7 @@ namespace LEDController.View
             this.button281.Name = "button281";
             this.button281.Size = new System.Drawing.Size(20, 20);
             this.button281.TabIndex = 215;
+            this.button281.Tag = "82";
             this.button281.UseVisualStyleBackColor = false;
             // 
             // button282
@@ -5150,6 +5205,7 @@ namespace LEDController.View
             this.button282.Name = "button282";
             this.button282.Size = new System.Drawing.Size(20, 20);
             this.button282.TabIndex = 214;
+            this.button282.Tag = "81";
             this.button282.UseVisualStyleBackColor = false;
             // 
             // button221
@@ -5162,6 +5218,7 @@ namespace LEDController.View
             this.button221.Name = "button221";
             this.button221.Size = new System.Drawing.Size(20, 20);
             this.button221.TabIndex = 213;
+            this.button221.Tag = "80";
             this.button221.UseVisualStyleBackColor = false;
             // 
             // button222
@@ -5174,6 +5231,7 @@ namespace LEDController.View
             this.button222.Name = "button222";
             this.button222.Size = new System.Drawing.Size(20, 20);
             this.button222.TabIndex = 212;
+            this.button222.Tag = "76";
             this.button222.UseVisualStyleBackColor = false;
             // 
             // button223
@@ -5186,6 +5244,7 @@ namespace LEDController.View
             this.button223.Name = "button223";
             this.button223.Size = new System.Drawing.Size(20, 20);
             this.button223.TabIndex = 211;
+            this.button223.Tag = "79";
             this.button223.UseVisualStyleBackColor = false;
             // 
             // button224
@@ -5198,6 +5257,7 @@ namespace LEDController.View
             this.button224.Name = "button224";
             this.button224.Size = new System.Drawing.Size(20, 20);
             this.button224.TabIndex = 210;
+            this.button224.Tag = "78";
             this.button224.UseVisualStyleBackColor = false;
             // 
             // button225
@@ -5210,6 +5270,7 @@ namespace LEDController.View
             this.button225.Name = "button225";
             this.button225.Size = new System.Drawing.Size(20, 20);
             this.button225.TabIndex = 209;
+            this.button225.Tag = "77";
             this.button225.UseVisualStyleBackColor = false;
             // 
             // button226
@@ -5222,6 +5283,7 @@ namespace LEDController.View
             this.button226.Name = "button226";
             this.button226.Size = new System.Drawing.Size(20, 20);
             this.button226.TabIndex = 208;
+            this.button226.Tag = "75";
             this.button226.UseVisualStyleBackColor = false;
             // 
             // button227
@@ -5234,6 +5296,7 @@ namespace LEDController.View
             this.button227.Name = "button227";
             this.button227.Size = new System.Drawing.Size(20, 20);
             this.button227.TabIndex = 207;
+            this.button227.Tag = "74";
             this.button227.UseVisualStyleBackColor = false;
             // 
             // button228
@@ -5246,6 +5309,7 @@ namespace LEDController.View
             this.button228.Name = "button228";
             this.button228.Size = new System.Drawing.Size(20, 20);
             this.button228.TabIndex = 206;
+            this.button228.Tag = "73";
             this.button228.UseVisualStyleBackColor = false;
             // 
             // button229
@@ -5258,6 +5322,7 @@ namespace LEDController.View
             this.button229.Name = "button229";
             this.button229.Size = new System.Drawing.Size(20, 20);
             this.button229.TabIndex = 205;
+            this.button229.Tag = "40";
             this.button229.UseVisualStyleBackColor = false;
             // 
             // button230
@@ -5270,6 +5335,7 @@ namespace LEDController.View
             this.button230.Name = "button230";
             this.button230.Size = new System.Drawing.Size(20, 20);
             this.button230.TabIndex = 204;
+            this.button230.Tag = "36";
             this.button230.UseVisualStyleBackColor = false;
             // 
             // button231
@@ -5282,6 +5348,7 @@ namespace LEDController.View
             this.button231.Name = "button231";
             this.button231.Size = new System.Drawing.Size(20, 20);
             this.button231.TabIndex = 203;
+            this.button231.Tag = "39";
             this.button231.UseVisualStyleBackColor = false;
             // 
             // button232
@@ -5294,6 +5361,7 @@ namespace LEDController.View
             this.button232.Name = "button232";
             this.button232.Size = new System.Drawing.Size(20, 20);
             this.button232.TabIndex = 202;
+            this.button232.Tag = "38";
             this.button232.UseVisualStyleBackColor = false;
             // 
             // button233
@@ -5306,6 +5374,7 @@ namespace LEDController.View
             this.button233.Name = "button233";
             this.button233.Size = new System.Drawing.Size(20, 20);
             this.button233.TabIndex = 201;
+            this.button233.Tag = "37";
             this.button233.UseVisualStyleBackColor = false;
             // 
             // button234
@@ -5318,6 +5387,7 @@ namespace LEDController.View
             this.button234.Name = "button234";
             this.button234.Size = new System.Drawing.Size(20, 20);
             this.button234.TabIndex = 200;
+            this.button234.Tag = "35";
             this.button234.UseVisualStyleBackColor = false;
             // 
             // button235
@@ -5330,6 +5400,7 @@ namespace LEDController.View
             this.button235.Name = "button235";
             this.button235.Size = new System.Drawing.Size(20, 20);
             this.button235.TabIndex = 199;
+            this.button235.Tag = "34";
             this.button235.UseVisualStyleBackColor = false;
             // 
             // button236
@@ -5342,6 +5413,7 @@ namespace LEDController.View
             this.button236.Name = "button236";
             this.button236.Size = new System.Drawing.Size(20, 20);
             this.button236.TabIndex = 198;
+            this.button236.Tag = "33";
             this.button236.UseVisualStyleBackColor = false;
             // 
             // button203
@@ -5354,6 +5426,7 @@ namespace LEDController.View
             this.button203.Name = "button203";
             this.button203.Size = new System.Drawing.Size(20, 20);
             this.button203.TabIndex = 197;
+            this.button203.Tag = "72";
             this.button203.UseVisualStyleBackColor = false;
             // 
             // button204
@@ -5366,6 +5439,7 @@ namespace LEDController.View
             this.button204.Name = "button204";
             this.button204.Size = new System.Drawing.Size(20, 20);
             this.button204.TabIndex = 196;
+            this.button204.Tag = "68";
             this.button204.UseVisualStyleBackColor = false;
             // 
             // button205
@@ -5378,6 +5452,7 @@ namespace LEDController.View
             this.button205.Name = "button205";
             this.button205.Size = new System.Drawing.Size(20, 20);
             this.button205.TabIndex = 195;
+            this.button205.Tag = "71";
             this.button205.UseVisualStyleBackColor = false;
             // 
             // button206
@@ -5390,6 +5465,7 @@ namespace LEDController.View
             this.button206.Name = "button206";
             this.button206.Size = new System.Drawing.Size(20, 20);
             this.button206.TabIndex = 194;
+            this.button206.Tag = "70";
             this.button206.UseVisualStyleBackColor = false;
             // 
             // button208
@@ -5402,6 +5478,7 @@ namespace LEDController.View
             this.button208.Name = "button208";
             this.button208.Size = new System.Drawing.Size(20, 20);
             this.button208.TabIndex = 193;
+            this.button208.Tag = "69";
             this.button208.UseVisualStyleBackColor = false;
             // 
             // button209
@@ -5414,6 +5491,7 @@ namespace LEDController.View
             this.button209.Name = "button209";
             this.button209.Size = new System.Drawing.Size(20, 20);
             this.button209.TabIndex = 192;
+            this.button209.Tag = "67";
             this.button209.UseVisualStyleBackColor = false;
             // 
             // button210
@@ -5426,6 +5504,7 @@ namespace LEDController.View
             this.button210.Name = "button210";
             this.button210.Size = new System.Drawing.Size(20, 20);
             this.button210.TabIndex = 191;
+            this.button210.Tag = "66";
             this.button210.UseVisualStyleBackColor = false;
             // 
             // button211
@@ -5438,6 +5517,7 @@ namespace LEDController.View
             this.button211.Name = "button211";
             this.button211.Size = new System.Drawing.Size(20, 20);
             this.button211.TabIndex = 190;
+            this.button211.Tag = "65";
             this.button211.UseVisualStyleBackColor = false;
             // 
             // button213
@@ -5450,6 +5530,7 @@ namespace LEDController.View
             this.button213.Name = "button213";
             this.button213.Size = new System.Drawing.Size(20, 20);
             this.button213.TabIndex = 189;
+            this.button213.Tag = "32";
             this.button213.UseVisualStyleBackColor = false;
             // 
             // button214
@@ -5462,6 +5543,7 @@ namespace LEDController.View
             this.button214.Name = "button214";
             this.button214.Size = new System.Drawing.Size(20, 20);
             this.button214.TabIndex = 188;
+            this.button214.Tag = "28";
             this.button214.UseVisualStyleBackColor = false;
             // 
             // button215
@@ -5474,6 +5556,7 @@ namespace LEDController.View
             this.button215.Name = "button215";
             this.button215.Size = new System.Drawing.Size(20, 20);
             this.button215.TabIndex = 187;
+            this.button215.Tag = "31";
             this.button215.UseVisualStyleBackColor = false;
             // 
             // button216
@@ -5486,6 +5569,7 @@ namespace LEDController.View
             this.button216.Name = "button216";
             this.button216.Size = new System.Drawing.Size(20, 20);
             this.button216.TabIndex = 186;
+            this.button216.Tag = "30";
             this.button216.UseVisualStyleBackColor = false;
             // 
             // button217
@@ -5498,6 +5582,7 @@ namespace LEDController.View
             this.button217.Name = "button217";
             this.button217.Size = new System.Drawing.Size(20, 20);
             this.button217.TabIndex = 185;
+            this.button217.Tag = "29";
             this.button217.UseVisualStyleBackColor = false;
             // 
             // button218
@@ -5510,6 +5595,7 @@ namespace LEDController.View
             this.button218.Name = "button218";
             this.button218.Size = new System.Drawing.Size(20, 20);
             this.button218.TabIndex = 184;
+            this.button218.Tag = "27";
             this.button218.UseVisualStyleBackColor = false;
             // 
             // button219
@@ -5522,6 +5608,7 @@ namespace LEDController.View
             this.button219.Name = "button219";
             this.button219.Size = new System.Drawing.Size(20, 20);
             this.button219.TabIndex = 183;
+            this.button219.Tag = "26";
             this.button219.UseVisualStyleBackColor = false;
             // 
             // button220
@@ -5534,6 +5621,7 @@ namespace LEDController.View
             this.button220.Name = "button220";
             this.button220.Size = new System.Drawing.Size(20, 20);
             this.button220.TabIndex = 182;
+            this.button220.Tag = "25";
             this.button220.UseVisualStyleBackColor = false;
             // 
             // button181
@@ -5546,6 +5634,7 @@ namespace LEDController.View
             this.button181.Name = "button181";
             this.button181.Size = new System.Drawing.Size(20, 20);
             this.button181.TabIndex = 181;
+            this.button181.Tag = "64";
             this.button181.UseVisualStyleBackColor = false;
             // 
             // button182
@@ -5558,6 +5647,7 @@ namespace LEDController.View
             this.button182.Name = "button182";
             this.button182.Size = new System.Drawing.Size(20, 20);
             this.button182.TabIndex = 180;
+            this.button182.Tag = "60";
             this.button182.UseVisualStyleBackColor = false;
             // 
             // button183
@@ -5570,6 +5660,7 @@ namespace LEDController.View
             this.button183.Name = "button183";
             this.button183.Size = new System.Drawing.Size(20, 20);
             this.button183.TabIndex = 179;
+            this.button183.Tag = "63";
             this.button183.UseVisualStyleBackColor = false;
             // 
             // button184
@@ -5582,6 +5673,7 @@ namespace LEDController.View
             this.button184.Name = "button184";
             this.button184.Size = new System.Drawing.Size(20, 20);
             this.button184.TabIndex = 178;
+            this.button184.Tag = "62";
             this.button184.UseVisualStyleBackColor = false;
             // 
             // button185
@@ -5594,6 +5686,7 @@ namespace LEDController.View
             this.button185.Name = "button185";
             this.button185.Size = new System.Drawing.Size(20, 20);
             this.button185.TabIndex = 177;
+            this.button185.Tag = "61";
             this.button185.UseVisualStyleBackColor = false;
             // 
             // button186
@@ -5606,6 +5699,7 @@ namespace LEDController.View
             this.button186.Name = "button186";
             this.button186.Size = new System.Drawing.Size(20, 20);
             this.button186.TabIndex = 176;
+            this.button186.Tag = "59";
             this.button186.UseVisualStyleBackColor = false;
             // 
             // button187
@@ -5618,6 +5712,7 @@ namespace LEDController.View
             this.button187.Name = "button187";
             this.button187.Size = new System.Drawing.Size(20, 20);
             this.button187.TabIndex = 175;
+            this.button187.Tag = "58";
             this.button187.UseVisualStyleBackColor = false;
             // 
             // button188
@@ -5630,6 +5725,7 @@ namespace LEDController.View
             this.button188.Name = "button188";
             this.button188.Size = new System.Drawing.Size(20, 20);
             this.button188.TabIndex = 174;
+            this.button188.Tag = "57";
             this.button188.UseVisualStyleBackColor = false;
             // 
             // button189
@@ -5642,6 +5738,7 @@ namespace LEDController.View
             this.button189.Name = "button189";
             this.button189.Size = new System.Drawing.Size(20, 20);
             this.button189.TabIndex = 173;
+            this.button189.Tag = "24";
             this.button189.UseVisualStyleBackColor = false;
             // 
             // button190
@@ -5654,6 +5751,7 @@ namespace LEDController.View
             this.button190.Name = "button190";
             this.button190.Size = new System.Drawing.Size(20, 20);
             this.button190.TabIndex = 172;
+            this.button190.Tag = "20";
             this.button190.UseVisualStyleBackColor = false;
             // 
             // button191
@@ -5666,6 +5764,7 @@ namespace LEDController.View
             this.button191.Name = "button191";
             this.button191.Size = new System.Drawing.Size(20, 20);
             this.button191.TabIndex = 171;
+            this.button191.Tag = "23";
             this.button191.UseVisualStyleBackColor = false;
             // 
             // button192
@@ -5678,6 +5777,7 @@ namespace LEDController.View
             this.button192.Name = "button192";
             this.button192.Size = new System.Drawing.Size(20, 20);
             this.button192.TabIndex = 170;
+            this.button192.Tag = "22";
             this.button192.UseVisualStyleBackColor = false;
             // 
             // button193
@@ -5690,6 +5790,7 @@ namespace LEDController.View
             this.button193.Name = "button193";
             this.button193.Size = new System.Drawing.Size(20, 20);
             this.button193.TabIndex = 169;
+            this.button193.Tag = "21";
             this.button193.UseVisualStyleBackColor = false;
             // 
             // button194
@@ -5702,6 +5803,7 @@ namespace LEDController.View
             this.button194.Name = "button194";
             this.button194.Size = new System.Drawing.Size(20, 20);
             this.button194.TabIndex = 168;
+            this.button194.Tag = "19";
             this.button194.UseVisualStyleBackColor = false;
             // 
             // button195
@@ -5714,6 +5816,7 @@ namespace LEDController.View
             this.button195.Name = "button195";
             this.button195.Size = new System.Drawing.Size(20, 20);
             this.button195.TabIndex = 167;
+            this.button195.Tag = "18";
             this.button195.UseVisualStyleBackColor = false;
             // 
             // button196
@@ -5726,6 +5829,7 @@ namespace LEDController.View
             this.button196.Name = "button196";
             this.button196.Size = new System.Drawing.Size(20, 20);
             this.button196.TabIndex = 166;
+            this.button196.Tag = "17";
             this.button196.UseVisualStyleBackColor = false;
             // 
             // button133
@@ -5738,6 +5842,7 @@ namespace LEDController.View
             this.button133.Name = "button133";
             this.button133.Size = new System.Drawing.Size(20, 20);
             this.button133.TabIndex = 165;
+            this.button133.Tag = "56";
             this.button133.UseVisualStyleBackColor = false;
             // 
             // button134
@@ -5750,6 +5855,7 @@ namespace LEDController.View
             this.button134.Name = "button134";
             this.button134.Size = new System.Drawing.Size(20, 20);
             this.button134.TabIndex = 164;
+            this.button134.Tag = "52";
             this.button134.UseVisualStyleBackColor = false;
             // 
             // button135
@@ -5762,6 +5868,7 @@ namespace LEDController.View
             this.button135.Name = "button135";
             this.button135.Size = new System.Drawing.Size(20, 20);
             this.button135.TabIndex = 163;
+            this.button135.Tag = "55";
             this.button135.UseVisualStyleBackColor = false;
             // 
             // button136
@@ -5774,6 +5881,7 @@ namespace LEDController.View
             this.button136.Name = "button136";
             this.button136.Size = new System.Drawing.Size(20, 20);
             this.button136.TabIndex = 162;
+            this.button136.Tag = "54";
             this.button136.UseVisualStyleBackColor = false;
             // 
             // button138
@@ -5786,6 +5894,7 @@ namespace LEDController.View
             this.button138.Name = "button138";
             this.button138.Size = new System.Drawing.Size(20, 20);
             this.button138.TabIndex = 161;
+            this.button138.Tag = "53";
             this.button138.UseVisualStyleBackColor = false;
             // 
             // button139
@@ -5798,6 +5907,7 @@ namespace LEDController.View
             this.button139.Name = "button139";
             this.button139.Size = new System.Drawing.Size(20, 20);
             this.button139.TabIndex = 160;
+            this.button139.Tag = "51";
             this.button139.UseVisualStyleBackColor = false;
             // 
             // button140
@@ -5810,6 +5920,7 @@ namespace LEDController.View
             this.button140.Name = "button140";
             this.button140.Size = new System.Drawing.Size(20, 20);
             this.button140.TabIndex = 159;
+            this.button140.Tag = "50";
             this.button140.UseVisualStyleBackColor = false;
             // 
             // button141
@@ -5822,6 +5933,7 @@ namespace LEDController.View
             this.button141.Name = "button141";
             this.button141.Size = new System.Drawing.Size(20, 20);
             this.button141.TabIndex = 158;
+            this.button141.Tag = "49";
             this.button141.UseVisualStyleBackColor = false;
             // 
             // button143
@@ -5834,6 +5946,7 @@ namespace LEDController.View
             this.button143.Name = "button143";
             this.button143.Size = new System.Drawing.Size(20, 20);
             this.button143.TabIndex = 157;
+            this.button143.Tag = "16";
             this.button143.UseVisualStyleBackColor = false;
             // 
             // button144
@@ -5846,6 +5959,7 @@ namespace LEDController.View
             this.button144.Name = "button144";
             this.button144.Size = new System.Drawing.Size(20, 20);
             this.button144.TabIndex = 156;
+            this.button144.Tag = "12";
             this.button144.UseVisualStyleBackColor = false;
             // 
             // button145
@@ -5858,6 +5972,7 @@ namespace LEDController.View
             this.button145.Name = "button145";
             this.button145.Size = new System.Drawing.Size(20, 20);
             this.button145.TabIndex = 155;
+            this.button145.Tag = "15";
             this.button145.UseVisualStyleBackColor = false;
             // 
             // button146
@@ -5870,6 +5985,7 @@ namespace LEDController.View
             this.button146.Name = "button146";
             this.button146.Size = new System.Drawing.Size(20, 20);
             this.button146.TabIndex = 154;
+            this.button146.Tag = "14";
             this.button146.UseVisualStyleBackColor = false;
             // 
             // button147
@@ -5882,6 +5998,7 @@ namespace LEDController.View
             this.button147.Name = "button147";
             this.button147.Size = new System.Drawing.Size(20, 20);
             this.button147.TabIndex = 153;
+            this.button147.Tag = "13";
             this.button147.UseVisualStyleBackColor = false;
             // 
             // button148
@@ -5894,6 +6011,7 @@ namespace LEDController.View
             this.button148.Name = "button148";
             this.button148.Size = new System.Drawing.Size(20, 20);
             this.button148.TabIndex = 152;
+            this.button148.Tag = "11";
             this.button148.UseVisualStyleBackColor = false;
             // 
             // button149
@@ -5906,6 +6024,7 @@ namespace LEDController.View
             this.button149.Name = "button149";
             this.button149.Size = new System.Drawing.Size(20, 20);
             this.button149.TabIndex = 151;
+            this.button149.Tag = "10";
             this.button149.UseVisualStyleBackColor = false;
             // 
             // button150
@@ -5918,6 +6037,7 @@ namespace LEDController.View
             this.button150.Name = "button150";
             this.button150.Size = new System.Drawing.Size(20, 20);
             this.button150.TabIndex = 150;
+            this.button150.Tag = "9";
             this.button150.UseVisualStyleBackColor = false;
             // 
             // button207
@@ -5930,6 +6050,7 @@ namespace LEDController.View
             this.button207.Name = "button207";
             this.button207.Size = new System.Drawing.Size(20, 20);
             this.button207.TabIndex = 149;
+            this.button207.Tag = "48";
             this.button207.UseVisualStyleBackColor = false;
             // 
             // button212
@@ -5942,6 +6063,7 @@ namespace LEDController.View
             this.button212.Name = "button212";
             this.button212.Size = new System.Drawing.Size(20, 20);
             this.button212.TabIndex = 144;
+            this.button212.Tag = "44";
             this.button212.UseVisualStyleBackColor = false;
             // 
             // button237
@@ -5954,6 +6076,7 @@ namespace LEDController.View
             this.button237.Name = "button237";
             this.button237.Size = new System.Drawing.Size(20, 20);
             this.button237.TabIndex = 119;
+            this.button237.Tag = "47";
             this.button237.UseVisualStyleBackColor = false;
             // 
             // button238
@@ -5966,6 +6089,7 @@ namespace LEDController.View
             this.button238.Name = "button238";
             this.button238.Size = new System.Drawing.Size(20, 20);
             this.button238.TabIndex = 118;
+            this.button238.Tag = "46";
             this.button238.UseVisualStyleBackColor = false;
             // 
             // button239
@@ -5978,6 +6102,7 @@ namespace LEDController.View
             this.button239.Name = "button239";
             this.button239.Size = new System.Drawing.Size(20, 20);
             this.button239.TabIndex = 117;
+            this.button239.Tag = "45";
             this.button239.UseVisualStyleBackColor = false;
             // 
             // button240
@@ -5990,6 +6115,7 @@ namespace LEDController.View
             this.button240.Name = "button240";
             this.button240.Size = new System.Drawing.Size(20, 20);
             this.button240.TabIndex = 116;
+            this.button240.Tag = "43";
             this.button240.UseVisualStyleBackColor = false;
             // 
             // button241
@@ -6002,6 +6128,7 @@ namespace LEDController.View
             this.button241.Name = "button241";
             this.button241.Size = new System.Drawing.Size(20, 20);
             this.button241.TabIndex = 115;
+            this.button241.Tag = "42";
             this.button241.UseVisualStyleBackColor = false;
             // 
             // button242
@@ -6014,6 +6141,7 @@ namespace LEDController.View
             this.button242.Name = "button242";
             this.button242.Size = new System.Drawing.Size(20, 20);
             this.button242.TabIndex = 114;
+            this.button242.Tag = "41";
             this.button242.UseVisualStyleBackColor = false;
             // 
             // button137
@@ -6026,6 +6154,7 @@ namespace LEDController.View
             this.button137.Name = "button137";
             this.button137.Size = new System.Drawing.Size(20, 20);
             this.button137.TabIndex = 109;
+            this.button137.Tag = "8";
             this.button137.UseVisualStyleBackColor = false;
             // 
             // button142
@@ -6038,6 +6167,7 @@ namespace LEDController.View
             this.button142.Name = "button142";
             this.button142.Size = new System.Drawing.Size(20, 20);
             this.button142.TabIndex = 104;
+            this.button142.Tag = "4";
             this.button142.UseVisualStyleBackColor = false;
             // 
             // button197
@@ -6050,6 +6180,7 @@ namespace LEDController.View
             this.button197.Name = "button197";
             this.button197.Size = new System.Drawing.Size(20, 20);
             this.button197.TabIndex = 79;
+            this.button197.Tag = "7";
             this.button197.UseVisualStyleBackColor = false;
             // 
             // button198
@@ -6062,6 +6193,7 @@ namespace LEDController.View
             this.button198.Name = "button198";
             this.button198.Size = new System.Drawing.Size(20, 20);
             this.button198.TabIndex = 78;
+            this.button198.Tag = "6";
             this.button198.UseVisualStyleBackColor = false;
             // 
             // button199
@@ -6074,6 +6206,7 @@ namespace LEDController.View
             this.button199.Name = "button199";
             this.button199.Size = new System.Drawing.Size(20, 20);
             this.button199.TabIndex = 77;
+            this.button199.Tag = "5";
             this.button199.UseVisualStyleBackColor = false;
             // 
             // button200
@@ -6086,6 +6219,7 @@ namespace LEDController.View
             this.button200.Name = "button200";
             this.button200.Size = new System.Drawing.Size(20, 20);
             this.button200.TabIndex = 76;
+            this.button200.Tag = "3";
             this.button200.UseVisualStyleBackColor = false;
             // 
             // button201
@@ -6098,6 +6232,7 @@ namespace LEDController.View
             this.button201.Name = "button201";
             this.button201.Size = new System.Drawing.Size(20, 20);
             this.button201.TabIndex = 75;
+            this.button201.Tag = "2";
             this.button201.UseVisualStyleBackColor = false;
             // 
             // button202
@@ -6110,29 +6245,20 @@ namespace LEDController.View
             this.button202.Name = "button202";
             this.button202.Size = new System.Drawing.Size(20, 20);
             this.button202.TabIndex = 74;
+            this.button202.Tag = "1";
             this.button202.UseVisualStyleBackColor = false;
             // 
-            // button132
+            // btnShowLEDStatus
             // 
-            this.button132.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button132.Location = new System.Drawing.Point(13, 172);
-            this.button132.Name = "button132";
-            this.button132.Padding = new System.Windows.Forms.Padding(1);
-            this.button132.Size = new System.Drawing.Size(131, 32);
-            this.button132.TabIndex = 10;
-            this.button132.Text = "停止获取";
-            this.button132.UseVisualStyleBackColor = true;
-            // 
-            // button131
-            // 
-            this.button131.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button131.Location = new System.Drawing.Point(13, 134);
-            this.button131.Name = "button131";
-            this.button131.Padding = new System.Windows.Forms.Padding(1);
-            this.button131.Size = new System.Drawing.Size(131, 32);
-            this.button131.TabIndex = 9;
-            this.button131.Text = "开始获取";
-            this.button131.UseVisualStyleBackColor = true;
+            this.btnShowLEDStatus.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnShowLEDStatus.Location = new System.Drawing.Point(13, 134);
+            this.btnShowLEDStatus.Name = "btnShowLEDStatus";
+            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(1);
+            this.btnShowLEDStatus.Size = new System.Drawing.Size(131, 32);
+            this.btnShowLEDStatus.TabIndex = 9;
+            this.btnShowLEDStatus.Text = "开始获取";
+            this.btnShowLEDStatus.UseVisualStyleBackColor = true;
+            this.btnShowLEDStatus.Click += new System.EventHandler(this.btnShowLEDStatus_Click);
             // 
             // label48
             // 
@@ -6143,25 +6269,25 @@ namespace LEDController.View
             this.label48.TabIndex = 8;
             this.label48.Text = "-";
             // 
-            // textBox7
+            // tbxMaxValue
             // 
-            this.textBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox7.Location = new System.Drawing.Point(153, 95);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox7.Size = new System.Drawing.Size(48, 26);
-            this.textBox7.TabIndex = 7;
-            this.textBox7.Text = "10";
+            this.tbxMaxValue.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxMaxValue.Location = new System.Drawing.Point(153, 95);
+            this.tbxMaxValue.Name = "tbxMaxValue";
+            this.tbxMaxValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tbxMaxValue.Size = new System.Drawing.Size(48, 26);
+            this.tbxMaxValue.TabIndex = 7;
+            this.tbxMaxValue.Text = "10";
             // 
-            // textBox6
+            // tbxMinValue
             // 
-            this.textBox6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox6.Location = new System.Drawing.Point(99, 95);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox6.Size = new System.Drawing.Size(30, 26);
-            this.textBox6.TabIndex = 6;
-            this.textBox6.Text = "0";
+            this.tbxMinValue.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxMinValue.Location = new System.Drawing.Point(99, 95);
+            this.tbxMinValue.Name = "tbxMinValue";
+            this.tbxMinValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tbxMinValue.Size = new System.Drawing.Size(30, 26);
+            this.tbxMinValue.TabIndex = 6;
+            this.tbxMinValue.Text = "0";
             // 
             // label47
             // 
@@ -6185,22 +6311,21 @@ namespace LEDController.View
             this.label46.TabIndex = 4;
             this.label46.Text = "秒";
             // 
-            // comboBox2
+            // cbxQueryWaitTime
             // 
-            this.comboBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbxQueryWaitTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxQueryWaitTime.FormattingEnabled = true;
+            this.cbxQueryWaitTime.Items.AddRange(new object[] {
             "1",
             "10",
-            "2",
+            "20",
             "30",
-            "5"});
-            this.comboBox2.Location = new System.Drawing.Point(99, 61);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(61, 24);
-            this.comboBox2.Sorted = true;
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.Text = "1";
+            "50"});
+            this.cbxQueryWaitTime.Location = new System.Drawing.Point(99, 61);
+            this.cbxQueryWaitTime.Name = "cbxQueryWaitTime";
+            this.cbxQueryWaitTime.Size = new System.Drawing.Size(61, 24);
+            this.cbxQueryWaitTime.Sorted = true;
+            this.cbxQueryWaitTime.TabIndex = 3;
             // 
             // label45
             // 
@@ -6214,20 +6339,19 @@ namespace LEDController.View
             this.label45.TabIndex = 2;
             this.label45.Text = "查询状态";
             // 
-            // comboBox1
+            // cbxQueryParam
             // 
-            this.comboBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxQueryParam.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxQueryParam.FormattingEnabled = true;
+            this.cbxQueryParam.Items.AddRange(new object[] {
             "LED电流",
             "LED电压",
             "LED功率"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "LED功率";
+            this.cbxQueryParam.Location = new System.Drawing.Point(99, 25);
+            this.cbxQueryParam.Name = "cbxQueryParam";
+            this.cbxQueryParam.Size = new System.Drawing.Size(121, 24);
+            this.cbxQueryParam.Sorted = true;
+            this.cbxQueryParam.TabIndex = 1;
             // 
             // label44
             // 
@@ -6390,6 +6514,42 @@ namespace LEDController.View
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Chartreuse;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(199, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.TabIndex = 266;
+            this.label1.Text = "绿色LED";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Red;
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(463, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.TabIndex = 267;
+            this.label4.Text = "红色LED";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.DarkRed;
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(728, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 16);
+            this.label7.TabIndex = 268;
+            this.label7.Text = "红外LED";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6448,8 +6608,8 @@ namespace LEDController.View
             this.panelGreenFixLED.PerformLayout();
             this.tpgLEDStatus.ResumeLayout(false);
             this.tpgLEDStatus.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelLEDStatus.ResumeLayout(false);
+            this.panelLEDStatus.PerformLayout();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -6625,16 +6785,15 @@ namespace LEDController.View
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Button button129;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxQueryParam;
+        private System.Windows.Forms.ComboBox cbxQueryWaitTime;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbxMaxValue;
+        private System.Windows.Forms.TextBox tbxMinValue;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Button button132;
-        private System.Windows.Forms.Button button131;
+        private System.Windows.Forms.Button btnShowLEDStatus;
         private System.Windows.Forms.Button btnLED120;
         private System.Windows.Forms.Button btnLED112;
         private System.Windows.Forms.Button btnLED104;
@@ -6725,7 +6884,7 @@ namespace LEDController.View
         private System.Windows.Forms.Button btnLED20;
         private System.Windows.Forms.Button btnLED12;
         private System.Windows.Forms.Button btnLED4;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelLEDStatus;
         private System.Windows.Forms.Button button291;
         private System.Windows.Forms.Button button292;
         private System.Windows.Forms.Button button293;
@@ -6893,6 +7052,9 @@ namespace LEDController.View
         private System.Windows.Forms.Label lblGreenLEDMaxRight;
         private System.Windows.Forms.Label lblGreenLEDMinLeft;
         private System.Windows.Forms.Label lblGreenLEDMaxLeft;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
     }
 }
 

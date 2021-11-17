@@ -59,6 +59,10 @@ namespace LEDController.View
         string tsslTemp2Text { get; set; }
         string tsslTemp3Text { get; set; }
         string tsslTemp4Text { get; set; }
+        int queryParamSelectItem { get; set; }
+        int queryWaitTimeSelectItem { get; set; }
+        double minLEDStatusValue { get; set; }
+        double maxLEDStatusValue { get; set; }
         Color btnRecStatus1Color { get; set; }
         Color btnRecStatus2Color { get; set; }
         Color btnRecStatus3Color { get; set; }
@@ -67,6 +71,7 @@ namespace LEDController.View
         Color btnSendStatus3Color { get; set; }
         Color btnConnectColor { get; set; }
         Color btnCloseColor { get; set; }
+        Color[] LEDStatusColors { get; set; }
         string testMsgRecStr { get; set; }
         event EventHandler<EventArgs> Connect;
         event EventHandler<EventArgs> CloseConnect;
@@ -81,6 +86,7 @@ namespace LEDController.View
         event EventHandler<EventArgs> HandleDimLED;
         event EventHandler<EventArgs> UpdateScrollBar;
         event EventHandler<EventArgs> UpdateLEDTbx;
+        event EventHandler<EventArgs> ShowLEDStatus;
         object Invoke(Delegate method);
     }
 }

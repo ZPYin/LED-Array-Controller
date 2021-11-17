@@ -28,6 +28,13 @@ namespace LEDController.Presenter
         private const double MinRedLEDPower = 0.0;
         private const double MaxDarkRedLEDPower = 30.0;
         private const double MinDarkRedLEDPower = 0.0;
+        private const int NumGreenFixLED = 40;
+        private const int NumRedFixLED = 40;
+        private const int NumDarkRedFixLED = 40;
+        private const int NumGreenDimLED = 4;
+        private const int NumRedDimLED = 4;
+        private const int NumDarkRedDimLED = 4;
+        private const int NumScrollBarLevel = 50;
 
         public LEDControllerPresenter(ILEDControllerForm newView)
         {
@@ -45,6 +52,7 @@ namespace LEDController.Presenter
             _view.HandleDimLED += new EventHandler<EventArgs>(HandleDimLED);
             _view.UpdateScrollBar += new EventHandler<EventArgs>(UpdateScrollBar);
             _view.UpdateLEDTbx += new EventHandler<EventArgs>(UpdateLEDTbx);
+            _view.ShowLEDStatus += new EventHandler<EventArgs>(ShowLEDStatus);
             _view.lblGreenLEDMaxLeftText = Convert.ToString(MaxGreenLEDPower);
             _view.lblGreenLEDMaxRightText = Convert.ToString(MaxGreenLEDPower);
             _view.lblGreenLEDMinLeftText = Convert.ToString(MinGreenLEDPower);
@@ -57,6 +65,23 @@ namespace LEDController.Presenter
             _view.lblDarkRedLEDMaxRightText = Convert.ToString(MaxDarkRedLEDPower);
             _view.lblDarkRedLEDMinLeftText = Convert.ToString(MinDarkRedLEDPower);
             _view.lblDarkRedLEDMinRightText = Convert.ToString(MinDarkRedLEDPower);
+        }
+
+        private void ShowLEDStatus(object sender, EventArgs e)
+        {
+            // Show LED status
+            
+            // Get Status values
+
+            // Convert values to color
+            Color[] LEDControlColors = new Color[132];
+            for (int i = 0; i < 132; i++)
+            {
+                LEDControlColors[i] = Color.Red;
+            }
+
+            // Set Colors
+            _view.LEDStatusColors = LEDControlColors;
         }
 
         private void HandleDimLED(object sender, EventArgs e)
@@ -160,22 +185,22 @@ namespace LEDController.Presenter
             // Calculate Dimmable LED power
             double LEDPower = 0.0;
 
-            if ((LEDIndex >= 1) && (LEDIndex <= 4))
+            if ((LEDIndex >= 1) && (LEDIndex <= NumGreenDimLED))
             {
                 // Green LED
-                LEDPower = (sbarValue - 0) / 50 * (MaxGreenLEDPower - MinGreenLEDPower) + MinGreenLEDPower;
+                LEDPower = (sbarValue - 0) / NumScrollBarLevel * (MaxGreenLEDPower - MinGreenLEDPower) + MinGreenLEDPower;
                 return LEDPower;
             }
-            else if ((LEDIndex >= 5) && (LEDIndex <= 8))
+            else if ((LEDIndex >= (NumGreenDimLED + 1)) && (LEDIndex <= (NumGreenDimLED + NumRedDimLED)))
             {
                 // Red LED
-                LEDPower = (sbarValue - 0) / 50 * (MaxRedLEDPower - MinRedLEDPower) + MinRedLEDPower;
+                LEDPower = (sbarValue - 0) / NumScrollBarLevel * (MaxRedLEDPower - MinRedLEDPower) + MinRedLEDPower;
                 return LEDPower;
             }
-            else if ((LEDIndex >= 9) && (LEDIndex <= 12))
+            else if ((LEDIndex >= (NumGreenDimLED + NumRedDimLED + 1)) && (LEDIndex <= (NumGreenDimLED + NumRedDimLED + NumDarkRedDimLED)))
             {
                 // DarkRed LED
-                LEDPower = (sbarValue - 0) / 50 * (MaxDarkRedLEDPower - MinDarkRedLEDPower) + MinDarkRedLEDPower;
+                LEDPower = (sbarValue - 0) / NumScrollBarLevel * (MaxDarkRedLEDPower - MinDarkRedLEDPower) + MinDarkRedLEDPower;
                 return LEDPower;
             }
             else
@@ -240,7 +265,7 @@ namespace LEDController.Presenter
             // Calculate scroll bar value for Dimmable LED
             int sbarValue = 0;
 
-            if ((LEDIndex >= 1) && (LEDIndex <= 4))
+            if ((LEDIndex >= 1) && (LEDIndex <= NumGreenDimLED))
             {
                 // Green LED
                 if ((LEDPower < MinGreenLEDPower) || (LEDPower > MaxGreenLEDPower))
@@ -250,11 +275,11 @@ namespace LEDController.Presenter
                 }
                 else
                 {
-                    sbarValue = Convert.ToInt32((LEDPower - MinGreenLEDPower) / (MaxGreenLEDPower - MinGreenLEDPower) * 50);
+                    sbarValue = Convert.ToInt32((LEDPower - MinGreenLEDPower) / (MaxGreenLEDPower - MinGreenLEDPower) * NumScrollBarLevel);
                 }
                 return sbarValue;
             }
-            else if ((LEDIndex >= 5) && (LEDIndex <= 8))
+            else if ((LEDIndex >= (NumRedDimLED + 1)) && (LEDIndex <= (NumGreenDimLED + NumRedDimLED)))
             {
                 // Red LED
                 if ((LEDPower < MinRedLEDPower) || (LEDPower > MaxRedLEDPower))
@@ -264,11 +289,11 @@ namespace LEDController.Presenter
                 }
                 else
                 {
-                    sbarValue = Convert.ToInt32((LEDPower - MinRedLEDPower) / (MaxRedLEDPower - MinRedLEDPower) * 50);
+                    sbarValue = Convert.ToInt32((LEDPower - MinRedLEDPower) / (MaxRedLEDPower - MinRedLEDPower) * NumScrollBarLevel);
                 }
                 return sbarValue;
             }
-            else if ((LEDIndex >= 9) && (LEDIndex <= 12))
+            else if ((LEDIndex >= (NumGreenDimLED + NumRedDimLED + 1)) && (LEDIndex <= (NumGreenDimLED + NumRedDimLED + NumDarkRedDimLED)))
             {
                 // DarkRed LED
                 if ((LEDPower < MinDarkRedLEDPower) || (LEDPower > MaxDarkRedLEDPower))
@@ -278,7 +303,7 @@ namespace LEDController.Presenter
                 }
                 else
                 {
-                    sbarValue = Convert.ToInt32((LEDPower - MinDarkRedLEDPower) / (MaxDarkRedLEDPower - MinDarkRedLEDPower) * 50);
+                    sbarValue = Convert.ToInt32((LEDPower - MinDarkRedLEDPower) / (MaxDarkRedLEDPower - MinDarkRedLEDPower) * NumScrollBarLevel);
                 }
                 return sbarValue;
             }
@@ -296,18 +321,20 @@ namespace LEDController.Presenter
 
             ShowSendStatus();
 
+            int numTotalFixLED = NumGreenFixLED + NumRedFixLED + NumDarkRedFixLED;
+
             // set button color
             Button btn = sender as Button;
             int tagLED = Int32.Parse(btn.Tag as string);
-            if ((tagLED >= 121) && (tagLED <= 124))
+            if ((tagLED >= (numTotalFixLED + 1)) && (tagLED <= (numTotalFixLED + NumGreenDimLED)))
             {
                 btn.BackColor = Color.Green;
             }
-            else if ((tagLED >= 125) && (tagLED <= 128))
+            else if ((tagLED >= (numTotalFixLED + NumGreenDimLED + 1)) && (tagLED <= (numTotalFixLED + NumGreenDimLED + NumRedDimLED)))
             {
                 btn.BackColor = Color.Red;
             }
-            else if ((tagLED >= 129) && (tagLED <= 132))
+            else if ((tagLED >= (numTotalFixLED + NumGreenDimLED + NumRedDimLED + 1)) && (tagLED <= (numTotalFixLED + NumGreenDimLED + NumRedDimLED + NumDarkRedDimLED)))
             {
                 btn.BackColor = Color.DarkRed;
             }
@@ -340,15 +367,15 @@ namespace LEDController.Presenter
             // set button color
             Button btn = sender as Button;
             int tagLED = Int32.Parse(btn.Tag as string);
-            if ((tagLED >= 1) && (tagLED <= 40))
+            if ((tagLED >= 1) && (tagLED <= NumGreenFixLED))
             {
                 btn.BackColor = Color.Green;
             }
-            else if ((tagLED >= 41) && (tagLED <= 80))
+            else if ((tagLED >= (NumGreenFixLED + 1)) && (tagLED <= (NumGreenFixLED + NumRedFixLED)))
             {
                 btn.BackColor = Color.Red;
             }
-            else if ((tagLED >= 81) && (tagLED <= 120))
+            else if ((tagLED >= (NumGreenFixLED + NumRedFixLED + 1)) && (tagLED <= (NumGreenFixLED + NumRedFixLED + NumDarkRedFixLED)))
             {
                 btn.BackColor = Color.DarkRed;
             }

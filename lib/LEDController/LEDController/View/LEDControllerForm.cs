@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Threading;
+using System.Windows.Threading;
 
 namespace LEDController.View
 {
@@ -19,6 +20,9 @@ namespace LEDController.View
         {
             InitializeComponent();
             this.KeyPreview = true;
+
+            cbxQueryParam.SelectedIndex = 0;
+            cbxQueryWaitTime.SelectedIndex = 0;
         }
 
         public event EventHandler<EventArgs> Connect;
@@ -34,6 +38,28 @@ namespace LEDController.View
         public event EventHandler<EventArgs> ClearSingleLEDStatus;
         public event EventHandler<EventArgs> UpdateScrollBar;
         public event EventHandler<EventArgs> UpdateLEDTbx;
+        public event EventHandler<EventArgs> ShowLEDStatus;
+        public DispatcherTimer timer = new DispatcherTimer();
+        public int queryParamSelectItem
+        {
+            get { return cbxQueryParam.SelectedIndex; }
+            set { cbxQueryParam.SelectedIndex = value; }
+        }
+        public int queryWaitTimeSelectItem 
+        {
+            get { return cbxQueryWaitTime.SelectedIndex; }
+            set { cbxQueryWaitTime.SelectedIndex = value; }
+        }
+        public double minLEDStatusValue 
+        { 
+            get { return Convert.ToDouble(tbxMinValue.Text); }
+            set { tbxMinValue.Text = Convert.ToString(value); }
+        }
+        public double maxLEDStatusValue
+        {
+            get { return Convert.ToDouble(tbxMaxValue.Text); }
+            set { tbxMaxValue.Text = Convert.ToString(value); }
+        }
         public Color btnRecStatus1Color
         {
             get { return btnRecStatus1.BackColor; }
@@ -73,6 +99,38 @@ namespace LEDController.View
         {
             get { return btnClose.BackColor; }
             set { btnClose.BackColor = value; btnClose.Refresh(); }
+        }
+        public Color[] LEDStatusColors
+        {
+            get 
+            {
+                List<Control> list = new List<Control>();
+                GetAllControl(this.panelLEDStatus, list);
+                Color[] LEDColors = new Color[list.Count()];
+                
+                foreach (Control control in list)
+                {
+                    if (control.GetType() == typeof(Button))
+                    {
+                        LEDColors[Convert.ToInt32(control.Tag) - 1] = control.BackColor;
+                    }
+                }
+
+                return LEDColors;
+            }
+            set 
+            {
+                List<Control> list = new List<Control>();
+                GetAllControl(this.panelLEDStatus, list);
+
+                foreach (Control control in list)
+                {
+                    if (control.GetType() == typeof(Button))
+                    {
+                        control.BackColor = value[Convert.ToInt32(control.Tag) - 1];
+                    }
+                }
+            }
         }
         public string slaveIP
         {
@@ -888,6 +946,34 @@ namespace LEDController.View
         {
             // Show LED status
             ShowSingleLEDStatus?.Invoke(sender, e);
+        }
+
+        private void btnShowLEDStatus_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            if (btn.Text == "开始获取")
+            {
+                btn.BackColor = Color.Green;
+                btn.Text = "停止获取";
+
+                timer.Interval = TimeSpan.FromSeconds(Convert.ToDouble(cbxQueryWaitTime.GetItemText(cbxQueryWaitTime.SelectedItem)));
+                timer.Tick += StartShowLEDStatus;
+
+                timer.Start();
+            }
+            else
+            {
+                btn.BackColor = Color.Empty;
+                btn.Text = "开始获取";
+
+                timer.Stop();
+            }
+        }
+
+        private void StartShowLEDStatus(object sender, EventArgs e)
+        {
+            ShowLEDStatus?.Invoke(sender, e);
         }
     }
 }

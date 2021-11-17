@@ -169,9 +169,10 @@ namespace LEDController.Model
         public void TurnOnDimLED(int LEDBrightness = 125)
         {}
 
-        private string MakeCmd()
+        private byte[] MakeCmd()
         {
-            return "00";
+            var cmdBytes = new byte[] { 0x00, 0x01, 0x02 };
+            return cmdBytes;
         }
 
         public LEDStatus ParseStatus(byte[] receiveMsg)
