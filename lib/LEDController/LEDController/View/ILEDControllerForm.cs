@@ -76,16 +76,16 @@ namespace LEDController.View
         event EventHandler<EventArgs> Connect;
         event EventHandler<EventArgs> CloseConnect;
         event EventHandler<EventArgs> SendTestData;
-        event EventHandler<EventArgs> ShowSingleLEDStatus;
-        event EventHandler<EventArgs> ClearSingleLEDStatus;
-        event EventHandler<EventArgs> OpenFixLED;
-        event EventHandler<EventArgs> CloseFixLED;
-        event EventHandler<EventArgs> HandleFixLED;
-        event EventHandler<EventArgs> OpenDimLED;
-        event EventHandler<EventArgs> CloseDimLED;
-        event EventHandler<EventArgs> HandleDimLED;
+        event EventHandler<EventEDArgs> ShowSingleLEDStatus;
+        event EventHandler<EventEDArgs> ClearSingleLEDStatus;
+        event EventHandler<EventFixLEDArgs> OpenFixLED;
+        event EventHandler<EventFixLEDArgs> CloseFixLED;
+        event EventHandler<EventFixLEDArgs> HandleFixLED;
+        event EventHandler<EventDimLEDArgs> OpenDimLED;
+        event EventHandler<EventDimLEDArgs> CloseDimLED;
+        event EventHandler<EventDimLEDArgs> HandleDimLED;
         event EventHandler<EventArgs> UpdateScrollBar;
-        event EventHandler<EventArgs> UpdateLEDTbx;
+        event EventHandler<EventArgs> UpdateLEDTbx;   // update Dimmable led text box
         event EventHandler<EventArgs> ShowLEDStatus;
         object Invoke(Delegate method);
     }

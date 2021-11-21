@@ -305,6 +305,9 @@ namespace LEDController.View
             this.btnLED1 = new System.Windows.Forms.Button();
             this.tpgLEDStatus = new System.Windows.Forms.TabPage();
             this.panelLEDStatus = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button291 = new System.Windows.Forms.Button();
             this.button292 = new System.Windows.Forms.Button();
             this.button293 = new System.Windows.Forms.Button();
@@ -463,9 +466,6 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
@@ -1119,7 +1119,7 @@ namespace LEDController.View
             this.btnOpenDimDarkRedLED4.Tag = "132";
             this.btnOpenDimDarkRedLED4.Text = "设置";
             this.btnOpenDimDarkRedLED4.UseVisualStyleBackColor = true;
-            this.btnOpenDimDarkRedLED4.Click += new System.EventHandler(this.btnOpenDimDarkRedLED4_Click);
+            this.btnOpenDimDarkRedLED4.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label34
             // 
@@ -1170,7 +1170,7 @@ namespace LEDController.View
             this.btnOpenDimDarkRedLED3.Tag = "131";
             this.btnOpenDimDarkRedLED3.Text = "设置";
             this.btnOpenDimDarkRedLED3.UseVisualStyleBackColor = true;
-            this.btnOpenDimDarkRedLED3.Click += new System.EventHandler(this.btnOpenDimDarkRedLED3_Click);
+            this.btnOpenDimDarkRedLED3.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label36
             // 
@@ -1221,7 +1221,7 @@ namespace LEDController.View
             this.btnOpenDimDarkRedLED2.Tag = "130";
             this.btnOpenDimDarkRedLED2.Text = "设置";
             this.btnOpenDimDarkRedLED2.UseVisualStyleBackColor = true;
-            this.btnOpenDimDarkRedLED2.Click += new System.EventHandler(this.btnOpenDimDarkRedLED2_Click);
+            this.btnOpenDimDarkRedLED2.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label38
             // 
@@ -1272,7 +1272,7 @@ namespace LEDController.View
             this.btnOpenDimDarkRedLED1.Tag = "129";
             this.btnOpenDimDarkRedLED1.Text = "设置";
             this.btnOpenDimDarkRedLED1.UseVisualStyleBackColor = true;
-            this.btnOpenDimDarkRedLED1.Click += new System.EventHandler(this.btnOpenDimDarkRedLED1_Click);
+            this.btnOpenDimDarkRedLED1.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label40
             // 
@@ -1434,7 +1434,7 @@ namespace LEDController.View
             this.btnOpenDimRedLED4.Tag = "128";
             this.btnOpenDimRedLED4.Text = "设置";
             this.btnOpenDimRedLED4.UseVisualStyleBackColor = true;
-            this.btnOpenDimRedLED4.Click += new System.EventHandler(this.btnOpenDimRedLED4_Click);
+            this.btnOpenDimRedLED4.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // tbxDimLED5
             // 
@@ -1496,7 +1496,7 @@ namespace LEDController.View
             this.btnOpenDimRedLED3.Tag = "127";
             this.btnOpenDimRedLED3.Text = "设置";
             this.btnOpenDimRedLED3.UseVisualStyleBackColor = true;
-            this.btnOpenDimRedLED3.Click += new System.EventHandler(this.btnOpenDimRedLED3_Click);
+            this.btnOpenDimRedLED3.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label27
             // 
@@ -1547,7 +1547,7 @@ namespace LEDController.View
             this.btnOpenDimRedLED2.Tag = "126";
             this.btnOpenDimRedLED2.Text = "设置";
             this.btnOpenDimRedLED2.UseVisualStyleBackColor = true;
-            this.btnOpenDimRedLED2.Click += new System.EventHandler(this.btnOpenDimRedLED2_Click);
+            this.btnOpenDimRedLED2.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label29
             // 
@@ -1598,7 +1598,7 @@ namespace LEDController.View
             this.btnOpenDimRedLED1.Tag = "125";
             this.btnOpenDimRedLED1.Text = "设置";
             this.btnOpenDimRedLED1.UseVisualStyleBackColor = true;
-            this.btnOpenDimRedLED1.Click += new System.EventHandler(this.btnOpenDimRedLED1_Click);
+            this.btnOpenDimRedLED1.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label31
             // 
@@ -1771,7 +1771,7 @@ namespace LEDController.View
             this.btnOpenDimGreenLED4.Tag = "124";
             this.btnOpenDimGreenLED4.Text = "设置";
             this.btnOpenDimGreenLED4.UseVisualStyleBackColor = true;
-            this.btnOpenDimGreenLED4.Click += new System.EventHandler(this.btnOpenDimGreenLED4_Click);
+            this.btnOpenDimGreenLED4.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label8
             // 
@@ -1822,7 +1822,7 @@ namespace LEDController.View
             this.btnOpenDimGreenLED3.Tag = "123";
             this.btnOpenDimGreenLED3.Text = "设置";
             this.btnOpenDimGreenLED3.UseVisualStyleBackColor = true;
-            this.btnOpenDimGreenLED3.Click += new System.EventHandler(this.btnOpenDimGreenLED3_Click);
+            this.btnOpenDimGreenLED3.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label6
             // 
@@ -1873,7 +1873,7 @@ namespace LEDController.View
             this.btnOpenDimGreenLED2.Tag = "122";
             this.btnOpenDimGreenLED2.Text = "设置";
             this.btnOpenDimGreenLED2.UseVisualStyleBackColor = true;
-            this.btnOpenDimGreenLED2.Click += new System.EventHandler(this.btnOpenDimGreenLED2_Click);
+            this.btnOpenDimGreenLED2.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label3
             // 
@@ -1924,7 +1924,7 @@ namespace LEDController.View
             this.btnOpenDimGreenLED1.Tag = "121";
             this.btnOpenDimGreenLED1.Text = "设置";
             this.btnOpenDimGreenLED1.UseVisualStyleBackColor = true;
-            this.btnOpenDimGreenLED1.Click += new System.EventHandler(this.btnOpenDimGreenLED1_Click);
+            this.btnOpenDimGreenLED1.Click += new System.EventHandler(this.btnCfgDimLED_Click);
             // 
             // label2
             // 
@@ -4532,6 +4532,42 @@ namespace LEDController.View
             this.panelLEDStatus.Size = new System.Drawing.Size(803, 479);
             this.panelLEDStatus.TabIndex = 11;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.DarkRed;
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(728, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 16);
+            this.label7.TabIndex = 268;
+            this.label7.Text = "红外LED";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Red;
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(463, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.TabIndex = 267;
+            this.label4.Text = "红色LED";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Chartreuse;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(199, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.TabIndex = 266;
+            this.label1.Text = "绿色LED";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button291
             // 
             this.button291.AutoSize = true;
@@ -6513,42 +6549,6 @@ namespace LEDController.View
             this.label53.Size = new System.Drawing.Size(29, 12);
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Chartreuse;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(199, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
-            this.label1.TabIndex = 266;
-            this.label1.Text = "绿色LED";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Red;
-            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(463, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
-            this.label4.TabIndex = 267;
-            this.label4.Text = "红色LED";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.DarkRed;
-            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(728, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 16);
-            this.label7.TabIndex = 268;
-            this.label7.Text = "红外LED";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LEDControllerViewer
             // 

@@ -16,8 +16,9 @@ namespace LEDController.Presenter
     class LEDControllerPresenter
     {
         private ILEDControllerForm _view;
-        private LEDBoardCom connector;
+        private LEDBoardCom connector = new LEDBoardCom();
         private FileSysIOClass fileIOer;
+        private LEDStatus currentLEDStatus;
         private Thread threadListen = null;
         private byte[] receiveBytes = null;
         private const int SendBufferSize = 2 * 1024;
@@ -28,31 +29,25 @@ namespace LEDController.Presenter
         private const double MinRedLEDPower = 0.0;
         private const double MaxDarkRedLEDPower = 30.0;
         private const double MinDarkRedLEDPower = 0.0;
-        private const int NumGreenFixLED = 40;
-        private const int NumRedFixLED = 40;
-        private const int NumDarkRedFixLED = 40;
-        private const int NumGreenDimLED = 4;
-        private const int NumRedDimLED = 4;
-        private const int NumDarkRedDimLED = 4;
         private const int NumScrollBarLevel = 50;
 
         public LEDControllerPresenter(ILEDControllerForm newView)
         {
             _view = newView;
-            _view.Connect += new EventHandler<EventArgs>(Connect);
-            _view.CloseConnect += new EventHandler<EventArgs>(CloseConnect);
-            _view.SendTestData += new EventHandler<EventArgs>(SendTestData);
-            _view.ShowSingleLEDStatus += new EventHandler<EventArgs>(ShowSingleLEDStatus);
-            _view.ClearSingleLEDStatus += new EventHandler<EventArgs>(ClearSingleLEDStatus);
-            _view.OpenFixLED += new EventHandler<EventArgs>(OpenFixLED);
-            _view.CloseFixLED += new EventHandler<EventArgs>(CloseFixLED);
-            _view.HandleFixLED += new EventHandler<EventArgs>(HandleFixLED);
-            _view.OpenDimLED += new EventHandler<EventArgs>(OpenDimLED);
-            _view.CloseDimLED += new EventHandler<EventArgs>(CloseDimLED);
-            _view.HandleDimLED += new EventHandler<EventArgs>(HandleDimLED);
-            _view.UpdateScrollBar += new EventHandler<EventArgs>(UpdateScrollBar);
-            _view.UpdateLEDTbx += new EventHandler<EventArgs>(UpdateLEDTbx);
-            _view.ShowLEDStatus += new EventHandler<EventArgs>(ShowLEDStatus);
+            _view.Connect += new EventHandler<EventArgs>(OnConnect);
+            _view.CloseConnect += new EventHandler<EventArgs>(OnCloseConnect);
+            _view.SendTestData += new EventHandler<EventArgs>(OnSendTestData);
+            _view.ShowSingleLEDStatus += new EventHandler<EventEDArgs>(OnShowSingleLEDStatus);
+            _view.ClearSingleLEDStatus += new EventHandler<EventEDArgs>(OnClearSingleLEDStatus);
+            _view.OpenFixLED += new EventHandler<EventFixLEDArgs>(OnOpenFixLED);
+            _view.CloseFixLED += new EventHandler<EventFixLEDArgs>(OnCloseFixLED);
+            _view.HandleFixLED += new EventHandler<EventFixLEDArgs>(OnHandleFixLED);
+            _view.OpenDimLED += new EventHandler<EventDimLEDArgs>(OnOpenDimLED);
+            _view.CloseDimLED += new EventHandler<EventDimLEDArgs>(OnCloseDimLED);
+            _view.HandleDimLED += new EventHandler<EventDimLEDArgs>(OnHandleDimLED);
+            _view.UpdateScrollBar += new EventHandler<EventArgs>(OnUpdateScrollBar);
+            _view.UpdateLEDTbx += new EventHandler<EventArgs>(OnUpdateLEDTbx);
+            _view.ShowLEDStatus += new EventHandler<EventArgs>(OnShowLEDStatus);
             _view.lblGreenLEDMaxLeftText = Convert.ToString(MaxGreenLEDPower);
             _view.lblGreenLEDMaxRightText = Convert.ToString(MaxGreenLEDPower);
             _view.lblGreenLEDMinLeftText = Convert.ToString(MinGreenLEDPower);
@@ -67,8 +62,13 @@ namespace LEDController.Presenter
             _view.lblDarkRedLEDMinRightText = Convert.ToString(MinDarkRedLEDPower);
         }
 
-        private void ShowLEDStatus(object sender, EventArgs e)
+        private void OnShowLEDStatus(object sender, EventArgs e)
         {
+            if (!connector.isAlive)
+            {
+                return;
+            }
+
             // Show LED status
             
             // Get Status values
@@ -84,8 +84,13 @@ namespace LEDController.Presenter
             _view.LEDStatusColors = LEDControlColors;
         }
 
-        private void HandleDimLED(object sender, EventArgs e)
+        private void OnHandleDimLED(object sender, EventDimLEDArgs e)
         {
+            if (!connector.isAlive)
+            {
+                return;
+            }
+
             // Turn on/off Dimmable LED Button
             try
             {
@@ -93,12 +98,12 @@ namespace LEDController.Presenter
                 if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
                 {
                     // Send control cmd
-                    OpenDimLED(sender, e);
+                    OnOpenDimLED(sender, e);
                 }
                 else
                 {
                     // Send control cmd
-                    CloseDimLED(sender, e);
+                    OnCloseDimLED(sender, e);
                 }
             }
             catch (Exception ex)
@@ -107,19 +112,24 @@ namespace LEDController.Presenter
             }
         }
 
-        private void HandleFixLED(object sender, EventArgs e)
+        private void OnHandleFixLED(object sender, EventFixLEDArgs e)
         {
+            if (!connector.isAlive)
+            {
+                return;
+            }
+
             // Turn on/off Fix LED Button
             try
             {
                 Button btn = sender as Button;
                 if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
                 {
-                    OpenFixLED(sender, e);
+                    OnOpenFixLED(sender, e);
                 }
                 else
                 {
-                    CloseFixLED(sender, e);
+                    OnCloseFixLED(sender, e);
                 }
             }
             catch (Exception ex)
@@ -128,7 +138,7 @@ namespace LEDController.Presenter
             }
         }
 
-        private void UpdateLEDTbx(object sender, EventArgs e)
+        private void OnUpdateLEDTbx(object sender, EventArgs e)
         {
             // Update LED Power setting text box
             TrackBar tbar = sender as TrackBar;
@@ -185,19 +195,19 @@ namespace LEDController.Presenter
             // Calculate Dimmable LED power
             double LEDPower = 0.0;
 
-            if ((LEDIndex >= 1) && (LEDIndex <= NumGreenDimLED))
+            if ((LEDIndex >= 1) && (LEDIndex <= LEDBoardCom.NumGreenFixLED))
             {
                 // Green LED
                 LEDPower = (sbarValue - 0) / NumScrollBarLevel * (MaxGreenLEDPower - MinGreenLEDPower) + MinGreenLEDPower;
                 return LEDPower;
             }
-            else if ((LEDIndex >= (NumGreenDimLED + 1)) && (LEDIndex <= (NumGreenDimLED + NumRedDimLED)))
+            else if ((LEDIndex >= (LEDBoardCom.NumGreenDimLED + 1)) && (LEDIndex <= (LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED)))
             {
                 // Red LED
                 LEDPower = (sbarValue - 0) / NumScrollBarLevel * (MaxRedLEDPower - MinRedLEDPower) + MinRedLEDPower;
                 return LEDPower;
             }
-            else if ((LEDIndex >= (NumGreenDimLED + NumRedDimLED + 1)) && (LEDIndex <= (NumGreenDimLED + NumRedDimLED + NumDarkRedDimLED)))
+            else if ((LEDIndex >= (LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED + 1)) && (LEDIndex <= (LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED + LEDBoardCom.NumDarkRedDimLED)))
             {
                 // DarkRed LED
                 LEDPower = (sbarValue - 0) / NumScrollBarLevel * (MaxDarkRedLEDPower - MinDarkRedLEDPower) + MinDarkRedLEDPower;
@@ -209,7 +219,7 @@ namespace LEDController.Presenter
             }
         }
 
-        private void UpdateScrollBar(object sender, EventArgs e)
+        private void OnUpdateScrollBar(object sender, EventArgs e)
         {
             // Convert string to scroll bar value
             TextBox tbx = sender as TextBox;
@@ -265,7 +275,7 @@ namespace LEDController.Presenter
             // Calculate scroll bar value for Dimmable LED
             int sbarValue = 0;
 
-            if ((LEDIndex >= 1) && (LEDIndex <= NumGreenDimLED))
+            if ((LEDIndex >= 1) && (LEDIndex <= LEDBoardCom.NumGreenDimLED))
             {
                 // Green LED
                 if ((LEDPower < MinGreenLEDPower) || (LEDPower > MaxGreenLEDPower))
@@ -279,7 +289,7 @@ namespace LEDController.Presenter
                 }
                 return sbarValue;
             }
-            else if ((LEDIndex >= (NumRedDimLED + 1)) && (LEDIndex <= (NumGreenDimLED + NumRedDimLED)))
+            else if ((LEDIndex >= (LEDBoardCom.NumRedDimLED + 1)) && (LEDIndex <= (LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED)))
             {
                 // Red LED
                 if ((LEDPower < MinRedLEDPower) || (LEDPower > MaxRedLEDPower))
@@ -293,7 +303,7 @@ namespace LEDController.Presenter
                 }
                 return sbarValue;
             }
-            else if ((LEDIndex >= (NumGreenDimLED + NumRedDimLED + 1)) && (LEDIndex <= (NumGreenDimLED + NumRedDimLED + NumDarkRedDimLED)))
+            else if ((LEDIndex >= (LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED + 1)) && (LEDIndex <= (LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED + LEDBoardCom.NumDarkRedDimLED)))
             {
                 // DarkRed LED
                 if ((LEDPower < MinDarkRedLEDPower) || (LEDPower > MaxDarkRedLEDPower))
@@ -313,28 +323,41 @@ namespace LEDController.Presenter
             }
         }
 
-        private void OpenDimLED(object sender, EventArgs e)
+        private void OnOpenDimLED(object sender, EventDimLEDArgs e)
         {
-            // Turn on Dimmable LED
+            if (!connector.isAlive)
+            {
+                return;
+            }
 
-            // send command to slave
+            // Turn on Dimmable LED
+            int LEDPowerBit;
+            LEDPowerBit = (Int16)(CalcSbarValue(e.LEDPower, e.LEDIndex) / NumScrollBarLevel * 255);   // Convert to 0-255
+            try
+            {
+                connector.TurnOnDimLED(e.LEDIndex, LEDPowerBit);
+            }
+            catch (Exception ex)
+            {
+                _view.tbxConnectMsgText = "[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n";
+            }
 
             ShowSendStatus();
 
-            int numTotalFixLED = NumGreenFixLED + NumRedFixLED + NumDarkRedFixLED;
+            int numTotalFixLED = LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED + LEDBoardCom.NumDarkRedFixLED;
 
             // set button color
             Button btn = sender as Button;
             int tagLED = Int32.Parse(btn.Tag as string);
-            if ((tagLED >= (numTotalFixLED + 1)) && (tagLED <= (numTotalFixLED + NumGreenDimLED)))
+            if ((tagLED >= (numTotalFixLED + 1)) && (tagLED <= (numTotalFixLED + LEDBoardCom.NumGreenDimLED)))
             {
                 btn.BackColor = Color.Green;
             }
-            else if ((tagLED >= (numTotalFixLED + NumGreenDimLED + 1)) && (tagLED <= (numTotalFixLED + NumGreenDimLED + NumRedDimLED)))
+            else if ((tagLED >= (numTotalFixLED + LEDBoardCom.NumGreenDimLED + 1)) && (tagLED <= (numTotalFixLED + LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED)))
             {
                 btn.BackColor = Color.Red;
             }
-            else if ((tagLED >= (numTotalFixLED + NumGreenDimLED + NumRedDimLED + 1)) && (tagLED <= (numTotalFixLED + NumGreenDimLED + NumRedDimLED + NumDarkRedDimLED)))
+            else if ((tagLED >= (numTotalFixLED + LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED + 1)) && (tagLED <= (numTotalFixLED + LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumRedDimLED + LEDBoardCom.NumDarkRedDimLED)))
             {
                 btn.BackColor = Color.DarkRed;
             }
@@ -342,11 +365,22 @@ namespace LEDController.Presenter
             btn.Refresh();
         }
 
-        private void CloseDimLED(object sender, EventArgs e)
+        private void OnCloseDimLED(object sender, EventDimLEDArgs e)
         {
-            // Turn off Dimmable LED
+            if (!connector.isAlive)
+            {
+                return;
+            }
 
-            // send command to slave
+            // Turn off Dimmable LED
+            try
+            {
+                connector.TurnOffDimLED(e.LEDIndex);
+            }
+            catch (Exception ex)
+            {
+                _view.tbxConnectMsgText = "[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n";
+            }
 
             ShowSendStatus();
 
@@ -356,69 +390,92 @@ namespace LEDController.Presenter
             btn.Refresh();
         }
 
-        private void OpenFixLED(object sender, EventArgs e)
+        private void OnOpenFixLED(object sender, EventFixLEDArgs e)
         {
-            // Turn on Fix LED
-
-            // send command to slave 
-
-            ShowSendStatus();
-
-            // set button color
-            Button btn = sender as Button;
-            int tagLED = Int32.Parse(btn.Tag as string);
-            if ((tagLED >= 1) && (tagLED <= NumGreenFixLED))
+            if (connector.isAlive)
             {
-                btn.BackColor = Color.Green;
-            }
-            else if ((tagLED >= (NumGreenFixLED + 1)) && (tagLED <= (NumGreenFixLED + NumRedFixLED)))
-            {
-                btn.BackColor = Color.Red;
-            }
-            else if ((tagLED >= (NumGreenFixLED + NumRedFixLED + 1)) && (tagLED <= (NumGreenFixLED + NumRedFixLED + NumDarkRedFixLED)))
-            {
-                btn.BackColor = Color.DarkRed;
-            }
+                // Turn on Fix LED
+                connector.TurnOnFixLED(e.LEDIndex);
+                ShowSendStatus();
 
-            btn.Refresh();
+                // set button color
+                Button btn = sender as Button;
+                int tagLED = Int32.Parse(btn.Tag as string);
+                if ((tagLED >= 1) && (tagLED <= LEDBoardCom.NumGreenFixLED))
+                {
+                    btn.BackColor = Color.Green;
+                }
+                else if ((tagLED >= (LEDBoardCom.NumGreenFixLED + 1)) && (tagLED <= (LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED)))
+                {
+                    btn.BackColor = Color.Red;
+                }
+                else if ((tagLED >= (LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED + 1)) && (tagLED <= (LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED + LEDBoardCom.NumDarkRedFixLED)))
+                {
+                    btn.BackColor = Color.DarkRed;
+                }
+
+                btn.Refresh();
+            }
 
         }
 
-        private void CloseFixLED(object sender, EventArgs e)
+        private void OnCloseFixLED(object sender, EventFixLEDArgs e)
         {
             // Turn off Fix LED
+            if (connector.isAlive)
+            {
+                connector.TurnOffFixLED(e.LEDIndex);
 
-            Button btn = sender as Button;
+                ShowSendStatus();
 
-            ShowSendStatus();
-
-            // Change color
-            btn.BackColor = Color.Gray;
-            btn.Refresh();
+                // Change color
+                Button btn = sender as Button;
+                btn.BackColor = Color.Gray;
+                btn.Refresh();
+            }
         }
 
-        private void ShowSingleLEDStatus(object sender, EventArgs e)
+        private void OnShowSingleLEDStatus(object sender, EventEDArgs e)
         {
             // Show LED status
 
-            if (connector != null)
+            if ((connector != null) && (receiveBytes != null))
             {
-                // parsing status
-                LEDStatus thisLEDStatus;
-                thisLEDStatus = connector.ParseStatus(this.receiveBytes);
+                try
+                {
+                    // parsing status
+                    LEDStatus thisLEDStatus;
+                    thisLEDStatus = connector.ParsePackage(receiveBytes);
 
+                    // show status
+                    // LED power, current, voltage, temperature ...
+                }
+                catch (Exception ex)
+                {
+                    // show status
+                    _view.toolStripLEDStatusText = "获取LED状态失败";
+                }
+            }
+            else
+            {
                 // show status
-                _view.toolStripLEDStatusText = "test";
+                _view.toolStripLEDStatusText = "获取LED状态失败";
             }
         }
 
-        private void ClearSingleLEDStatus(object sender, EventArgs e)
+        private void OnClearSingleLEDStatus(object sender, EventEDArgs e)
         {
             // Clear LED status
             _view.toolStripLEDStatusText = "LED状态";
         }
-        private void SendTestData(object sender, EventArgs e)
+
+        private void OnSendTestData(object sender, EventArgs e)
         {
+            if (!connector.isAlive)
+            {
+                return;
+            }
+
             // Send test data
             try
             {
@@ -446,7 +503,8 @@ namespace LEDController.Presenter
 
                     if (msgLen > 0)
                     {
-                        receiveBytes = buffer;
+                        LEDStatus currentLEDStatus = connector.ParsePackage(buffer);
+
                         string recMsg = Encoding.UTF8.GetString(buffer);
                         recMsg = recMsg.Replace("\0", "");
                         // TODO add timestamp
@@ -456,15 +514,7 @@ namespace LEDController.Presenter
                         _view.Invoke(new Action(() => { _view.testMsgRecStr = formatRecMsg; }));
 
                         // showing receiving status with colorful light
-                        _view.btnRecStatus1Color = Color.Green;
-                        Thread.Sleep(100);
-                        _view.btnRecStatus2Color = Color.Green;
-                        Thread.Sleep(100);
-                        _view.btnRecStatus3Color = Color.Green;
-                        Thread.Sleep(300);
-                        _view.btnRecStatus1Color = Color.DarkRed;
-                        _view.btnRecStatus2Color = Color.DarkRed;
-                        _view.btnRecStatus3Color = Color.DarkRed;
+                        ShowReceiveStatus();
 
                         // showing total power
                         _view.tsslGreenLEDTPText = "绿光实时总功率: 1W";
@@ -499,6 +549,19 @@ namespace LEDController.Presenter
             }));
         }
 
+        private void ShowReceiveStatus()
+        {
+            // Show status bar for sending data
+            DelayAction(0, new Action(() => { _view.btnRecStatus1Color = Color.Green; }));
+            DelayAction(100, new Action(() => { _view.btnRecStatus2Color = Color.Green; }));
+            DelayAction(100, new Action(() => { _view.btnRecStatus3Color = Color.Green; }));
+            DelayAction(300, new Action(() => { 
+                _view.btnRecStatus1Color = Color.DarkRed;
+                _view.btnRecStatus2Color = Color.DarkRed;
+                _view.btnRecStatus3Color = Color.DarkRed; 
+            }));
+        }
+
         public void DelayAction(int millisecond, Action action)
         {
             // Timer delay for action
@@ -514,10 +577,11 @@ namespace LEDController.Presenter
             timer.Start();
         }
 
-        private void Connect(object sender, EventArgs e)
+        private void OnConnect(object sender, EventArgs e)
         {
             // Start TCP connection
-            connector = new LEDBoardCom(_view.slaveIP, _view.slavePort);
+            connector.slaveIP = _view.slaveIP;
+            connector.slavePort = _view.slavePort;
 
             try
             {
@@ -542,7 +606,7 @@ namespace LEDController.Presenter
             }
         }
 
-        private void CloseConnect(object sender, EventArgs e)
+        private void OnCloseConnect(object sender, EventArgs e)
         {
             // Close connection
             try
