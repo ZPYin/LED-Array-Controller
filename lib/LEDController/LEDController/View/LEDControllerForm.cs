@@ -407,7 +407,7 @@ namespace LEDController.View
         public string lblDarkRedLEDMaxRightText
         {
             get { return lblDarkRedLEDMaxRight.Text; }
-            set { lblDarkRedLEDMaxRight.Text = value; }
+            set { lblDarkRedLEDMaxRight.Text = value; } 
         }
         public string lblDarkRedLEDMinRightText
         {

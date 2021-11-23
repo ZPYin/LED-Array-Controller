@@ -538,15 +538,27 @@ namespace LEDController.Presenter
 
         private void ShowSendStatus()
         {
-            // Show status bar for sending data
-            DelayAction(0, new Action(() => { _view.btnSendStatus1Color = Color.Green; }));
-            DelayAction(100, new Action(() => { _view.btnSendStatus2Color = Color.Green; }));
-            DelayAction(100, new Action(() => { _view.btnSendStatus3Color = Color.Green; }));
-            DelayAction(300, new Action(() => { 
-                _view.btnSendStatus1Color = Color.DarkRed;
-                _view.btnSendStatus2Color = Color.DarkRed;
-                _view.btnSendStatus3Color = Color.DarkRed; 
-            }));
+            // // Async
+            // DelayAction(0, new Action(() => { _view.btnSendStatus1Color = Color.Green; }));
+            // DelayAction(100, new Action(() => { _view.btnSendStatus2Color = Color.Green; }));
+            // DelayAction(100, new Action(() => { _view.btnSendStatus3Color = Color.Green; }));
+            // DelayAction(300, new Action(() => { 
+            //     _view.btnSendStatus1Color = Color.DarkRed;
+            //     _view.btnSendStatus2Color = Color.DarkRed;
+            //     _view.btnSendStatus3Color = Color.DarkRed; 
+            // }));
+
+            // Sync
+            _view.btnSendStatus1Color = Color.Green;
+            Thread.Sleep(100);
+            _view.btnSendStatus2Color = Color.Green;
+            Thread.Sleep(100);
+            _view.btnSendStatus3Color = Color.Green;
+            Thread.Sleep(100);
+            _view.btnSendStatus1Color = Color.DarkRed;
+            _view.btnSendStatus2Color = Color.DarkRed;
+            _view.btnSendStatus3Color = Color.DarkRed;
+
         }
 
         private void ShowReceiveStatus()
@@ -555,7 +567,7 @@ namespace LEDController.Presenter
             DelayAction(0, new Action(() => { _view.btnRecStatus1Color = Color.Green; }));
             DelayAction(100, new Action(() => { _view.btnRecStatus2Color = Color.Green; }));
             DelayAction(100, new Action(() => { _view.btnRecStatus3Color = Color.Green; }));
-            DelayAction(300, new Action(() => { 
+            DelayAction(100, new Action(() => { 
                 _view.btnRecStatus1Color = Color.DarkRed;
                 _view.btnRecStatus2Color = Color.DarkRed;
                 _view.btnRecStatus3Color = Color.DarkRed; 
