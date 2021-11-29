@@ -20,6 +20,9 @@ namespace LEDController.Model
         public double[] fixLEDCurrent;
         public double[] dimLEDCurrent;
         public double[] temperature;
+        public double totalGreenLEDPower;
+        public double totalRedLEDPower;
+        public double totalDarkredLEDPower;
         public Boolean isValidPackage;
     }
 
@@ -195,7 +198,7 @@ namespace LEDController.Model
             SendCmd(cmdBytes);
         }
 
-        public void TurnOnDimLED(int LEDInd, int LEDBrightness)
+        public void SetDimLED(int LEDInd, int LEDBrightness)
         {
             var cmdBytes = MakeCmd(LEDInd, LEDBrightness, true);
             SendCmd(cmdBytes);
@@ -264,6 +267,9 @@ namespace LEDController.Model
             recStatus.dimLEDCurrent = new double[NumDimLED];
             recStatus.dimLEDVoltage = new double[NumDimLED];
             recStatus.temperature = new double[4];
+            recStatus.totalRedLEDPower = 0;
+            recStatus.totalGreenLEDPower = 0;
+            recStatus.totalDarkredLEDPower = 0;
             recStatus.isValidPackage = false;
             int pkgLen = Convert.ToInt16((recBytes[2] + recBytes[3] >> 8));
 

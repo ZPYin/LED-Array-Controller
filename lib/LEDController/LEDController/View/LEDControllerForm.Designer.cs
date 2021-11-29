@@ -304,7 +304,9 @@ namespace LEDController.View
             this.btnLED2 = new System.Windows.Forms.Button();
             this.btnLED1 = new System.Windows.Forms.Button();
             this.tpgLEDStatus = new System.Windows.Forms.TabPage();
+            this.formsPlotRTD = new ScottPlot.FormsPlot();
             this.panelLEDStatus = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -883,7 +885,7 @@ namespace LEDController.View
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(136, 10);
+            this.label43.Location = new System.Drawing.Point(136, 37);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(17, 12);
             this.label43.TabIndex = 94;
@@ -895,7 +897,7 @@ namespace LEDController.View
             this.button130.BackColor = System.Drawing.Color.White;
             this.button130.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button130.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button130.Location = new System.Drawing.Point(110, 6);
+            this.button130.Location = new System.Drawing.Point(110, 33);
             this.button130.Name = "button130";
             this.button130.Size = new System.Drawing.Size(20, 20);
             this.button130.TabIndex = 93;
@@ -904,7 +906,7 @@ namespace LEDController.View
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(70, 10);
+            this.label42.Location = new System.Drawing.Point(70, 37);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(23, 12);
             this.label42.TabIndex = 92;
@@ -916,7 +918,7 @@ namespace LEDController.View
             this.button129.BackColor = System.Drawing.Color.Gray;
             this.button129.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button129.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button129.Location = new System.Drawing.Point(44, 6);
+            this.button129.Location = new System.Drawing.Point(44, 33);
             this.button129.Name = "button129";
             this.button129.Size = new System.Drawing.Size(20, 20);
             this.button129.TabIndex = 64;
@@ -925,7 +927,7 @@ namespace LEDController.View
             // btnCloseDarkRedDimLED
             // 
             this.btnCloseDarkRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseDarkRedDimLED.Location = new System.Drawing.Point(867, 462);
+            this.btnCloseDarkRedDimLED.Location = new System.Drawing.Point(867, 486);
             this.btnCloseDarkRedDimLED.Name = "btnCloseDarkRedDimLED";
             this.btnCloseDarkRedDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseDarkRedDimLED.TabIndex = 91;
@@ -936,7 +938,7 @@ namespace LEDController.View
             // btnOpenDarkRedDimLED
             // 
             this.btnOpenDarkRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenDarkRedDimLED.Location = new System.Drawing.Point(718, 462);
+            this.btnOpenDarkRedDimLED.Location = new System.Drawing.Point(718, 486);
             this.btnOpenDarkRedDimLED.Name = "btnOpenDarkRedDimLED";
             this.btnOpenDarkRedDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenDarkRedDimLED.TabIndex = 90;
@@ -947,7 +949,7 @@ namespace LEDController.View
             // btnCloseRedDimLED
             // 
             this.btnCloseRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseRedDimLED.Location = new System.Drawing.Point(545, 462);
+            this.btnCloseRedDimLED.Location = new System.Drawing.Point(545, 486);
             this.btnCloseRedDimLED.Name = "btnCloseRedDimLED";
             this.btnCloseRedDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseRedDimLED.TabIndex = 89;
@@ -958,7 +960,7 @@ namespace LEDController.View
             // btnOpenRedDimLED
             // 
             this.btnOpenRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenRedDimLED.Location = new System.Drawing.Point(396, 462);
+            this.btnOpenRedDimLED.Location = new System.Drawing.Point(396, 486);
             this.btnOpenRedDimLED.Name = "btnOpenRedDimLED";
             this.btnOpenRedDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenRedDimLED.TabIndex = 88;
@@ -969,7 +971,7 @@ namespace LEDController.View
             // btnCloseGreenDimLED
             // 
             this.btnCloseGreenDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseGreenDimLED.Location = new System.Drawing.Point(226, 462);
+            this.btnCloseGreenDimLED.Location = new System.Drawing.Point(226, 486);
             this.btnCloseGreenDimLED.Name = "btnCloseGreenDimLED";
             this.btnCloseGreenDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseGreenDimLED.TabIndex = 87;
@@ -980,7 +982,7 @@ namespace LEDController.View
             // btnOpenGreenDimLED
             // 
             this.btnOpenGreenDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenGreenDimLED.Location = new System.Drawing.Point(77, 462);
+            this.btnOpenGreenDimLED.Location = new System.Drawing.Point(77, 486);
             this.btnOpenGreenDimLED.Name = "btnOpenGreenDimLED";
             this.btnOpenGreenDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenGreenDimLED.TabIndex = 86;
@@ -1016,7 +1018,7 @@ namespace LEDController.View
             this.panelDarkRedDimLED.Controls.Add(this.label40);
             this.panelDarkRedDimLED.Controls.Add(this.sbarDimLED9);
             this.panelDarkRedDimLED.Controls.Add(this.btnDimLED9);
-            this.panelDarkRedDimLED.Location = new System.Drawing.Point(685, 307);
+            this.panelDarkRedDimLED.Location = new System.Drawing.Point(685, 331);
             this.panelDarkRedDimLED.Name = "panelDarkRedDimLED";
             this.panelDarkRedDimLED.Size = new System.Drawing.Size(307, 152);
             this.panelDarkRedDimLED.TabIndex = 85;
@@ -1342,7 +1344,7 @@ namespace LEDController.View
             this.panelRedDimLED.Controls.Add(this.label31);
             this.panelRedDimLED.Controls.Add(this.sbarDimLED5);
             this.panelRedDimLED.Controls.Add(this.btnDimLED5);
-            this.panelRedDimLED.Location = new System.Drawing.Point(363, 307);
+            this.panelRedDimLED.Location = new System.Drawing.Point(363, 331);
             this.panelRedDimLED.Name = "panelRedDimLED";
             this.panelRedDimLED.Size = new System.Drawing.Size(307, 152);
             this.panelRedDimLED.TabIndex = 85;
@@ -1668,7 +1670,7 @@ namespace LEDController.View
             this.panelGreenDimLED.Controls.Add(this.label2);
             this.panelGreenDimLED.Controls.Add(this.sbarDimLED1);
             this.panelGreenDimLED.Controls.Add(this.btnDimLED1);
-            this.panelGreenDimLED.Location = new System.Drawing.Point(44, 307);
+            this.panelGreenDimLED.Location = new System.Drawing.Point(44, 331);
             this.panelGreenDimLED.Name = "panelGreenDimLED";
             this.panelGreenDimLED.Size = new System.Drawing.Size(307, 152);
             this.panelGreenDimLED.TabIndex = 82;
@@ -1968,6 +1970,7 @@ namespace LEDController.View
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslGreenLEDTotalPower,
@@ -1977,7 +1980,7 @@ namespace LEDController.View
             this.tsslTemp2,
             this.tsslTemp3,
             this.tsslTemp4});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 494);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 3);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1039, 22);
             this.statusStrip1.TabIndex = 80;
@@ -2028,7 +2031,7 @@ namespace LEDController.View
             // btnCloseDarkRedFixLED
             // 
             this.btnCloseDarkRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseDarkRedFixLED.Location = new System.Drawing.Point(867, 274);
+            this.btnCloseDarkRedFixLED.Location = new System.Drawing.Point(867, 298);
             this.btnCloseDarkRedFixLED.Name = "btnCloseDarkRedFixLED";
             this.btnCloseDarkRedFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseDarkRedFixLED.TabIndex = 79;
@@ -2039,7 +2042,7 @@ namespace LEDController.View
             // btnOpenDarkRedFixLED
             // 
             this.btnOpenDarkRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenDarkRedFixLED.Location = new System.Drawing.Point(718, 274);
+            this.btnOpenDarkRedFixLED.Location = new System.Drawing.Point(718, 298);
             this.btnOpenDarkRedFixLED.Name = "btnOpenDarkRedFixLED";
             this.btnOpenDarkRedFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenDarkRedFixLED.TabIndex = 78;
@@ -2050,7 +2053,7 @@ namespace LEDController.View
             // btnCloseRedFixLED
             // 
             this.btnCloseRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseRedFixLED.Location = new System.Drawing.Point(545, 274);
+            this.btnCloseRedFixLED.Location = new System.Drawing.Point(545, 298);
             this.btnCloseRedFixLED.Name = "btnCloseRedFixLED";
             this.btnCloseRedFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseRedFixLED.TabIndex = 77;
@@ -2061,7 +2064,7 @@ namespace LEDController.View
             // btnOpenRedFixLED
             // 
             this.btnOpenRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenRedFixLED.Location = new System.Drawing.Point(396, 274);
+            this.btnOpenRedFixLED.Location = new System.Drawing.Point(396, 298);
             this.btnOpenRedFixLED.Name = "btnOpenRedFixLED";
             this.btnOpenRedFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenRedFixLED.TabIndex = 76;
@@ -2072,7 +2075,7 @@ namespace LEDController.View
             // btnCloseGreenFixLED
             // 
             this.btnCloseGreenFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseGreenFixLED.Location = new System.Drawing.Point(226, 274);
+            this.btnCloseGreenFixLED.Location = new System.Drawing.Point(226, 298);
             this.btnCloseGreenFixLED.Name = "btnCloseGreenFixLED";
             this.btnCloseGreenFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseGreenFixLED.TabIndex = 75;
@@ -2083,7 +2086,7 @@ namespace LEDController.View
             // btnOpenGreenFixLED
             // 
             this.btnOpenGreenFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenGreenFixLED.Location = new System.Drawing.Point(77, 274);
+            this.btnOpenGreenFixLED.Location = new System.Drawing.Point(77, 298);
             this.btnOpenGreenFixLED.Name = "btnOpenGreenFixLED";
             this.btnOpenGreenFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenGreenFixLED.TabIndex = 74;
@@ -2095,7 +2098,7 @@ namespace LEDController.View
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label24.Location = new System.Drawing.Point(909, 42);
+            this.label24.Location = new System.Drawing.Point(909, 66);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(17, 16);
             this.label24.TabIndex = 73;
@@ -2105,7 +2108,7 @@ namespace LEDController.View
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(868, 42);
+            this.label25.Location = new System.Drawing.Point(868, 66);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(35, 16);
             this.label25.TabIndex = 72;
@@ -2115,7 +2118,7 @@ namespace LEDController.View
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label26.Location = new System.Drawing.Point(752, 42);
+            this.label26.Location = new System.Drawing.Point(752, 66);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(114, 16);
             this.label26.TabIndex = 71;
@@ -2125,7 +2128,7 @@ namespace LEDController.View
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(588, 42);
+            this.label21.Location = new System.Drawing.Point(588, 66);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(17, 16);
             this.label21.TabIndex = 70;
@@ -2135,7 +2138,7 @@ namespace LEDController.View
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label22.Location = new System.Drawing.Point(547, 42);
+            this.label22.Location = new System.Drawing.Point(547, 66);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(35, 16);
             this.label22.TabIndex = 69;
@@ -2145,7 +2148,7 @@ namespace LEDController.View
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.Location = new System.Drawing.Point(431, 42);
+            this.label23.Location = new System.Drawing.Point(431, 66);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(114, 16);
             this.label23.TabIndex = 68;
@@ -2155,7 +2158,7 @@ namespace LEDController.View
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(247, 42);
+            this.label20.Location = new System.Drawing.Point(247, 66);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(17, 16);
             this.label20.TabIndex = 67;
@@ -2165,7 +2168,7 @@ namespace LEDController.View
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(206, 42);
+            this.label19.Location = new System.Drawing.Point(206, 66);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(35, 16);
             this.label19.TabIndex = 66;
@@ -2175,7 +2178,7 @@ namespace LEDController.View
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(90, 42);
+            this.label18.Location = new System.Drawing.Point(90, 66);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(114, 16);
             this.label18.TabIndex = 65;
@@ -2224,7 +2227,7 @@ namespace LEDController.View
             this.panelDarkRedFixLED.Controls.Add(this.btnLED83);
             this.panelDarkRedFixLED.Controls.Add(this.btnLED82);
             this.panelDarkRedFixLED.Controls.Add(this.btnLED81);
-            this.panelDarkRedFixLED.Location = new System.Drawing.Point(685, 61);
+            this.panelDarkRedFixLED.Location = new System.Drawing.Point(685, 85);
             this.panelDarkRedFixLED.Name = "panelDarkRedFixLED";
             this.panelDarkRedFixLED.Size = new System.Drawing.Size(307, 207);
             this.panelDarkRedFixLED.TabIndex = 64;
@@ -2952,7 +2955,7 @@ namespace LEDController.View
             this.panelRedFixLED.Controls.Add(this.btnLED43);
             this.panelRedFixLED.Controls.Add(this.btnLED42);
             this.panelRedFixLED.Controls.Add(this.btnLED41);
-            this.panelRedFixLED.Location = new System.Drawing.Point(363, 61);
+            this.panelRedFixLED.Location = new System.Drawing.Point(363, 85);
             this.panelRedFixLED.Name = "panelRedFixLED";
             this.panelRedFixLED.Size = new System.Drawing.Size(307, 207);
             this.panelRedFixLED.TabIndex = 64;
@@ -3680,7 +3683,7 @@ namespace LEDController.View
             this.panelGreenFixLED.Controls.Add(this.btnLED3);
             this.panelGreenFixLED.Controls.Add(this.btnLED2);
             this.panelGreenFixLED.Controls.Add(this.btnLED1);
-            this.panelGreenFixLED.Location = new System.Drawing.Point(44, 61);
+            this.panelGreenFixLED.Location = new System.Drawing.Point(44, 85);
             this.panelGreenFixLED.Name = "panelGreenFixLED";
             this.panelGreenFixLED.Size = new System.Drawing.Size(307, 207);
             this.panelGreenFixLED.TabIndex = 34;
@@ -4367,6 +4370,7 @@ namespace LEDController.View
             // 
             // tpgLEDStatus
             // 
+            this.tpgLEDStatus.Controls.Add(this.formsPlotRTD);
             this.tpgLEDStatus.Controls.Add(this.panelLEDStatus);
             this.tpgLEDStatus.Controls.Add(this.btnShowLEDStatus);
             this.tpgLEDStatus.Controls.Add(this.label48);
@@ -4385,6 +4389,14 @@ namespace LEDController.View
             this.tpgLEDStatus.Text = "LED状态";
             this.tpgLEDStatus.UseVisualStyleBackColor = true;
             // 
+            // formsPlotRTD
+            // 
+            this.formsPlotRTD.BackColor = System.Drawing.Color.Transparent;
+            this.formsPlotRTD.Location = new System.Drawing.Point(224, 254);
+            this.formsPlotRTD.Name = "formsPlotRTD";
+            this.formsPlotRTD.Size = new System.Drawing.Size(805, 247);
+            this.formsPlotRTD.TabIndex = 12;
+            // 
             // panelLEDStatus
             // 
             this.panelLEDStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -4392,6 +4404,7 @@ namespace LEDController.View
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLEDStatus.AutoSize = true;
             this.panelLEDStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelLEDStatus.Controls.Add(this.label9);
             this.panelLEDStatus.Controls.Add(this.label7);
             this.panelLEDStatus.Controls.Add(this.label4);
             this.panelLEDStatus.Controls.Add(this.label1);
@@ -4527,17 +4540,27 @@ namespace LEDController.View
             this.panelLEDStatus.Controls.Add(this.button200);
             this.panelLEDStatus.Controls.Add(this.button201);
             this.panelLEDStatus.Controls.Add(this.button202);
-            this.panelLEDStatus.Location = new System.Drawing.Point(226, 25);
+            this.panelLEDStatus.Location = new System.Drawing.Point(226, 12);
             this.panelLEDStatus.Name = "panelLEDStatus";
-            this.panelLEDStatus.Size = new System.Drawing.Size(803, 479);
+            this.panelLEDStatus.Size = new System.Drawing.Size(803, 236);
             this.panelLEDStatus.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(41, 201);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 16);
+            this.label9.TabIndex = 269;
+            this.label9.Text = "可调亮度LED";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.DarkRed;
             this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(728, 36);
+            this.label7.Location = new System.Drawing.Point(730, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 16);
             this.label7.TabIndex = 268;
@@ -4549,7 +4572,7 @@ namespace LEDController.View
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Red;
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(463, 36);
+            this.label4.Location = new System.Drawing.Point(465, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 267;
@@ -4561,7 +4584,7 @@ namespace LEDController.View
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Chartreuse;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(199, 36);
+            this.label1.Location = new System.Drawing.Point(201, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 266;
@@ -4574,7 +4597,7 @@ namespace LEDController.View
             this.button291.BackColor = System.Drawing.Color.Gray;
             this.button291.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button291.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button291.Location = new System.Drawing.Point(651, 249);
+            this.button291.Location = new System.Drawing.Point(762, 193);
             this.button291.Name = "button291";
             this.button291.Size = new System.Drawing.Size(30, 30);
             this.button291.TabIndex = 265;
@@ -4587,7 +4610,7 @@ namespace LEDController.View
             this.button292.BackColor = System.Drawing.Color.Gray;
             this.button292.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button292.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button292.Location = new System.Drawing.Point(595, 249);
+            this.button292.Location = new System.Drawing.Point(706, 193);
             this.button292.Name = "button292";
             this.button292.Size = new System.Drawing.Size(30, 30);
             this.button292.TabIndex = 264;
@@ -4600,7 +4623,7 @@ namespace LEDController.View
             this.button293.BackColor = System.Drawing.Color.Gray;
             this.button293.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button293.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button293.Location = new System.Drawing.Point(542, 249);
+            this.button293.Location = new System.Drawing.Point(653, 193);
             this.button293.Name = "button293";
             this.button293.Size = new System.Drawing.Size(30, 30);
             this.button293.TabIndex = 263;
@@ -4613,7 +4636,7 @@ namespace LEDController.View
             this.button294.BackColor = System.Drawing.Color.Gray;
             this.button294.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button294.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button294.Location = new System.Drawing.Point(486, 249);
+            this.button294.Location = new System.Drawing.Point(597, 193);
             this.button294.Name = "button294";
             this.button294.Size = new System.Drawing.Size(30, 30);
             this.button294.TabIndex = 262;
@@ -4626,7 +4649,7 @@ namespace LEDController.View
             this.button287.BackColor = System.Drawing.Color.Gray;
             this.button287.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button287.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button287.Location = new System.Drawing.Point(431, 249);
+            this.button287.Location = new System.Drawing.Point(542, 193);
             this.button287.Name = "button287";
             this.button287.Size = new System.Drawing.Size(30, 30);
             this.button287.TabIndex = 261;
@@ -4639,7 +4662,7 @@ namespace LEDController.View
             this.button288.BackColor = System.Drawing.Color.Gray;
             this.button288.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button288.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button288.Location = new System.Drawing.Point(375, 249);
+            this.button288.Location = new System.Drawing.Point(486, 193);
             this.button288.Name = "button288";
             this.button288.Size = new System.Drawing.Size(30, 30);
             this.button288.TabIndex = 260;
@@ -4652,7 +4675,7 @@ namespace LEDController.View
             this.button289.BackColor = System.Drawing.Color.Gray;
             this.button289.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button289.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button289.Location = new System.Drawing.Point(322, 249);
+            this.button289.Location = new System.Drawing.Point(433, 193);
             this.button289.Name = "button289";
             this.button289.Size = new System.Drawing.Size(30, 30);
             this.button289.TabIndex = 259;
@@ -4665,7 +4688,7 @@ namespace LEDController.View
             this.button290.BackColor = System.Drawing.Color.Gray;
             this.button290.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button290.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button290.Location = new System.Drawing.Point(266, 249);
+            this.button290.Location = new System.Drawing.Point(377, 193);
             this.button290.Name = "button290";
             this.button290.Size = new System.Drawing.Size(30, 30);
             this.button290.TabIndex = 258;
@@ -4678,7 +4701,7 @@ namespace LEDController.View
             this.button286.BackColor = System.Drawing.Color.Gray;
             this.button286.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button286.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button286.Location = new System.Drawing.Point(210, 249);
+            this.button286.Location = new System.Drawing.Point(321, 193);
             this.button286.Name = "button286";
             this.button286.Size = new System.Drawing.Size(30, 30);
             this.button286.TabIndex = 257;
@@ -4691,7 +4714,7 @@ namespace LEDController.View
             this.button285.BackColor = System.Drawing.Color.Gray;
             this.button285.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button285.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button285.Location = new System.Drawing.Point(154, 249);
+            this.button285.Location = new System.Drawing.Point(265, 193);
             this.button285.Name = "button285";
             this.button285.Size = new System.Drawing.Size(30, 30);
             this.button285.TabIndex = 256;
@@ -4704,7 +4727,7 @@ namespace LEDController.View
             this.button284.BackColor = System.Drawing.Color.Gray;
             this.button284.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button284.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button284.Location = new System.Drawing.Point(101, 249);
+            this.button284.Location = new System.Drawing.Point(212, 193);
             this.button284.Name = "button284";
             this.button284.Size = new System.Drawing.Size(30, 30);
             this.button284.TabIndex = 255;
@@ -4717,7 +4740,7 @@ namespace LEDController.View
             this.button283.BackColor = System.Drawing.Color.Gray;
             this.button283.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button283.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button283.Location = new System.Drawing.Point(45, 249);
+            this.button283.Location = new System.Drawing.Point(156, 193);
             this.button283.Name = "button283";
             this.button283.Size = new System.Drawing.Size(30, 30);
             this.button283.TabIndex = 254;
@@ -4730,7 +4753,7 @@ namespace LEDController.View
             this.button243.BackColor = System.Drawing.Color.Gray;
             this.button243.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button243.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button243.Location = new System.Drawing.Point(772, 185);
+            this.button243.Location = new System.Drawing.Point(774, 156);
             this.button243.Name = "button243";
             this.button243.Size = new System.Drawing.Size(20, 20);
             this.button243.TabIndex = 253;
@@ -4743,7 +4766,7 @@ namespace LEDController.View
             this.button244.BackColor = System.Drawing.Color.Gray;
             this.button244.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button244.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button244.Location = new System.Drawing.Point(640, 185);
+            this.button244.Location = new System.Drawing.Point(642, 156);
             this.button244.Name = "button244";
             this.button244.Size = new System.Drawing.Size(20, 20);
             this.button244.TabIndex = 252;
@@ -4756,7 +4779,7 @@ namespace LEDController.View
             this.button245.BackColor = System.Drawing.Color.Gray;
             this.button245.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button245.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button245.Location = new System.Drawing.Point(739, 185);
+            this.button245.Location = new System.Drawing.Point(741, 156);
             this.button245.Name = "button245";
             this.button245.Size = new System.Drawing.Size(20, 20);
             this.button245.TabIndex = 251;
@@ -4769,7 +4792,7 @@ namespace LEDController.View
             this.button246.BackColor = System.Drawing.Color.Gray;
             this.button246.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button246.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button246.Location = new System.Drawing.Point(706, 185);
+            this.button246.Location = new System.Drawing.Point(708, 156);
             this.button246.Name = "button246";
             this.button246.Size = new System.Drawing.Size(20, 20);
             this.button246.TabIndex = 250;
@@ -4782,7 +4805,7 @@ namespace LEDController.View
             this.button247.BackColor = System.Drawing.Color.Gray;
             this.button247.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button247.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button247.Location = new System.Drawing.Point(673, 185);
+            this.button247.Location = new System.Drawing.Point(675, 156);
             this.button247.Name = "button247";
             this.button247.Size = new System.Drawing.Size(20, 20);
             this.button247.TabIndex = 249;
@@ -4795,7 +4818,7 @@ namespace LEDController.View
             this.button248.BackColor = System.Drawing.Color.Gray;
             this.button248.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button248.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button248.Location = new System.Drawing.Point(607, 185);
+            this.button248.Location = new System.Drawing.Point(609, 156);
             this.button248.Name = "button248";
             this.button248.Size = new System.Drawing.Size(20, 20);
             this.button248.TabIndex = 248;
@@ -4808,7 +4831,7 @@ namespace LEDController.View
             this.button249.BackColor = System.Drawing.Color.Gray;
             this.button249.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button249.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button249.Location = new System.Drawing.Point(574, 185);
+            this.button249.Location = new System.Drawing.Point(576, 156);
             this.button249.Name = "button249";
             this.button249.Size = new System.Drawing.Size(20, 20);
             this.button249.TabIndex = 247;
@@ -4821,7 +4844,7 @@ namespace LEDController.View
             this.button250.BackColor = System.Drawing.Color.Gray;
             this.button250.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button250.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button250.Location = new System.Drawing.Point(541, 185);
+            this.button250.Location = new System.Drawing.Point(543, 156);
             this.button250.Name = "button250";
             this.button250.Size = new System.Drawing.Size(20, 20);
             this.button250.TabIndex = 246;
@@ -4834,7 +4857,7 @@ namespace LEDController.View
             this.button251.BackColor = System.Drawing.Color.Gray;
             this.button251.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button251.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button251.Location = new System.Drawing.Point(772, 153);
+            this.button251.Location = new System.Drawing.Point(774, 124);
             this.button251.Name = "button251";
             this.button251.Size = new System.Drawing.Size(20, 20);
             this.button251.TabIndex = 245;
@@ -4847,7 +4870,7 @@ namespace LEDController.View
             this.button252.BackColor = System.Drawing.Color.Gray;
             this.button252.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button252.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button252.Location = new System.Drawing.Point(640, 153);
+            this.button252.Location = new System.Drawing.Point(642, 124);
             this.button252.Name = "button252";
             this.button252.Size = new System.Drawing.Size(20, 20);
             this.button252.TabIndex = 244;
@@ -4860,7 +4883,7 @@ namespace LEDController.View
             this.button253.BackColor = System.Drawing.Color.Gray;
             this.button253.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button253.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button253.Location = new System.Drawing.Point(739, 153);
+            this.button253.Location = new System.Drawing.Point(741, 124);
             this.button253.Name = "button253";
             this.button253.Size = new System.Drawing.Size(20, 20);
             this.button253.TabIndex = 243;
@@ -4873,7 +4896,7 @@ namespace LEDController.View
             this.button254.BackColor = System.Drawing.Color.Gray;
             this.button254.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button254.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button254.Location = new System.Drawing.Point(706, 153);
+            this.button254.Location = new System.Drawing.Point(708, 124);
             this.button254.Name = "button254";
             this.button254.Size = new System.Drawing.Size(20, 20);
             this.button254.TabIndex = 242;
@@ -4886,7 +4909,7 @@ namespace LEDController.View
             this.button255.BackColor = System.Drawing.Color.Gray;
             this.button255.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button255.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button255.Location = new System.Drawing.Point(673, 153);
+            this.button255.Location = new System.Drawing.Point(675, 124);
             this.button255.Name = "button255";
             this.button255.Size = new System.Drawing.Size(20, 20);
             this.button255.TabIndex = 241;
@@ -4899,7 +4922,7 @@ namespace LEDController.View
             this.button256.BackColor = System.Drawing.Color.Gray;
             this.button256.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button256.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button256.Location = new System.Drawing.Point(607, 153);
+            this.button256.Location = new System.Drawing.Point(609, 124);
             this.button256.Name = "button256";
             this.button256.Size = new System.Drawing.Size(20, 20);
             this.button256.TabIndex = 240;
@@ -4912,7 +4935,7 @@ namespace LEDController.View
             this.button257.BackColor = System.Drawing.Color.Gray;
             this.button257.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button257.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button257.Location = new System.Drawing.Point(574, 153);
+            this.button257.Location = new System.Drawing.Point(576, 124);
             this.button257.Name = "button257";
             this.button257.Size = new System.Drawing.Size(20, 20);
             this.button257.TabIndex = 239;
@@ -4925,7 +4948,7 @@ namespace LEDController.View
             this.button258.BackColor = System.Drawing.Color.Gray;
             this.button258.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button258.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button258.Location = new System.Drawing.Point(541, 153);
+            this.button258.Location = new System.Drawing.Point(543, 124);
             this.button258.Name = "button258";
             this.button258.Size = new System.Drawing.Size(20, 20);
             this.button258.TabIndex = 238;
@@ -4938,7 +4961,7 @@ namespace LEDController.View
             this.button259.BackColor = System.Drawing.Color.Gray;
             this.button259.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button259.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button259.Location = new System.Drawing.Point(772, 120);
+            this.button259.Location = new System.Drawing.Point(774, 91);
             this.button259.Name = "button259";
             this.button259.Size = new System.Drawing.Size(20, 20);
             this.button259.TabIndex = 237;
@@ -4951,7 +4974,7 @@ namespace LEDController.View
             this.button260.BackColor = System.Drawing.Color.Gray;
             this.button260.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button260.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button260.Location = new System.Drawing.Point(640, 120);
+            this.button260.Location = new System.Drawing.Point(642, 91);
             this.button260.Name = "button260";
             this.button260.Size = new System.Drawing.Size(20, 20);
             this.button260.TabIndex = 236;
@@ -4964,7 +4987,7 @@ namespace LEDController.View
             this.button261.BackColor = System.Drawing.Color.Gray;
             this.button261.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button261.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button261.Location = new System.Drawing.Point(739, 120);
+            this.button261.Location = new System.Drawing.Point(741, 91);
             this.button261.Name = "button261";
             this.button261.Size = new System.Drawing.Size(20, 20);
             this.button261.TabIndex = 235;
@@ -4977,7 +5000,7 @@ namespace LEDController.View
             this.button262.BackColor = System.Drawing.Color.Gray;
             this.button262.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button262.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button262.Location = new System.Drawing.Point(706, 120);
+            this.button262.Location = new System.Drawing.Point(708, 91);
             this.button262.Name = "button262";
             this.button262.Size = new System.Drawing.Size(20, 20);
             this.button262.TabIndex = 234;
@@ -4990,7 +5013,7 @@ namespace LEDController.View
             this.button263.BackColor = System.Drawing.Color.Gray;
             this.button263.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button263.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button263.Location = new System.Drawing.Point(673, 120);
+            this.button263.Location = new System.Drawing.Point(675, 91);
             this.button263.Name = "button263";
             this.button263.Size = new System.Drawing.Size(20, 20);
             this.button263.TabIndex = 233;
@@ -5003,7 +5026,7 @@ namespace LEDController.View
             this.button264.BackColor = System.Drawing.Color.Gray;
             this.button264.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button264.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button264.Location = new System.Drawing.Point(607, 120);
+            this.button264.Location = new System.Drawing.Point(609, 91);
             this.button264.Name = "button264";
             this.button264.Size = new System.Drawing.Size(20, 20);
             this.button264.TabIndex = 232;
@@ -5016,7 +5039,7 @@ namespace LEDController.View
             this.button265.BackColor = System.Drawing.Color.Gray;
             this.button265.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button265.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button265.Location = new System.Drawing.Point(574, 120);
+            this.button265.Location = new System.Drawing.Point(576, 91);
             this.button265.Name = "button265";
             this.button265.Size = new System.Drawing.Size(20, 20);
             this.button265.TabIndex = 231;
@@ -5029,7 +5052,7 @@ namespace LEDController.View
             this.button266.BackColor = System.Drawing.Color.Gray;
             this.button266.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button266.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button266.Location = new System.Drawing.Point(541, 120);
+            this.button266.Location = new System.Drawing.Point(543, 91);
             this.button266.Name = "button266";
             this.button266.Size = new System.Drawing.Size(20, 20);
             this.button266.TabIndex = 230;
@@ -5042,7 +5065,7 @@ namespace LEDController.View
             this.button267.BackColor = System.Drawing.Color.Gray;
             this.button267.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button267.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button267.Location = new System.Drawing.Point(772, 88);
+            this.button267.Location = new System.Drawing.Point(774, 59);
             this.button267.Name = "button267";
             this.button267.Size = new System.Drawing.Size(20, 20);
             this.button267.TabIndex = 229;
@@ -5055,7 +5078,7 @@ namespace LEDController.View
             this.button268.BackColor = System.Drawing.Color.Gray;
             this.button268.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button268.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button268.Location = new System.Drawing.Point(640, 88);
+            this.button268.Location = new System.Drawing.Point(642, 59);
             this.button268.Name = "button268";
             this.button268.Size = new System.Drawing.Size(20, 20);
             this.button268.TabIndex = 228;
@@ -5068,7 +5091,7 @@ namespace LEDController.View
             this.button269.BackColor = System.Drawing.Color.Gray;
             this.button269.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button269.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button269.Location = new System.Drawing.Point(739, 88);
+            this.button269.Location = new System.Drawing.Point(741, 59);
             this.button269.Name = "button269";
             this.button269.Size = new System.Drawing.Size(20, 20);
             this.button269.TabIndex = 227;
@@ -5081,7 +5104,7 @@ namespace LEDController.View
             this.button270.BackColor = System.Drawing.Color.Gray;
             this.button270.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button270.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button270.Location = new System.Drawing.Point(706, 88);
+            this.button270.Location = new System.Drawing.Point(708, 59);
             this.button270.Name = "button270";
             this.button270.Size = new System.Drawing.Size(20, 20);
             this.button270.TabIndex = 226;
@@ -5094,7 +5117,7 @@ namespace LEDController.View
             this.button271.BackColor = System.Drawing.Color.Gray;
             this.button271.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button271.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button271.Location = new System.Drawing.Point(673, 88);
+            this.button271.Location = new System.Drawing.Point(675, 59);
             this.button271.Name = "button271";
             this.button271.Size = new System.Drawing.Size(20, 20);
             this.button271.TabIndex = 225;
@@ -5107,7 +5130,7 @@ namespace LEDController.View
             this.button272.BackColor = System.Drawing.Color.Gray;
             this.button272.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button272.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button272.Location = new System.Drawing.Point(607, 88);
+            this.button272.Location = new System.Drawing.Point(609, 59);
             this.button272.Name = "button272";
             this.button272.Size = new System.Drawing.Size(20, 20);
             this.button272.TabIndex = 224;
@@ -5120,7 +5143,7 @@ namespace LEDController.View
             this.button273.BackColor = System.Drawing.Color.Gray;
             this.button273.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button273.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button273.Location = new System.Drawing.Point(574, 88);
+            this.button273.Location = new System.Drawing.Point(576, 59);
             this.button273.Name = "button273";
             this.button273.Size = new System.Drawing.Size(20, 20);
             this.button273.TabIndex = 223;
@@ -5133,7 +5156,7 @@ namespace LEDController.View
             this.button274.BackColor = System.Drawing.Color.Gray;
             this.button274.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button274.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button274.Location = new System.Drawing.Point(541, 88);
+            this.button274.Location = new System.Drawing.Point(543, 59);
             this.button274.Name = "button274";
             this.button274.Size = new System.Drawing.Size(20, 20);
             this.button274.TabIndex = 222;
@@ -5146,7 +5169,7 @@ namespace LEDController.View
             this.button275.BackColor = System.Drawing.Color.Gray;
             this.button275.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button275.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button275.Location = new System.Drawing.Point(772, 55);
+            this.button275.Location = new System.Drawing.Point(774, 26);
             this.button275.Name = "button275";
             this.button275.Size = new System.Drawing.Size(20, 20);
             this.button275.TabIndex = 221;
@@ -5159,7 +5182,7 @@ namespace LEDController.View
             this.button276.BackColor = System.Drawing.Color.Gray;
             this.button276.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button276.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button276.Location = new System.Drawing.Point(640, 55);
+            this.button276.Location = new System.Drawing.Point(642, 26);
             this.button276.Name = "button276";
             this.button276.Size = new System.Drawing.Size(20, 20);
             this.button276.TabIndex = 220;
@@ -5172,7 +5195,7 @@ namespace LEDController.View
             this.button277.BackColor = System.Drawing.Color.Gray;
             this.button277.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button277.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button277.Location = new System.Drawing.Point(739, 55);
+            this.button277.Location = new System.Drawing.Point(741, 26);
             this.button277.Name = "button277";
             this.button277.Size = new System.Drawing.Size(20, 20);
             this.button277.TabIndex = 219;
@@ -5185,7 +5208,7 @@ namespace LEDController.View
             this.button278.BackColor = System.Drawing.Color.Gray;
             this.button278.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button278.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button278.Location = new System.Drawing.Point(706, 55);
+            this.button278.Location = new System.Drawing.Point(708, 26);
             this.button278.Name = "button278";
             this.button278.Size = new System.Drawing.Size(20, 20);
             this.button278.TabIndex = 218;
@@ -5198,7 +5221,7 @@ namespace LEDController.View
             this.button279.BackColor = System.Drawing.Color.Gray;
             this.button279.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button279.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button279.Location = new System.Drawing.Point(673, 55);
+            this.button279.Location = new System.Drawing.Point(675, 26);
             this.button279.Name = "button279";
             this.button279.Size = new System.Drawing.Size(20, 20);
             this.button279.TabIndex = 217;
@@ -5211,7 +5234,7 @@ namespace LEDController.View
             this.button280.BackColor = System.Drawing.Color.Gray;
             this.button280.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button280.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button280.Location = new System.Drawing.Point(607, 55);
+            this.button280.Location = new System.Drawing.Point(609, 26);
             this.button280.Name = "button280";
             this.button280.Size = new System.Drawing.Size(20, 20);
             this.button280.TabIndex = 216;
@@ -5224,7 +5247,7 @@ namespace LEDController.View
             this.button281.BackColor = System.Drawing.Color.Gray;
             this.button281.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button281.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button281.Location = new System.Drawing.Point(574, 55);
+            this.button281.Location = new System.Drawing.Point(576, 26);
             this.button281.Name = "button281";
             this.button281.Size = new System.Drawing.Size(20, 20);
             this.button281.TabIndex = 215;
@@ -5237,7 +5260,7 @@ namespace LEDController.View
             this.button282.BackColor = System.Drawing.Color.Gray;
             this.button282.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button282.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button282.Location = new System.Drawing.Point(541, 55);
+            this.button282.Location = new System.Drawing.Point(543, 26);
             this.button282.Name = "button282";
             this.button282.Size = new System.Drawing.Size(20, 20);
             this.button282.TabIndex = 214;
@@ -5250,7 +5273,7 @@ namespace LEDController.View
             this.button221.BackColor = System.Drawing.Color.Gray;
             this.button221.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button221.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button221.Location = new System.Drawing.Point(507, 185);
+            this.button221.Location = new System.Drawing.Point(509, 156);
             this.button221.Name = "button221";
             this.button221.Size = new System.Drawing.Size(20, 20);
             this.button221.TabIndex = 213;
@@ -5263,7 +5286,7 @@ namespace LEDController.View
             this.button222.BackColor = System.Drawing.Color.Gray;
             this.button222.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button222.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button222.Location = new System.Drawing.Point(375, 185);
+            this.button222.Location = new System.Drawing.Point(377, 156);
             this.button222.Name = "button222";
             this.button222.Size = new System.Drawing.Size(20, 20);
             this.button222.TabIndex = 212;
@@ -5276,7 +5299,7 @@ namespace LEDController.View
             this.button223.BackColor = System.Drawing.Color.Gray;
             this.button223.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button223.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button223.Location = new System.Drawing.Point(474, 185);
+            this.button223.Location = new System.Drawing.Point(476, 156);
             this.button223.Name = "button223";
             this.button223.Size = new System.Drawing.Size(20, 20);
             this.button223.TabIndex = 211;
@@ -5289,7 +5312,7 @@ namespace LEDController.View
             this.button224.BackColor = System.Drawing.Color.Gray;
             this.button224.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button224.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button224.Location = new System.Drawing.Point(441, 185);
+            this.button224.Location = new System.Drawing.Point(443, 156);
             this.button224.Name = "button224";
             this.button224.Size = new System.Drawing.Size(20, 20);
             this.button224.TabIndex = 210;
@@ -5302,7 +5325,7 @@ namespace LEDController.View
             this.button225.BackColor = System.Drawing.Color.Gray;
             this.button225.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button225.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button225.Location = new System.Drawing.Point(408, 185);
+            this.button225.Location = new System.Drawing.Point(410, 156);
             this.button225.Name = "button225";
             this.button225.Size = new System.Drawing.Size(20, 20);
             this.button225.TabIndex = 209;
@@ -5315,7 +5338,7 @@ namespace LEDController.View
             this.button226.BackColor = System.Drawing.Color.Gray;
             this.button226.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button226.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button226.Location = new System.Drawing.Point(342, 185);
+            this.button226.Location = new System.Drawing.Point(344, 156);
             this.button226.Name = "button226";
             this.button226.Size = new System.Drawing.Size(20, 20);
             this.button226.TabIndex = 208;
@@ -5328,7 +5351,7 @@ namespace LEDController.View
             this.button227.BackColor = System.Drawing.Color.Gray;
             this.button227.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button227.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button227.Location = new System.Drawing.Point(309, 185);
+            this.button227.Location = new System.Drawing.Point(311, 156);
             this.button227.Name = "button227";
             this.button227.Size = new System.Drawing.Size(20, 20);
             this.button227.TabIndex = 207;
@@ -5341,7 +5364,7 @@ namespace LEDController.View
             this.button228.BackColor = System.Drawing.Color.Gray;
             this.button228.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button228.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button228.Location = new System.Drawing.Point(276, 185);
+            this.button228.Location = new System.Drawing.Point(278, 156);
             this.button228.Name = "button228";
             this.button228.Size = new System.Drawing.Size(20, 20);
             this.button228.TabIndex = 206;
@@ -5354,7 +5377,7 @@ namespace LEDController.View
             this.button229.BackColor = System.Drawing.Color.Gray;
             this.button229.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button229.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button229.Location = new System.Drawing.Point(243, 185);
+            this.button229.Location = new System.Drawing.Point(245, 156);
             this.button229.Name = "button229";
             this.button229.Size = new System.Drawing.Size(20, 20);
             this.button229.TabIndex = 205;
@@ -5367,7 +5390,7 @@ namespace LEDController.View
             this.button230.BackColor = System.Drawing.Color.Gray;
             this.button230.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button230.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button230.Location = new System.Drawing.Point(111, 185);
+            this.button230.Location = new System.Drawing.Point(113, 156);
             this.button230.Name = "button230";
             this.button230.Size = new System.Drawing.Size(20, 20);
             this.button230.TabIndex = 204;
@@ -5380,7 +5403,7 @@ namespace LEDController.View
             this.button231.BackColor = System.Drawing.Color.Gray;
             this.button231.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button231.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button231.Location = new System.Drawing.Point(210, 185);
+            this.button231.Location = new System.Drawing.Point(212, 156);
             this.button231.Name = "button231";
             this.button231.Size = new System.Drawing.Size(20, 20);
             this.button231.TabIndex = 203;
@@ -5393,7 +5416,7 @@ namespace LEDController.View
             this.button232.BackColor = System.Drawing.Color.Gray;
             this.button232.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button232.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button232.Location = new System.Drawing.Point(177, 185);
+            this.button232.Location = new System.Drawing.Point(179, 156);
             this.button232.Name = "button232";
             this.button232.Size = new System.Drawing.Size(20, 20);
             this.button232.TabIndex = 202;
@@ -5406,7 +5429,7 @@ namespace LEDController.View
             this.button233.BackColor = System.Drawing.Color.Gray;
             this.button233.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button233.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button233.Location = new System.Drawing.Point(144, 185);
+            this.button233.Location = new System.Drawing.Point(146, 156);
             this.button233.Name = "button233";
             this.button233.Size = new System.Drawing.Size(20, 20);
             this.button233.TabIndex = 201;
@@ -5419,7 +5442,7 @@ namespace LEDController.View
             this.button234.BackColor = System.Drawing.Color.Gray;
             this.button234.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button234.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button234.Location = new System.Drawing.Point(78, 185);
+            this.button234.Location = new System.Drawing.Point(80, 156);
             this.button234.Name = "button234";
             this.button234.Size = new System.Drawing.Size(20, 20);
             this.button234.TabIndex = 200;
@@ -5432,7 +5455,7 @@ namespace LEDController.View
             this.button235.BackColor = System.Drawing.Color.Gray;
             this.button235.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button235.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button235.Location = new System.Drawing.Point(45, 185);
+            this.button235.Location = new System.Drawing.Point(47, 156);
             this.button235.Name = "button235";
             this.button235.Size = new System.Drawing.Size(20, 20);
             this.button235.TabIndex = 199;
@@ -5445,7 +5468,7 @@ namespace LEDController.View
             this.button236.BackColor = System.Drawing.Color.Gray;
             this.button236.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button236.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button236.Location = new System.Drawing.Point(12, 185);
+            this.button236.Location = new System.Drawing.Point(14, 156);
             this.button236.Name = "button236";
             this.button236.Size = new System.Drawing.Size(20, 20);
             this.button236.TabIndex = 198;
@@ -5458,7 +5481,7 @@ namespace LEDController.View
             this.button203.BackColor = System.Drawing.Color.Gray;
             this.button203.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button203.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button203.Location = new System.Drawing.Point(507, 153);
+            this.button203.Location = new System.Drawing.Point(509, 124);
             this.button203.Name = "button203";
             this.button203.Size = new System.Drawing.Size(20, 20);
             this.button203.TabIndex = 197;
@@ -5471,7 +5494,7 @@ namespace LEDController.View
             this.button204.BackColor = System.Drawing.Color.Gray;
             this.button204.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button204.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button204.Location = new System.Drawing.Point(375, 153);
+            this.button204.Location = new System.Drawing.Point(377, 124);
             this.button204.Name = "button204";
             this.button204.Size = new System.Drawing.Size(20, 20);
             this.button204.TabIndex = 196;
@@ -5484,7 +5507,7 @@ namespace LEDController.View
             this.button205.BackColor = System.Drawing.Color.Gray;
             this.button205.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button205.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button205.Location = new System.Drawing.Point(474, 153);
+            this.button205.Location = new System.Drawing.Point(476, 124);
             this.button205.Name = "button205";
             this.button205.Size = new System.Drawing.Size(20, 20);
             this.button205.TabIndex = 195;
@@ -5497,7 +5520,7 @@ namespace LEDController.View
             this.button206.BackColor = System.Drawing.Color.Gray;
             this.button206.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button206.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button206.Location = new System.Drawing.Point(441, 153);
+            this.button206.Location = new System.Drawing.Point(443, 124);
             this.button206.Name = "button206";
             this.button206.Size = new System.Drawing.Size(20, 20);
             this.button206.TabIndex = 194;
@@ -5510,7 +5533,7 @@ namespace LEDController.View
             this.button208.BackColor = System.Drawing.Color.Gray;
             this.button208.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button208.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button208.Location = new System.Drawing.Point(408, 153);
+            this.button208.Location = new System.Drawing.Point(410, 124);
             this.button208.Name = "button208";
             this.button208.Size = new System.Drawing.Size(20, 20);
             this.button208.TabIndex = 193;
@@ -5523,7 +5546,7 @@ namespace LEDController.View
             this.button209.BackColor = System.Drawing.Color.Gray;
             this.button209.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button209.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button209.Location = new System.Drawing.Point(342, 153);
+            this.button209.Location = new System.Drawing.Point(344, 124);
             this.button209.Name = "button209";
             this.button209.Size = new System.Drawing.Size(20, 20);
             this.button209.TabIndex = 192;
@@ -5536,7 +5559,7 @@ namespace LEDController.View
             this.button210.BackColor = System.Drawing.Color.Gray;
             this.button210.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button210.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button210.Location = new System.Drawing.Point(309, 153);
+            this.button210.Location = new System.Drawing.Point(311, 124);
             this.button210.Name = "button210";
             this.button210.Size = new System.Drawing.Size(20, 20);
             this.button210.TabIndex = 191;
@@ -5549,7 +5572,7 @@ namespace LEDController.View
             this.button211.BackColor = System.Drawing.Color.Gray;
             this.button211.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button211.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button211.Location = new System.Drawing.Point(276, 153);
+            this.button211.Location = new System.Drawing.Point(278, 124);
             this.button211.Name = "button211";
             this.button211.Size = new System.Drawing.Size(20, 20);
             this.button211.TabIndex = 190;
@@ -5562,7 +5585,7 @@ namespace LEDController.View
             this.button213.BackColor = System.Drawing.Color.Gray;
             this.button213.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button213.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button213.Location = new System.Drawing.Point(243, 153);
+            this.button213.Location = new System.Drawing.Point(245, 124);
             this.button213.Name = "button213";
             this.button213.Size = new System.Drawing.Size(20, 20);
             this.button213.TabIndex = 189;
@@ -5575,7 +5598,7 @@ namespace LEDController.View
             this.button214.BackColor = System.Drawing.Color.Gray;
             this.button214.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button214.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button214.Location = new System.Drawing.Point(111, 153);
+            this.button214.Location = new System.Drawing.Point(113, 124);
             this.button214.Name = "button214";
             this.button214.Size = new System.Drawing.Size(20, 20);
             this.button214.TabIndex = 188;
@@ -5588,7 +5611,7 @@ namespace LEDController.View
             this.button215.BackColor = System.Drawing.Color.Gray;
             this.button215.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button215.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button215.Location = new System.Drawing.Point(210, 153);
+            this.button215.Location = new System.Drawing.Point(212, 124);
             this.button215.Name = "button215";
             this.button215.Size = new System.Drawing.Size(20, 20);
             this.button215.TabIndex = 187;
@@ -5601,7 +5624,7 @@ namespace LEDController.View
             this.button216.BackColor = System.Drawing.Color.Gray;
             this.button216.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button216.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button216.Location = new System.Drawing.Point(177, 153);
+            this.button216.Location = new System.Drawing.Point(179, 124);
             this.button216.Name = "button216";
             this.button216.Size = new System.Drawing.Size(20, 20);
             this.button216.TabIndex = 186;
@@ -5614,7 +5637,7 @@ namespace LEDController.View
             this.button217.BackColor = System.Drawing.Color.Gray;
             this.button217.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button217.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button217.Location = new System.Drawing.Point(144, 153);
+            this.button217.Location = new System.Drawing.Point(146, 124);
             this.button217.Name = "button217";
             this.button217.Size = new System.Drawing.Size(20, 20);
             this.button217.TabIndex = 185;
@@ -5627,7 +5650,7 @@ namespace LEDController.View
             this.button218.BackColor = System.Drawing.Color.Gray;
             this.button218.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button218.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button218.Location = new System.Drawing.Point(78, 153);
+            this.button218.Location = new System.Drawing.Point(80, 124);
             this.button218.Name = "button218";
             this.button218.Size = new System.Drawing.Size(20, 20);
             this.button218.TabIndex = 184;
@@ -5640,7 +5663,7 @@ namespace LEDController.View
             this.button219.BackColor = System.Drawing.Color.Gray;
             this.button219.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button219.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button219.Location = new System.Drawing.Point(45, 153);
+            this.button219.Location = new System.Drawing.Point(47, 124);
             this.button219.Name = "button219";
             this.button219.Size = new System.Drawing.Size(20, 20);
             this.button219.TabIndex = 183;
@@ -5653,7 +5676,7 @@ namespace LEDController.View
             this.button220.BackColor = System.Drawing.Color.Gray;
             this.button220.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button220.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button220.Location = new System.Drawing.Point(12, 153);
+            this.button220.Location = new System.Drawing.Point(14, 124);
             this.button220.Name = "button220";
             this.button220.Size = new System.Drawing.Size(20, 20);
             this.button220.TabIndex = 182;
@@ -5666,7 +5689,7 @@ namespace LEDController.View
             this.button181.BackColor = System.Drawing.Color.Gray;
             this.button181.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button181.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button181.Location = new System.Drawing.Point(507, 120);
+            this.button181.Location = new System.Drawing.Point(509, 91);
             this.button181.Name = "button181";
             this.button181.Size = new System.Drawing.Size(20, 20);
             this.button181.TabIndex = 181;
@@ -5679,7 +5702,7 @@ namespace LEDController.View
             this.button182.BackColor = System.Drawing.Color.Gray;
             this.button182.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button182.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button182.Location = new System.Drawing.Point(375, 120);
+            this.button182.Location = new System.Drawing.Point(377, 91);
             this.button182.Name = "button182";
             this.button182.Size = new System.Drawing.Size(20, 20);
             this.button182.TabIndex = 180;
@@ -5692,7 +5715,7 @@ namespace LEDController.View
             this.button183.BackColor = System.Drawing.Color.Gray;
             this.button183.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button183.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button183.Location = new System.Drawing.Point(474, 120);
+            this.button183.Location = new System.Drawing.Point(476, 91);
             this.button183.Name = "button183";
             this.button183.Size = new System.Drawing.Size(20, 20);
             this.button183.TabIndex = 179;
@@ -5705,7 +5728,7 @@ namespace LEDController.View
             this.button184.BackColor = System.Drawing.Color.Gray;
             this.button184.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button184.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button184.Location = new System.Drawing.Point(441, 120);
+            this.button184.Location = new System.Drawing.Point(443, 91);
             this.button184.Name = "button184";
             this.button184.Size = new System.Drawing.Size(20, 20);
             this.button184.TabIndex = 178;
@@ -5718,7 +5741,7 @@ namespace LEDController.View
             this.button185.BackColor = System.Drawing.Color.Gray;
             this.button185.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button185.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button185.Location = new System.Drawing.Point(408, 120);
+            this.button185.Location = new System.Drawing.Point(410, 91);
             this.button185.Name = "button185";
             this.button185.Size = new System.Drawing.Size(20, 20);
             this.button185.TabIndex = 177;
@@ -5731,7 +5754,7 @@ namespace LEDController.View
             this.button186.BackColor = System.Drawing.Color.Gray;
             this.button186.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button186.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button186.Location = new System.Drawing.Point(342, 120);
+            this.button186.Location = new System.Drawing.Point(344, 91);
             this.button186.Name = "button186";
             this.button186.Size = new System.Drawing.Size(20, 20);
             this.button186.TabIndex = 176;
@@ -5744,7 +5767,7 @@ namespace LEDController.View
             this.button187.BackColor = System.Drawing.Color.Gray;
             this.button187.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button187.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button187.Location = new System.Drawing.Point(309, 120);
+            this.button187.Location = new System.Drawing.Point(311, 91);
             this.button187.Name = "button187";
             this.button187.Size = new System.Drawing.Size(20, 20);
             this.button187.TabIndex = 175;
@@ -5757,7 +5780,7 @@ namespace LEDController.View
             this.button188.BackColor = System.Drawing.Color.Gray;
             this.button188.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button188.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button188.Location = new System.Drawing.Point(276, 120);
+            this.button188.Location = new System.Drawing.Point(278, 91);
             this.button188.Name = "button188";
             this.button188.Size = new System.Drawing.Size(20, 20);
             this.button188.TabIndex = 174;
@@ -5770,7 +5793,7 @@ namespace LEDController.View
             this.button189.BackColor = System.Drawing.Color.Gray;
             this.button189.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button189.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button189.Location = new System.Drawing.Point(243, 120);
+            this.button189.Location = new System.Drawing.Point(245, 91);
             this.button189.Name = "button189";
             this.button189.Size = new System.Drawing.Size(20, 20);
             this.button189.TabIndex = 173;
@@ -5783,7 +5806,7 @@ namespace LEDController.View
             this.button190.BackColor = System.Drawing.Color.Gray;
             this.button190.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button190.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button190.Location = new System.Drawing.Point(111, 120);
+            this.button190.Location = new System.Drawing.Point(113, 91);
             this.button190.Name = "button190";
             this.button190.Size = new System.Drawing.Size(20, 20);
             this.button190.TabIndex = 172;
@@ -5796,7 +5819,7 @@ namespace LEDController.View
             this.button191.BackColor = System.Drawing.Color.Gray;
             this.button191.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button191.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button191.Location = new System.Drawing.Point(210, 120);
+            this.button191.Location = new System.Drawing.Point(212, 91);
             this.button191.Name = "button191";
             this.button191.Size = new System.Drawing.Size(20, 20);
             this.button191.TabIndex = 171;
@@ -5809,7 +5832,7 @@ namespace LEDController.View
             this.button192.BackColor = System.Drawing.Color.Gray;
             this.button192.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button192.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button192.Location = new System.Drawing.Point(177, 120);
+            this.button192.Location = new System.Drawing.Point(179, 91);
             this.button192.Name = "button192";
             this.button192.Size = new System.Drawing.Size(20, 20);
             this.button192.TabIndex = 170;
@@ -5822,7 +5845,7 @@ namespace LEDController.View
             this.button193.BackColor = System.Drawing.Color.Gray;
             this.button193.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button193.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button193.Location = new System.Drawing.Point(144, 120);
+            this.button193.Location = new System.Drawing.Point(146, 91);
             this.button193.Name = "button193";
             this.button193.Size = new System.Drawing.Size(20, 20);
             this.button193.TabIndex = 169;
@@ -5835,7 +5858,7 @@ namespace LEDController.View
             this.button194.BackColor = System.Drawing.Color.Gray;
             this.button194.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button194.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button194.Location = new System.Drawing.Point(78, 120);
+            this.button194.Location = new System.Drawing.Point(80, 91);
             this.button194.Name = "button194";
             this.button194.Size = new System.Drawing.Size(20, 20);
             this.button194.TabIndex = 168;
@@ -5848,7 +5871,7 @@ namespace LEDController.View
             this.button195.BackColor = System.Drawing.Color.Gray;
             this.button195.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button195.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button195.Location = new System.Drawing.Point(45, 120);
+            this.button195.Location = new System.Drawing.Point(47, 91);
             this.button195.Name = "button195";
             this.button195.Size = new System.Drawing.Size(20, 20);
             this.button195.TabIndex = 167;
@@ -5861,7 +5884,7 @@ namespace LEDController.View
             this.button196.BackColor = System.Drawing.Color.Gray;
             this.button196.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button196.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button196.Location = new System.Drawing.Point(12, 120);
+            this.button196.Location = new System.Drawing.Point(14, 91);
             this.button196.Name = "button196";
             this.button196.Size = new System.Drawing.Size(20, 20);
             this.button196.TabIndex = 166;
@@ -5874,7 +5897,7 @@ namespace LEDController.View
             this.button133.BackColor = System.Drawing.Color.Gray;
             this.button133.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button133.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button133.Location = new System.Drawing.Point(507, 88);
+            this.button133.Location = new System.Drawing.Point(509, 59);
             this.button133.Name = "button133";
             this.button133.Size = new System.Drawing.Size(20, 20);
             this.button133.TabIndex = 165;
@@ -5887,7 +5910,7 @@ namespace LEDController.View
             this.button134.BackColor = System.Drawing.Color.Gray;
             this.button134.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button134.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button134.Location = new System.Drawing.Point(375, 88);
+            this.button134.Location = new System.Drawing.Point(377, 59);
             this.button134.Name = "button134";
             this.button134.Size = new System.Drawing.Size(20, 20);
             this.button134.TabIndex = 164;
@@ -5900,7 +5923,7 @@ namespace LEDController.View
             this.button135.BackColor = System.Drawing.Color.Gray;
             this.button135.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button135.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button135.Location = new System.Drawing.Point(474, 88);
+            this.button135.Location = new System.Drawing.Point(476, 59);
             this.button135.Name = "button135";
             this.button135.Size = new System.Drawing.Size(20, 20);
             this.button135.TabIndex = 163;
@@ -5913,7 +5936,7 @@ namespace LEDController.View
             this.button136.BackColor = System.Drawing.Color.Gray;
             this.button136.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button136.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button136.Location = new System.Drawing.Point(441, 88);
+            this.button136.Location = new System.Drawing.Point(443, 59);
             this.button136.Name = "button136";
             this.button136.Size = new System.Drawing.Size(20, 20);
             this.button136.TabIndex = 162;
@@ -5926,7 +5949,7 @@ namespace LEDController.View
             this.button138.BackColor = System.Drawing.Color.Gray;
             this.button138.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button138.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button138.Location = new System.Drawing.Point(408, 88);
+            this.button138.Location = new System.Drawing.Point(410, 59);
             this.button138.Name = "button138";
             this.button138.Size = new System.Drawing.Size(20, 20);
             this.button138.TabIndex = 161;
@@ -5939,7 +5962,7 @@ namespace LEDController.View
             this.button139.BackColor = System.Drawing.Color.Gray;
             this.button139.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button139.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button139.Location = new System.Drawing.Point(342, 88);
+            this.button139.Location = new System.Drawing.Point(344, 59);
             this.button139.Name = "button139";
             this.button139.Size = new System.Drawing.Size(20, 20);
             this.button139.TabIndex = 160;
@@ -5952,7 +5975,7 @@ namespace LEDController.View
             this.button140.BackColor = System.Drawing.Color.Gray;
             this.button140.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button140.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button140.Location = new System.Drawing.Point(309, 88);
+            this.button140.Location = new System.Drawing.Point(311, 59);
             this.button140.Name = "button140";
             this.button140.Size = new System.Drawing.Size(20, 20);
             this.button140.TabIndex = 159;
@@ -5965,7 +5988,7 @@ namespace LEDController.View
             this.button141.BackColor = System.Drawing.Color.Gray;
             this.button141.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button141.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button141.Location = new System.Drawing.Point(276, 88);
+            this.button141.Location = new System.Drawing.Point(278, 59);
             this.button141.Name = "button141";
             this.button141.Size = new System.Drawing.Size(20, 20);
             this.button141.TabIndex = 158;
@@ -5978,7 +6001,7 @@ namespace LEDController.View
             this.button143.BackColor = System.Drawing.Color.Gray;
             this.button143.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button143.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button143.Location = new System.Drawing.Point(243, 88);
+            this.button143.Location = new System.Drawing.Point(245, 59);
             this.button143.Name = "button143";
             this.button143.Size = new System.Drawing.Size(20, 20);
             this.button143.TabIndex = 157;
@@ -5991,7 +6014,7 @@ namespace LEDController.View
             this.button144.BackColor = System.Drawing.Color.Gray;
             this.button144.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button144.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button144.Location = new System.Drawing.Point(111, 88);
+            this.button144.Location = new System.Drawing.Point(113, 59);
             this.button144.Name = "button144";
             this.button144.Size = new System.Drawing.Size(20, 20);
             this.button144.TabIndex = 156;
@@ -6004,7 +6027,7 @@ namespace LEDController.View
             this.button145.BackColor = System.Drawing.Color.Gray;
             this.button145.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button145.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button145.Location = new System.Drawing.Point(210, 88);
+            this.button145.Location = new System.Drawing.Point(212, 59);
             this.button145.Name = "button145";
             this.button145.Size = new System.Drawing.Size(20, 20);
             this.button145.TabIndex = 155;
@@ -6017,7 +6040,7 @@ namespace LEDController.View
             this.button146.BackColor = System.Drawing.Color.Gray;
             this.button146.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button146.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button146.Location = new System.Drawing.Point(177, 88);
+            this.button146.Location = new System.Drawing.Point(179, 59);
             this.button146.Name = "button146";
             this.button146.Size = new System.Drawing.Size(20, 20);
             this.button146.TabIndex = 154;
@@ -6030,7 +6053,7 @@ namespace LEDController.View
             this.button147.BackColor = System.Drawing.Color.Gray;
             this.button147.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button147.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button147.Location = new System.Drawing.Point(144, 88);
+            this.button147.Location = new System.Drawing.Point(146, 59);
             this.button147.Name = "button147";
             this.button147.Size = new System.Drawing.Size(20, 20);
             this.button147.TabIndex = 153;
@@ -6043,7 +6066,7 @@ namespace LEDController.View
             this.button148.BackColor = System.Drawing.Color.Gray;
             this.button148.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button148.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button148.Location = new System.Drawing.Point(78, 88);
+            this.button148.Location = new System.Drawing.Point(80, 59);
             this.button148.Name = "button148";
             this.button148.Size = new System.Drawing.Size(20, 20);
             this.button148.TabIndex = 152;
@@ -6056,7 +6079,7 @@ namespace LEDController.View
             this.button149.BackColor = System.Drawing.Color.Gray;
             this.button149.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button149.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button149.Location = new System.Drawing.Point(45, 88);
+            this.button149.Location = new System.Drawing.Point(47, 59);
             this.button149.Name = "button149";
             this.button149.Size = new System.Drawing.Size(20, 20);
             this.button149.TabIndex = 151;
@@ -6069,7 +6092,7 @@ namespace LEDController.View
             this.button150.BackColor = System.Drawing.Color.Gray;
             this.button150.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button150.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button150.Location = new System.Drawing.Point(12, 88);
+            this.button150.Location = new System.Drawing.Point(14, 59);
             this.button150.Name = "button150";
             this.button150.Size = new System.Drawing.Size(20, 20);
             this.button150.TabIndex = 150;
@@ -6082,7 +6105,7 @@ namespace LEDController.View
             this.button207.BackColor = System.Drawing.Color.Gray;
             this.button207.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button207.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button207.Location = new System.Drawing.Point(507, 55);
+            this.button207.Location = new System.Drawing.Point(509, 26);
             this.button207.Name = "button207";
             this.button207.Size = new System.Drawing.Size(20, 20);
             this.button207.TabIndex = 149;
@@ -6095,7 +6118,7 @@ namespace LEDController.View
             this.button212.BackColor = System.Drawing.Color.Gray;
             this.button212.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button212.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button212.Location = new System.Drawing.Point(375, 55);
+            this.button212.Location = new System.Drawing.Point(377, 26);
             this.button212.Name = "button212";
             this.button212.Size = new System.Drawing.Size(20, 20);
             this.button212.TabIndex = 144;
@@ -6108,7 +6131,7 @@ namespace LEDController.View
             this.button237.BackColor = System.Drawing.Color.Gray;
             this.button237.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button237.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button237.Location = new System.Drawing.Point(474, 55);
+            this.button237.Location = new System.Drawing.Point(476, 26);
             this.button237.Name = "button237";
             this.button237.Size = new System.Drawing.Size(20, 20);
             this.button237.TabIndex = 119;
@@ -6121,7 +6144,7 @@ namespace LEDController.View
             this.button238.BackColor = System.Drawing.Color.Gray;
             this.button238.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button238.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button238.Location = new System.Drawing.Point(441, 55);
+            this.button238.Location = new System.Drawing.Point(443, 26);
             this.button238.Name = "button238";
             this.button238.Size = new System.Drawing.Size(20, 20);
             this.button238.TabIndex = 118;
@@ -6134,7 +6157,7 @@ namespace LEDController.View
             this.button239.BackColor = System.Drawing.Color.Gray;
             this.button239.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button239.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button239.Location = new System.Drawing.Point(408, 55);
+            this.button239.Location = new System.Drawing.Point(410, 26);
             this.button239.Name = "button239";
             this.button239.Size = new System.Drawing.Size(20, 20);
             this.button239.TabIndex = 117;
@@ -6147,7 +6170,7 @@ namespace LEDController.View
             this.button240.BackColor = System.Drawing.Color.Gray;
             this.button240.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button240.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button240.Location = new System.Drawing.Point(342, 55);
+            this.button240.Location = new System.Drawing.Point(344, 26);
             this.button240.Name = "button240";
             this.button240.Size = new System.Drawing.Size(20, 20);
             this.button240.TabIndex = 116;
@@ -6160,7 +6183,7 @@ namespace LEDController.View
             this.button241.BackColor = System.Drawing.Color.Gray;
             this.button241.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button241.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button241.Location = new System.Drawing.Point(309, 55);
+            this.button241.Location = new System.Drawing.Point(311, 26);
             this.button241.Name = "button241";
             this.button241.Size = new System.Drawing.Size(20, 20);
             this.button241.TabIndex = 115;
@@ -6173,7 +6196,7 @@ namespace LEDController.View
             this.button242.BackColor = System.Drawing.Color.Gray;
             this.button242.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button242.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button242.Location = new System.Drawing.Point(276, 55);
+            this.button242.Location = new System.Drawing.Point(278, 26);
             this.button242.Name = "button242";
             this.button242.Size = new System.Drawing.Size(20, 20);
             this.button242.TabIndex = 114;
@@ -6186,7 +6209,7 @@ namespace LEDController.View
             this.button137.BackColor = System.Drawing.Color.Gray;
             this.button137.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button137.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button137.Location = new System.Drawing.Point(243, 55);
+            this.button137.Location = new System.Drawing.Point(245, 26);
             this.button137.Name = "button137";
             this.button137.Size = new System.Drawing.Size(20, 20);
             this.button137.TabIndex = 109;
@@ -6199,7 +6222,7 @@ namespace LEDController.View
             this.button142.BackColor = System.Drawing.Color.Gray;
             this.button142.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button142.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button142.Location = new System.Drawing.Point(111, 55);
+            this.button142.Location = new System.Drawing.Point(113, 26);
             this.button142.Name = "button142";
             this.button142.Size = new System.Drawing.Size(20, 20);
             this.button142.TabIndex = 104;
@@ -6212,7 +6235,7 @@ namespace LEDController.View
             this.button197.BackColor = System.Drawing.Color.Gray;
             this.button197.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button197.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button197.Location = new System.Drawing.Point(210, 55);
+            this.button197.Location = new System.Drawing.Point(212, 26);
             this.button197.Name = "button197";
             this.button197.Size = new System.Drawing.Size(20, 20);
             this.button197.TabIndex = 79;
@@ -6225,7 +6248,7 @@ namespace LEDController.View
             this.button198.BackColor = System.Drawing.Color.Gray;
             this.button198.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button198.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button198.Location = new System.Drawing.Point(177, 55);
+            this.button198.Location = new System.Drawing.Point(179, 26);
             this.button198.Name = "button198";
             this.button198.Size = new System.Drawing.Size(20, 20);
             this.button198.TabIndex = 78;
@@ -6238,7 +6261,7 @@ namespace LEDController.View
             this.button199.BackColor = System.Drawing.Color.Gray;
             this.button199.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button199.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button199.Location = new System.Drawing.Point(144, 55);
+            this.button199.Location = new System.Drawing.Point(146, 26);
             this.button199.Name = "button199";
             this.button199.Size = new System.Drawing.Size(20, 20);
             this.button199.TabIndex = 77;
@@ -6251,7 +6274,7 @@ namespace LEDController.View
             this.button200.BackColor = System.Drawing.Color.Gray;
             this.button200.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button200.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button200.Location = new System.Drawing.Point(78, 55);
+            this.button200.Location = new System.Drawing.Point(80, 26);
             this.button200.Name = "button200";
             this.button200.Size = new System.Drawing.Size(20, 20);
             this.button200.TabIndex = 76;
@@ -6264,7 +6287,7 @@ namespace LEDController.View
             this.button201.BackColor = System.Drawing.Color.Gray;
             this.button201.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button201.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button201.Location = new System.Drawing.Point(45, 55);
+            this.button201.Location = new System.Drawing.Point(47, 26);
             this.button201.Name = "button201";
             this.button201.Size = new System.Drawing.Size(20, 20);
             this.button201.TabIndex = 75;
@@ -6277,7 +6300,7 @@ namespace LEDController.View
             this.button202.BackColor = System.Drawing.Color.Gray;
             this.button202.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button202.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button202.Location = new System.Drawing.Point(12, 55);
+            this.button202.Location = new System.Drawing.Point(14, 26);
             this.button202.Name = "button202";
             this.button202.Size = new System.Drawing.Size(20, 20);
             this.button202.TabIndex = 74;
@@ -6382,7 +6405,8 @@ namespace LEDController.View
             this.cbxQueryParam.Items.AddRange(new object[] {
             "LED电流",
             "LED电压",
-            "LED功率"});
+            "LED功率",
+            "LED状态"});
             this.cbxQueryParam.Location = new System.Drawing.Point(99, 25);
             this.cbxQueryParam.Name = "cbxQueryParam";
             this.cbxQueryParam.Size = new System.Drawing.Size(121, 24);
@@ -7055,6 +7079,8 @@ namespace LEDController.View
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
+        private ScottPlot.FormsPlot formsPlotRTD;
     }
 }
 

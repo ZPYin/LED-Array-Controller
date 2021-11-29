@@ -1081,6 +1081,22 @@
         "runtime": {
           "LEDController.exe": {}
         }
+      },
+      "ScottPlot.WinForms/4.1.27.0": {
+        "runtime": {
+          "ScottPlot.WinForms.dll": {
+            "assemblyVersion": "4.1.27.0",
+            "fileVersion": "4.1.27.0"
+          }
+        }
+      },
+      "ScottPlot/4.1.27.0": {
+        "runtime": {
+          "ScottPlot.dll": {
+            "assemblyVersion": "4.1.27.0",
+            "fileVersion": "4.1.27.0"
+          }
+        }
       }
     }
   },
@@ -1708,6 +1724,16 @@
     },
     "LEDController/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ScottPlot.WinForms/4.1.27.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ScottPlot/4.1.27.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

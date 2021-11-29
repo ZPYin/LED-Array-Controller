@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Drawing;
+using System.Windows.Forms;
+using ScottPlot;
 
 namespace LEDController.View
 {
@@ -72,6 +74,7 @@ namespace LEDController.View
         Color btnConnectColor { get; set; }
         Color btnCloseColor { get; set; }
         Color[] LEDStatusColors { get; set; }
+        FormsPlot LEDFormsPlot {get; set; }
         string testMsgRecStr { get; set; }
         event EventHandler<EventArgs> Connect;
         event EventHandler<EventArgs> CloseConnect;
@@ -81,7 +84,7 @@ namespace LEDController.View
         event EventHandler<EventFixLEDArgs> OpenFixLED;
         event EventHandler<EventFixLEDArgs> CloseFixLED;
         event EventHandler<EventFixLEDArgs> HandleFixLED;
-        event EventHandler<EventDimLEDArgs> OpenDimLED;
+        event EventHandler<EventDimLEDArgs> SetDimLED;
         event EventHandler<EventDimLEDArgs> CloseDimLED;
         event EventHandler<EventDimLEDArgs> HandleDimLED;
         event EventHandler<EventArgs> UpdateScrollBar;

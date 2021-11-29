@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using System.Text;
 using System.Threading.Tasks;
 using LEDController.View;
 using LEDController.Model;
-using System.Threading;
-using System.Net.Sockets;
 using System.Drawing;
 using System.Windows.Threading;
+using System.ComponentModel;
+using System.Diagnostics;
 
 namespace LEDController.Presenter
 {
     class LEDControllerPresenter
     {
-        private ILEDControllerForm _view;
+        private LEDControllerViewer _view;
         private LEDBoardCom connector = new LEDBoardCom();
         private FileSysIOClass fileIOer;
         private LEDStatus currentLEDStatus;
-        private Thread threadListen = null;
         private byte[] receiveBytes = null;
         private const int SendBufferSize = 2 * 1024;
         private const int RecBufferSize = 8 * 1024;
@@ -30,9 +27,22 @@ namespace LEDController.Presenter
         private const double MaxDarkRedLEDPower = 30.0;
         private const double MinDarkRedLEDPower = 0.0;
         private const int NumScrollBarLevel = 50;
+        BackgroundWorker recWorker = new BackgroundWorker();
+        private const int NumLiveData = 3600;
+        private double[] LEDPowerLiveData = new double[NumLiveData];
+        private double[] LEDCurrentLiveData = new double[NumLiveData];
+        private double[] LEDVoltageLiveData = new double[NumLiveData];
+        public Stopwatch sw = Stopwatch.StartNew();
+        public System.Threading.Timer updateLEDStatusTimer;
+        public System.Threading.Timer renderLEDStatusTimer;
 
-        public LEDControllerPresenter(ILEDControllerForm newView)
+        public LEDControllerPresenter(LEDControllerViewer newView)
         {
+            recWorker.WorkerReportsProgress = true;
+            recWorker.WorkerSupportsCancellation = true;
+            recWorker.DoWork += ReceiveMsg;
+            recWorker.ProgressChanged += ShowReceiveStatusAsync;
+            recWorker.RunWorkerCompleted += OnConnectionBreak;
             _view = newView;
             _view.Connect += new EventHandler<EventArgs>(OnConnect);
             _view.CloseConnect += new EventHandler<EventArgs>(OnCloseConnect);
@@ -42,7 +52,7 @@ namespace LEDController.Presenter
             _view.OpenFixLED += new EventHandler<EventFixLEDArgs>(OnOpenFixLED);
             _view.CloseFixLED += new EventHandler<EventFixLEDArgs>(OnCloseFixLED);
             _view.HandleFixLED += new EventHandler<EventFixLEDArgs>(OnHandleFixLED);
-            _view.OpenDimLED += new EventHandler<EventDimLEDArgs>(OnOpenDimLED);
+            _view.SetDimLED += new EventHandler<EventDimLEDArgs>(OnSetDimLED);
             _view.CloseDimLED += new EventHandler<EventDimLEDArgs>(OnCloseDimLED);
             _view.HandleDimLED += new EventHandler<EventDimLEDArgs>(OnHandleDimLED);
             _view.UpdateScrollBar += new EventHandler<EventArgs>(OnUpdateScrollBar);
@@ -60,6 +70,54 @@ namespace LEDController.Presenter
             _view.lblDarkRedLEDMaxRightText = Convert.ToString(MaxDarkRedLEDPower);
             _view.lblDarkRedLEDMinLeftText = Convert.ToString(MinDarkRedLEDPower);
             _view.lblDarkRedLEDMinRightText = Convert.ToString(MinDarkRedLEDPower);
+
+            // Initialize LED status plot
+            sw.Start();
+            Random rand = new Random(0);
+            LEDPowerLiveData = ScottPlot.DataGen.RandomWalk(rand, NumLiveData);
+            LEDCurrentLiveData = ScottPlot.DataGen.RandomWalk(rand, NumLiveData);
+            LEDVoltageLiveData = ScottPlot.DataGen.RandomWalk(rand, NumLiveData);
+            var sig = _view.formsLEDStatusPlot.Plot.AddSignal(LEDPowerLiveData, sampleRate: 3600 * 24.0, label: "功率");
+            _view.formsLEDStatusPlot.Plot.AddSignal(LEDCurrentLiveData, sampleRate: 3600 * 24.0, label: "电流");
+            _view.formsLEDStatusPlot.Plot.AddSignal(LEDVoltageLiveData, sampleRate: 3600 * 24.0, label: "电压");
+            _view.formsLEDStatusPlot.Plot.Title("LED状态");
+            _view.formsLEDStatusPlot.Plot.XLabel("时间");
+            _view.formsLEDStatusPlot.Plot.YLabel("强度");
+            _view.formsLEDStatusPlot.Plot.Grid(true);
+            _view.formsLEDStatusPlot.Plot.SetAxisLimitsY(0, 20);
+            sig.OffsetX = GetCurrentTime().ToOADate();
+            _view.formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
+            _view.formsLEDStatusPlot.Plot.XAxis.ManualTickSpacing(5, ScottPlot.Ticks.DateTimeUnit.Minute);
+            _view.formsLEDStatusPlot.Plot.XAxis.TickLabelFormat("HH:mm", true);
+            _view.formsLEDStatusPlot.Plot.XAxis.DateTimeFormat(true);
+            var legend = _view.formsLEDStatusPlot.Plot.Legend(location: ScottPlot.Alignment.UpperRight);
+            _view.formsLEDStatusPlot.Refresh();
+
+            updateLEDStatusTimer = new System.Threading.Timer(this.UpdateLEDLiveData, 0, 0, 1000);
+            renderLEDStatusTimer = new System.Threading.Timer(this.renderLEDStatus, sig, 0, 3600 * 1000);
+        }
+
+        private void renderLEDStatus(object state)
+        {
+            ScottPlot.Plottable.SignalPlot sig = state as ScottPlot.Plottable.SignalPlot;
+            sig.OffsetX = GetCurrentTime().ToOADate();
+            _view.formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
+            _view.formsLEDStatusPlot.Refresh();
+        }
+
+        private void UpdateLEDLiveData(object state)
+        {
+            int thisIndex = (int)(sw.Elapsed.TotalSeconds) % 3600;
+            LEDPowerLiveData[thisIndex] = 1;
+            LEDVoltageLiveData[thisIndex] = 1;
+            LEDCurrentLiveData[thisIndex] = 1;
+
+            _view.formsLEDStatusPlot.Refresh();
+        }
+
+        private void OnConnectionBreak(object sender, RunWorkerCompletedEventArgs args)
+        {
+            recWorker.CancelAsync();
         }
 
         private void OnShowLEDStatus(object sender, EventArgs e)
@@ -98,7 +156,7 @@ namespace LEDController.Presenter
                 if (btn.BackColor.ToArgb().Equals(Color.Gray.ToArgb()))
                 {
                     // Send control cmd
-                    OnOpenDimLED(sender, e);
+                    OnSetDimLED(sender, e);
                 }
                 else
                 {
@@ -323,7 +381,7 @@ namespace LEDController.Presenter
             }
         }
 
-        private void OnOpenDimLED(object sender, EventDimLEDArgs e)
+        private void OnSetDimLED(object sender, EventDimLEDArgs e)
         {
             if (!connector.isAlive)
             {
@@ -332,24 +390,29 @@ namespace LEDController.Presenter
 
             // Turn on Dimmable LED
             int LEDPowerBit;
-            LEDPowerBit = (Int16)(CalcSbarValue(e.LEDPower, e.LEDIndex) / NumScrollBarLevel * 255);   // Convert to 0-255
+            LEDPowerBit = (Int16)((double)CalcSbarValue(e.LEDPower, e.LEDIndex) / (double)NumScrollBarLevel * 255);   // Convert to 0-255
             try
             {
-                connector.TurnOnDimLED(e.LEDIndex, LEDPowerBit);
+                connector.SetDimLED(e.LEDIndex, LEDPowerBit);
             }
             catch (Exception ex)
             {
                 _view.tbxConnectMsgText = "[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n";
             }
 
-            ShowSendStatus();
+            ShowSendStatusAsync();
 
             int numTotalFixLED = LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED + LEDBoardCom.NumDarkRedFixLED;
 
             // set button color
             Button btn = sender as Button;
             int tagLED = Int32.Parse(btn.Tag as string);
-            if ((tagLED >= (numTotalFixLED + 1)) && (tagLED <= (numTotalFixLED + LEDBoardCom.NumGreenDimLED)))
+            if ((LEDPowerBit == 0))
+            {
+                // Turn off the button
+                btn.BackColor = Color.Gray;
+            }
+            else if ((tagLED >= (numTotalFixLED + 1)) && (tagLED <= (numTotalFixLED + LEDBoardCom.NumGreenDimLED)))
             {
                 btn.BackColor = Color.Green;
             }
@@ -375,14 +438,14 @@ namespace LEDController.Presenter
             // Turn off Dimmable LED
             try
             {
-                connector.TurnOffDimLED(e.LEDIndex);
+                connector.SetDimLED(e.LEDIndex, 0);
             }
             catch (Exception ex)
             {
                 _view.tbxConnectMsgText = "[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n";
             }
 
-            ShowSendStatus();
+            ShowSendStatusAsync();
 
             // Change color
             Button btn = sender as Button;
@@ -396,7 +459,7 @@ namespace LEDController.Presenter
             {
                 // Turn on Fix LED
                 connector.TurnOnFixLED(e.LEDIndex);
-                ShowSendStatus();
+                ShowSendStatusAsync();
 
                 // set button color
                 Button btn = sender as Button;
@@ -426,7 +489,7 @@ namespace LEDController.Presenter
             {
                 connector.TurnOffFixLED(e.LEDIndex);
 
-                ShowSendStatus();
+                ShowSendStatusAsync();
 
                 // Change color
                 Button btn = sender as Button;
@@ -480,7 +543,7 @@ namespace LEDController.Presenter
             try
             {
                 connector.SendCmd(_view.testCmdStr);
-                ShowSendStatus();
+                ShowSendStatusAsync();
             }
             catch (Exception ex)
             {
@@ -488,90 +551,86 @@ namespace LEDController.Presenter
             }
         }
 
-        public void ReceiveMsg()
+        public void ReceiveMsg(object sender, DoWorkEventArgs args)
         {
+
+            BackgroundWorker worker = sender as BackgroundWorker;
+
             // Socket socketSlave = socketHostObj as Socket;
             byte[] buffer = new byte[SendBufferSize];
 
             while (true)   // Receiving message from slave
             {
                 int msgLen = 0;
-
-                try
+                if ((connector.socketHost != null) && (!worker.CancellationPending)) 
                 {
-                    if (connector.socketHost != null) msgLen = connector.socketHost.Receive(buffer);
+                    msgLen = connector.socketHost.Receive(buffer);
+                }
+                else
+                {
+                    args.Cancel = true;
+                    break;
+                }
 
-                    if (msgLen > 0)
+                if (msgLen > 0)
+                {
+                    try
                     {
-                        LEDStatus currentLEDStatus = connector.ParsePackage(buffer);
-
-                        string recMsg = Encoding.UTF8.GetString(buffer);
-                        recMsg = recMsg.Replace("\0", "");
+                        currentLEDStatus = connector.ParsePackage(buffer);
+                        receiveBytes = buffer;
                         // TODO add timestamp
 
-                        // format recMsg
-                        string formatRecMsg = "[" + GetCurrentTime() + "] " + "\r\n" + recMsg + "\r\n";
-                        _view.Invoke(new Action(() => { _view.testMsgRecStr = formatRecMsg; }));
-
                         // showing receiving status with colorful light
-                        ShowReceiveStatus();
-
-                        // showing total power
-                        _view.tsslGreenLEDTPText = "绿光实时总功率: 1W";
-                        _view.tsslRedLEDTPText = "红光实时总功率: 2W";
-                        _view.tsslDarkRedTPText = "红外实时总功率: 3W";
-
-                        // showing temperature sensors
-                        _view.tsslTemp1Text = "测温点1: 20°C";
-                        _view.tsslTemp2Text = "测温点2: 20°C";
-                        _view.tsslTemp3Text = "测温点3: 20°C";
-                        _view.tsslTemp4Text = "测温点4: 20°C";
+                        worker.ReportProgress(1);
                     }
-                }
-                catch (SocketException ex)
-                {
-                    // TODO: Write Log
-                _view.tbxConnectMsgText = "[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n";
+                    catch (Exception ex)
+                    {
+                    }
                 }
             }
         }
 
-        private void ShowSendStatus()
+        private async void ShowSendStatusAsync()
         {
-            // // Async
-            // DelayAction(0, new Action(() => { _view.btnSendStatus1Color = Color.Green; }));
-            // DelayAction(100, new Action(() => { _view.btnSendStatus2Color = Color.Green; }));
-            // DelayAction(100, new Action(() => { _view.btnSendStatus3Color = Color.Green; }));
-            // DelayAction(300, new Action(() => { 
-            //     _view.btnSendStatus1Color = Color.DarkRed;
-            //     _view.btnSendStatus2Color = Color.DarkRed;
-            //     _view.btnSendStatus3Color = Color.DarkRed; 
-            // }));
 
             // Sync
             _view.btnSendStatus1Color = Color.Green;
-            Thread.Sleep(100);
             _view.btnSendStatus2Color = Color.Green;
-            Thread.Sleep(100);
             _view.btnSendStatus3Color = Color.Green;
-            Thread.Sleep(100);
+            await Task.Delay(50);
             _view.btnSendStatus1Color = Color.DarkRed;
             _view.btnSendStatus2Color = Color.DarkRed;
             _view.btnSendStatus3Color = Color.DarkRed;
 
         }
 
-        private void ShowReceiveStatus()
+        private async void ShowReceiveStatusAsync(object sender, ProgressChangedEventArgs args)
         {
-            // Show status bar for sending data
-            DelayAction(0, new Action(() => { _view.btnRecStatus1Color = Color.Green; }));
-            DelayAction(100, new Action(() => { _view.btnRecStatus2Color = Color.Green; }));
-            DelayAction(100, new Action(() => { _view.btnRecStatus3Color = Color.Green; }));
-            DelayAction(100, new Action(() => { 
-                _view.btnRecStatus1Color = Color.DarkRed;
-                _view.btnRecStatus2Color = Color.DarkRed;
-                _view.btnRecStatus3Color = Color.DarkRed; 
-            }));
+
+            // format recMsg
+            string recMsg = Encoding.UTF8.GetString(receiveBytes);
+            recMsg = recMsg.Replace("\0", "");
+            string formatRecMsg = "[" + GetCurrentTime() + "] " + "\r\n" + recMsg + "\r\n";
+            _view.testMsgRecStr = formatRecMsg;;
+
+            // showing total power
+            _view.tsslGreenLEDTPText = $"绿光实时总功率: {currentLEDStatus.totalGreenLEDPower}W";
+            _view.tsslRedLEDTPText = $"红光实时总功率: {currentLEDStatus.totalRedLEDPower}W";
+            _view.tsslDarkRedTPText = $"红外实时总功率: {currentLEDStatus.totalDarkredLEDPower}W";
+
+            // showing temperature sensors
+            _view.tsslTemp1Text = $"测温点1: {currentLEDStatus.temperature[0]}°C";
+            _view.tsslTemp2Text = $"测温点2: {currentLEDStatus.temperature[1]}°C";
+            _view.tsslTemp3Text = $"测温点3: {currentLEDStatus.temperature[2]}°C";
+            _view.tsslTemp4Text = $"测温点4: {currentLEDStatus.temperature[3]}°C";
+
+            _view.btnRecStatus1Color = Color.Green;
+            _view.btnRecStatus2Color = Color.Green;
+            _view.btnRecStatus3Color = Color.Green;
+            await Task.Delay(50);
+            _view.btnRecStatus1Color = Color.DarkRed;
+            _view.btnRecStatus2Color = Color.DarkRed;
+            _view.btnRecStatus3Color = Color.DarkRed;
         }
 
         public void DelayAction(int millisecond, Action action)
@@ -598,16 +657,17 @@ namespace LEDController.Presenter
             try
             {
                 connector.Connect();
-                ShowSendStatus();
+                ShowSendStatusAsync();
                 _view.toolStripConnectionStatusText = "连接成功";
                 // show connection message
                 _view.tbxConnectMsgText = "[" + GetCurrentTime() + "]" + " 连接成功\r\n";
                 _view.btnConnectColor = Color.Green;
                 _view.btnCloseColor = Color.Empty;
 
-                threadListen = new Thread(ReceiveMsg);
-                threadListen.IsBackground = true;
-                threadListen.Start();
+                if (!recWorker.IsBusy)
+                {
+                    recWorker.RunWorkerAsync();
+                }
             }
             catch (Exception ex)
             {
@@ -623,9 +683,9 @@ namespace LEDController.Presenter
             // Close connection
             try
             {
-                if (threadListen != null) threadListen.Abort();
                 connector.Close();
-                ShowSendStatus();
+                recWorker.CancelAsync();
+                ShowSendStatusAsync();
                 _view.toolStripConnectionStatusText = "断开成功";
                 // show disconnect message
                 _view.tbxConnectMsgText = "[" + GetCurrentTime() + "]" + " 断开成功\r\n";

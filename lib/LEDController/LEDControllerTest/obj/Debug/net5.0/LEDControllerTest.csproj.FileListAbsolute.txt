@@ -1,3 +1,8 @@
+D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.AssemblyInfoInputs.cache
+D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.AssemblyInfo.cs
+D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.csproj.CoreCompileInputs.cache
+D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.csproj.AssemblyReference.cache
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\testhost.dll
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\testhost.exe
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -88,13 +93,11 @@ D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\LEDController.exe
+D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\ScottPlot.WinForms.dll
+D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\ScottPlot.dll
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\LEDController.pdb
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\LEDController.exe.config
-D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.csproj.AssemblyReference.cache
-D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.GeneratedMSBuildEditorConfig.editorconfig
-D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.AssemblyInfoInputs.cache
-D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.AssemblyInfo.cs
-D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.csproj.CoreCompileInputs.cache
+D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\bin\Debug\net5.0\ScottPlot.xml
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.csproj.CopyComplete
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\LEDControllerTest.dll
 D:\Coding\C#\LED-controller\lib\LEDController\LEDControllerTest\obj\Debug\net5.0\ref\LEDControllerTest.dll
