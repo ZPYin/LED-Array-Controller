@@ -499,11 +499,12 @@ namespace LEDController.View
             // toolStripLEDStatus
             // 
             this.toolStripLEDStatus.Name = "toolStripLEDStatus";
-            this.toolStripLEDStatus.Size = new System.Drawing.Size(54, 17);
+            this.toolStripLEDStatus.Size = new System.Drawing.Size(79, 24);
             this.toolStripLEDStatus.Text = "LED状态";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件,
@@ -512,7 +513,7 @@ namespace LEDController.View
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1068, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1068, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -524,38 +525,41 @@ namespace LEDController.View
             this.ToolStripMenuItemSaveAs,
             this.ToolStripMenuItemClose});
             this.文件.Name = "文件";
-            this.文件.Size = new System.Drawing.Size(44, 21);
+            this.文件.Size = new System.Drawing.Size(62, 28);
             this.文件.Text = "文件";
             // 
             // ToolStripMenuItemOpen
             // 
             this.ToolStripMenuItemOpen.Name = "ToolStripMenuItemOpen";
-            this.ToolStripMenuItemOpen.Size = new System.Drawing.Size(121, 22);
+            this.ToolStripMenuItemOpen.Size = new System.Drawing.Size(270, 34);
             this.ToolStripMenuItemOpen.Text = "打开";
+            this.ToolStripMenuItemOpen.Click += new System.EventHandler(this.Open_Click);
             // 
             // ToolStripMenuItemSave
             // 
             this.ToolStripMenuItemSave.Name = "ToolStripMenuItemSave";
-            this.ToolStripMenuItemSave.Size = new System.Drawing.Size(121, 22);
+            this.ToolStripMenuItemSave.Size = new System.Drawing.Size(270, 34);
             this.ToolStripMenuItemSave.Text = "保存";
+            this.ToolStripMenuItemSave.Click += new System.EventHandler(this.Save_Click);
             // 
             // ToolStripMenuItemSaveAs
             // 
             this.ToolStripMenuItemSaveAs.Name = "ToolStripMenuItemSaveAs";
-            this.ToolStripMenuItemSaveAs.Size = new System.Drawing.Size(121, 22);
+            this.ToolStripMenuItemSaveAs.Size = new System.Drawing.Size(270, 34);
             this.ToolStripMenuItemSaveAs.Text = "另存为...";
+            this.ToolStripMenuItemSaveAs.Click += new System.EventHandler(this.Saveas_Click);
             // 
             // ToolStripMenuItemClose
             // 
             this.ToolStripMenuItemClose.Name = "ToolStripMenuItemClose";
-            this.ToolStripMenuItemClose.Size = new System.Drawing.Size(121, 22);
+            this.ToolStripMenuItemClose.Size = new System.Drawing.Size(270, 34);
             this.ToolStripMenuItemClose.Text = "关闭";
             this.ToolStripMenuItemClose.Click += new System.EventHandler(this.CloseApplication);
             // 
             // 连接ToolStripMenuItem
             // 
             this.连接ToolStripMenuItem.Name = "连接ToolStripMenuItem";
-            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(12, 21);
+            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(16, 28);
             // 
             // 窗口ToolStripMenuItem
             // 
@@ -569,62 +573,62 @@ namespace LEDController.View
             this.tsmSkylightControl,
             this.tsmCameraControl});
             this.窗口ToolStripMenuItem.Name = "窗口ToolStripMenuItem";
-            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(62, 28);
             this.窗口ToolStripMenuItem.Text = "窗口";
             // 
             // tsmConnect
             // 
             this.tsmConnect.Name = "tsmConnect";
-            this.tsmConnect.Size = new System.Drawing.Size(168, 22);
+            this.tsmConnect.Size = new System.Drawing.Size(270, 34);
             this.tsmConnect.Text = "连接测试";
             this.tsmConnect.Click += new System.EventHandler(this.tsmConnect_Click);
             // 
             // tsmLEDControl
             // 
             this.tsmLEDControl.Name = "tsmLEDControl";
-            this.tsmLEDControl.Size = new System.Drawing.Size(168, 22);
+            this.tsmLEDControl.Size = new System.Drawing.Size(270, 34);
             this.tsmLEDControl.Text = "LED控制";
             this.tsmLEDControl.Click += new System.EventHandler(this.tsmLEDControl_Click);
             // 
             // tsmLEDStatus
             // 
             this.tsmLEDStatus.Name = "tsmLEDStatus";
-            this.tsmLEDStatus.Size = new System.Drawing.Size(168, 22);
+            this.tsmLEDStatus.Size = new System.Drawing.Size(270, 34);
             this.tsmLEDStatus.Text = "LED状态";
             this.tsmLEDStatus.Click += new System.EventHandler(this.tsmLEDStatus_Click);
             // 
             // tsmRTControl
             // 
             this.tsmRTControl.Name = "tsmRTControl";
-            this.tsmRTControl.Size = new System.Drawing.Size(168, 22);
+            this.tsmRTControl.Size = new System.Drawing.Size(270, 34);
             this.tsmRTControl.Text = "转台控制(暂无)";
             this.tsmRTControl.Click += new System.EventHandler(this.tsmRTControl_Click);
             // 
             // tsmLightControl
             // 
             this.tsmLightControl.Name = "tsmLightControl";
-            this.tsmLightControl.Size = new System.Drawing.Size(168, 22);
+            this.tsmLightControl.Size = new System.Drawing.Size(270, 34);
             this.tsmLightControl.Text = "室内照明(暂无)";
             this.tsmLightControl.Click += new System.EventHandler(this.tsmLightControl_Click);
             // 
             // tsmAirConditionerControl
             // 
             this.tsmAirConditionerControl.Name = "tsmAirConditionerControl";
-            this.tsmAirConditionerControl.Size = new System.Drawing.Size(168, 22);
+            this.tsmAirConditionerControl.Size = new System.Drawing.Size(270, 34);
             this.tsmAirConditionerControl.Text = "空调控制(暂无)";
             this.tsmAirConditionerControl.Click += new System.EventHandler(this.tsmAirConditionerControl_Click);
             // 
             // tsmSkylightControl
             // 
             this.tsmSkylightControl.Name = "tsmSkylightControl";
-            this.tsmSkylightControl.Size = new System.Drawing.Size(168, 22);
+            this.tsmSkylightControl.Size = new System.Drawing.Size(270, 34);
             this.tsmSkylightControl.Text = "电动天窗(暂无)";
             this.tsmSkylightControl.Click += new System.EventHandler(this.tsmSkylightControl_Click);
             // 
             // tsmCameraControl
             // 
             this.tsmCameraControl.Name = "tsmCameraControl";
-            this.tsmCameraControl.Size = new System.Drawing.Size(168, 22);
+            this.tsmCameraControl.Size = new System.Drawing.Size(270, 34);
             this.tsmCameraControl.Text = "摄像头控制(暂无)";
             this.tsmCameraControl.Click += new System.EventHandler(this.tsmCameraControl_Click);
             // 
@@ -634,19 +638,19 @@ namespace LEDController.View
             this.使用帮助ToolStripMenuItem,
             this.版本信息ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(62, 28);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 使用帮助ToolStripMenuItem
             // 
             this.使用帮助ToolStripMenuItem.Name = "使用帮助ToolStripMenuItem";
-            this.使用帮助ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.使用帮助ToolStripMenuItem.Size = new System.Drawing.Size(182, 34);
             this.使用帮助ToolStripMenuItem.Text = "使用帮助";
             // 
             // 版本信息ToolStripMenuItem
             // 
             this.版本信息ToolStripMenuItem.Name = "版本信息ToolStripMenuItem";
-            this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(182, 34);
             this.版本信息ToolStripMenuItem.Text = "版本信息";
             // 
             // 网口连接ToolStripMenuItem
@@ -740,7 +744,7 @@ namespace LEDController.View
             this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label17.Location = new System.Drawing.Point(187, 287);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 16);
+            this.label17.Size = new System.Drawing.Size(106, 24);
             this.label17.TabIndex = 10;
             this.label17.Text = "接收数据";
             // 
@@ -794,7 +798,7 @@ namespace LEDController.View
             this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(187, 23);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 16);
+            this.label16.Size = new System.Drawing.Size(106, 24);
             this.label16.TabIndex = 5;
             this.label16.Text = "状态信息";
             // 
@@ -803,7 +807,7 @@ namespace LEDController.View
             this.tbxPort.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxPort.Location = new System.Drawing.Point(62, 59);
             this.tbxPort.Name = "tbxPort";
-            this.tbxPort.Size = new System.Drawing.Size(100, 26);
+            this.tbxPort.Size = new System.Drawing.Size(100, 35);
             this.tbxPort.TabIndex = 3;
             this.tbxPort.Text = "8080";
             // 
@@ -812,7 +816,7 @@ namespace LEDController.View
             this.tbxIP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxIP.Location = new System.Drawing.Point(62, 27);
             this.tbxIP.Name = "tbxIP";
-            this.tbxIP.Size = new System.Drawing.Size(100, 26);
+            this.tbxIP.Size = new System.Drawing.Size(100, 35);
             this.tbxIP.TabIndex = 2;
             this.tbxIP.Text = "192.168.100.36";
             // 
@@ -824,7 +828,7 @@ namespace LEDController.View
             this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label15.Location = new System.Drawing.Point(11, 61);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 16);
+            this.label15.Size = new System.Drawing.Size(70, 24);
             this.label15.TabIndex = 1;
             this.label15.Text = "Port:";
             // 
@@ -836,7 +840,7 @@ namespace LEDController.View
             this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label14.Location = new System.Drawing.Point(27, 35);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 16);
+            this.label14.Size = new System.Drawing.Size(46, 24);
             this.label14.TabIndex = 0;
             this.label14.Text = "IP:";
             // 
@@ -1139,7 +1143,7 @@ namespace LEDController.View
             this.sbarDimLED12.Maximum = 50;
             this.sbarDimLED12.Name = "sbarDimLED12";
             this.sbarDimLED12.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED12.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED12.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED12.TabIndex = 80;
             this.sbarDimLED12.Tag = "12";
             this.sbarDimLED12.TickFrequency = 5;
@@ -1190,7 +1194,7 @@ namespace LEDController.View
             this.sbarDimLED11.Maximum = 50;
             this.sbarDimLED11.Name = "sbarDimLED11";
             this.sbarDimLED11.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED11.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED11.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED11.TabIndex = 75;
             this.sbarDimLED11.Tag = "11";
             this.sbarDimLED11.TickFrequency = 5;
@@ -1241,7 +1245,7 @@ namespace LEDController.View
             this.sbarDimLED10.Maximum = 50;
             this.sbarDimLED10.Name = "sbarDimLED10";
             this.sbarDimLED10.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED10.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED10.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED10.TabIndex = 70;
             this.sbarDimLED10.Tag = "10";
             this.sbarDimLED10.TickFrequency = 5;
@@ -1292,7 +1296,7 @@ namespace LEDController.View
             this.sbarDimLED9.Maximum = 50;
             this.sbarDimLED9.Name = "sbarDimLED9";
             this.sbarDimLED9.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED9.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED9.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED9.TabIndex = 65;
             this.sbarDimLED9.Tag = "9";
             this.sbarDimLED9.TickFrequency = 5;
@@ -1465,7 +1469,7 @@ namespace LEDController.View
             this.sbarDimLED8.Maximum = 50;
             this.sbarDimLED8.Name = "sbarDimLED8";
             this.sbarDimLED8.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED8.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED8.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED8.TabIndex = 80;
             this.sbarDimLED8.Tag = "8";
             this.sbarDimLED8.TickFrequency = 5;
@@ -1516,7 +1520,7 @@ namespace LEDController.View
             this.sbarDimLED7.Maximum = 50;
             this.sbarDimLED7.Name = "sbarDimLED7";
             this.sbarDimLED7.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED7.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED7.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED7.TabIndex = 75;
             this.sbarDimLED7.Tag = "7";
             this.sbarDimLED7.TickFrequency = 5;
@@ -1567,7 +1571,7 @@ namespace LEDController.View
             this.sbarDimLED6.Maximum = 50;
             this.sbarDimLED6.Name = "sbarDimLED6";
             this.sbarDimLED6.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED6.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED6.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED6.TabIndex = 70;
             this.sbarDimLED6.Tag = "6";
             this.sbarDimLED6.TickFrequency = 5;
@@ -1618,7 +1622,7 @@ namespace LEDController.View
             this.sbarDimLED5.Maximum = 50;
             this.sbarDimLED5.Name = "sbarDimLED5";
             this.sbarDimLED5.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED5.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED5.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED5.TabIndex = 65;
             this.sbarDimLED5.Tag = "5";
             this.sbarDimLED5.TickFrequency = 5;
@@ -1791,7 +1795,7 @@ namespace LEDController.View
             this.sbarDimLED4.Maximum = 50;
             this.sbarDimLED4.Name = "sbarDimLED4";
             this.sbarDimLED4.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED4.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED4.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED4.TabIndex = 80;
             this.sbarDimLED4.Tag = "4";
             this.sbarDimLED4.TickFrequency = 5;
@@ -1842,7 +1846,7 @@ namespace LEDController.View
             this.sbarDimLED3.Maximum = 50;
             this.sbarDimLED3.Name = "sbarDimLED3";
             this.sbarDimLED3.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED3.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED3.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED3.TabIndex = 75;
             this.sbarDimLED3.Tag = "3";
             this.sbarDimLED3.TickFrequency = 5;
@@ -1893,7 +1897,7 @@ namespace LEDController.View
             this.sbarDimLED2.Maximum = 50;
             this.sbarDimLED2.Name = "sbarDimLED2";
             this.sbarDimLED2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED2.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED2.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED2.TabIndex = 70;
             this.sbarDimLED2.Tag = "2";
             this.sbarDimLED2.TickFrequency = 5;
@@ -1944,7 +1948,7 @@ namespace LEDController.View
             this.sbarDimLED1.Maximum = 50;
             this.sbarDimLED1.Name = "sbarDimLED1";
             this.sbarDimLED1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED1.Size = new System.Drawing.Size(45, 80);
+            this.sbarDimLED1.Size = new System.Drawing.Size(69, 80);
             this.sbarDimLED1.TabIndex = 65;
             this.sbarDimLED1.Tag = "1";
             this.sbarDimLED1.TickFrequency = 5;
@@ -1982,50 +1986,50 @@ namespace LEDController.View
             this.tsslTemp4});
             this.statusStrip1.Location = new System.Drawing.Point(3, 3);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1039, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1039, 31);
             this.statusStrip1.TabIndex = 80;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // tsslGreenLEDTotalPower
             // 
             this.tsslGreenLEDTotalPower.Name = "tsslGreenLEDTotalPower";
-            this.tsslGreenLEDTotalPower.Size = new System.Drawing.Size(118, 17);
+            this.tsslGreenLEDTotalPower.Size = new System.Drawing.Size(174, 24);
             this.tsslGreenLEDTotalPower.Text = "绿光实时总功率: 0W";
             // 
             // tsslRedLEDTotalPower
             // 
             this.tsslRedLEDTotalPower.Name = "tsslRedLEDTotalPower";
-            this.tsslRedLEDTotalPower.Size = new System.Drawing.Size(118, 17);
+            this.tsslRedLEDTotalPower.Size = new System.Drawing.Size(174, 24);
             this.tsslRedLEDTotalPower.Text = "红光实时总功率: 0W";
             // 
             // tsslDarkRedLEDTotalPower
             // 
             this.tsslDarkRedLEDTotalPower.Name = "tsslDarkRedLEDTotalPower";
-            this.tsslDarkRedLEDTotalPower.Size = new System.Drawing.Size(118, 17);
+            this.tsslDarkRedLEDTotalPower.Size = new System.Drawing.Size(174, 24);
             this.tsslDarkRedLEDTotalPower.Text = "红外实时总功率: 0W";
             // 
             // tsslTemp1
             // 
             this.tsslTemp1.Name = "tsslTemp1";
-            this.tsslTemp1.Size = new System.Drawing.Size(87, 17);
+            this.tsslTemp1.Size = new System.Drawing.Size(128, 24);
             this.tsslTemp1.Text = "测温点1： 0°C";
             // 
             // tsslTemp2
             // 
             this.tsslTemp2.Name = "tsslTemp2";
-            this.tsslTemp2.Size = new System.Drawing.Size(78, 17);
+            this.tsslTemp2.Size = new System.Drawing.Size(114, 24);
             this.tsslTemp2.Text = "测温点2: 0°C";
             // 
             // tsslTemp3
             // 
             this.tsslTemp3.Name = "tsslTemp3";
-            this.tsslTemp3.Size = new System.Drawing.Size(78, 17);
+            this.tsslTemp3.Size = new System.Drawing.Size(114, 24);
             this.tsslTemp3.Text = "测温点3: 0°C";
             // 
             // tsslTemp4
             // 
             this.tsslTemp4.Name = "tsslTemp4";
-            this.tsslTemp4.Size = new System.Drawing.Size(78, 17);
+            this.tsslTemp4.Size = new System.Drawing.Size(114, 24);
             this.tsslTemp4.Text = "测温点4: 0°C";
             // 
             // btnCloseDarkRedFixLED
@@ -2100,7 +2104,7 @@ namespace LEDController.View
             this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label24.Location = new System.Drawing.Point(909, 66);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(17, 16);
+            this.label24.Size = new System.Drawing.Size(23, 24);
             this.label24.TabIndex = 73;
             this.label24.Text = "W";
             // 
@@ -2110,7 +2114,7 @@ namespace LEDController.View
             this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label25.Location = new System.Drawing.Point(868, 66);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(35, 16);
+            this.label25.Size = new System.Drawing.Size(49, 24);
             this.label25.TabIndex = 72;
             this.label25.Text = "100";
             // 
@@ -2120,7 +2124,7 @@ namespace LEDController.View
             this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label26.Location = new System.Drawing.Point(752, 66);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(114, 16);
+            this.label26.Size = new System.Drawing.Size(164, 24);
             this.label26.TabIndex = 71;
             this.label26.Text = "红外(810 nm)";
             // 
@@ -2130,7 +2134,7 @@ namespace LEDController.View
             this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label21.Location = new System.Drawing.Point(588, 66);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(17, 16);
+            this.label21.Size = new System.Drawing.Size(23, 24);
             this.label21.TabIndex = 70;
             this.label21.Text = "W";
             // 
@@ -2140,7 +2144,7 @@ namespace LEDController.View
             this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label22.Location = new System.Drawing.Point(547, 66);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(35, 16);
+            this.label22.Size = new System.Drawing.Size(49, 24);
             this.label22.TabIndex = 69;
             this.label22.Text = "100";
             // 
@@ -2150,7 +2154,7 @@ namespace LEDController.View
             this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label23.Location = new System.Drawing.Point(431, 66);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(114, 16);
+            this.label23.Size = new System.Drawing.Size(164, 24);
             this.label23.TabIndex = 68;
             this.label23.Text = "红光(630 nm)";
             // 
@@ -2160,7 +2164,7 @@ namespace LEDController.View
             this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.Location = new System.Drawing.Point(247, 66);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(17, 16);
+            this.label20.Size = new System.Drawing.Size(23, 24);
             this.label20.TabIndex = 67;
             this.label20.Text = "W";
             // 
@@ -2170,7 +2174,7 @@ namespace LEDController.View
             this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label19.Location = new System.Drawing.Point(206, 66);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(35, 16);
+            this.label19.Size = new System.Drawing.Size(49, 24);
             this.label19.TabIndex = 66;
             this.label19.Text = "300";
             // 
@@ -2180,7 +2184,7 @@ namespace LEDController.View
             this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label18.Location = new System.Drawing.Point(90, 66);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(114, 16);
+            this.label18.Size = new System.Drawing.Size(164, 24);
             this.label18.TabIndex = 65;
             this.label18.Text = "绿光(525 nm)";
             // 
@@ -4542,7 +4546,7 @@ namespace LEDController.View
             this.panelLEDStatus.Controls.Add(this.button202);
             this.panelLEDStatus.Location = new System.Drawing.Point(226, 12);
             this.panelLEDStatus.Name = "panelLEDStatus";
-            this.panelLEDStatus.Size = new System.Drawing.Size(803, 236);
+            this.panelLEDStatus.Size = new System.Drawing.Size(827, 236);
             this.panelLEDStatus.TabIndex = 11;
             // 
             // label9
@@ -4551,7 +4555,7 @@ namespace LEDController.View
             this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(41, 201);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 16);
+            this.label9.Size = new System.Drawing.Size(142, 24);
             this.label9.TabIndex = 269;
             this.label9.Text = "可调亮度LED";
             // 
@@ -4562,7 +4566,7 @@ namespace LEDController.View
             this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(730, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 16);
+            this.label7.Size = new System.Drawing.Size(94, 24);
             this.label7.TabIndex = 268;
             this.label7.Text = "红外LED";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4574,7 +4578,7 @@ namespace LEDController.View
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(465, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.Size = new System.Drawing.Size(94, 24);
             this.label4.TabIndex = 267;
             this.label4.Text = "红色LED";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4586,7 +4590,7 @@ namespace LEDController.View
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(201, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.Size = new System.Drawing.Size(94, 24);
             this.label1.TabIndex = 266;
             this.label1.Text = "绿色LED";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6334,7 +6338,7 @@ namespace LEDController.View
             this.tbxMaxValue.Location = new System.Drawing.Point(153, 95);
             this.tbxMaxValue.Name = "tbxMaxValue";
             this.tbxMaxValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tbxMaxValue.Size = new System.Drawing.Size(48, 26);
+            this.tbxMaxValue.Size = new System.Drawing.Size(48, 35);
             this.tbxMaxValue.TabIndex = 7;
             this.tbxMaxValue.Text = "10";
             // 
@@ -6344,7 +6348,7 @@ namespace LEDController.View
             this.tbxMinValue.Location = new System.Drawing.Point(99, 95);
             this.tbxMinValue.Name = "tbxMinValue";
             this.tbxMinValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tbxMinValue.Size = new System.Drawing.Size(30, 26);
+            this.tbxMinValue.Size = new System.Drawing.Size(30, 35);
             this.tbxMinValue.TabIndex = 6;
             this.tbxMinValue.Text = "0";
             // 
@@ -6356,7 +6360,7 @@ namespace LEDController.View
             this.label47.Location = new System.Drawing.Point(10, 105);
             this.label47.Margin = new System.Windows.Forms.Padding(10);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(76, 16);
+            this.label47.Size = new System.Drawing.Size(110, 24);
             this.label47.TabIndex = 5;
             this.label47.Text = "显示范围";
             // 
@@ -6366,7 +6370,7 @@ namespace LEDController.View
             this.label46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label46.Location = new System.Drawing.Point(176, 66);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(25, 16);
+            this.label46.Size = new System.Drawing.Size(35, 24);
             this.label46.TabIndex = 4;
             this.label46.Text = "秒";
             // 
@@ -6382,7 +6386,7 @@ namespace LEDController.View
             "50"});
             this.cbxQueryWaitTime.Location = new System.Drawing.Point(99, 61);
             this.cbxQueryWaitTime.Name = "cbxQueryWaitTime";
-            this.cbxQueryWaitTime.Size = new System.Drawing.Size(61, 24);
+            this.cbxQueryWaitTime.Size = new System.Drawing.Size(61, 32);
             this.cbxQueryWaitTime.Sorted = true;
             this.cbxQueryWaitTime.TabIndex = 3;
             // 
@@ -6394,7 +6398,7 @@ namespace LEDController.View
             this.label45.Location = new System.Drawing.Point(10, 69);
             this.label45.Margin = new System.Windows.Forms.Padding(10);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(76, 16);
+            this.label45.Size = new System.Drawing.Size(110, 24);
             this.label45.TabIndex = 2;
             this.label45.Text = "查询状态";
             // 
@@ -6409,7 +6413,7 @@ namespace LEDController.View
             "LED状态"});
             this.cbxQueryParam.Location = new System.Drawing.Point(99, 25);
             this.cbxQueryParam.Name = "cbxQueryParam";
-            this.cbxQueryParam.Size = new System.Drawing.Size(121, 24);
+            this.cbxQueryParam.Size = new System.Drawing.Size(121, 32);
             this.cbxQueryParam.Sorted = true;
             this.cbxQueryParam.TabIndex = 1;
             // 
@@ -6421,7 +6425,7 @@ namespace LEDController.View
             this.label44.Location = new System.Drawing.Point(10, 33);
             this.label44.Margin = new System.Windows.Forms.Padding(10);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(76, 16);
+            this.label44.Size = new System.Drawing.Size(110, 24);
             this.label44.TabIndex = 0;
             this.label44.Text = "查询状态";
             // 
@@ -6484,16 +6488,16 @@ namespace LEDController.View
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripConnectionStatus,
             this.toolStripLEDStatus});
-            this.statusStrip2.Location = new System.Drawing.Point(0, 575);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 566);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(1068, 22);
+            this.statusStrip2.Size = new System.Drawing.Size(1068, 31);
             this.statusStrip2.TabIndex = 7;
             this.statusStrip2.Text = "statusStrip2";
             // 
             // toolStripConnectionStatus
             // 
             this.toolStripConnectionStatus.Name = "toolStripConnectionStatus";
-            this.toolStripConnectionStatus.Size = new System.Drawing.Size(56, 17);
+            this.toolStripConnectionStatus.Size = new System.Drawing.Size(82, 24);
             this.toolStripConnectionStatus.Text = "连接断开";
             // 
             // btnRecStatus1

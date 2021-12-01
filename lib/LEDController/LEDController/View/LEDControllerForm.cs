@@ -38,11 +38,14 @@ namespace LEDController.View
         public event EventHandler<EventDimLEDArgs> SetDimLED;
         public event EventHandler<EventDimLEDArgs> CloseDimLED;
         public event EventHandler<EventDimLEDArgs> HandleDimLED;
-        public event EventHandler<EventEDArgs> ShowSingleLEDStatus;
-        public event EventHandler<EventEDArgs> ClearSingleLEDStatus;
+        public event EventHandler<EventLEDArgs> ShowSingleLEDStatus;
+        public event EventHandler<EventLEDArgs> ClearSingleLEDStatus;
         public event EventHandler<EventArgs> UpdateScrollBar;
         public event EventHandler<EventArgs> UpdateLEDTbx;
         public event EventHandler<EventArgs> ShowLEDStatus;
+        public event EventHandler<EventArgs> OpenWithCfgFile;
+        public event EventHandler<EventArgs> SaveCfgFile;
+        public event EventHandler<EventArgs> SaveasCfgFile;
         public DispatcherTimer timer = new DispatcherTimer();
 
         public int queryParamSelectItem
@@ -793,7 +796,7 @@ namespace LEDController.View
         {
             // Show LED status
             Button btn = sender as Button;
-            EventEDArgs LEDEvent = new EventEDArgs(Convert.ToInt32(btn.Tag));
+            EventLEDArgs LEDEvent = new EventLEDArgs(Convert.ToInt32(btn.Tag));
             ShowSingleLEDStatus?.Invoke(sender, LEDEvent);
         }
 
@@ -801,14 +804,14 @@ namespace LEDController.View
         {
             // Clear LED status
             Button btn = sender as Button;
-            EventEDArgs LEDEvent = new EventEDArgs(Convert.ToInt32(btn.Tag));
+            EventLEDArgs LEDEvent = new EventLEDArgs(Convert.ToInt32(btn.Tag));
             ClearSingleLEDStatus?.Invoke(sender, LEDEvent);
         }
 
         private void btnDimLED_MouseLeave(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            EventEDArgs LEDEvent = new EventEDArgs(Convert.ToInt32(btn.Tag));
+            EventLEDArgs LEDEvent = new EventLEDArgs(Convert.ToInt32(btn.Tag));
             ClearSingleLEDStatus?.Invoke(sender, LEDEvent);
         }
 
@@ -816,7 +819,7 @@ namespace LEDController.View
         {
             // Show LED status
             Button btn = sender as Button;
-            EventEDArgs LEDEvent = new EventEDArgs(Convert.ToInt32(btn.Tag));
+            EventLEDArgs LEDEvent = new EventLEDArgs(Convert.ToInt32(btn.Tag));
             ShowSingleLEDStatus?.Invoke(sender, LEDEvent);
         }
 
@@ -905,6 +908,20 @@ namespace LEDController.View
             SetDimLED?.Invoke(btnList[Convert.ToInt32(btn.Tag) - 1 - 120], dimLEDEvent);
         }
 
+        private void Open_Click(object sender, EventArgs e)
+        {
+            OpenWithCfgFile?.Invoke(sender, e);
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            SaveCfgFile?.Invoke(sender, e);
+        }
+
+        private void Saveas_Click(object sender, EventArgs e)
+        {
+            SaveasCfgFile?.Invoke(sender, e);
+        }
     }
 
     public class EventDimLEDArgs : EventArgs
@@ -929,13 +946,14 @@ namespace LEDController.View
         }
     }
 
-    public class EventEDArgs : EventArgs
+    public class EventLEDArgs : EventArgs
     {
         public int LEDIndex;
 
-        public EventEDArgs(int thisLEDIndex)
+        public EventLEDArgs(int thisLEDIndex)
         {
             LEDIndex = thisLEDIndex;
         }
     }
+
 }

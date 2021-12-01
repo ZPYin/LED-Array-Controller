@@ -11,7 +11,7 @@ using System.Collections;
 namespace LEDController.Model
 {
 
-    struct LEDStatus
+    public struct LEDStatus
     {
         public double[] fixLEDPower;
         public double[] dimLEDPower;
@@ -26,12 +26,148 @@ namespace LEDController.Model
         public Boolean isValidPackage;
     }
 
+    public class LEDControllerCfg : LEDBoardCom
+    {
+        public Boolean[] isGreenFixLEDOn = new Boolean[LEDBoardCom.NumGreenFixLED];
+        public Boolean[] isRedFixLEDOn = new Boolean[LEDBoardCom.NumRedFixLED];
+        public Boolean[] isDarkRedFixLEDOn = new Boolean[LEDBoardCom.NumDarkRedFixLED];
+        public double[] greenDimLEDPower = new double[LEDBoardCom.NumGreenDimLED];
+        public double[] redDimLEDPower = new double[LEDBoardCom.NumRedDimLED];
+        public double[] darkRedDimLEDPower = new double[LEDBoardCom.NumDarkRedDimLED];
+
+        public LEDControllerCfg(string fileName)
+        {
+            Config cfgReader = new Config(fileName);
+
+            foreach (var item in cfgReader.configData)
+            {
+                try
+                {
+                    if (item.Key.Equals("SlaveIP"))
+                    {
+                        slaveIP = item.Value;
+                    }
+                    else if (item.Key.Equals("SlavePort"))
+                    {
+                        slavePort = item.Value;
+                    }
+                    else if (item.Key.Contains("GreenFixLED"))
+                    {
+                        int LEDIndex = GetLEDIndex(item.Key, "GreenFixLED");
+
+                        isGreenFixLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
+                    }
+                    else if ((item.Key.Contains("RedFixLED")) && (!item.Key.Contains("Dark")))
+                    {
+                        int LEDIndex = GetLEDIndex(item.Key, "RedFixLED");
+
+                        isRedFixLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
+                    }
+                    else if (item.Key.Contains("DarkRedFixLED"))
+                    {
+                        int LEDIndex = GetLEDIndex(item.Key, "DarkRedFixLED");
+
+                        isDarkRedFixLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
+                    }
+                    else if (item.Key.Contains("GreenDimLED"))
+                    {
+                        int LEDIndex = GetLEDIndex(item.Key, "GreenDimLED");
+
+                        greenDimLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
+                    }
+                    else if ((item.Key.Contains("RedDimLED")) && (!item.Key.Contains("Dark")))
+                    {
+                        int LEDIndex = GetLEDIndex(item.Key, "RedDimLED");
+
+                        redDimLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
+                    }
+                    else if (item.Key.Contains("DarkRedDimLED"))
+                    {
+                        int LEDIndex = GetLEDIndex(item.Key, "DarkRedDimLED");
+
+                        darkRedDimLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
+                    }
+                    else
+                    {
+                        Exception myEx = new Exception();
+                        throw myEx;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        public LEDControllerCfg()
+        {}
+
+        public int GetLEDIndex(string LEDStr, string searchPattern)
+        {
+            int LEDIndex;
+            string LEDIndStr = LEDStr.Substring(LEDStr.IndexOf(searchPattern) + searchPattern.Count());
+            LEDIndex = Convert.ToInt32(LEDIndStr) - 1;
+
+            return LEDIndex;
+        }
+
+        public void LEDControllerCfgSave(string fileName)
+        {
+            Dictionary<string, string> LEDCfg = new Dictionary<string, string>();
+
+            for (int i = 0; i < isGreenFixLEDOn.Count(); i++)
+            {
+                LEDCfg.Add($"GreenFixLED{i + 1}", Convert.ToString(isGreenFixLEDOn[i]));
+            }
+
+            for (int i = 0; i < isRedFixLEDOn.Count(); i++)
+            {
+                LEDCfg.Add($"RedFixLED{i + 1}", Convert.ToString(isRedFixLEDOn[i]));
+            }
+
+            for (int i = 0; i < isDarkRedFixLEDOn.Count(); i++)
+            {
+                LEDCfg.Add($"DarkRedFixLED{i + 1}", Convert.ToString(isDarkRedFixLEDOn[i]));
+            }
+
+            for (int i = 0; i < greenDimLEDPower.Count(); i++)
+            {
+                LEDCfg.Add($"GreenDimLED{i + 1}", Convert.ToString(greenDimLEDPower[i]));
+            }
+
+            for (int i = 0; i < redDimLEDPower.Count(); i++)
+            {
+                LEDCfg.Add($"RedDimLED{i + 1}", Convert.ToString(redDimLEDPower[i]));
+            }
+
+            for (int i = 0; i < darkRedDimLEDPower.Count(); i++)
+            {
+                LEDCfg.Add($"DarkRedDimLED{i + 1}", Convert.ToString(darkRedDimLEDPower[i]));
+            }
+
+            LEDCfg.Add("SlaveIP", slaveIP);
+            LEDCfg.Add("SlavePort", slavePort);
+
+            Config cfgWriter = new Config();
+
+            cfgWriter.configData = LEDCfg;
+            cfgWriter.fullFileName = fileName;
+            cfgWriter.save();
+        }
+    }
+
 
     public class Config
     {
         // read INI file
         public Dictionary<string, string> configData;
         public string fullFileName;
+
+        public Config()
+        {
+        }
+
         public Config(string _fileName)
         {
             configData = new Dictionary<string, string>();
@@ -95,7 +231,7 @@ namespace LEDController.Model
         }
     }
 
-    class LEDBoardCom
+    public class LEDBoardCom
     {
         public string slaveIP;
         public string slavePort;
@@ -240,7 +376,7 @@ namespace LEDController.Model
             cmdBytes[1] = 0x7E;
             cmdBytes[2] = 0x05;
             cmdBytes[3] = 0x31;   // Command code
-            cmdBytes[4] = Convert.ToByte(LEDInd + 8);   // LED address
+            cmdBytes[4] = Convert.ToByte(LEDInd + 8 + NumGreenFixLED + NumRedFixLED + NumDarkRedFixLED);   // LED address
             cmdBytes[5] = Convert.ToByte(isTurnOn);
             cmdBytes[6] = Convert.ToByte(LEDBrightness);
             cmdBytes[7] = 0x00;
