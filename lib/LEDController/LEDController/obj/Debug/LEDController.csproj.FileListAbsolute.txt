@@ -13,4 +13,4 @@ D:\Coding\C#\LED-controller\lib\LEDController\LEDController\bin\Debug\ScottPlot.
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\bin\Debug\System.ValueTuple.xml
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.exe
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.pdb
-D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.csproj.CopyComplete
+D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.csproj.AssemblyReference.cache

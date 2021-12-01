@@ -499,12 +499,11 @@ namespace LEDController.View
             // toolStripLEDStatus
             // 
             this.toolStripLEDStatus.Name = "toolStripLEDStatus";
-            this.toolStripLEDStatus.Size = new System.Drawing.Size(79, 24);
+            this.toolStripLEDStatus.Size = new System.Drawing.Size(54, 17);
             this.toolStripLEDStatus.Text = "LED状态";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件,
@@ -513,7 +512,7 @@ namespace LEDController.View
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1068, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1068, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -525,41 +524,46 @@ namespace LEDController.View
             this.ToolStripMenuItemSaveAs,
             this.ToolStripMenuItemClose});
             this.文件.Name = "文件";
-            this.文件.Size = new System.Drawing.Size(62, 28);
+            this.文件.Size = new System.Drawing.Size(44, 21);
             this.文件.Text = "文件";
             // 
             // ToolStripMenuItemOpen
             // 
             this.ToolStripMenuItemOpen.Name = "ToolStripMenuItemOpen";
-            this.ToolStripMenuItemOpen.Size = new System.Drawing.Size(270, 34);
+            this.ToolStripMenuItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.ToolStripMenuItemOpen.Size = new System.Drawing.Size(199, 22);
             this.ToolStripMenuItemOpen.Text = "打开";
             this.ToolStripMenuItemOpen.Click += new System.EventHandler(this.Open_Click);
             // 
             // ToolStripMenuItemSave
             // 
             this.ToolStripMenuItemSave.Name = "ToolStripMenuItemSave";
-            this.ToolStripMenuItemSave.Size = new System.Drawing.Size(270, 34);
+            this.ToolStripMenuItemSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.ToolStripMenuItemSave.Size = new System.Drawing.Size(199, 22);
             this.ToolStripMenuItemSave.Text = "保存";
             this.ToolStripMenuItemSave.Click += new System.EventHandler(this.Save_Click);
             // 
             // ToolStripMenuItemSaveAs
             // 
             this.ToolStripMenuItemSaveAs.Name = "ToolStripMenuItemSaveAs";
-            this.ToolStripMenuItemSaveAs.Size = new System.Drawing.Size(270, 34);
+            this.ToolStripMenuItemSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.ToolStripMenuItemSaveAs.Size = new System.Drawing.Size(199, 22);
             this.ToolStripMenuItemSaveAs.Text = "另存为...";
             this.ToolStripMenuItemSaveAs.Click += new System.EventHandler(this.Saveas_Click);
             // 
             // ToolStripMenuItemClose
             // 
             this.ToolStripMenuItemClose.Name = "ToolStripMenuItemClose";
-            this.ToolStripMenuItemClose.Size = new System.Drawing.Size(270, 34);
+            this.ToolStripMenuItemClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.ToolStripMenuItemClose.Size = new System.Drawing.Size(199, 22);
             this.ToolStripMenuItemClose.Text = "关闭";
             this.ToolStripMenuItemClose.Click += new System.EventHandler(this.CloseApplication);
             // 
             // 连接ToolStripMenuItem
             // 
             this.连接ToolStripMenuItem.Name = "连接ToolStripMenuItem";
-            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(16, 28);
+            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(12, 21);
             // 
             // 窗口ToolStripMenuItem
             // 
@@ -573,62 +577,70 @@ namespace LEDController.View
             this.tsmSkylightControl,
             this.tsmCameraControl});
             this.窗口ToolStripMenuItem.Name = "窗口ToolStripMenuItem";
-            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(62, 28);
+            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.窗口ToolStripMenuItem.Text = "窗口";
             // 
             // tsmConnect
             // 
             this.tsmConnect.Name = "tsmConnect";
-            this.tsmConnect.Size = new System.Drawing.Size(270, 34);
+            this.tsmConnect.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.tsmConnect.Size = new System.Drawing.Size(212, 22);
             this.tsmConnect.Text = "连接测试";
             this.tsmConnect.Click += new System.EventHandler(this.tsmConnect_Click);
             // 
             // tsmLEDControl
             // 
             this.tsmLEDControl.Name = "tsmLEDControl";
-            this.tsmLEDControl.Size = new System.Drawing.Size(270, 34);
+            this.tsmLEDControl.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.tsmLEDControl.Size = new System.Drawing.Size(212, 22);
             this.tsmLEDControl.Text = "LED控制";
             this.tsmLEDControl.Click += new System.EventHandler(this.tsmLEDControl_Click);
             // 
             // tsmLEDStatus
             // 
             this.tsmLEDStatus.Name = "tsmLEDStatus";
-            this.tsmLEDStatus.Size = new System.Drawing.Size(270, 34);
+            this.tsmLEDStatus.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
+            this.tsmLEDStatus.Size = new System.Drawing.Size(212, 22);
             this.tsmLEDStatus.Text = "LED状态";
             this.tsmLEDStatus.Click += new System.EventHandler(this.tsmLEDStatus_Click);
             // 
             // tsmRTControl
             // 
             this.tsmRTControl.Name = "tsmRTControl";
-            this.tsmRTControl.Size = new System.Drawing.Size(270, 34);
+            this.tsmRTControl.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
+            this.tsmRTControl.Size = new System.Drawing.Size(212, 22);
             this.tsmRTControl.Text = "转台控制(暂无)";
             this.tsmRTControl.Click += new System.EventHandler(this.tsmRTControl_Click);
             // 
             // tsmLightControl
             // 
             this.tsmLightControl.Name = "tsmLightControl";
-            this.tsmLightControl.Size = new System.Drawing.Size(270, 34);
+            this.tsmLightControl.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
+            this.tsmLightControl.Size = new System.Drawing.Size(212, 22);
             this.tsmLightControl.Text = "室内照明(暂无)";
             this.tsmLightControl.Click += new System.EventHandler(this.tsmLightControl_Click);
             // 
             // tsmAirConditionerControl
             // 
             this.tsmAirConditionerControl.Name = "tsmAirConditionerControl";
-            this.tsmAirConditionerControl.Size = new System.Drawing.Size(270, 34);
+            this.tsmAirConditionerControl.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
+            this.tsmAirConditionerControl.Size = new System.Drawing.Size(212, 22);
             this.tsmAirConditionerControl.Text = "空调控制(暂无)";
             this.tsmAirConditionerControl.Click += new System.EventHandler(this.tsmAirConditionerControl_Click);
             // 
             // tsmSkylightControl
             // 
             this.tsmSkylightControl.Name = "tsmSkylightControl";
-            this.tsmSkylightControl.Size = new System.Drawing.Size(270, 34);
+            this.tsmSkylightControl.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D7)));
+            this.tsmSkylightControl.Size = new System.Drawing.Size(212, 22);
             this.tsmSkylightControl.Text = "电动天窗(暂无)";
             this.tsmSkylightControl.Click += new System.EventHandler(this.tsmSkylightControl_Click);
             // 
             // tsmCameraControl
             // 
             this.tsmCameraControl.Name = "tsmCameraControl";
-            this.tsmCameraControl.Size = new System.Drawing.Size(270, 34);
+            this.tsmCameraControl.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D8)));
+            this.tsmCameraControl.Size = new System.Drawing.Size(212, 22);
             this.tsmCameraControl.Text = "摄像头控制(暂无)";
             this.tsmCameraControl.Click += new System.EventHandler(this.tsmCameraControl_Click);
             // 
@@ -638,19 +650,20 @@ namespace LEDController.View
             this.使用帮助ToolStripMenuItem,
             this.版本信息ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(62, 28);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 使用帮助ToolStripMenuItem
             // 
             this.使用帮助ToolStripMenuItem.Name = "使用帮助ToolStripMenuItem";
-            this.使用帮助ToolStripMenuItem.Size = new System.Drawing.Size(182, 34);
+            this.使用帮助ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.使用帮助ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.使用帮助ToolStripMenuItem.Text = "使用帮助";
             // 
             // 版本信息ToolStripMenuItem
             // 
             this.版本信息ToolStripMenuItem.Name = "版本信息ToolStripMenuItem";
-            this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(182, 34);
+            this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.版本信息ToolStripMenuItem.Text = "版本信息";
             // 
             // 网口连接ToolStripMenuItem
@@ -690,7 +703,7 @@ namespace LEDController.View
             this.tabCtrlMain.SelectedIndex = 0;
             this.tabCtrlMain.Size = new System.Drawing.Size(1053, 545);
             this.tabCtrlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabCtrlMain.TabIndex = 1;
+            this.tabCtrlMain.TabIndex = 2;
             // 
             // tpgConnect
             // 
@@ -722,7 +735,7 @@ namespace LEDController.View
             this.btnConnect.Location = new System.Drawing.Point(52, 91);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(110, 29);
-            this.btnConnect.TabIndex = 12;
+            this.btnConnect.TabIndex = 4;
             this.btnConnect.Text = "连接";
             this.btnConnect.UseVisualStyleBackColor = false;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
@@ -733,7 +746,7 @@ namespace LEDController.View
             this.btnClose.Location = new System.Drawing.Point(52, 126);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(110, 29);
-            this.btnClose.TabIndex = 11;
+            this.btnClose.TabIndex = 5;
             this.btnClose.Text = "断开";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -744,7 +757,7 @@ namespace LEDController.View
             this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label17.Location = new System.Drawing.Point(187, 287);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(106, 24);
+            this.label17.Size = new System.Drawing.Size(72, 16);
             this.label17.TabIndex = 10;
             this.label17.Text = "接收数据";
             // 
@@ -758,6 +771,7 @@ namespace LEDController.View
             this.tbxTestRec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbxTestRec.Size = new System.Drawing.Size(842, 93);
             this.tbxTestRec.TabIndex = 9;
+            this.tbxTestRec.TabStop = false;
             // 
             // tbxTestCmd
             // 
@@ -768,7 +782,7 @@ namespace LEDController.View
             this.tbxTestCmd.Name = "tbxTestCmd";
             this.tbxTestCmd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbxTestCmd.Size = new System.Drawing.Size(842, 93);
-            this.tbxTestCmd.TabIndex = 8;
+            this.tbxTestCmd.TabIndex = 7;
             // 
             // btnSendTestMsg
             // 
@@ -776,7 +790,7 @@ namespace LEDController.View
             this.btnSendTestMsg.Location = new System.Drawing.Point(62, 178);
             this.btnSendTestMsg.Name = "btnSendTestMsg";
             this.btnSendTestMsg.Size = new System.Drawing.Size(100, 83);
-            this.btnSendTestMsg.TabIndex = 7;
+            this.btnSendTestMsg.TabIndex = 6;
             this.btnSendTestMsg.Text = "发送";
             this.btnSendTestMsg.UseVisualStyleBackColor = true;
             this.btnSendTestMsg.Click += new System.EventHandler(this.btnSendTestMsg_Click);
@@ -791,6 +805,7 @@ namespace LEDController.View
             this.tbxConnectMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbxConnectMsg.Size = new System.Drawing.Size(842, 113);
             this.tbxConnectMsg.TabIndex = 6;
+            this.tbxConnectMsg.TabStop = false;
             // 
             // label16
             // 
@@ -798,7 +813,7 @@ namespace LEDController.View
             this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(187, 23);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(106, 24);
+            this.label16.Size = new System.Drawing.Size(72, 16);
             this.label16.TabIndex = 5;
             this.label16.Text = "状态信息";
             // 
@@ -807,7 +822,7 @@ namespace LEDController.View
             this.tbxPort.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxPort.Location = new System.Drawing.Point(62, 59);
             this.tbxPort.Name = "tbxPort";
-            this.tbxPort.Size = new System.Drawing.Size(100, 35);
+            this.tbxPort.Size = new System.Drawing.Size(100, 26);
             this.tbxPort.TabIndex = 3;
             this.tbxPort.Text = "8080";
             // 
@@ -816,7 +831,7 @@ namespace LEDController.View
             this.tbxIP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxIP.Location = new System.Drawing.Point(62, 27);
             this.tbxIP.Name = "tbxIP";
-            this.tbxIP.Size = new System.Drawing.Size(100, 35);
+            this.tbxIP.Size = new System.Drawing.Size(100, 26);
             this.tbxIP.TabIndex = 2;
             this.tbxIP.Text = "192.168.100.36";
             // 
@@ -828,7 +843,7 @@ namespace LEDController.View
             this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label15.Location = new System.Drawing.Point(11, 61);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 24);
+            this.label15.Size = new System.Drawing.Size(48, 16);
             this.label15.TabIndex = 1;
             this.label15.Text = "Port:";
             // 
@@ -840,7 +855,7 @@ namespace LEDController.View
             this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label14.Location = new System.Drawing.Point(27, 35);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 24);
+            this.label14.Size = new System.Drawing.Size(32, 16);
             this.label14.TabIndex = 0;
             this.label14.Text = "IP:";
             // 
@@ -905,6 +920,7 @@ namespace LEDController.View
             this.button130.Name = "button130";
             this.button130.Size = new System.Drawing.Size(20, 20);
             this.button130.TabIndex = 93;
+            this.button130.TabStop = false;
             this.button130.UseVisualStyleBackColor = false;
             // 
             // label42
@@ -926,6 +942,7 @@ namespace LEDController.View
             this.button129.Name = "button129";
             this.button129.Size = new System.Drawing.Size(20, 20);
             this.button129.TabIndex = 64;
+            this.button129.TabStop = false;
             this.button129.UseVisualStyleBackColor = false;
             // 
             // btnCloseDarkRedDimLED
@@ -934,7 +951,7 @@ namespace LEDController.View
             this.btnCloseDarkRedDimLED.Location = new System.Drawing.Point(867, 486);
             this.btnCloseDarkRedDimLED.Name = "btnCloseDarkRedDimLED";
             this.btnCloseDarkRedDimLED.Size = new System.Drawing.Size(91, 27);
-            this.btnCloseDarkRedDimLED.TabIndex = 91;
+            this.btnCloseDarkRedDimLED.TabIndex = 202;
             this.btnCloseDarkRedDimLED.Text = "红外全关";
             this.btnCloseDarkRedDimLED.UseVisualStyleBackColor = true;
             this.btnCloseDarkRedDimLED.Click += new System.EventHandler(this.btnCloseDarkRedDimLED_Click);
@@ -945,7 +962,7 @@ namespace LEDController.View
             this.btnOpenDarkRedDimLED.Location = new System.Drawing.Point(718, 486);
             this.btnOpenDarkRedDimLED.Name = "btnOpenDarkRedDimLED";
             this.btnOpenDarkRedDimLED.Size = new System.Drawing.Size(91, 27);
-            this.btnOpenDarkRedDimLED.TabIndex = 90;
+            this.btnOpenDarkRedDimLED.TabIndex = 201;
             this.btnOpenDarkRedDimLED.Text = "红外全开";
             this.btnOpenDarkRedDimLED.UseVisualStyleBackColor = true;
             this.btnOpenDarkRedDimLED.Click += new System.EventHandler(this.btnOpenDarkRedDimLED_Click);
@@ -956,7 +973,7 @@ namespace LEDController.View
             this.btnCloseRedDimLED.Location = new System.Drawing.Point(545, 486);
             this.btnCloseRedDimLED.Name = "btnCloseRedDimLED";
             this.btnCloseRedDimLED.Size = new System.Drawing.Size(91, 27);
-            this.btnCloseRedDimLED.TabIndex = 89;
+            this.btnCloseRedDimLED.TabIndex = 188;
             this.btnCloseRedDimLED.Text = "红光全关";
             this.btnCloseRedDimLED.UseVisualStyleBackColor = true;
             this.btnCloseRedDimLED.Click += new System.EventHandler(this.btnCloseRedDimLED_Click);
@@ -967,7 +984,7 @@ namespace LEDController.View
             this.btnOpenRedDimLED.Location = new System.Drawing.Point(396, 486);
             this.btnOpenRedDimLED.Name = "btnOpenRedDimLED";
             this.btnOpenRedDimLED.Size = new System.Drawing.Size(91, 27);
-            this.btnOpenRedDimLED.TabIndex = 88;
+            this.btnOpenRedDimLED.TabIndex = 187;
             this.btnOpenRedDimLED.Text = "红光全开";
             this.btnOpenRedDimLED.UseVisualStyleBackColor = true;
             this.btnOpenRedDimLED.Click += new System.EventHandler(this.btnOpenRedDimLED_Click);
@@ -978,7 +995,7 @@ namespace LEDController.View
             this.btnCloseGreenDimLED.Location = new System.Drawing.Point(226, 486);
             this.btnCloseGreenDimLED.Name = "btnCloseGreenDimLED";
             this.btnCloseGreenDimLED.Size = new System.Drawing.Size(91, 27);
-            this.btnCloseGreenDimLED.TabIndex = 87;
+            this.btnCloseGreenDimLED.TabIndex = 174;
             this.btnCloseGreenDimLED.Text = "绿光全关";
             this.btnCloseGreenDimLED.UseVisualStyleBackColor = true;
             this.btnCloseGreenDimLED.Click += new System.EventHandler(this.btnCloseGreenDimLED_Click);
@@ -989,7 +1006,7 @@ namespace LEDController.View
             this.btnOpenGreenDimLED.Location = new System.Drawing.Point(77, 486);
             this.btnOpenGreenDimLED.Name = "btnOpenGreenDimLED";
             this.btnOpenGreenDimLED.Size = new System.Drawing.Size(91, 27);
-            this.btnOpenGreenDimLED.TabIndex = 86;
+            this.btnOpenGreenDimLED.TabIndex = 173;
             this.btnOpenGreenDimLED.Text = "绿光全开";
             this.btnOpenGreenDimLED.UseVisualStyleBackColor = true;
             this.btnOpenGreenDimLED.Click += new System.EventHandler(this.btnOpenGreenDimLED_Click);
@@ -1059,7 +1076,7 @@ namespace LEDController.View
             this.tbxDimLED12.Location = new System.Drawing.Point(232, 26);
             this.tbxDimLED12.Name = "tbxDimLED12";
             this.tbxDimLED12.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED12.TabIndex = 92;
+            this.tbxDimLED12.TabIndex = 199;
             this.tbxDimLED12.Tag = "12";
             this.tbxDimLED12.Text = "0";
             this.tbxDimLED12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1079,7 +1096,7 @@ namespace LEDController.View
             this.tbxDimLED11.Location = new System.Drawing.Point(170, 26);
             this.tbxDimLED11.Name = "tbxDimLED11";
             this.tbxDimLED11.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED11.TabIndex = 91;
+            this.tbxDimLED11.TabIndex = 196;
             this.tbxDimLED11.Tag = "11";
             this.tbxDimLED11.Text = "0";
             this.tbxDimLED11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1090,7 +1107,7 @@ namespace LEDController.View
             this.tbxDimLED10.Location = new System.Drawing.Point(109, 26);
             this.tbxDimLED10.Name = "tbxDimLED10";
             this.tbxDimLED10.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED10.TabIndex = 90;
+            this.tbxDimLED10.TabIndex = 193;
             this.tbxDimLED10.Tag = "10";
             this.tbxDimLED10.Text = "0";
             this.tbxDimLED10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1101,7 +1118,7 @@ namespace LEDController.View
             this.tbxDimLED9.Location = new System.Drawing.Point(49, 26);
             this.tbxDimLED9.Name = "tbxDimLED9";
             this.tbxDimLED9.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED9.TabIndex = 89;
+            this.tbxDimLED9.TabIndex = 190;
             this.tbxDimLED9.Tag = "9";
             this.tbxDimLED9.Text = "0";
             this.tbxDimLED9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1121,7 +1138,7 @@ namespace LEDController.View
             this.btnOpenDimDarkRedLED4.Location = new System.Drawing.Point(235, 126);
             this.btnOpenDimDarkRedLED4.Name = "btnOpenDimDarkRedLED4";
             this.btnOpenDimDarkRedLED4.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimDarkRedLED4.TabIndex = 83;
+            this.btnOpenDimDarkRedLED4.TabIndex = 200;
             this.btnOpenDimDarkRedLED4.Tag = "132";
             this.btnOpenDimDarkRedLED4.Text = "设置";
             this.btnOpenDimDarkRedLED4.UseVisualStyleBackColor = true;
@@ -1143,7 +1160,7 @@ namespace LEDController.View
             this.sbarDimLED12.Maximum = 50;
             this.sbarDimLED12.Name = "sbarDimLED12";
             this.sbarDimLED12.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED12.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED12.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED12.TabIndex = 80;
             this.sbarDimLED12.Tag = "12";
             this.sbarDimLED12.TickFrequency = 5;
@@ -1160,7 +1177,7 @@ namespace LEDController.View
             this.btnDimLED12.Location = new System.Drawing.Point(243, 3);
             this.btnDimLED12.Name = "btnDimLED12";
             this.btnDimLED12.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED12.TabIndex = 79;
+            this.btnDimLED12.TabIndex = 198;
             this.btnDimLED12.Tag = "132";
             this.btnDimLED12.UseVisualStyleBackColor = false;
             this.btnDimLED12.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1172,7 +1189,7 @@ namespace LEDController.View
             this.btnOpenDimDarkRedLED3.Location = new System.Drawing.Point(173, 126);
             this.btnOpenDimDarkRedLED3.Name = "btnOpenDimDarkRedLED3";
             this.btnOpenDimDarkRedLED3.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimDarkRedLED3.TabIndex = 78;
+            this.btnOpenDimDarkRedLED3.TabIndex = 197;
             this.btnOpenDimDarkRedLED3.Tag = "131";
             this.btnOpenDimDarkRedLED3.Text = "设置";
             this.btnOpenDimDarkRedLED3.UseVisualStyleBackColor = true;
@@ -1194,7 +1211,7 @@ namespace LEDController.View
             this.sbarDimLED11.Maximum = 50;
             this.sbarDimLED11.Name = "sbarDimLED11";
             this.sbarDimLED11.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED11.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED11.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED11.TabIndex = 75;
             this.sbarDimLED11.Tag = "11";
             this.sbarDimLED11.TickFrequency = 5;
@@ -1211,7 +1228,7 @@ namespace LEDController.View
             this.btnDimLED11.Location = new System.Drawing.Point(181, 3);
             this.btnDimLED11.Name = "btnDimLED11";
             this.btnDimLED11.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED11.TabIndex = 74;
+            this.btnDimLED11.TabIndex = 195;
             this.btnDimLED11.Tag = "131";
             this.btnDimLED11.UseVisualStyleBackColor = false;
             this.btnDimLED11.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1223,7 +1240,7 @@ namespace LEDController.View
             this.btnOpenDimDarkRedLED2.Location = new System.Drawing.Point(112, 126);
             this.btnOpenDimDarkRedLED2.Name = "btnOpenDimDarkRedLED2";
             this.btnOpenDimDarkRedLED2.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimDarkRedLED2.TabIndex = 73;
+            this.btnOpenDimDarkRedLED2.TabIndex = 194;
             this.btnOpenDimDarkRedLED2.Tag = "130";
             this.btnOpenDimDarkRedLED2.Text = "设置";
             this.btnOpenDimDarkRedLED2.UseVisualStyleBackColor = true;
@@ -1245,7 +1262,7 @@ namespace LEDController.View
             this.sbarDimLED10.Maximum = 50;
             this.sbarDimLED10.Name = "sbarDimLED10";
             this.sbarDimLED10.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED10.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED10.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED10.TabIndex = 70;
             this.sbarDimLED10.Tag = "10";
             this.sbarDimLED10.TickFrequency = 5;
@@ -1262,7 +1279,7 @@ namespace LEDController.View
             this.btnDimLED10.Location = new System.Drawing.Point(120, 3);
             this.btnDimLED10.Name = "btnDimLED10";
             this.btnDimLED10.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED10.TabIndex = 69;
+            this.btnDimLED10.TabIndex = 192;
             this.btnDimLED10.Tag = "130";
             this.btnDimLED10.UseVisualStyleBackColor = false;
             this.btnDimLED10.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1274,7 +1291,7 @@ namespace LEDController.View
             this.btnOpenDimDarkRedLED1.Location = new System.Drawing.Point(51, 126);
             this.btnOpenDimDarkRedLED1.Name = "btnOpenDimDarkRedLED1";
             this.btnOpenDimDarkRedLED1.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimDarkRedLED1.TabIndex = 68;
+            this.btnOpenDimDarkRedLED1.TabIndex = 191;
             this.btnOpenDimDarkRedLED1.Tag = "129";
             this.btnOpenDimDarkRedLED1.Text = "设置";
             this.btnOpenDimDarkRedLED1.UseVisualStyleBackColor = true;
@@ -1296,7 +1313,7 @@ namespace LEDController.View
             this.sbarDimLED9.Maximum = 50;
             this.sbarDimLED9.Name = "sbarDimLED9";
             this.sbarDimLED9.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED9.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED9.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED9.TabIndex = 65;
             this.sbarDimLED9.Tag = "9";
             this.sbarDimLED9.TickFrequency = 5;
@@ -1313,7 +1330,7 @@ namespace LEDController.View
             this.btnDimLED9.Location = new System.Drawing.Point(59, 3);
             this.btnDimLED9.Name = "btnDimLED9";
             this.btnDimLED9.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED9.TabIndex = 64;
+            this.btnDimLED9.TabIndex = 189;
             this.btnDimLED9.Tag = "129";
             this.btnDimLED9.UseVisualStyleBackColor = false;
             this.btnDimLED9.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1385,7 +1402,7 @@ namespace LEDController.View
             this.tbxDimLED8.Location = new System.Drawing.Point(233, 26);
             this.tbxDimLED8.Name = "tbxDimLED8";
             this.tbxDimLED8.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED8.TabIndex = 92;
+            this.tbxDimLED8.TabIndex = 185;
             this.tbxDimLED8.Tag = "8";
             this.tbxDimLED8.Text = "0";
             this.tbxDimLED8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1405,7 +1422,7 @@ namespace LEDController.View
             this.tbxDimLED7.Location = new System.Drawing.Point(171, 26);
             this.tbxDimLED7.Name = "tbxDimLED7";
             this.tbxDimLED7.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED7.TabIndex = 91;
+            this.tbxDimLED7.TabIndex = 182;
             this.tbxDimLED7.Tag = "7";
             this.tbxDimLED7.Text = "0";
             this.tbxDimLED7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1425,7 +1442,7 @@ namespace LEDController.View
             this.tbxDimLED6.Location = new System.Drawing.Point(110, 26);
             this.tbxDimLED6.Name = "tbxDimLED6";
             this.tbxDimLED6.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED6.TabIndex = 90;
+            this.tbxDimLED6.TabIndex = 179;
             this.tbxDimLED6.Tag = "6";
             this.tbxDimLED6.Text = "0";
             this.tbxDimLED6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1436,7 +1453,7 @@ namespace LEDController.View
             this.btnOpenDimRedLED4.Location = new System.Drawing.Point(235, 126);
             this.btnOpenDimRedLED4.Name = "btnOpenDimRedLED4";
             this.btnOpenDimRedLED4.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimRedLED4.TabIndex = 83;
+            this.btnOpenDimRedLED4.TabIndex = 186;
             this.btnOpenDimRedLED4.Tag = "128";
             this.btnOpenDimRedLED4.Text = "设置";
             this.btnOpenDimRedLED4.UseVisualStyleBackColor = true;
@@ -1447,7 +1464,7 @@ namespace LEDController.View
             this.tbxDimLED5.Location = new System.Drawing.Point(50, 26);
             this.tbxDimLED5.Name = "tbxDimLED5";
             this.tbxDimLED5.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED5.TabIndex = 89;
+            this.tbxDimLED5.TabIndex = 176;
             this.tbxDimLED5.Tag = "5";
             this.tbxDimLED5.Text = "0";
             this.tbxDimLED5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1469,7 +1486,7 @@ namespace LEDController.View
             this.sbarDimLED8.Maximum = 50;
             this.sbarDimLED8.Name = "sbarDimLED8";
             this.sbarDimLED8.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED8.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED8.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED8.TabIndex = 80;
             this.sbarDimLED8.Tag = "8";
             this.sbarDimLED8.TickFrequency = 5;
@@ -1486,7 +1503,7 @@ namespace LEDController.View
             this.btnDimLED8.Location = new System.Drawing.Point(243, 3);
             this.btnDimLED8.Name = "btnDimLED8";
             this.btnDimLED8.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED8.TabIndex = 79;
+            this.btnDimLED8.TabIndex = 184;
             this.btnDimLED8.Tag = "128";
             this.btnDimLED8.UseVisualStyleBackColor = false;
             this.btnDimLED8.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1498,7 +1515,7 @@ namespace LEDController.View
             this.btnOpenDimRedLED3.Location = new System.Drawing.Point(173, 126);
             this.btnOpenDimRedLED3.Name = "btnOpenDimRedLED3";
             this.btnOpenDimRedLED3.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimRedLED3.TabIndex = 78;
+            this.btnOpenDimRedLED3.TabIndex = 183;
             this.btnOpenDimRedLED3.Tag = "127";
             this.btnOpenDimRedLED3.Text = "设置";
             this.btnOpenDimRedLED3.UseVisualStyleBackColor = true;
@@ -1520,7 +1537,7 @@ namespace LEDController.View
             this.sbarDimLED7.Maximum = 50;
             this.sbarDimLED7.Name = "sbarDimLED7";
             this.sbarDimLED7.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED7.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED7.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED7.TabIndex = 75;
             this.sbarDimLED7.Tag = "7";
             this.sbarDimLED7.TickFrequency = 5;
@@ -1537,7 +1554,7 @@ namespace LEDController.View
             this.btnDimLED7.Location = new System.Drawing.Point(181, 3);
             this.btnDimLED7.Name = "btnDimLED7";
             this.btnDimLED7.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED7.TabIndex = 74;
+            this.btnDimLED7.TabIndex = 181;
             this.btnDimLED7.Tag = "127";
             this.btnDimLED7.UseVisualStyleBackColor = false;
             this.btnDimLED7.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1549,7 +1566,7 @@ namespace LEDController.View
             this.btnOpenDimRedLED2.Location = new System.Drawing.Point(112, 126);
             this.btnOpenDimRedLED2.Name = "btnOpenDimRedLED2";
             this.btnOpenDimRedLED2.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimRedLED2.TabIndex = 73;
+            this.btnOpenDimRedLED2.TabIndex = 180;
             this.btnOpenDimRedLED2.Tag = "126";
             this.btnOpenDimRedLED2.Text = "设置";
             this.btnOpenDimRedLED2.UseVisualStyleBackColor = true;
@@ -1571,7 +1588,7 @@ namespace LEDController.View
             this.sbarDimLED6.Maximum = 50;
             this.sbarDimLED6.Name = "sbarDimLED6";
             this.sbarDimLED6.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED6.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED6.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED6.TabIndex = 70;
             this.sbarDimLED6.Tag = "6";
             this.sbarDimLED6.TickFrequency = 5;
@@ -1588,7 +1605,7 @@ namespace LEDController.View
             this.btnDimLED6.Location = new System.Drawing.Point(120, 3);
             this.btnDimLED6.Name = "btnDimLED6";
             this.btnDimLED6.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED6.TabIndex = 69;
+            this.btnDimLED6.TabIndex = 178;
             this.btnDimLED6.Tag = "126";
             this.btnDimLED6.UseVisualStyleBackColor = false;
             this.btnDimLED6.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1600,7 +1617,7 @@ namespace LEDController.View
             this.btnOpenDimRedLED1.Location = new System.Drawing.Point(51, 126);
             this.btnOpenDimRedLED1.Name = "btnOpenDimRedLED1";
             this.btnOpenDimRedLED1.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimRedLED1.TabIndex = 68;
+            this.btnOpenDimRedLED1.TabIndex = 177;
             this.btnOpenDimRedLED1.Tag = "125";
             this.btnOpenDimRedLED1.Text = "设置";
             this.btnOpenDimRedLED1.UseVisualStyleBackColor = true;
@@ -1622,7 +1639,7 @@ namespace LEDController.View
             this.sbarDimLED5.Maximum = 50;
             this.sbarDimLED5.Name = "sbarDimLED5";
             this.sbarDimLED5.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED5.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED5.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED5.TabIndex = 65;
             this.sbarDimLED5.Tag = "5";
             this.sbarDimLED5.TickFrequency = 5;
@@ -1639,7 +1656,7 @@ namespace LEDController.View
             this.btnDimLED5.Location = new System.Drawing.Point(59, 3);
             this.btnDimLED5.Name = "btnDimLED5";
             this.btnDimLED5.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED5.TabIndex = 64;
+            this.btnDimLED5.TabIndex = 175;
             this.btnDimLED5.Tag = "125";
             this.btnDimLED5.UseVisualStyleBackColor = false;
             this.btnDimLED5.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1720,7 +1737,7 @@ namespace LEDController.View
             this.tbxDimLED4.Location = new System.Drawing.Point(233, 26);
             this.tbxDimLED4.Name = "tbxDimLED4";
             this.tbxDimLED4.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED4.TabIndex = 88;
+            this.tbxDimLED4.TabIndex = 171;
             this.tbxDimLED4.Tag = "4";
             this.tbxDimLED4.Text = "0";
             this.tbxDimLED4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1731,7 +1748,7 @@ namespace LEDController.View
             this.tbxDimLED3.Location = new System.Drawing.Point(171, 26);
             this.tbxDimLED3.Name = "tbxDimLED3";
             this.tbxDimLED3.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED3.TabIndex = 87;
+            this.tbxDimLED3.TabIndex = 168;
             this.tbxDimLED3.Tag = "3";
             this.tbxDimLED3.Text = "0";
             this.tbxDimLED3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1742,7 +1759,7 @@ namespace LEDController.View
             this.tbxDimLED2.Location = new System.Drawing.Point(110, 26);
             this.tbxDimLED2.Name = "tbxDimLED2";
             this.tbxDimLED2.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED2.TabIndex = 86;
+            this.tbxDimLED2.TabIndex = 165;
             this.tbxDimLED2.Tag = "2";
             this.tbxDimLED2.Text = "0";
             this.tbxDimLED2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1753,7 +1770,7 @@ namespace LEDController.View
             this.tbxDimLED1.Location = new System.Drawing.Point(50, 26);
             this.tbxDimLED1.Name = "tbxDimLED1";
             this.tbxDimLED1.Size = new System.Drawing.Size(30, 21);
-            this.tbxDimLED1.TabIndex = 85;
+            this.tbxDimLED1.TabIndex = 161;
             this.tbxDimLED1.Tag = "1";
             this.tbxDimLED1.Text = "0";
             this.tbxDimLED1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1773,7 +1790,7 @@ namespace LEDController.View
             this.btnOpenDimGreenLED4.Location = new System.Drawing.Point(235, 126);
             this.btnOpenDimGreenLED4.Name = "btnOpenDimGreenLED4";
             this.btnOpenDimGreenLED4.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimGreenLED4.TabIndex = 83;
+            this.btnOpenDimGreenLED4.TabIndex = 172;
             this.btnOpenDimGreenLED4.Tag = "124";
             this.btnOpenDimGreenLED4.Text = "设置";
             this.btnOpenDimGreenLED4.UseVisualStyleBackColor = true;
@@ -1795,7 +1812,7 @@ namespace LEDController.View
             this.sbarDimLED4.Maximum = 50;
             this.sbarDimLED4.Name = "sbarDimLED4";
             this.sbarDimLED4.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED4.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED4.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED4.TabIndex = 80;
             this.sbarDimLED4.Tag = "4";
             this.sbarDimLED4.TickFrequency = 5;
@@ -1812,7 +1829,7 @@ namespace LEDController.View
             this.btnDimLED4.Location = new System.Drawing.Point(243, 3);
             this.btnDimLED4.Name = "btnDimLED4";
             this.btnDimLED4.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED4.TabIndex = 79;
+            this.btnDimLED4.TabIndex = 170;
             this.btnDimLED4.Tag = "124";
             this.btnDimLED4.UseVisualStyleBackColor = false;
             this.btnDimLED4.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1824,7 +1841,7 @@ namespace LEDController.View
             this.btnOpenDimGreenLED3.Location = new System.Drawing.Point(173, 126);
             this.btnOpenDimGreenLED3.Name = "btnOpenDimGreenLED3";
             this.btnOpenDimGreenLED3.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimGreenLED3.TabIndex = 78;
+            this.btnOpenDimGreenLED3.TabIndex = 169;
             this.btnOpenDimGreenLED3.Tag = "123";
             this.btnOpenDimGreenLED3.Text = "设置";
             this.btnOpenDimGreenLED3.UseVisualStyleBackColor = true;
@@ -1846,7 +1863,7 @@ namespace LEDController.View
             this.sbarDimLED3.Maximum = 50;
             this.sbarDimLED3.Name = "sbarDimLED3";
             this.sbarDimLED3.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED3.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED3.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED3.TabIndex = 75;
             this.sbarDimLED3.Tag = "3";
             this.sbarDimLED3.TickFrequency = 5;
@@ -1863,7 +1880,7 @@ namespace LEDController.View
             this.btnDimLED3.Location = new System.Drawing.Point(181, 3);
             this.btnDimLED3.Name = "btnDimLED3";
             this.btnDimLED3.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED3.TabIndex = 74;
+            this.btnDimLED3.TabIndex = 167;
             this.btnDimLED3.Tag = "123";
             this.btnDimLED3.UseVisualStyleBackColor = false;
             this.btnDimLED3.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1875,7 +1892,7 @@ namespace LEDController.View
             this.btnOpenDimGreenLED2.Location = new System.Drawing.Point(112, 126);
             this.btnOpenDimGreenLED2.Name = "btnOpenDimGreenLED2";
             this.btnOpenDimGreenLED2.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimGreenLED2.TabIndex = 73;
+            this.btnOpenDimGreenLED2.TabIndex = 166;
             this.btnOpenDimGreenLED2.Tag = "122";
             this.btnOpenDimGreenLED2.Text = "设置";
             this.btnOpenDimGreenLED2.UseVisualStyleBackColor = true;
@@ -1897,7 +1914,7 @@ namespace LEDController.View
             this.sbarDimLED2.Maximum = 50;
             this.sbarDimLED2.Name = "sbarDimLED2";
             this.sbarDimLED2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED2.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED2.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED2.TabIndex = 70;
             this.sbarDimLED2.Tag = "2";
             this.sbarDimLED2.TickFrequency = 5;
@@ -1914,7 +1931,7 @@ namespace LEDController.View
             this.btnDimLED2.Location = new System.Drawing.Point(120, 3);
             this.btnDimLED2.Name = "btnDimLED2";
             this.btnDimLED2.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED2.TabIndex = 69;
+            this.btnDimLED2.TabIndex = 164;
             this.btnDimLED2.Tag = "122";
             this.btnDimLED2.UseVisualStyleBackColor = false;
             this.btnDimLED2.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1926,7 +1943,7 @@ namespace LEDController.View
             this.btnOpenDimGreenLED1.Location = new System.Drawing.Point(51, 126);
             this.btnOpenDimGreenLED1.Name = "btnOpenDimGreenLED1";
             this.btnOpenDimGreenLED1.Size = new System.Drawing.Size(45, 23);
-            this.btnOpenDimGreenLED1.TabIndex = 68;
+            this.btnOpenDimGreenLED1.TabIndex = 163;
             this.btnOpenDimGreenLED1.Tag = "121";
             this.btnOpenDimGreenLED1.Text = "设置";
             this.btnOpenDimGreenLED1.UseVisualStyleBackColor = true;
@@ -1948,7 +1965,7 @@ namespace LEDController.View
             this.sbarDimLED1.Maximum = 50;
             this.sbarDimLED1.Name = "sbarDimLED1";
             this.sbarDimLED1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sbarDimLED1.Size = new System.Drawing.Size(69, 80);
+            this.sbarDimLED1.Size = new System.Drawing.Size(45, 80);
             this.sbarDimLED1.TabIndex = 65;
             this.sbarDimLED1.Tag = "1";
             this.sbarDimLED1.TickFrequency = 5;
@@ -1965,7 +1982,7 @@ namespace LEDController.View
             this.btnDimLED1.Location = new System.Drawing.Point(59, 3);
             this.btnDimLED1.Name = "btnDimLED1";
             this.btnDimLED1.Size = new System.Drawing.Size(20, 20);
-            this.btnDimLED1.TabIndex = 64;
+            this.btnDimLED1.TabIndex = 160;
             this.btnDimLED1.Tag = "121";
             this.btnDimLED1.UseVisualStyleBackColor = false;
             this.btnDimLED1.Click += new System.EventHandler(this.btnDimLED_Click);
@@ -1986,50 +2003,50 @@ namespace LEDController.View
             this.tsslTemp4});
             this.statusStrip1.Location = new System.Drawing.Point(3, 3);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1039, 31);
+            this.statusStrip1.Size = new System.Drawing.Size(1039, 22);
             this.statusStrip1.TabIndex = 80;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // tsslGreenLEDTotalPower
             // 
             this.tsslGreenLEDTotalPower.Name = "tsslGreenLEDTotalPower";
-            this.tsslGreenLEDTotalPower.Size = new System.Drawing.Size(174, 24);
+            this.tsslGreenLEDTotalPower.Size = new System.Drawing.Size(118, 17);
             this.tsslGreenLEDTotalPower.Text = "绿光实时总功率: 0W";
             // 
             // tsslRedLEDTotalPower
             // 
             this.tsslRedLEDTotalPower.Name = "tsslRedLEDTotalPower";
-            this.tsslRedLEDTotalPower.Size = new System.Drawing.Size(174, 24);
+            this.tsslRedLEDTotalPower.Size = new System.Drawing.Size(118, 17);
             this.tsslRedLEDTotalPower.Text = "红光实时总功率: 0W";
             // 
             // tsslDarkRedLEDTotalPower
             // 
             this.tsslDarkRedLEDTotalPower.Name = "tsslDarkRedLEDTotalPower";
-            this.tsslDarkRedLEDTotalPower.Size = new System.Drawing.Size(174, 24);
+            this.tsslDarkRedLEDTotalPower.Size = new System.Drawing.Size(118, 17);
             this.tsslDarkRedLEDTotalPower.Text = "红外实时总功率: 0W";
             // 
             // tsslTemp1
             // 
             this.tsslTemp1.Name = "tsslTemp1";
-            this.tsslTemp1.Size = new System.Drawing.Size(128, 24);
+            this.tsslTemp1.Size = new System.Drawing.Size(87, 17);
             this.tsslTemp1.Text = "测温点1： 0°C";
             // 
             // tsslTemp2
             // 
             this.tsslTemp2.Name = "tsslTemp2";
-            this.tsslTemp2.Size = new System.Drawing.Size(114, 24);
+            this.tsslTemp2.Size = new System.Drawing.Size(78, 17);
             this.tsslTemp2.Text = "测温点2: 0°C";
             // 
             // tsslTemp3
             // 
             this.tsslTemp3.Name = "tsslTemp3";
-            this.tsslTemp3.Size = new System.Drawing.Size(114, 24);
+            this.tsslTemp3.Size = new System.Drawing.Size(78, 17);
             this.tsslTemp3.Text = "测温点3: 0°C";
             // 
             // tsslTemp4
             // 
             this.tsslTemp4.Name = "tsslTemp4";
-            this.tsslTemp4.Size = new System.Drawing.Size(114, 24);
+            this.tsslTemp4.Size = new System.Drawing.Size(78, 17);
             this.tsslTemp4.Text = "测温点4: 0°C";
             // 
             // btnCloseDarkRedFixLED
@@ -2038,7 +2055,7 @@ namespace LEDController.View
             this.btnCloseDarkRedFixLED.Location = new System.Drawing.Point(867, 298);
             this.btnCloseDarkRedFixLED.Name = "btnCloseDarkRedFixLED";
             this.btnCloseDarkRedFixLED.Size = new System.Drawing.Size(91, 27);
-            this.btnCloseDarkRedFixLED.TabIndex = 79;
+            this.btnCloseDarkRedFixLED.TabIndex = 159;
             this.btnCloseDarkRedFixLED.Text = "红外全关";
             this.btnCloseDarkRedFixLED.UseVisualStyleBackColor = true;
             this.btnCloseDarkRedFixLED.Click += new System.EventHandler(this.btnCloseDarkRedFixLED_Click);
@@ -2049,7 +2066,7 @@ namespace LEDController.View
             this.btnOpenDarkRedFixLED.Location = new System.Drawing.Point(718, 298);
             this.btnOpenDarkRedFixLED.Name = "btnOpenDarkRedFixLED";
             this.btnOpenDarkRedFixLED.Size = new System.Drawing.Size(91, 27);
-            this.btnOpenDarkRedFixLED.TabIndex = 78;
+            this.btnOpenDarkRedFixLED.TabIndex = 158;
             this.btnOpenDarkRedFixLED.Text = "红外全开";
             this.btnOpenDarkRedFixLED.UseVisualStyleBackColor = true;
             this.btnOpenDarkRedFixLED.Click += new System.EventHandler(this.btnOpenDarkRedFixLED_Click);
@@ -2060,7 +2077,7 @@ namespace LEDController.View
             this.btnCloseRedFixLED.Location = new System.Drawing.Point(545, 298);
             this.btnCloseRedFixLED.Name = "btnCloseRedFixLED";
             this.btnCloseRedFixLED.Size = new System.Drawing.Size(91, 27);
-            this.btnCloseRedFixLED.TabIndex = 77;
+            this.btnCloseRedFixLED.TabIndex = 157;
             this.btnCloseRedFixLED.Text = "红光全关";
             this.btnCloseRedFixLED.UseVisualStyleBackColor = true;
             this.btnCloseRedFixLED.Click += new System.EventHandler(this.btnCloseRedFixLED_Click);
@@ -2071,7 +2088,7 @@ namespace LEDController.View
             this.btnOpenRedFixLED.Location = new System.Drawing.Point(396, 298);
             this.btnOpenRedFixLED.Name = "btnOpenRedFixLED";
             this.btnOpenRedFixLED.Size = new System.Drawing.Size(91, 27);
-            this.btnOpenRedFixLED.TabIndex = 76;
+            this.btnOpenRedFixLED.TabIndex = 156;
             this.btnOpenRedFixLED.Text = "红光全开";
             this.btnOpenRedFixLED.UseVisualStyleBackColor = true;
             this.btnOpenRedFixLED.Click += new System.EventHandler(this.btnOpenRedFixLED_Click);
@@ -2082,7 +2099,7 @@ namespace LEDController.View
             this.btnCloseGreenFixLED.Location = new System.Drawing.Point(226, 298);
             this.btnCloseGreenFixLED.Name = "btnCloseGreenFixLED";
             this.btnCloseGreenFixLED.Size = new System.Drawing.Size(91, 27);
-            this.btnCloseGreenFixLED.TabIndex = 75;
+            this.btnCloseGreenFixLED.TabIndex = 155;
             this.btnCloseGreenFixLED.Text = "绿光全关";
             this.btnCloseGreenFixLED.UseVisualStyleBackColor = true;
             this.btnCloseGreenFixLED.Click += new System.EventHandler(this.btnCloseGreenFixLED_Click);
@@ -2093,7 +2110,7 @@ namespace LEDController.View
             this.btnOpenGreenFixLED.Location = new System.Drawing.Point(77, 298);
             this.btnOpenGreenFixLED.Name = "btnOpenGreenFixLED";
             this.btnOpenGreenFixLED.Size = new System.Drawing.Size(91, 27);
-            this.btnOpenGreenFixLED.TabIndex = 74;
+            this.btnOpenGreenFixLED.TabIndex = 154;
             this.btnOpenGreenFixLED.Text = "绿光全开";
             this.btnOpenGreenFixLED.UseVisualStyleBackColor = true;
             this.btnOpenGreenFixLED.Click += new System.EventHandler(this.btnOpenGreenFixLED_Click);
@@ -2104,7 +2121,7 @@ namespace LEDController.View
             this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label24.Location = new System.Drawing.Point(909, 66);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(23, 24);
+            this.label24.Size = new System.Drawing.Size(17, 16);
             this.label24.TabIndex = 73;
             this.label24.Text = "W";
             // 
@@ -2114,7 +2131,7 @@ namespace LEDController.View
             this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label25.Location = new System.Drawing.Point(868, 66);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(49, 24);
+            this.label25.Size = new System.Drawing.Size(35, 16);
             this.label25.TabIndex = 72;
             this.label25.Text = "100";
             // 
@@ -2124,7 +2141,7 @@ namespace LEDController.View
             this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label26.Location = new System.Drawing.Point(752, 66);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(164, 24);
+            this.label26.Size = new System.Drawing.Size(114, 16);
             this.label26.TabIndex = 71;
             this.label26.Text = "红外(810 nm)";
             // 
@@ -2134,7 +2151,7 @@ namespace LEDController.View
             this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label21.Location = new System.Drawing.Point(588, 66);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(23, 24);
+            this.label21.Size = new System.Drawing.Size(17, 16);
             this.label21.TabIndex = 70;
             this.label21.Text = "W";
             // 
@@ -2144,7 +2161,7 @@ namespace LEDController.View
             this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label22.Location = new System.Drawing.Point(547, 66);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(49, 24);
+            this.label22.Size = new System.Drawing.Size(35, 16);
             this.label22.TabIndex = 69;
             this.label22.Text = "100";
             // 
@@ -2154,7 +2171,7 @@ namespace LEDController.View
             this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label23.Location = new System.Drawing.Point(431, 66);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(164, 24);
+            this.label23.Size = new System.Drawing.Size(114, 16);
             this.label23.TabIndex = 68;
             this.label23.Text = "红光(630 nm)";
             // 
@@ -2164,7 +2181,7 @@ namespace LEDController.View
             this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.Location = new System.Drawing.Point(247, 66);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(23, 24);
+            this.label20.Size = new System.Drawing.Size(17, 16);
             this.label20.TabIndex = 67;
             this.label20.Text = "W";
             // 
@@ -2174,7 +2191,7 @@ namespace LEDController.View
             this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label19.Location = new System.Drawing.Point(206, 66);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 24);
+            this.label19.Size = new System.Drawing.Size(35, 16);
             this.label19.TabIndex = 66;
             this.label19.Text = "300";
             // 
@@ -2184,7 +2201,7 @@ namespace LEDController.View
             this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label18.Location = new System.Drawing.Point(90, 66);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(164, 24);
+            this.label18.Size = new System.Drawing.Size(114, 16);
             this.label18.TabIndex = 65;
             this.label18.Text = "绿光(525 nm)";
             // 
@@ -2246,7 +2263,7 @@ namespace LEDController.View
             this.btnLED120.Location = new System.Drawing.Point(266, 168);
             this.btnLED120.Name = "btnLED120";
             this.btnLED120.Size = new System.Drawing.Size(20, 20);
-            this.btnLED120.TabIndex = 113;
+            this.btnLED120.TabIndex = 153;
             this.btnLED120.Tag = "120";
             this.btnLED120.UseVisualStyleBackColor = false;
             this.btnLED120.Click += new System.EventHandler(this.btnLED_Click);
@@ -2263,7 +2280,7 @@ namespace LEDController.View
             this.btnLED112.Location = new System.Drawing.Point(266, 128);
             this.btnLED112.Name = "btnLED112";
             this.btnLED112.Size = new System.Drawing.Size(20, 20);
-            this.btnLED112.TabIndex = 112;
+            this.btnLED112.TabIndex = 145;
             this.btnLED112.Tag = "112";
             this.btnLED112.UseVisualStyleBackColor = false;
             this.btnLED112.Click += new System.EventHandler(this.btnLED_Click);
@@ -2280,7 +2297,7 @@ namespace LEDController.View
             this.btnLED104.Location = new System.Drawing.Point(266, 92);
             this.btnLED104.Name = "btnLED104";
             this.btnLED104.Size = new System.Drawing.Size(20, 20);
-            this.btnLED104.TabIndex = 111;
+            this.btnLED104.TabIndex = 137;
             this.btnLED104.Tag = "104";
             this.btnLED104.UseVisualStyleBackColor = false;
             this.btnLED104.Click += new System.EventHandler(this.btnLED_Click);
@@ -2297,7 +2314,7 @@ namespace LEDController.View
             this.btnLED96.Location = new System.Drawing.Point(266, 55);
             this.btnLED96.Name = "btnLED96";
             this.btnLED96.Size = new System.Drawing.Size(20, 20);
-            this.btnLED96.TabIndex = 110;
+            this.btnLED96.TabIndex = 129;
             this.btnLED96.Tag = "96";
             this.btnLED96.UseVisualStyleBackColor = false;
             this.btnLED96.Click += new System.EventHandler(this.btnLED_Click);
@@ -2314,7 +2331,7 @@ namespace LEDController.View
             this.btnLED88.Location = new System.Drawing.Point(266, 19);
             this.btnLED88.Name = "btnLED88";
             this.btnLED88.Size = new System.Drawing.Size(20, 20);
-            this.btnLED88.TabIndex = 109;
+            this.btnLED88.TabIndex = 121;
             this.btnLED88.Tag = "88";
             this.btnLED88.UseVisualStyleBackColor = false;
             this.btnLED88.Click += new System.EventHandler(this.btnLED_Click);
@@ -2331,7 +2348,7 @@ namespace LEDController.View
             this.btnLED116.Location = new System.Drawing.Point(126, 168);
             this.btnLED116.Name = "btnLED116";
             this.btnLED116.Size = new System.Drawing.Size(20, 20);
-            this.btnLED116.TabIndex = 108;
+            this.btnLED116.TabIndex = 149;
             this.btnLED116.Tag = "116";
             this.btnLED116.UseVisualStyleBackColor = false;
             this.btnLED116.Click += new System.EventHandler(this.btnLED_Click);
@@ -2348,7 +2365,7 @@ namespace LEDController.View
             this.btnLED108.Location = new System.Drawing.Point(126, 128);
             this.btnLED108.Name = "btnLED108";
             this.btnLED108.Size = new System.Drawing.Size(20, 20);
-            this.btnLED108.TabIndex = 107;
+            this.btnLED108.TabIndex = 141;
             this.btnLED108.Tag = "108";
             this.btnLED108.UseVisualStyleBackColor = false;
             this.btnLED108.Click += new System.EventHandler(this.btnLED_Click);
@@ -2365,7 +2382,7 @@ namespace LEDController.View
             this.btnLED100.Location = new System.Drawing.Point(126, 92);
             this.btnLED100.Name = "btnLED100";
             this.btnLED100.Size = new System.Drawing.Size(20, 20);
-            this.btnLED100.TabIndex = 106;
+            this.btnLED100.TabIndex = 133;
             this.btnLED100.Tag = "100";
             this.btnLED100.UseVisualStyleBackColor = false;
             this.btnLED100.Click += new System.EventHandler(this.btnLED_Click);
@@ -2382,7 +2399,7 @@ namespace LEDController.View
             this.btnLED92.Location = new System.Drawing.Point(126, 55);
             this.btnLED92.Name = "btnLED92";
             this.btnLED92.Size = new System.Drawing.Size(20, 20);
-            this.btnLED92.TabIndex = 105;
+            this.btnLED92.TabIndex = 125;
             this.btnLED92.Tag = "92";
             this.btnLED92.UseVisualStyleBackColor = false;
             this.btnLED92.Click += new System.EventHandler(this.btnLED_Click);
@@ -2399,7 +2416,7 @@ namespace LEDController.View
             this.btnLED84.Location = new System.Drawing.Point(126, 19);
             this.btnLED84.Name = "btnLED84";
             this.btnLED84.Size = new System.Drawing.Size(20, 20);
-            this.btnLED84.TabIndex = 104;
+            this.btnLED84.TabIndex = 117;
             this.btnLED84.Tag = "84";
             this.btnLED84.UseVisualStyleBackColor = false;
             this.btnLED84.Click += new System.EventHandler(this.btnLED_Click);
@@ -2416,7 +2433,7 @@ namespace LEDController.View
             this.btnLED119.Location = new System.Drawing.Point(231, 168);
             this.btnLED119.Name = "btnLED119";
             this.btnLED119.Size = new System.Drawing.Size(20, 20);
-            this.btnLED119.TabIndex = 103;
+            this.btnLED119.TabIndex = 152;
             this.btnLED119.Tag = "119";
             this.btnLED119.UseVisualStyleBackColor = false;
             this.btnLED119.Click += new System.EventHandler(this.btnLED_Click);
@@ -2433,7 +2450,7 @@ namespace LEDController.View
             this.btnLED118.Location = new System.Drawing.Point(196, 168);
             this.btnLED118.Name = "btnLED118";
             this.btnLED118.Size = new System.Drawing.Size(20, 20);
-            this.btnLED118.TabIndex = 102;
+            this.btnLED118.TabIndex = 151;
             this.btnLED118.Tag = "118";
             this.btnLED118.UseVisualStyleBackColor = false;
             this.btnLED118.Click += new System.EventHandler(this.btnLED_Click);
@@ -2450,7 +2467,7 @@ namespace LEDController.View
             this.btnLED117.Location = new System.Drawing.Point(161, 168);
             this.btnLED117.Name = "btnLED117";
             this.btnLED117.Size = new System.Drawing.Size(20, 20);
-            this.btnLED117.TabIndex = 101;
+            this.btnLED117.TabIndex = 150;
             this.btnLED117.Tag = "117";
             this.btnLED117.UseVisualStyleBackColor = false;
             this.btnLED117.Click += new System.EventHandler(this.btnLED_Click);
@@ -2467,7 +2484,7 @@ namespace LEDController.View
             this.btnLED115.Location = new System.Drawing.Point(91, 168);
             this.btnLED115.Name = "btnLED115";
             this.btnLED115.Size = new System.Drawing.Size(20, 20);
-            this.btnLED115.TabIndex = 100;
+            this.btnLED115.TabIndex = 148;
             this.btnLED115.Tag = "115";
             this.btnLED115.UseVisualStyleBackColor = false;
             this.btnLED115.Click += new System.EventHandler(this.btnLED_Click);
@@ -2484,7 +2501,7 @@ namespace LEDController.View
             this.btnLED114.Location = new System.Drawing.Point(56, 168);
             this.btnLED114.Name = "btnLED114";
             this.btnLED114.Size = new System.Drawing.Size(20, 20);
-            this.btnLED114.TabIndex = 99;
+            this.btnLED114.TabIndex = 147;
             this.btnLED114.Tag = "114";
             this.btnLED114.UseVisualStyleBackColor = false;
             this.btnLED114.Click += new System.EventHandler(this.btnLED_Click);
@@ -2501,7 +2518,7 @@ namespace LEDController.View
             this.btnLED113.Location = new System.Drawing.Point(21, 168);
             this.btnLED113.Name = "btnLED113";
             this.btnLED113.Size = new System.Drawing.Size(20, 20);
-            this.btnLED113.TabIndex = 98;
+            this.btnLED113.TabIndex = 146;
             this.btnLED113.Tag = "113";
             this.btnLED113.UseVisualStyleBackColor = false;
             this.btnLED113.Click += new System.EventHandler(this.btnLED_Click);
@@ -2518,7 +2535,7 @@ namespace LEDController.View
             this.btnLED111.Location = new System.Drawing.Point(231, 128);
             this.btnLED111.Name = "btnLED111";
             this.btnLED111.Size = new System.Drawing.Size(20, 20);
-            this.btnLED111.TabIndex = 97;
+            this.btnLED111.TabIndex = 144;
             this.btnLED111.Tag = "111";
             this.btnLED111.UseVisualStyleBackColor = false;
             this.btnLED111.Click += new System.EventHandler(this.btnLED_Click);
@@ -2535,7 +2552,7 @@ namespace LEDController.View
             this.btnLED110.Location = new System.Drawing.Point(196, 128);
             this.btnLED110.Name = "btnLED110";
             this.btnLED110.Size = new System.Drawing.Size(20, 20);
-            this.btnLED110.TabIndex = 96;
+            this.btnLED110.TabIndex = 143;
             this.btnLED110.Tag = "110";
             this.btnLED110.UseVisualStyleBackColor = false;
             this.btnLED110.Click += new System.EventHandler(this.btnLED_Click);
@@ -2552,7 +2569,7 @@ namespace LEDController.View
             this.btnLED109.Location = new System.Drawing.Point(161, 128);
             this.btnLED109.Name = "btnLED109";
             this.btnLED109.Size = new System.Drawing.Size(20, 20);
-            this.btnLED109.TabIndex = 95;
+            this.btnLED109.TabIndex = 142;
             this.btnLED109.Tag = "109";
             this.btnLED109.UseVisualStyleBackColor = false;
             this.btnLED109.Click += new System.EventHandler(this.btnLED_Click);
@@ -2569,7 +2586,7 @@ namespace LEDController.View
             this.btnLED107.Location = new System.Drawing.Point(91, 128);
             this.btnLED107.Name = "btnLED107";
             this.btnLED107.Size = new System.Drawing.Size(20, 20);
-            this.btnLED107.TabIndex = 94;
+            this.btnLED107.TabIndex = 140;
             this.btnLED107.Tag = "107";
             this.btnLED107.UseVisualStyleBackColor = false;
             this.btnLED107.Click += new System.EventHandler(this.btnLED_Click);
@@ -2586,7 +2603,7 @@ namespace LEDController.View
             this.btnLED106.Location = new System.Drawing.Point(56, 128);
             this.btnLED106.Name = "btnLED106";
             this.btnLED106.Size = new System.Drawing.Size(20, 20);
-            this.btnLED106.TabIndex = 93;
+            this.btnLED106.TabIndex = 139;
             this.btnLED106.Tag = "106";
             this.btnLED106.UseVisualStyleBackColor = false;
             this.btnLED106.Click += new System.EventHandler(this.btnLED_Click);
@@ -2603,7 +2620,7 @@ namespace LEDController.View
             this.btnLED105.Location = new System.Drawing.Point(21, 128);
             this.btnLED105.Name = "btnLED105";
             this.btnLED105.Size = new System.Drawing.Size(20, 20);
-            this.btnLED105.TabIndex = 92;
+            this.btnLED105.TabIndex = 138;
             this.btnLED105.Tag = "105";
             this.btnLED105.UseVisualStyleBackColor = false;
             this.btnLED105.Click += new System.EventHandler(this.btnLED_Click);
@@ -2620,7 +2637,7 @@ namespace LEDController.View
             this.btnLED103.Location = new System.Drawing.Point(231, 92);
             this.btnLED103.Name = "btnLED103";
             this.btnLED103.Size = new System.Drawing.Size(20, 20);
-            this.btnLED103.TabIndex = 91;
+            this.btnLED103.TabIndex = 136;
             this.btnLED103.Tag = "103";
             this.btnLED103.UseVisualStyleBackColor = false;
             this.btnLED103.Click += new System.EventHandler(this.btnLED_Click);
@@ -2637,7 +2654,7 @@ namespace LEDController.View
             this.btnLED102.Location = new System.Drawing.Point(196, 92);
             this.btnLED102.Name = "btnLED102";
             this.btnLED102.Size = new System.Drawing.Size(20, 20);
-            this.btnLED102.TabIndex = 90;
+            this.btnLED102.TabIndex = 135;
             this.btnLED102.Tag = "102";
             this.btnLED102.UseVisualStyleBackColor = false;
             this.btnLED102.Click += new System.EventHandler(this.btnLED_Click);
@@ -2654,7 +2671,7 @@ namespace LEDController.View
             this.btnLED101.Location = new System.Drawing.Point(161, 92);
             this.btnLED101.Name = "btnLED101";
             this.btnLED101.Size = new System.Drawing.Size(20, 20);
-            this.btnLED101.TabIndex = 89;
+            this.btnLED101.TabIndex = 134;
             this.btnLED101.Tag = "101";
             this.btnLED101.UseVisualStyleBackColor = false;
             this.btnLED101.Click += new System.EventHandler(this.btnLED_Click);
@@ -2671,7 +2688,7 @@ namespace LEDController.View
             this.btnLED99.Location = new System.Drawing.Point(91, 92);
             this.btnLED99.Name = "btnLED99";
             this.btnLED99.Size = new System.Drawing.Size(20, 20);
-            this.btnLED99.TabIndex = 88;
+            this.btnLED99.TabIndex = 132;
             this.btnLED99.Tag = "99";
             this.btnLED99.UseVisualStyleBackColor = false;
             this.btnLED99.Click += new System.EventHandler(this.btnLED_Click);
@@ -2688,7 +2705,7 @@ namespace LEDController.View
             this.btnLED98.Location = new System.Drawing.Point(56, 92);
             this.btnLED98.Name = "btnLED98";
             this.btnLED98.Size = new System.Drawing.Size(20, 20);
-            this.btnLED98.TabIndex = 87;
+            this.btnLED98.TabIndex = 131;
             this.btnLED98.Tag = "98";
             this.btnLED98.UseVisualStyleBackColor = false;
             this.btnLED98.Click += new System.EventHandler(this.btnLED_Click);
@@ -2705,7 +2722,7 @@ namespace LEDController.View
             this.btnLED97.Location = new System.Drawing.Point(21, 92);
             this.btnLED97.Name = "btnLED97";
             this.btnLED97.Size = new System.Drawing.Size(20, 20);
-            this.btnLED97.TabIndex = 86;
+            this.btnLED97.TabIndex = 130;
             this.btnLED97.Tag = "97";
             this.btnLED97.UseVisualStyleBackColor = false;
             this.btnLED97.Click += new System.EventHandler(this.btnLED_Click);
@@ -2722,7 +2739,7 @@ namespace LEDController.View
             this.btnLED95.Location = new System.Drawing.Point(231, 55);
             this.btnLED95.Name = "btnLED95";
             this.btnLED95.Size = new System.Drawing.Size(20, 20);
-            this.btnLED95.TabIndex = 85;
+            this.btnLED95.TabIndex = 128;
             this.btnLED95.Tag = "95";
             this.btnLED95.UseVisualStyleBackColor = false;
             this.btnLED95.Click += new System.EventHandler(this.btnLED_Click);
@@ -2739,7 +2756,7 @@ namespace LEDController.View
             this.btnLED94.Location = new System.Drawing.Point(196, 55);
             this.btnLED94.Name = "btnLED94";
             this.btnLED94.Size = new System.Drawing.Size(20, 20);
-            this.btnLED94.TabIndex = 84;
+            this.btnLED94.TabIndex = 127;
             this.btnLED94.Tag = "94";
             this.btnLED94.UseVisualStyleBackColor = false;
             this.btnLED94.Click += new System.EventHandler(this.btnLED_Click);
@@ -2756,7 +2773,7 @@ namespace LEDController.View
             this.btnLED93.Location = new System.Drawing.Point(161, 55);
             this.btnLED93.Name = "btnLED93";
             this.btnLED93.Size = new System.Drawing.Size(20, 20);
-            this.btnLED93.TabIndex = 83;
+            this.btnLED93.TabIndex = 126;
             this.btnLED93.Tag = "93";
             this.btnLED93.UseVisualStyleBackColor = false;
             this.btnLED93.Click += new System.EventHandler(this.btnLED_Click);
@@ -2773,7 +2790,7 @@ namespace LEDController.View
             this.btnLED91.Location = new System.Drawing.Point(91, 55);
             this.btnLED91.Name = "btnLED91";
             this.btnLED91.Size = new System.Drawing.Size(20, 20);
-            this.btnLED91.TabIndex = 82;
+            this.btnLED91.TabIndex = 124;
             this.btnLED91.Tag = "91";
             this.btnLED91.UseVisualStyleBackColor = false;
             this.btnLED91.Click += new System.EventHandler(this.btnLED_Click);
@@ -2790,7 +2807,7 @@ namespace LEDController.View
             this.btnLED90.Location = new System.Drawing.Point(56, 55);
             this.btnLED90.Name = "btnLED90";
             this.btnLED90.Size = new System.Drawing.Size(20, 20);
-            this.btnLED90.TabIndex = 81;
+            this.btnLED90.TabIndex = 123;
             this.btnLED90.Tag = "90";
             this.btnLED90.UseVisualStyleBackColor = false;
             this.btnLED90.Click += new System.EventHandler(this.btnLED_Click);
@@ -2807,7 +2824,7 @@ namespace LEDController.View
             this.btnLED89.Location = new System.Drawing.Point(21, 55);
             this.btnLED89.Name = "btnLED89";
             this.btnLED89.Size = new System.Drawing.Size(20, 20);
-            this.btnLED89.TabIndex = 80;
+            this.btnLED89.TabIndex = 122;
             this.btnLED89.Tag = "89";
             this.btnLED89.UseVisualStyleBackColor = false;
             this.btnLED89.Click += new System.EventHandler(this.btnLED_Click);
@@ -2824,7 +2841,7 @@ namespace LEDController.View
             this.btnLED87.Location = new System.Drawing.Point(231, 19);
             this.btnLED87.Name = "btnLED87";
             this.btnLED87.Size = new System.Drawing.Size(20, 20);
-            this.btnLED87.TabIndex = 79;
+            this.btnLED87.TabIndex = 120;
             this.btnLED87.Tag = "87";
             this.btnLED87.UseVisualStyleBackColor = false;
             this.btnLED87.Click += new System.EventHandler(this.btnLED_Click);
@@ -2841,7 +2858,7 @@ namespace LEDController.View
             this.btnLED86.Location = new System.Drawing.Point(196, 19);
             this.btnLED86.Name = "btnLED86";
             this.btnLED86.Size = new System.Drawing.Size(20, 20);
-            this.btnLED86.TabIndex = 78;
+            this.btnLED86.TabIndex = 119;
             this.btnLED86.Tag = "86";
             this.btnLED86.UseVisualStyleBackColor = false;
             this.btnLED86.Click += new System.EventHandler(this.btnLED_Click);
@@ -2858,7 +2875,7 @@ namespace LEDController.View
             this.btnLED85.Location = new System.Drawing.Point(161, 19);
             this.btnLED85.Name = "btnLED85";
             this.btnLED85.Size = new System.Drawing.Size(20, 20);
-            this.btnLED85.TabIndex = 77;
+            this.btnLED85.TabIndex = 118;
             this.btnLED85.Tag = "85";
             this.btnLED85.UseVisualStyleBackColor = false;
             this.btnLED85.Click += new System.EventHandler(this.btnLED_Click);
@@ -2875,7 +2892,7 @@ namespace LEDController.View
             this.btnLED83.Location = new System.Drawing.Point(91, 19);
             this.btnLED83.Name = "btnLED83";
             this.btnLED83.Size = new System.Drawing.Size(20, 20);
-            this.btnLED83.TabIndex = 76;
+            this.btnLED83.TabIndex = 116;
             this.btnLED83.Tag = "83";
             this.btnLED83.UseVisualStyleBackColor = false;
             this.btnLED83.Click += new System.EventHandler(this.btnLED_Click);
@@ -2892,7 +2909,7 @@ namespace LEDController.View
             this.btnLED82.Location = new System.Drawing.Point(56, 19);
             this.btnLED82.Name = "btnLED82";
             this.btnLED82.Size = new System.Drawing.Size(20, 20);
-            this.btnLED82.TabIndex = 75;
+            this.btnLED82.TabIndex = 115;
             this.btnLED82.Tag = "82";
             this.btnLED82.UseVisualStyleBackColor = false;
             this.btnLED82.Click += new System.EventHandler(this.btnLED_Click);
@@ -2909,7 +2926,7 @@ namespace LEDController.View
             this.btnLED81.Location = new System.Drawing.Point(21, 19);
             this.btnLED81.Name = "btnLED81";
             this.btnLED81.Size = new System.Drawing.Size(20, 20);
-            this.btnLED81.TabIndex = 74;
+            this.btnLED81.TabIndex = 114;
             this.btnLED81.Tag = "81";
             this.btnLED81.UseVisualStyleBackColor = false;
             this.btnLED81.Click += new System.EventHandler(this.btnLED_Click);
@@ -2991,7 +3008,7 @@ namespace LEDController.View
             this.btnLED72.Location = new System.Drawing.Point(266, 128);
             this.btnLED72.Name = "btnLED72";
             this.btnLED72.Size = new System.Drawing.Size(20, 20);
-            this.btnLED72.TabIndex = 112;
+            this.btnLED72.TabIndex = 105;
             this.btnLED72.Tag = "72";
             this.btnLED72.UseVisualStyleBackColor = false;
             this.btnLED72.Click += new System.EventHandler(this.btnLED_Click);
@@ -3008,7 +3025,7 @@ namespace LEDController.View
             this.btnLED64.Location = new System.Drawing.Point(266, 92);
             this.btnLED64.Name = "btnLED64";
             this.btnLED64.Size = new System.Drawing.Size(20, 20);
-            this.btnLED64.TabIndex = 111;
+            this.btnLED64.TabIndex = 97;
             this.btnLED64.Tag = "64";
             this.btnLED64.UseVisualStyleBackColor = false;
             this.btnLED64.Click += new System.EventHandler(this.btnLED_Click);
@@ -3025,7 +3042,7 @@ namespace LEDController.View
             this.btnLED56.Location = new System.Drawing.Point(266, 55);
             this.btnLED56.Name = "btnLED56";
             this.btnLED56.Size = new System.Drawing.Size(20, 20);
-            this.btnLED56.TabIndex = 110;
+            this.btnLED56.TabIndex = 89;
             this.btnLED56.Tag = "56";
             this.btnLED56.UseVisualStyleBackColor = false;
             this.btnLED56.Click += new System.EventHandler(this.btnLED_Click);
@@ -3042,7 +3059,7 @@ namespace LEDController.View
             this.btnLED48.Location = new System.Drawing.Point(266, 19);
             this.btnLED48.Name = "btnLED48";
             this.btnLED48.Size = new System.Drawing.Size(20, 20);
-            this.btnLED48.TabIndex = 109;
+            this.btnLED48.TabIndex = 81;
             this.btnLED48.Tag = "48";
             this.btnLED48.UseVisualStyleBackColor = false;
             this.btnLED48.Click += new System.EventHandler(this.btnLED_Click);
@@ -3059,7 +3076,7 @@ namespace LEDController.View
             this.btnLED76.Location = new System.Drawing.Point(126, 168);
             this.btnLED76.Name = "btnLED76";
             this.btnLED76.Size = new System.Drawing.Size(20, 20);
-            this.btnLED76.TabIndex = 108;
+            this.btnLED76.TabIndex = 109;
             this.btnLED76.Tag = "76";
             this.btnLED76.UseVisualStyleBackColor = false;
             this.btnLED76.Click += new System.EventHandler(this.btnLED_Click);
@@ -3076,7 +3093,7 @@ namespace LEDController.View
             this.btnLED68.Location = new System.Drawing.Point(126, 128);
             this.btnLED68.Name = "btnLED68";
             this.btnLED68.Size = new System.Drawing.Size(20, 20);
-            this.btnLED68.TabIndex = 107;
+            this.btnLED68.TabIndex = 101;
             this.btnLED68.Tag = "68";
             this.btnLED68.UseVisualStyleBackColor = false;
             this.btnLED68.Click += new System.EventHandler(this.btnLED_Click);
@@ -3093,7 +3110,7 @@ namespace LEDController.View
             this.btnLED60.Location = new System.Drawing.Point(126, 92);
             this.btnLED60.Name = "btnLED60";
             this.btnLED60.Size = new System.Drawing.Size(20, 20);
-            this.btnLED60.TabIndex = 106;
+            this.btnLED60.TabIndex = 93;
             this.btnLED60.Tag = "60";
             this.btnLED60.UseVisualStyleBackColor = false;
             this.btnLED60.Click += new System.EventHandler(this.btnLED_Click);
@@ -3110,7 +3127,7 @@ namespace LEDController.View
             this.btnLED52.Location = new System.Drawing.Point(126, 55);
             this.btnLED52.Name = "btnLED52";
             this.btnLED52.Size = new System.Drawing.Size(20, 20);
-            this.btnLED52.TabIndex = 105;
+            this.btnLED52.TabIndex = 85;
             this.btnLED52.Tag = "52";
             this.btnLED52.UseVisualStyleBackColor = false;
             this.btnLED52.Click += new System.EventHandler(this.btnLED_Click);
@@ -3127,7 +3144,7 @@ namespace LEDController.View
             this.btnLED44.Location = new System.Drawing.Point(126, 19);
             this.btnLED44.Name = "btnLED44";
             this.btnLED44.Size = new System.Drawing.Size(20, 20);
-            this.btnLED44.TabIndex = 104;
+            this.btnLED44.TabIndex = 77;
             this.btnLED44.Tag = "44";
             this.btnLED44.UseVisualStyleBackColor = false;
             this.btnLED44.Click += new System.EventHandler(this.btnLED_Click);
@@ -3144,7 +3161,7 @@ namespace LEDController.View
             this.btnLED79.Location = new System.Drawing.Point(231, 168);
             this.btnLED79.Name = "btnLED79";
             this.btnLED79.Size = new System.Drawing.Size(20, 20);
-            this.btnLED79.TabIndex = 103;
+            this.btnLED79.TabIndex = 112;
             this.btnLED79.Tag = "79";
             this.btnLED79.UseVisualStyleBackColor = false;
             this.btnLED79.Click += new System.EventHandler(this.btnLED_Click);
@@ -3161,7 +3178,7 @@ namespace LEDController.View
             this.btnLED78.Location = new System.Drawing.Point(196, 168);
             this.btnLED78.Name = "btnLED78";
             this.btnLED78.Size = new System.Drawing.Size(20, 20);
-            this.btnLED78.TabIndex = 102;
+            this.btnLED78.TabIndex = 111;
             this.btnLED78.Tag = "78";
             this.btnLED78.UseVisualStyleBackColor = false;
             this.btnLED78.Click += new System.EventHandler(this.btnLED_Click);
@@ -3178,7 +3195,7 @@ namespace LEDController.View
             this.btnLED77.Location = new System.Drawing.Point(161, 168);
             this.btnLED77.Name = "btnLED77";
             this.btnLED77.Size = new System.Drawing.Size(20, 20);
-            this.btnLED77.TabIndex = 101;
+            this.btnLED77.TabIndex = 110;
             this.btnLED77.Tag = "77";
             this.btnLED77.UseVisualStyleBackColor = false;
             this.btnLED77.Click += new System.EventHandler(this.btnLED_Click);
@@ -3195,7 +3212,7 @@ namespace LEDController.View
             this.btnLED75.Location = new System.Drawing.Point(91, 168);
             this.btnLED75.Name = "btnLED75";
             this.btnLED75.Size = new System.Drawing.Size(20, 20);
-            this.btnLED75.TabIndex = 100;
+            this.btnLED75.TabIndex = 108;
             this.btnLED75.Tag = "75";
             this.btnLED75.UseVisualStyleBackColor = false;
             this.btnLED75.Click += new System.EventHandler(this.btnLED_Click);
@@ -3212,7 +3229,7 @@ namespace LEDController.View
             this.btnLED74.Location = new System.Drawing.Point(56, 168);
             this.btnLED74.Name = "btnLED74";
             this.btnLED74.Size = new System.Drawing.Size(20, 20);
-            this.btnLED74.TabIndex = 99;
+            this.btnLED74.TabIndex = 107;
             this.btnLED74.Tag = "74";
             this.btnLED74.UseVisualStyleBackColor = false;
             this.btnLED74.Click += new System.EventHandler(this.btnLED_Click);
@@ -3229,7 +3246,7 @@ namespace LEDController.View
             this.btnLED73.Location = new System.Drawing.Point(21, 168);
             this.btnLED73.Name = "btnLED73";
             this.btnLED73.Size = new System.Drawing.Size(20, 20);
-            this.btnLED73.TabIndex = 98;
+            this.btnLED73.TabIndex = 106;
             this.btnLED73.Tag = "73";
             this.btnLED73.UseVisualStyleBackColor = false;
             this.btnLED73.Click += new System.EventHandler(this.btnLED_Click);
@@ -3246,7 +3263,7 @@ namespace LEDController.View
             this.btnLED71.Location = new System.Drawing.Point(231, 128);
             this.btnLED71.Name = "btnLED71";
             this.btnLED71.Size = new System.Drawing.Size(20, 20);
-            this.btnLED71.TabIndex = 97;
+            this.btnLED71.TabIndex = 104;
             this.btnLED71.Tag = "71";
             this.btnLED71.UseVisualStyleBackColor = false;
             this.btnLED71.Click += new System.EventHandler(this.btnLED_Click);
@@ -3263,7 +3280,7 @@ namespace LEDController.View
             this.btnLED70.Location = new System.Drawing.Point(196, 128);
             this.btnLED70.Name = "btnLED70";
             this.btnLED70.Size = new System.Drawing.Size(20, 20);
-            this.btnLED70.TabIndex = 96;
+            this.btnLED70.TabIndex = 103;
             this.btnLED70.Tag = "70";
             this.btnLED70.UseVisualStyleBackColor = false;
             this.btnLED70.Click += new System.EventHandler(this.btnLED_Click);
@@ -3280,7 +3297,7 @@ namespace LEDController.View
             this.btnLED69.Location = new System.Drawing.Point(161, 128);
             this.btnLED69.Name = "btnLED69";
             this.btnLED69.Size = new System.Drawing.Size(20, 20);
-            this.btnLED69.TabIndex = 95;
+            this.btnLED69.TabIndex = 102;
             this.btnLED69.Tag = "69";
             this.btnLED69.UseVisualStyleBackColor = false;
             this.btnLED69.Click += new System.EventHandler(this.btnLED_Click);
@@ -3297,7 +3314,7 @@ namespace LEDController.View
             this.btnLED67.Location = new System.Drawing.Point(91, 128);
             this.btnLED67.Name = "btnLED67";
             this.btnLED67.Size = new System.Drawing.Size(20, 20);
-            this.btnLED67.TabIndex = 94;
+            this.btnLED67.TabIndex = 100;
             this.btnLED67.Tag = "67";
             this.btnLED67.UseVisualStyleBackColor = false;
             this.btnLED67.Click += new System.EventHandler(this.btnLED_Click);
@@ -3314,7 +3331,7 @@ namespace LEDController.View
             this.btnLED66.Location = new System.Drawing.Point(56, 128);
             this.btnLED66.Name = "btnLED66";
             this.btnLED66.Size = new System.Drawing.Size(20, 20);
-            this.btnLED66.TabIndex = 93;
+            this.btnLED66.TabIndex = 99;
             this.btnLED66.Tag = "66";
             this.btnLED66.UseVisualStyleBackColor = false;
             this.btnLED66.Click += new System.EventHandler(this.btnLED_Click);
@@ -3331,7 +3348,7 @@ namespace LEDController.View
             this.btnLED65.Location = new System.Drawing.Point(21, 128);
             this.btnLED65.Name = "btnLED65";
             this.btnLED65.Size = new System.Drawing.Size(20, 20);
-            this.btnLED65.TabIndex = 92;
+            this.btnLED65.TabIndex = 98;
             this.btnLED65.Tag = "65";
             this.btnLED65.UseVisualStyleBackColor = false;
             this.btnLED65.Click += new System.EventHandler(this.btnLED_Click);
@@ -3348,7 +3365,7 @@ namespace LEDController.View
             this.btnLED63.Location = new System.Drawing.Point(231, 92);
             this.btnLED63.Name = "btnLED63";
             this.btnLED63.Size = new System.Drawing.Size(20, 20);
-            this.btnLED63.TabIndex = 91;
+            this.btnLED63.TabIndex = 96;
             this.btnLED63.Tag = "63";
             this.btnLED63.UseVisualStyleBackColor = false;
             this.btnLED63.Click += new System.EventHandler(this.btnLED_Click);
@@ -3365,7 +3382,7 @@ namespace LEDController.View
             this.btnLED62.Location = new System.Drawing.Point(196, 92);
             this.btnLED62.Name = "btnLED62";
             this.btnLED62.Size = new System.Drawing.Size(20, 20);
-            this.btnLED62.TabIndex = 90;
+            this.btnLED62.TabIndex = 95;
             this.btnLED62.Tag = "62";
             this.btnLED62.UseVisualStyleBackColor = false;
             this.btnLED62.Click += new System.EventHandler(this.btnLED_Click);
@@ -3382,7 +3399,7 @@ namespace LEDController.View
             this.btnLED61.Location = new System.Drawing.Point(161, 92);
             this.btnLED61.Name = "btnLED61";
             this.btnLED61.Size = new System.Drawing.Size(20, 20);
-            this.btnLED61.TabIndex = 89;
+            this.btnLED61.TabIndex = 94;
             this.btnLED61.Tag = "61";
             this.btnLED61.UseVisualStyleBackColor = false;
             this.btnLED61.Click += new System.EventHandler(this.btnLED_Click);
@@ -3399,7 +3416,7 @@ namespace LEDController.View
             this.btnLED59.Location = new System.Drawing.Point(91, 92);
             this.btnLED59.Name = "btnLED59";
             this.btnLED59.Size = new System.Drawing.Size(20, 20);
-            this.btnLED59.TabIndex = 88;
+            this.btnLED59.TabIndex = 92;
             this.btnLED59.Tag = "59";
             this.btnLED59.UseVisualStyleBackColor = false;
             this.btnLED59.Click += new System.EventHandler(this.btnLED_Click);
@@ -3416,7 +3433,7 @@ namespace LEDController.View
             this.btnLED58.Location = new System.Drawing.Point(56, 92);
             this.btnLED58.Name = "btnLED58";
             this.btnLED58.Size = new System.Drawing.Size(20, 20);
-            this.btnLED58.TabIndex = 87;
+            this.btnLED58.TabIndex = 91;
             this.btnLED58.Tag = "58";
             this.btnLED58.UseVisualStyleBackColor = false;
             this.btnLED58.Click += new System.EventHandler(this.btnLED_Click);
@@ -3433,7 +3450,7 @@ namespace LEDController.View
             this.btnLED57.Location = new System.Drawing.Point(21, 92);
             this.btnLED57.Name = "btnLED57";
             this.btnLED57.Size = new System.Drawing.Size(20, 20);
-            this.btnLED57.TabIndex = 86;
+            this.btnLED57.TabIndex = 90;
             this.btnLED57.Tag = "57";
             this.btnLED57.UseVisualStyleBackColor = false;
             this.btnLED57.Click += new System.EventHandler(this.btnLED_Click);
@@ -3450,7 +3467,7 @@ namespace LEDController.View
             this.btnLED55.Location = new System.Drawing.Point(231, 55);
             this.btnLED55.Name = "btnLED55";
             this.btnLED55.Size = new System.Drawing.Size(20, 20);
-            this.btnLED55.TabIndex = 85;
+            this.btnLED55.TabIndex = 88;
             this.btnLED55.Tag = "55";
             this.btnLED55.UseVisualStyleBackColor = false;
             this.btnLED55.Click += new System.EventHandler(this.btnLED_Click);
@@ -3467,7 +3484,7 @@ namespace LEDController.View
             this.btnLED54.Location = new System.Drawing.Point(196, 55);
             this.btnLED54.Name = "btnLED54";
             this.btnLED54.Size = new System.Drawing.Size(20, 20);
-            this.btnLED54.TabIndex = 84;
+            this.btnLED54.TabIndex = 87;
             this.btnLED54.Tag = "54";
             this.btnLED54.UseVisualStyleBackColor = false;
             this.btnLED54.Click += new System.EventHandler(this.btnLED_Click);
@@ -3484,7 +3501,7 @@ namespace LEDController.View
             this.btnLED53.Location = new System.Drawing.Point(161, 55);
             this.btnLED53.Name = "btnLED53";
             this.btnLED53.Size = new System.Drawing.Size(20, 20);
-            this.btnLED53.TabIndex = 83;
+            this.btnLED53.TabIndex = 86;
             this.btnLED53.Tag = "53";
             this.btnLED53.UseVisualStyleBackColor = false;
             this.btnLED53.Click += new System.EventHandler(this.btnLED_Click);
@@ -3501,7 +3518,7 @@ namespace LEDController.View
             this.btnLED51.Location = new System.Drawing.Point(91, 55);
             this.btnLED51.Name = "btnLED51";
             this.btnLED51.Size = new System.Drawing.Size(20, 20);
-            this.btnLED51.TabIndex = 82;
+            this.btnLED51.TabIndex = 84;
             this.btnLED51.Tag = "51";
             this.btnLED51.UseVisualStyleBackColor = false;
             this.btnLED51.Click += new System.EventHandler(this.btnLED_Click);
@@ -3518,7 +3535,7 @@ namespace LEDController.View
             this.btnLED50.Location = new System.Drawing.Point(56, 55);
             this.btnLED50.Name = "btnLED50";
             this.btnLED50.Size = new System.Drawing.Size(20, 20);
-            this.btnLED50.TabIndex = 81;
+            this.btnLED50.TabIndex = 83;
             this.btnLED50.Tag = "50";
             this.btnLED50.UseVisualStyleBackColor = false;
             this.btnLED50.Click += new System.EventHandler(this.btnLED_Click);
@@ -3535,7 +3552,7 @@ namespace LEDController.View
             this.btnLED49.Location = new System.Drawing.Point(21, 55);
             this.btnLED49.Name = "btnLED49";
             this.btnLED49.Size = new System.Drawing.Size(20, 20);
-            this.btnLED49.TabIndex = 80;
+            this.btnLED49.TabIndex = 82;
             this.btnLED49.Tag = "49";
             this.btnLED49.UseVisualStyleBackColor = false;
             this.btnLED49.Click += new System.EventHandler(this.btnLED_Click);
@@ -3552,7 +3569,7 @@ namespace LEDController.View
             this.btnLED47.Location = new System.Drawing.Point(231, 19);
             this.btnLED47.Name = "btnLED47";
             this.btnLED47.Size = new System.Drawing.Size(20, 20);
-            this.btnLED47.TabIndex = 79;
+            this.btnLED47.TabIndex = 80;
             this.btnLED47.Tag = "47";
             this.btnLED47.UseVisualStyleBackColor = false;
             this.btnLED47.Click += new System.EventHandler(this.btnLED_Click);
@@ -3569,7 +3586,7 @@ namespace LEDController.View
             this.btnLED46.Location = new System.Drawing.Point(196, 19);
             this.btnLED46.Name = "btnLED46";
             this.btnLED46.Size = new System.Drawing.Size(20, 20);
-            this.btnLED46.TabIndex = 78;
+            this.btnLED46.TabIndex = 79;
             this.btnLED46.Tag = "46";
             this.btnLED46.UseVisualStyleBackColor = false;
             this.btnLED46.Click += new System.EventHandler(this.btnLED_Click);
@@ -3586,7 +3603,7 @@ namespace LEDController.View
             this.btnLED45.Location = new System.Drawing.Point(161, 19);
             this.btnLED45.Name = "btnLED45";
             this.btnLED45.Size = new System.Drawing.Size(20, 20);
-            this.btnLED45.TabIndex = 77;
+            this.btnLED45.TabIndex = 78;
             this.btnLED45.Tag = "45";
             this.btnLED45.UseVisualStyleBackColor = false;
             this.btnLED45.Click += new System.EventHandler(this.btnLED_Click);
@@ -3719,7 +3736,7 @@ namespace LEDController.View
             this.btnLED32.Location = new System.Drawing.Point(267, 128);
             this.btnLED32.Name = "btnLED32";
             this.btnLED32.Size = new System.Drawing.Size(20, 20);
-            this.btnLED32.TabIndex = 72;
+            this.btnLED32.TabIndex = 65;
             this.btnLED32.Tag = "32";
             this.btnLED32.UseVisualStyleBackColor = false;
             this.btnLED32.Click += new System.EventHandler(this.btnLED_Click);
@@ -3736,7 +3753,7 @@ namespace LEDController.View
             this.btnLED24.Location = new System.Drawing.Point(267, 92);
             this.btnLED24.Name = "btnLED24";
             this.btnLED24.Size = new System.Drawing.Size(20, 20);
-            this.btnLED24.TabIndex = 71;
+            this.btnLED24.TabIndex = 57;
             this.btnLED24.Tag = "24";
             this.btnLED24.UseVisualStyleBackColor = false;
             this.btnLED24.Click += new System.EventHandler(this.btnLED_Click);
@@ -3753,7 +3770,7 @@ namespace LEDController.View
             this.btnLED16.Location = new System.Drawing.Point(267, 55);
             this.btnLED16.Name = "btnLED16";
             this.btnLED16.Size = new System.Drawing.Size(20, 20);
-            this.btnLED16.TabIndex = 70;
+            this.btnLED16.TabIndex = 49;
             this.btnLED16.Tag = "16";
             this.btnLED16.UseVisualStyleBackColor = false;
             this.btnLED16.Click += new System.EventHandler(this.btnLED_Click);
@@ -3770,7 +3787,7 @@ namespace LEDController.View
             this.btnLED8.Location = new System.Drawing.Point(267, 19);
             this.btnLED8.Name = "btnLED8";
             this.btnLED8.Size = new System.Drawing.Size(20, 20);
-            this.btnLED8.TabIndex = 69;
+            this.btnLED8.TabIndex = 41;
             this.btnLED8.Tag = "8";
             this.btnLED8.UseVisualStyleBackColor = false;
             this.btnLED8.Click += new System.EventHandler(this.btnLED_Click);
@@ -3787,7 +3804,7 @@ namespace LEDController.View
             this.btnLED36.Location = new System.Drawing.Point(127, 168);
             this.btnLED36.Name = "btnLED36";
             this.btnLED36.Size = new System.Drawing.Size(20, 20);
-            this.btnLED36.TabIndex = 68;
+            this.btnLED36.TabIndex = 69;
             this.btnLED36.Tag = "36";
             this.btnLED36.UseVisualStyleBackColor = false;
             this.btnLED36.Click += new System.EventHandler(this.btnLED_Click);
@@ -3804,7 +3821,7 @@ namespace LEDController.View
             this.btnLED28.Location = new System.Drawing.Point(127, 128);
             this.btnLED28.Name = "btnLED28";
             this.btnLED28.Size = new System.Drawing.Size(20, 20);
-            this.btnLED28.TabIndex = 67;
+            this.btnLED28.TabIndex = 61;
             this.btnLED28.Tag = "28";
             this.btnLED28.UseVisualStyleBackColor = false;
             this.btnLED28.Click += new System.EventHandler(this.btnLED_Click);
@@ -3821,7 +3838,7 @@ namespace LEDController.View
             this.btnLED20.Location = new System.Drawing.Point(127, 92);
             this.btnLED20.Name = "btnLED20";
             this.btnLED20.Size = new System.Drawing.Size(20, 20);
-            this.btnLED20.TabIndex = 66;
+            this.btnLED20.TabIndex = 53;
             this.btnLED20.Tag = "20";
             this.btnLED20.UseVisualStyleBackColor = false;
             this.btnLED20.Click += new System.EventHandler(this.btnLED_Click);
@@ -3838,7 +3855,7 @@ namespace LEDController.View
             this.btnLED12.Location = new System.Drawing.Point(127, 55);
             this.btnLED12.Name = "btnLED12";
             this.btnLED12.Size = new System.Drawing.Size(20, 20);
-            this.btnLED12.TabIndex = 65;
+            this.btnLED12.TabIndex = 45;
             this.btnLED12.Tag = "12";
             this.btnLED12.UseVisualStyleBackColor = false;
             this.btnLED12.Click += new System.EventHandler(this.btnLED_Click);
@@ -3855,7 +3872,7 @@ namespace LEDController.View
             this.btnLED4.Location = new System.Drawing.Point(127, 19);
             this.btnLED4.Name = "btnLED4";
             this.btnLED4.Size = new System.Drawing.Size(20, 20);
-            this.btnLED4.TabIndex = 64;
+            this.btnLED4.TabIndex = 37;
             this.btnLED4.Tag = "4";
             this.btnLED4.UseVisualStyleBackColor = false;
             this.btnLED4.Click += new System.EventHandler(this.btnLED_Click);
@@ -3872,7 +3889,7 @@ namespace LEDController.View
             this.btnLED39.Location = new System.Drawing.Point(232, 168);
             this.btnLED39.Name = "btnLED39";
             this.btnLED39.Size = new System.Drawing.Size(20, 20);
-            this.btnLED39.TabIndex = 63;
+            this.btnLED39.TabIndex = 72;
             this.btnLED39.Tag = "39";
             this.btnLED39.UseVisualStyleBackColor = false;
             this.btnLED39.Click += new System.EventHandler(this.btnLED_Click);
@@ -3889,7 +3906,7 @@ namespace LEDController.View
             this.btnLED38.Location = new System.Drawing.Point(197, 168);
             this.btnLED38.Name = "btnLED38";
             this.btnLED38.Size = new System.Drawing.Size(20, 20);
-            this.btnLED38.TabIndex = 62;
+            this.btnLED38.TabIndex = 71;
             this.btnLED38.Tag = "38";
             this.btnLED38.UseVisualStyleBackColor = false;
             this.btnLED38.Click += new System.EventHandler(this.btnLED_Click);
@@ -3906,7 +3923,7 @@ namespace LEDController.View
             this.btnLED37.Location = new System.Drawing.Point(162, 168);
             this.btnLED37.Name = "btnLED37";
             this.btnLED37.Size = new System.Drawing.Size(20, 20);
-            this.btnLED37.TabIndex = 61;
+            this.btnLED37.TabIndex = 70;
             this.btnLED37.Tag = "37";
             this.btnLED37.UseVisualStyleBackColor = false;
             this.btnLED37.Click += new System.EventHandler(this.btnLED_Click);
@@ -3923,7 +3940,7 @@ namespace LEDController.View
             this.btnLED35.Location = new System.Drawing.Point(92, 168);
             this.btnLED35.Name = "btnLED35";
             this.btnLED35.Size = new System.Drawing.Size(20, 20);
-            this.btnLED35.TabIndex = 60;
+            this.btnLED35.TabIndex = 68;
             this.btnLED35.Tag = "35";
             this.btnLED35.UseVisualStyleBackColor = false;
             this.btnLED35.Click += new System.EventHandler(this.btnLED_Click);
@@ -3940,7 +3957,7 @@ namespace LEDController.View
             this.btnLED34.Location = new System.Drawing.Point(57, 168);
             this.btnLED34.Name = "btnLED34";
             this.btnLED34.Size = new System.Drawing.Size(20, 20);
-            this.btnLED34.TabIndex = 59;
+            this.btnLED34.TabIndex = 67;
             this.btnLED34.Tag = "34";
             this.btnLED34.UseVisualStyleBackColor = false;
             this.btnLED34.Click += new System.EventHandler(this.btnLED_Click);
@@ -3957,7 +3974,7 @@ namespace LEDController.View
             this.btnLED33.Location = new System.Drawing.Point(22, 168);
             this.btnLED33.Name = "btnLED33";
             this.btnLED33.Size = new System.Drawing.Size(20, 20);
-            this.btnLED33.TabIndex = 58;
+            this.btnLED33.TabIndex = 66;
             this.btnLED33.Tag = "33";
             this.btnLED33.UseVisualStyleBackColor = false;
             this.btnLED33.Click += new System.EventHandler(this.btnLED_Click);
@@ -3974,7 +3991,7 @@ namespace LEDController.View
             this.btnLED31.Location = new System.Drawing.Point(232, 128);
             this.btnLED31.Name = "btnLED31";
             this.btnLED31.Size = new System.Drawing.Size(20, 20);
-            this.btnLED31.TabIndex = 57;
+            this.btnLED31.TabIndex = 64;
             this.btnLED31.Tag = "31";
             this.btnLED31.UseVisualStyleBackColor = false;
             this.btnLED31.Click += new System.EventHandler(this.btnLED_Click);
@@ -3991,7 +4008,7 @@ namespace LEDController.View
             this.btnLED30.Location = new System.Drawing.Point(197, 128);
             this.btnLED30.Name = "btnLED30";
             this.btnLED30.Size = new System.Drawing.Size(20, 20);
-            this.btnLED30.TabIndex = 56;
+            this.btnLED30.TabIndex = 63;
             this.btnLED30.Tag = "30";
             this.btnLED30.UseVisualStyleBackColor = false;
             this.btnLED30.Click += new System.EventHandler(this.btnLED_Click);
@@ -4008,7 +4025,7 @@ namespace LEDController.View
             this.btnLED29.Location = new System.Drawing.Point(162, 128);
             this.btnLED29.Name = "btnLED29";
             this.btnLED29.Size = new System.Drawing.Size(20, 20);
-            this.btnLED29.TabIndex = 55;
+            this.btnLED29.TabIndex = 62;
             this.btnLED29.Tag = "29";
             this.btnLED29.UseVisualStyleBackColor = false;
             this.btnLED29.Click += new System.EventHandler(this.btnLED_Click);
@@ -4025,7 +4042,7 @@ namespace LEDController.View
             this.btnLED27.Location = new System.Drawing.Point(92, 128);
             this.btnLED27.Name = "btnLED27";
             this.btnLED27.Size = new System.Drawing.Size(20, 20);
-            this.btnLED27.TabIndex = 54;
+            this.btnLED27.TabIndex = 60;
             this.btnLED27.Tag = "27";
             this.btnLED27.UseVisualStyleBackColor = false;
             this.btnLED27.Click += new System.EventHandler(this.btnLED_Click);
@@ -4042,7 +4059,7 @@ namespace LEDController.View
             this.btnLED26.Location = new System.Drawing.Point(57, 128);
             this.btnLED26.Name = "btnLED26";
             this.btnLED26.Size = new System.Drawing.Size(20, 20);
-            this.btnLED26.TabIndex = 53;
+            this.btnLED26.TabIndex = 59;
             this.btnLED26.Tag = "26";
             this.btnLED26.UseVisualStyleBackColor = false;
             this.btnLED26.Click += new System.EventHandler(this.btnLED_Click);
@@ -4059,7 +4076,7 @@ namespace LEDController.View
             this.btnLED25.Location = new System.Drawing.Point(22, 128);
             this.btnLED25.Name = "btnLED25";
             this.btnLED25.Size = new System.Drawing.Size(20, 20);
-            this.btnLED25.TabIndex = 52;
+            this.btnLED25.TabIndex = 58;
             this.btnLED25.Tag = "25";
             this.btnLED25.UseVisualStyleBackColor = false;
             this.btnLED25.Click += new System.EventHandler(this.btnLED_Click);
@@ -4076,7 +4093,7 @@ namespace LEDController.View
             this.btnLED23.Location = new System.Drawing.Point(232, 92);
             this.btnLED23.Name = "btnLED23";
             this.btnLED23.Size = new System.Drawing.Size(20, 20);
-            this.btnLED23.TabIndex = 51;
+            this.btnLED23.TabIndex = 56;
             this.btnLED23.Tag = "23";
             this.btnLED23.UseVisualStyleBackColor = false;
             this.btnLED23.Click += new System.EventHandler(this.btnLED_Click);
@@ -4093,7 +4110,7 @@ namespace LEDController.View
             this.btnLED22.Location = new System.Drawing.Point(197, 92);
             this.btnLED22.Name = "btnLED22";
             this.btnLED22.Size = new System.Drawing.Size(20, 20);
-            this.btnLED22.TabIndex = 50;
+            this.btnLED22.TabIndex = 55;
             this.btnLED22.Tag = "22";
             this.btnLED22.UseVisualStyleBackColor = false;
             this.btnLED22.Click += new System.EventHandler(this.btnLED_Click);
@@ -4110,7 +4127,7 @@ namespace LEDController.View
             this.btnLED21.Location = new System.Drawing.Point(162, 92);
             this.btnLED21.Name = "btnLED21";
             this.btnLED21.Size = new System.Drawing.Size(20, 20);
-            this.btnLED21.TabIndex = 49;
+            this.btnLED21.TabIndex = 54;
             this.btnLED21.Tag = "21";
             this.btnLED21.UseVisualStyleBackColor = false;
             this.btnLED21.Click += new System.EventHandler(this.btnLED_Click);
@@ -4127,7 +4144,7 @@ namespace LEDController.View
             this.btnLED19.Location = new System.Drawing.Point(92, 92);
             this.btnLED19.Name = "btnLED19";
             this.btnLED19.Size = new System.Drawing.Size(20, 20);
-            this.btnLED19.TabIndex = 48;
+            this.btnLED19.TabIndex = 52;
             this.btnLED19.Tag = "19";
             this.btnLED19.UseVisualStyleBackColor = false;
             this.btnLED19.Click += new System.EventHandler(this.btnLED_Click);
@@ -4144,7 +4161,7 @@ namespace LEDController.View
             this.btnLED18.Location = new System.Drawing.Point(57, 92);
             this.btnLED18.Name = "btnLED18";
             this.btnLED18.Size = new System.Drawing.Size(20, 20);
-            this.btnLED18.TabIndex = 47;
+            this.btnLED18.TabIndex = 51;
             this.btnLED18.Tag = "18";
             this.btnLED18.UseVisualStyleBackColor = false;
             this.btnLED18.Click += new System.EventHandler(this.btnLED_Click);
@@ -4161,7 +4178,7 @@ namespace LEDController.View
             this.btnLED17.Location = new System.Drawing.Point(22, 92);
             this.btnLED17.Name = "btnLED17";
             this.btnLED17.Size = new System.Drawing.Size(20, 20);
-            this.btnLED17.TabIndex = 46;
+            this.btnLED17.TabIndex = 50;
             this.btnLED17.Tag = "17";
             this.btnLED17.UseVisualStyleBackColor = false;
             this.btnLED17.Click += new System.EventHandler(this.btnLED_Click);
@@ -4178,7 +4195,7 @@ namespace LEDController.View
             this.btnLED15.Location = new System.Drawing.Point(232, 55);
             this.btnLED15.Name = "btnLED15";
             this.btnLED15.Size = new System.Drawing.Size(20, 20);
-            this.btnLED15.TabIndex = 45;
+            this.btnLED15.TabIndex = 48;
             this.btnLED15.Tag = "15";
             this.btnLED15.UseVisualStyleBackColor = false;
             this.btnLED15.Click += new System.EventHandler(this.btnLED_Click);
@@ -4195,7 +4212,7 @@ namespace LEDController.View
             this.btnLED14.Location = new System.Drawing.Point(197, 55);
             this.btnLED14.Name = "btnLED14";
             this.btnLED14.Size = new System.Drawing.Size(20, 20);
-            this.btnLED14.TabIndex = 44;
+            this.btnLED14.TabIndex = 47;
             this.btnLED14.Tag = "14";
             this.btnLED14.UseVisualStyleBackColor = false;
             this.btnLED14.Click += new System.EventHandler(this.btnLED_Click);
@@ -4212,7 +4229,7 @@ namespace LEDController.View
             this.btnLED13.Location = new System.Drawing.Point(162, 55);
             this.btnLED13.Name = "btnLED13";
             this.btnLED13.Size = new System.Drawing.Size(20, 20);
-            this.btnLED13.TabIndex = 43;
+            this.btnLED13.TabIndex = 46;
             this.btnLED13.Tag = "13";
             this.btnLED13.UseVisualStyleBackColor = false;
             this.btnLED13.Click += new System.EventHandler(this.btnLED_Click);
@@ -4229,7 +4246,7 @@ namespace LEDController.View
             this.btnLED11.Location = new System.Drawing.Point(92, 55);
             this.btnLED11.Name = "btnLED11";
             this.btnLED11.Size = new System.Drawing.Size(20, 20);
-            this.btnLED11.TabIndex = 42;
+            this.btnLED11.TabIndex = 44;
             this.btnLED11.Tag = "11";
             this.btnLED11.UseVisualStyleBackColor = false;
             this.btnLED11.Click += new System.EventHandler(this.btnLED_Click);
@@ -4246,7 +4263,7 @@ namespace LEDController.View
             this.btnLED10.Location = new System.Drawing.Point(57, 55);
             this.btnLED10.Name = "btnLED10";
             this.btnLED10.Size = new System.Drawing.Size(20, 20);
-            this.btnLED10.TabIndex = 41;
+            this.btnLED10.TabIndex = 43;
             this.btnLED10.Tag = "10";
             this.btnLED10.UseVisualStyleBackColor = false;
             this.btnLED10.Click += new System.EventHandler(this.btnLED_Click);
@@ -4263,7 +4280,7 @@ namespace LEDController.View
             this.btnLED9.Location = new System.Drawing.Point(22, 55);
             this.btnLED9.Name = "btnLED9";
             this.btnLED9.Size = new System.Drawing.Size(20, 20);
-            this.btnLED9.TabIndex = 40;
+            this.btnLED9.TabIndex = 42;
             this.btnLED9.Tag = "9";
             this.btnLED9.UseVisualStyleBackColor = false;
             this.btnLED9.Click += new System.EventHandler(this.btnLED_Click);
@@ -4280,7 +4297,7 @@ namespace LEDController.View
             this.btnLED7.Location = new System.Drawing.Point(232, 19);
             this.btnLED7.Name = "btnLED7";
             this.btnLED7.Size = new System.Drawing.Size(20, 20);
-            this.btnLED7.TabIndex = 39;
+            this.btnLED7.TabIndex = 40;
             this.btnLED7.Tag = "7";
             this.btnLED7.UseVisualStyleBackColor = false;
             this.btnLED7.Click += new System.EventHandler(this.btnLED_Click);
@@ -4297,7 +4314,7 @@ namespace LEDController.View
             this.btnLED6.Location = new System.Drawing.Point(197, 19);
             this.btnLED6.Name = "btnLED6";
             this.btnLED6.Size = new System.Drawing.Size(20, 20);
-            this.btnLED6.TabIndex = 38;
+            this.btnLED6.TabIndex = 39;
             this.btnLED6.Tag = "6";
             this.btnLED6.UseVisualStyleBackColor = false;
             this.btnLED6.Click += new System.EventHandler(this.btnLED_Click);
@@ -4314,7 +4331,7 @@ namespace LEDController.View
             this.btnLED5.Location = new System.Drawing.Point(162, 19);
             this.btnLED5.Name = "btnLED5";
             this.btnLED5.Size = new System.Drawing.Size(20, 20);
-            this.btnLED5.TabIndex = 37;
+            this.btnLED5.TabIndex = 38;
             this.btnLED5.Tag = "5";
             this.btnLED5.UseVisualStyleBackColor = false;
             this.btnLED5.Click += new System.EventHandler(this.btnLED_Click);
@@ -4555,7 +4572,7 @@ namespace LEDController.View
             this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(41, 201);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 24);
+            this.label9.Size = new System.Drawing.Size(96, 16);
             this.label9.TabIndex = 269;
             this.label9.Text = "可调亮度LED";
             // 
@@ -4566,7 +4583,7 @@ namespace LEDController.View
             this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(730, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 24);
+            this.label7.Size = new System.Drawing.Size(64, 16);
             this.label7.TabIndex = 268;
             this.label7.Text = "红外LED";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4578,7 +4595,7 @@ namespace LEDController.View
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(465, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 24);
+            this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 267;
             this.label4.Text = "红色LED";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4590,7 +4607,7 @@ namespace LEDController.View
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(201, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 266;
             this.label1.Text = "绿色LED";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6338,7 +6355,7 @@ namespace LEDController.View
             this.tbxMaxValue.Location = new System.Drawing.Point(153, 95);
             this.tbxMaxValue.Name = "tbxMaxValue";
             this.tbxMaxValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tbxMaxValue.Size = new System.Drawing.Size(48, 35);
+            this.tbxMaxValue.Size = new System.Drawing.Size(48, 26);
             this.tbxMaxValue.TabIndex = 7;
             this.tbxMaxValue.Text = "10";
             // 
@@ -6348,7 +6365,7 @@ namespace LEDController.View
             this.tbxMinValue.Location = new System.Drawing.Point(99, 95);
             this.tbxMinValue.Name = "tbxMinValue";
             this.tbxMinValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tbxMinValue.Size = new System.Drawing.Size(30, 35);
+            this.tbxMinValue.Size = new System.Drawing.Size(30, 26);
             this.tbxMinValue.TabIndex = 6;
             this.tbxMinValue.Text = "0";
             // 
@@ -6360,7 +6377,7 @@ namespace LEDController.View
             this.label47.Location = new System.Drawing.Point(10, 105);
             this.label47.Margin = new System.Windows.Forms.Padding(10);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(110, 24);
+            this.label47.Size = new System.Drawing.Size(76, 16);
             this.label47.TabIndex = 5;
             this.label47.Text = "显示范围";
             // 
@@ -6370,7 +6387,7 @@ namespace LEDController.View
             this.label46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label46.Location = new System.Drawing.Point(176, 66);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(35, 24);
+            this.label46.Size = new System.Drawing.Size(25, 16);
             this.label46.TabIndex = 4;
             this.label46.Text = "秒";
             // 
@@ -6386,7 +6403,7 @@ namespace LEDController.View
             "50"});
             this.cbxQueryWaitTime.Location = new System.Drawing.Point(99, 61);
             this.cbxQueryWaitTime.Name = "cbxQueryWaitTime";
-            this.cbxQueryWaitTime.Size = new System.Drawing.Size(61, 32);
+            this.cbxQueryWaitTime.Size = new System.Drawing.Size(61, 24);
             this.cbxQueryWaitTime.Sorted = true;
             this.cbxQueryWaitTime.TabIndex = 3;
             // 
@@ -6398,7 +6415,7 @@ namespace LEDController.View
             this.label45.Location = new System.Drawing.Point(10, 69);
             this.label45.Margin = new System.Windows.Forms.Padding(10);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(110, 24);
+            this.label45.Size = new System.Drawing.Size(76, 16);
             this.label45.TabIndex = 2;
             this.label45.Text = "查询状态";
             // 
@@ -6413,7 +6430,7 @@ namespace LEDController.View
             "LED状态"});
             this.cbxQueryParam.Location = new System.Drawing.Point(99, 25);
             this.cbxQueryParam.Name = "cbxQueryParam";
-            this.cbxQueryParam.Size = new System.Drawing.Size(121, 32);
+            this.cbxQueryParam.Size = new System.Drawing.Size(121, 24);
             this.cbxQueryParam.Sorted = true;
             this.cbxQueryParam.TabIndex = 1;
             // 
@@ -6425,7 +6442,7 @@ namespace LEDController.View
             this.label44.Location = new System.Drawing.Point(10, 33);
             this.label44.Margin = new System.Windows.Forms.Padding(10);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(110, 24);
+            this.label44.Size = new System.Drawing.Size(76, 16);
             this.label44.TabIndex = 0;
             this.label44.Text = "查询状态";
             // 
@@ -6488,20 +6505,21 @@ namespace LEDController.View
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripConnectionStatus,
             this.toolStripLEDStatus});
-            this.statusStrip2.Location = new System.Drawing.Point(0, 566);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 575);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(1068, 31);
+            this.statusStrip2.Size = new System.Drawing.Size(1068, 22);
             this.statusStrip2.TabIndex = 7;
             this.statusStrip2.Text = "statusStrip2";
             // 
             // toolStripConnectionStatus
             // 
             this.toolStripConnectionStatus.Name = "toolStripConnectionStatus";
-            this.toolStripConnectionStatus.Size = new System.Drawing.Size(82, 24);
+            this.toolStripConnectionStatus.Size = new System.Drawing.Size(56, 17);
             this.toolStripConnectionStatus.Text = "连接断开";
             // 
             // btnRecStatus1
             // 
+            this.btnRecStatus1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRecStatus1.BackColor = System.Drawing.Color.DarkRed;
             this.btnRecStatus1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnRecStatus1.Enabled = false;
@@ -6512,6 +6530,7 @@ namespace LEDController.View
             // 
             // btnRecStatus3
             // 
+            this.btnRecStatus3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRecStatus3.BackColor = System.Drawing.Color.DarkRed;
             this.btnRecStatus3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnRecStatus3.Enabled = false;
@@ -6522,6 +6541,7 @@ namespace LEDController.View
             // 
             // btnRecStatus2
             // 
+            this.btnRecStatus2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRecStatus2.BackColor = System.Drawing.Color.DarkRed;
             this.btnRecStatus2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnRecStatus2.Enabled = false;
@@ -6532,6 +6552,7 @@ namespace LEDController.View
             // 
             // btnSendStatus2
             // 
+            this.btnSendStatus2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSendStatus2.BackColor = System.Drawing.Color.DarkRed;
             this.btnSendStatus2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnSendStatus2.Enabled = false;
@@ -6542,6 +6563,7 @@ namespace LEDController.View
             // 
             // btnSendStatus3
             // 
+            this.btnSendStatus3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSendStatus3.BackColor = System.Drawing.Color.DarkRed;
             this.btnSendStatus3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnSendStatus3.Enabled = false;
@@ -6552,6 +6574,7 @@ namespace LEDController.View
             // 
             // btnSendStatus1
             // 
+            this.btnSendStatus1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSendStatus1.BackColor = System.Drawing.Color.DarkRed;
             this.btnSendStatus1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnSendStatus1.Enabled = false;
@@ -6562,6 +6585,7 @@ namespace LEDController.View
             // 
             // label52
             // 
+            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label52.AutoSize = true;
             this.label52.Location = new System.Drawing.Point(857, 580);
             this.label52.Name = "label52";
@@ -6571,6 +6595,7 @@ namespace LEDController.View
             // 
             // label53
             // 
+            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label53.AutoSize = true;
             this.label53.Location = new System.Drawing.Point(956, 580);
             this.label53.Name = "label53";
@@ -6597,10 +6622,11 @@ namespace LEDController.View
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.Name = "LEDControllerViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LED-Controller";
+            this.Load += new System.EventHandler(this.LEDControllerViewer_Load);
+            this.Resize += new System.EventHandler(this.LEDControllerViewer_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabCtrlMain.ResumeLayout(false);

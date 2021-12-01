@@ -48,6 +48,9 @@ namespace LEDController.View
         public event EventHandler<EventArgs> SaveasCfgFile;
         public DispatcherTimer timer = new DispatcherTimer();
 
+        private Size m_szInit;   //初始窗体大小
+        private Dictionary<Control, Rectangle> m_dicSize = new Dictionary<Control, Rectangle>();
+
         public int queryParamSelectItem
         {
             get { return cbxQueryParam.SelectedIndex; }
@@ -479,22 +482,32 @@ namespace LEDController.View
             }
         }
 
+        private void GetAllControl(Control c, List<Control> list, string substr)
+        {
+            // Get all controls
+            foreach (Control control in c.Controls)
+            {
+                if (control.Name.Contains(substr))
+                    list.Add(control);
+
+                if (control.GetType() == typeof(Panel))
+                    GetAllControl(control, list);
+            }
+        }
+
         private void btnOpenGreenFixLED_Click(object sender, EventArgs e)
         {
             // Turn on all Green Fix LEDs
             this.Cursor = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
+            GetAllControl(this.panelGreenFixLED, list, "btnLED");
 
-            GetAllControl(this.panelGreenFixLED, list);
-
-            foreach (Control control in list)
+            for (int i = 0; i < list.Count(); i++)
             {
-                if (control.GetType() == typeof(Button))
-                {
-
-                    OpenFixLED?.Invoke(control, new EventFixLEDArgs(Convert.ToInt16(control.Tag)));
-                    Thread.Sleep(100);
-                }
+                int LEDIndex = i + 1;
+                Button btn = (Button)(panelGreenFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                OpenFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
         }
@@ -504,17 +517,14 @@ namespace LEDController.View
             // Turn off all Green LEDs
             this.Cursor = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
+            GetAllControl(this.panelGreenFixLED, list, "btnLED");
 
-            GetAllControl(this.panelGreenFixLED, list);
-
-            foreach (Control control in list)
+            for (int i = 0; i < list.Count(); i++)
             {
-                if (control.GetType() == typeof(Button))
-                {
-
-                    CloseFixLED?.Invoke(control, new EventFixLEDArgs(Convert.ToInt16(control.Tag)));
-                    Thread.Sleep(100);
-                }
+                int LEDIndex = i + 1;
+                Button btn = (Button)(panelGreenFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                CloseFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
         }
@@ -523,78 +533,92 @@ namespace LEDController.View
         {
             // Turn on all Red Fix LEDs
             this.Cursor = Cursors.WaitCursor;
+
+            List<Control> greenLEDList = new List<Control>();
+            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnLED");
+            int nGreenFixLED = greenLEDList.Count();
+
             List<Control> list = new List<Control>();
+            GetAllControl(this.panelRedFixLED, list, "btnLED");
 
-            GetAllControl(this.panelRedFixLED, list);
-
-            foreach (Control control in list)
+            for (int i = 0; i < list.Count(); i++)
             {
-                if (control.GetType() == typeof(Button))
-                {
-
-                    OpenFixLED?.Invoke(control, new EventFixLEDArgs(Convert.ToInt16(control.Tag)));
-                    Thread.Sleep(100);
-                }
+                int LEDIndex = i + 1 + nGreenFixLED;
+                Button btn = (Button)(panelRedFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                OpenFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
         }
 
         private void btnCloseRedFixLED_Click(object sender, EventArgs e)
         {
-            // Turn off all Red Fix LEDs
+            // Turn on all Red Fix LEDs
             this.Cursor = Cursors.WaitCursor;
+
+            List<Control> greenLEDList = new List<Control>();
+            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnLED");
+            int nGreenFixLED = greenLEDList.Count();
+
             List<Control> list = new List<Control>();
+            GetAllControl(this.panelRedFixLED, list, "btnLED");
 
-            GetAllControl(this.panelRedFixLED, list);
-
-            foreach (Control control in list)
+            for (int i = 0; i < list.Count(); i++)
             {
-                if (control.GetType() == typeof(Button))
-                {
-
-                    CloseFixLED?.Invoke(control, new EventFixLEDArgs(Convert.ToInt16(control.Tag)));
-                    Thread.Sleep(100);
-                }
+                int LEDIndex = i + 1 + nGreenFixLED;
+                Button btn = (Button)(panelRedFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                CloseFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
         }
 
         private void btnOpenDarkRedFixLED_Click(object sender, EventArgs e)
         {
-            // Turn on all DarkRed Fix LEDs
+            // Turn on all Red Fix LEDs
             this.Cursor = Cursors.WaitCursor;
+
+            List<Control> greenLEDList = new List<Control>();
+            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnLED");
+            int nGreenFixLED = greenLEDList.Count();
+            List<Control> redLEDList = new List<Control>();
+            GetAllControl(this.panelRedFixLED, redLEDList, "btnLED");
+            int nRedFixLED = redLEDList.Count();
+
             List<Control> list = new List<Control>();
+            GetAllControl(this.panelDarkRedFixLED, list, "btnLED");
 
-            GetAllControl(this.panelDarkRedFixLED, list);
-
-            foreach (Control control in list)
+            for (int i = 0; i < list.Count(); i++)
             {
-                if (control.GetType() == typeof(Button))
-                {
-
-                    OpenFixLED?.Invoke(control, new EventFixLEDArgs(Convert.ToInt16(control.Tag)));
-                    Thread.Sleep(100);
-                }
+                int LEDIndex = i + 1 + nGreenFixLED + nRedFixLED;
+                Button btn = (Button)(panelDarkRedFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                OpenFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
         }
 
         private void btnCloseDarkRedFixLED_Click(object sender, EventArgs e)
         {
-            // Turn off all DarkRed LEDs
+            // Turn on all Red Fix LEDs
             this.Cursor = Cursors.WaitCursor;
+
+            List<Control> greenLEDList = new List<Control>();
+            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnLED");
+            int nGreenFixLED = greenLEDList.Count();
+            List<Control> redLEDList = new List<Control>();
+            GetAllControl(this.panelRedFixLED, redLEDList, "btnLED");
+            int nRedFixLED = redLEDList.Count();
+
             List<Control> list = new List<Control>();
+            GetAllControl(this.panelDarkRedFixLED, list, "btnLED");
 
-            GetAllControl(this.panelDarkRedFixLED, list);
-
-            foreach (Control control in list)
+            for (int i = 0; i < list.Count(); i++)
             {
-                if (control.GetType() == typeof(Button))
-                {
-
-                    CloseFixLED?.Invoke(control, new EventFixLEDArgs(Convert.ToInt16(control.Tag)));
-                    Thread.Sleep(100);
-                }
+                int LEDIndex = i + 1 + nGreenFixLED + nRedFixLED;
+                Button btn = (Button)(panelDarkRedFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                CloseFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
         }
@@ -786,7 +810,7 @@ namespace LEDController.View
         }
 
         private void btnLED_Click(object sender, EventArgs e)
-        {
+        { 
             // Click Fix LED button
             Button btn = sender as Button;
             HandleFixLED?.Invoke(sender, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
@@ -854,21 +878,10 @@ namespace LEDController.View
         private void btnDimLED_Click(object sender, EventArgs e)
         {
             // Turn on Dimmable LED
-            double[] dimLEDPowers = new double[]{
-                Convert.ToDouble(tbxDimLED1.Text),
-                Convert.ToDouble(tbxDimLED2.Text),
-                Convert.ToDouble(tbxDimLED3.Text),
-                Convert.ToDouble(tbxDimLED4.Text),
-                Convert.ToDouble(tbxDimLED5.Text),
-                Convert.ToDouble(tbxDimLED6.Text),
-                Convert.ToDouble(tbxDimLED7.Text),
-                Convert.ToDouble(tbxDimLED8.Text),
-                Convert.ToDouble(tbxDimLED9.Text),
-                Convert.ToDouble(tbxDimLED10.Text),
-                Convert.ToDouble(tbxDimLED11.Text),
-                Convert.ToDouble(tbxDimLED12.Text)};
             Button btn = sender as Button;
-            EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(Convert.ToInt32(btn.Tag) - 120, dimLEDPowers[Convert.ToInt32(btn.Tag) - 1 - 120]);
+            int LEDIndex = Convert.ToInt32(btn.Tag) - 120;
+            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimLED{LEDIndex}", true)[0]);
+            EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(LEDIndex, Convert.ToDouble(tbx.Text));
 
             HandleDimLED?.Invoke(sender, dimLEDEvent);
         }
@@ -876,36 +889,13 @@ namespace LEDController.View
         private void btnCfgDimLED_Click(object sender, EventArgs e)
         {
             // Turn on Dimmable LED
-            double[] dimLEDPowers = new double[]{
-                Convert.ToDouble(tbxDimLED1.Text),
-                Convert.ToDouble(tbxDimLED2.Text),
-                Convert.ToDouble(tbxDimLED3.Text),
-                Convert.ToDouble(tbxDimLED4.Text),
-                Convert.ToDouble(tbxDimLED5.Text),
-                Convert.ToDouble(tbxDimLED6.Text),
-                Convert.ToDouble(tbxDimLED7.Text),
-                Convert.ToDouble(tbxDimLED8.Text),
-                Convert.ToDouble(tbxDimLED9.Text),
-                Convert.ToDouble(tbxDimLED10.Text),
-                Convert.ToDouble(tbxDimLED11.Text),
-                Convert.ToDouble(tbxDimLED12.Text)};
-            List<Button> btnList = new List<Button>();
-            btnList.Add(btnDimLED1);
-            btnList.Add(btnDimLED2);
-            btnList.Add(btnDimLED3);
-            btnList.Add(btnDimLED4);
-            btnList.Add(btnDimLED5);
-            btnList.Add(btnDimLED6);
-            btnList.Add(btnDimLED7);
-            btnList.Add(btnDimLED8);
-            btnList.Add(btnDimLED9);
-            btnList.Add(btnDimLED10);
-            btnList.Add(btnDimLED11);
-            btnList.Add(btnDimLED12);
             Button btn = sender as Button;
-            EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(Convert.ToInt32(btn.Tag) - 120, dimLEDPowers[Convert.ToInt32(btn.Tag) - 120 - 1]);
+            int LEDIndex = Convert.ToInt32(btn.Tag) - 120;
+            Button LEDBtn = (Button)(this.Controls.Find($"btnDimLED{LEDIndex}", true)[0]);
+            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimLED{LEDIndex}", true)[0]);
+            EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(LEDIndex, Convert.ToDouble(tbx.Text));
 
-            SetDimLED?.Invoke(btnList[Convert.ToInt32(btn.Tag) - 1 - 120], dimLEDEvent);
+            SetDimLED?.Invoke(LEDBtn, dimLEDEvent);
         }
 
         private void Open_Click(object sender, EventArgs e)
@@ -921,6 +911,35 @@ namespace LEDController.View
         private void Saveas_Click(object sender, EventArgs e)
         {
             SaveasCfgFile?.Invoke(sender, e);
+        }
+
+        protected void LEDControllerViewer_Load(object sender, EventArgs e)
+        {
+            m_szInit = this.Size;
+            this.GetInitSize(this);
+        }
+
+        private void GetInitSize(Control c)
+        {
+            foreach (Control control in c.Controls)
+            {
+                m_dicSize.Add(control, new Rectangle(control.Location, control.Size));
+                this.GetInitSize(control);
+            }
+        }
+
+        private void LEDControllerViewer_Resize(object sender, EventArgs e)
+        {
+            float fx = (float)this.Width / m_szInit.Width;
+            float fy = (float)this.Height / m_szInit.Height;
+            foreach (var v in m_dicSize)
+            {
+                v.Key.Left = (int)(v.Value.Left * fx);
+                v.Key.Top = (int)(v.Value.Top * fy);
+                v.Key.Width = (int)(v.Value.Width * fx);
+                v.Key.Height = (int)(v.Value.Height * fy);
+            }
+
         }
     }
 
