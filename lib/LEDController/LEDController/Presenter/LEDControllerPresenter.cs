@@ -63,6 +63,7 @@ namespace LEDController.Presenter
             _view.OpenWithCfgFile += new EventHandler<EventArgs>(OnOpenWithCfgFile);
             _view.SaveCfgFile += new EventHandler<EventArgs>(OnSaveCfgFile);
             _view.SaveasCfgFile += new EventHandler<EventArgs>(OnSaveasCfgFile);
+            _view.ShowVersion += new EventHandler<EventArgs>(OnShowVersion);
             _view.lblGreenLEDMaxLeftText = Convert.ToString(MaxGreenLEDPower);
             _view.lblGreenLEDMaxRightText = Convert.ToString(MaxGreenLEDPower);
             _view.lblGreenLEDMinLeftText = Convert.ToString(MinGreenLEDPower);
@@ -160,6 +161,17 @@ namespace LEDController.Presenter
             }
 
             return LEDCfgWriter;
+        }
+
+        public void OnShowVersion(object sender, EventArgs e)
+        {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            var companyName = fvi.CompanyName;
+            var productName = fvi.ProductName;
+            var productVersion = fvi.ProductVersion;
+
+            MessageBox.Show(String.Format("Product Name: {0}\nVersion: {1}\nCompany: {2}", productName, productVersion, companyName));
         }
 
         public void OnSaveCfgFile(object sender, EventArgs e)

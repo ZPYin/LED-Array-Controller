@@ -46,6 +46,7 @@ namespace LEDController.View
         public event EventHandler<EventArgs> OpenWithCfgFile;
         public event EventHandler<EventArgs> SaveCfgFile;
         public event EventHandler<EventArgs> SaveasCfgFile;
+        public event EventHandler<EventArgs> ShowVersion;
         public DispatcherTimer timer = new DispatcherTimer();
 
         private Size m_szInit;   //初始窗体大小
@@ -940,6 +941,16 @@ namespace LEDController.View
                 v.Key.Height = (int)(v.Value.Height * fy);
             }
 
+        }
+
+        private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.baidu.com/");
+        }
+
+        private void VersionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowVersion?.Invoke(sender, e);
         }
     }
 

@@ -48,8 +48,8 @@ namespace LEDController.View
             this.tsmSkylightControl = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCameraControl = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.使用帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.版本信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.网口连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.网口断开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -647,24 +647,26 @@ namespace LEDController.View
             // 帮助ToolStripMenuItem
             // 
             this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.使用帮助ToolStripMenuItem,
-            this.版本信息ToolStripMenuItem});
+            this.HelpToolStripMenuItem,
+            this.VersionToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
             this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
-            // 使用帮助ToolStripMenuItem
+            // HelpToolStripMenuItem
             // 
-            this.使用帮助ToolStripMenuItem.Name = "使用帮助ToolStripMenuItem";
-            this.使用帮助ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.使用帮助ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.使用帮助ToolStripMenuItem.Text = "使用帮助";
+            this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
+            this.HelpToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.HelpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.HelpToolStripMenuItem.Text = "使用帮助";
+            this.HelpToolStripMenuItem.Click += new System.EventHandler(this.HelpToolStripMenuItem_Click);
             // 
-            // 版本信息ToolStripMenuItem
+            // VersionToolStripMenuItem
             // 
-            this.版本信息ToolStripMenuItem.Name = "版本信息ToolStripMenuItem";
-            this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.版本信息ToolStripMenuItem.Text = "版本信息";
+            this.VersionToolStripMenuItem.Name = "VersionToolStripMenuItem";
+            this.VersionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.VersionToolStripMenuItem.Text = "版本信息";
+            this.VersionToolStripMenuItem.Click += new System.EventHandler(this.VersionToolStripMenuItem_Click);
             // 
             // 网口连接ToolStripMenuItem
             // 
@@ -6689,8 +6691,8 @@ namespace LEDController.View
         private System.Windows.Forms.ToolStripMenuItem tsmSkylightControl;
         private System.Windows.Forms.ToolStripMenuItem tsmCameraControl;
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 使用帮助ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 版本信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem VersionToolStripMenuItem;
         private System.Windows.Forms.TabControl tabCtrlMain;
         private System.Windows.Forms.TabPage tpgConnect;
         private System.Windows.Forms.TabPage tpgLEDControl;
