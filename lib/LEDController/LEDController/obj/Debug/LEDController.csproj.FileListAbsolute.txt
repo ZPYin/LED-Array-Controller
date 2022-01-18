@@ -19,3 +19,4 @@ D:\Coding\C#\LED-controller\lib\LEDController\LEDController\bin\Debug\LEDControl
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.TrustInfo.xml
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.exe.manifest
 D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.application
+D:\Coding\C#\LED-controller\lib\LEDController\LEDController\obj\Debug\LEDController.csproj.CopyComplete

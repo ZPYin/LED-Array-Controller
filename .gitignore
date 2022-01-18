@@ -5,3 +5,4 @@ lib/LEDControllerTest/obj
 
 # editor configuration
 lib/.vs
+.vscode

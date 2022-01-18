@@ -519,7 +519,7 @@ namespace LEDController.Presenter
             // Calculate Dimmable LED power
             double LEDPower = 0.0;
 
-            if ((LEDIndex >= 1) && (LEDIndex <= LEDBoardCom.NumGreenFixLED))
+            if ((LEDIndex >= 1) && (LEDIndex <= LEDBoardCom.NumGreenDimLED))
             {
                 // Green LED
                 LEDPower = (sbarValue - 0) / NumScrollBarLevel * (MaxGreenLEDPower - MinGreenLEDPower) + MinGreenLEDPower;
