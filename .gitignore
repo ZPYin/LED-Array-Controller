@@ -2,7 +2,10 @@
 lib/LEDController/TestResults
 lib/LEDController/obj
 lib/LEDControllerTest/obj
+lib/LEDController/LEDControllerTest/bin
+lib/LEDController/LEDController/bin
 
 # editor configuration
 lib/.vs
 .vscode
+lib/LEDController/.vs

@@ -20,5 +20,11 @@ namespace LEDControllerTest
 
             Assert.AreEqual(cfgReader.configData["name"], "zhenping");
         }
+
+        [TestMethod]
+        public void TestConnect()
+        {
+            
+        }
     }
 }
