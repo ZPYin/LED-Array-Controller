@@ -80,9 +80,9 @@ namespace LEDController.Presenter
             // Initialize LED status plot
             sw.Start();
             Random rand = new Random(0);
-            LEDPowerLiveData = ScottPlot.DataGen.RandomWalk(rand, NumLiveData);
-            LEDCurrentLiveData = ScottPlot.DataGen.RandomWalk(rand, NumLiveData);
-            LEDVoltageLiveData = ScottPlot.DataGen.RandomWalk(rand, NumLiveData);
+            double[] LEDPowerLiveData = new double[1];
+            double[] LEDCurrentLiveData = new double[1];
+            double[] LEDVoltageLiveData = new double[1];
             var sig = _view.formsLEDStatusPlot.Plot.AddSignal(LEDPowerLiveData, sampleRate: 3600 * 24.0, label: "功率");
             _view.formsLEDStatusPlot.Plot.AddSignal(LEDCurrentLiveData, sampleRate: 3600 * 24.0, label: "电流");
             _view.formsLEDStatusPlot.Plot.AddSignal(LEDVoltageLiveData, sampleRate: 3600 * 24.0, label: "电压");
@@ -394,18 +394,38 @@ namespace LEDController.Presenter
             }
 
             // Show LED status
-            
-            // Get Status values
 
-            // Convert values to color
-            Color[] LEDControlColors = new Color[132];
-            for (int i = 0; i < 132; i++)
+            if ((connector != null) && (receiveBytes != null))
             {
-                LEDControlColors[i] = Color.Red;
-            }
+                try
+                {
+                    // parsing status
+                    LEDStatus thisLEDStatus;
+                    thisLEDStatus = connector.ParsePackage(receiveBytes);
 
-            // Set Colors
-            _view.LEDStatusColors = LEDControlColors;
+                    if (thisLEDStatus.isValidPackage)
+                    {
+                        // show status
+                        // Get Status values
+
+                        // Convert values to color
+                        Color[] LEDControlColors = new Color[132];
+                        for (int i = 0; i < 132; i++)
+                        {
+                            // specify LED status according to the showing message type
+                            LEDControlColors[i] = Color.Red;
+                        }
+
+                        // Set Colors
+                        _view.LEDStatusColors = LEDControlColors;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // show status
+                    _view.toolStripLEDStatusText = "获取LED状态失败";
+                }
+            }
         }
 
         private void OnHandleDimLED(object sender, EventDimLEDArgs e)
@@ -776,8 +796,17 @@ namespace LEDController.Presenter
                     LEDStatus thisLEDStatus;
                     thisLEDStatus = connector.ParsePackage(receiveBytes);
 
-                    // show status
-                    // LED power, current, voltage, temperature ...
+                    if (thisLEDStatus.isValidPackage)
+                    {
+                        // show status
+                        // determine whether it is fix led or dim led
+                        // LED power, current, voltage, temperature ... in the bottom status bar
+                    }
+                    else
+                    {
+                        // show status
+                        _view.toolStripLEDStatusText = "获取LED状态失败";
+                    }
                 }
                 catch (Exception ex)
                 {
