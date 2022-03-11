@@ -4,6 +4,8 @@ lib/LEDController/obj
 lib/LEDControllerTest/obj
 lib/LEDController/LEDControllerTest/bin
 lib/LEDController/LEDController/bin
+lib/LEDController/LEDControllerTest/obj
+lib/LEDController/LEDController/obj
 
 # editor configuration
 lib/.vs

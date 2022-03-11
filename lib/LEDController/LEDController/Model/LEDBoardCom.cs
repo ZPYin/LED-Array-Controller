@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Net;
 using System.Net.Sockets;
+using System.Net.NetworkInformation;
 using System.IO;
 using System.Collections;
 
@@ -231,6 +232,26 @@ namespace LEDController.Model
         }
     }
 
+    public static class IpUtilities
+    {
+        private const ushort MIN_PORT = 1;
+        private const ushort MAX_PORT = UInt16.MaxValue;
+        public static int? GetAvailablePort(ushort lowerPort = MIN_PORT, ushort upperPort = MAX_PORT)
+        {
+            var ipProperties = IPGlobalProperties.GetIPGlobalProperties();
+            var usedPorts = Enumerable.Empty<int>()
+                .Concat(ipProperties.GetActiveTcpConnections().Select(c => c.LocalEndPoint.Port))
+                .Concat(ipProperties.GetActiveTcpListeners().Select(l => l.Port))
+                .Concat(ipProperties.GetActiveUdpListeners().Select(l => l.Port))
+                .ToHashSet();
+            for (int port = lowerPort; port <= upperPort; port++)
+            {
+                if (!usedPorts.Contains(port)) return port;
+            }
+            return null;
+        }
+    }
+
     public class LEDBoardCom
     {
         public string slaveIP;
@@ -346,7 +367,7 @@ namespace LEDController.Model
             SendCmd(cmdBytes);
         }
 
-        private byte[] MakeCmd(int LEDInd, Boolean isTurnOn)
+        public byte[] MakeCmd(int LEDInd, Boolean isTurnOn)
         {
             var cmdBytes = new byte[11];
 
@@ -368,7 +389,7 @@ namespace LEDController.Model
             return cmdBytes;
         }
 
-        private byte[] MakeCmd(int LEDInd, int LEDBrightness, Boolean isTurnOn)
+        public byte[] MakeCmd(int LEDInd, int LEDBrightness, Boolean isTurnOn)
         {
             var cmdBytes = new byte[11];
 
@@ -377,8 +398,8 @@ namespace LEDController.Model
             cmdBytes[2] = 0x05;
             cmdBytes[3] = 0x31;   // Command code
             cmdBytes[4] = Convert.ToByte(LEDInd + 8 + NumGreenFixLED + NumRedFixLED + NumDarkRedFixLED);   // LED address
-            cmdBytes[5] = Convert.ToByte(isTurnOn);
-            cmdBytes[6] = Convert.ToByte(LEDBrightness);
+            cmdBytes[5] = Convert.ToByte(LEDBrightness);
+            cmdBytes[6] = 0x00;
             cmdBytes[7] = 0x00;
 
             UInt16 CHK = (UInt16)((UInt16)0xFFFF - ((UInt16)cmdBytes[3] + (UInt16)cmdBytes[4] + (UInt16)cmdBytes[5] + (UInt16)cmdBytes[6] + (UInt16)cmdBytes[7] + (UInt16)1));
