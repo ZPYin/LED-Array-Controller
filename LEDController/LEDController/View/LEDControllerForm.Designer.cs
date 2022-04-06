@@ -54,6 +54,19 @@ namespace LEDController.View
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabCtrlMain = new System.Windows.Forms.TabControl();
+            this.tpgConnect = new System.Windows.Forms.TabPage();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tbxTestRec = new System.Windows.Forms.TextBox();
+            this.tbxTestCmd = new System.Windows.Forms.TextBox();
+            this.btnSendTestMsg = new System.Windows.Forms.Button();
+            this.tbxConnectMsg = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tbxPort = new System.Windows.Forms.TextBox();
+            this.tbxIP = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tpgLEDControl = new System.Windows.Forms.TabPage();
             this.label43 = new System.Windows.Forms.Label();
             this.button130 = new System.Windows.Forms.Button();
@@ -443,19 +456,6 @@ namespace LEDController.View
             this.tpgAirConditionerControl = new System.Windows.Forms.TabPage();
             this.tpgSkylightControl = new System.Windows.Forms.TabPage();
             this.tpgCameraControl = new System.Windows.Forms.TabPage();
-            this.tpgConnect = new System.Windows.Forms.TabPage();
-            this.btnConnect = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.tbxTestRec = new System.Windows.Forms.TextBox();
-            this.tbxTestCmd = new System.Windows.Forms.TextBox();
-            this.btnSendTestMsg = new System.Windows.Forms.Button();
-            this.tbxConnectMsg = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.tbxPort = new System.Windows.Forms.TextBox();
-            this.tbxIP = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -467,8 +467,10 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
+            this.tpgConnect.SuspendLayout();
             this.tpgLEDControl.SuspendLayout();
             this.panelDarkRedDimLED.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED12)).BeginInit();
@@ -491,8 +493,8 @@ namespace LEDController.View
             this.panelGreenFixLED.SuspendLayout();
             this.tpgLEDStatus.SuspendLayout();
             this.panelLEDStatus.SuspendLayout();
-            this.tpgConnect.SuspendLayout();
             this.statusStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripLEDStatus
@@ -697,6 +699,158 @@ namespace LEDController.View
             this.tabCtrlMain.Size = new System.Drawing.Size(1050, 560);
             this.tabCtrlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabCtrlMain.TabIndex = 0;
+            // 
+            // tpgConnect
+            // 
+            this.tpgConnect.Controls.Add(this.btnConnect);
+            this.tpgConnect.Controls.Add(this.btnClose);
+            this.tpgConnect.Controls.Add(this.label17);
+            this.tpgConnect.Controls.Add(this.tbxTestRec);
+            this.tpgConnect.Controls.Add(this.tbxTestCmd);
+            this.tpgConnect.Controls.Add(this.btnSendTestMsg);
+            this.tpgConnect.Controls.Add(this.tbxConnectMsg);
+            this.tpgConnect.Controls.Add(this.label16);
+            this.tpgConnect.Controls.Add(this.tbxPort);
+            this.tpgConnect.Controls.Add(this.tbxIP);
+            this.tpgConnect.Controls.Add(this.label15);
+            this.tpgConnect.Controls.Add(this.label14);
+            this.tpgConnect.Location = new System.Drawing.Point(4, 22);
+            this.tpgConnect.Name = "tpgConnect";
+            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgConnect.Size = new System.Drawing.Size(1042, 534);
+            this.tpgConnect.TabIndex = 0;
+            this.tpgConnect.Text = "连接测试";
+            this.tpgConnect.UseVisualStyleBackColor = true;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.BackColor = System.Drawing.Color.Transparent;
+            this.btnConnect.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnConnect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnConnect.Location = new System.Drawing.Point(52, 91);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(110, 29);
+            this.btnConnect.TabIndex = 4;
+            this.btnConnect.Text = "连接";
+            this.btnConnect.UseVisualStyleBackColor = false;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnClose.Location = new System.Drawing.Point(52, 126);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(110, 29);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "断开";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(239, 260);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 16);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "接收数据";
+            // 
+            // tbxTestRec
+            // 
+            this.tbxTestRec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tbxTestRec.Location = new System.Drawing.Point(242, 292);
+            this.tbxTestRec.Multiline = true;
+            this.tbxTestRec.Name = "tbxTestRec";
+            this.tbxTestRec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbxTestRec.Size = new System.Drawing.Size(790, 221);
+            this.tbxTestRec.TabIndex = 9;
+            this.tbxTestRec.TabStop = false;
+            // 
+            // tbxTestCmd
+            // 
+            this.tbxTestCmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tbxTestCmd.Location = new System.Drawing.Point(242, 154);
+            this.tbxTestCmd.Multiline = true;
+            this.tbxTestCmd.Name = "tbxTestCmd";
+            this.tbxTestCmd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbxTestCmd.Size = new System.Drawing.Size(790, 93);
+            this.tbxTestCmd.TabIndex = 7;
+            // 
+            // btnSendTestMsg
+            // 
+            this.btnSendTestMsg.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSendTestMsg.Location = new System.Drawing.Point(62, 178);
+            this.btnSendTestMsg.Name = "btnSendTestMsg";
+            this.btnSendTestMsg.Size = new System.Drawing.Size(100, 83);
+            this.btnSendTestMsg.TabIndex = 6;
+            this.btnSendTestMsg.Text = "发送";
+            this.btnSendTestMsg.UseVisualStyleBackColor = true;
+            this.btnSendTestMsg.Click += new System.EventHandler(this.btnSendTestMsg_Click);
+            // 
+            // tbxConnectMsg
+            // 
+            this.tbxConnectMsg.Location = new System.Drawing.Point(242, 35);
+            this.tbxConnectMsg.Multiline = true;
+            this.tbxConnectMsg.Name = "tbxConnectMsg";
+            this.tbxConnectMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbxConnectMsg.Size = new System.Drawing.Size(790, 113);
+            this.tbxConnectMsg.TabIndex = 6;
+            this.tbxConnectMsg.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(239, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(72, 16);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "状态信息";
+            // 
+            // tbxPort
+            // 
+            this.tbxPort.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxPort.Location = new System.Drawing.Point(62, 59);
+            this.tbxPort.Name = "tbxPort";
+            this.tbxPort.Size = new System.Drawing.Size(82, 26);
+            this.tbxPort.TabIndex = 3;
+            this.tbxPort.Text = "8080";
+            // 
+            // tbxIP
+            // 
+            this.tbxIP.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxIP.Location = new System.Drawing.Point(62, 27);
+            this.tbxIP.Name = "tbxIP";
+            this.tbxIP.Size = new System.Drawing.Size(153, 26);
+            this.tbxIP.TabIndex = 2;
+            this.tbxIP.Text = "192.168.100.36";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(11, 61);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(48, 16);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Port:";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(27, 35);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 16);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "IP:";
             // 
             // tpgLEDControl
             // 
@@ -4252,6 +4406,7 @@ namespace LEDController.View
             // 
             this.panelLEDStatus.AutoSize = true;
             this.panelLEDStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelLEDStatus.Controls.Add(this.pictureBox1);
             this.panelLEDStatus.Controls.Add(this.formsPlotRTD);
             this.panelLEDStatus.Controls.Add(this.label9);
             this.panelLEDStatus.Controls.Add(this.label7);
@@ -4391,13 +4546,13 @@ namespace LEDController.View
             this.panelLEDStatus.Controls.Add(this.button202);
             this.panelLEDStatus.Location = new System.Drawing.Point(226, 12);
             this.panelLEDStatus.Name = "panelLEDStatus";
-            this.panelLEDStatus.Size = new System.Drawing.Size(990, 519);
+            this.panelLEDStatus.Size = new System.Drawing.Size(813, 519);
             this.panelLEDStatus.TabIndex = 11;
             // 
             // formsPlotRTD
             // 
             this.formsPlotRTD.BackColor = System.Drawing.Color.Transparent;
-            this.formsPlotRTD.Location = new System.Drawing.Point(7, 242);
+            this.formsPlotRTD.Location = new System.Drawing.Point(4, 263);
             this.formsPlotRTD.Margin = new System.Windows.Forms.Padding(4);
             this.formsPlotRTD.Name = "formsPlotRTD";
             this.formsPlotRTD.Size = new System.Drawing.Size(805, 247);
@@ -6180,7 +6335,7 @@ namespace LEDController.View
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(136, 102);
+            this.label48.Location = new System.Drawing.Point(145, 102);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(11, 12);
             this.label48.TabIndex = 8;
@@ -6189,7 +6344,7 @@ namespace LEDController.View
             // tbxMaxValue
             // 
             this.tbxMaxValue.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbxMaxValue.Location = new System.Drawing.Point(153, 95);
+            this.tbxMaxValue.Location = new System.Drawing.Point(162, 95);
             this.tbxMaxValue.Name = "tbxMaxValue";
             this.tbxMaxValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxMaxValue.Size = new System.Drawing.Size(48, 26);
@@ -6202,7 +6357,7 @@ namespace LEDController.View
             this.tbxMinValue.Location = new System.Drawing.Point(99, 95);
             this.tbxMinValue.Name = "tbxMinValue";
             this.tbxMinValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tbxMinValue.Size = new System.Drawing.Size(30, 26);
+            this.tbxMinValue.Size = new System.Drawing.Size(40, 26);
             this.tbxMinValue.TabIndex = 6;
             this.tbxMinValue.Text = "0";
             // 
@@ -6211,7 +6366,7 @@ namespace LEDController.View
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.Color.Transparent;
             this.label47.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label47.Location = new System.Drawing.Point(10, 105);
+            this.label47.Location = new System.Drawing.Point(10, 100);
             this.label47.Margin = new System.Windows.Forms.Padding(10);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(76, 16);
@@ -6238,7 +6393,7 @@ namespace LEDController.View
             "20",
             "30",
             "50"});
-            this.cbxQueryWaitTime.Location = new System.Drawing.Point(99, 61);
+            this.cbxQueryWaitTime.Location = new System.Drawing.Point(99, 62);
             this.cbxQueryWaitTime.Name = "cbxQueryWaitTime";
             this.cbxQueryWaitTime.Size = new System.Drawing.Size(61, 24);
             this.cbxQueryWaitTime.Sorted = true;
@@ -6249,7 +6404,7 @@ namespace LEDController.View
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label45.Location = new System.Drawing.Point(10, 69);
+            this.label45.Location = new System.Drawing.Point(10, 66);
             this.label45.Margin = new System.Windows.Forms.Padding(10);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(76, 16);
@@ -6265,7 +6420,7 @@ namespace LEDController.View
             "LED电压",
             "LED功率",
             "LED状态"});
-            this.cbxQueryParam.Location = new System.Drawing.Point(99, 25);
+            this.cbxQueryParam.Location = new System.Drawing.Point(99, 29);
             this.cbxQueryParam.Name = "cbxQueryParam";
             this.cbxQueryParam.Size = new System.Drawing.Size(121, 24);
             this.cbxQueryParam.Sorted = true;
@@ -6327,158 +6482,6 @@ namespace LEDController.View
             this.tpgCameraControl.TabIndex = 7;
             this.tpgCameraControl.Text = "摄像头控制";
             this.tpgCameraControl.UseVisualStyleBackColor = true;
-            // 
-            // tpgConnect
-            // 
-            this.tpgConnect.Controls.Add(this.btnConnect);
-            this.tpgConnect.Controls.Add(this.btnClose);
-            this.tpgConnect.Controls.Add(this.label17);
-            this.tpgConnect.Controls.Add(this.tbxTestRec);
-            this.tpgConnect.Controls.Add(this.tbxTestCmd);
-            this.tpgConnect.Controls.Add(this.btnSendTestMsg);
-            this.tpgConnect.Controls.Add(this.tbxConnectMsg);
-            this.tpgConnect.Controls.Add(this.label16);
-            this.tpgConnect.Controls.Add(this.tbxPort);
-            this.tpgConnect.Controls.Add(this.tbxIP);
-            this.tpgConnect.Controls.Add(this.label15);
-            this.tpgConnect.Controls.Add(this.label14);
-            this.tpgConnect.Location = new System.Drawing.Point(4, 22);
-            this.tpgConnect.Name = "tpgConnect";
-            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgConnect.Size = new System.Drawing.Size(1042, 534);
-            this.tpgConnect.TabIndex = 0;
-            this.tpgConnect.Text = "连接测试";
-            this.tpgConnect.UseVisualStyleBackColor = true;
-            // 
-            // btnConnect
-            // 
-            this.btnConnect.BackColor = System.Drawing.Color.Transparent;
-            this.btnConnect.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnConnect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnConnect.Location = new System.Drawing.Point(52, 91);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(110, 29);
-            this.btnConnect.TabIndex = 4;
-            this.btnConnect.Text = "连接";
-            this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClose.Location = new System.Drawing.Point(52, 126);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(110, 29);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "断开";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(239, 260);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 16);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "接收数据";
-            // 
-            // tbxTestRec
-            // 
-            this.tbxTestRec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxTestRec.Location = new System.Drawing.Point(242, 292);
-            this.tbxTestRec.Multiline = true;
-            this.tbxTestRec.Name = "tbxTestRec";
-            this.tbxTestRec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxTestRec.Size = new System.Drawing.Size(790, 221);
-            this.tbxTestRec.TabIndex = 9;
-            this.tbxTestRec.TabStop = false;
-            // 
-            // tbxTestCmd
-            // 
-            this.tbxTestCmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxTestCmd.Location = new System.Drawing.Point(242, 154);
-            this.tbxTestCmd.Multiline = true;
-            this.tbxTestCmd.Name = "tbxTestCmd";
-            this.tbxTestCmd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxTestCmd.Size = new System.Drawing.Size(790, 93);
-            this.tbxTestCmd.TabIndex = 7;
-            // 
-            // btnSendTestMsg
-            // 
-            this.btnSendTestMsg.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnSendTestMsg.Location = new System.Drawing.Point(62, 178);
-            this.btnSendTestMsg.Name = "btnSendTestMsg";
-            this.btnSendTestMsg.Size = new System.Drawing.Size(100, 83);
-            this.btnSendTestMsg.TabIndex = 6;
-            this.btnSendTestMsg.Text = "发送";
-            this.btnSendTestMsg.UseVisualStyleBackColor = true;
-            this.btnSendTestMsg.Click += new System.EventHandler(this.btnSendTestMsg_Click);
-            // 
-            // tbxConnectMsg
-            // 
-            this.tbxConnectMsg.Location = new System.Drawing.Point(242, 35);
-            this.tbxConnectMsg.Multiline = true;
-            this.tbxConnectMsg.Name = "tbxConnectMsg";
-            this.tbxConnectMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxConnectMsg.Size = new System.Drawing.Size(790, 113);
-            this.tbxConnectMsg.TabIndex = 6;
-            this.tbxConnectMsg.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(239, 16);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 16);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "状态信息";
-            // 
-            // tbxPort
-            // 
-            this.tbxPort.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbxPort.Location = new System.Drawing.Point(62, 59);
-            this.tbxPort.Name = "tbxPort";
-            this.tbxPort.Size = new System.Drawing.Size(82, 26);
-            this.tbxPort.TabIndex = 3;
-            this.tbxPort.Text = "8080";
-            // 
-            // tbxIP
-            // 
-            this.tbxIP.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbxIP.Location = new System.Drawing.Point(62, 27);
-            this.tbxIP.Name = "tbxIP";
-            this.tbxIP.Size = new System.Drawing.Size(153, 26);
-            this.tbxIP.TabIndex = 2;
-            this.tbxIP.Text = "192.168.100.36";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(11, 61);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 16);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Port:";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(27, 35);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 16);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "IP:";
             // 
             // label5
             // 
@@ -6592,6 +6595,16 @@ namespace LEDController.View
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(179, 229);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(483, 27);
+            this.pictureBox1.TabIndex = 270;
+            this.pictureBox1.TabStop = false;
+            // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6619,6 +6632,8 @@ namespace LEDController.View
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabCtrlMain.ResumeLayout(false);
+            this.tpgConnect.ResumeLayout(false);
+            this.tpgConnect.PerformLayout();
             this.tpgLEDControl.ResumeLayout(false);
             this.tpgLEDControl.PerformLayout();
             this.panelDarkRedDimLED.ResumeLayout(false);
@@ -6651,10 +6666,9 @@ namespace LEDController.View
             this.tpgLEDStatus.PerformLayout();
             this.panelLEDStatus.ResumeLayout(false);
             this.panelLEDStatus.PerformLayout();
-            this.tpgConnect.ResumeLayout(false);
-            this.tpgConnect.PerformLayout();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7099,6 +7113,7 @@ namespace LEDController.View
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private ScottPlot.FormsPlot formsPlotRTD;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

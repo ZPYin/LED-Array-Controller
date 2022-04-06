@@ -1,13 +1,13 @@
 # build
-lib/LEDController/TestResults
-lib/LEDController/obj
-lib/LEDControllerTest/obj
-lib/LEDController/LEDControllerTest/bin
-lib/LEDController/LEDController/bin
-lib/LEDController/LEDControllerTest/obj
-lib/LEDController/LEDController/obj
+LEDController/TestResults
+LEDController/LEDController/obj
+LEDController/LEDController/bin
+LEDController/LEDControllerTest/obj
+LEDController/LEDControllerTest/bin
+LEDController/LEDControllerTest/obj
+LEDController/LEDController/obj
 
 # editor configuration
-lib/.vs
+LEDController/.vs
 .vscode
-lib/LEDController/.vs
+LEDController/.vs

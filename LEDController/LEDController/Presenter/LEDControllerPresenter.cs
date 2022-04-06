@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.IO;
 using System.Windows.Forms;
 using System.Text;
@@ -14,11 +15,6 @@ namespace LEDController.Presenter
 {
     class LEDControllerPresenter
     {
-        private LEDControllerViewer _view;
-        private LEDBoardCom connector = new LEDBoardCom();
-        private FileSysIOClass fileIOer;
-        private LEDStatus currentLEDStatus;
-        private byte[] receiveBytes = null;
         private const int SendBufferSize = 2 * 1024;
         private const int RecBufferSize = 8 * 1024;
         private const double MaxGreenLEDPower = 10.0;
@@ -28,18 +24,25 @@ namespace LEDController.Presenter
         private const double MaxDarkRedLEDPower = 30.0;
         private const double MinDarkRedLEDPower = 0.0;
         private const int NumScrollBarLevel = 50;
-        BackgroundWorker recWorker = new BackgroundWorker();
         private const int NumLiveData = 3600;
+
+        private LEDControllerViewer _view;
+        private LEDBoardCom connector;
+        private LEDStatus currentLEDStatus;
+        private byte[] receiveBytes = null;
         private double[] LEDPowerLiveData = new double[NumLiveData];
         private double[] LEDCurrentLiveData = new double[NumLiveData];
         private double[] LEDVoltageLiveData = new double[NumLiveData];
-        public Stopwatch sw = Stopwatch.StartNew();
+        public Stopwatch sw;
         public System.Threading.Timer updateLEDStatusTimer;
         public System.Threading.Timer renderLEDStatusTimer;
+        BackgroundWorker recWorker = new BackgroundWorker();
         public string cfgFileName;
 
         public LEDControllerPresenter(LEDControllerViewer newView)
         {
+            this.sw = Stopwatch.StartNew();
+            this.connector = new LEDBoardCom();
             recWorker.WorkerReportsProgress = true;
             recWorker.WorkerSupportsCancellation = true;
             recWorker.DoWork += ReceiveMsg;
@@ -80,9 +83,6 @@ namespace LEDController.Presenter
             // Initialize LED status plot
             sw.Start();
             Random rand = new Random(0);
-            double[] LEDPowerLiveData = new double[1];
-            double[] LEDCurrentLiveData = new double[1];
-            double[] LEDVoltageLiveData = new double[1];
             var sig = _view.formsLEDStatusPlot.Plot.AddSignal(LEDPowerLiveData, sampleRate: 3600 * 24.0, label: "功率");
             _view.formsLEDStatusPlot.Plot.AddSignal(LEDCurrentLiveData, sampleRate: 3600 * 24.0, label: "电流");
             _view.formsLEDStatusPlot.Plot.AddSignal(LEDVoltageLiveData, sampleRate: 3600 * 24.0, label: "电压");
@@ -360,7 +360,6 @@ namespace LEDController.Presenter
                     OnSetDimLED(btn, myEvent);
                 }
             }
-
         }
 
         private void RenderLEDStatus(object state)
@@ -377,6 +376,11 @@ namespace LEDController.Presenter
             LEDPowerLiveData[thisIndex] = 1;
             LEDVoltageLiveData[thisIndex] = 1;
             LEDCurrentLiveData[thisIndex] = 1;
+            /* // Replace the upper part with below 3 lines
+            LEDPowerLiveData[thisIndex] = (this.currentLEDStatus.fixLEDPower + this.currentLEDStatus.dimLEDPower);
+            LEDVoltageLiveData[thisIndex] = (this.currentLEDStatus.fixLEDVoltage + this.currentLEDStatus.dimLEDVoltage);
+            LEDCurrentLiveData[thisIndex] = (this.currentLEDStatus.fixLEDCurrent + this.currentLEDStatus.dimLEDCurrent);
+            */
 
             _view.formsLEDStatusPlot.Refresh();
         }
@@ -389,38 +393,52 @@ namespace LEDController.Presenter
         private void OnShowLEDStatus(object sender, EventArgs e)
         {
             if (!connector.isAlive)
-            {
                 return;
-            }
 
             // Show LED status
-
             if ((connector != null) && (receiveBytes != null))
             {
                 try
                 {
                     // parsing status
-                    LEDStatus thisLEDStatus;
-                    thisLEDStatus = connector.ParsePackage(receiveBytes);
+                    LEDStatus thisLEDStatus = connector.ParsePackage(receiveBytes);
+                    TextBox tbxMinValue = (TextBox)(this._view.Controls.Find("tbxMinValue", true)[0]);
+                    TextBox tbxMaxValue = (TextBox)(this._view.Controls.Find("tbxMaxValue", true)[0]);
+                    double minValue = Convert.ToDouble(tbxMinValue.Text);
+                    double maxValue = Convert.ToDouble(tbxMaxValue.Text);
+
+                    ComboBox cbxQueryParam = (ComboBox)(this._view.Controls.Find("cbxQueryParam", true)[0]);
+                    int queryIndex = cbxQueryParam.SelectedIndex;
 
                     if (thisLEDStatus.isValidPackage)
                     {
-                        // show status
-                        // Get Status values
-
                         // Convert values to color
+                        double[] LEDPower = Enumerable.Concat(thisLEDStatus.fixLEDPower, thisLEDStatus.dimLEDPower).ToArray();
+                        double[] LEDVoltage = Enumerable.Concat(thisLEDStatus.fixLEDVoltage, thisLEDStatus.dimLEDVoltage).ToArray();
+                        double[] LEDCurrent = Enumerable.Concat(thisLEDStatus.fixLEDCurrent, thisLEDStatus.dimLEDCurrent).ToArray();
                         Color[] LEDControlColors = new Color[132];
                         for (int i = 0; i < 132; i++)
                         {
+                            double LEDValue, normLEDValue;
+                            if (queryIndex == 1)
+                                LEDValue = LEDCurrent[i];
+                            else if (queryIndex == 2)
+                                LEDValue = LEDVoltage[i];
+                            else if (queryIndex == 3)
+                                LEDValue = LEDPower[i];
+                            else
+                                LEDValue = 0.0;
+
+                            normLEDValue = (LEDValue - minValue) / (maxValue - minValue);
                             // specify LED status according to the showing message type
-                            LEDControlColors[i] = Color.Red;
+                            LEDControlColors[i] = ColorConv.HSL2RGB(normLEDValue, 0.5, 0.5);
                         }
 
                         // Set Colors
                         _view.LEDStatusColors = LEDControlColors;
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
                     // show status
                     _view.toolStripLEDStatusText = "获取LED状态失败";
@@ -808,7 +826,7 @@ namespace LEDController.Presenter
                         _view.toolStripLEDStatusText = "获取LED状态失败";
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
                     // show status
                     _view.toolStripLEDStatusText = "获取LED状态失败";
@@ -878,7 +896,7 @@ namespace LEDController.Presenter
                         // showing receiving status with colorful light
                         worker.ReportProgress(1);
                     }
-                    catch (Exception ex)
+                    catch
                     {
                     }
                 }
