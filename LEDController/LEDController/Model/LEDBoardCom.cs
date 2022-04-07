@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -351,40 +351,44 @@ namespace LEDController.Model
             recStatus.totalGreenLEDPower = 0;
             recStatus.totalDarkredLEDPower = 0;
             recStatus.isValidPackage = false;
-            int pkgLen = Convert.ToInt16((recBytes[2] + recBytes[3] >> 8));
+            int pkgLen = Convert.ToInt16((recBytes[2] + (recBytes[3] << 8)));//改
 
-            Int32 sumData = 0;
-            for (int i = 4; i < (4 + pkgLen + 1); i++)
+            //校验也改了
+            UInt16 sumData = 0;
+            for (int i = 4; i < (4 + pkgLen ); i++)
             {
-                sumData = Convert.ToInt32(recBytes[i]) + sumData;
+                sumData += (UInt16)(recBytes[i]);
             }
 
-            UInt16 recCHK = (UInt16)((UInt16)0xFFFF - (UInt16)recBytes[4 + pkgLen + 1] - ((UInt16)recBytes[4 + pkgLen + 2]) - 1);
+            UInt16 CHECKSUM = (UInt16)((recBytes[4 + pkgLen] + (recBytes[4 + pkgLen + 1] << 8)));
 
-            if (sumData == (Int32)recCHK)
+            UInt16 recCHK = (UInt16)((UInt16)0xFFFF - (CHECKSUM + 1));//单片机的sumdata
+            if (sumData == recCHK)
             {
                 recStatus.isValidPackage = true;
 
-                // fixed LED
+                //修改协议，一个字节改为两个字节
+                // fixed LED固定亮度LED
                 for (int i = 0; i < NumFixLED; i++)
                 {
-                    recStatus.fixLEDPower[i] = (double)recBytes[4 + i] * LEDPowerConvertFactor;
-                    recStatus.fixLEDVoltage[i] = (double)recBytes[4 + i + NumFixLED + NumFixLED] * LEDVoltageConvertFactor;
-                    recStatus.fixLEDCurrent[i] = (double)recBytes[4 + i + NumFixLED * 2 + NumFixLED * 2] * LEDCurrentConvertFactor;
+                    recStatus.fixLEDPower[i] = (double)(recBytes[4 + i * 2] + (recBytes[4 + i * 2 + 1]<<8)) * LEDPowerConvertFactor;
+                    recStatus.fixLEDVoltage[i] = (double)(recBytes[4 + i * 2 + NumFixLED * 2 + NumDimLED * 2] + (recBytes[4 + i * 2 + NumFixLED * 2 + NumDimLED * 2 + 1] << 8)) * LEDVoltageConvertFactor;
+                    recStatus.fixLEDCurrent[i] = (double)(recBytes[4 + i * 2 + NumFixLED * 2 * 2 + NumDimLED * 2 * 2] + (recBytes[4 + i * 2 + NumFixLED * 2*2 + NumDimLED * 2 * 2 + 1] << 8)) * LEDCurrentConvertFactor;
                 }
 
                 // Dimmable LED
                 for (int i = 0; i < NumDimLED; i++)
                 {
-                    recStatus.dimLEDPower[i] = (double)recBytes[4 + i + NumFixLED] * LEDPowerConvertFactor;
-                    recStatus.dimLEDVoltage[i] = (double)recBytes[4 + i + NumFixLED * 2] * LEDVoltageConvertFactor;
-                    recStatus.dimLEDCurrent[i] = (double)recBytes[4 + i + NumFixLED * 3] * LEDCurrentConvertFactor;
+                    recStatus.dimLEDPower[i] = (double)(recBytes[4 + i * 2 + NumFixLED * 2]+(recBytes[4 + i * 2 + NumFixLED * 2 + 1] << 8)) * LEDPowerConvertFactor;
+                    recStatus.dimLEDVoltage[i] = (double)(recBytes[4 + i * 2 + NumFixLED * 4+ NumDimLED*2 ] + (recBytes[4 + i * 2 + NumFixLED * 4 + NumDimLED * 2 + 1] << 8)) * LEDVoltageConvertFactor;
+                    recStatus.dimLEDCurrent[i] = (double)(recBytes[4 + i * 2 + NumFixLED * 6 + NumDimLED * 4 ] + (recBytes[4 + i * 2 + NumFixLED * 6 + NumDimLED * 4 + 1] << 8)) * LEDCurrentConvertFactor;
                 }
 
-                recStatus.temperature[0] = (double)recBytes[4 + NumFixLED * 3 + NumDimLED * 3 + 1] * TempConvertFactor;
-                recStatus.temperature[1] = (double)recBytes[4 + NumFixLED * 3 + NumDimLED * 3 + 2] * TempConvertFactor;
-                recStatus.temperature[2] = (double)recBytes[4 + NumFixLED * 3 + NumDimLED * 3 + 3] * TempConvertFactor;
-                recStatus.temperature[3] = (double)recBytes[4 + NumFixLED * 3 + NumDimLED * 3 + 4] * TempConvertFactor;
+                recStatus.temperature[0] = (double)(recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 ] + (recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 1] << 8)) * TempConvertFactor;
+                //recStatus.temperature[0] = (recStatus.temperature[0] - 0.76) / 0.0025 + 25;//转换成温度值
+                recStatus.temperature[1] = (double)(recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 2] + (recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 3] << 8)) * TempConvertFactor;
+                recStatus.temperature[2] = (double)(recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 4] + (recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 5] << 8)) * TempConvertFactor;
+                recStatus.temperature[3] = (double)(recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 6] + (recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 7] << 8)) * TempConvertFactor;
             }
 
             return recStatus;
