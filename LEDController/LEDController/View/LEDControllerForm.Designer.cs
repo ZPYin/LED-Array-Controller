@@ -304,6 +304,7 @@ namespace LEDController.View
             this.btnLED1 = new System.Windows.Forms.Button();
             this.tpgLEDStatus = new System.Windows.Forms.TabPage();
             this.panelLEDStatus = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.formsPlotRTD = new ScottPlot.FormsPlot();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -467,7 +468,6 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
@@ -493,8 +493,8 @@ namespace LEDController.View
             this.panelGreenFixLED.SuspendLayout();
             this.tpgLEDStatus.SuspendLayout();
             this.panelLEDStatus.SuspendLayout();
-            this.statusStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripLEDStatus
@@ -4549,6 +4549,16 @@ namespace LEDController.View
             this.panelLEDStatus.Size = new System.Drawing.Size(813, 519);
             this.panelLEDStatus.TabIndex = 11;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(179, 233);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(480, 20);
+            this.pictureBox1.TabIndex = 270;
+            this.pictureBox1.TabStop = false;
+            // 
             // formsPlotRTD
             // 
             this.formsPlotRTD.BackColor = System.Drawing.Color.Transparent;
@@ -6595,16 +6605,6 @@ namespace LEDController.View
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(179, 229);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(483, 27);
-            this.pictureBox1.TabIndex = 270;
-            this.pictureBox1.TabStop = false;
-            // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6666,9 +6666,9 @@ namespace LEDController.View
             this.tpgLEDStatus.PerformLayout();
             this.panelLEDStatus.ResumeLayout(false);
             this.panelLEDStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
