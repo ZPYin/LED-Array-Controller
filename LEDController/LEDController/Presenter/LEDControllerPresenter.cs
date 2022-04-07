@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.IO;
 using System.Windows.Forms;
@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Windows.Threading;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Threading;
 
 namespace LEDController.Presenter
 {
@@ -870,21 +871,32 @@ namespace LEDController.Presenter
             BackgroundWorker worker = sender as BackgroundWorker;
 
             // Socket socketSlave = socketHostObj as Socket;
-            byte[] buffer = new byte[SendBufferSize];
+            //byte[] buffer = new byte[SendBufferSize];
 
             while (true)   // Receiving message from slave
             {
+                byte[] buffer = new byte[SendBufferSize];
                 int msgLen = 0;
                 if ((connector.socketHost != null) && (!worker.CancellationPending)) 
                 {
-                    msgLen = connector.socketHost.Receive(buffer);
+                    msgLen = connector.socketHost.Receive(buffer,0, buffer.Length,System.Net.Sockets.SocketFlags.None);
+
+                    //数据接收不完整，故再次判断
+                    Thread.Sleep(50);
+                    while (connector.socketHost.Available > 0)
+                    {//参数 数据缓存区  起始位置  数据长度  值的按位组合
+                        msgLen += connector.socketHost.Receive(buffer, msgLen, buffer.Length- msgLen, System.Net.Sockets.SocketFlags.None);
+
+                        Thread.Sleep(50);
+                        Console.WriteLine("");
+                    }
                 }
                 else
                 {
                     args.Cancel = true;
                     break;
                 }
-
+                Console.WriteLine("");
                 if (msgLen > 0)
                 {
                     try
@@ -896,7 +908,7 @@ namespace LEDController.Presenter
                         // showing receiving status with colorful light
                         worker.ReportProgress(1);
                     }
-                    catch
+                    catch (Exception ex)
                     {
                     }
                 }
