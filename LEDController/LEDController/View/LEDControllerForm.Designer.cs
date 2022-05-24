@@ -454,6 +454,18 @@ namespace LEDController.View
             this.label44 = new System.Windows.Forms.Label();
             this.tpgRTControl = new System.Windows.Forms.TabPage();
             this.tpgLightControl = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label1111 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tpgAirConditionerControl = new System.Windows.Forms.TabPage();
             this.tpgSkylightControl = new System.Windows.Forms.TabPage();
             this.tpgCameraControl = new System.Windows.Forms.TabPage();
@@ -468,6 +480,7 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
@@ -494,7 +507,12 @@ namespace LEDController.View
             this.tpgLEDStatus.SuspendLayout();
             this.panelLEDStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tpgLightControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.statusStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripLEDStatus
@@ -702,6 +720,7 @@ namespace LEDController.View
             // 
             // tpgConnect
             // 
+            this.tpgConnect.Controls.Add(this.pictureBox5);
             this.tpgConnect.Controls.Add(this.btnConnect);
             this.tpgConnect.Controls.Add(this.btnClose);
             this.tpgConnect.Controls.Add(this.label17);
@@ -716,7 +735,7 @@ namespace LEDController.View
             this.tpgConnect.Controls.Add(this.label14);
             this.tpgConnect.Location = new System.Drawing.Point(4, 22);
             this.tpgConnect.Name = "tpgConnect";
-            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tpgConnect.Size = new System.Drawing.Size(1042, 534);
             this.tpgConnect.TabIndex = 0;
             this.tpgConnect.Text = "连接测试";
@@ -782,9 +801,9 @@ namespace LEDController.View
             // btnSendTestMsg
             // 
             this.btnSendTestMsg.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnSendTestMsg.Location = new System.Drawing.Point(62, 178);
+            this.btnSendTestMsg.Location = new System.Drawing.Point(52, 178);
             this.btnSendTestMsg.Name = "btnSendTestMsg";
-            this.btnSendTestMsg.Size = new System.Drawing.Size(100, 83);
+            this.btnSendTestMsg.Size = new System.Drawing.Size(110, 41);
             this.btnSendTestMsg.TabIndex = 6;
             this.btnSendTestMsg.Text = "发送";
             this.btnSendTestMsg.UseVisualStyleBackColor = true;
@@ -888,7 +907,7 @@ namespace LEDController.View
             this.tpgLEDControl.Controls.Add(this.panelGreenFixLED);
             this.tpgLEDControl.Location = new System.Drawing.Point(4, 22);
             this.tpgLEDControl.Name = "tpgLEDControl";
-            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tpgLEDControl.Size = new System.Drawing.Size(1042, 534);
             this.tpgLEDControl.TabIndex = 1;
             this.tpgLEDControl.Text = " LED控制";
@@ -4563,7 +4582,7 @@ namespace LEDController.View
             // 
             this.formsPlotRTD.BackColor = System.Drawing.Color.Transparent;
             this.formsPlotRTD.Location = new System.Drawing.Point(4, 263);
-            this.formsPlotRTD.Margin = new System.Windows.Forms.Padding(4);
+            this.formsPlotRTD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.formsPlotRTD.Name = "formsPlotRTD";
             this.formsPlotRTD.Size = new System.Drawing.Size(805, 247);
             this.formsPlotRTD.TabIndex = 12;
@@ -6335,7 +6354,7 @@ namespace LEDController.View
             this.btnShowLEDStatus.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnShowLEDStatus.Location = new System.Drawing.Point(13, 134);
             this.btnShowLEDStatus.Name = "btnShowLEDStatus";
-            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(1);
+            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnShowLEDStatus.Size = new System.Drawing.Size(131, 32);
             this.btnShowLEDStatus.TabIndex = 9;
             this.btnShowLEDStatus.Text = "开始获取";
@@ -6377,7 +6396,7 @@ namespace LEDController.View
             this.label47.BackColor = System.Drawing.Color.Transparent;
             this.label47.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label47.Location = new System.Drawing.Point(10, 100);
-            this.label47.Margin = new System.Windows.Forms.Padding(10);
+            this.label47.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(76, 16);
             this.label47.TabIndex = 5;
@@ -6415,7 +6434,7 @@ namespace LEDController.View
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label45.Location = new System.Drawing.Point(10, 66);
-            this.label45.Margin = new System.Windows.Forms.Padding(10);
+            this.label45.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(76, 16);
             this.label45.TabIndex = 2;
@@ -6442,7 +6461,7 @@ namespace LEDController.View
             this.label44.BackColor = System.Drawing.Color.Transparent;
             this.label44.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label44.Location = new System.Drawing.Point(10, 33);
-            this.label44.Margin = new System.Windows.Forms.Padding(10);
+            this.label44.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(76, 16);
             this.label44.TabIndex = 0;
@@ -6459,12 +6478,153 @@ namespace LEDController.View
             // 
             // tpgLightControl
             // 
+            this.tpgLightControl.Controls.Add(this.pictureBox4);
+            this.tpgLightControl.Controls.Add(this.button5);
+            this.tpgLightControl.Controls.Add(this.label28);
+            this.tpgLightControl.Controls.Add(this.button6);
+            this.tpgLightControl.Controls.Add(this.pictureBox3);
+            this.tpgLightControl.Controls.Add(this.button3);
+            this.tpgLightControl.Controls.Add(this.label13);
+            this.tpgLightControl.Controls.Add(this.button4);
+            this.tpgLightControl.Controls.Add(this.pictureBox2);
+            this.tpgLightControl.Controls.Add(this.button2);
+            this.tpgLightControl.Controls.Add(this.label1111);
+            this.tpgLightControl.Controls.Add(this.button1);
             this.tpgLightControl.Location = new System.Drawing.Point(4, 22);
             this.tpgLightControl.Name = "tpgLightControl";
             this.tpgLightControl.Size = new System.Drawing.Size(1042, 534);
             this.tpgLightControl.TabIndex = 4;
             this.tpgLightControl.Text = "室内照明";
             this.tpgLightControl.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.ErrorImage")));
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(182, 118);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 15;
+            this.pictureBox4.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(110, 125);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(50, 20);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "关闭";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(10, 129);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(23, 12);
+            this.label28.TabIndex = 13;
+            this.label28.Text = "灯3";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(47, 125);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(50, 20);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "打开";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.ErrorImage")));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(182, 70);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(110, 77);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(50, 20);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "关闭";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(10, 81);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 12);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "灯2";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(47, 77);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(50, 20);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "打开";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(182, 17);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(110, 24);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 20);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "关闭";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label1111
+            // 
+            this.label1111.AutoSize = true;
+            this.label1111.Location = new System.Drawing.Point(10, 28);
+            this.label1111.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1111.Name = "label1111";
+            this.label1111.Size = new System.Drawing.Size(23, 12);
+            this.label1111.TabIndex = 5;
+            this.label1111.Text = "灯1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(47, 24);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 20);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "打开";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // tpgAirConditionerControl
             // 
@@ -6605,6 +6765,18 @@ namespace LEDController.View
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(52, 288);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(150, 225);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6667,8 +6839,14 @@ namespace LEDController.View
             this.panelLEDStatus.ResumeLayout(false);
             this.panelLEDStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tpgLightControl.ResumeLayout(false);
+            this.tpgLightControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7114,6 +7292,19 @@ namespace LEDController.View
         private System.Windows.Forms.Label label9;
         private ScottPlot.FormsPlot formsPlotRTD;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1111;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

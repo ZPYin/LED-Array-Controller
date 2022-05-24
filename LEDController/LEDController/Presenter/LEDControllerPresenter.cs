@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.IO;
 using System.Windows.Forms;
@@ -867,11 +867,7 @@ namespace LEDController.Presenter
 
         public void ReceiveMsg(object sender, DoWorkEventArgs args)
         {
-
             BackgroundWorker worker = sender as BackgroundWorker;
-
-            // Socket socketSlave = socketHostObj as Socket;
-            //byte[] buffer = new byte[SendBufferSize];
 
             while (true)   // Receiving message from slave
             {
@@ -888,7 +884,6 @@ namespace LEDController.Presenter
                         msgLen += connector.socketHost.Receive(buffer, msgLen, buffer.Length- msgLen, System.Net.Sockets.SocketFlags.None);
 
                         Thread.Sleep(50);
-                        Console.WriteLine("");
                     }
                 }
                 else
@@ -896,7 +891,7 @@ namespace LEDController.Presenter
                     args.Cancel = true;
                     break;
                 }
-                Console.WriteLine("");
+
                 if (msgLen > 0)
                 {
                     try
@@ -908,7 +903,7 @@ namespace LEDController.Presenter
                         // showing receiving status with colorful light
                         worker.ReportProgress(1);
                     }
-                    catch (Exception ex)
+                    catch
                     {
                     }
                 }
