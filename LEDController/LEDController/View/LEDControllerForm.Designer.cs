@@ -55,6 +55,7 @@ namespace LEDController.View
             this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabCtrlMain = new System.Windows.Forms.TabControl();
             this.tpgConnect = new System.Windows.Forms.TabPage();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -480,10 +481,10 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tpgLEDControl.SuspendLayout();
             this.panelDarkRedDimLED.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sbarDimLED12)).BeginInit();
@@ -512,7 +513,6 @@ namespace LEDController.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.statusStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripLEDStatus
@@ -735,16 +735,28 @@ namespace LEDController.View
             this.tpgConnect.Controls.Add(this.label14);
             this.tpgConnect.Location = new System.Drawing.Point(4, 22);
             this.tpgConnect.Name = "tpgConnect";
-            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3);
             this.tpgConnect.Size = new System.Drawing.Size(1042, 534);
             this.tpgConnect.TabIndex = 0;
             this.tpgConnect.Text = "连接测试";
             this.tpgConnect.UseVisualStyleBackColor = true;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(52, 288);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(150, 225);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            // 
             // btnConnect
             // 
             this.btnConnect.BackColor = System.Drawing.Color.Transparent;
-            this.btnConnect.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnConnect.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnConnect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnConnect.Location = new System.Drawing.Point(52, 91);
             this.btnConnect.Name = "btnConnect";
@@ -756,7 +768,7 @@ namespace LEDController.View
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnClose.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnClose.Location = new System.Drawing.Point(52, 126);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(110, 29);
@@ -768,10 +780,10 @@ namespace LEDController.View
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label17.Location = new System.Drawing.Point(239, 260);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 16);
+            this.label17.Size = new System.Drawing.Size(71, 16);
             this.label17.TabIndex = 10;
             this.label17.Text = "接收数据";
             // 
@@ -800,7 +812,7 @@ namespace LEDController.View
             // 
             // btnSendTestMsg
             // 
-            this.btnSendTestMsg.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSendTestMsg.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSendTestMsg.Location = new System.Drawing.Point(52, 178);
             this.btnSendTestMsg.Name = "btnSendTestMsg";
             this.btnSendTestMsg.Size = new System.Drawing.Size(110, 41);
@@ -822,16 +834,16 @@ namespace LEDController.View
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(239, 16);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 16);
+            this.label16.Size = new System.Drawing.Size(71, 16);
             this.label16.TabIndex = 5;
             this.label16.Text = "状态信息";
             // 
             // tbxPort
             // 
-            this.tbxPort.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxPort.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxPort.Location = new System.Drawing.Point(62, 59);
             this.tbxPort.Name = "tbxPort";
             this.tbxPort.Size = new System.Drawing.Size(82, 26);
@@ -840,7 +852,7 @@ namespace LEDController.View
             // 
             // tbxIP
             // 
-            this.tbxIP.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxIP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxIP.Location = new System.Drawing.Point(62, 27);
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(153, 26);
@@ -852,10 +864,10 @@ namespace LEDController.View
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label15.Location = new System.Drawing.Point(11, 61);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 16);
+            this.label15.Size = new System.Drawing.Size(47, 16);
             this.label15.TabIndex = 1;
             this.label15.Text = "Port:";
             // 
@@ -864,10 +876,10 @@ namespace LEDController.View
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label14.Location = new System.Drawing.Point(27, 35);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 16);
+            this.label14.Size = new System.Drawing.Size(31, 16);
             this.label14.TabIndex = 0;
             this.label14.Text = "IP:";
             // 
@@ -907,7 +919,7 @@ namespace LEDController.View
             this.tpgLEDControl.Controls.Add(this.panelGreenFixLED);
             this.tpgLEDControl.Location = new System.Drawing.Point(4, 22);
             this.tpgLEDControl.Name = "tpgLEDControl";
-            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(3);
             this.tpgLEDControl.Size = new System.Drawing.Size(1042, 534);
             this.tpgLEDControl.TabIndex = 1;
             this.tpgLEDControl.Text = " LED控制";
@@ -959,8 +971,8 @@ namespace LEDController.View
             // 
             // btnCloseDarkRedDimLED
             // 
-            this.btnCloseDarkRedDimLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseDarkRedDimLED.Location = new System.Drawing.Point(867, 486);
+            this.btnCloseDarkRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseDarkRedDimLED.Location = new System.Drawing.Point(867, 498);
             this.btnCloseDarkRedDimLED.Name = "btnCloseDarkRedDimLED";
             this.btnCloseDarkRedDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseDarkRedDimLED.TabIndex = 202;
@@ -970,8 +982,8 @@ namespace LEDController.View
             // 
             // btnOpenDarkRedDimLED
             // 
-            this.btnOpenDarkRedDimLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenDarkRedDimLED.Location = new System.Drawing.Point(718, 486);
+            this.btnOpenDarkRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenDarkRedDimLED.Location = new System.Drawing.Point(718, 498);
             this.btnOpenDarkRedDimLED.Name = "btnOpenDarkRedDimLED";
             this.btnOpenDarkRedDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenDarkRedDimLED.TabIndex = 201;
@@ -981,8 +993,8 @@ namespace LEDController.View
             // 
             // btnCloseRedDimLED
             // 
-            this.btnCloseRedDimLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseRedDimLED.Location = new System.Drawing.Point(545, 486);
+            this.btnCloseRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseRedDimLED.Location = new System.Drawing.Point(545, 498);
             this.btnCloseRedDimLED.Name = "btnCloseRedDimLED";
             this.btnCloseRedDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseRedDimLED.TabIndex = 188;
@@ -992,8 +1004,8 @@ namespace LEDController.View
             // 
             // btnOpenRedDimLED
             // 
-            this.btnOpenRedDimLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenRedDimLED.Location = new System.Drawing.Point(396, 486);
+            this.btnOpenRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenRedDimLED.Location = new System.Drawing.Point(396, 498);
             this.btnOpenRedDimLED.Name = "btnOpenRedDimLED";
             this.btnOpenRedDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenRedDimLED.TabIndex = 187;
@@ -1003,8 +1015,8 @@ namespace LEDController.View
             // 
             // btnCloseGreenDimLED
             // 
-            this.btnCloseGreenDimLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseGreenDimLED.Location = new System.Drawing.Point(226, 486);
+            this.btnCloseGreenDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseGreenDimLED.Location = new System.Drawing.Point(226, 498);
             this.btnCloseGreenDimLED.Name = "btnCloseGreenDimLED";
             this.btnCloseGreenDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseGreenDimLED.TabIndex = 174;
@@ -1014,8 +1026,8 @@ namespace LEDController.View
             // 
             // btnOpenGreenDimLED
             // 
-            this.btnOpenGreenDimLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenGreenDimLED.Location = new System.Drawing.Point(77, 486);
+            this.btnOpenGreenDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenGreenDimLED.Location = new System.Drawing.Point(77, 498);
             this.btnOpenGreenDimLED.Name = "btnOpenGreenDimLED";
             this.btnOpenGreenDimLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenGreenDimLED.TabIndex = 173;
@@ -1051,7 +1063,7 @@ namespace LEDController.View
             this.panelDarkRedDimLED.Controls.Add(this.label40);
             this.panelDarkRedDimLED.Controls.Add(this.sbarDimLED9);
             this.panelDarkRedDimLED.Controls.Add(this.btnDimLED9);
-            this.panelDarkRedDimLED.Location = new System.Drawing.Point(685, 331);
+            this.panelDarkRedDimLED.Location = new System.Drawing.Point(685, 340);
             this.panelDarkRedDimLED.Name = "panelDarkRedDimLED";
             this.panelDarkRedDimLED.Size = new System.Drawing.Size(307, 152);
             this.panelDarkRedDimLED.TabIndex = 85;
@@ -1377,7 +1389,7 @@ namespace LEDController.View
             this.panelRedDimLED.Controls.Add(this.label31);
             this.panelRedDimLED.Controls.Add(this.sbarDimLED5);
             this.panelRedDimLED.Controls.Add(this.btnDimLED5);
-            this.panelRedDimLED.Location = new System.Drawing.Point(363, 331);
+            this.panelRedDimLED.Location = new System.Drawing.Point(363, 340);
             this.panelRedDimLED.Name = "panelRedDimLED";
             this.panelRedDimLED.Size = new System.Drawing.Size(307, 152);
             this.panelRedDimLED.TabIndex = 85;
@@ -1703,7 +1715,7 @@ namespace LEDController.View
             this.panelGreenDimLED.Controls.Add(this.label2);
             this.panelGreenDimLED.Controls.Add(this.sbarDimLED1);
             this.panelGreenDimLED.Controls.Add(this.btnDimLED1);
-            this.panelGreenDimLED.Location = new System.Drawing.Point(44, 331);
+            this.panelGreenDimLED.Location = new System.Drawing.Point(44, 340);
             this.panelGreenDimLED.Name = "panelGreenDimLED";
             this.panelGreenDimLED.Size = new System.Drawing.Size(307, 152);
             this.panelGreenDimLED.TabIndex = 82;
@@ -2063,8 +2075,8 @@ namespace LEDController.View
             // 
             // btnCloseDarkRedFixLED
             // 
-            this.btnCloseDarkRedFixLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseDarkRedFixLED.Location = new System.Drawing.Point(867, 298);
+            this.btnCloseDarkRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseDarkRedFixLED.Location = new System.Drawing.Point(867, 300);
             this.btnCloseDarkRedFixLED.Name = "btnCloseDarkRedFixLED";
             this.btnCloseDarkRedFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseDarkRedFixLED.TabIndex = 159;
@@ -2074,8 +2086,8 @@ namespace LEDController.View
             // 
             // btnOpenDarkRedFixLED
             // 
-            this.btnOpenDarkRedFixLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenDarkRedFixLED.Location = new System.Drawing.Point(718, 298);
+            this.btnOpenDarkRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenDarkRedFixLED.Location = new System.Drawing.Point(718, 300);
             this.btnOpenDarkRedFixLED.Name = "btnOpenDarkRedFixLED";
             this.btnOpenDarkRedFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenDarkRedFixLED.TabIndex = 158;
@@ -2085,8 +2097,8 @@ namespace LEDController.View
             // 
             // btnCloseRedFixLED
             // 
-            this.btnCloseRedFixLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseRedFixLED.Location = new System.Drawing.Point(545, 298);
+            this.btnCloseRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseRedFixLED.Location = new System.Drawing.Point(545, 300);
             this.btnCloseRedFixLED.Name = "btnCloseRedFixLED";
             this.btnCloseRedFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseRedFixLED.TabIndex = 157;
@@ -2096,8 +2108,8 @@ namespace LEDController.View
             // 
             // btnOpenRedFixLED
             // 
-            this.btnOpenRedFixLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenRedFixLED.Location = new System.Drawing.Point(396, 298);
+            this.btnOpenRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenRedFixLED.Location = new System.Drawing.Point(396, 300);
             this.btnOpenRedFixLED.Name = "btnOpenRedFixLED";
             this.btnOpenRedFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenRedFixLED.TabIndex = 156;
@@ -2107,8 +2119,8 @@ namespace LEDController.View
             // 
             // btnCloseGreenFixLED
             // 
-            this.btnCloseGreenFixLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCloseGreenFixLED.Location = new System.Drawing.Point(226, 298);
+            this.btnCloseGreenFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseGreenFixLED.Location = new System.Drawing.Point(226, 300);
             this.btnCloseGreenFixLED.Name = "btnCloseGreenFixLED";
             this.btnCloseGreenFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnCloseGreenFixLED.TabIndex = 155;
@@ -2118,8 +2130,8 @@ namespace LEDController.View
             // 
             // btnOpenGreenFixLED
             // 
-            this.btnOpenGreenFixLED.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpenGreenFixLED.Location = new System.Drawing.Point(77, 298);
+            this.btnOpenGreenFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenGreenFixLED.Location = new System.Drawing.Point(77, 300);
             this.btnOpenGreenFixLED.Name = "btnOpenGreenFixLED";
             this.btnOpenGreenFixLED.Size = new System.Drawing.Size(91, 27);
             this.btnOpenGreenFixLED.TabIndex = 154;
@@ -2130,90 +2142,90 @@ namespace LEDController.View
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label24.Location = new System.Drawing.Point(909, 66);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(17, 16);
+            this.label24.Size = new System.Drawing.Size(16, 16);
             this.label24.TabIndex = 73;
             this.label24.Text = "W";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label25.Location = new System.Drawing.Point(868, 66);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(35, 16);
+            this.label25.Size = new System.Drawing.Size(34, 16);
             this.label25.TabIndex = 72;
             this.label25.Text = "100";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label26.Location = new System.Drawing.Point(752, 66);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(114, 16);
+            this.label26.Size = new System.Drawing.Size(113, 16);
             this.label26.TabIndex = 71;
             this.label26.Text = "红外(810 nm)";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label21.Location = new System.Drawing.Point(588, 66);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(17, 16);
+            this.label21.Size = new System.Drawing.Size(16, 16);
             this.label21.TabIndex = 70;
             this.label21.Text = "W";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label22.Location = new System.Drawing.Point(547, 66);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(35, 16);
+            this.label22.Size = new System.Drawing.Size(34, 16);
             this.label22.TabIndex = 69;
             this.label22.Text = "100";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label23.Location = new System.Drawing.Point(431, 66);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(114, 16);
+            this.label23.Size = new System.Drawing.Size(113, 16);
             this.label23.TabIndex = 68;
             this.label23.Text = "红光(630 nm)";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.Location = new System.Drawing.Point(247, 66);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(17, 16);
+            this.label20.Size = new System.Drawing.Size(16, 16);
             this.label20.TabIndex = 67;
             this.label20.Text = "W";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label19.Location = new System.Drawing.Point(206, 66);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(35, 16);
+            this.label19.Size = new System.Drawing.Size(34, 16);
             this.label19.TabIndex = 66;
             this.label19.Text = "300";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label18.Location = new System.Drawing.Point(90, 66);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(114, 16);
+            this.label18.Size = new System.Drawing.Size(113, 16);
             this.label18.TabIndex = 65;
             this.label18.Text = "绿光(525 nm)";
             // 
@@ -4582,7 +4594,7 @@ namespace LEDController.View
             // 
             this.formsPlotRTD.BackColor = System.Drawing.Color.Transparent;
             this.formsPlotRTD.Location = new System.Drawing.Point(4, 263);
-            this.formsPlotRTD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.formsPlotRTD.Margin = new System.Windows.Forms.Padding(4);
             this.formsPlotRTD.Name = "formsPlotRTD";
             this.formsPlotRTD.Size = new System.Drawing.Size(805, 247);
             this.formsPlotRTD.TabIndex = 12;
@@ -4590,10 +4602,10 @@ namespace LEDController.View
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(41, 201);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 16);
+            this.label9.Size = new System.Drawing.Size(95, 16);
             this.label9.TabIndex = 269;
             this.label9.Text = "可调亮度LED";
             // 
@@ -4601,10 +4613,10 @@ namespace LEDController.View
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.DarkRed;
-            this.label7.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(730, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 16);
+            this.label7.Size = new System.Drawing.Size(63, 16);
             this.label7.TabIndex = 268;
             this.label7.Text = "红外LED";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4613,10 +4625,10 @@ namespace LEDController.View
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Red;
-            this.label4.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(465, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.Size = new System.Drawing.Size(63, 16);
             this.label4.TabIndex = 267;
             this.label4.Text = "红色LED";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4625,10 +4637,10 @@ namespace LEDController.View
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Chartreuse;
-            this.label1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(201, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 266;
             this.label1.Text = "绿色LED";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6351,10 +6363,10 @@ namespace LEDController.View
             // 
             // btnShowLEDStatus
             // 
-            this.btnShowLEDStatus.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnShowLEDStatus.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnShowLEDStatus.Location = new System.Drawing.Point(13, 134);
             this.btnShowLEDStatus.Name = "btnShowLEDStatus";
-            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(1);
             this.btnShowLEDStatus.Size = new System.Drawing.Size(131, 32);
             this.btnShowLEDStatus.TabIndex = 9;
             this.btnShowLEDStatus.Text = "开始获取";
@@ -6372,7 +6384,7 @@ namespace LEDController.View
             // 
             // tbxMaxValue
             // 
-            this.tbxMaxValue.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxMaxValue.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxMaxValue.Location = new System.Drawing.Point(162, 95);
             this.tbxMaxValue.Name = "tbxMaxValue";
             this.tbxMaxValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -6382,7 +6394,7 @@ namespace LEDController.View
             // 
             // tbxMinValue
             // 
-            this.tbxMinValue.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxMinValue.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxMinValue.Location = new System.Drawing.Point(99, 95);
             this.tbxMinValue.Name = "tbxMinValue";
             this.tbxMinValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -6394,27 +6406,27 @@ namespace LEDController.View
             // 
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.Color.Transparent;
-            this.label47.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label47.Location = new System.Drawing.Point(10, 100);
-            this.label47.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label47.Margin = new System.Windows.Forms.Padding(10);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(76, 16);
+            this.label47.Size = new System.Drawing.Size(75, 16);
             this.label47.TabIndex = 5;
             this.label47.Text = "显示范围";
             // 
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label46.Location = new System.Drawing.Point(176, 66);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(25, 16);
+            this.label46.Size = new System.Drawing.Size(24, 16);
             this.label46.TabIndex = 4;
             this.label46.Text = "秒";
             // 
             // cbxQueryWaitTime
             // 
-            this.cbxQueryWaitTime.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxQueryWaitTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbxQueryWaitTime.FormattingEnabled = true;
             this.cbxQueryWaitTime.Items.AddRange(new object[] {
             "1",
@@ -6432,17 +6444,17 @@ namespace LEDController.View
             // 
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.Transparent;
-            this.label45.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label45.Location = new System.Drawing.Point(10, 66);
-            this.label45.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label45.Margin = new System.Windows.Forms.Padding(10);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(76, 16);
+            this.label45.Size = new System.Drawing.Size(75, 16);
             this.label45.TabIndex = 2;
             this.label45.Text = "查询状态";
             // 
             // cbxQueryParam
             // 
-            this.cbxQueryParam.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxQueryParam.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbxQueryParam.FormattingEnabled = true;
             this.cbxQueryParam.Items.AddRange(new object[] {
             "LED电流",
@@ -6459,11 +6471,11 @@ namespace LEDController.View
             // 
             this.label44.AutoSize = true;
             this.label44.BackColor = System.Drawing.Color.Transparent;
-            this.label44.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label44.Location = new System.Drawing.Point(10, 33);
-            this.label44.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label44.Margin = new System.Windows.Forms.Padding(10);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(76, 16);
+            this.label44.Size = new System.Drawing.Size(75, 16);
             this.label44.TabIndex = 0;
             this.label44.Text = "查询状态";
             // 
@@ -6503,7 +6515,7 @@ namespace LEDController.View
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
             this.pictureBox4.Location = new System.Drawing.Point(182, 118);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(33, 33);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -6513,7 +6525,7 @@ namespace LEDController.View
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(110, 125);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(50, 20);
             this.button5.TabIndex = 14;
@@ -6533,7 +6545,7 @@ namespace LEDController.View
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(47, 125);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(50, 20);
             this.button6.TabIndex = 12;
@@ -6546,7 +6558,7 @@ namespace LEDController.View
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
             this.pictureBox3.Location = new System.Drawing.Point(182, 70);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(33, 33);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -6556,7 +6568,7 @@ namespace LEDController.View
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(110, 77);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 20);
             this.button3.TabIndex = 10;
@@ -6576,7 +6588,7 @@ namespace LEDController.View
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(47, 77);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 20);
             this.button4.TabIndex = 8;
@@ -6589,7 +6601,7 @@ namespace LEDController.View
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(182, 17);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -6599,7 +6611,7 @@ namespace LEDController.View
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(110, 24);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 20);
             this.button2.TabIndex = 6;
@@ -6619,7 +6631,7 @@ namespace LEDController.View
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(47, 24);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 20);
             this.button1.TabIndex = 4;
@@ -6765,18 +6777,6 @@ namespace LEDController.View
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(52, 288);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(150, 225);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 11;
-            this.pictureBox5.TabStop = false;
-            // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6806,6 +6806,7 @@ namespace LEDController.View
             this.tabCtrlMain.ResumeLayout(false);
             this.tpgConnect.ResumeLayout(false);
             this.tpgConnect.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tpgLEDControl.ResumeLayout(false);
             this.tpgLEDControl.PerformLayout();
             this.panelDarkRedDimLED.ResumeLayout(false);
@@ -6846,7 +6847,6 @@ namespace LEDController.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
