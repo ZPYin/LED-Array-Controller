@@ -40,9 +40,9 @@ namespace LEDControllerTest
 
             client.Connect();
 
-            Assert.IsNotNull(client.socketHost);
+            Assert.IsNotNull(client.device);
 
-            client.Close();
+            client.Disconnect();
             server.Stop();
         }
 
@@ -77,7 +77,7 @@ namespace LEDControllerTest
 
             Assert.AreEqual(Convert.ToBase64String(client.MakeCmd(1, true)), Convert.ToBase64String(cmdBytes));
 
-            client.Close();
+            client.Disconnect();
             server.Stop();
         }
 
@@ -112,7 +112,7 @@ namespace LEDControllerTest
 
             Assert.AreEqual(Convert.ToBase64String(client.MakeCmd(1, false)), Convert.ToBase64String(cmdBytes));
 
-            client.Close();
+            client.Disconnect();
             server.Stop();
         }
 
@@ -147,7 +147,7 @@ namespace LEDControllerTest
 
             Assert.AreEqual(Convert.ToBase64String(client.MakeCmd(1, 1, true)), Convert.ToBase64String(cmdBytes));
 
-            client.Close();
+            client.Disconnect();
             server.Stop();
         }
 
@@ -181,7 +181,7 @@ namespace LEDControllerTest
 
             Assert.AreEqual(Convert.ToBase64String(client.MakeCmd(1, 0, false)), Convert.ToBase64String(cmdBytes));
 
-            client.Close();
+            client.Disconnect();
             server.Stop();
         }
     }

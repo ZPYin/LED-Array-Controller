@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="Model\FileSysIOClass.cs" />
     <Compile Include="Model\LEDBoardCom.cs" />
+    <Compile Include="Model\Modbus.cs" />
     <Compile Include="Model\ValueConversion.cs" />
     <Compile Include="Presenter\LEDControllerPresenter.cs" />
     <Compile Include="View\ILEDControllerForm.cs" />

@@ -1,14 +1,15 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
+using System.Windows.Forms;
+using System.IO.Ports;
 using System.Net.Sockets;
 using System.Net.NetworkInformation;
 
 namespace LEDController.Model
 {
-
     public struct LEDStatus
     {
         public double[] fixLEDPower;
@@ -17,7 +18,6 @@ namespace LEDController.Model
         public double[] dimLEDVoltage;
         public double[] fixLEDCurrent;
         public double[] dimLEDCurrent;
-        public double[] temperature;
         public double totalGreenLEDPower;
         public double totalRedLEDPower;
         public double totalDarkredLEDPower;
@@ -26,6 +26,16 @@ namespace LEDController.Model
 
     public class LEDControllerCfg : LEDBoardCom
     {
+        public string slaveIP;
+        public string slavePort;
+        public string serialName;
+        public string dataBit;
+        public string stopBit;
+        public string checkBit;
+        public string baudRate;
+        public string protocal;
+        public bool isSendASCII;
+        public bool isRecASCII;
         public Boolean[] isGreenFixLEDOn = new Boolean[LEDBoardCom.NumGreenFixLED];
         public Boolean[] isRedFixLEDOn = new Boolean[LEDBoardCom.NumRedFixLED];
         public Boolean[] isDarkRedFixLEDOn = new Boolean[LEDBoardCom.NumDarkRedFixLED];
@@ -48,6 +58,38 @@ namespace LEDController.Model
                     else if (item.Key.Equals("SlavePort"))
                     {
                         slavePort = item.Value;
+                    }
+                    else if (item.Key.Equals("Protocal"))
+                    {
+                        protocal = item.Value;
+                    }
+                    else if (item.Key.Equals("COMPort"))
+                    {
+                        serialName = item.Value;
+                    }
+                    else if (item.Key.Equals("BaudRate"))
+                    {
+                        baudRate = item.Value;
+                    }
+                    else if (item.Key.Equals("CheckBit"))
+                    {
+                        checkBit = item.Value;
+                    }
+                    else if (item.Key.Equals("DataBit"))
+                    {
+                        dataBit = item.Value;
+                    }
+                    else if (item.Key.Equals("StopBit"))
+                    {
+                        stopBit = item.Value;
+                    }
+                    else if (item.Key.Equals("IsSendDataASCII"))
+                    {
+                        isSendASCII = Convert.ToBoolean(item.Value);
+                    }
+                    else if (item.Key.Equals("isRecASCII"))
+                    {
+                        isRecASCII = Convert.ToBoolean(item.Value);
                     }
                     else if (item.Key.Contains("GreenFixLED"))
                     {
@@ -177,117 +219,84 @@ namespace LEDController.Model
 
     public class LEDBoardCom
     {
-        public string slaveIP;
-        public string slavePort;
-        public Socket socketHost = null;
-        public string strRecMsg = null;
+        public Modbus device;
+        public Boolean isAlive = false;
+        public Boolean isTCP = false;
+        public Boolean isSerialPort = false;
+
         private const double LEDVoltageConvertFactor = 1;
         private const double LEDCurrentConvertFactor = 1;
         private const double LEDPowerConvertFactor = 1;
-        private const double TempConvertFactor = 1;
-        public const int NumGreenFixLED = 40;
-        public const int NumRedFixLED = 40;
-        public const int NumDarkRedFixLED = 40;
+        public const int NumGreenFixLED = 26;
+        public const int NumRedFixLED = 26;
+        public const int NumDarkRedFixLED = 26;
         public const int NumGreenDimLED = 4;
         public const int NumRedDimLED = 4;
         public const int NumDarkRedDimLED = 4;
-        public Boolean isAlive = false;
 
         public LEDBoardCom(string SlaveIP, string SlavePort)
         {
-            // Verify Program Version
-            // Test port occupation
-            slaveIP = SlaveIP;
-            slavePort = SlavePort;
+            device = new ModbusTCP(SlaveIP, Convert.ToInt32(SlavePort));
+            this.isTCP = true;
+            this.isSerialPort = false;
+        }
+
+        public LEDBoardCom(string serialName, string baudRate, string dataBit, string checkBit, string stopBit)
+        {
+            device = new ModbusRTU(serialName, baudRate, dataBit, checkBit, stopBit);
+            this.isTCP = false;
+            this.isSerialPort = true;
         }
 
         public LEDBoardCom()
         {}
 
-        public void Connect(int timeout = 2)
+        public void Connect(int timeout = 500)
         {
-            // Start TCP connection
-
-            // Initialize a socket for communication
-            socketHost = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-            IPAddress slaveIPAddress = IPAddress.Parse(slaveIP);
-            IPEndPoint endPoint = new IPEndPoint(slaveIPAddress, int.Parse(slavePort));
-
-            // Send connection request
-            var result = socketHost.BeginConnect(endPoint, null, null);
-            bool isSuccess = result.AsyncWaitHandle.WaitOne(timeout, true);
-            if (! isSuccess)
-            {
-                socketHost.Close();
-                throw new SocketException(10060);
-            }
-            isAlive = true;
+            this.isAlive = this.device.Connect(timeout);
         }
 
-        public void Close()
+        public void Disconnect()
         {
-            if (socketHost != null)
+            this.isAlive = !this.device.Disconnect();
+        }
+
+        public void SendCmd(string sendMsg, Boolean isSendHEX = false)
+        {
+            this.device.WriteMsg(sendMsg, isSendHEX);
+        }
+
+        public void SendCmd(byte addrPLC, byte function, ushort register, byte[] data)
+        {
+            if (this.isAlive)
             {
-                socketHost.Close(1);
-                isAlive = false;
+                this.device.Write(addrPLC, function, register, data);
             }
         }
 
-        public void SendCmd(string sendMsg)
-        {
-            try
-            {
-                byte[] arrCmd = Encoding.UTF8.GetBytes(sendMsg);
-                if (socketHost != null)
-                {
-                    socketHost.Send(arrCmd);
-                }
-            }
-            catch (Exception ex)
-            {
-                // TODO Write Log
-                throw ex;
-            }
-        }
-
-        public void SendCmd(byte[] cmdBytes)
-        {
-            try
-            {
-                if (socketHost != null)
-                {
-                    socketHost.Send(cmdBytes);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void TurnOnFixLED(int LEDInd)
+        public void TurnOnFixLED(int addrPLC, int LEDInd)
         {
             var cmdBytes = MakeCmd(LEDInd, true);
-            SendCmd(cmdBytes);
+            SendCmd((byte)addrPLC, 5, (byte)LEDInd, cmdBytes);
         }
 
-        public void TurnOffFixLED(int LEDInd)
+        public void TurnOffFixLED(int addrPLC, int LEDInd)
         {
             var cmdBytes = MakeCmd(LEDInd, false);
-            SendCmd(cmdBytes);
+            SendCmd((byte)addrPLC, 5, (byte)LEDInd, cmdBytes);
         }
 
-        public void SetDimLED(int LEDInd, int LEDBrightness)
+        public void SetDimLED(int addrPLC, int LEDInd, int LEDBrightness)
         {
             var cmdBytes = MakeCmd(LEDInd, LEDBrightness, true);
-            SendCmd(cmdBytes);
+            int idxReg = 01;
+            SendCmd((byte)addrPLC, 6, (byte)idxReg, cmdBytes);
         }
 
-        public void TurnOffDimLED(int LEDInd)
+        public void TurnOffDimLED(int addrPLC, int LEDInd)
         {
             var cmdBytes = MakeCmd(LEDInd, 0, false);
-            SendCmd(cmdBytes);
+            SendCmd((byte)addrPLC, 5, (byte)LEDInd, cmdBytes);
         }
 
         public byte[] MakeCmd(int LEDInd, Boolean isTurnOn)
@@ -340,13 +349,13 @@ namespace LEDController.Model
             int NumDimLED = NumGreenDimLED + NumRedDimLED + NumDarkRedDimLED;
 
             LEDStatus recStatus;
+
             recStatus.fixLEDPower = new double[NumFixLED];
             recStatus.fixLEDCurrent = new double[NumFixLED];
             recStatus.fixLEDVoltage = new double[NumFixLED];
             recStatus.dimLEDPower = new double[NumDimLED];
             recStatus.dimLEDCurrent = new double[NumDimLED];
             recStatus.dimLEDVoltage = new double[NumDimLED];
-            recStatus.temperature = new double[4];
             recStatus.totalRedLEDPower = 0;
             recStatus.totalGreenLEDPower = 0;
             recStatus.totalDarkredLEDPower = 0;
@@ -383,12 +392,6 @@ namespace LEDController.Model
                     recStatus.dimLEDVoltage[i] = (double)(recBytes[4 + i * 2 + NumFixLED * 4+ NumDimLED*2 ] + (recBytes[4 + i * 2 + NumFixLED * 4 + NumDimLED * 2 + 1] << 8)) * LEDVoltageConvertFactor;
                     recStatus.dimLEDCurrent[i] = (double)(recBytes[4 + i * 2 + NumFixLED * 6 + NumDimLED * 4 ] + (recBytes[4 + i * 2 + NumFixLED * 6 + NumDimLED * 4 + 1] << 8)) * LEDCurrentConvertFactor;
                 }
-
-                recStatus.temperature[0] = (double)(recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 ] + (recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 1] << 8)) * TempConvertFactor;
-                //recStatus.temperature[0] = (recStatus.temperature[0] - 0.76) / 0.0025 + 25;//转换成温度值
-                recStatus.temperature[1] = (double)(recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 2] + (recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 3] << 8)) * TempConvertFactor;
-                recStatus.temperature[2] = (double)(recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 4] + (recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 5] << 8)) * TempConvertFactor;
-                recStatus.temperature[3] = (double)(recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 6] + (recBytes[4 + NumFixLED * 3 * 2 + NumDimLED * 3 * 2 + 7] << 8)) * TempConvertFactor;
             }
 
             return recStatus;
