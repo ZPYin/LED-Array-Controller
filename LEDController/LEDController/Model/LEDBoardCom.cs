@@ -33,7 +33,7 @@ namespace LEDController.Model
         public double LEDPower;
         public double LEDVoltage;
         public double LEDCurrent;
-        public bool isVaildStatus;
+        public bool isValidStatus;
     }
 
     public class AllLEDStatus
@@ -56,7 +56,7 @@ namespace LEDController.Model
         public double[] dimDarkRedLEDPower;
         public double[] dimDarkRedLEDVoltage;
         public double[] dimDarkRedLEDCurrent;
-        public bool isVaildStatus;
+        public bool isValidStatus;
         public DateTime updatedTime;
 
         public AllLEDStatus(int numFixRedLED, int numFixDarkRedLED, int numFixGreenLED, int numDimRedLED, int numDimDarkRedLED, int numDimGreenLED)
@@ -79,7 +79,7 @@ namespace LEDController.Model
             this.dimDarkRedLEDPower = new double[numDimDarkRedLED];
             this.dimDarkRedLEDCurrent = new double[numDimDarkRedLED];
             this.dimDarkRedLEDVoltage = new double[numDimDarkRedLED];
-            this.isVaildStatus = false;
+            this.isValidStatus = false;
             this.updatedTime = DateTime.Now;
         }
 
@@ -271,93 +271,86 @@ namespace LEDController.Model
 
             foreach (var item in cfgReader.configData)
             {
-                try
+                if (item.Key.Equals("SlaveIP"))
                 {
-                    if (item.Key.Equals("SlaveIP"))
-                    {
-                        slaveIP = item.Value;
-                    }
-                    else if (item.Key.Equals("SlavePort"))
-                    {
-                        slavePort = item.Value;
-                    }
-                    else if (item.Key.Equals("Protocol"))
-                    {
-                        protocol = item.Value;
-                    }
-                    else if (item.Key.Equals("COMPort"))
-                    {
-                        serialName = item.Value;
-                    }
-                    else if (item.Key.Equals("BaudRate"))
-                    {
-                        baudRate = item.Value;
-                    }
-                    else if (item.Key.Equals("CheckBit"))
-                    {
-                        checkBit = item.Value;
-                    }
-                    else if (item.Key.Equals("DataBit"))
-                    {
-                        dataBit = item.Value;
-                    }
-                    else if (item.Key.Equals("StopBit"))
-                    {
-                        stopBit = item.Value;
-                    }
-                    else if (item.Key.Equals("IsSendDataASCII"))
-                    {
-                        isSendASCII = Convert.ToBoolean(item.Value);
-                    }
-                    else if (item.Key.Equals("isRecASCII"))
-                    {
-                        isRecASCII = Convert.ToBoolean(item.Value);
-                    }
-                    else if (item.Key.Contains("FixGreenLED"))
-                    {
-                        int LEDIndex = GetLEDIndex(item.Key, "FixGreenLED");
-
-                        isFixGreenLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
-                    }
-                    else if ((item.Key.Contains("FixRedLED")) && (!item.Key.Contains("Dark")))
-                    {
-                        int LEDIndex = GetLEDIndex(item.Key, "FixRedLED");
-
-                        isFixRedLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
-                    }
-                    else if (item.Key.Contains("FixDarkRedLED"))
-                    {
-                        int LEDIndex = GetLEDIndex(item.Key, "FixDarkRedLED");
-
-                        isFixDarkRedLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
-                    }
-                    else if (item.Key.Contains("DimGreenLED"))
-                    {
-                        int LEDIndex = GetLEDIndex(item.Key, "DimGreenLED");
-
-                        dimGreenLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
-                    }
-                    else if ((item.Key.Contains("DimRedLED")) && (!item.Key.Contains("Dark")))
-                    {
-                        int LEDIndex = GetLEDIndex(item.Key, "DimRedLED");
-
-                        dimRedLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
-                    }
-                    else if (item.Key.Contains("DimDarkRedLED"))
-                    {
-                        int LEDIndex = GetLEDIndex(item.Key, "DimDarkRedLED");
-
-                        dimDarkRedLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
-                    }
-                    else
-                    {
-                        Exception myEx = new Exception();
-                        throw myEx;
-                    }
+                    slaveIP = item.Value;
                 }
-                catch (Exception ex)
+                else if (item.Key.Equals("SlavePort"))
                 {
-                    throw ex;
+                    slavePort = item.Value;
+                }
+                else if (item.Key.Equals("Protocol"))
+                {
+                    protocol = item.Value;
+                }
+                else if (item.Key.Equals("COMPort"))
+                {
+                    serialName = item.Value;
+                }
+                else if (item.Key.Equals("BaudRate"))
+                {
+                    baudRate = item.Value;
+                }
+                else if (item.Key.Equals("CheckBit"))
+                {
+                    checkBit = item.Value;
+                }
+                else if (item.Key.Equals("DataBit"))
+                {
+                    dataBit = item.Value;
+                }
+                else if (item.Key.Equals("StopBit"))
+                {
+                    stopBit = item.Value;
+                }
+                else if (item.Key.Equals("IsSendDataASCII"))
+                {
+                    isSendASCII = Convert.ToBoolean(item.Value);
+                }
+                else if (item.Key.Equals("IsRecASCII"))
+                {
+                    isRecASCII = Convert.ToBoolean(item.Value);
+                }
+                else if (item.Key.Contains("FixGreenLED"))
+                {
+                    int LEDIndex = GetLEDIndex(item.Key, "FixGreenLED");
+
+                    isFixGreenLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
+                }
+                else if ((item.Key.Contains("FixRedLED")) && (!item.Key.Contains("Dark")))
+                {
+                    int LEDIndex = GetLEDIndex(item.Key, "FixRedLED");
+
+                    isFixRedLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
+                }
+                else if (item.Key.Contains("FixDarkRedLED"))
+                {
+                    int LEDIndex = GetLEDIndex(item.Key, "FixDarkRedLED");
+
+                    isFixDarkRedLEDOn[LEDIndex] = Convert.ToBoolean(item.Value);
+                }
+                else if (item.Key.Contains("DimGreenLED"))
+                {
+                    int LEDIndex = GetLEDIndex(item.Key, "DimGreenLED");
+
+                    dimGreenLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
+                }
+                else if ((item.Key.Contains("DimRedLED")) && (!item.Key.Contains("Dark")))
+                {
+                    int LEDIndex = GetLEDIndex(item.Key, "DimRedLED");
+
+                    dimRedLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
+                }
+                else if (item.Key.Contains("DimDarkRedLED"))
+                {
+                    int LEDIndex = GetLEDIndex(item.Key, "DimDarkRedLED");
+
+                    dimDarkRedLEDPower[LEDIndex] = Convert.ToDouble(item.Value);
+                }
+                else
+                {
+                    Exception myEx = new Exception();
+                    throw myEx;
                 }
             }
         }
@@ -410,6 +403,14 @@ namespace LEDController.Model
 
             LEDCfg.Add("SlaveIP", slaveIP);
             LEDCfg.Add("SlavePort", slavePort);
+            LEDCfg.Add("COMPort", serialName);
+            LEDCfg.Add("BaudRate", baudRate);
+            LEDCfg.Add("CheckBit", checkBit);
+            LEDCfg.Add("DataBit", dataBit);
+            LEDCfg.Add("StopBit", stopBit);
+            LEDCfg.Add("Protocol", protocol);
+            LEDCfg.Add("IsSendDataASCII", isSendASCII.ToString());
+            LEDCfg.Add("IsRecASCII", isRecASCII.ToString());
 
             Config cfgWriter = new Config();
 
@@ -841,7 +842,7 @@ namespace LEDController.Model
                 status.dimGreenLEDCurrent[i] = values[i];
             }
 
-            status.isVaildStatus = true;
+            status.isValidStatus = true;
             status.updatedTime = DateTime.Now;
 
             return status;
@@ -872,7 +873,7 @@ namespace LEDController.Model
                 recStatus.LEDPower = 0.0;
                 recStatus.LEDCurrent = 0.0;
                 recStatus.LEDVoltage = 0.0;
-                recStatus.isVaildStatus = false;
+                recStatus.isValidStatus = false;
                 return recStatus;
             }
 
@@ -935,11 +936,41 @@ namespace LEDController.Model
             values = ParseLEDVoltage(recData);
             recStatus.LEDCurrent = values[0];
 
-            recStatus.isVaildStatus = true;
+            recStatus.isValidStatus = true;
 
             return recStatus;
         }
 
+        public bool[] ParseChillerStatus(byte[] recData, int count)
+        {
+            bool[] chillerStatus = new bool[count];
+
+            for (int i = 0; i <= count / 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if ((i * 8 + j) < count)
+                    {
+                        chillerStatus[i * 8 + j] = Convert.ToBoolean(recData[i] & (1 << (7 - j)));
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return chillerStatus;
+        }
+
+        public bool IsChillerWarning(int addrPLC, int chillerIndex)
+        {
+            bool chillerWarning = false;
+
+            byte[] recData = this.device.WriteReceive((byte)addr)
+
+            return chillerWarning;
+        }
     }
 
 }

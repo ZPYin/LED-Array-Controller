@@ -50,8 +50,12 @@ namespace LEDController.View
         public event EventHandler<EventArgs> ShowLEDStatus;
         public event EventHandler<EventArgs> OpenWithCfgFile;
         public event EventHandler<EventArgs> SaveCfgFile;
-        public event EventHandler<EventArgs> SaveasCfgFile;
+        public event EventHandler<EventArgs> SaveAsCfgFile;
         public event EventHandler<EventArgs> ShowVersion;
+        public event EventHandler<EventArgs> ShowChillerStatus;
+        public event EventHandler<EventSkyLightArgs> TurnOnSkyLight;
+        public event EventHandler<EventSkyLightArgs> TurnOffSkyLight;
+        
         public DispatcherTimer timer = new DispatcherTimer();
 
         private Size m_szInit;   //初始窗体大小
@@ -536,7 +540,7 @@ namespace LEDController.View
 
         private void Saveas_Click(object sender, EventArgs e)
         {
-            SaveasCfgFile?.Invoke(sender, e);
+            SaveAsCfgFile?.Invoke(sender, e);
         }
 
         protected void LEDControllerViewer_Load(object sender, EventArgs e)
@@ -823,37 +827,37 @@ namespace LEDController.View
 
         private void btnUpdateChiller_Click(object sender, EventArgs e)
         {
-
+            ShowChillerStatus?.Invoke(sender, e);
         }
 
         private void btnOpenSkylight1_Click(object sender, EventArgs e)
         {
-
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
         }
 
         private void btnCloseSkylight1_Click(object sender, EventArgs e)
         {
-
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
         }
 
         private void btnOpenSkylight2_Click(object sender, EventArgs e)
         {
-
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
         }
 
         private void btnCloseSkylight2_Click(object sender, EventArgs e)
         {
-
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
         }
 
         private void btnOpenSkylight3_Click(object sender, EventArgs e)
         {
-
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
         }
 
         private void btnCloseSkylight3_Click(object sender, EventArgs e)
         {
-
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
         }
     }
 
@@ -880,6 +884,16 @@ namespace LEDController.View
         {
             this.LEDIndex = thisLEDIndex;
             this.addrPLC = thisAddrPLC;
+        }
+    }
+
+    public class EventSkyLightArgs : EventArgs
+    {
+        public int SkyLightIndex;
+
+        public EventSkyLightArgs(int thisSkyLightIndex)
+        {
+            this.SkyLightIndex = thisSkyLightIndex;
         }
     }
 
