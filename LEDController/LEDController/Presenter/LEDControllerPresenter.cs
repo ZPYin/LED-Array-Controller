@@ -2,6 +2,7 @@
 using LEDController.Model;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Ports;
 using System.Windows.Forms;
@@ -13,13 +14,13 @@ using System.Windows.Threading;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
+using ScottPlot.Plottable;
 
 namespace LEDController.Presenter
 {
     class LEDControllerPresenter
     {
         private const int SendBufferSize = 2 * 1024;
-        private const int RecBufferSize = 8 * 1024;
         private const double MaxGreenLEDPower = 10.0;
         private const double MinGreenLEDPower = 0.0;
         private const double MaxRedLEDPower = 20.0;
@@ -58,8 +59,10 @@ namespace LEDController.Presenter
             _view.ConnectSerialPort += new EventHandler<EventArgs>(OnConnectSerialPort);
             _view.CloseSerialPort += new EventHandler<EventArgs>(OnCloseSerialPort);
             _view.SendTestData += new EventHandler<EventArgs>(OnSendTestData);
-            _view.ShowSingleLEDStatus += new EventHandler<EventLEDArgs>(OnShowSingleLEDStatus);
-            _view.ClearSingleLEDStatus += new EventHandler<EventLEDArgs>(OnClearSingleLEDStatus);
+            _view.ShowFixLEDStatus += new EventHandler<EventLEDArgs>(OnShowFixLEDStatus);
+            _view.ShowDimLEDStatus += new EventHandler<EventDimLEDArgs>(OnShowDimLEDStatus);
+            _view.ClearFixLEDStatus += new EventHandler<EventLEDArgs>(OnClearFixLEDStatus);
+            _view.ClearDimLEDStatus += new EventHandler<EventDimLEDArgs>(OnClearDimLEDStatus);
             _view.OpenFixLED += new EventHandler<EventLEDArgs>(OnOpenFixLED);
             _view.CloseFixLED += new EventHandler<EventLEDArgs>(OnCloseFixLED);
             _view.HandleFixLED += new EventHandler<EventLEDArgs>(OnHandleFixLED);
@@ -111,8 +114,8 @@ namespace LEDController.Presenter
             connector = new LEDBoardCom(
                 cbxCOMPort.SelectedItem.ToString(),
                 cbxBaudRate.SelectedItem.ToString(),
-                cbxCheckBit.SelectedItem.ToString(),
                 cbxDataBit.SelectedItem.ToString(),
+                cbxCheckBit.SelectedItem.ToString(),
                 cbxStopBit.SelectedItem.ToString()
             );
 
@@ -127,7 +130,7 @@ namespace LEDController.Presenter
 
             try
             {
-                connector.Connect(2000);
+                this.connector.Connect(200);
                 ShowSendStatusAsync();
                 _view.toolStripConnectionStatusText = "连接成功";
 
@@ -181,7 +184,7 @@ namespace LEDController.Presenter
             // Close connection
             try
             {
-                connector.Disconnect();
+                this.connector.Disconnect();
                 recWorker.CancelAsync();
                 ShowSendStatusAsync();
                 _view.toolStripConnectionStatusText = "断开成功";
@@ -307,52 +310,52 @@ namespace LEDController.Presenter
             TextBox tbxPort = (TextBox)(_view.Controls.Find("tbxPort", true)[0]);
             LEDCfgWriter.slavePort = tbxPort.Text;
 
-            for (int i = 0; i < LEDBoardCom.NumGreenFixLED; i++)
+            for (int i = 0; i < LEDBoardCom.NumFixGreenLED; i++)
             {
                 int LEDIndex = i + 1;
-                Button btn = (Button)(_view.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                Button btn = (Button)(_view.Controls.Find($"btnGreenLED{LEDIndex}", true)[0]);
 
-                LEDCfgWriter.isGreenFixLEDOn[i] = (btn.BackColor == Color.Green);
+                LEDCfgWriter.isFixGreenLEDOn[i] = (btn.BackColor == Color.Green);
             }
 
-            for (int i = 0; i < LEDBoardCom.NumRedFixLED; i++)
-            {
-                int LEDIndex = i + 1 + LEDBoardCom.NumGreenFixLED;
-                Button btn = (Button)(_view.Controls.Find($"btnLED{LEDIndex}", true)[0]);
-
-                LEDCfgWriter.isRedFixLEDOn[i] = (btn.BackColor == Color.Red);
-            }
-
-            for (int i = 0; i < LEDBoardCom.NumDarkRedFixLED; i++)
-            {
-                int LEDIndex = i + 1 + LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED;
-                Button btn = (Button)(_view.Controls.Find($"btnLED{LEDIndex}", true)[0]);
-
-                LEDCfgWriter.isDarkRedFixLEDOn[i] = (btn.BackColor == Color.DarkRed);
-            }
-
-            for (int i = 0; i < LEDBoardCom.NumGreenDimLED; i++)
+            for (int i = 0; i < LEDBoardCom.NumFixRedLED; i++)
             {
                 int LEDIndex = i + 1;
-                TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimLED{LEDIndex}", true)[0]);
+                Button btn = (Button)(_view.Controls.Find($"btnRedLED{LEDIndex}", true)[0]);
 
-                LEDCfgWriter.greenDimLEDPower[i] = Convert.ToDouble(tbx.Text);
+                LEDCfgWriter.isFixRedLEDOn[i] = (btn.BackColor == Color.Red);
             }
 
-            for (int i = 0; i < LEDBoardCom.NumRedDimLED; i++)
+            for (int i = 0; i < LEDBoardCom.NumFixDarkRedLED; i++)
             {
-                int LEDIndex = i + 1 + LEDBoardCom.NumGreenDimLED;
-                TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimLED{LEDIndex}", true)[0]);
+                int LEDIndex = i + 1;
+                Button btn = (Button)(_view.Controls.Find($"btnDarkRedLED{LEDIndex}", true)[0]);
 
-                LEDCfgWriter.redDimLEDPower[i] = Convert.ToDouble(tbx.Text);
+                LEDCfgWriter.isFixDarkRedLEDOn[i] = (btn.BackColor == Color.DarkRed);
             }
 
-            for (int i = 0; i < LEDBoardCom.NumDarkRedDimLED; i++)
+            for (int i = 0; i < LEDBoardCom.NumDimGreenLED; i++)
             {
-                int LEDIndex = i + 1 + LEDBoardCom.NumGreenDimLED + LEDBoardCom.NumDarkRedDimLED;
-                TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimLED{LEDIndex}", true)[0]);
+                int LEDIndex = i + 1;
+                TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimGreenLED{LEDIndex}", true)[0]);
 
-                LEDCfgWriter.darkRedDimLEDPower[i] = Convert.ToDouble(tbx.Text);
+                LEDCfgWriter.dimGreenLEDPower[i] = Convert.ToDouble(tbx.Text);
+            }
+
+            for (int i = 0; i < LEDBoardCom.NumDimRedLED; i++)
+            {
+                int LEDIndex = i + 1;
+                TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimRedLED{LEDIndex}", true)[0]);
+
+                LEDCfgWriter.dimRedLEDPower[i] = Convert.ToDouble(tbx.Text);
+            }
+
+            for (int i = 0; i < LEDBoardCom.NumDimDarkRedLED; i++)
+            {
+                int LEDIndex = i + 1;
+                TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimDarkRedLED{LEDIndex}", true)[0]);
+
+                LEDCfgWriter.dimDarkRedLEDPower[i] = Convert.ToDouble(tbx.Text);
             }
 
             return LEDCfgWriter;
@@ -469,13 +472,13 @@ namespace LEDController.Presenter
                 }
 
                 // Turn on Fix LEDs
-                for (int i = 0; i < LEDCfgReader.isGreenFixLEDOn.Length; i++)
+                for (int i = 0; i < LEDCfgReader.isFixGreenLEDOn.Length; i++)
                 {
                     int LEDIndex = i + 1;
                     EventLEDArgs myEvent = new EventLEDArgs(LEDIndex, 3);
-                    Button btn = (Button)(_view.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                    Button btn = (Button)(_view.Controls.Find($"btnGreenLED{LEDIndex}", true)[0]);
 
-                    if (LEDCfgReader.isGreenFixLEDOn[i])
+                    if (LEDCfgReader.isFixGreenLEDOn[i])
                     {
                         OnOpenFixLED(btn, myEvent);
                     }
@@ -485,13 +488,13 @@ namespace LEDController.Presenter
                     }
                 }
 
-                for (int i = 0; i < LEDCfgReader.isRedFixLEDOn.Length; i++)
+                for (int i = 0; i < LEDCfgReader.isFixRedLEDOn.Length; i++)
                 {
-                    int LEDIndex = i + LEDBoardCom.NumGreenFixLED + 1;
+                    int LEDIndex = i + 1;
                     EventLEDArgs myEvent = new EventLEDArgs(LEDIndex, 1);
-                    Button btn = (Button)(_view.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                    Button btn = (Button)(_view.Controls.Find($"btnRedLED{LEDIndex}", true)[0]);
 
-                    if (LEDCfgReader.isRedFixLEDOn[i])
+                    if (LEDCfgReader.isFixRedLEDOn[i])
                     {
                         OnOpenFixLED(btn, myEvent);
                     }
@@ -501,13 +504,13 @@ namespace LEDController.Presenter
                     }
                 }
 
-                for (int i = 0; i < LEDCfgReader.isDarkRedFixLEDOn.Length; i++)
+                for (int i = 0; i < LEDCfgReader.isFixDarkRedLEDOn.Length; i++)
                 {
-                    int LEDIndex = i + LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED + 1;
+                    int LEDIndex = i + 1;
                     EventLEDArgs myEvent = new EventLEDArgs(LEDIndex, 2);
-                    Button btn = (Button)(_view.Controls.Find($"btnLED{LEDIndex}", true)[0]);
+                    Button btn = (Button)(_view.Controls.Find($"btnDarkRedLED{LEDIndex}", true)[0]);
 
-                    if (LEDCfgReader.isDarkRedFixLEDOn[i])
+                    if (LEDCfgReader.isFixDarkRedLEDOn[i])
                     {
                         OnOpenFixLED(btn, myEvent);
                     }
@@ -517,64 +520,64 @@ namespace LEDController.Presenter
                     }
                 }
 
-                for (int i = 0; i < LEDCfgReader.greenDimLEDPower.Length; i++)
+                for (int i = 0; i < LEDCfgReader.dimGreenLEDPower.Length; i++)
                 {
                     int dimLEDIndex = i + 1;
                     int LEDIndex = dimLEDIndex;
-                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.greenDimLEDPower[i], LEDIndex, 3) / (double)NumScrollBarLevel * 255);
+                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimGreenLEDPower[i], LEDIndex, 3) / (double)NumScrollBarLevel * 255);
 
                     // configure dimmable LED textbox and scrollbar
                     TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimLED{dimLEDIndex}", true)[0]);
-                    tbx.Text = Convert.ToString(LEDCfgReader.greenDimLEDPower[i]);
+                    tbx.Text = Convert.ToString(LEDCfgReader.dimGreenLEDPower[i]);
 
                     TrackBar tbar = (TrackBar)(_view.Controls.Find($"sbarDimLED{dimLEDIndex}", true)[0]);
-                    int sbarVal = CalcSbarValue(LEDCfgReader.greenDimLEDPower[i], dimLEDIndex, 3);
+                    int sbarVal = CalcSbarValue(LEDCfgReader.dimGreenLEDPower[i], dimLEDIndex, 3);
                     tbar.Value = sbarVal;
 
                     // turn on or turn off the LED button
-                    EventDimLEDArgs myEvent = new EventDimLEDArgs(LEDIndex, 3, LEDCfgReader.greenDimLEDPower[i]);
+                    EventDimLEDArgs myEvent = new EventDimLEDArgs(LEDIndex, 3, LEDCfgReader.dimGreenLEDPower[i]);
                     Button btn = (Button)(_view.Controls.Find($"btnDimLED{dimLEDIndex}", true)[0]);
 
                     OnSetDimLED(btn, myEvent);
                 }
 
-                for (int i = 0; i < LEDCfgReader.redDimLEDPower.Length; i++)
+                for (int i = 0; i < LEDCfgReader.dimRedLEDPower.Length; i++)
                 {
                     int dimLEDIndex = i + 1;
                     int LEDIndex = dimLEDIndex;
-                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.redDimLEDPower[i], LEDIndex, 1) / (double)NumScrollBarLevel * 255);
+                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimRedLEDPower[i], LEDIndex, 1) / (double)NumScrollBarLevel * 255);
 
                     // configure dimmable LED textbox and scrollbar
                     TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimLED{dimLEDIndex}", true)[0]);
-                    tbx.Text = Convert.ToString(LEDCfgReader.redDimLEDPower[i]);
+                    tbx.Text = Convert.ToString(LEDCfgReader.dimRedLEDPower[i]);
 
                     TrackBar tbar = (TrackBar)(_view.Controls.Find($"sbarDimLED{dimLEDIndex}", true)[0]);
-                    int sbarVal = CalcSbarValue(LEDCfgReader.redDimLEDPower[i], dimLEDIndex, 1);
+                    int sbarVal = CalcSbarValue(LEDCfgReader.dimRedLEDPower[i], dimLEDIndex, 1);
                     tbar.Value = sbarVal;
 
                     // turn on or turn off the LED button
-                    EventDimLEDArgs myEvent = new EventDimLEDArgs(LEDIndex, 1, LEDCfgReader.redDimLEDPower[i]);
+                    EventDimLEDArgs myEvent = new EventDimLEDArgs(LEDIndex, 1, LEDCfgReader.dimRedLEDPower[i]);
                     Button btn = (Button)(_view.Controls.Find($"btnDimLED{dimLEDIndex}", true)[0]);
 
                     OnSetDimLED(btn, myEvent);
                 }
 
-                for (int i = 0; i < LEDCfgReader.darkRedDimLEDPower.Length; i++)
+                for (int i = 0; i < LEDCfgReader.dimDarkRedLEDPower.Length; i++)
                 {
                     int dimLEDIndex = i + 1;
                     int LEDIndex = dimLEDIndex;
-                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.darkRedDimLEDPower[i], LEDIndex, 2) / (double)NumScrollBarLevel * 255);
+                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimDarkRedLEDPower[i], LEDIndex, 2) / (double)NumScrollBarLevel * 255);
 
                     // configure dimmable LED textbox and scrollbar
                     TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimLED{dimLEDIndex}", true)[0]);
-                    tbx.Text = Convert.ToString(LEDCfgReader.darkRedDimLEDPower[i]);
+                    tbx.Text = Convert.ToString(LEDCfgReader.dimDarkRedLEDPower[i]);
 
                     TrackBar tbar = (TrackBar)(_view.Controls.Find($"sbarDimLED{dimLEDIndex}", true)[0]);
-                    int sbarVal = CalcSbarValue(LEDCfgReader.darkRedDimLEDPower[i], dimLEDIndex, 2);
+                    int sbarVal = CalcSbarValue(LEDCfgReader.dimDarkRedLEDPower[i], dimLEDIndex, 2);
                     tbar.Value = sbarVal;
 
                     // turn on or turn off the LED button
-                    EventDimLEDArgs myEvent = new EventDimLEDArgs(LEDIndex, 2, LEDCfgReader.darkRedDimLEDPower[i]);
+                    EventDimLEDArgs myEvent = new EventDimLEDArgs(LEDIndex, 2, LEDCfgReader.dimDarkRedLEDPower[i]);
                     Button btn = (Button)(_view.Controls.Find($"btnDimLED{dimLEDIndex}", true)[0]);
 
                     OnSetDimLED(btn, myEvent);
@@ -584,7 +587,7 @@ namespace LEDController.Presenter
 
         private void RenderLEDStatus(object state)
         {
-            ScottPlot.Plottable.SignalPlot sig = state as ScottPlot.Plottable.SignalPlot;
+            SignalPlot sig = state as SignalPlot;
             sig.OffsetX = GetCurrentTime().ToOADate();
             _view.formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
             _view.formsLEDStatusPlot.Refresh();
@@ -617,48 +620,68 @@ namespace LEDController.Presenter
                 return;
             }
 
+            AllLEDStatus status = this.connector.QueryAllLEDStatus();
+
+
             // Show LED status
-            if ((connector != null) && (receiveBytes != null))
+            if (status.isVaildStatus)
             {
+                StatusStrip statusStrip1 = (StatusStrip)(this._view.Controls.Find("statusStrip1", true)[0]);
+                // showing total power
+                ToolStripStatusLabel tsslGreenLEDTotalPower = statusStrip1.Items[0] as ToolStripStatusLabel;
+                ToolStripStatusLabel tsslRedLEDTotalPower = statusStrip1.Items[1] as ToolStripStatusLabel;
+                ToolStripStatusLabel tsslDarkRedLEDTotalPower = statusStrip1.Items[2] as ToolStripStatusLabel;
+                tsslGreenLEDTotalPower.Text = $"绿光实时总功率: {status.CalcTotalGreenLEDPower()} W";
+                tsslRedLEDTotalPower.Text = $"红光实时总功率: {status.CalcTotalRedLEDPower()} W";
+                tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: {status.CalcTotalDarkRedLEDPower()} W";
+
                 try
                 {
-                    // parsing status
-                    LEDStatus thisLEDStatus = connector.ParsePackage(receiveBytes);
+                    double[] LEDCurrent = status.GetLEDCurrentArray();
+                    double[] LEDVoltage = status.GetLEDVoltageArray();
+                    double[] LEDPower = status.GetLEDPowerArray();
+
                     TextBox tbxMinValue = (TextBox)(this._view.Controls.Find("tbxMinValue", true)[0]);
                     TextBox tbxMaxValue = (TextBox)(this._view.Controls.Find("tbxMaxValue", true)[0]);
                     double minValue = Convert.ToDouble(tbxMinValue.Text);
                     double maxValue = Convert.ToDouble(tbxMaxValue.Text);
 
                     ComboBox cbxQueryParam = (ComboBox)(this._view.Controls.Find("cbxQueryParam", true)[0]);
-                    int queryIndex = cbxQueryParam.SelectedIndex;
+                    string queryType = (string)cbxQueryParam.SelectedItem;
 
-                    if (thisLEDStatus.isValidPackage)
+                    // Convert values to color
+                    List<Control> btnList = new List<Control>();
+                    Panel panelLEDStatus = (Panel)(this._view.Controls.Find("panelLEDStatus", true)[0]);
+                    this._view.GetAllControl(panelLEDStatus, btnList, "btnStatusLED");
+                    Color[] LEDControlColors = new Color[btnList.Count()];
+                    double normLEDValue = 0.0;
+                    for (int i = 0; i < btnList.Count(); i++)
                     {
-                        // Convert values to color
-                        double[] LEDPower = Enumerable.Concat(thisLEDStatus.fixLEDPower, thisLEDStatus.dimLEDPower).ToArray();
-                        double[] LEDVoltage = Enumerable.Concat(thisLEDStatus.fixLEDVoltage, thisLEDStatus.dimLEDVoltage).ToArray();
-                        double[] LEDCurrent = Enumerable.Concat(thisLEDStatus.fixLEDCurrent, thisLEDStatus.dimLEDCurrent).ToArray();
-                        Color[] LEDControlColors = new Color[132];
-                        for (int i = 0; i < 132; i++)
-                        {
-                            double LEDValue, normLEDValue;
-                            if (queryIndex == 1)
-                                LEDValue = LEDCurrent[i];
-                            else if (queryIndex == 2)
-                                LEDValue = LEDVoltage[i];
-                            else if (queryIndex == 3)
-                                LEDValue = LEDPower[i];
-                            else
-                                LEDValue = 0.0;
 
-                            normLEDValue = (LEDValue - minValue) / (maxValue - minValue);
-                            // specify LED status according to the showing message type
-                            LEDControlColors[i] = ColorConv.HSL2RGB(normLEDValue, 0.5, 0.5);
+                        switch (queryType)
+                        {
+                            case "LED电流":
+                                normLEDValue = (LEDCurrent[i] - minValue) / (maxValue - minValue);
+                                break;
+
+                            case "LED电压":
+                                normLEDValue = (LEDVoltage[i] - minValue) / (maxValue - minValue);
+                                break;
+
+                            case "LED功率":
+                                normLEDValue = (LEDPower[i] - minValue) / (maxValue - minValue);
+                                break;
+                            case "LED状态":
+                                normLEDValue = 0.0;
+                                break;
                         }
 
-                        // Set Colors
-                        // _view.LEDStatusColors = LEDControlColors;
+                        // specify LED status according to the showing message type
+                        LEDControlColors[i] = ColorConv.HSL2RGB(normLEDValue, 0.5, 0.5);
                     }
+
+                    // Set Colors
+                    // _view.LEDStatusColors = LEDControlColors;
                 }
                 catch
                 {
@@ -941,23 +964,24 @@ namespace LEDController.Presenter
             if (connector.isAlive)
             {
                 // Turn on Fix LED
-                connector.TurnOnFixLED(e.LEDIndex);
+                connector.TurnOnFixLED(e.addrPLC, e.LEDIndex);
                 ShowSendStatusAsync();
 
                 // set button color
                 Button btn = sender as Button;
-                int tagLED = Int32.Parse(btn.Tag as string);
-                if ((tagLED >= 1) && (tagLED <= LEDBoardCom.NumGreenFixLED))
+                switch (e.addrPLC)
                 {
-                    btn.BackColor = Color.Green;
-                }
-                else if ((tagLED >= (LEDBoardCom.NumGreenFixLED + 1)) && (tagLED <= (LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED)))
-                {
-                    btn.BackColor = Color.Red;
-                }
-                else if ((tagLED >= (LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED + 1)) && (tagLED <= (LEDBoardCom.NumGreenFixLED + LEDBoardCom.NumRedFixLED + LEDBoardCom.NumDarkRedFixLED)))
-                {
-                    btn.BackColor = Color.DarkRed;
+                    case 1:
+                        btn.BackColor = Color.Red;
+                        break;
+
+                    case 2:
+                        btn.BackColor = Color.DarkRed;
+                        break;
+
+                    case 3:
+                        btn.BackColor = Color.Green;
+                        break;
                 }
 
                 btn.Refresh();
@@ -969,7 +993,7 @@ namespace LEDController.Presenter
             // Turn off Fix LED
             if (connector.isAlive)
             {
-                connector.TurnOffFixLED(e.LEDIndex);
+                connector.TurnOffFixLED(e.addrPLC, e.LEDIndex);
 
                 ShowSendStatusAsync();
 
@@ -980,23 +1004,36 @@ namespace LEDController.Presenter
             }
         }
 
-        private void OnShowSingleLEDStatus(object sender, EventLEDArgs e)
+        private void OnShowFixLEDStatus(object sender, EventLEDArgs e)
         {
             // Show LED status
+            QueryType qType = QueryType.FixGreenLED;
+            switch (e.addrPLC)
+            {
+                case 1:
+                    qType = QueryType.FixRedLED;
+                    break;
+
+                case 2:
+                    qType = QueryType.FixDarkRedLED;
+                    break;
+
+                case 3:
+                    qType = QueryType.FixGreenLED;
+                    break;
+            }
 
             if ((connector != null) && (receiveBytes != null))
             {
                 try
                 {
                     // parsing status
-                    LEDStatus thisLEDStatus;
-                    thisLEDStatus = connector.ParsePackage(receiveBytes);
+                    LEDStatus thisLEDStatus = this.connector.QueryLEDStatus(e.LEDIndex, qType);
 
-                    if (thisLEDStatus.isValidPackage)
+                    if (thisLEDStatus.isVaildStatus)
                     {
                         // show status
-                        // determine whether it is fix led or dim led
-                        // LED power, current, voltage, temperature ... in the bottom status bar
+                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} mV | 电流: {thisLEDStatus.LEDCurrent} mA | 功率: {thisLEDStatus.LEDPower} mW";
                     }
                     else
                     {
@@ -1017,7 +1054,63 @@ namespace LEDController.Presenter
             }
         }
 
-        private void OnClearSingleLEDStatus(object sender, EventLEDArgs e)
+        private void OnShowDimLEDStatus(object sender, EventDimLEDArgs e)
+        {
+            // Show LED status
+            QueryType qType = QueryType.DimGreenLED;
+            switch (e.addrPLC)
+            {
+                case 1:
+                    qType = QueryType.DimRedLED;
+                    break;
+
+                case 2:
+                    qType = QueryType.DimDarkRedLED;
+                    break;
+
+                case 3:
+                    qType = QueryType.DimGreenLED;
+                    break;
+            }
+
+            if ((connector != null) && (receiveBytes != null))
+            {
+                try
+                {
+                    // parsing status
+                    LEDStatus thisLEDStatus = this.connector.QueryLEDStatus(e.LEDIndex, qType);
+
+                    if (thisLEDStatus.isVaildStatus)
+                    {
+                        // show status
+                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} mV | 电流: {thisLEDStatus.LEDCurrent} mA | 功率: {thisLEDStatus.LEDPower} mW";
+                    }
+                    else
+                    {
+                        // show status
+                        _view.toolStripLEDStatusText = "获取LED状态失败";
+                    }
+                }
+                catch
+                {
+                    // show status
+                    _view.toolStripLEDStatusText = "获取LED状态失败";
+                }
+            }
+            else
+            {
+                // show status
+                _view.toolStripLEDStatusText = "获取LED状态失败";
+            }
+        }
+
+        private void OnClearFixLEDStatus(object sender, EventLEDArgs e)
+        {
+            // Clear LED status
+            _view.toolStripLEDStatusText = "LED状态";
+        }
+
+        private void OnClearDimLEDStatus(object sender, EventDimLEDArgs e)
         {
             // Clear LED status
             _view.toolStripLEDStatusText = "LED状态";
@@ -1048,65 +1141,34 @@ namespace LEDController.Presenter
         public void ReceiveMsg(object sender, DoWorkEventArgs args)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
+            byte[] buffer;
 
+            RadioButton rbnRecHEX = (RadioButton)(this._view.Controls.Find("rbnRecHEX", true)[0]);
             while (true)   // Receiving message from slave
             {
-                int msgLen = 0;
-                byte[] buffer = new byte[SendBufferSize];
-                if ((this.connector.isAlive) && (this.connector.isTCP) && (connector.socketHost != null) && (!worker.CancellationPending))
+                if (this.connector.isAlive)
                 {
-                    msgLen = connector.socketHost.Receive(buffer,0, buffer.Length, SocketFlags.None);
-
-                    //数据接收不完整，故再次判断
-                    Thread.Sleep(50);
-                    while (connector.socketHost.Available > 0)
+                    try
                     {
-                        msgLen += connector.socketHost.Receive(buffer, msgLen, buffer.Length - msgLen, SocketFlags.None);
-
-                        Thread.Sleep(50);
+                        buffer = this.connector.device.ReadMsg(rbnRecHEX.Checked);
                     }
-                }
-                else if ((this.connector.isAlive) && (this.connector.isSerialPort) && (!worker.CancellationPending))
-                {
-                    RadioButton rbnRecHEX = (RadioButton)(this._view.Controls.Find("rbnRecHEX", true)[0]);
-                    if (rbnRecHEX.Checked)
+                    catch
                     {
-                        
-                        byte[] recData = new byte[this.connector.serialPort.BytesToRead];
-                        this.connector.serialPort.Read(recData, 0, recData.Length);
-                        msgLen = recData.Length;
-                        int value;
-                        for (int i = 0; i < msgLen; i++)
-                        {
-                            value = Convert.ToInt32(recData[i]);
-                            buffer[i] = Convert.ToByte(String.Format("{0:X}", value));
-                        }
+                        buffer = new byte[0];
                     }
-                    else
-                    {
-                        byte[] recData = new byte[this.connector.serialPort.BytesToRead];
-                        this.connector.serialPort.Read(recData, 0, recData.Length);
-
-                        msgLen = recData.Length;
-                        for (int i = 0; i < msgLen; i++)
-                        {
-                            buffer[i] = recData[i];
-                        }
-                    }
-
-                    this.connector.serialPort.DiscardInBuffer();
                 }
                 else
                 {
+                    buffer = new byte[0];
                     args.Cancel = true;
                     break;
                 }
 
-                if (msgLen > 0)
+                if (buffer.Length > 0)
                 {
                     try
                     {
-                        currentLEDStatus = connector.ParsePackage(buffer);
+                        //currentLEDStatus = connector.ParsePackage(buffer);
                         receiveBytes = buffer;
                         // TODO add timestamp
 
@@ -1114,8 +1176,7 @@ namespace LEDController.Presenter
                         worker.ReportProgress(1);
                     }
                     catch
-                    {
-                    }
+                    {}
                 }
             }
         }
@@ -1144,14 +1205,6 @@ namespace LEDController.Presenter
             tbxTestRec.AppendText(formatRecMsg);;
 
             StatusStrip statusStrip1 = (StatusStrip)(this._view.Controls.Find("statusStrip1", true)[0]);
-
-            // showing total power
-            ToolStripStatusLabel tsslGreenLEDTotalPower = statusStrip1.Items[0] as ToolStripStatusLabel;
-            ToolStripStatusLabel tsslRedLEDTotalPower = statusStrip1.Items[1] as ToolStripStatusLabel;
-            ToolStripStatusLabel tsslDarkRedLEDTotalPower = statusStrip1.Items[2] as ToolStripStatusLabel;
-            tsslGreenLEDTotalPower.Text = $"绿光实时总功率: {currentLEDStatus.totalGreenLEDPower}W";
-            tsslRedLEDTotalPower.Text = $"红光实时总功率: {currentLEDStatus.totalRedLEDPower}W";
-            tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: {currentLEDStatus.totalDarkredLEDPower}W";
 
             _view.btnRecStatus1Color = Color.Green;
             _view.btnRecStatus2Color = Color.Green;
@@ -1190,7 +1243,7 @@ namespace LEDController.Presenter
             Button btnSendTestMsg = (Button)(this._view.Controls.Find("btnSendTestMsg", true)[0]);
             try
             {
-                connector.device.Connect(2000);
+                connector.Connect(200);
                 ShowSendStatusAsync();
                 _view.toolStripConnectionStatusText = "连接成功";
                 // show connection message
@@ -1223,7 +1276,7 @@ namespace LEDController.Presenter
             // Close connection
             try
             {
-                connector.device.Disconnect();
+                connector.Disconnect();
                 recWorker.CancelAsync();
                 ShowSendStatusAsync();
                 _view.toolStripConnectionStatusText = "断开成功";

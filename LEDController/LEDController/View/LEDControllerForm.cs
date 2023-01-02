@@ -41,8 +41,10 @@ namespace LEDController.View
         public event EventHandler<EventDimLEDArgs> SetDimLED;
         public event EventHandler<EventDimLEDArgs> CloseDimLED;
         public event EventHandler<EventDimLEDArgs> HandleDimLED;
-        public event EventHandler<EventLEDArgs> ShowSingleLEDStatus;
-        public event EventHandler<EventLEDArgs> ClearSingleLEDStatus;
+        public event EventHandler<EventLEDArgs> ShowFixLEDStatus;
+        public event EventHandler<EventDimLEDArgs> ShowDimLEDStatus;
+        public event EventHandler<EventLEDArgs> ClearFixLEDStatus;
+        public event EventHandler<EventDimLEDArgs> ClearDimLEDStatus;
         public event EventHandler<EventDimLEDArgs> UpdateScrollBar;
         public event EventHandler<EventDimLEDArgs> UpdateLEDTbx;
         public event EventHandler<EventArgs> ShowLEDStatus;
@@ -120,38 +122,38 @@ namespace LEDController.View
             }
         }
 
-        // public Color[] LEDStatusColors
-        // {
-        //     get 
-        //     {
-        //         List<Control> list = new List<Control>();
-        //         GetAllControl(this.panelLEDStatus, list);
-        //         Color[] LEDColors = new Color[list.Count()];
+        public Color[] LEDStatusColors
+        {
+            get 
+            {
+                List<Control> list = new List<Control>();
+                GetAllControl(this.panelLEDStatus, list, "LED");
+                Color[] LEDColors = new Color[list.Count()];
                 
-        //         foreach (Control control in list)
-        //         {
-        //             if (control.GetType() == typeof(Button))
-        //             {
-        //                 LEDColors[Convert.ToInt32(control.Tag) - 1] = control.BackColor;
-        //             }
-        //         }
+                foreach (Control control in list)
+                {
+                    if (control.GetType() == typeof(Button))
+                    {
+                        LEDColors[Convert.ToInt32(control.Tag) - 1] = control.BackColor;
+                    }
+                }
 
-        //         return LEDColors;
-        //     }
-        //     set 
-        //     {
-        //         List<Control> list = new List<Control>();
-        //         GetAllControl(this.panelLEDStatus, list);
+                return LEDColors;
+            }
+            set 
+            {
+                List<Control> list = new List<Control>();
+                GetAllControl(this.panelLEDStatus, list, "LED");
 
-        //         foreach (Control control in list)
-        //         {
-        //             if (control.GetType() == typeof(Button))
-        //             {
-        //                 control.BackColor = value[Convert.ToInt32(control.Tag) - 1];
-        //             }
-        //         }
-        //     }
-        // }
+                foreach (Control control in list)
+                {
+                    if (control.GetType() == typeof(Button))
+                    {
+                        control.BackColor = value[Convert.ToInt32(control.Tag) - 1];
+                    }
+                }
+            }
+        }
 
         public string toolStripConnectionStatusText
         {
@@ -176,7 +178,7 @@ namespace LEDController.View
             Application.Exit();
         }
 
-        private void GetAllControl(Control c, List<Control> list)
+        public void GetAllControl(Control c, List<Control> list)
         {
             // Get all controls
             foreach (Control control in c.Controls)
@@ -184,21 +186,43 @@ namespace LEDController.View
                 list.Add(control);
 
                 if (control.GetType() == typeof(Panel))
+                {
                     GetAllControl(control, list);
+                }
             }
         }
 
-        private void GetAllControl(Control c, List<Control> list, string substr)
+        public void GetAllControl(Control c, List<Control> list, string substr)
         {
             // Get all controls
             foreach (Control control in c.Controls)
             {
                 if (control.Name.Contains(substr))
+                {
                     list.Add(control);
+                }
 
                 if (control.GetType() == typeof(Panel))
+                {
                     GetAllControl(control, list);
+                }
             }
+        }
+
+        public int GetLEDIndex(string source, string value)
+        {
+            return Convert.ToInt16(source.Substring(EndIndexOf(source, value)));
+        }
+
+        public int EndIndexOf(string source, string value)
+        {
+            int index = source.IndexOf(value);
+            if (index >= 0)
+            {
+                index += value.Length;
+            }
+
+            return index;
         }
 
         private void btnOpenGreenFixLED_Click(object sender, EventArgs e)
@@ -259,7 +283,7 @@ namespace LEDController.View
             this.Cursor = Cursors.WaitCursor;
 
             List<Control> redLEDList = new List<Control>();
-            GetAllControl(this.panelGreenFixLED, redLEDList, "btnRedLED");
+            GetAllControl(this.panelRedFixLED, redLEDList, "btnRedLED");
 
             for (int i = 0; i < redLEDList.Count(); i++)
             {
@@ -318,7 +342,7 @@ namespace LEDController.View
             for (int i = 0; i < dimGreenLEDList.Count(); i++)
             {
                 Button btn = (Button)(this.Controls.Find($"btnDimGreenLED{i + 1}", true)[0]);
-                int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimGreenLED")));
+                int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
                 TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimGreenLED{idxLED}", true)[0]);
 
                 SetDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
@@ -338,7 +362,7 @@ namespace LEDController.View
             for (int i = 0; i < dimGreenLEDList.Count(); i++)
             {
                 Button btn = (Button)(this.Controls.Find($"btnDimGreenLED{i + 1}", true)[0]);
-                int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimGreenLED")));
+                int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
                 TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimGreenLED{idxLED}", true)[0]);
 
                 CloseDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
@@ -358,7 +382,7 @@ namespace LEDController.View
             for (int i = 0; i < dimRedLEDList.Count(); i++)
             {
                 Button btn = (Button)(this.Controls.Find($"btnDimRedLED{i + 1}", true)[0]);
-                int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimRedLED")));
+                int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
                 TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimRedLED{idxLED}", true)[0]);
 
                 SetDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
@@ -378,7 +402,7 @@ namespace LEDController.View
             for (int i = 0; i < dimRedLEDList.Count(); i++)
             {
                 Button btn = (Button)(this.Controls.Find($"btnDimRedLED{i + 1}", true)[0]);
-                int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimRedLED")));
+                int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
                 TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimRedLED{idxLED}", true)[0]);
 
                 CloseDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
@@ -398,7 +422,7 @@ namespace LEDController.View
             for (int i = 0; i < dimDarkRedLEDList.Count(); i++)
             {
                 Button btn = (Button)(this.Controls.Find($"btnDimDarkRedLED{i + 1}", true)[0]);
-                int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimDarkRedLED")));
+                int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
                 TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
 
                 SetDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
@@ -418,7 +442,7 @@ namespace LEDController.View
             for (int i = 0; i < dimDarkRedLEDList.Count(); i++)
             {
                 Button btn = (Button)(this.Controls.Find($"btnDimDarkRedLED{i + 1}", true)[0]);
-                int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimDarkRedLED")));
+                int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
                 TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
 
                 CloseDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
@@ -578,76 +602,76 @@ namespace LEDController.View
         private void btnDarkRedLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDarkRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
             HandleFixLED?.Invoke(sender, new EventLEDArgs(idxLED, 2));
         }
 
         private void btnDarkRedLED_MouseHover(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDarkRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
 
-            ShowSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 2));
+            ShowFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 2));
         }
 
         private void btnDarkRedLED_MouseLeave(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDarkRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
 
-            ClearSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 2));
+            ClearFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 2));
         }
 
         private void btnGreenLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnGreenLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnGreenLED");
             HandleFixLED?.Invoke(sender, new EventLEDArgs(idxLED, 3));
         }
 
         private void btnGreenLED_MouseHover(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnGreenLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnGreenLED");
 
-            ShowSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 3));
+            ShowFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 3));
         }
 
         private void btnGreenLED_MouseLeave(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnGreenLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnGreenLED");
 
-            ClearSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 3));
+            ClearFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 3));
         }
 
         private void btnRedLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnRedLED");
             HandleFixLED?.Invoke(sender, new EventLEDArgs(idxLED, 1));
         }
 
         private void btnRedLED_MouseHover(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnRedLED");
 
-            ShowSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 1));
+            ShowFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 1));
         }
 
         private void btnRedLED_MouseLeave(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnRedLED");
 
-            ClearSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 1));
+            ClearFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 1));
         }
 
         private void btnDimGreenLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimGreenLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
             TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimGreenLED{idxLED}", true)[0]);
 
             HandleDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
@@ -656,17 +680,17 @@ namespace LEDController.View
         private void btnDimGreenLED_MouseHover(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimGreenLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
 
-            ShowSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 3));
+            ShowDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, 0));
         }
 
         private void btnDimGreenLED_MouseLeave(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimGreenLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
 
-            ClearSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 3));
+            ClearDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, 0));
         }
 
         private void tbxDimGreenLED_KeyDown(object sender, KeyEventArgs e)
@@ -674,7 +698,7 @@ namespace LEDController.View
             if (e.KeyCode == Keys.Enter)
             {
                 TextBox tbx = sender as TextBox;
-                int idxLED = Convert.ToInt16(tbx.Name.Substring(tbx.Name.IndexOf("tbxDimGreenLED")));
+                int idxLED = GetLEDIndex(tbx.Name, "tbxDimGreenLED");
                 UpdateScrollBar?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
             }
         }
@@ -682,14 +706,14 @@ namespace LEDController.View
         private void sbarDimGreenLED_Scroll(object sender, EventArgs e)
         {
             TrackBar tbar = sender as TrackBar;
-            int idxLED = Convert.ToInt16(tbar.Name.Substring(tbar.Name.IndexOf("sbarDimGreenLED")));
+            int idxLED = GetLEDIndex(tbar.Name, "sbarDimGreenLED");
             UpdateLEDTbx?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, (double)tbar.Value));
         }
 
         private void btnCfgDimGreenLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnCfgDimGreenLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnOpenDimGreenLED");
             TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimGreenLED{idxLED}", true)[0]);
 
             SetDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
@@ -698,9 +722,9 @@ namespace LEDController.View
         private void btnDimDarkRedLED_MouseHover(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimDarkRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
 
-            ShowSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 2));
+            ShowDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, 0));
         }
 
         private void tbxDimDarkRedLED_KeyDown(object sender, KeyEventArgs e)
@@ -708,7 +732,7 @@ namespace LEDController.View
             if (e.KeyCode == Keys.Enter)
             {
                 TextBox tbx = sender as TextBox;
-                int idxLED = Convert.ToInt16(tbx.Name.Substring(tbx.Name.IndexOf("tbxDimDarkRedLED")));
+                int idxLED = GetLEDIndex(tbx.Name, "tbxDimDarkRedLED");
                 UpdateScrollBar?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
             }
         }
@@ -716,15 +740,15 @@ namespace LEDController.View
         private void btnDimDarkRedLED_MouseLeave(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimDarkRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
 
-            ClearSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 2));
+            ClearDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, 0));
         }
 
         private void btnDimDarkRedLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDarkRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
             TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
 
             HandleDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
@@ -733,14 +757,14 @@ namespace LEDController.View
         private void sbarDimDarkRedLED_Scroll(object sender, EventArgs e)
         {
             TrackBar tbar = sender as TrackBar;
-            int idxLED = Convert.ToInt16(tbar.Name.Substring(tbar.Name.IndexOf("sbarDimDarkRedLED")));
+            int idxLED = GetLEDIndex(tbar.Name, "sbarDimDarkRedLED");
             UpdateLEDTbx?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, (double)tbar.Value));
         }
 
         private void btnCfgDimDarkRedLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnCfgDimDarkRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnOpenDimDarkRedLED");
             TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
 
             SetDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
@@ -749,7 +773,7 @@ namespace LEDController.View
         private void btnCfgDimRedLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnCfgDimRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnOpenDimRedLED");
             TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimRedLED{idxLED}", true)[0]);
 
             SetDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
@@ -758,7 +782,7 @@ namespace LEDController.View
         private void sbarDimRedLED_Scroll(object sender, EventArgs e)
         {
             TrackBar tbar = sender as TrackBar;
-            int idxLED = Convert.ToInt16(tbar.Name.Substring(tbar.Name.IndexOf("sbarDimRedLED")));
+            int idxLED = GetLEDIndex(tbar.Name, "sbarDimRedLED");
             UpdateLEDTbx?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, (double)tbar.Value));
         }
 
@@ -767,7 +791,7 @@ namespace LEDController.View
             if (e.KeyCode == Keys.Enter)
             {
                 TextBox tbx = sender as TextBox;
-                int idxLED = Convert.ToInt16(tbx.Name.Substring(tbx.Name.IndexOf("tbxDimRedLED")));
+                int idxLED = GetLEDIndex(tbx.Name, "tbxDimRedLED");
                 UpdateScrollBar?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
             }
         }
@@ -775,7 +799,7 @@ namespace LEDController.View
         private void btnDimRedLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
             TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimRedLED{idxLED}", true)[0]);
 
             HandleDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
@@ -784,17 +808,52 @@ namespace LEDController.View
         private void btnDimRedLED_MouseHover(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
 
-            ShowSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 1));
+            ShowDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, 0));
         }
 
         private void btnDimRedLED_MouseLeave(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = Convert.ToInt16(btn.Name.Substring(btn.Name.IndexOf("btnDimRedLED")));
+            int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
 
-            ClearSingleLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 1));
+            ClearDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, 0));
+        }
+
+        private void btnUpdateChiller_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenSkylight1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCloseSkylight1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenSkylight2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCloseSkylight2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenSkylight3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCloseSkylight3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

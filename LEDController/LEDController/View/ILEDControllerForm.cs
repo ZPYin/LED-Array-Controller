@@ -28,8 +28,10 @@ namespace LEDController.View
         event EventHandler<EventArgs> ConnectTCP;
         event EventHandler<EventArgs> CloseTCP;
         event EventHandler<EventArgs> SendTestData;
-        event EventHandler<EventLEDArgs> ShowSingleLEDStatus;
-        event EventHandler<EventLEDArgs> ClearSingleLEDStatus;
+        event EventHandler<EventLEDArgs> ShowFixLEDStatus;
+        event EventHandler<EventDimLEDArgs> ShowDimLEDStatus;
+        event EventHandler<EventLEDArgs> ClearFixLEDStatus;
+        event EventHandler<EventDimLEDArgs> ClearDimLEDStatus;
         event EventHandler<EventLEDArgs> OpenFixLED;
         event EventHandler<EventLEDArgs> CloseFixLED;
         event EventHandler<EventLEDArgs> HandleFixLED;

@@ -289,96 +289,96 @@ namespace LEDController.View
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnStatusDarkRedLED30 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED29 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED28 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED27 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED30 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED29 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED28 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED27 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED30 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED29 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED28 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED27 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED26 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED25 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED24 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED20 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED23 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED22 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED21 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED19 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED18 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED17 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED16 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED12 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED15 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED14 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED13 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED11 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED10 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED9 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED8 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED4 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED7 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED6 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED5 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED3 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED2 = new System.Windows.Forms.Button();
-            this.btnStatusDarkRedLED1 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED26 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED25 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED26 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED25 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED24 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED20 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED23 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED22 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED21 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED19 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED18 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED17 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED24 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED20 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED23 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED22 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED21 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED19 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED18 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED17 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED16 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED12 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED15 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED14 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED13 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED11 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED10 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED9 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED16 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED12 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED15 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED14 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED13 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED11 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED10 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED9 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED8 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED4 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED7 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED6 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED5 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED3 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED2 = new System.Windows.Forms.Button();
-            this.btnStatusRedLED1 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED8 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED4 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED7 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED6 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED5 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED3 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED2 = new System.Windows.Forms.Button();
-            this.btnStatusGreenLED1 = new System.Windows.Forms.Button();
+            this.btnStatusLED90 = new System.Windows.Forms.Button();
+            this.btnStatusLED89 = new System.Windows.Forms.Button();
+            this.btnStatusLED88 = new System.Windows.Forms.Button();
+            this.btnStatusLED87 = new System.Windows.Forms.Button();
+            this.btnStatusLED60 = new System.Windows.Forms.Button();
+            this.btnStatusLED59 = new System.Windows.Forms.Button();
+            this.btnStatusLED58 = new System.Windows.Forms.Button();
+            this.btnStatusLED57 = new System.Windows.Forms.Button();
+            this.btnStatusLED30 = new System.Windows.Forms.Button();
+            this.btnStatusLED29 = new System.Windows.Forms.Button();
+            this.btnStatusLED28 = new System.Windows.Forms.Button();
+            this.btnStatusLED27 = new System.Windows.Forms.Button();
+            this.btnStatusLED86 = new System.Windows.Forms.Button();
+            this.btnStatusLED85 = new System.Windows.Forms.Button();
+            this.btnStatusLED84 = new System.Windows.Forms.Button();
+            this.btnStatusLED80 = new System.Windows.Forms.Button();
+            this.btnStatusLED83 = new System.Windows.Forms.Button();
+            this.btnStatusLED82 = new System.Windows.Forms.Button();
+            this.btnStatusLED81 = new System.Windows.Forms.Button();
+            this.btnStatusLED79 = new System.Windows.Forms.Button();
+            this.btnStatusLED78 = new System.Windows.Forms.Button();
+            this.btnStatusLED77 = new System.Windows.Forms.Button();
+            this.btnStatusLED76 = new System.Windows.Forms.Button();
+            this.btnStatusLED72 = new System.Windows.Forms.Button();
+            this.btnStatusLED75 = new System.Windows.Forms.Button();
+            this.btnStatusLED74 = new System.Windows.Forms.Button();
+            this.btnStatusLED73 = new System.Windows.Forms.Button();
+            this.btnStatusLED71 = new System.Windows.Forms.Button();
+            this.btnStatusLED70 = new System.Windows.Forms.Button();
+            this.btnStatusLED69 = new System.Windows.Forms.Button();
+            this.btnStatusLED68 = new System.Windows.Forms.Button();
+            this.btnStatusLED64 = new System.Windows.Forms.Button();
+            this.btnStatusLED67 = new System.Windows.Forms.Button();
+            this.btnStatusLED66 = new System.Windows.Forms.Button();
+            this.btnStatusLED65 = new System.Windows.Forms.Button();
+            this.btnStatusLED63 = new System.Windows.Forms.Button();
+            this.btnStatusLED62 = new System.Windows.Forms.Button();
+            this.btnStatusLED61 = new System.Windows.Forms.Button();
+            this.btnStatusLED56 = new System.Windows.Forms.Button();
+            this.btnStatusLED55 = new System.Windows.Forms.Button();
+            this.btnStatusLED26 = new System.Windows.Forms.Button();
+            this.btnStatusLED25 = new System.Windows.Forms.Button();
+            this.btnStatusLED54 = new System.Windows.Forms.Button();
+            this.btnStatusLED50 = new System.Windows.Forms.Button();
+            this.btnStatusLED53 = new System.Windows.Forms.Button();
+            this.btnStatusLED52 = new System.Windows.Forms.Button();
+            this.btnStatusLED51 = new System.Windows.Forms.Button();
+            this.btnStatusLED49 = new System.Windows.Forms.Button();
+            this.btnStatusLED48 = new System.Windows.Forms.Button();
+            this.btnStatusLED47 = new System.Windows.Forms.Button();
+            this.btnStatusLED24 = new System.Windows.Forms.Button();
+            this.btnStatusLED20 = new System.Windows.Forms.Button();
+            this.btnStatusLED23 = new System.Windows.Forms.Button();
+            this.btnStatusLED22 = new System.Windows.Forms.Button();
+            this.btnStatusLED21 = new System.Windows.Forms.Button();
+            this.btnStatusLED19 = new System.Windows.Forms.Button();
+            this.btnStatusLED18 = new System.Windows.Forms.Button();
+            this.btnStatusLED17 = new System.Windows.Forms.Button();
+            this.btnStatusLED46 = new System.Windows.Forms.Button();
+            this.btnStatusLED42 = new System.Windows.Forms.Button();
+            this.btnStatusLED45 = new System.Windows.Forms.Button();
+            this.btnStatusLED44 = new System.Windows.Forms.Button();
+            this.btnStatusLED43 = new System.Windows.Forms.Button();
+            this.btnStatusLED41 = new System.Windows.Forms.Button();
+            this.btnStatusLED40 = new System.Windows.Forms.Button();
+            this.btnStatusLED39 = new System.Windows.Forms.Button();
+            this.btnStatusLED16 = new System.Windows.Forms.Button();
+            this.btnStatusLED12 = new System.Windows.Forms.Button();
+            this.btnStatusLED15 = new System.Windows.Forms.Button();
+            this.btnStatusLED14 = new System.Windows.Forms.Button();
+            this.btnStatusLED13 = new System.Windows.Forms.Button();
+            this.btnStatusLED11 = new System.Windows.Forms.Button();
+            this.btnStatusLED10 = new System.Windows.Forms.Button();
+            this.btnStatusLED9 = new System.Windows.Forms.Button();
+            this.btnStatusLED38 = new System.Windows.Forms.Button();
+            this.btnStatusLED34 = new System.Windows.Forms.Button();
+            this.btnStatusLED37 = new System.Windows.Forms.Button();
+            this.btnStatusLED36 = new System.Windows.Forms.Button();
+            this.btnStatusLED35 = new System.Windows.Forms.Button();
+            this.btnStatusLED33 = new System.Windows.Forms.Button();
+            this.btnStatusLED32 = new System.Windows.Forms.Button();
+            this.btnStatusLED31 = new System.Windows.Forms.Button();
+            this.btnStatusLED8 = new System.Windows.Forms.Button();
+            this.btnStatusLED4 = new System.Windows.Forms.Button();
+            this.btnStatusLED7 = new System.Windows.Forms.Button();
+            this.btnStatusLED6 = new System.Windows.Forms.Button();
+            this.btnStatusLED5 = new System.Windows.Forms.Button();
+            this.btnStatusLED3 = new System.Windows.Forms.Button();
+            this.btnStatusLED2 = new System.Windows.Forms.Button();
+            this.btnStatusLED1 = new System.Windows.Forms.Button();
             this.btnShowLEDStatus = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
             this.tbxMaxValue = new System.Windows.Forms.TextBox();
@@ -419,18 +419,18 @@ namespace LEDController.View
             this.pbxSkylight1 = new System.Windows.Forms.PictureBox();
             this.label60 = new System.Windows.Forms.Label();
             this.tpgLightControl = new System.Windows.Forms.TabPage();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.pbxLight3 = new System.Windows.Forms.PictureBox();
+            this.btnCloseLight3 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnOpenLight3 = new System.Windows.Forms.Button();
+            this.pbxLight2 = new System.Windows.Forms.PictureBox();
+            this.btnCloseLight2 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnOpenLight2 = new System.Windows.Forms.Button();
+            this.pbxLight1 = new System.Windows.Forms.PictureBox();
+            this.btnCloseLight1 = new System.Windows.Forms.Button();
             this.label1111 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOpenLight1 = new System.Windows.Forms.Button();
             this.tpgRTControl = new System.Windows.Forms.TabPage();
             this.tpgAirConditionerControl = new System.Windows.Forms.TabPage();
             this.tpgCameraControl = new System.Windows.Forms.TabPage();
@@ -489,9 +489,9 @@ namespace LEDController.View
             ((System.ComponentModel.ISupportInitialize)(this.pbxSkylight2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSkylight1)).BeginInit();
             this.tpgLightControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLight3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLight2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLight1)).BeginInit();
             this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -725,7 +725,7 @@ namespace LEDController.View
             this.tpgConnect.Controls.Add(this.label16);
             this.tpgConnect.Location = new System.Drawing.Point(4, 22);
             this.tpgConnect.Name = "tpgConnect";
-            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgConnect.Padding = new System.Windows.Forms.Padding(3);
             this.tpgConnect.Size = new System.Drawing.Size(1042, 534);
             this.tpgConnect.TabIndex = 0;
             this.tpgConnect.Text = "连接测试";
@@ -1154,7 +1154,7 @@ namespace LEDController.View
             this.tpgLEDControl.Controls.Add(this.panelGreenFixLED);
             this.tpgLEDControl.Location = new System.Drawing.Point(4, 22);
             this.tpgLEDControl.Name = "tpgLEDControl";
-            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(3);
             this.tpgLEDControl.Size = new System.Drawing.Size(1042, 534);
             this.tpgLEDControl.TabIndex = 1;
             this.tpgLEDControl.Text = " LED控制";
@@ -3894,96 +3894,96 @@ namespace LEDController.View
             this.panelLEDStatus.Controls.Add(this.label7);
             this.panelLEDStatus.Controls.Add(this.label4);
             this.panelLEDStatus.Controls.Add(this.label1);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED30);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED29);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED28);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED27);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED30);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED29);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED28);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED27);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED30);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED29);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED28);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED27);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED26);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED25);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED24);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED20);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED23);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED22);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED21);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED19);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED18);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED17);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED16);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED12);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED15);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED14);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED13);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED11);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED10);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED9);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED8);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED4);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED7);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED6);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED5);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED3);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED2);
-            this.panelLEDStatus.Controls.Add(this.btnStatusDarkRedLED1);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED26);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED25);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED26);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED25);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED24);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED20);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED23);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED22);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED21);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED19);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED18);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED17);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED24);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED20);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED23);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED22);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED21);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED19);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED18);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED17);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED16);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED12);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED15);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED14);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED13);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED11);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED10);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED9);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED16);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED12);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED15);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED14);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED13);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED11);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED10);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED9);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED8);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED4);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED7);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED6);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED5);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED3);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED2);
-            this.panelLEDStatus.Controls.Add(this.btnStatusRedLED1);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED8);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED4);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED7);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED6);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED5);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED3);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED2);
-            this.panelLEDStatus.Controls.Add(this.btnStatusGreenLED1);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED90);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED89);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED88);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED87);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED60);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED59);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED58);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED57);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED30);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED29);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED28);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED27);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED86);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED85);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED84);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED80);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED83);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED82);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED81);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED79);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED78);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED77);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED76);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED72);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED75);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED74);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED73);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED71);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED70);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED69);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED68);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED64);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED67);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED66);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED65);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED63);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED62);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED61);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED56);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED55);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED26);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED25);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED54);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED50);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED53);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED52);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED51);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED49);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED48);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED47);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED24);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED20);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED23);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED22);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED21);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED19);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED18);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED17);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED46);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED42);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED45);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED44);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED43);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED41);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED40);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED39);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED16);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED12);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED15);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED14);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED13);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED11);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED10);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED9);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED38);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED34);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED37);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED36);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED35);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED33);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED32);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED31);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED8);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED4);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED7);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED6);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED5);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED3);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED2);
+            this.panelLEDStatus.Controls.Add(this.btnStatusLED1);
             this.panelLEDStatus.Location = new System.Drawing.Point(226, 12);
             this.panelLEDStatus.Name = "panelLEDStatus";
             this.panelLEDStatus.Size = new System.Drawing.Size(827, 519);
@@ -4003,7 +4003,7 @@ namespace LEDController.View
             // 
             this.formsPlotRTD.BackColor = System.Drawing.Color.Transparent;
             this.formsPlotRTD.Location = new System.Drawing.Point(4, 263);
-            this.formsPlotRTD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.formsPlotRTD.Margin = new System.Windows.Forms.Padding(4);
             this.formsPlotRTD.Name = "formsPlotRTD";
             this.formsPlotRTD.Size = new System.Drawing.Size(805, 247);
             this.formsPlotRTD.TabIndex = 12;
@@ -4054,1182 +4054,1182 @@ namespace LEDController.View
             this.label1.Text = "绿色LED";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnStatusDarkRedLED30
-            // 
-            this.btnStatusDarkRedLED30.AutoSize = true;
-            this.btnStatusDarkRedLED30.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED30.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED30.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED30.Location = new System.Drawing.Point(749, 193);
-            this.btnStatusDarkRedLED30.Name = "btnStatusDarkRedLED30";
-            this.btnStatusDarkRedLED30.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusDarkRedLED30.TabIndex = 265;
-            this.btnStatusDarkRedLED30.Tag = "132";
-            this.btnStatusDarkRedLED30.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED29
-            // 
-            this.btnStatusDarkRedLED29.AutoSize = true;
-            this.btnStatusDarkRedLED29.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED29.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED29.Location = new System.Drawing.Point(693, 193);
-            this.btnStatusDarkRedLED29.Name = "btnStatusDarkRedLED29";
-            this.btnStatusDarkRedLED29.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusDarkRedLED29.TabIndex = 264;
-            this.btnStatusDarkRedLED29.Tag = "131";
-            this.btnStatusDarkRedLED29.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED28
-            // 
-            this.btnStatusDarkRedLED28.AutoSize = true;
-            this.btnStatusDarkRedLED28.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED28.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED28.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED28.Location = new System.Drawing.Point(640, 193);
-            this.btnStatusDarkRedLED28.Name = "btnStatusDarkRedLED28";
-            this.btnStatusDarkRedLED28.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusDarkRedLED28.TabIndex = 263;
-            this.btnStatusDarkRedLED28.Tag = "130";
-            this.btnStatusDarkRedLED28.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED27
-            // 
-            this.btnStatusDarkRedLED27.AutoSize = true;
-            this.btnStatusDarkRedLED27.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED27.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED27.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED27.Location = new System.Drawing.Point(584, 193);
-            this.btnStatusDarkRedLED27.Name = "btnStatusDarkRedLED27";
-            this.btnStatusDarkRedLED27.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusDarkRedLED27.TabIndex = 262;
-            this.btnStatusDarkRedLED27.Tag = "129";
-            this.btnStatusDarkRedLED27.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED30
-            // 
-            this.btnStatusRedLED30.AutoSize = true;
-            this.btnStatusRedLED30.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED30.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED30.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED30.Location = new System.Drawing.Point(482, 193);
-            this.btnStatusRedLED30.Name = "btnStatusRedLED30";
-            this.btnStatusRedLED30.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusRedLED30.TabIndex = 261;
-            this.btnStatusRedLED30.Tag = "128";
-            this.btnStatusRedLED30.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED29
-            // 
-            this.btnStatusRedLED29.AutoSize = true;
-            this.btnStatusRedLED29.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED29.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED29.Location = new System.Drawing.Point(426, 193);
-            this.btnStatusRedLED29.Name = "btnStatusRedLED29";
-            this.btnStatusRedLED29.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusRedLED29.TabIndex = 260;
-            this.btnStatusRedLED29.Tag = "127";
-            this.btnStatusRedLED29.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED28
-            // 
-            this.btnStatusRedLED28.AutoSize = true;
-            this.btnStatusRedLED28.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED28.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED28.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED28.Location = new System.Drawing.Point(373, 193);
-            this.btnStatusRedLED28.Name = "btnStatusRedLED28";
-            this.btnStatusRedLED28.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusRedLED28.TabIndex = 259;
-            this.btnStatusRedLED28.Tag = "126";
-            this.btnStatusRedLED28.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED27
-            // 
-            this.btnStatusRedLED27.AutoSize = true;
-            this.btnStatusRedLED27.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED27.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED27.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED27.Location = new System.Drawing.Point(317, 193);
-            this.btnStatusRedLED27.Name = "btnStatusRedLED27";
-            this.btnStatusRedLED27.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusRedLED27.TabIndex = 258;
-            this.btnStatusRedLED27.Tag = "125";
-            this.btnStatusRedLED27.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED30
-            // 
-            this.btnStatusGreenLED30.AutoSize = true;
-            this.btnStatusGreenLED30.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED30.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED30.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED30.Location = new System.Drawing.Point(230, 193);
-            this.btnStatusGreenLED30.Name = "btnStatusGreenLED30";
-            this.btnStatusGreenLED30.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusGreenLED30.TabIndex = 257;
-            this.btnStatusGreenLED30.Tag = "124";
-            this.btnStatusGreenLED30.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED29
-            // 
-            this.btnStatusGreenLED29.AutoSize = true;
-            this.btnStatusGreenLED29.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED29.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED29.Location = new System.Drawing.Point(189, 193);
-            this.btnStatusGreenLED29.Name = "btnStatusGreenLED29";
-            this.btnStatusGreenLED29.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusGreenLED29.TabIndex = 256;
-            this.btnStatusGreenLED29.Tag = "123";
-            this.btnStatusGreenLED29.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED28
-            // 
-            this.btnStatusGreenLED28.AutoSize = true;
-            this.btnStatusGreenLED28.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED28.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED28.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED28.Location = new System.Drawing.Point(146, 193);
-            this.btnStatusGreenLED28.Name = "btnStatusGreenLED28";
-            this.btnStatusGreenLED28.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusGreenLED28.TabIndex = 255;
-            this.btnStatusGreenLED28.Tag = "122";
-            this.btnStatusGreenLED28.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED27
-            // 
-            this.btnStatusGreenLED27.AutoSize = true;
-            this.btnStatusGreenLED27.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED27.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED27.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED27.Location = new System.Drawing.Point(103, 193);
-            this.btnStatusGreenLED27.Name = "btnStatusGreenLED27";
-            this.btnStatusGreenLED27.Size = new System.Drawing.Size(30, 30);
-            this.btnStatusGreenLED27.TabIndex = 254;
-            this.btnStatusGreenLED27.Tag = "121";
-            this.btnStatusGreenLED27.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED26
-            // 
-            this.btnStatusDarkRedLED26.AutoSize = true;
-            this.btnStatusDarkRedLED26.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED26.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED26.Location = new System.Drawing.Point(576, 141);
-            this.btnStatusDarkRedLED26.Name = "btnStatusDarkRedLED26";
-            this.btnStatusDarkRedLED26.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED26.TabIndex = 239;
-            this.btnStatusDarkRedLED26.Tag = "106";
-            this.btnStatusDarkRedLED26.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED25
-            // 
-            this.btnStatusDarkRedLED25.AutoSize = true;
-            this.btnStatusDarkRedLED25.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED25.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED25.Location = new System.Drawing.Point(543, 141);
-            this.btnStatusDarkRedLED25.Name = "btnStatusDarkRedLED25";
-            this.btnStatusDarkRedLED25.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED25.TabIndex = 238;
-            this.btnStatusDarkRedLED25.Tag = "105";
-            this.btnStatusDarkRedLED25.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED24
-            // 
-            this.btnStatusDarkRedLED24.AutoSize = true;
-            this.btnStatusDarkRedLED24.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED24.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED24.Location = new System.Drawing.Point(774, 108);
-            this.btnStatusDarkRedLED24.Name = "btnStatusDarkRedLED24";
-            this.btnStatusDarkRedLED24.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED24.TabIndex = 237;
-            this.btnStatusDarkRedLED24.Tag = "104";
-            this.btnStatusDarkRedLED24.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED20
-            // 
-            this.btnStatusDarkRedLED20.AutoSize = true;
-            this.btnStatusDarkRedLED20.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED20.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED20.Location = new System.Drawing.Point(642, 108);
-            this.btnStatusDarkRedLED20.Name = "btnStatusDarkRedLED20";
-            this.btnStatusDarkRedLED20.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED20.TabIndex = 236;
-            this.btnStatusDarkRedLED20.Tag = "100";
-            this.btnStatusDarkRedLED20.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED23
-            // 
-            this.btnStatusDarkRedLED23.AutoSize = true;
-            this.btnStatusDarkRedLED23.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED23.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED23.Location = new System.Drawing.Point(741, 108);
-            this.btnStatusDarkRedLED23.Name = "btnStatusDarkRedLED23";
-            this.btnStatusDarkRedLED23.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED23.TabIndex = 235;
-            this.btnStatusDarkRedLED23.Tag = "103";
-            this.btnStatusDarkRedLED23.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED22
-            // 
-            this.btnStatusDarkRedLED22.AutoSize = true;
-            this.btnStatusDarkRedLED22.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED22.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED22.Location = new System.Drawing.Point(708, 108);
-            this.btnStatusDarkRedLED22.Name = "btnStatusDarkRedLED22";
-            this.btnStatusDarkRedLED22.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED22.TabIndex = 234;
-            this.btnStatusDarkRedLED22.Tag = "102";
-            this.btnStatusDarkRedLED22.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED21
-            // 
-            this.btnStatusDarkRedLED21.AutoSize = true;
-            this.btnStatusDarkRedLED21.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED21.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED21.Location = new System.Drawing.Point(675, 108);
-            this.btnStatusDarkRedLED21.Name = "btnStatusDarkRedLED21";
-            this.btnStatusDarkRedLED21.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED21.TabIndex = 233;
-            this.btnStatusDarkRedLED21.Tag = "101";
-            this.btnStatusDarkRedLED21.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED19
-            // 
-            this.btnStatusDarkRedLED19.AutoSize = true;
-            this.btnStatusDarkRedLED19.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED19.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED19.Location = new System.Drawing.Point(609, 108);
-            this.btnStatusDarkRedLED19.Name = "btnStatusDarkRedLED19";
-            this.btnStatusDarkRedLED19.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED19.TabIndex = 232;
-            this.btnStatusDarkRedLED19.Tag = "99";
-            this.btnStatusDarkRedLED19.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED18
-            // 
-            this.btnStatusDarkRedLED18.AutoSize = true;
-            this.btnStatusDarkRedLED18.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED18.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED18.Location = new System.Drawing.Point(576, 108);
-            this.btnStatusDarkRedLED18.Name = "btnStatusDarkRedLED18";
-            this.btnStatusDarkRedLED18.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED18.TabIndex = 231;
-            this.btnStatusDarkRedLED18.Tag = "98";
-            this.btnStatusDarkRedLED18.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED17
-            // 
-            this.btnStatusDarkRedLED17.AutoSize = true;
-            this.btnStatusDarkRedLED17.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED17.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED17.Location = new System.Drawing.Point(543, 108);
-            this.btnStatusDarkRedLED17.Name = "btnStatusDarkRedLED17";
-            this.btnStatusDarkRedLED17.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED17.TabIndex = 230;
-            this.btnStatusDarkRedLED17.Tag = "97";
-            this.btnStatusDarkRedLED17.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED16
-            // 
-            this.btnStatusDarkRedLED16.AutoSize = true;
-            this.btnStatusDarkRedLED16.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED16.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED16.Location = new System.Drawing.Point(774, 76);
-            this.btnStatusDarkRedLED16.Name = "btnStatusDarkRedLED16";
-            this.btnStatusDarkRedLED16.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED16.TabIndex = 229;
-            this.btnStatusDarkRedLED16.Tag = "96";
-            this.btnStatusDarkRedLED16.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED12
-            // 
-            this.btnStatusDarkRedLED12.AutoSize = true;
-            this.btnStatusDarkRedLED12.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED12.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED12.Location = new System.Drawing.Point(642, 76);
-            this.btnStatusDarkRedLED12.Name = "btnStatusDarkRedLED12";
-            this.btnStatusDarkRedLED12.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED12.TabIndex = 228;
-            this.btnStatusDarkRedLED12.Tag = "92";
-            this.btnStatusDarkRedLED12.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED15
-            // 
-            this.btnStatusDarkRedLED15.AutoSize = true;
-            this.btnStatusDarkRedLED15.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED15.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED15.Location = new System.Drawing.Point(741, 76);
-            this.btnStatusDarkRedLED15.Name = "btnStatusDarkRedLED15";
-            this.btnStatusDarkRedLED15.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED15.TabIndex = 227;
-            this.btnStatusDarkRedLED15.Tag = "95";
-            this.btnStatusDarkRedLED15.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED14
-            // 
-            this.btnStatusDarkRedLED14.AutoSize = true;
-            this.btnStatusDarkRedLED14.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED14.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED14.Location = new System.Drawing.Point(708, 76);
-            this.btnStatusDarkRedLED14.Name = "btnStatusDarkRedLED14";
-            this.btnStatusDarkRedLED14.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED14.TabIndex = 226;
-            this.btnStatusDarkRedLED14.Tag = "94";
-            this.btnStatusDarkRedLED14.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED13
-            // 
-            this.btnStatusDarkRedLED13.AutoSize = true;
-            this.btnStatusDarkRedLED13.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED13.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED13.Location = new System.Drawing.Point(675, 76);
-            this.btnStatusDarkRedLED13.Name = "btnStatusDarkRedLED13";
-            this.btnStatusDarkRedLED13.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED13.TabIndex = 225;
-            this.btnStatusDarkRedLED13.Tag = "93";
-            this.btnStatusDarkRedLED13.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED11
-            // 
-            this.btnStatusDarkRedLED11.AutoSize = true;
-            this.btnStatusDarkRedLED11.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED11.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED11.Location = new System.Drawing.Point(609, 76);
-            this.btnStatusDarkRedLED11.Name = "btnStatusDarkRedLED11";
-            this.btnStatusDarkRedLED11.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED11.TabIndex = 224;
-            this.btnStatusDarkRedLED11.Tag = "91";
-            this.btnStatusDarkRedLED11.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED10
-            // 
-            this.btnStatusDarkRedLED10.AutoSize = true;
-            this.btnStatusDarkRedLED10.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED10.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED10.Location = new System.Drawing.Point(576, 76);
-            this.btnStatusDarkRedLED10.Name = "btnStatusDarkRedLED10";
-            this.btnStatusDarkRedLED10.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED10.TabIndex = 223;
-            this.btnStatusDarkRedLED10.Tag = "90";
-            this.btnStatusDarkRedLED10.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED9
-            // 
-            this.btnStatusDarkRedLED9.AutoSize = true;
-            this.btnStatusDarkRedLED9.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED9.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED9.Location = new System.Drawing.Point(543, 76);
-            this.btnStatusDarkRedLED9.Name = "btnStatusDarkRedLED9";
-            this.btnStatusDarkRedLED9.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED9.TabIndex = 222;
-            this.btnStatusDarkRedLED9.Tag = "89";
-            this.btnStatusDarkRedLED9.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED8
-            // 
-            this.btnStatusDarkRedLED8.AutoSize = true;
-            this.btnStatusDarkRedLED8.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED8.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED8.Location = new System.Drawing.Point(774, 43);
-            this.btnStatusDarkRedLED8.Name = "btnStatusDarkRedLED8";
-            this.btnStatusDarkRedLED8.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED8.TabIndex = 221;
-            this.btnStatusDarkRedLED8.Tag = "88";
-            this.btnStatusDarkRedLED8.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED4
-            // 
-            this.btnStatusDarkRedLED4.AutoSize = true;
-            this.btnStatusDarkRedLED4.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED4.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED4.Location = new System.Drawing.Point(642, 43);
-            this.btnStatusDarkRedLED4.Name = "btnStatusDarkRedLED4";
-            this.btnStatusDarkRedLED4.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED4.TabIndex = 220;
-            this.btnStatusDarkRedLED4.Tag = "84";
-            this.btnStatusDarkRedLED4.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED7
-            // 
-            this.btnStatusDarkRedLED7.AutoSize = true;
-            this.btnStatusDarkRedLED7.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED7.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED7.Location = new System.Drawing.Point(741, 43);
-            this.btnStatusDarkRedLED7.Name = "btnStatusDarkRedLED7";
-            this.btnStatusDarkRedLED7.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED7.TabIndex = 219;
-            this.btnStatusDarkRedLED7.Tag = "87";
-            this.btnStatusDarkRedLED7.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED6
-            // 
-            this.btnStatusDarkRedLED6.AutoSize = true;
-            this.btnStatusDarkRedLED6.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED6.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED6.Location = new System.Drawing.Point(708, 43);
-            this.btnStatusDarkRedLED6.Name = "btnStatusDarkRedLED6";
-            this.btnStatusDarkRedLED6.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED6.TabIndex = 218;
-            this.btnStatusDarkRedLED6.Tag = "86";
-            this.btnStatusDarkRedLED6.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED5
-            // 
-            this.btnStatusDarkRedLED5.AutoSize = true;
-            this.btnStatusDarkRedLED5.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED5.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED5.Location = new System.Drawing.Point(675, 43);
-            this.btnStatusDarkRedLED5.Name = "btnStatusDarkRedLED5";
-            this.btnStatusDarkRedLED5.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED5.TabIndex = 217;
-            this.btnStatusDarkRedLED5.Tag = "85";
-            this.btnStatusDarkRedLED5.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED3
-            // 
-            this.btnStatusDarkRedLED3.AutoSize = true;
-            this.btnStatusDarkRedLED3.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED3.Location = new System.Drawing.Point(609, 43);
-            this.btnStatusDarkRedLED3.Name = "btnStatusDarkRedLED3";
-            this.btnStatusDarkRedLED3.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED3.TabIndex = 216;
-            this.btnStatusDarkRedLED3.Tag = "83";
-            this.btnStatusDarkRedLED3.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED2
-            // 
-            this.btnStatusDarkRedLED2.AutoSize = true;
-            this.btnStatusDarkRedLED2.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED2.Location = new System.Drawing.Point(576, 43);
-            this.btnStatusDarkRedLED2.Name = "btnStatusDarkRedLED2";
-            this.btnStatusDarkRedLED2.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED2.TabIndex = 215;
-            this.btnStatusDarkRedLED2.Tag = "82";
-            this.btnStatusDarkRedLED2.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusDarkRedLED1
-            // 
-            this.btnStatusDarkRedLED1.AutoSize = true;
-            this.btnStatusDarkRedLED1.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusDarkRedLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusDarkRedLED1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusDarkRedLED1.Location = new System.Drawing.Point(543, 43);
-            this.btnStatusDarkRedLED1.Name = "btnStatusDarkRedLED1";
-            this.btnStatusDarkRedLED1.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusDarkRedLED1.TabIndex = 214;
-            this.btnStatusDarkRedLED1.Tag = "81";
-            this.btnStatusDarkRedLED1.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED26
-            // 
-            this.btnStatusRedLED26.AutoSize = true;
-            this.btnStatusRedLED26.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED26.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED26.Location = new System.Drawing.Point(311, 141);
-            this.btnStatusRedLED26.Name = "btnStatusRedLED26";
-            this.btnStatusRedLED26.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED26.TabIndex = 191;
-            this.btnStatusRedLED26.Tag = "66";
-            this.btnStatusRedLED26.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED25
-            // 
-            this.btnStatusRedLED25.AutoSize = true;
-            this.btnStatusRedLED25.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED25.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED25.Location = new System.Drawing.Point(278, 141);
-            this.btnStatusRedLED25.Name = "btnStatusRedLED25";
-            this.btnStatusRedLED25.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED25.TabIndex = 190;
-            this.btnStatusRedLED25.Tag = "65";
-            this.btnStatusRedLED25.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED26
-            // 
-            this.btnStatusGreenLED26.AutoSize = true;
-            this.btnStatusGreenLED26.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED26.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED26.Location = new System.Drawing.Point(47, 141);
-            this.btnStatusGreenLED26.Name = "btnStatusGreenLED26";
-            this.btnStatusGreenLED26.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED26.TabIndex = 183;
-            this.btnStatusGreenLED26.Tag = "26";
-            this.btnStatusGreenLED26.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED25
-            // 
-            this.btnStatusGreenLED25.AutoSize = true;
-            this.btnStatusGreenLED25.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED25.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED25.Location = new System.Drawing.Point(14, 141);
-            this.btnStatusGreenLED25.Name = "btnStatusGreenLED25";
-            this.btnStatusGreenLED25.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED25.TabIndex = 182;
-            this.btnStatusGreenLED25.Tag = "25";
-            this.btnStatusGreenLED25.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED24
-            // 
-            this.btnStatusRedLED24.AutoSize = true;
-            this.btnStatusRedLED24.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED24.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED24.Location = new System.Drawing.Point(509, 108);
-            this.btnStatusRedLED24.Name = "btnStatusRedLED24";
-            this.btnStatusRedLED24.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED24.TabIndex = 181;
-            this.btnStatusRedLED24.Tag = "64";
-            this.btnStatusRedLED24.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED20
-            // 
-            this.btnStatusRedLED20.AutoSize = true;
-            this.btnStatusRedLED20.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED20.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED20.Location = new System.Drawing.Point(377, 108);
-            this.btnStatusRedLED20.Name = "btnStatusRedLED20";
-            this.btnStatusRedLED20.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED20.TabIndex = 180;
-            this.btnStatusRedLED20.Tag = "60";
-            this.btnStatusRedLED20.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED23
-            // 
-            this.btnStatusRedLED23.AutoSize = true;
-            this.btnStatusRedLED23.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED23.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED23.Location = new System.Drawing.Point(476, 108);
-            this.btnStatusRedLED23.Name = "btnStatusRedLED23";
-            this.btnStatusRedLED23.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED23.TabIndex = 179;
-            this.btnStatusRedLED23.Tag = "63";
-            this.btnStatusRedLED23.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED22
-            // 
-            this.btnStatusRedLED22.AutoSize = true;
-            this.btnStatusRedLED22.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED22.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED22.Location = new System.Drawing.Point(443, 108);
-            this.btnStatusRedLED22.Name = "btnStatusRedLED22";
-            this.btnStatusRedLED22.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED22.TabIndex = 178;
-            this.btnStatusRedLED22.Tag = "62";
-            this.btnStatusRedLED22.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED21
-            // 
-            this.btnStatusRedLED21.AutoSize = true;
-            this.btnStatusRedLED21.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED21.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED21.Location = new System.Drawing.Point(410, 108);
-            this.btnStatusRedLED21.Name = "btnStatusRedLED21";
-            this.btnStatusRedLED21.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED21.TabIndex = 177;
-            this.btnStatusRedLED21.Tag = "61";
-            this.btnStatusRedLED21.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED19
-            // 
-            this.btnStatusRedLED19.AutoSize = true;
-            this.btnStatusRedLED19.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED19.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED19.Location = new System.Drawing.Point(344, 108);
-            this.btnStatusRedLED19.Name = "btnStatusRedLED19";
-            this.btnStatusRedLED19.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED19.TabIndex = 176;
-            this.btnStatusRedLED19.Tag = "59";
-            this.btnStatusRedLED19.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED18
-            // 
-            this.btnStatusRedLED18.AutoSize = true;
-            this.btnStatusRedLED18.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED18.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED18.Location = new System.Drawing.Point(311, 108);
-            this.btnStatusRedLED18.Name = "btnStatusRedLED18";
-            this.btnStatusRedLED18.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED18.TabIndex = 175;
-            this.btnStatusRedLED18.Tag = "58";
-            this.btnStatusRedLED18.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED17
-            // 
-            this.btnStatusRedLED17.AutoSize = true;
-            this.btnStatusRedLED17.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED17.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED17.Location = new System.Drawing.Point(278, 108);
-            this.btnStatusRedLED17.Name = "btnStatusRedLED17";
-            this.btnStatusRedLED17.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED17.TabIndex = 174;
-            this.btnStatusRedLED17.Tag = "57";
-            this.btnStatusRedLED17.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED24
-            // 
-            this.btnStatusGreenLED24.AutoSize = true;
-            this.btnStatusGreenLED24.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED24.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED24.Location = new System.Drawing.Point(245, 108);
-            this.btnStatusGreenLED24.Name = "btnStatusGreenLED24";
-            this.btnStatusGreenLED24.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED24.TabIndex = 173;
-            this.btnStatusGreenLED24.Tag = "24";
-            this.btnStatusGreenLED24.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED20
-            // 
-            this.btnStatusGreenLED20.AutoSize = true;
-            this.btnStatusGreenLED20.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED20.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED20.Location = new System.Drawing.Point(113, 108);
-            this.btnStatusGreenLED20.Name = "btnStatusGreenLED20";
-            this.btnStatusGreenLED20.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED20.TabIndex = 172;
-            this.btnStatusGreenLED20.Tag = "20";
-            this.btnStatusGreenLED20.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED23
-            // 
-            this.btnStatusGreenLED23.AutoSize = true;
-            this.btnStatusGreenLED23.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED23.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED23.Location = new System.Drawing.Point(212, 108);
-            this.btnStatusGreenLED23.Name = "btnStatusGreenLED23";
-            this.btnStatusGreenLED23.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED23.TabIndex = 171;
-            this.btnStatusGreenLED23.Tag = "23";
-            this.btnStatusGreenLED23.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED22
-            // 
-            this.btnStatusGreenLED22.AutoSize = true;
-            this.btnStatusGreenLED22.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED22.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED22.Location = new System.Drawing.Point(179, 108);
-            this.btnStatusGreenLED22.Name = "btnStatusGreenLED22";
-            this.btnStatusGreenLED22.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED22.TabIndex = 170;
-            this.btnStatusGreenLED22.Tag = "22";
-            this.btnStatusGreenLED22.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED21
-            // 
-            this.btnStatusGreenLED21.AutoSize = true;
-            this.btnStatusGreenLED21.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED21.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED21.Location = new System.Drawing.Point(146, 108);
-            this.btnStatusGreenLED21.Name = "btnStatusGreenLED21";
-            this.btnStatusGreenLED21.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED21.TabIndex = 169;
-            this.btnStatusGreenLED21.Tag = "21";
-            this.btnStatusGreenLED21.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED19
-            // 
-            this.btnStatusGreenLED19.AutoSize = true;
-            this.btnStatusGreenLED19.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED19.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED19.Location = new System.Drawing.Point(80, 108);
-            this.btnStatusGreenLED19.Name = "btnStatusGreenLED19";
-            this.btnStatusGreenLED19.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED19.TabIndex = 168;
-            this.btnStatusGreenLED19.Tag = "19";
-            this.btnStatusGreenLED19.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED18
-            // 
-            this.btnStatusGreenLED18.AutoSize = true;
-            this.btnStatusGreenLED18.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED18.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED18.Location = new System.Drawing.Point(47, 108);
-            this.btnStatusGreenLED18.Name = "btnStatusGreenLED18";
-            this.btnStatusGreenLED18.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED18.TabIndex = 167;
-            this.btnStatusGreenLED18.Tag = "18";
-            this.btnStatusGreenLED18.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED17
-            // 
-            this.btnStatusGreenLED17.AutoSize = true;
-            this.btnStatusGreenLED17.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED17.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED17.Location = new System.Drawing.Point(14, 108);
-            this.btnStatusGreenLED17.Name = "btnStatusGreenLED17";
-            this.btnStatusGreenLED17.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED17.TabIndex = 166;
-            this.btnStatusGreenLED17.Tag = "17";
-            this.btnStatusGreenLED17.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED16
-            // 
-            this.btnStatusRedLED16.AutoSize = true;
-            this.btnStatusRedLED16.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED16.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED16.Location = new System.Drawing.Point(509, 76);
-            this.btnStatusRedLED16.Name = "btnStatusRedLED16";
-            this.btnStatusRedLED16.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED16.TabIndex = 165;
-            this.btnStatusRedLED16.Tag = "56";
-            this.btnStatusRedLED16.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED12
-            // 
-            this.btnStatusRedLED12.AutoSize = true;
-            this.btnStatusRedLED12.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED12.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED12.Location = new System.Drawing.Point(377, 76);
-            this.btnStatusRedLED12.Name = "btnStatusRedLED12";
-            this.btnStatusRedLED12.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED12.TabIndex = 164;
-            this.btnStatusRedLED12.Tag = "52";
-            this.btnStatusRedLED12.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED15
-            // 
-            this.btnStatusRedLED15.AutoSize = true;
-            this.btnStatusRedLED15.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED15.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED15.Location = new System.Drawing.Point(476, 76);
-            this.btnStatusRedLED15.Name = "btnStatusRedLED15";
-            this.btnStatusRedLED15.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED15.TabIndex = 163;
-            this.btnStatusRedLED15.Tag = "55";
-            this.btnStatusRedLED15.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED14
-            // 
-            this.btnStatusRedLED14.AutoSize = true;
-            this.btnStatusRedLED14.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED14.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED14.Location = new System.Drawing.Point(443, 76);
-            this.btnStatusRedLED14.Name = "btnStatusRedLED14";
-            this.btnStatusRedLED14.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED14.TabIndex = 162;
-            this.btnStatusRedLED14.Tag = "54";
-            this.btnStatusRedLED14.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED13
-            // 
-            this.btnStatusRedLED13.AutoSize = true;
-            this.btnStatusRedLED13.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED13.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED13.Location = new System.Drawing.Point(410, 76);
-            this.btnStatusRedLED13.Name = "btnStatusRedLED13";
-            this.btnStatusRedLED13.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED13.TabIndex = 161;
-            this.btnStatusRedLED13.Tag = "53";
-            this.btnStatusRedLED13.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED11
-            // 
-            this.btnStatusRedLED11.AutoSize = true;
-            this.btnStatusRedLED11.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED11.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED11.Location = new System.Drawing.Point(344, 76);
-            this.btnStatusRedLED11.Name = "btnStatusRedLED11";
-            this.btnStatusRedLED11.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED11.TabIndex = 160;
-            this.btnStatusRedLED11.Tag = "51";
-            this.btnStatusRedLED11.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED10
-            // 
-            this.btnStatusRedLED10.AutoSize = true;
-            this.btnStatusRedLED10.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED10.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED10.Location = new System.Drawing.Point(311, 76);
-            this.btnStatusRedLED10.Name = "btnStatusRedLED10";
-            this.btnStatusRedLED10.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED10.TabIndex = 159;
-            this.btnStatusRedLED10.Tag = "50";
-            this.btnStatusRedLED10.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED9
-            // 
-            this.btnStatusRedLED9.AutoSize = true;
-            this.btnStatusRedLED9.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED9.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED9.Location = new System.Drawing.Point(278, 76);
-            this.btnStatusRedLED9.Name = "btnStatusRedLED9";
-            this.btnStatusRedLED9.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED9.TabIndex = 158;
-            this.btnStatusRedLED9.Tag = "49";
-            this.btnStatusRedLED9.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED16
-            // 
-            this.btnStatusGreenLED16.AutoSize = true;
-            this.btnStatusGreenLED16.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED16.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED16.Location = new System.Drawing.Point(245, 76);
-            this.btnStatusGreenLED16.Name = "btnStatusGreenLED16";
-            this.btnStatusGreenLED16.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED16.TabIndex = 157;
-            this.btnStatusGreenLED16.Tag = "16";
-            this.btnStatusGreenLED16.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED12
-            // 
-            this.btnStatusGreenLED12.AutoSize = true;
-            this.btnStatusGreenLED12.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED12.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED12.Location = new System.Drawing.Point(113, 76);
-            this.btnStatusGreenLED12.Name = "btnStatusGreenLED12";
-            this.btnStatusGreenLED12.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED12.TabIndex = 156;
-            this.btnStatusGreenLED12.Tag = "12";
-            this.btnStatusGreenLED12.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED15
-            // 
-            this.btnStatusGreenLED15.AutoSize = true;
-            this.btnStatusGreenLED15.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED15.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED15.Location = new System.Drawing.Point(212, 76);
-            this.btnStatusGreenLED15.Name = "btnStatusGreenLED15";
-            this.btnStatusGreenLED15.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED15.TabIndex = 155;
-            this.btnStatusGreenLED15.Tag = "15";
-            this.btnStatusGreenLED15.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED14
-            // 
-            this.btnStatusGreenLED14.AutoSize = true;
-            this.btnStatusGreenLED14.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED14.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED14.Location = new System.Drawing.Point(179, 76);
-            this.btnStatusGreenLED14.Name = "btnStatusGreenLED14";
-            this.btnStatusGreenLED14.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED14.TabIndex = 154;
-            this.btnStatusGreenLED14.Tag = "14";
-            this.btnStatusGreenLED14.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED13
-            // 
-            this.btnStatusGreenLED13.AutoSize = true;
-            this.btnStatusGreenLED13.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED13.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED13.Location = new System.Drawing.Point(146, 76);
-            this.btnStatusGreenLED13.Name = "btnStatusGreenLED13";
-            this.btnStatusGreenLED13.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED13.TabIndex = 153;
-            this.btnStatusGreenLED13.Tag = "13";
-            this.btnStatusGreenLED13.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED11
-            // 
-            this.btnStatusGreenLED11.AutoSize = true;
-            this.btnStatusGreenLED11.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED11.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED11.Location = new System.Drawing.Point(80, 76);
-            this.btnStatusGreenLED11.Name = "btnStatusGreenLED11";
-            this.btnStatusGreenLED11.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED11.TabIndex = 152;
-            this.btnStatusGreenLED11.Tag = "11";
-            this.btnStatusGreenLED11.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED10
-            // 
-            this.btnStatusGreenLED10.AutoSize = true;
-            this.btnStatusGreenLED10.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED10.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED10.Location = new System.Drawing.Point(47, 76);
-            this.btnStatusGreenLED10.Name = "btnStatusGreenLED10";
-            this.btnStatusGreenLED10.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED10.TabIndex = 151;
-            this.btnStatusGreenLED10.Tag = "10";
-            this.btnStatusGreenLED10.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED9
-            // 
-            this.btnStatusGreenLED9.AutoSize = true;
-            this.btnStatusGreenLED9.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED9.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED9.Location = new System.Drawing.Point(14, 76);
-            this.btnStatusGreenLED9.Name = "btnStatusGreenLED9";
-            this.btnStatusGreenLED9.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED9.TabIndex = 150;
-            this.btnStatusGreenLED9.Tag = "9";
-            this.btnStatusGreenLED9.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED8
-            // 
-            this.btnStatusRedLED8.AutoSize = true;
-            this.btnStatusRedLED8.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED8.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED8.Location = new System.Drawing.Point(509, 43);
-            this.btnStatusRedLED8.Name = "btnStatusRedLED8";
-            this.btnStatusRedLED8.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED8.TabIndex = 149;
-            this.btnStatusRedLED8.Tag = "48";
-            this.btnStatusRedLED8.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED4
-            // 
-            this.btnStatusRedLED4.AutoSize = true;
-            this.btnStatusRedLED4.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED4.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED4.Location = new System.Drawing.Point(377, 43);
-            this.btnStatusRedLED4.Name = "btnStatusRedLED4";
-            this.btnStatusRedLED4.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED4.TabIndex = 144;
-            this.btnStatusRedLED4.Tag = "44";
-            this.btnStatusRedLED4.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED7
-            // 
-            this.btnStatusRedLED7.AutoSize = true;
-            this.btnStatusRedLED7.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED7.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED7.Location = new System.Drawing.Point(476, 43);
-            this.btnStatusRedLED7.Name = "btnStatusRedLED7";
-            this.btnStatusRedLED7.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED7.TabIndex = 119;
-            this.btnStatusRedLED7.Tag = "47";
-            this.btnStatusRedLED7.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED6
-            // 
-            this.btnStatusRedLED6.AutoSize = true;
-            this.btnStatusRedLED6.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED6.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED6.Location = new System.Drawing.Point(443, 43);
-            this.btnStatusRedLED6.Name = "btnStatusRedLED6";
-            this.btnStatusRedLED6.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED6.TabIndex = 118;
-            this.btnStatusRedLED6.Tag = "46";
-            this.btnStatusRedLED6.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED5
-            // 
-            this.btnStatusRedLED5.AutoSize = true;
-            this.btnStatusRedLED5.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED5.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED5.Location = new System.Drawing.Point(410, 43);
-            this.btnStatusRedLED5.Name = "btnStatusRedLED5";
-            this.btnStatusRedLED5.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED5.TabIndex = 117;
-            this.btnStatusRedLED5.Tag = "45";
-            this.btnStatusRedLED5.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED3
-            // 
-            this.btnStatusRedLED3.AutoSize = true;
-            this.btnStatusRedLED3.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED3.Location = new System.Drawing.Point(344, 43);
-            this.btnStatusRedLED3.Name = "btnStatusRedLED3";
-            this.btnStatusRedLED3.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED3.TabIndex = 116;
-            this.btnStatusRedLED3.Tag = "43";
-            this.btnStatusRedLED3.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED2
-            // 
-            this.btnStatusRedLED2.AutoSize = true;
-            this.btnStatusRedLED2.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED2.Location = new System.Drawing.Point(311, 43);
-            this.btnStatusRedLED2.Name = "btnStatusRedLED2";
-            this.btnStatusRedLED2.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED2.TabIndex = 115;
-            this.btnStatusRedLED2.Tag = "42";
-            this.btnStatusRedLED2.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusRedLED1
-            // 
-            this.btnStatusRedLED1.AutoSize = true;
-            this.btnStatusRedLED1.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusRedLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusRedLED1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusRedLED1.Location = new System.Drawing.Point(278, 43);
-            this.btnStatusRedLED1.Name = "btnStatusRedLED1";
-            this.btnStatusRedLED1.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusRedLED1.TabIndex = 114;
-            this.btnStatusRedLED1.Tag = "41";
-            this.btnStatusRedLED1.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED8
-            // 
-            this.btnStatusGreenLED8.AutoSize = true;
-            this.btnStatusGreenLED8.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED8.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED8.Location = new System.Drawing.Point(245, 43);
-            this.btnStatusGreenLED8.Name = "btnStatusGreenLED8";
-            this.btnStatusGreenLED8.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED8.TabIndex = 109;
-            this.btnStatusGreenLED8.Tag = "8";
-            this.btnStatusGreenLED8.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED4
-            // 
-            this.btnStatusGreenLED4.AutoSize = true;
-            this.btnStatusGreenLED4.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED4.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED4.Location = new System.Drawing.Point(113, 43);
-            this.btnStatusGreenLED4.Name = "btnStatusGreenLED4";
-            this.btnStatusGreenLED4.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED4.TabIndex = 104;
-            this.btnStatusGreenLED4.Tag = "4";
-            this.btnStatusGreenLED4.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED7
-            // 
-            this.btnStatusGreenLED7.AutoSize = true;
-            this.btnStatusGreenLED7.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED7.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED7.Location = new System.Drawing.Point(212, 43);
-            this.btnStatusGreenLED7.Name = "btnStatusGreenLED7";
-            this.btnStatusGreenLED7.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED7.TabIndex = 79;
-            this.btnStatusGreenLED7.Tag = "7";
-            this.btnStatusGreenLED7.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED6
-            // 
-            this.btnStatusGreenLED6.AutoSize = true;
-            this.btnStatusGreenLED6.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED6.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED6.Location = new System.Drawing.Point(179, 43);
-            this.btnStatusGreenLED6.Name = "btnStatusGreenLED6";
-            this.btnStatusGreenLED6.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED6.TabIndex = 78;
-            this.btnStatusGreenLED6.Tag = "6";
-            this.btnStatusGreenLED6.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED5
-            // 
-            this.btnStatusGreenLED5.AutoSize = true;
-            this.btnStatusGreenLED5.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED5.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED5.Location = new System.Drawing.Point(146, 43);
-            this.btnStatusGreenLED5.Name = "btnStatusGreenLED5";
-            this.btnStatusGreenLED5.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED5.TabIndex = 77;
-            this.btnStatusGreenLED5.Tag = "5";
-            this.btnStatusGreenLED5.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED3
-            // 
-            this.btnStatusGreenLED3.AutoSize = true;
-            this.btnStatusGreenLED3.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED3.Location = new System.Drawing.Point(80, 43);
-            this.btnStatusGreenLED3.Name = "btnStatusGreenLED3";
-            this.btnStatusGreenLED3.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED3.TabIndex = 76;
-            this.btnStatusGreenLED3.Tag = "3";
-            this.btnStatusGreenLED3.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED2
-            // 
-            this.btnStatusGreenLED2.AutoSize = true;
-            this.btnStatusGreenLED2.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED2.Location = new System.Drawing.Point(47, 43);
-            this.btnStatusGreenLED2.Name = "btnStatusGreenLED2";
-            this.btnStatusGreenLED2.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED2.TabIndex = 75;
-            this.btnStatusGreenLED2.Tag = "2";
-            this.btnStatusGreenLED2.UseVisualStyleBackColor = false;
-            // 
-            // btnStatusGreenLED1
-            // 
-            this.btnStatusGreenLED1.AutoSize = true;
-            this.btnStatusGreenLED1.BackColor = System.Drawing.Color.Gray;
-            this.btnStatusGreenLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStatusGreenLED1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnStatusGreenLED1.Location = new System.Drawing.Point(14, 43);
-            this.btnStatusGreenLED1.Name = "btnStatusGreenLED1";
-            this.btnStatusGreenLED1.Size = new System.Drawing.Size(20, 20);
-            this.btnStatusGreenLED1.TabIndex = 74;
-            this.btnStatusGreenLED1.Tag = "1";
-            this.btnStatusGreenLED1.UseVisualStyleBackColor = false;
+            // btnStatusLED90
+            // 
+            this.btnStatusLED90.AutoSize = true;
+            this.btnStatusLED90.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED90.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED90.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED90.Location = new System.Drawing.Point(749, 193);
+            this.btnStatusLED90.Name = "btnStatusLED90";
+            this.btnStatusLED90.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED90.TabIndex = 265;
+            this.btnStatusLED90.Tag = "132";
+            this.btnStatusLED90.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED89
+            // 
+            this.btnStatusLED89.AutoSize = true;
+            this.btnStatusLED89.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED89.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED89.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED89.Location = new System.Drawing.Point(693, 193);
+            this.btnStatusLED89.Name = "btnStatusLED89";
+            this.btnStatusLED89.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED89.TabIndex = 264;
+            this.btnStatusLED89.Tag = "131";
+            this.btnStatusLED89.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED88
+            // 
+            this.btnStatusLED88.AutoSize = true;
+            this.btnStatusLED88.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED88.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED88.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED88.Location = new System.Drawing.Point(640, 193);
+            this.btnStatusLED88.Name = "btnStatusLED88";
+            this.btnStatusLED88.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED88.TabIndex = 263;
+            this.btnStatusLED88.Tag = "130";
+            this.btnStatusLED88.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED87
+            // 
+            this.btnStatusLED87.AutoSize = true;
+            this.btnStatusLED87.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED87.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED87.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED87.Location = new System.Drawing.Point(584, 193);
+            this.btnStatusLED87.Name = "btnStatusLED87";
+            this.btnStatusLED87.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED87.TabIndex = 262;
+            this.btnStatusLED87.Tag = "129";
+            this.btnStatusLED87.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED60
+            // 
+            this.btnStatusLED60.AutoSize = true;
+            this.btnStatusLED60.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED60.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED60.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED60.Location = new System.Drawing.Point(482, 193);
+            this.btnStatusLED60.Name = "btnStatusLED60";
+            this.btnStatusLED60.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED60.TabIndex = 261;
+            this.btnStatusLED60.Tag = "128";
+            this.btnStatusLED60.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED59
+            // 
+            this.btnStatusLED59.AutoSize = true;
+            this.btnStatusLED59.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED59.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED59.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED59.Location = new System.Drawing.Point(426, 193);
+            this.btnStatusLED59.Name = "btnStatusLED59";
+            this.btnStatusLED59.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED59.TabIndex = 260;
+            this.btnStatusLED59.Tag = "127";
+            this.btnStatusLED59.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED58
+            // 
+            this.btnStatusLED58.AutoSize = true;
+            this.btnStatusLED58.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED58.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED58.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED58.Location = new System.Drawing.Point(373, 193);
+            this.btnStatusLED58.Name = "btnStatusLED58";
+            this.btnStatusLED58.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED58.TabIndex = 259;
+            this.btnStatusLED58.Tag = "126";
+            this.btnStatusLED58.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED57
+            // 
+            this.btnStatusLED57.AutoSize = true;
+            this.btnStatusLED57.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED57.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED57.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED57.Location = new System.Drawing.Point(317, 193);
+            this.btnStatusLED57.Name = "btnStatusLED57";
+            this.btnStatusLED57.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED57.TabIndex = 258;
+            this.btnStatusLED57.Tag = "125";
+            this.btnStatusLED57.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED30
+            // 
+            this.btnStatusLED30.AutoSize = true;
+            this.btnStatusLED30.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED30.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED30.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED30.Location = new System.Drawing.Point(230, 193);
+            this.btnStatusLED30.Name = "btnStatusLED30";
+            this.btnStatusLED30.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED30.TabIndex = 257;
+            this.btnStatusLED30.Tag = "124";
+            this.btnStatusLED30.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED29
+            // 
+            this.btnStatusLED29.AutoSize = true;
+            this.btnStatusLED29.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED29.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED29.Location = new System.Drawing.Point(189, 193);
+            this.btnStatusLED29.Name = "btnStatusLED29";
+            this.btnStatusLED29.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED29.TabIndex = 256;
+            this.btnStatusLED29.Tag = "123";
+            this.btnStatusLED29.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED28
+            // 
+            this.btnStatusLED28.AutoSize = true;
+            this.btnStatusLED28.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED28.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED28.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED28.Location = new System.Drawing.Point(146, 193);
+            this.btnStatusLED28.Name = "btnStatusLED28";
+            this.btnStatusLED28.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED28.TabIndex = 255;
+            this.btnStatusLED28.Tag = "122";
+            this.btnStatusLED28.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED27
+            // 
+            this.btnStatusLED27.AutoSize = true;
+            this.btnStatusLED27.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED27.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED27.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED27.Location = new System.Drawing.Point(103, 193);
+            this.btnStatusLED27.Name = "btnStatusLED27";
+            this.btnStatusLED27.Size = new System.Drawing.Size(30, 30);
+            this.btnStatusLED27.TabIndex = 254;
+            this.btnStatusLED27.Tag = "121";
+            this.btnStatusLED27.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED86
+            // 
+            this.btnStatusLED86.AutoSize = true;
+            this.btnStatusLED86.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED86.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED86.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED86.Location = new System.Drawing.Point(576, 141);
+            this.btnStatusLED86.Name = "btnStatusLED86";
+            this.btnStatusLED86.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED86.TabIndex = 239;
+            this.btnStatusLED86.Tag = "106";
+            this.btnStatusLED86.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED85
+            // 
+            this.btnStatusLED85.AutoSize = true;
+            this.btnStatusLED85.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED85.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED85.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED85.Location = new System.Drawing.Point(543, 141);
+            this.btnStatusLED85.Name = "btnStatusLED85";
+            this.btnStatusLED85.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED85.TabIndex = 238;
+            this.btnStatusLED85.Tag = "105";
+            this.btnStatusLED85.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED84
+            // 
+            this.btnStatusLED84.AutoSize = true;
+            this.btnStatusLED84.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED84.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED84.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED84.Location = new System.Drawing.Point(774, 108);
+            this.btnStatusLED84.Name = "btnStatusLED84";
+            this.btnStatusLED84.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED84.TabIndex = 237;
+            this.btnStatusLED84.Tag = "104";
+            this.btnStatusLED84.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED80
+            // 
+            this.btnStatusLED80.AutoSize = true;
+            this.btnStatusLED80.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED80.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED80.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED80.Location = new System.Drawing.Point(642, 108);
+            this.btnStatusLED80.Name = "btnStatusLED80";
+            this.btnStatusLED80.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED80.TabIndex = 236;
+            this.btnStatusLED80.Tag = "100";
+            this.btnStatusLED80.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED83
+            // 
+            this.btnStatusLED83.AutoSize = true;
+            this.btnStatusLED83.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED83.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED83.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED83.Location = new System.Drawing.Point(741, 108);
+            this.btnStatusLED83.Name = "btnStatusLED83";
+            this.btnStatusLED83.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED83.TabIndex = 235;
+            this.btnStatusLED83.Tag = "103";
+            this.btnStatusLED83.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED82
+            // 
+            this.btnStatusLED82.AutoSize = true;
+            this.btnStatusLED82.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED82.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED82.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED82.Location = new System.Drawing.Point(708, 108);
+            this.btnStatusLED82.Name = "btnStatusLED82";
+            this.btnStatusLED82.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED82.TabIndex = 234;
+            this.btnStatusLED82.Tag = "102";
+            this.btnStatusLED82.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED81
+            // 
+            this.btnStatusLED81.AutoSize = true;
+            this.btnStatusLED81.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED81.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED81.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED81.Location = new System.Drawing.Point(675, 108);
+            this.btnStatusLED81.Name = "btnStatusLED81";
+            this.btnStatusLED81.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED81.TabIndex = 233;
+            this.btnStatusLED81.Tag = "101";
+            this.btnStatusLED81.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED79
+            // 
+            this.btnStatusLED79.AutoSize = true;
+            this.btnStatusLED79.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED79.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED79.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED79.Location = new System.Drawing.Point(609, 108);
+            this.btnStatusLED79.Name = "btnStatusLED79";
+            this.btnStatusLED79.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED79.TabIndex = 232;
+            this.btnStatusLED79.Tag = "99";
+            this.btnStatusLED79.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED78
+            // 
+            this.btnStatusLED78.AutoSize = true;
+            this.btnStatusLED78.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED78.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED78.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED78.Location = new System.Drawing.Point(576, 108);
+            this.btnStatusLED78.Name = "btnStatusLED78";
+            this.btnStatusLED78.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED78.TabIndex = 231;
+            this.btnStatusLED78.Tag = "98";
+            this.btnStatusLED78.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED77
+            // 
+            this.btnStatusLED77.AutoSize = true;
+            this.btnStatusLED77.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED77.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED77.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED77.Location = new System.Drawing.Point(543, 108);
+            this.btnStatusLED77.Name = "btnStatusLED77";
+            this.btnStatusLED77.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED77.TabIndex = 230;
+            this.btnStatusLED77.Tag = "97";
+            this.btnStatusLED77.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED76
+            // 
+            this.btnStatusLED76.AutoSize = true;
+            this.btnStatusLED76.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED76.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED76.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED76.Location = new System.Drawing.Point(774, 76);
+            this.btnStatusLED76.Name = "btnStatusLED76";
+            this.btnStatusLED76.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED76.TabIndex = 229;
+            this.btnStatusLED76.Tag = "96";
+            this.btnStatusLED76.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED72
+            // 
+            this.btnStatusLED72.AutoSize = true;
+            this.btnStatusLED72.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED72.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED72.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED72.Location = new System.Drawing.Point(642, 76);
+            this.btnStatusLED72.Name = "btnStatusLED72";
+            this.btnStatusLED72.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED72.TabIndex = 228;
+            this.btnStatusLED72.Tag = "92";
+            this.btnStatusLED72.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED75
+            // 
+            this.btnStatusLED75.AutoSize = true;
+            this.btnStatusLED75.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED75.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED75.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED75.Location = new System.Drawing.Point(741, 76);
+            this.btnStatusLED75.Name = "btnStatusLED75";
+            this.btnStatusLED75.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED75.TabIndex = 227;
+            this.btnStatusLED75.Tag = "95";
+            this.btnStatusLED75.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED74
+            // 
+            this.btnStatusLED74.AutoSize = true;
+            this.btnStatusLED74.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED74.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED74.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED74.Location = new System.Drawing.Point(708, 76);
+            this.btnStatusLED74.Name = "btnStatusLED74";
+            this.btnStatusLED74.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED74.TabIndex = 226;
+            this.btnStatusLED74.Tag = "94";
+            this.btnStatusLED74.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED73
+            // 
+            this.btnStatusLED73.AutoSize = true;
+            this.btnStatusLED73.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED73.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED73.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED73.Location = new System.Drawing.Point(675, 76);
+            this.btnStatusLED73.Name = "btnStatusLED73";
+            this.btnStatusLED73.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED73.TabIndex = 225;
+            this.btnStatusLED73.Tag = "93";
+            this.btnStatusLED73.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED71
+            // 
+            this.btnStatusLED71.AutoSize = true;
+            this.btnStatusLED71.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED71.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED71.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED71.Location = new System.Drawing.Point(609, 76);
+            this.btnStatusLED71.Name = "btnStatusLED71";
+            this.btnStatusLED71.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED71.TabIndex = 224;
+            this.btnStatusLED71.Tag = "91";
+            this.btnStatusLED71.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED70
+            // 
+            this.btnStatusLED70.AutoSize = true;
+            this.btnStatusLED70.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED70.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED70.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED70.Location = new System.Drawing.Point(576, 76);
+            this.btnStatusLED70.Name = "btnStatusLED70";
+            this.btnStatusLED70.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED70.TabIndex = 223;
+            this.btnStatusLED70.Tag = "90";
+            this.btnStatusLED70.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED69
+            // 
+            this.btnStatusLED69.AutoSize = true;
+            this.btnStatusLED69.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED69.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED69.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED69.Location = new System.Drawing.Point(543, 76);
+            this.btnStatusLED69.Name = "btnStatusLED69";
+            this.btnStatusLED69.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED69.TabIndex = 222;
+            this.btnStatusLED69.Tag = "89";
+            this.btnStatusLED69.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED68
+            // 
+            this.btnStatusLED68.AutoSize = true;
+            this.btnStatusLED68.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED68.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED68.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED68.Location = new System.Drawing.Point(774, 43);
+            this.btnStatusLED68.Name = "btnStatusLED68";
+            this.btnStatusLED68.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED68.TabIndex = 221;
+            this.btnStatusLED68.Tag = "88";
+            this.btnStatusLED68.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED64
+            // 
+            this.btnStatusLED64.AutoSize = true;
+            this.btnStatusLED64.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED64.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED64.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED64.Location = new System.Drawing.Point(642, 43);
+            this.btnStatusLED64.Name = "btnStatusLED64";
+            this.btnStatusLED64.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED64.TabIndex = 220;
+            this.btnStatusLED64.Tag = "84";
+            this.btnStatusLED64.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED67
+            // 
+            this.btnStatusLED67.AutoSize = true;
+            this.btnStatusLED67.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED67.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED67.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED67.Location = new System.Drawing.Point(741, 43);
+            this.btnStatusLED67.Name = "btnStatusLED67";
+            this.btnStatusLED67.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED67.TabIndex = 219;
+            this.btnStatusLED67.Tag = "87";
+            this.btnStatusLED67.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED66
+            // 
+            this.btnStatusLED66.AutoSize = true;
+            this.btnStatusLED66.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED66.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED66.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED66.Location = new System.Drawing.Point(708, 43);
+            this.btnStatusLED66.Name = "btnStatusLED66";
+            this.btnStatusLED66.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED66.TabIndex = 218;
+            this.btnStatusLED66.Tag = "86";
+            this.btnStatusLED66.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED65
+            // 
+            this.btnStatusLED65.AutoSize = true;
+            this.btnStatusLED65.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED65.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED65.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED65.Location = new System.Drawing.Point(675, 43);
+            this.btnStatusLED65.Name = "btnStatusLED65";
+            this.btnStatusLED65.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED65.TabIndex = 217;
+            this.btnStatusLED65.Tag = "85";
+            this.btnStatusLED65.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED63
+            // 
+            this.btnStatusLED63.AutoSize = true;
+            this.btnStatusLED63.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED63.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED63.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED63.Location = new System.Drawing.Point(609, 43);
+            this.btnStatusLED63.Name = "btnStatusLED63";
+            this.btnStatusLED63.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED63.TabIndex = 216;
+            this.btnStatusLED63.Tag = "83";
+            this.btnStatusLED63.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED62
+            // 
+            this.btnStatusLED62.AutoSize = true;
+            this.btnStatusLED62.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED62.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED62.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED62.Location = new System.Drawing.Point(576, 43);
+            this.btnStatusLED62.Name = "btnStatusLED62";
+            this.btnStatusLED62.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED62.TabIndex = 215;
+            this.btnStatusLED62.Tag = "82";
+            this.btnStatusLED62.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED61
+            // 
+            this.btnStatusLED61.AutoSize = true;
+            this.btnStatusLED61.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED61.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED61.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED61.Location = new System.Drawing.Point(543, 43);
+            this.btnStatusLED61.Name = "btnStatusLED61";
+            this.btnStatusLED61.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED61.TabIndex = 214;
+            this.btnStatusLED61.Tag = "81";
+            this.btnStatusLED61.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED56
+            // 
+            this.btnStatusLED56.AutoSize = true;
+            this.btnStatusLED56.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED56.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED56.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED56.Location = new System.Drawing.Point(311, 141);
+            this.btnStatusLED56.Name = "btnStatusLED56";
+            this.btnStatusLED56.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED56.TabIndex = 191;
+            this.btnStatusLED56.Tag = "66";
+            this.btnStatusLED56.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED55
+            // 
+            this.btnStatusLED55.AutoSize = true;
+            this.btnStatusLED55.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED55.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED55.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED55.Location = new System.Drawing.Point(278, 141);
+            this.btnStatusLED55.Name = "btnStatusLED55";
+            this.btnStatusLED55.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED55.TabIndex = 190;
+            this.btnStatusLED55.Tag = "65";
+            this.btnStatusLED55.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED26
+            // 
+            this.btnStatusLED26.AutoSize = true;
+            this.btnStatusLED26.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED26.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED26.Location = new System.Drawing.Point(47, 141);
+            this.btnStatusLED26.Name = "btnStatusLED26";
+            this.btnStatusLED26.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED26.TabIndex = 183;
+            this.btnStatusLED26.Tag = "26";
+            this.btnStatusLED26.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED25
+            // 
+            this.btnStatusLED25.AutoSize = true;
+            this.btnStatusLED25.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED25.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED25.Location = new System.Drawing.Point(14, 141);
+            this.btnStatusLED25.Name = "btnStatusLED25";
+            this.btnStatusLED25.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED25.TabIndex = 182;
+            this.btnStatusLED25.Tag = "25";
+            this.btnStatusLED25.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED54
+            // 
+            this.btnStatusLED54.AutoSize = true;
+            this.btnStatusLED54.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED54.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED54.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED54.Location = new System.Drawing.Point(509, 108);
+            this.btnStatusLED54.Name = "btnStatusLED54";
+            this.btnStatusLED54.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED54.TabIndex = 181;
+            this.btnStatusLED54.Tag = "64";
+            this.btnStatusLED54.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED50
+            // 
+            this.btnStatusLED50.AutoSize = true;
+            this.btnStatusLED50.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED50.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED50.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED50.Location = new System.Drawing.Point(377, 108);
+            this.btnStatusLED50.Name = "btnStatusLED50";
+            this.btnStatusLED50.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED50.TabIndex = 180;
+            this.btnStatusLED50.Tag = "60";
+            this.btnStatusLED50.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED53
+            // 
+            this.btnStatusLED53.AutoSize = true;
+            this.btnStatusLED53.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED53.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED53.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED53.Location = new System.Drawing.Point(476, 108);
+            this.btnStatusLED53.Name = "btnStatusLED53";
+            this.btnStatusLED53.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED53.TabIndex = 179;
+            this.btnStatusLED53.Tag = "63";
+            this.btnStatusLED53.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED52
+            // 
+            this.btnStatusLED52.AutoSize = true;
+            this.btnStatusLED52.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED52.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED52.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED52.Location = new System.Drawing.Point(443, 108);
+            this.btnStatusLED52.Name = "btnStatusLED52";
+            this.btnStatusLED52.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED52.TabIndex = 178;
+            this.btnStatusLED52.Tag = "62";
+            this.btnStatusLED52.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED51
+            // 
+            this.btnStatusLED51.AutoSize = true;
+            this.btnStatusLED51.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED51.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED51.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED51.Location = new System.Drawing.Point(410, 108);
+            this.btnStatusLED51.Name = "btnStatusLED51";
+            this.btnStatusLED51.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED51.TabIndex = 177;
+            this.btnStatusLED51.Tag = "61";
+            this.btnStatusLED51.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED49
+            // 
+            this.btnStatusLED49.AutoSize = true;
+            this.btnStatusLED49.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED49.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED49.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED49.Location = new System.Drawing.Point(344, 108);
+            this.btnStatusLED49.Name = "btnStatusLED49";
+            this.btnStatusLED49.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED49.TabIndex = 176;
+            this.btnStatusLED49.Tag = "59";
+            this.btnStatusLED49.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED48
+            // 
+            this.btnStatusLED48.AutoSize = true;
+            this.btnStatusLED48.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED48.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED48.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED48.Location = new System.Drawing.Point(311, 108);
+            this.btnStatusLED48.Name = "btnStatusLED48";
+            this.btnStatusLED48.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED48.TabIndex = 175;
+            this.btnStatusLED48.Tag = "58";
+            this.btnStatusLED48.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED47
+            // 
+            this.btnStatusLED47.AutoSize = true;
+            this.btnStatusLED47.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED47.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED47.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED47.Location = new System.Drawing.Point(278, 108);
+            this.btnStatusLED47.Name = "btnStatusLED47";
+            this.btnStatusLED47.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED47.TabIndex = 174;
+            this.btnStatusLED47.Tag = "57";
+            this.btnStatusLED47.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED24
+            // 
+            this.btnStatusLED24.AutoSize = true;
+            this.btnStatusLED24.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED24.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED24.Location = new System.Drawing.Point(245, 108);
+            this.btnStatusLED24.Name = "btnStatusLED24";
+            this.btnStatusLED24.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED24.TabIndex = 173;
+            this.btnStatusLED24.Tag = "24";
+            this.btnStatusLED24.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED20
+            // 
+            this.btnStatusLED20.AutoSize = true;
+            this.btnStatusLED20.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED20.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED20.Location = new System.Drawing.Point(113, 108);
+            this.btnStatusLED20.Name = "btnStatusLED20";
+            this.btnStatusLED20.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED20.TabIndex = 172;
+            this.btnStatusLED20.Tag = "20";
+            this.btnStatusLED20.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED23
+            // 
+            this.btnStatusLED23.AutoSize = true;
+            this.btnStatusLED23.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED23.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED23.Location = new System.Drawing.Point(212, 108);
+            this.btnStatusLED23.Name = "btnStatusLED23";
+            this.btnStatusLED23.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED23.TabIndex = 171;
+            this.btnStatusLED23.Tag = "23";
+            this.btnStatusLED23.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED22
+            // 
+            this.btnStatusLED22.AutoSize = true;
+            this.btnStatusLED22.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED22.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED22.Location = new System.Drawing.Point(179, 108);
+            this.btnStatusLED22.Name = "btnStatusLED22";
+            this.btnStatusLED22.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED22.TabIndex = 170;
+            this.btnStatusLED22.Tag = "22";
+            this.btnStatusLED22.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED21
+            // 
+            this.btnStatusLED21.AutoSize = true;
+            this.btnStatusLED21.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED21.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED21.Location = new System.Drawing.Point(146, 108);
+            this.btnStatusLED21.Name = "btnStatusLED21";
+            this.btnStatusLED21.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED21.TabIndex = 169;
+            this.btnStatusLED21.Tag = "21";
+            this.btnStatusLED21.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED19
+            // 
+            this.btnStatusLED19.AutoSize = true;
+            this.btnStatusLED19.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED19.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED19.Location = new System.Drawing.Point(80, 108);
+            this.btnStatusLED19.Name = "btnStatusLED19";
+            this.btnStatusLED19.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED19.TabIndex = 168;
+            this.btnStatusLED19.Tag = "19";
+            this.btnStatusLED19.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED18
+            // 
+            this.btnStatusLED18.AutoSize = true;
+            this.btnStatusLED18.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED18.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED18.Location = new System.Drawing.Point(47, 108);
+            this.btnStatusLED18.Name = "btnStatusLED18";
+            this.btnStatusLED18.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED18.TabIndex = 167;
+            this.btnStatusLED18.Tag = "18";
+            this.btnStatusLED18.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED17
+            // 
+            this.btnStatusLED17.AutoSize = true;
+            this.btnStatusLED17.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED17.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED17.Location = new System.Drawing.Point(14, 108);
+            this.btnStatusLED17.Name = "btnStatusLED17";
+            this.btnStatusLED17.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED17.TabIndex = 166;
+            this.btnStatusLED17.Tag = "17";
+            this.btnStatusLED17.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED46
+            // 
+            this.btnStatusLED46.AutoSize = true;
+            this.btnStatusLED46.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED46.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED46.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED46.Location = new System.Drawing.Point(509, 76);
+            this.btnStatusLED46.Name = "btnStatusLED46";
+            this.btnStatusLED46.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED46.TabIndex = 165;
+            this.btnStatusLED46.Tag = "56";
+            this.btnStatusLED46.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED42
+            // 
+            this.btnStatusLED42.AutoSize = true;
+            this.btnStatusLED42.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED42.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED42.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED42.Location = new System.Drawing.Point(377, 76);
+            this.btnStatusLED42.Name = "btnStatusLED42";
+            this.btnStatusLED42.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED42.TabIndex = 164;
+            this.btnStatusLED42.Tag = "52";
+            this.btnStatusLED42.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED45
+            // 
+            this.btnStatusLED45.AutoSize = true;
+            this.btnStatusLED45.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED45.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED45.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED45.Location = new System.Drawing.Point(476, 76);
+            this.btnStatusLED45.Name = "btnStatusLED45";
+            this.btnStatusLED45.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED45.TabIndex = 163;
+            this.btnStatusLED45.Tag = "55";
+            this.btnStatusLED45.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED44
+            // 
+            this.btnStatusLED44.AutoSize = true;
+            this.btnStatusLED44.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED44.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED44.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED44.Location = new System.Drawing.Point(443, 76);
+            this.btnStatusLED44.Name = "btnStatusLED44";
+            this.btnStatusLED44.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED44.TabIndex = 162;
+            this.btnStatusLED44.Tag = "54";
+            this.btnStatusLED44.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED43
+            // 
+            this.btnStatusLED43.AutoSize = true;
+            this.btnStatusLED43.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED43.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED43.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED43.Location = new System.Drawing.Point(410, 76);
+            this.btnStatusLED43.Name = "btnStatusLED43";
+            this.btnStatusLED43.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED43.TabIndex = 161;
+            this.btnStatusLED43.Tag = "53";
+            this.btnStatusLED43.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED41
+            // 
+            this.btnStatusLED41.AutoSize = true;
+            this.btnStatusLED41.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED41.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED41.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED41.Location = new System.Drawing.Point(344, 76);
+            this.btnStatusLED41.Name = "btnStatusLED41";
+            this.btnStatusLED41.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED41.TabIndex = 160;
+            this.btnStatusLED41.Tag = "51";
+            this.btnStatusLED41.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED40
+            // 
+            this.btnStatusLED40.AutoSize = true;
+            this.btnStatusLED40.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED40.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED40.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED40.Location = new System.Drawing.Point(311, 76);
+            this.btnStatusLED40.Name = "btnStatusLED40";
+            this.btnStatusLED40.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED40.TabIndex = 159;
+            this.btnStatusLED40.Tag = "50";
+            this.btnStatusLED40.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED39
+            // 
+            this.btnStatusLED39.AutoSize = true;
+            this.btnStatusLED39.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED39.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED39.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED39.Location = new System.Drawing.Point(278, 76);
+            this.btnStatusLED39.Name = "btnStatusLED39";
+            this.btnStatusLED39.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED39.TabIndex = 158;
+            this.btnStatusLED39.Tag = "49";
+            this.btnStatusLED39.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED16
+            // 
+            this.btnStatusLED16.AutoSize = true;
+            this.btnStatusLED16.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED16.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED16.Location = new System.Drawing.Point(245, 76);
+            this.btnStatusLED16.Name = "btnStatusLED16";
+            this.btnStatusLED16.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED16.TabIndex = 157;
+            this.btnStatusLED16.Tag = "16";
+            this.btnStatusLED16.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED12
+            // 
+            this.btnStatusLED12.AutoSize = true;
+            this.btnStatusLED12.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED12.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED12.Location = new System.Drawing.Point(113, 76);
+            this.btnStatusLED12.Name = "btnStatusLED12";
+            this.btnStatusLED12.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED12.TabIndex = 156;
+            this.btnStatusLED12.Tag = "12";
+            this.btnStatusLED12.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED15
+            // 
+            this.btnStatusLED15.AutoSize = true;
+            this.btnStatusLED15.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED15.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED15.Location = new System.Drawing.Point(212, 76);
+            this.btnStatusLED15.Name = "btnStatusLED15";
+            this.btnStatusLED15.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED15.TabIndex = 155;
+            this.btnStatusLED15.Tag = "15";
+            this.btnStatusLED15.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED14
+            // 
+            this.btnStatusLED14.AutoSize = true;
+            this.btnStatusLED14.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED14.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED14.Location = new System.Drawing.Point(179, 76);
+            this.btnStatusLED14.Name = "btnStatusLED14";
+            this.btnStatusLED14.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED14.TabIndex = 154;
+            this.btnStatusLED14.Tag = "14";
+            this.btnStatusLED14.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED13
+            // 
+            this.btnStatusLED13.AutoSize = true;
+            this.btnStatusLED13.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED13.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED13.Location = new System.Drawing.Point(146, 76);
+            this.btnStatusLED13.Name = "btnStatusLED13";
+            this.btnStatusLED13.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED13.TabIndex = 153;
+            this.btnStatusLED13.Tag = "13";
+            this.btnStatusLED13.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED11
+            // 
+            this.btnStatusLED11.AutoSize = true;
+            this.btnStatusLED11.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED11.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED11.Location = new System.Drawing.Point(80, 76);
+            this.btnStatusLED11.Name = "btnStatusLED11";
+            this.btnStatusLED11.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED11.TabIndex = 152;
+            this.btnStatusLED11.Tag = "11";
+            this.btnStatusLED11.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED10
+            // 
+            this.btnStatusLED10.AutoSize = true;
+            this.btnStatusLED10.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED10.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED10.Location = new System.Drawing.Point(47, 76);
+            this.btnStatusLED10.Name = "btnStatusLED10";
+            this.btnStatusLED10.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED10.TabIndex = 151;
+            this.btnStatusLED10.Tag = "10";
+            this.btnStatusLED10.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED9
+            // 
+            this.btnStatusLED9.AutoSize = true;
+            this.btnStatusLED9.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED9.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED9.Location = new System.Drawing.Point(14, 76);
+            this.btnStatusLED9.Name = "btnStatusLED9";
+            this.btnStatusLED9.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED9.TabIndex = 150;
+            this.btnStatusLED9.Tag = "9";
+            this.btnStatusLED9.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED38
+            // 
+            this.btnStatusLED38.AutoSize = true;
+            this.btnStatusLED38.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED38.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED38.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED38.Location = new System.Drawing.Point(509, 43);
+            this.btnStatusLED38.Name = "btnStatusLED38";
+            this.btnStatusLED38.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED38.TabIndex = 149;
+            this.btnStatusLED38.Tag = "48";
+            this.btnStatusLED38.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED34
+            // 
+            this.btnStatusLED34.AutoSize = true;
+            this.btnStatusLED34.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED34.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED34.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED34.Location = new System.Drawing.Point(377, 43);
+            this.btnStatusLED34.Name = "btnStatusLED34";
+            this.btnStatusLED34.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED34.TabIndex = 144;
+            this.btnStatusLED34.Tag = "44";
+            this.btnStatusLED34.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED37
+            // 
+            this.btnStatusLED37.AutoSize = true;
+            this.btnStatusLED37.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED37.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED37.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED37.Location = new System.Drawing.Point(476, 43);
+            this.btnStatusLED37.Name = "btnStatusLED37";
+            this.btnStatusLED37.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED37.TabIndex = 119;
+            this.btnStatusLED37.Tag = "47";
+            this.btnStatusLED37.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED36
+            // 
+            this.btnStatusLED36.AutoSize = true;
+            this.btnStatusLED36.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED36.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED36.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED36.Location = new System.Drawing.Point(443, 43);
+            this.btnStatusLED36.Name = "btnStatusLED36";
+            this.btnStatusLED36.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED36.TabIndex = 118;
+            this.btnStatusLED36.Tag = "46";
+            this.btnStatusLED36.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED35
+            // 
+            this.btnStatusLED35.AutoSize = true;
+            this.btnStatusLED35.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED35.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED35.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED35.Location = new System.Drawing.Point(410, 43);
+            this.btnStatusLED35.Name = "btnStatusLED35";
+            this.btnStatusLED35.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED35.TabIndex = 117;
+            this.btnStatusLED35.Tag = "45";
+            this.btnStatusLED35.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED33
+            // 
+            this.btnStatusLED33.AutoSize = true;
+            this.btnStatusLED33.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED33.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED33.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED33.Location = new System.Drawing.Point(344, 43);
+            this.btnStatusLED33.Name = "btnStatusLED33";
+            this.btnStatusLED33.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED33.TabIndex = 116;
+            this.btnStatusLED33.Tag = "43";
+            this.btnStatusLED33.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED32
+            // 
+            this.btnStatusLED32.AutoSize = true;
+            this.btnStatusLED32.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED32.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED32.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED32.Location = new System.Drawing.Point(311, 43);
+            this.btnStatusLED32.Name = "btnStatusLED32";
+            this.btnStatusLED32.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED32.TabIndex = 115;
+            this.btnStatusLED32.Tag = "42";
+            this.btnStatusLED32.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED31
+            // 
+            this.btnStatusLED31.AutoSize = true;
+            this.btnStatusLED31.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED31.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED31.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED31.Location = new System.Drawing.Point(278, 43);
+            this.btnStatusLED31.Name = "btnStatusLED31";
+            this.btnStatusLED31.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED31.TabIndex = 114;
+            this.btnStatusLED31.Tag = "41";
+            this.btnStatusLED31.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED8
+            // 
+            this.btnStatusLED8.AutoSize = true;
+            this.btnStatusLED8.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED8.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED8.Location = new System.Drawing.Point(245, 43);
+            this.btnStatusLED8.Name = "btnStatusLED8";
+            this.btnStatusLED8.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED8.TabIndex = 109;
+            this.btnStatusLED8.Tag = "8";
+            this.btnStatusLED8.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED4
+            // 
+            this.btnStatusLED4.AutoSize = true;
+            this.btnStatusLED4.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED4.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED4.Location = new System.Drawing.Point(113, 43);
+            this.btnStatusLED4.Name = "btnStatusLED4";
+            this.btnStatusLED4.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED4.TabIndex = 104;
+            this.btnStatusLED4.Tag = "4";
+            this.btnStatusLED4.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED7
+            // 
+            this.btnStatusLED7.AutoSize = true;
+            this.btnStatusLED7.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED7.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED7.Location = new System.Drawing.Point(212, 43);
+            this.btnStatusLED7.Name = "btnStatusLED7";
+            this.btnStatusLED7.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED7.TabIndex = 79;
+            this.btnStatusLED7.Tag = "7";
+            this.btnStatusLED7.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED6
+            // 
+            this.btnStatusLED6.AutoSize = true;
+            this.btnStatusLED6.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED6.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED6.Location = new System.Drawing.Point(179, 43);
+            this.btnStatusLED6.Name = "btnStatusLED6";
+            this.btnStatusLED6.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED6.TabIndex = 78;
+            this.btnStatusLED6.Tag = "6";
+            this.btnStatusLED6.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED5
+            // 
+            this.btnStatusLED5.AutoSize = true;
+            this.btnStatusLED5.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED5.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED5.Location = new System.Drawing.Point(146, 43);
+            this.btnStatusLED5.Name = "btnStatusLED5";
+            this.btnStatusLED5.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED5.TabIndex = 77;
+            this.btnStatusLED5.Tag = "5";
+            this.btnStatusLED5.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED3
+            // 
+            this.btnStatusLED3.AutoSize = true;
+            this.btnStatusLED3.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED3.Location = new System.Drawing.Point(80, 43);
+            this.btnStatusLED3.Name = "btnStatusLED3";
+            this.btnStatusLED3.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED3.TabIndex = 76;
+            this.btnStatusLED3.Tag = "3";
+            this.btnStatusLED3.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED2
+            // 
+            this.btnStatusLED2.AutoSize = true;
+            this.btnStatusLED2.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED2.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED2.Location = new System.Drawing.Point(47, 43);
+            this.btnStatusLED2.Name = "btnStatusLED2";
+            this.btnStatusLED2.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED2.TabIndex = 75;
+            this.btnStatusLED2.Tag = "2";
+            this.btnStatusLED2.UseVisualStyleBackColor = false;
+            // 
+            // btnStatusLED1
+            // 
+            this.btnStatusLED1.AutoSize = true;
+            this.btnStatusLED1.BackColor = System.Drawing.Color.Gray;
+            this.btnStatusLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStatusLED1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnStatusLED1.Location = new System.Drawing.Point(14, 43);
+            this.btnStatusLED1.Name = "btnStatusLED1";
+            this.btnStatusLED1.Size = new System.Drawing.Size(20, 20);
+            this.btnStatusLED1.TabIndex = 74;
+            this.btnStatusLED1.Tag = "1";
+            this.btnStatusLED1.UseVisualStyleBackColor = false;
             // 
             // btnShowLEDStatus
             // 
             this.btnShowLEDStatus.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnShowLEDStatus.Location = new System.Drawing.Point(13, 134);
             this.btnShowLEDStatus.Name = "btnShowLEDStatus";
-            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(1);
             this.btnShowLEDStatus.Size = new System.Drawing.Size(131, 32);
             this.btnShowLEDStatus.TabIndex = 9;
             this.btnShowLEDStatus.Text = "开始获取";
@@ -5271,7 +5271,7 @@ namespace LEDController.View
             this.label47.BackColor = System.Drawing.Color.Transparent;
             this.label47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label47.Location = new System.Drawing.Point(10, 100);
-            this.label47.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label47.Margin = new System.Windows.Forms.Padding(10);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(75, 16);
             this.label47.TabIndex = 5;
@@ -5309,7 +5309,7 @@ namespace LEDController.View
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label45.Location = new System.Drawing.Point(10, 66);
-            this.label45.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label45.Margin = new System.Windows.Forms.Padding(10);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(75, 16);
             this.label45.TabIndex = 2;
@@ -5336,7 +5336,7 @@ namespace LEDController.View
             this.label44.BackColor = System.Drawing.Color.Transparent;
             this.label44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label44.Location = new System.Drawing.Point(10, 33);
-            this.label44.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label44.Margin = new System.Windows.Forms.Padding(10);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(75, 16);
             this.label44.TabIndex = 0;
@@ -5375,6 +5375,7 @@ namespace LEDController.View
             this.btnUpdateChiller.TabIndex = 21;
             this.btnUpdateChiller.Text = "更新状态";
             this.btnUpdateChiller.UseVisualStyleBackColor = true;
+            this.btnUpdateChiller.Click += new System.EventHandler(this.btnUpdateChiller_Click);
             // 
             // label59
             // 
@@ -5392,7 +5393,7 @@ namespace LEDController.View
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
             this.pictureBox12.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.InitialImage")));
             this.pictureBox12.Location = new System.Drawing.Point(176, 20);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(40, 40);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5415,7 +5416,7 @@ namespace LEDController.View
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
             this.pictureBox11.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.InitialImage")));
             this.pictureBox11.Location = new System.Drawing.Point(48, 20);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(40, 40);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5428,7 +5429,7 @@ namespace LEDController.View
             this.pbxPump3.Image = ((System.Drawing.Image)(resources.GetObject("pbxPump3.Image")));
             this.pbxPump3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxPump3.InitialImage")));
             this.pbxPump3.Location = new System.Drawing.Point(185, 359);
-            this.pbxPump3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxPump3.Margin = new System.Windows.Forms.Padding(2);
             this.pbxPump3.Name = "pbxPump3";
             this.pbxPump3.Size = new System.Drawing.Size(40, 40);
             this.pbxPump3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5451,7 +5452,7 @@ namespace LEDController.View
             this.pbxPump2.Image = ((System.Drawing.Image)(resources.GetObject("pbxPump2.Image")));
             this.pbxPump2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxPump2.InitialImage")));
             this.pbxPump2.Location = new System.Drawing.Point(185, 296);
-            this.pbxPump2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxPump2.Margin = new System.Windows.Forms.Padding(2);
             this.pbxPump2.Name = "pbxPump2";
             this.pbxPump2.Size = new System.Drawing.Size(40, 40);
             this.pbxPump2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5474,7 +5475,7 @@ namespace LEDController.View
             this.pbxPump1.Image = ((System.Drawing.Image)(resources.GetObject("pbxPump1.Image")));
             this.pbxPump1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxPump1.InitialImage")));
             this.pbxPump1.Location = new System.Drawing.Point(185, 231);
-            this.pbxPump1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxPump1.Margin = new System.Windows.Forms.Padding(2);
             this.pbxPump1.Name = "pbxPump1";
             this.pbxPump1.Size = new System.Drawing.Size(40, 40);
             this.pbxPump1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5497,7 +5498,7 @@ namespace LEDController.View
             this.pbxChiller2.Image = ((System.Drawing.Image)(resources.GetObject("pbxChiller2.Image")));
             this.pbxChiller2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxChiller2.InitialImage")));
             this.pbxChiller2.Location = new System.Drawing.Point(185, 170);
-            this.pbxChiller2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxChiller2.Margin = new System.Windows.Forms.Padding(2);
             this.pbxChiller2.Name = "pbxChiller2";
             this.pbxChiller2.Size = new System.Drawing.Size(40, 40);
             this.pbxChiller2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5520,7 +5521,7 @@ namespace LEDController.View
             this.pbxChiller1.Image = ((System.Drawing.Image)(resources.GetObject("pbxChiller1.Image")));
             this.pbxChiller1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxChiller1.InitialImage")));
             this.pbxChiller1.Location = new System.Drawing.Point(185, 104);
-            this.pbxChiller1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxChiller1.Margin = new System.Windows.Forms.Padding(2);
             this.pbxChiller1.Name = "pbxChiller1";
             this.pbxChiller1.Size = new System.Drawing.Size(40, 40);
             this.pbxChiller1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5567,6 +5568,7 @@ namespace LEDController.View
             this.btnCloseSkylight3.TabIndex = 19;
             this.btnCloseSkylight3.Text = "关闭";
             this.btnCloseSkylight3.UseVisualStyleBackColor = true;
+            this.btnCloseSkylight3.Click += new System.EventHandler(this.btnCloseSkylight3_Click);
             // 
             // btnOpenSkylight3
             // 
@@ -5577,6 +5579,7 @@ namespace LEDController.View
             this.btnOpenSkylight3.TabIndex = 18;
             this.btnOpenSkylight3.Text = "打开";
             this.btnOpenSkylight3.UseVisualStyleBackColor = true;
+            this.btnOpenSkylight3.Click += new System.EventHandler(this.btnOpenSkylight3_Click);
             // 
             // pbxSkylight3
             // 
@@ -5584,7 +5587,7 @@ namespace LEDController.View
             this.pbxSkylight3.Image = ((System.Drawing.Image)(resources.GetObject("pbxSkylight3.Image")));
             this.pbxSkylight3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxSkylight3.InitialImage")));
             this.pbxSkylight3.Location = new System.Drawing.Point(323, 232);
-            this.pbxSkylight3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxSkylight3.Margin = new System.Windows.Forms.Padding(2);
             this.pbxSkylight3.Name = "pbxSkylight3";
             this.pbxSkylight3.Size = new System.Drawing.Size(74, 69);
             this.pbxSkylight3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5610,6 +5613,7 @@ namespace LEDController.View
             this.btnCloseSkylight2.TabIndex = 15;
             this.btnCloseSkylight2.Text = "关闭";
             this.btnCloseSkylight2.UseVisualStyleBackColor = true;
+            this.btnCloseSkylight2.Click += new System.EventHandler(this.btnCloseSkylight2_Click);
             // 
             // btnOpenSkylight2
             // 
@@ -5620,6 +5624,7 @@ namespace LEDController.View
             this.btnOpenSkylight2.TabIndex = 14;
             this.btnOpenSkylight2.Text = "打开";
             this.btnOpenSkylight2.UseVisualStyleBackColor = true;
+            this.btnOpenSkylight2.Click += new System.EventHandler(this.btnOpenSkylight2_Click);
             // 
             // pbxSkylight2
             // 
@@ -5627,7 +5632,7 @@ namespace LEDController.View
             this.pbxSkylight2.Image = ((System.Drawing.Image)(resources.GetObject("pbxSkylight2.Image")));
             this.pbxSkylight2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxSkylight2.InitialImage")));
             this.pbxSkylight2.Location = new System.Drawing.Point(323, 141);
-            this.pbxSkylight2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxSkylight2.Margin = new System.Windows.Forms.Padding(2);
             this.pbxSkylight2.Name = "pbxSkylight2";
             this.pbxSkylight2.Size = new System.Drawing.Size(74, 69);
             this.pbxSkylight2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5653,6 +5658,7 @@ namespace LEDController.View
             this.btnCloseSkylight1.TabIndex = 11;
             this.btnCloseSkylight1.Text = "关闭";
             this.btnCloseSkylight1.UseVisualStyleBackColor = true;
+            this.btnCloseSkylight1.Click += new System.EventHandler(this.btnCloseSkylight1_Click);
             // 
             // btnOpenSkylight1
             // 
@@ -5663,6 +5669,7 @@ namespace LEDController.View
             this.btnOpenSkylight1.TabIndex = 10;
             this.btnOpenSkylight1.Text = "打开";
             this.btnOpenSkylight1.UseVisualStyleBackColor = true;
+            this.btnOpenSkylight1.Click += new System.EventHandler(this.btnOpenSkylight1_Click);
             // 
             // pbxSkylight1
             // 
@@ -5670,7 +5677,7 @@ namespace LEDController.View
             this.pbxSkylight1.Image = ((System.Drawing.Image)(resources.GetObject("pbxSkylight1.Image")));
             this.pbxSkylight1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxSkylight1.InitialImage")));
             this.pbxSkylight1.Location = new System.Drawing.Point(323, 49);
-            this.pbxSkylight1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxSkylight1.Margin = new System.Windows.Forms.Padding(2);
             this.pbxSkylight1.Name = "pbxSkylight1";
             this.pbxSkylight1.Size = new System.Drawing.Size(74, 69);
             this.pbxSkylight1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5689,18 +5696,18 @@ namespace LEDController.View
             // 
             // tpgLightControl
             // 
-            this.tpgLightControl.Controls.Add(this.pictureBox4);
-            this.tpgLightControl.Controls.Add(this.button5);
+            this.tpgLightControl.Controls.Add(this.pbxLight3);
+            this.tpgLightControl.Controls.Add(this.btnCloseLight3);
             this.tpgLightControl.Controls.Add(this.label28);
-            this.tpgLightControl.Controls.Add(this.button6);
-            this.tpgLightControl.Controls.Add(this.pictureBox3);
-            this.tpgLightControl.Controls.Add(this.button3);
+            this.tpgLightControl.Controls.Add(this.btnOpenLight3);
+            this.tpgLightControl.Controls.Add(this.pbxLight2);
+            this.tpgLightControl.Controls.Add(this.btnCloseLight2);
             this.tpgLightControl.Controls.Add(this.label13);
-            this.tpgLightControl.Controls.Add(this.button4);
-            this.tpgLightControl.Controls.Add(this.pictureBox2);
-            this.tpgLightControl.Controls.Add(this.button2);
+            this.tpgLightControl.Controls.Add(this.btnOpenLight2);
+            this.tpgLightControl.Controls.Add(this.pbxLight1);
+            this.tpgLightControl.Controls.Add(this.btnCloseLight1);
             this.tpgLightControl.Controls.Add(this.label1111);
-            this.tpgLightControl.Controls.Add(this.button1);
+            this.tpgLightControl.Controls.Add(this.btnOpenLight1);
             this.tpgLightControl.Location = new System.Drawing.Point(4, 22);
             this.tpgLightControl.Name = "tpgLightControl";
             this.tpgLightControl.Size = new System.Drawing.Size(1042, 534);
@@ -5708,134 +5715,143 @@ namespace LEDController.View
             this.tpgLightControl.Text = "室内照明";
             this.tpgLightControl.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
+            // pbxLight3
             // 
-            this.pictureBox4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.ErrorImage")));
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(182, 118);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
+            this.pbxLight3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxLight3.ErrorImage")));
+            this.pbxLight3.Image = ((System.Drawing.Image)(resources.GetObject("pbxLight3.Image")));
+            this.pbxLight3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxLight3.InitialImage")));
+            this.pbxLight3.Location = new System.Drawing.Point(230, 153);
+            this.pbxLight3.Margin = new System.Windows.Forms.Padding(2);
+            this.pbxLight3.Name = "pbxLight3";
+            this.pbxLight3.Size = new System.Drawing.Size(40, 40);
+            this.pbxLight3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxLight3.TabIndex = 15;
+            this.pbxLight3.TabStop = false;
             // 
-            // button5
+            // btnCloseLight3
             // 
-            this.button5.Location = new System.Drawing.Point(110, 125);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 20);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "关闭";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCloseLight3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseLight3.Location = new System.Drawing.Point(146, 158);
+            this.btnCloseLight3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCloseLight3.Name = "btnCloseLight3";
+            this.btnCloseLight3.Size = new System.Drawing.Size(60, 30);
+            this.btnCloseLight3.TabIndex = 14;
+            this.btnCloseLight3.Text = "关闭";
+            this.btnCloseLight3.UseVisualStyleBackColor = true;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(10, 129);
+            this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Location = new System.Drawing.Point(35, 165);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(23, 12);
+            this.label28.Size = new System.Drawing.Size(31, 16);
             this.label28.TabIndex = 13;
             this.label28.Text = "灯3";
             // 
-            // button6
+            // btnOpenLight3
             // 
-            this.button6.Location = new System.Drawing.Point(47, 125);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(50, 20);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "打开";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnOpenLight3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenLight3.Location = new System.Drawing.Point(72, 158);
+            this.btnOpenLight3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOpenLight3.Name = "btnOpenLight3";
+            this.btnOpenLight3.Size = new System.Drawing.Size(60, 30);
+            this.btnOpenLight3.TabIndex = 12;
+            this.btnOpenLight3.Text = "打开";
+            this.btnOpenLight3.UseVisualStyleBackColor = true;
             // 
-            // pictureBox3
+            // pbxLight2
             // 
-            this.pictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.ErrorImage")));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(182, 70);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
+            this.pbxLight2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxLight2.ErrorImage")));
+            this.pbxLight2.Image = ((System.Drawing.Image)(resources.GetObject("pbxLight2.Image")));
+            this.pbxLight2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxLight2.InitialImage")));
+            this.pbxLight2.Location = new System.Drawing.Point(230, 105);
+            this.pbxLight2.Margin = new System.Windows.Forms.Padding(2);
+            this.pbxLight2.Name = "pbxLight2";
+            this.pbxLight2.Size = new System.Drawing.Size(40, 40);
+            this.pbxLight2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxLight2.TabIndex = 11;
+            this.pbxLight2.TabStop = false;
             // 
-            // button3
+            // btnCloseLight2
             // 
-            this.button3.Location = new System.Drawing.Point(110, 77);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 20);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "关闭";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCloseLight2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseLight2.Location = new System.Drawing.Point(146, 110);
+            this.btnCloseLight2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCloseLight2.Name = "btnCloseLight2";
+            this.btnCloseLight2.Size = new System.Drawing.Size(60, 30);
+            this.btnCloseLight2.TabIndex = 10;
+            this.btnCloseLight2.Text = "关闭";
+            this.btnCloseLight2.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(10, 81);
+            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(35, 117);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 12);
+            this.label13.Size = new System.Drawing.Size(31, 16);
             this.label13.TabIndex = 9;
             this.label13.Text = "灯2";
             // 
-            // button4
+            // btnOpenLight2
             // 
-            this.button4.Location = new System.Drawing.Point(47, 77);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 20);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "打开";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnOpenLight2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenLight2.Location = new System.Drawing.Point(72, 110);
+            this.btnOpenLight2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOpenLight2.Name = "btnOpenLight2";
+            this.btnOpenLight2.Size = new System.Drawing.Size(60, 30);
+            this.btnOpenLight2.TabIndex = 8;
+            this.btnOpenLight2.Text = "打开";
+            this.btnOpenLight2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // pbxLight1
             // 
-            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(182, 17);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.pbxLight1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxLight1.ErrorImage")));
+            this.pbxLight1.Image = ((System.Drawing.Image)(resources.GetObject("pbxLight1.Image")));
+            this.pbxLight1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxLight1.InitialImage")));
+            this.pbxLight1.Location = new System.Drawing.Point(230, 52);
+            this.pbxLight1.Margin = new System.Windows.Forms.Padding(2);
+            this.pbxLight1.Name = "pbxLight1";
+            this.pbxLight1.Size = new System.Drawing.Size(40, 40);
+            this.pbxLight1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxLight1.TabIndex = 7;
+            this.pbxLight1.TabStop = false;
             // 
-            // button2
+            // btnCloseLight1
             // 
-            this.button2.Location = new System.Drawing.Point(110, 24);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 20);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "关闭";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCloseLight1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseLight1.Location = new System.Drawing.Point(146, 57);
+            this.btnCloseLight1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCloseLight1.Name = "btnCloseLight1";
+            this.btnCloseLight1.Size = new System.Drawing.Size(60, 30);
+            this.btnCloseLight1.TabIndex = 6;
+            this.btnCloseLight1.Text = "关闭";
+            this.btnCloseLight1.UseVisualStyleBackColor = true;
             // 
             // label1111
             // 
             this.label1111.AutoSize = true;
-            this.label1111.Location = new System.Drawing.Point(10, 28);
+            this.label1111.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1111.Location = new System.Drawing.Point(35, 64);
             this.label1111.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1111.Name = "label1111";
-            this.label1111.Size = new System.Drawing.Size(23, 12);
+            this.label1111.Size = new System.Drawing.Size(31, 16);
             this.label1111.TabIndex = 5;
             this.label1111.Text = "灯1";
             // 
-            // button1
+            // btnOpenLight1
             // 
-            this.button1.Location = new System.Drawing.Point(47, 24);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 20);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "打开";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOpenLight1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpenLight1.Location = new System.Drawing.Point(72, 57);
+            this.btnOpenLight1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOpenLight1.Name = "btnOpenLight1";
+            this.btnOpenLight1.Size = new System.Drawing.Size(60, 30);
+            this.btnOpenLight1.TabIndex = 4;
+            this.btnOpenLight1.Text = "打开";
+            this.btnOpenLight1.UseVisualStyleBackColor = true;
             // 
             // tpgRTControl
             // 
@@ -6063,9 +6079,9 @@ namespace LEDController.View
             ((System.ComponentModel.ISupportInitialize)(this.pbxSkylight1)).EndInit();
             this.tpgLightControl.ResumeLayout(false);
             this.tpgLightControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLight3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLight2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLight1)).EndInit();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -6290,96 +6306,96 @@ namespace LEDController.View
         private System.Windows.Forms.Button btnGreenLED12;
         private System.Windows.Forms.Button btnGreenLED4;
         private System.Windows.Forms.Panel panelLEDStatus;
-        private System.Windows.Forms.Button btnStatusDarkRedLED30;
-        private System.Windows.Forms.Button btnStatusDarkRedLED29;
-        private System.Windows.Forms.Button btnStatusDarkRedLED28;
-        private System.Windows.Forms.Button btnStatusDarkRedLED27;
-        private System.Windows.Forms.Button btnStatusRedLED30;
-        private System.Windows.Forms.Button btnStatusRedLED29;
-        private System.Windows.Forms.Button btnStatusRedLED28;
-        private System.Windows.Forms.Button btnStatusRedLED27;
-        private System.Windows.Forms.Button btnStatusGreenLED30;
-        private System.Windows.Forms.Button btnStatusGreenLED29;
-        private System.Windows.Forms.Button btnStatusGreenLED28;
-        private System.Windows.Forms.Button btnStatusGreenLED27;
-        private System.Windows.Forms.Button btnStatusDarkRedLED26;
-        private System.Windows.Forms.Button btnStatusDarkRedLED25;
-        private System.Windows.Forms.Button btnStatusDarkRedLED24;
-        private System.Windows.Forms.Button btnStatusDarkRedLED20;
-        private System.Windows.Forms.Button btnStatusDarkRedLED23;
-        private System.Windows.Forms.Button btnStatusDarkRedLED22;
-        private System.Windows.Forms.Button btnStatusDarkRedLED21;
-        private System.Windows.Forms.Button btnStatusDarkRedLED19;
-        private System.Windows.Forms.Button btnStatusDarkRedLED18;
-        private System.Windows.Forms.Button btnStatusDarkRedLED17;
-        private System.Windows.Forms.Button btnStatusDarkRedLED16;
-        private System.Windows.Forms.Button btnStatusDarkRedLED12;
-        private System.Windows.Forms.Button btnStatusDarkRedLED15;
-        private System.Windows.Forms.Button btnStatusDarkRedLED14;
-        private System.Windows.Forms.Button btnStatusDarkRedLED13;
-        private System.Windows.Forms.Button btnStatusDarkRedLED11;
-        private System.Windows.Forms.Button btnStatusDarkRedLED10;
-        private System.Windows.Forms.Button btnStatusDarkRedLED9;
-        private System.Windows.Forms.Button btnStatusDarkRedLED8;
-        private System.Windows.Forms.Button btnStatusDarkRedLED4;
-        private System.Windows.Forms.Button btnStatusDarkRedLED7;
-        private System.Windows.Forms.Button btnStatusDarkRedLED6;
-        private System.Windows.Forms.Button btnStatusDarkRedLED5;
-        private System.Windows.Forms.Button btnStatusDarkRedLED3;
-        private System.Windows.Forms.Button btnStatusDarkRedLED2;
-        private System.Windows.Forms.Button btnStatusDarkRedLED1;
-        private System.Windows.Forms.Button btnStatusRedLED26;
-        private System.Windows.Forms.Button btnStatusRedLED25;
-        private System.Windows.Forms.Button btnStatusGreenLED26;
-        private System.Windows.Forms.Button btnStatusGreenLED25;
-        private System.Windows.Forms.Button btnStatusRedLED24;
-        private System.Windows.Forms.Button btnStatusRedLED20;
-        private System.Windows.Forms.Button btnStatusRedLED23;
-        private System.Windows.Forms.Button btnStatusRedLED22;
-        private System.Windows.Forms.Button btnStatusRedLED21;
-        private System.Windows.Forms.Button btnStatusRedLED19;
-        private System.Windows.Forms.Button btnStatusRedLED18;
-        private System.Windows.Forms.Button btnStatusRedLED17;
-        private System.Windows.Forms.Button btnStatusGreenLED24;
-        private System.Windows.Forms.Button btnStatusGreenLED20;
-        private System.Windows.Forms.Button btnStatusGreenLED23;
-        private System.Windows.Forms.Button btnStatusGreenLED22;
-        private System.Windows.Forms.Button btnStatusGreenLED21;
-        private System.Windows.Forms.Button btnStatusGreenLED19;
-        private System.Windows.Forms.Button btnStatusGreenLED18;
-        private System.Windows.Forms.Button btnStatusGreenLED17;
-        private System.Windows.Forms.Button btnStatusRedLED16;
-        private System.Windows.Forms.Button btnStatusRedLED12;
-        private System.Windows.Forms.Button btnStatusRedLED15;
-        private System.Windows.Forms.Button btnStatusRedLED14;
-        private System.Windows.Forms.Button btnStatusRedLED13;
-        private System.Windows.Forms.Button btnStatusRedLED11;
-        private System.Windows.Forms.Button btnStatusRedLED10;
-        private System.Windows.Forms.Button btnStatusRedLED9;
-        private System.Windows.Forms.Button btnStatusGreenLED16;
-        private System.Windows.Forms.Button btnStatusGreenLED12;
-        private System.Windows.Forms.Button btnStatusGreenLED15;
-        private System.Windows.Forms.Button btnStatusGreenLED14;
-        private System.Windows.Forms.Button btnStatusGreenLED13;
-        private System.Windows.Forms.Button btnStatusGreenLED11;
-        private System.Windows.Forms.Button btnStatusGreenLED10;
-        private System.Windows.Forms.Button btnStatusGreenLED9;
-        private System.Windows.Forms.Button btnStatusRedLED8;
-        private System.Windows.Forms.Button btnStatusRedLED4;
-        private System.Windows.Forms.Button btnStatusRedLED7;
-        private System.Windows.Forms.Button btnStatusRedLED6;
-        private System.Windows.Forms.Button btnStatusRedLED5;
-        private System.Windows.Forms.Button btnStatusRedLED3;
-        private System.Windows.Forms.Button btnStatusRedLED2;
-        private System.Windows.Forms.Button btnStatusRedLED1;
-        private System.Windows.Forms.Button btnStatusGreenLED8;
-        private System.Windows.Forms.Button btnStatusGreenLED4;
-        private System.Windows.Forms.Button btnStatusGreenLED7;
-        private System.Windows.Forms.Button btnStatusGreenLED6;
-        private System.Windows.Forms.Button btnStatusGreenLED5;
-        private System.Windows.Forms.Button btnStatusGreenLED3;
-        private System.Windows.Forms.Button btnStatusGreenLED2;
-        private System.Windows.Forms.Button btnStatusGreenLED1;
+        private System.Windows.Forms.Button btnStatusLED90;
+        private System.Windows.Forms.Button btnStatusLED89;
+        private System.Windows.Forms.Button btnStatusLED88;
+        private System.Windows.Forms.Button btnStatusLED87;
+        private System.Windows.Forms.Button btnStatusLED60;
+        private System.Windows.Forms.Button btnStatusLED59;
+        private System.Windows.Forms.Button btnStatusLED58;
+        private System.Windows.Forms.Button btnStatusLED57;
+        private System.Windows.Forms.Button btnStatusLED30;
+        private System.Windows.Forms.Button btnStatusLED29;
+        private System.Windows.Forms.Button btnStatusLED28;
+        private System.Windows.Forms.Button btnStatusLED27;
+        private System.Windows.Forms.Button btnStatusLED86;
+        private System.Windows.Forms.Button btnStatusLED85;
+        private System.Windows.Forms.Button btnStatusLED84;
+        private System.Windows.Forms.Button btnStatusLED80;
+        private System.Windows.Forms.Button btnStatusLED83;
+        private System.Windows.Forms.Button btnStatusLED82;
+        private System.Windows.Forms.Button btnStatusLED81;
+        private System.Windows.Forms.Button btnStatusLED79;
+        private System.Windows.Forms.Button btnStatusLED78;
+        private System.Windows.Forms.Button btnStatusLED77;
+        private System.Windows.Forms.Button btnStatusLED76;
+        private System.Windows.Forms.Button btnStatusLED72;
+        private System.Windows.Forms.Button btnStatusLED75;
+        private System.Windows.Forms.Button btnStatusLED74;
+        private System.Windows.Forms.Button btnStatusLED73;
+        private System.Windows.Forms.Button btnStatusLED71;
+        private System.Windows.Forms.Button btnStatusLED70;
+        private System.Windows.Forms.Button btnStatusLED69;
+        private System.Windows.Forms.Button btnStatusLED68;
+        private System.Windows.Forms.Button btnStatusLED64;
+        private System.Windows.Forms.Button btnStatusLED67;
+        private System.Windows.Forms.Button btnStatusLED66;
+        private System.Windows.Forms.Button btnStatusLED65;
+        private System.Windows.Forms.Button btnStatusLED63;
+        private System.Windows.Forms.Button btnStatusLED62;
+        private System.Windows.Forms.Button btnStatusLED61;
+        private System.Windows.Forms.Button btnStatusLED56;
+        private System.Windows.Forms.Button btnStatusLED55;
+        private System.Windows.Forms.Button btnStatusLED26;
+        private System.Windows.Forms.Button btnStatusLED25;
+        private System.Windows.Forms.Button btnStatusLED54;
+        private System.Windows.Forms.Button btnStatusLED50;
+        private System.Windows.Forms.Button btnStatusLED53;
+        private System.Windows.Forms.Button btnStatusLED52;
+        private System.Windows.Forms.Button btnStatusLED51;
+        private System.Windows.Forms.Button btnStatusLED49;
+        private System.Windows.Forms.Button btnStatusLED48;
+        private System.Windows.Forms.Button btnStatusLED47;
+        private System.Windows.Forms.Button btnStatusLED24;
+        private System.Windows.Forms.Button btnStatusLED20;
+        private System.Windows.Forms.Button btnStatusLED23;
+        private System.Windows.Forms.Button btnStatusLED22;
+        private System.Windows.Forms.Button btnStatusLED21;
+        private System.Windows.Forms.Button btnStatusLED19;
+        private System.Windows.Forms.Button btnStatusLED18;
+        private System.Windows.Forms.Button btnStatusLED17;
+        private System.Windows.Forms.Button btnStatusLED46;
+        private System.Windows.Forms.Button btnStatusLED42;
+        private System.Windows.Forms.Button btnStatusLED45;
+        private System.Windows.Forms.Button btnStatusLED44;
+        private System.Windows.Forms.Button btnStatusLED43;
+        private System.Windows.Forms.Button btnStatusLED41;
+        private System.Windows.Forms.Button btnStatusLED40;
+        private System.Windows.Forms.Button btnStatusLED39;
+        private System.Windows.Forms.Button btnStatusLED16;
+        private System.Windows.Forms.Button btnStatusLED12;
+        private System.Windows.Forms.Button btnStatusLED15;
+        private System.Windows.Forms.Button btnStatusLED14;
+        private System.Windows.Forms.Button btnStatusLED13;
+        private System.Windows.Forms.Button btnStatusLED11;
+        private System.Windows.Forms.Button btnStatusLED10;
+        private System.Windows.Forms.Button btnStatusLED9;
+        private System.Windows.Forms.Button btnStatusLED38;
+        private System.Windows.Forms.Button btnStatusLED34;
+        private System.Windows.Forms.Button btnStatusLED37;
+        private System.Windows.Forms.Button btnStatusLED36;
+        private System.Windows.Forms.Button btnStatusLED35;
+        private System.Windows.Forms.Button btnStatusLED33;
+        private System.Windows.Forms.Button btnStatusLED32;
+        private System.Windows.Forms.Button btnStatusLED31;
+        private System.Windows.Forms.Button btnStatusLED8;
+        private System.Windows.Forms.Button btnStatusLED4;
+        private System.Windows.Forms.Button btnStatusLED7;
+        private System.Windows.Forms.Button btnStatusLED6;
+        private System.Windows.Forms.Button btnStatusLED5;
+        private System.Windows.Forms.Button btnStatusLED3;
+        private System.Windows.Forms.Button btnStatusLED2;
+        private System.Windows.Forms.Button btnStatusLED1;
         private System.Windows.Forms.Label btnRecStatus1;
         private System.Windows.Forms.Label btnRecStatus3;
         private System.Windows.Forms.Label btnRecStatus2;
@@ -6419,18 +6435,18 @@ namespace LEDController.View
         private System.Windows.Forms.Label label9;
         private ScottPlot.FormsPlot formsPlotRTD;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pbxLight1;
+        private System.Windows.Forms.Button btnCloseLight1;
         private System.Windows.Forms.Label label1111;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnOpenLight1;
+        private System.Windows.Forms.PictureBox pbxLight3;
+        private System.Windows.Forms.Button btnCloseLight3;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnOpenLight3;
+        private System.Windows.Forms.PictureBox pbxLight2;
+        private System.Windows.Forms.Button btnCloseLight2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnOpenLight2;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCloseCOM;

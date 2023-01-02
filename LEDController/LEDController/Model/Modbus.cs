@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
 using System.IO.Ports;
+using System.Threading;
 
 namespace LEDController.Model
 {
@@ -19,7 +21,11 @@ namespace LEDController.Model
 
         public abstract void Write(byte addrPLC, byte function, ushort register, byte[] data);
 
+        public abstract byte[] WriteReceive(byte addrPLC, byte function, ushort register, byte[] data);
+
         public abstract void WriteMsg(string msg, bool isSendHEX);
+
+        public abstract byte[] ReadMsg(bool isReceiveHEX);
 
         public byte[] MakePacket(byte addrPLC, byte function, ushort register, ushort count)
         {
@@ -40,10 +46,7 @@ namespace LEDController.Model
                 addrPLC,
                 function,
                 (byte)(register >> 8),
-                (byte)register,
-                (byte)(count >> 8),
-                (byte)count,
-                (byte)data.Count()
+                (byte)register
             };
 
             return header.Concat(data).ToArray();
@@ -86,7 +89,6 @@ namespace LEDController.Model
         public float[] ReadHoldingFloat(byte addrPLC, UInt16 register, UInt16 count)
         {
             byte[] rVal = Read(addrPLC, 3, register, (ushort)(count * 2));
-            byte[] tmpVals = new byte[4];
             float[] values = new float[rVal.Length / 4];
             for (int i = 0; i < rVal.Length; i += 4)
             {
@@ -149,6 +151,8 @@ namespace LEDController.Model
         private Socket socket;
         private string _ipAddress;
         private string _port;
+        public const int SendBufferSize = 2 * 1024;
+        public const int ReceiveBufferSize = 2 * 1024;
 
         public ModbusTCP(string ipAddress, int port = 502)
         {
@@ -168,7 +172,7 @@ namespace LEDController.Model
             if (!isSuccess)
             {
                 this.socket.Close();
-                throw new System.IO.IOException("Failed in connecting TCP/IP.");
+                throw new IOException("Failed in connecting TCP/IP.");
             }
             else
             {
@@ -211,13 +215,20 @@ namespace LEDController.Model
             byte[] response;
             ushort count;
 
-            socket.Send(packet);
-            socket.Receive(mbap, 0, mbap.Length, SocketFlags.None);
-            count = mbap[4];
-            count <<= 8;
-            count += mbap[5];
-            response = new byte[count - 1];
-            socket.Receive(response, 0, response.Count(), SocketFlags.None);
+            try
+            {
+                socket.Send(packet);
+                socket.Receive(mbap, 0, mbap.Length, SocketFlags.None);
+                count = mbap[4];
+                count <<= 8;
+                count += mbap[5];
+                response = new byte[count - 1];
+                socket.Receive(response, 0, response.Count(), SocketFlags.None);
+            }
+            catch
+            {
+                throw new SocketException(10060);
+            }
 
             if (response[0] > 128)
             {
@@ -243,16 +254,17 @@ namespace LEDController.Model
         public override void Write(byte addrPLC, byte function, ushort register, byte[] data)
         {
             byte[] packet;
-            if (function == 16)
-            {
-                packet = MakePacket(addrPLC, function, register, data);
-            }
-            else
-            {
-                throw new System.IO.IOException("Only function code 16 was implemented for writes");
-            }
+            packet = MakePacket(addrPLC, function, register, data);
 
-            SendReceive(MakeMBAP(addrPLC, (ushort)packet.Count()).Concat(packet).ToArray());
+            socket.Send(MakeMBAP(addrPLC, (ushort)packet.Count()).Concat(packet).ToArray());
+        }
+
+        public override byte[] WriteReceive(byte addrPLC, byte function, ushort register, byte[] data)
+        {
+            byte[] packet;
+            packet = MakePacket(addrPLC, function, register, data);
+
+            return SendReceive(MakeMBAP(addrPLC, (ushort)packet.Count()).Concat(packet).ToArray());
         }
 
         public override void WriteMsg(string msg, bool isSendHEX)
@@ -273,6 +285,45 @@ namespace LEDController.Model
                 this.socket.Send(Encoding.UTF8.GetBytes(msg));
             }
         }
+
+        public override byte[] ReadMsg(bool isReceiveHEX)
+        {
+            byte[] buffer = new byte[SendBufferSize];
+            int msgLen = 0;
+
+            try
+            {
+                while (socket.Available > 0)
+                {
+                    msgLen += socket.Receive(buffer, msgLen, buffer.Length - msgLen, SocketFlags.None);
+                    Thread.Sleep(50);
+                }
+            }
+            catch (SocketException ex)
+            {
+                throw ex;
+            }
+
+            byte[] recData = new byte[msgLen];
+            if (isReceiveHEX)
+            {
+                int value;
+                for (int i = 0; i < msgLen; i++)
+                {
+                    value = Convert.ToInt32(buffer[i]);
+                    recData[i] = Convert.ToByte(String.Format("{0:X}", value));
+                }
+            }
+            else
+            {
+                for (int i = 0; i < msgLen; i++)
+                {
+                    recData[i] = buffer[i];
+                }
+            }
+
+            return recData;
+        }
     }
 
     public class ModbusRTU : Modbus
@@ -284,6 +335,8 @@ namespace LEDController.Model
         private string _dataBit;
         private string _checkBit;
         private string _stopBit;
+        public const int SendBufferSize = 2 * 1024;
+        public const int ReceiveBufferSize = 2 * 1024;
 
         public ModbusRTU(string portName, string baudRate, string dataBit, string checkBit, string stopBit)
         {
@@ -344,7 +397,7 @@ namespace LEDController.Model
                 }
                 catch
                 {
-                    throw new System.IO.IOException("Failed in connection serial port.");
+                    throw new IOException("Failed in connection serial port.");
                 }
             }
             else
@@ -391,18 +444,38 @@ namespace LEDController.Model
 
         private byte[] SendReceive(byte[] packet)
         {
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[ReceiveBufferSize];
             byte[] rtn;
+            int msgLen;
             int timeoutTmp;
-            serialPort.Write(packet, 0, packet.Count());
-            System.Threading.Thread.Sleep(modbusTimeout);
-            serialPort.Read(buffer, 0, 1);
-            timeoutTmp = serialPort.ReadTimeout;
-            serialPort.ReadTimeout = modbusTimeout;
-            serialPort.Read(buffer, 1, 1023);
-            if (buffer[1] > 128)
+            try
             {
-                throw new System.IO.IOException("ModBus RTU error(" + (buffer[2]) + ")");
+                serialPort.Write(packet, 0, packet.Count());
+                Thread.Sleep(modbusTimeout);
+                msgLen = serialPort.Read(buffer, 0, 1);
+                timeoutTmp = serialPort.ReadTimeout;
+                serialPort.ReadTimeout = modbusTimeout;
+                msgLen += serialPort.Read(buffer, 1, ReceiveBufferSize - 1);
+            }
+            catch
+            {
+                return new byte[0];
+                // throw new IOException("ModBus RTU error: No data received.");
+            }
+
+            byte[] subArray = new byte[msgLen - 2];
+            if (msgLen > 3)
+            {
+                Array.Copy(buffer, 0, subArray, 0, msgLen - 2);
+            }
+            else
+            {
+                throw new IOException("ModBus RTU error: wrong data package.");
+            }
+
+            if ((buffer[1] > 128) || (MakeCRC(subArray, subArray.Length) == BitConverter.ToInt16(new byte[4] {buffer[msgLen - 4], buffer[msgLen - 3], buffer[msgLen - 2], buffer[msgLen - 1]}, 0)))
+            {
+                throw new IOException("ModBus RTU error(" + (buffer[2]) + ")");
             }
             else if (buffer[1] < 5)
             {
@@ -432,17 +505,22 @@ namespace LEDController.Model
         public override void Write(byte addrPLC, byte function, ushort register, byte[] data)
         {
             byte[] packet;
-            if (function == 16)
-            {
-                packet = MakePacket(addrPLC, function, register, data);
-            }
-            else
-            {
-                throw new System.IO.IOException("Only function code 16 is implemented for writes");
-            }
+            packet = MakePacket(addrPLC, function, register, data);
             ushort crc = MakeCRC(packet, packet.Count());
             byte[] crcBytes = new byte[] { (byte)(crc & 0xFF), (byte)((crc >> 8) & 0xFF) };
-            SendReceive(packet.Concat(crcBytes).ToArray());
+            
+            byte[] sendData = packet.Concat(crcBytes).ToArray();
+            serialPort.Write(sendData, 0, sendData.Count());
+        }
+
+        public override byte[] WriteReceive(byte addrPLC, byte function, ushort register, byte[] data)
+        {
+            byte[] packet;
+            packet = MakePacket(addrPLC, function, register, data);
+            ushort crc = MakeCRC(packet, packet.Count());
+            byte[] crcBytes = new byte[] { (byte)(crc & 0xFF), (byte)((crc >> 8) & 0xFF) };
+            
+            return SendReceive(packet.Concat(crcBytes).ToArray());
         }
 
         public override void WriteMsg(string msg, bool isSendHEX)
@@ -464,6 +542,46 @@ namespace LEDController.Model
             {
                 this.serialPort.Write(msg);
             }
+        }
+        
+
+        public override byte[] ReadMsg(bool isReceiveHEX)
+        {
+            byte[] buffer = new byte[SendBufferSize];
+            int msgLen = 0;
+
+            try
+            {
+                while (serialPort.BytesToRead > 0)
+                {
+                    msgLen += serialPort.Read(buffer, msgLen, buffer.Length - msgLen);
+                    Thread.Sleep(50);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            byte[] recData = new byte[msgLen];
+            if (isReceiveHEX)
+            {
+                int value;
+                for (int i = 0; i < msgLen; i++)
+                {
+                    value = Convert.ToInt32(buffer[i]);
+                    recData[i] = Convert.ToByte(String.Format("{0:X}", value));
+                }
+            }
+            else
+            {
+                for (int i = 0; i < msgLen; i++)
+                {
+                    recData[i] = buffer[i];
+                }
+            }
+
+            return recData;
         }
     }
 }

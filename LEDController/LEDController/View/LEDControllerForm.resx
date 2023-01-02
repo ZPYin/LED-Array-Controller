@@ -4740,7 +4740,7 @@
         y7Isy7Isy7Isy7Isy7L8jLzzzv8BZuhlSam91hcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox4.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight3.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
@@ -4796,7 +4796,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
@@ -4852,7 +4852,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox4.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight3.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
@@ -4908,7 +4908,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox3.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight2.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
@@ -4964,7 +4964,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
@@ -5020,7 +5020,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox3.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight2.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
@@ -5076,7 +5076,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox2.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight1.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
@@ -5132,7 +5132,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
@@ -5188,7 +5188,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox2.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxLight1.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAC65JREFUeF7t
         nX2MXFUZh5vGaMIfhFY+gliMsG47dzp3d1kMwQ+yKjRpUhsMII2iEdBGtCIVbEgTtNEU2oolpcGv2BC1
