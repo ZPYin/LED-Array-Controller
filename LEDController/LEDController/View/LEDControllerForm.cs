@@ -1,16 +1,11 @@
-﻿using System;
+﻿using ScottPlot;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Net.Sockets;
 using System.Threading;
+using System.Windows.Forms;
 using System.Windows.Threading;
-using ScottPlot;
 
 namespace LEDController.View
 {
@@ -24,30 +19,42 @@ namespace LEDController.View
             InitializeComponent();
             this.KeyPreview = true;
 
-            // 初始化控件
             cbxQueryParam.SelectedIndex = 0;
             cbxQueryWaitTime.SelectedIndex = 0;
             formsLEDStatusPlot = this.formsPlotRTD;
         }
 
-        public event EventHandler<EventArgs> Connect;
-        public event EventHandler<EventArgs> CloseConnect;
-        public event EventHandler<EventArgs> SendTestData;
-        public event EventHandler<EventFixLEDArgs> OpenFixLED;
-        public event EventHandler<EventFixLEDArgs> CloseFixLED;
-        public event EventHandler<EventFixLEDArgs> HandleFixLED;
-        public event EventHandler<EventDimLEDArgs> SetDimLED;
+        public event EventHandler<EventDimLEDArgs> ClearDimLEDStatus;
+        public event EventHandler<EventLEDArgs> ClearFixLEDStatus;
         public event EventHandler<EventDimLEDArgs> CloseDimLED;
+        public event EventHandler<EventLEDArgs> CloseFixLED;
+        public event EventHandler<EventArgs> CloseSerialPort;
+        public event EventHandler<EventArgs> CloseTCP;
+        public event EventHandler<EventArgs> ConnectSerialPort;
+        public event EventHandler<EventArgs> ConnectTCP;
         public event EventHandler<EventDimLEDArgs> HandleDimLED;
-        public event EventHandler<EventLEDArgs> ShowSingleLEDStatus;
-        public event EventHandler<EventLEDArgs> ClearSingleLEDStatus;
-        public event EventHandler<EventArgs> UpdateScrollBar;
-        public event EventHandler<EventArgs> UpdateLEDTbx;
-        public event EventHandler<EventArgs> ShowLEDStatus;
+        public event EventHandler<EventLEDArgs> HandleFixLED;
+        public event EventHandler<EventLEDArgs> OpenFixLED;
         public event EventHandler<EventArgs> OpenWithCfgFile;
+        public event EventHandler<EventArgs> SaveAsCfgFile;
         public event EventHandler<EventArgs> SaveCfgFile;
-        public event EventHandler<EventArgs> SaveasCfgFile;
+        public event EventHandler<EventArgs> SendTestData;
+        public event EventHandler<EventDimLEDArgs> SetDimLED;
+        public event EventHandler<EventDimLEDArgs> ShowDimLEDStatus;
+        public event EventHandler<EventArgs> ShowChillerStatus;
+        public event EventHandler<EventLEDArgs> ShowFixLEDStatus;
+        public event EventHandler<EventArgs> ShowLEDStatus;
+        public event EventHandler<EventArgs> StopShowLEDStatus;
         public event EventHandler<EventArgs> ShowVersion;
+        public event EventHandler<EventLightArgs> TurnOffLight;
+        public event EventHandler<EventSkyLightArgs> TurnOffSkyLight;
+        public event EventHandler<EventLightArgs> TurnOnLight;
+        public event EventHandler<EventSkyLightArgs> TurnOnSkyLight;
+        public event EventHandler<EventDimLEDArgs> UpdateLEDTbx;
+        public event EventHandler<EventDimLEDArgs> UpdateScrollBar;
+        public event EventHandler<EventArgs> SelectStatusDataSaveFolder;
+        public event EventHandler<EventArgs> ChangeStatusDataSaveFolder;
+
         public DispatcherTimer timer = new DispatcherTimer();
 
         private Size m_szInit;   //初始窗体大小
@@ -62,16 +69,6 @@ namespace LEDController.View
         {
             get { return cbxQueryWaitTime.SelectedIndex; }
             set { cbxQueryWaitTime.SelectedIndex = value; }
-        }
-        public double minLEDStatusValue 
-        { 
-            get { return Convert.ToDouble(tbxMinValue.Text); }
-            set { tbxMinValue.Text = Convert.ToString(value); }
-        }
-        public double maxLEDStatusValue
-        {
-            get { return Convert.ToDouble(tbxMaxValue.Text); }
-            set { tbxMaxValue.Text = Convert.ToString(value); }
         }
         public Color btnRecStatus1Color
         {
@@ -127,30 +124,13 @@ namespace LEDController.View
                 btnSendStatus3.Refresh(); 
             }
         }
-        public Color btnConnectColor
-        {
-            get { return btnConnect.BackColor; }
-            set 
-            { 
-                btnConnect.BackColor = value; 
-                btnConnect.Refresh(); 
-            }
-        }
-        public Color btnCloseColor
-        {
-            get { return btnClose.BackColor; }
-            set 
-            { 
-                btnClose.BackColor = value; 
-                btnClose.Refresh(); 
-            }
-        }
+
         public Color[] LEDStatusColors
         {
             get 
             {
                 List<Control> list = new List<Control>();
-                GetAllControl(this.panelLEDStatus, list);
+                GetAllControl(this.panelLEDStatus, list, "LED");
                 Color[] LEDColors = new Color[list.Count()];
                 
                 foreach (Control control in list)
@@ -166,7 +146,7 @@ namespace LEDController.View
             set 
             {
                 List<Control> list = new List<Control>();
-                GetAllControl(this.panelLEDStatus, list);
+                GetAllControl(this.panelLEDStatus, list, "LED");
 
                 foreach (Control control in list)
                 {
@@ -177,267 +157,17 @@ namespace LEDController.View
                 }
             }
         }
-        public string slaveIP
-        {
-            get { return tbxIP.Text; }
-            set { tbxIP.Text = value; }
-        }
-        public string slavePort
-        {
-            get { return tbxPort.Text; }
-            set { tbxPort.Text = value; }
-        }
-        public string tbxConnectMsgText
-        {
-            get { return tbxConnectMsg.Text; }
-            set { tbxConnectMsg.AppendText(value); }
-        }
+
         public string toolStripConnectionStatusText
         {
             get { return toolStripConnectionStatus.Text; }
             set { toolStripConnectionStatus.Text = value; }
         }
+
         public string toolStripLEDStatusText
         {
             get { return toolStripLEDStatus.Text; }
             set { toolStripLEDStatus.Text = value; }
-        }
-        public string tsslGreenLEDTPText
-        {
-            get { return tsslGreenLEDTotalPower.Text; }
-            set { tsslGreenLEDTotalPower.Text = value; }
-        }
-        public string tsslRedLEDTPText
-        {
-            get { return tsslRedLEDTotalPower.Text; }
-            set { tsslRedLEDTotalPower.Text = value; }
-        }
-        public string tsslDarkRedTPText
-        {
-            get { return tsslDarkRedLEDTotalPower.Text; }
-            set { tsslDarkRedLEDTotalPower.Text = value; }
-        }
-        public string tsslTemp1Text
-        {
-            get { return tsslTemp1.Text; }
-            set { tsslTemp1.Text = value; }
-        }
-        public string tsslTemp2Text
-        {
-            get { return tsslTemp2.Text; }
-            set { tsslTemp2.Text = value; }
-        }
-        public string tsslTemp3Text
-        {
-            get { return tsslTemp3.Text; }
-            set { tsslTemp3.Text = value; }
-        }
-        public string tsslTemp4Text
-        {
-            get { return tsslTemp4.Text; }
-            set { tsslTemp4.Text = value; }
-        }
-        public string testCmdStr
-        {
-            get { return tbxTestCmd.Text; }
-            set { tbxTestCmd.Text = value; }
-        }
-        public string testMsgRecStr
-        {
-            get { return tbxTestRec.Text; }
-            set { tbxTestRec.AppendText(value); }
-        }
-        public int sbarDimLED1Value
-        {
-            get { return sbarDimLED1.Value; }
-            set { sbarDimLED1.Value = value; }
-        }
-        public int sbarDimLED2Value
-        {
-            get { return sbarDimLED2.Value; }
-            set { sbarDimLED2.Value = value; }
-        }
-        public int sbarDimLED3Value
-        {
-            get { return sbarDimLED3.Value; }
-            set { sbarDimLED3.Value = value; }
-        }
-        public int sbarDimLED4Value
-        {
-            get { return sbarDimLED4.Value; }
-            set { sbarDimLED4.Value = value; }
-        }
-        public int sbarDimLED5Value
-        {
-            get { return sbarDimLED5.Value; }
-            set { sbarDimLED5.Value = value; }
-        }
-        public int sbarDimLED6Value
-        {
-            get { return sbarDimLED6.Value; }
-            set { sbarDimLED6.Value = value; }
-        }
-        public int sbarDimLED7Value
-        {
-            get { return sbarDimLED7.Value; }
-            set { sbarDimLED7.Value = value; }
-        }
-        public int sbarDimLED8Value
-        {
-            get { return sbarDimLED8.Value; }
-            set { sbarDimLED8.Value = value; }
-        }
-        public int sbarDimLED9Value
-        {
-            get { return sbarDimLED9.Value; }
-            set { sbarDimLED9.Value = value; }
-        }
-        public int sbarDimLED10Value
-        {
-            get { return sbarDimLED10.Value; }
-            set { sbarDimLED10.Value = value; }
-        }
-        public int sbarDimLED11Value
-        {
-            get { return sbarDimLED11.Value; }
-            set { sbarDimLED11.Value = value; }
-        }
-        public int sbarDimLED12Value
-        {
-            get { return sbarDimLED12.Value; }
-            set { sbarDimLED12.Value = value; }
-        }
-        public string tbxDimLED1Text
-        {
-            get { return tbxDimLED1.Text; }
-            set { tbxDimLED1.Text = value; }
-        }
-        public string tbxDimLED2Text
-        {
-            get { return tbxDimLED2.Text; }
-            set { tbxDimLED2.Text = value; }
-        }
-        public string tbxDimLED3Text
-        {
-            get { return tbxDimLED3.Text; }
-            set { tbxDimLED3.Text = value; }
-        }
-        public string tbxDimLED4Text
-        {
-            get { return tbxDimLED4.Text; }
-            set { tbxDimLED4.Text = value; }
-        }
-        public string tbxDimLED5Text
-        {
-            get { return tbxDimLED5.Text; }
-            set { tbxDimLED5.Text = value; }
-        }
-        public string tbxDimLED6Text
-        {
-            get { return tbxDimLED6.Text; }
-            set { tbxDimLED6.Text = value; }
-        }
-        public string tbxDimLED7Text
-        {
-            get { return tbxDimLED7.Text; }
-            set { tbxDimLED7.Text = value; }
-        }
-        public string tbxDimLED8Text
-        {
-            get { return tbxDimLED8.Text; }
-            set { tbxDimLED8.Text = value; }
-        }
-        public string tbxDimLED9Text
-        {
-            get { return tbxDimLED9.Text; }
-            set { tbxDimLED9.Text = value; }
-        }
-        public string tbxDimLED10Text
-        {
-            get { return tbxDimLED10.Text; }
-            set { tbxDimLED10.Text = value; }
-        }
-        public string tbxDimLED11Text
-        {
-            get { return tbxDimLED11.Text; }
-            set { tbxDimLED11.Text = value; }
-        }
-        public string tbxDimLED12Text
-        {
-            get { return tbxDimLED12.Text; }
-            set { tbxDimLED12.Text = value; }
-        }
-        public string lblGreenLEDMaxLeftText
-        {
-            get { return lblGreenLEDMaxLeft.Text; }
-            set { lblGreenLEDMaxLeft.Text = value; }
-        }
-        public string lblGreenLEDMinLeftText
-        {
-            get { return lblGreenLEDMinLeft.Text; }
-            set { lblGreenLEDMinLeft.Text = value; }
-        }
-        public string lblGreenLEDMaxRightText
-        {
-            get { return lblGreenLEDMaxRight.Text; }
-            set { lblGreenLEDMaxRight.Text = value; }
-        }
-        public string lblGreenLEDMinRightText
-        {
-            get { return lblGreenLEDMinRight.Text; }
-            set { lblGreenLEDMinRight.Text = value; }
-        }
-        public string lblRedLEDMaxLeftText
-        {
-            get { return lblRedLEDMaxLeft.Text; }
-            set { lblRedLEDMaxLeft.Text = value; }
-        }
-        public string lblRedLEDMinLeftText
-        {
-            get { return lblRedLEDMinLeft.Text; }
-            set { lblRedLEDMinLeft.Text = value; }
-        }
-        public string lblRedLEDMaxRightText
-        {
-            get { return lblRedLEDMaxRight.Text; }
-            set { lblRedLEDMaxRight.Text = value; }
-        }
-        public string lblRedLEDMinRightText
-        {
-            get { return lblRedLEDMinRight.Text; }
-            set { lblRedLEDMinRight.Text = value; }
-        }
-        public string lblDarkRedLEDMaxLeftText
-        {
-            get { return lblDarkRedLEDMaxLeft.Text; }
-            set { lblDarkRedLEDMaxLeft.Text = value; }
-        }
-        public string lblDarkRedLEDMinLeftText
-        {
-            get { return lblDarkRedLEDMinLeft.Text; }
-            set { lblDarkRedLEDMinLeft.Text = value; }
-        }
-        public string lblDarkRedLEDMaxRightText
-        {
-            get { return lblDarkRedLEDMaxRight.Text; }
-            set { lblDarkRedLEDMaxRight.Text = value; } 
-        }
-        public string lblDarkRedLEDMinRightText
-        {
-            get { return lblDarkRedLEDMinRight.Text; }
-            set { lblDarkRedLEDMinRight.Text = value; }
-        }
-
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            // Click connect button
-            Connect?.Invoke(sender, e);
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            // Click disconnect button
-            CloseConnect?.Invoke(sender, e);
         }
 
         private void btnSendTestMsg_Click(object sender, EventArgs e)
@@ -451,28 +181,7 @@ namespace LEDController.View
             Application.Exit();
         }
 
-        private void sbarDimLED1_Scroll(object sender, EventArgs e)
-        {
-            // Update LED power textbox
-            UpdateLEDTbx?.Invoke(sender, e);
-        }
-
-        private void sbarDimLED5_Scroll(object sender, EventArgs e)
-        {
-            // Update LED power textbox
-            UpdateLEDTbx?.Invoke(sender, e);
-        }
-
-        private void tbxDimLED1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Update scroll bar
-                UpdateScrollBar?.Invoke(sender, e);
-            }
-        }
-
-        private void GetAllControl(Control c, List<Control> list)
+        public void GetAllControl(Control c, List<Control> list)
         {
             // Get all controls
             foreach (Control control in c.Controls)
@@ -480,21 +189,43 @@ namespace LEDController.View
                 list.Add(control);
 
                 if (control.GetType() == typeof(Panel))
+                {
                     GetAllControl(control, list);
+                }
             }
         }
 
-        private void GetAllControl(Control c, List<Control> list, string substr)
+        public void GetAllControl(Control c, List<Control> list, string substr)
         {
             // Get all controls
             foreach (Control control in c.Controls)
             {
                 if (control.Name.Contains(substr))
+                {
                     list.Add(control);
+                }
 
                 if (control.GetType() == typeof(Panel))
+                {
                     GetAllControl(control, list);
+                }
             }
+        }
+
+        public int GetLEDIndex(string source, string value)
+        {
+            return Convert.ToInt16(source.Substring(EndIndexOf(source, value)));
+        }
+
+        public int EndIndexOf(string source, string value)
+        {
+            int index = source.IndexOf(value);
+            if (index >= 0)
+            {
+                index += value.Length;
+            }
+
+            return index;
         }
 
         private void btnOpenGreenFixLED_Click(object sender, EventArgs e)
@@ -502,13 +233,13 @@ namespace LEDController.View
             // Turn on all Green Fix LEDs
             this.Cursor = Cursors.WaitCursor;
             List<Control> list = new List<Control>();
-            GetAllControl(this.panelGreenFixLED, list, "btnLED");
+            GetAllControl(this.panelGreenFixLED, list, "btnGreenLED");
 
             for (int i = 0; i < list.Count(); i++)
             {
                 int LEDIndex = i + 1;
-                Button btn = (Button)(panelGreenFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
-                OpenFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                Button btn = (Button)(panelGreenFixLED.Controls.Find($"btnGreenLED{LEDIndex}", true)[0]);
+                OpenFixLED?.Invoke(btn, new EventLEDArgs(LEDIndex, 3));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -518,14 +249,14 @@ namespace LEDController.View
         {
             // Turn off all Green LEDs
             this.Cursor = Cursors.WaitCursor;
-            List<Control> list = new List<Control>();
-            GetAllControl(this.panelGreenFixLED, list, "btnLED");
+            List<Control> greenLEDList = new List<Control>();
+            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnGreenLED");
 
-            for (int i = 0; i < list.Count(); i++)
+            for (int i = 0; i < greenLEDList.Count(); i++)
             {
                 int LEDIndex = i + 1;
-                Button btn = (Button)(panelGreenFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
-                CloseFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                Button btn = (Button)(panelGreenFixLED.Controls.Find($"btnGreenLED{LEDIndex}", true)[0]);
+                CloseFixLED?.Invoke(btn, new EventLEDArgs(LEDIndex, 3));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -536,18 +267,14 @@ namespace LEDController.View
             // Turn on all Red Fix LEDs
             this.Cursor = Cursors.WaitCursor;
 
-            List<Control> greenLEDList = new List<Control>();
-            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnLED");
-            int nGreenFixLED = greenLEDList.Count();
+            List<Control> redLEDList = new List<Control>();
+            GetAllControl(this.panelRedFixLED, redLEDList, "btnRedLED");
 
-            List<Control> list = new List<Control>();
-            GetAllControl(this.panelRedFixLED, list, "btnLED");
-
-            for (int i = 0; i < list.Count(); i++)
+            for (int i = 0; i < redLEDList.Count(); i++)
             {
-                int LEDIndex = i + 1 + nGreenFixLED;
-                Button btn = (Button)(panelRedFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
-                OpenFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                int LEDIndex = i + 1;
+                Button btn = (Button)(panelRedFixLED.Controls.Find($"btnRedLED{LEDIndex}", true)[0]);
+                OpenFixLED?.Invoke(btn, new EventLEDArgs(LEDIndex, 1));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -558,18 +285,14 @@ namespace LEDController.View
             // Turn on all Red Fix LEDs
             this.Cursor = Cursors.WaitCursor;
 
-            List<Control> greenLEDList = new List<Control>();
-            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnLED");
-            int nGreenFixLED = greenLEDList.Count();
+            List<Control> redLEDList = new List<Control>();
+            GetAllControl(this.panelRedFixLED, redLEDList, "btnRedLED");
 
-            List<Control> list = new List<Control>();
-            GetAllControl(this.panelRedFixLED, list, "btnLED");
-
-            for (int i = 0; i < list.Count(); i++)
+            for (int i = 0; i < redLEDList.Count(); i++)
             {
-                int LEDIndex = i + 1 + nGreenFixLED;
-                Button btn = (Button)(panelRedFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
-                CloseFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                int LEDIndex = i + 1;
+                Button btn = (Button)(panelRedFixLED.Controls.Find($"btnRedLED{LEDIndex}", true)[0]);
+                CloseFixLED?.Invoke(btn, new EventLEDArgs(LEDIndex, 1));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -580,21 +303,14 @@ namespace LEDController.View
             // Turn on all Red Fix LEDs
             this.Cursor = Cursors.WaitCursor;
 
-            List<Control> greenLEDList = new List<Control>();
-            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnLED");
-            int nGreenFixLED = greenLEDList.Count();
-            List<Control> redLEDList = new List<Control>();
-            GetAllControl(this.panelRedFixLED, redLEDList, "btnLED");
-            int nRedFixLED = redLEDList.Count();
+            List<Control> darkRedLEDList = new List<Control>();
+            GetAllControl(this.panelDarkRedFixLED, darkRedLEDList, "btnDarkRedLED");
 
-            List<Control> list = new List<Control>();
-            GetAllControl(this.panelDarkRedFixLED, list, "btnLED");
-
-            for (int i = 0; i < list.Count(); i++)
+            for (int i = 0; i < darkRedLEDList.Count(); i++)
             {
-                int LEDIndex = i + 1 + nGreenFixLED + nRedFixLED;
-                Button btn = (Button)(panelDarkRedFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
-                OpenFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                int LEDIndex = i + 1;
+                Button btn = (Button)(panelDarkRedFixLED.Controls.Find($"btnDarkRedLED{LEDIndex}", true)[0]);
+                OpenFixLED?.Invoke(btn, new EventLEDArgs(LEDIndex, 2));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -605,21 +321,14 @@ namespace LEDController.View
             // Turn on all Red Fix LEDs
             this.Cursor = Cursors.WaitCursor;
 
-            List<Control> greenLEDList = new List<Control>();
-            GetAllControl(this.panelGreenFixLED, greenLEDList, "btnLED");
-            int nGreenFixLED = greenLEDList.Count();
-            List<Control> redLEDList = new List<Control>();
-            GetAllControl(this.panelRedFixLED, redLEDList, "btnLED");
-            int nRedFixLED = redLEDList.Count();
+            List<Control> darkRedLEDList = new List<Control>();
+            GetAllControl(this.panelDarkRedFixLED, darkRedLEDList, "btnDarkRedLED");
 
-            List<Control> list = new List<Control>();
-            GetAllControl(this.panelDarkRedFixLED, list, "btnLED");
-
-            for (int i = 0; i < list.Count(); i++)
+            for (int i = 0; i < darkRedLEDList.Count(); i++)
             {
-                int LEDIndex = i + 1 + nGreenFixLED + nRedFixLED;
-                Button btn = (Button)(panelDarkRedFixLED.Controls.Find($"btnLED{LEDIndex}", true)[0]);
-                CloseFixLED?.Invoke(btn, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
+                int LEDIndex = i + 1;
+                Button btn = (Button)(panelDarkRedFixLED.Controls.Find($"btnDarkRedLED{LEDIndex}", true)[0]);
+                CloseFixLED?.Invoke(btn, new EventLEDArgs(LEDIndex, 2));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -629,20 +338,17 @@ namespace LEDController.View
         {
             // Turn on all Green Dimmable LED
             this.Cursor = Cursors.WaitCursor;
-            List<Button> list = new List<Button>();
-            double[] LEDPowers = new double[] {Convert.ToDouble(tbxDimLED1.Text), Convert.ToDouble(tbxDimLED2.Text), Convert.ToDouble(tbxDimLED3.Text), Convert.ToDouble(tbxDimLED4.Text)};
 
-            list.Add(btnDimLED1);
-            list.Add(btnDimLED2);
-            list.Add(btnDimLED3);
-            list.Add(btnDimLED4);
+            List<Control> dimGreenLEDList = new List<Control>();
+            GetAllControl(this.panelDimGreenLED, dimGreenLEDList, "btnDimGreenLED");
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < dimGreenLEDList.Count(); i++)
             {
-                Button btn = list[i];
-                EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(Convert.ToInt32(btn.Tag) - 120, LEDPowers[i]);
+                Button btn = (Button)(this.Controls.Find($"btnDimGreenLED{i + 1}", true)[0]);
+                int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
+                TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimGreenLED{idxLED}", true)[0]);
 
-                SetDimLED?.Invoke(list[i], dimLEDEvent);
+                SetDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -652,20 +358,17 @@ namespace LEDController.View
         {
             // Turn off all Green Dimmable LED
             this.Cursor = Cursors.WaitCursor;
-            List<Button> list = new List<Button>();
-            double[] LEDPowers = new double[] {Convert.ToDouble(tbxDimLED1.Text), Convert.ToDouble(tbxDimLED2.Text), Convert.ToDouble(tbxDimLED3.Text), Convert.ToDouble(tbxDimLED4.Text)};
 
-            list.Add(btnDimLED1);
-            list.Add(btnDimLED2);
-            list.Add(btnDimLED3);
-            list.Add(btnDimLED4);
+            List<Control> dimGreenLEDList = new List<Control>();
+            GetAllControl(this.panelDimGreenLED, dimGreenLEDList, "btnDimGreenLED");
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < dimGreenLEDList.Count(); i++)
             {
-                Button btn = list[i];
-                EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(Convert.ToInt32(btn.Tag) - 120, LEDPowers[i]);
+                Button btn = (Button)(this.Controls.Find($"btnDimGreenLED{i + 1}", true)[0]);
+                int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
+                TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimGreenLED{idxLED}", true)[0]);
 
-                CloseDimLED?.Invoke(list[i], dimLEDEvent);
+                CloseDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -675,20 +378,17 @@ namespace LEDController.View
         {
             // Turn on all Red Dimmable LED
             this.Cursor = Cursors.WaitCursor;
-            List<Button> list = new List<Button>();
-            double[] LEDPowers = new double[] {Convert.ToDouble(tbxDimLED5.Text), Convert.ToDouble(tbxDimLED6.Text), Convert.ToDouble(tbxDimLED7.Text), Convert.ToDouble(tbxDimLED8.Text)};
 
-            list.Add(btnDimLED5);
-            list.Add(btnDimLED6);
-            list.Add(btnDimLED7);
-            list.Add(btnDimLED8);
+            List<Control> dimRedLEDList = new List<Control>();
+            GetAllControl(this.panelDimRedLED, dimRedLEDList, "btnDimRedLED");
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < dimRedLEDList.Count(); i++)
             {
-                Button btn = list[i];
-                EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(Convert.ToInt32(btn.Tag), LEDPowers[i]);
+                Button btn = (Button)(this.Controls.Find($"btnDimRedLED{i + 1}", true)[0]);
+                int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
+                TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimRedLED{idxLED}", true)[0]);
 
-                SetDimLED?.Invoke(list[i], dimLEDEvent);
+                SetDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -698,20 +398,17 @@ namespace LEDController.View
         {
             // Turn off all Red Dimmable LED
             this.Cursor = Cursors.WaitCursor;
-            List<Button> list = new List<Button>();
-            double[] LEDPowers = new double[] {Convert.ToDouble(tbxDimLED5.Text), Convert.ToDouble(tbxDimLED6.Text), Convert.ToDouble(tbxDimLED7.Text), Convert.ToDouble(tbxDimLED8.Text)};
 
-            list.Add(btnDimLED5);
-            list.Add(btnDimLED6);
-            list.Add(btnDimLED7);
-            list.Add(btnDimLED8);
+            List<Control> dimRedLEDList = new List<Control>();
+            GetAllControl(this.panelDimRedLED, dimRedLEDList, "btnDimRedLED");
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < dimRedLEDList.Count(); i++)
             {
-                Button btn = list[i];
-                EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(Convert.ToInt32(btn.Tag), LEDPowers[i]);
+                Button btn = (Button)(this.Controls.Find($"btnDimRedLED{i + 1}", true)[0]);
+                int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
+                TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimRedLED{idxLED}", true)[0]);
 
-                CloseDimLED?.Invoke(list[i], dimLEDEvent);
+                CloseDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -721,20 +418,17 @@ namespace LEDController.View
         {
             // Turn on all DarkRed Dimmable LED
             this.Cursor = Cursors.WaitCursor;
-            List<Button> list = new List<Button>();
-            double[] LEDPowers = new double[] {Convert.ToDouble(tbxDimLED9.Text), Convert.ToDouble(tbxDimLED10.Text), Convert.ToDouble(tbxDimLED11.Text), Convert.ToDouble(tbxDimLED12.Text)};
 
-            list.Add(btnDimLED9);
-            list.Add(btnDimLED10);
-            list.Add(btnDimLED11);
-            list.Add(btnDimLED12);
+            List<Control> dimDarkRedLEDList = new List<Control>();
+            GetAllControl(this.panelDimDarkRedLED, dimDarkRedLEDList, "btnDimDarkRedLED");
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < dimDarkRedLEDList.Count(); i++)
             {
-                Button btn = list[i];
-                EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(Convert.ToInt32(btn.Tag), LEDPowers[i]);
+                Button btn = (Button)(this.Controls.Find($"btnDimDarkRedLED{i + 1}", true)[0]);
+                int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
+                TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
 
-                SetDimLED?.Invoke(list[i], dimLEDEvent);
+                SetDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -744,20 +438,17 @@ namespace LEDController.View
         {
             // Turn off all DarkRed Dimmable LED
             this.Cursor = Cursors.WaitCursor;
-            List<Button> list = new List<Button>();
-            double[] LEDPowers = new double[] {Convert.ToDouble(tbxDimLED9.Text), Convert.ToDouble(tbxDimLED10.Text), Convert.ToDouble(tbxDimLED11.Text), Convert.ToDouble(tbxDimLED12.Text)};
 
-            list.Add(btnDimLED9);
-            list.Add(btnDimLED10);
-            list.Add(btnDimLED11);
-            list.Add(btnDimLED12);
+            List<Control> dimDarkRedLEDList = new List<Control>();
+            GetAllControl(this.panelDimDarkRedLED, dimDarkRedLEDList, "btnDimDarkRedLED");
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < dimDarkRedLEDList.Count(); i++)
             {
-                Button btn = list[i];
-                EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(Convert.ToInt32(btn.Tag), LEDPowers[i]);
+                Button btn = (Button)(this.Controls.Find($"btnDimDarkRedLED{i + 1}", true)[0]);
+                int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
+                TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
 
-                CloseDimLED?.Invoke(list[i], dimLEDEvent);
+                CloseDimLED?.Invoke(btn, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
                 Thread.Sleep(100);
             }
             this.Cursor = Cursors.Default;
@@ -765,88 +456,47 @@ namespace LEDController.View
 
         private void tsmConnect_Click(object sender, EventArgs e)
         {
-            // select first panel through menu
             tabCtrlMain.SelectedIndex = 0;
         }
 
         private void tsmLEDControl_Click(object sender, EventArgs e)
         {
-            // select second panel through menu
             tabCtrlMain.SelectedIndex = 1;
         }
 
         private void tsmLEDStatus_Click(object sender, EventArgs e)
         {
-            // select third panel through menu
             tabCtrlMain.SelectedIndex = 2;
         }
 
-        private void tsmRTControl_Click(object sender, EventArgs e)
+        private void tsmChillerControl_Click(object sender, EventArgs e)
         {
-            // select 4th panel through menu
             tabCtrlMain.SelectedIndex = 3;
-        }
-
-        private void tsmLightControl_Click(object sender, EventArgs e)
-        {
-            // select 5th panel through menu
-            tabCtrlMain.SelectedIndex = 4;
-        }
-
-        private void tsmAirConditionerControl_Click(object sender, EventArgs e)
-        {
-            // select 6th panel through menu
-            tabCtrlMain.SelectedIndex = 5;
         }
 
         private void tsmSkylightControl_Click(object sender, EventArgs e)
         {
-            // select 7th panel through menu
+            tabCtrlMain.SelectedIndex = 4;
+        }
+
+        private void tsmLightControl_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 5;
+        }
+
+        private void tsmRTControl_Click(object sender, EventArgs e)
+        {
             tabCtrlMain.SelectedIndex = 6;
+        }
+
+        private void tsmAirConditionerControl_Click(object sender, EventArgs e)
+        {
+            tabCtrlMain.SelectedIndex = 7;
         }
 
         private void tsmCameraControl_Click(object sender, EventArgs e)
         {
-            // select 8th panel through menu
-            tabCtrlMain.SelectedIndex = 7;
-        }
-
-        private void btnLED_Click(object sender, EventArgs e)
-        { 
-            // Click Fix LED button
-            Button btn = sender as Button;
-            HandleFixLED?.Invoke(sender, new EventFixLEDArgs(Convert.ToInt16(btn.Tag)));
-        }
-
-        private void btnLED_MouseHover(object sender, EventArgs e)
-        {
-            // Show LED status
-            Button btn = sender as Button;
-            EventLEDArgs LEDEvent = new EventLEDArgs(Convert.ToInt32(btn.Tag));
-            ShowSingleLEDStatus?.Invoke(sender, LEDEvent);
-        }
-
-        private void btnLED_MouseLeave(object sender, EventArgs e)
-        {
-            // Clear LED status
-            Button btn = sender as Button;
-            EventLEDArgs LEDEvent = new EventLEDArgs(Convert.ToInt32(btn.Tag));
-            ClearSingleLEDStatus?.Invoke(sender, LEDEvent);
-        }
-
-        private void btnDimLED_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            EventLEDArgs LEDEvent = new EventLEDArgs(Convert.ToInt32(btn.Tag));
-            ClearSingleLEDStatus?.Invoke(sender, LEDEvent);
-        }
-
-        private void btnDimLED_MouseHover(object sender, EventArgs e)
-        {
-            // Show LED status
-            Button btn = sender as Button;
-            EventLEDArgs LEDEvent = new EventLEDArgs(Convert.ToInt32(btn.Tag));
-            ShowSingleLEDStatus?.Invoke(sender, LEDEvent);
+            tabCtrlMain.SelectedIndex = 8;
         }
 
         private void btnShowLEDStatus_Click(object sender, EventArgs e)
@@ -867,6 +517,7 @@ namespace LEDController.View
             {
                 btn.BackColor = Color.Empty;
                 btn.Text = "开始获取";
+                StopShowLEDStatus?.Invoke(sender, e);
 
                 timer.Stop();
             }
@@ -875,29 +526,6 @@ namespace LEDController.View
         private void StartShowLEDStatus(object sender, EventArgs e)
         {
             ShowLEDStatus?.Invoke(sender, e);
-        }
-
-        private void btnDimLED_Click(object sender, EventArgs e)
-        {
-            // Turn on Dimmable LED
-            Button btn = sender as Button;
-            int LEDIndex = Convert.ToInt32(btn.Tag) - 120;
-            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimLED{LEDIndex}", true)[0]);
-            EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(LEDIndex, Convert.ToDouble(tbx.Text));
-
-            HandleDimLED?.Invoke(sender, dimLEDEvent);
-        }
-
-        private void btnCfgDimLED_Click(object sender, EventArgs e)
-        {
-            // Turn on Dimmable LED
-            Button btn = sender as Button;
-            int LEDIndex = Convert.ToInt32(btn.Tag) - 120;
-            Button LEDBtn = (Button)(this.Controls.Find($"btnDimLED{LEDIndex}", true)[0]);
-            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimLED{LEDIndex}", true)[0]);
-            EventDimLEDArgs dimLEDEvent = new EventDimLEDArgs(LEDIndex, Convert.ToDouble(tbx.Text));
-
-            SetDimLED?.Invoke(LEDBtn, dimLEDEvent);
         }
 
         private void Open_Click(object sender, EventArgs e)
@@ -912,7 +540,7 @@ namespace LEDController.View
 
         private void Saveas_Click(object sender, EventArgs e)
         {
-            SaveasCfgFile?.Invoke(sender, e);
+            SaveAsCfgFile?.Invoke(sender, e);
         }
 
         protected void LEDControllerViewer_Load(object sender, EventArgs e)
@@ -953,37 +581,382 @@ namespace LEDController.View
         {
             ShowVersion?.Invoke(sender, e);
         }
+
+        private void btnOpenCOM_Click(object sender, EventArgs e)
+        {
+            ConnectSerialPort?.Invoke(sender, e);
+        }
+
+        private void btnCloseCOM_Click(object sender, EventArgs e)
+        {
+            CloseSerialPort?.Invoke(sender, e);
+        }
+
+        private void btnOpenTCP_Click(object sender, EventArgs e)
+        {
+            ConnectTCP?.Invoke(sender, e);
+        }
+
+        private void btnCloseTCP_Click(object sender, EventArgs e)
+        {
+            // Click disconnect button
+            CloseTCP?.Invoke(sender, e);
+        }
+
+        private void btnDarkRedLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
+            HandleFixLED?.Invoke(sender, new EventLEDArgs(idxLED, 2));
+        }
+
+        private void btnDarkRedLED_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
+
+            ShowFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 2));
+        }
+
+        private void btnDarkRedLED_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
+
+            ClearFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 2));
+        }
+
+        private void btnGreenLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnGreenLED");
+            HandleFixLED?.Invoke(sender, new EventLEDArgs(idxLED, 3));
+        }
+
+        private void btnGreenLED_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnGreenLED");
+
+            ShowFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 3));
+        }
+
+        private void btnGreenLED_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnGreenLED");
+
+            ClearFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 3));
+        }
+
+        private void btnRedLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnRedLED");
+            HandleFixLED?.Invoke(sender, new EventLEDArgs(idxLED, 1));
+        }
+
+        private void btnRedLED_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnRedLED");
+
+            ShowFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 1));
+        }
+
+        private void btnRedLED_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnRedLED");
+
+            ClearFixLEDStatus?.Invoke(sender, new EventLEDArgs(idxLED, 1));
+        }
+
+        private void btnDimGreenLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
+            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimGreenLED{idxLED}", true)[0]);
+
+            HandleDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
+        }
+
+        private void btnDimGreenLED_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
+
+            ShowDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, 0));
+        }
+
+        private void btnDimGreenLED_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDimGreenLED");
+
+            ClearDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, 0));
+        }
+
+        private void tbxDimGreenLED_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TextBox tbx = sender as TextBox;
+                int idxLED = GetLEDIndex(tbx.Name, "tbxDimGreenLED");
+                UpdateScrollBar?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
+            }
+        }
+
+        private void sbarDimGreenLED_Scroll(object sender, EventArgs e)
+        {
+            TrackBar tbar = sender as TrackBar;
+            int idxLED = GetLEDIndex(tbar.Name, "sbarDimGreenLED");
+            UpdateLEDTbx?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, (double)tbar.Value));
+        }
+
+        private void btnCfgDimGreenLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnOpenDimGreenLED");
+            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimGreenLED{idxLED}", true)[0]);
+
+            SetDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 3, Convert.ToDouble(tbx.Text)));
+        }
+
+        private void btnDimDarkRedLED_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
+
+            ShowDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, 0));
+        }
+
+        private void tbxDimDarkRedLED_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TextBox tbx = sender as TextBox;
+                int idxLED = GetLEDIndex(tbx.Name, "tbxDimDarkRedLED");
+                UpdateScrollBar?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
+            }
+        }
+
+        private void btnDimDarkRedLED_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
+
+            ClearDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, 0));
+        }
+
+        private void btnDimDarkRedLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
+            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
+
+            HandleDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
+        }
+
+        private void sbarDimDarkRedLED_Scroll(object sender, EventArgs e)
+        {
+            TrackBar tbar = sender as TrackBar;
+            int idxLED = GetLEDIndex(tbar.Name, "sbarDimDarkRedLED");
+            UpdateLEDTbx?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, (double)tbar.Value));
+        }
+
+        private void btnCfgDimDarkRedLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnOpenDimDarkRedLED");
+            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
+
+            SetDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 2, Convert.ToDouble(tbx.Text)));
+        }
+
+        private void btnCfgDimRedLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnOpenDimRedLED");
+            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimRedLED{idxLED}", true)[0]);
+
+            SetDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
+        }
+
+        private void sbarDimRedLED_Scroll(object sender, EventArgs e)
+        {
+            TrackBar tbar = sender as TrackBar;
+            int idxLED = GetLEDIndex(tbar.Name, "sbarDimRedLED");
+            UpdateLEDTbx?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, (double)tbar.Value));
+        }
+
+        private void tbxDimRedLED_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TextBox tbx = sender as TextBox;
+                int idxLED = GetLEDIndex(tbx.Name, "tbxDimRedLED");
+                UpdateScrollBar?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
+            }
+        }
+
+        private void btnDimRedLED_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
+            TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimRedLED{idxLED}", true)[0]);
+
+            HandleDimLED?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, Convert.ToDouble(tbx.Text)));
+        }
+
+        private void btnDimRedLED_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
+
+            ShowDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, 0));
+        }
+
+        private void btnDimRedLED_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idxLED = GetLEDIndex(btn.Name, "btnDimRedLED");
+
+            ClearDimLEDStatus?.Invoke(sender, new EventDimLEDArgs(idxLED, 1, 0));
+        }
+
+        private void btnUpdateChiller_Click(object sender, EventArgs e)
+        {
+            ShowChillerStatus?.Invoke(sender, e);
+        }
+
+        private void btnOpenSkylight1_Click(object sender, EventArgs e)
+        {
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
+        }
+
+        private void btnCloseSkylight1_Click(object sender, EventArgs e)
+        {
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
+        }
+
+        private void btnOpenSkylight2_Click(object sender, EventArgs e)
+        {
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
+        }
+
+        private void btnCloseSkylight2_Click(object sender, EventArgs e)
+        {
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
+        }
+
+        private void btnOpenSkylight3_Click(object sender, EventArgs e)
+        {
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
+        }
+
+        private void btnCloseSkylight3_Click(object sender, EventArgs e)
+        {
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
+        }
+
+        private void btnOpenLight1_Click(object sender, EventArgs e)
+        {
+            TurnOnLight?.Invoke(sender, new EventLightArgs(1));
+        }
+
+        private void btnCloseLight1_Click(object sender, EventArgs e)
+        {
+            TurnOffLight?.Invoke(sender, new EventLightArgs(1));
+        }
+
+        private void btnOpenLight2_Click(object sender, EventArgs e)
+        {
+            TurnOnLight?.Invoke(sender, new EventLightArgs(2));
+        }
+
+        private void btnCloseLight2_Click(object sender, EventArgs e)
+        {
+            TurnOffLight?.Invoke(sender, new EventLightArgs(2));
+        }
+
+        private void btnOpenLight3_Click(object sender, EventArgs e)
+        {
+            TurnOnLight?.Invoke(sender, new EventLightArgs(3));
+        }
+
+        private void btnCloseLight3_Click(object sender, EventArgs e)
+        {
+            TurnOffLight?.Invoke(sender, new EventLightArgs(3));
+        }
+
+        private void toolStripMenuConfiguration_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStatusSaveFolder_Click(object sender, EventArgs e)
+        {
+            SelectStatusDataSaveFolder?.Invoke(sender, e);
+        }
+
+        private void tbxStatusSaveFolder_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ChangeStatusDataSaveFolder?.Invoke(sender, e);
+            }
+        }
+
+        private void tbxStatusSaveFolder_Leave(object sender, EventArgs e)
+        {
+            ChangeStatusDataSaveFolder?.Invoke(sender, e);
+        }
     }
 
     public class EventDimLEDArgs : EventArgs
     {
         public int LEDIndex;
+        public int addrPLC;
         public double LEDPower;
 
-        public EventDimLEDArgs(int thisLEDIndex, double thisLEDPower)
+        public EventDimLEDArgs(int thisLEDIndex, int thisAddrPLC, double thisLEDPower)
         {
-            LEDIndex = thisLEDIndex;
-            LEDPower = thisLEDPower;
-        }
-    }
-
-    public class EventFixLEDArgs : EventArgs
-    {
-        public int LEDIndex;
-
-        public EventFixLEDArgs(int thisLEDIndex)
-        {
-            LEDIndex = thisLEDIndex;
+            this.addrPLC = thisAddrPLC;
+            this.LEDIndex = thisLEDIndex;
+            this.LEDPower = thisLEDPower;
         }
     }
 
     public class EventLEDArgs : EventArgs
     {
         public int LEDIndex;
+        public int addrPLC;
 
-        public EventLEDArgs(int thisLEDIndex)
+        public EventLEDArgs(int thisLEDIndex, int thisAddrPLC)
         {
-            LEDIndex = thisLEDIndex;
+            this.LEDIndex = thisLEDIndex;
+            this.addrPLC = thisAddrPLC;
+        }
+    }
+
+    public class EventSkyLightArgs : EventArgs
+    {
+        public int SkyLightIndex;
+
+        public EventSkyLightArgs(int thisSkyLightIndex)
+        {
+            this.SkyLightIndex = thisSkyLightIndex;
+        }
+    }
+
+    public class EventLightArgs : EventArgs
+    {
+        public int LightIndex;
+
+        public EventLightArgs(int thisLightIndex)
+        {
+            this.LightIndex = thisLightIndex;
         }
     }
 

@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="Model\FileSysIOClass.cs" />
     <Compile Include="Model\LEDBoardCom.cs" />
+    <Compile Include="Model\Modbus.cs" />
     <Compile Include="Model\ValueConversion.cs" />
     <Compile Include="Presenter\LEDControllerPresenter.cs" />
     <Compile Include="View\ILEDControllerForm.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -152,6 +154,39 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chiller_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chiller_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window-closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question-circle-fill.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
