@@ -1,12 +1,10 @@
-# build
-LEDController/TestResults
-LEDController/LEDController/obj
-LEDController/LEDController/bin
-LEDController/LEDControllerTest/obj
-LEDController/LEDControllerTest/bin
-LEDController/LEDController/obj
+# build caches
+obj
+bin
+packages
+TestResults
 
 # editor configuration
 LEDController/.vs
 .vscode
-LEDController/.vs
+.vs
