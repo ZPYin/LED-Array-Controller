@@ -1,20 +1,18 @@
-﻿using LEDController.View;
-using LEDController.Model;
+﻿using LEDController.Model;
+using LEDController.View;
+using ScottPlot.Plottable;
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using System.IO;
-using System.IO.Ports;
-using System.Windows.Forms;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Sockets;
-using System.Drawing;
-using System.Windows.Threading;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Threading;
-using ScottPlot.Plottable;
+using System.Drawing;
+using System.Linq;
+using System.IO;
+using System.IO.Ports;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Threading;
 
 namespace LEDController.Presenter
 {
@@ -78,6 +76,8 @@ namespace LEDController.Presenter
             _view.ShowChillerStatus += new EventHandler<EventArgs>(OnShowChillerStatus);
             _view.TurnOnSkyLight += new EventHandler<EventSkyLightArgs>(OnTurnOnSkyLight);
             _view.TurnOffSkyLight += new EventHandler<EventSkyLightArgs>(OnTurnOffSkyLight);
+            _view.TurnOnLight += new EventHandler<EventLightArgs>(OnTurnOnLight);
+            _view.TurnOffLight += new EventHandler<EventLightArgs>(OnTurnOffLight);
 
             // Initialize Form
             InitialForm();
@@ -105,18 +105,88 @@ namespace LEDController.Presenter
             renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, sig, 0, 3600 * 1000);
         }
 
+        public void OnTurnOnLight(object sender, EventLightArgs e)
+        {
+            this.connector.TurnOnLight(1, e.LightIndex);
+            ShowSendStatusAsync();
+
+            PictureBox pbxLight = (PictureBox)(this._view.Controls.Find($"pbxLight{e.LightIndex}", true)[0]);
+            pbxLight.Image = Properties.Resources.light_on;
+        }
+
+        public void OnTurnOffLight(object sender, EventLightArgs e)
+        {
+            this.connector.TurnOffLight(1, e.LightIndex);
+            ShowSendStatusAsync();
+
+            PictureBox pbxLight = (PictureBox)(this._view.Controls.Find($"pbxLight{e.LightIndex}", true)[0]);
+            pbxLight.Image = Properties.Resources.light_off;
+        }
+
         public void OnShowChillerStatus(object sender, EventArgs e)
         {
-            PictureBox pbxChiller = (PictureBox)(this._view.Controls.Find("pbxChiller", true)[0]);
-            if ()
+            for (int i = 1; i <= 2; i++)
+            {
+                PictureBox pbxChiller = (PictureBox)(this._view.Controls.Find($"pbxChiller{i}", true)[0]);
+                ShowSendStatusAsync();
 
+                try
+                {
+                    if (this.connector.IsChillerWarning(1, i))
+                    {
+                        pbxChiller.Image = Properties.Resources.chiller_error;
+                    }
+                    else
+                    {
+                        pbxChiller.Image = Properties.Resources.chiller_normal;
+                    }
+                }
+                catch
+                {
+                    pbxChiller.Image = Properties.Resources.question_circle_fill;
+                }
+            }
+
+            for (int j = 1; j <= 3; j++)
+            {
+                PictureBox pbxPump = (PictureBox)(this._view.Controls.Find($"pbxPump{j}", true)[0]);
+                ShowSendStatusAsync();
+
+                try
+                {
+                    if (this.connector.IsPumpWarning(1, j))
+                    {
+                        pbxPump.Image = Properties.Resources.chiller_error;
+                    }
+                    else
+                    {
+                        pbxPump.Image = Properties.Resources.chiller_normal;
+                    }
+                }
+                catch
+                {
+                    pbxPump.Image = Properties.Resources.question_circle_fill;
+                }
+            }
         }
 
         public void OnTurnOnSkyLight(object sender, EventSkyLightArgs e)
-        {}
+        {
+            this.connector.TurnOnSkyLight(1, e.SkyLightIndex);
+            ShowSendStatusAsync();
+
+            PictureBox pbxSkyLight = (PictureBox)(this._view.Controls.Find($"pbxSkyLight{e.SkyLightIndex}", true)[0]);
+            pbxSkyLight.Image = Properties.Resources.window_open;
+        }
 
         public void OnTurnOffSkyLight(object sender, EventSkyLightArgs e)
-        {}
+        {
+            this.connector.TurnOffSkyLight(1, e.SkyLightIndex);
+            ShowSendStatusAsync();
+
+            PictureBox pbxSkyLight = (PictureBox)(this._view.Controls.Find($"pbxSkyLight{e.SkyLightIndex}", true)[0]);
+            pbxSkyLight.Image = Properties.Resources.window_closed;
+        }
 
         public void OnConnectSerialPort(object sender, EventArgs e)
         {

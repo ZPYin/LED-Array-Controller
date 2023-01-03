@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Net;
-using System.Windows.Forms;
-using System.IO.Ports;
-using System.Net.Sockets;
 using System.Net.NetworkInformation;
 
 namespace LEDController.Model
@@ -965,11 +960,64 @@ namespace LEDController.Model
 
         public bool IsChillerWarning(int addrPLC, int chillerIndex)
         {
-            bool chillerWarning = false;
+            bool[] chillerWarning;
 
-            byte[] recData = this.device.WriteReceive((byte)addr)
+            byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)addrPlcAChillerWarn[chillerIndex], new byte[2] { 0x00, 0x01 });
+            chillerWarning = ParseChillerStatus(recData, 1);
 
-            return chillerWarning;
+            return chillerWarning[0];
+        }
+
+        public bool[] ParsePumpStatus(byte[] recData, int count)
+        {
+            bool[] pumpStatus = new bool[count];
+
+            for (int i = 0; i <= count / 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if ((i * 8 + j) < count)
+                    {
+                        pumpStatus[i * 8 + j] = Convert.ToBoolean(recData[i] & (1 << (7 - j)));
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return pumpStatus;
+        }
+
+        public bool IsPumpWarning(int addrPLC, int pumpIndex)
+        {
+            bool[] pumpWarning;
+
+            byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)addrPlcAPumpWarn[pumpIndex], new byte[2] { 0x00, 0x01 });
+            pumpWarning = ParsePumpStatus(recData, 1);
+
+            return pumpWarning[0];
+        }
+
+        public void TurnOnSkyLight(int addrPLC, int skyLightIndex)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffSkyLight(int addrPLC, int skyLightIndex)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0x00, 0x00 });
+        }
+
+        public void TurnOnLight(int addrPLC, int LightIndex)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[LightIndex + 3], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffLight(int addrPLC, int LightIndex)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[LightIndex + 3], new byte[2] { 0x00, 0x00 });
         }
     }
 

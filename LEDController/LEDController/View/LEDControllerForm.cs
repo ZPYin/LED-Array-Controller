@@ -1,16 +1,11 @@
-﻿using System;
+﻿using ScottPlot;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Net.Sockets;
 using System.Threading;
+using System.Windows.Forms;
 using System.Windows.Threading;
-using ScottPlot;
 
 namespace LEDController.View
 {
@@ -24,37 +19,38 @@ namespace LEDController.View
             InitializeComponent();
             this.KeyPreview = true;
 
-            // 初始化控件
             cbxQueryParam.SelectedIndex = 0;
             cbxQueryWaitTime.SelectedIndex = 0;
             formsLEDStatusPlot = this.formsPlotRTD;
         }
 
-        public event EventHandler<EventArgs> ConnectTCP;
+        public event EventHandler<EventDimLEDArgs> ClearDimLEDStatus;
+        public event EventHandler<EventLEDArgs> ClearFixLEDStatus;
+        public event EventHandler<EventDimLEDArgs> CloseDimLED;
+        public event EventHandler<EventLEDArgs> CloseFixLED;
+        public event EventHandler<EventArgs> CloseSerialPort;
         public event EventHandler<EventArgs> CloseTCP;
         public event EventHandler<EventArgs> ConnectSerialPort;
-        public event EventHandler<EventArgs> CloseSerialPort;
-        public event EventHandler<EventArgs> SendTestData;
-        public event EventHandler<EventLEDArgs> OpenFixLED;
-        public event EventHandler<EventLEDArgs> CloseFixLED;
-        public event EventHandler<EventLEDArgs> HandleFixLED;
-        public event EventHandler<EventDimLEDArgs> SetDimLED;
-        public event EventHandler<EventDimLEDArgs> CloseDimLED;
+        public event EventHandler<EventArgs> ConnectTCP;
         public event EventHandler<EventDimLEDArgs> HandleDimLED;
-        public event EventHandler<EventLEDArgs> ShowFixLEDStatus;
-        public event EventHandler<EventDimLEDArgs> ShowDimLEDStatus;
-        public event EventHandler<EventLEDArgs> ClearFixLEDStatus;
-        public event EventHandler<EventDimLEDArgs> ClearDimLEDStatus;
-        public event EventHandler<EventDimLEDArgs> UpdateScrollBar;
-        public event EventHandler<EventDimLEDArgs> UpdateLEDTbx;
-        public event EventHandler<EventArgs> ShowLEDStatus;
+        public event EventHandler<EventLEDArgs> HandleFixLED;
+        public event EventHandler<EventLEDArgs> OpenFixLED;
         public event EventHandler<EventArgs> OpenWithCfgFile;
-        public event EventHandler<EventArgs> SaveCfgFile;
         public event EventHandler<EventArgs> SaveAsCfgFile;
-        public event EventHandler<EventArgs> ShowVersion;
+        public event EventHandler<EventArgs> SaveCfgFile;
+        public event EventHandler<EventArgs> SendTestData;
+        public event EventHandler<EventDimLEDArgs> SetDimLED;
+        public event EventHandler<EventDimLEDArgs> ShowDimLEDStatus;
         public event EventHandler<EventArgs> ShowChillerStatus;
-        public event EventHandler<EventSkyLightArgs> TurnOnSkyLight;
+        public event EventHandler<EventLEDArgs> ShowFixLEDStatus;
+        public event EventHandler<EventArgs> ShowLEDStatus;
+        public event EventHandler<EventArgs> ShowVersion;
+        public event EventHandler<EventLightArgs> TurnOffLight;
         public event EventHandler<EventSkyLightArgs> TurnOffSkyLight;
+        public event EventHandler<EventLightArgs> TurnOnLight;
+        public event EventHandler<EventSkyLightArgs> TurnOnSkyLight;
+        public event EventHandler<EventDimLEDArgs> UpdateLEDTbx;
+        public event EventHandler<EventDimLEDArgs> UpdateScrollBar;
         
         public DispatcherTimer timer = new DispatcherTimer();
 
@@ -859,6 +855,41 @@ namespace LEDController.View
         {
             TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
         }
+
+        private void btnOpenLight1_Click(object sender, EventArgs e)
+        {
+            TurnOnLight?.Invoke(sender, new EventLightArgs(1));
+        }
+
+        private void btnCloseLight1_Click(object sender, EventArgs e)
+        {
+            TurnOffLight?.Invoke(sender, new EventLightArgs(1));
+        }
+
+        private void btnOpenLight2_Click(object sender, EventArgs e)
+        {
+            TurnOnLight?.Invoke(sender, new EventLightArgs(2));
+        }
+
+        private void btnCloseLight2_Click(object sender, EventArgs e)
+        {
+            TurnOffLight?.Invoke(sender, new EventLightArgs(2));
+        }
+
+        private void btnOpenLight3_Click(object sender, EventArgs e)
+        {
+            TurnOnLight?.Invoke(sender, new EventLightArgs(3));
+        }
+
+        private void btnCloseLight3_Click(object sender, EventArgs e)
+        {
+            TurnOffLight?.Invoke(sender, new EventLightArgs(3));
+        }
+
+        private void toolStripMenuConfiguration_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class EventDimLEDArgs : EventArgs
@@ -894,6 +925,16 @@ namespace LEDController.View
         public EventSkyLightArgs(int thisSkyLightIndex)
         {
             this.SkyLightIndex = thisSkyLightIndex;
+        }
+    }
+
+    public class EventLightArgs : EventArgs
+    {
+        public int LightIndex;
+
+        public EventLightArgs(int thisLightIndex)
+        {
+            this.LightIndex = thisLightIndex;
         }
     }
 

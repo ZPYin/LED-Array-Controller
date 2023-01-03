@@ -143,6 +143,16 @@ namespace LEDController.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap question_circle_fill {
+            get {
+                object obj = ResourceManager.GetObject("question-circle-fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap window_closed {
             get {
                 object obj = ResourceManager.GetObject("window-closed", resourceCulture);
