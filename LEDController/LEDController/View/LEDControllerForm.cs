@@ -44,6 +44,7 @@ namespace LEDController.View
         public event EventHandler<EventArgs> ShowChillerStatus;
         public event EventHandler<EventLEDArgs> ShowFixLEDStatus;
         public event EventHandler<EventArgs> ShowLEDStatus;
+        public event EventHandler<EventArgs> StopShowLEDStatus;
         public event EventHandler<EventArgs> ShowVersion;
         public event EventHandler<EventLightArgs> TurnOffLight;
         public event EventHandler<EventSkyLightArgs> TurnOffSkyLight;
@@ -51,7 +52,9 @@ namespace LEDController.View
         public event EventHandler<EventSkyLightArgs> TurnOnSkyLight;
         public event EventHandler<EventDimLEDArgs> UpdateLEDTbx;
         public event EventHandler<EventDimLEDArgs> UpdateScrollBar;
-        
+        public event EventHandler<EventArgs> SelectStatusDataSaveFolder;
+        public event EventHandler<EventArgs> ChangeStatusDataSaveFolder;
+
         public DispatcherTimer timer = new DispatcherTimer();
 
         private Size m_szInit;   //初始窗体大小
@@ -514,6 +517,7 @@ namespace LEDController.View
             {
                 btn.BackColor = Color.Empty;
                 btn.Text = "开始获取";
+                StopShowLEDStatus?.Invoke(sender, e);
 
                 timer.Stop();
             }
@@ -889,6 +893,24 @@ namespace LEDController.View
         private void toolStripMenuConfiguration_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnStatusSaveFolder_Click(object sender, EventArgs e)
+        {
+            SelectStatusDataSaveFolder?.Invoke(sender, e);
+        }
+
+        private void tbxStatusSaveFolder_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ChangeStatusDataSaveFolder?.Invoke(sender, e);
+            }
+        }
+
+        private void tbxStatusSaveFolder_Leave(object sender, EventArgs e)
+        {
+            ChangeStatusDataSaveFolder?.Invoke(sender, e);
         }
     }
 

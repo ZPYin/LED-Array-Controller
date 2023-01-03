@@ -1,5 +1,5 @@
-﻿using LEDController.Model;
-using LEDController.View;
+﻿using LEDController.View;
+using LEDController.Model;
 using ScottPlot.Plottable;
 using System;
 using System.Collections.Generic;
@@ -39,6 +39,8 @@ namespace LEDController.Presenter
         public System.Threading.Timer renderLEDStatusTimer;
         BackgroundWorker recWorker = new BackgroundWorker();
         public string cfgFileName;
+        public string statusDataFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "");
+        FileStream statusDataFS = null;
 
         public LEDControllerPresenter(LEDControllerViewer newView)
         {
@@ -69,6 +71,7 @@ namespace LEDController.Presenter
             _view.UpdateScrollBar += new EventHandler<EventDimLEDArgs>(OnUpdateScrollBar);
             _view.UpdateLEDTbx += new EventHandler<EventDimLEDArgs>(OnUpdateLEDTbx);
             _view.ShowLEDStatus += new EventHandler<EventArgs>(OnShowLEDStatus);
+            _view.StopShowLEDStatus += new EventHandler<EventArgs>(OnStopShowLEDStatus);
             _view.OpenWithCfgFile += new EventHandler<EventArgs>(OnOpenWithCfgFile);
             _view.SaveCfgFile += new EventHandler<EventArgs>(OnSaveCfgFile);
             _view.SaveAsCfgFile += new EventHandler<EventArgs>(OnSaveAsCfgFile);
@@ -78,6 +81,9 @@ namespace LEDController.Presenter
             _view.TurnOffSkyLight += new EventHandler<EventSkyLightArgs>(OnTurnOffSkyLight);
             _view.TurnOnLight += new EventHandler<EventLightArgs>(OnTurnOnLight);
             _view.TurnOffLight += new EventHandler<EventLightArgs>(OnTurnOffLight);
+            _view.SelectStatusDataSaveFolder += new EventHandler<EventArgs>(OnSelectStatusDataSaveFolder);
+            _view.ChangeStatusDataSaveFolder += new EventHandler<EventArgs>(OnChangeStatusDataSaveFolder);
+            _view.ChangeStatusDataSaveFolder += new EventHandler<EventArgs>(OnChangeStatusDataSaveFolder);
 
             // Initialize Form
             InitialForm();
@@ -103,6 +109,31 @@ namespace LEDController.Presenter
 
             updateLEDStatusTimer = new System.Threading.Timer(this.UpdateLEDLiveData, 0, 0, 1000);
             renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, sig, 0, 3600 * 1000);
+        }
+
+        public void OnChangeStatusDataSaveFolder(object sender, EventArgs e)
+        {
+            TextBox tbxStatusSaveFolder = (TextBox)(this._view.Controls.Find("tbxStatusSaveFolder", true)[0]);
+
+            if (tbxStatusSaveFolder.Text != "")
+            {
+                statusDataFolder = tbxStatusSaveFolder.Text;
+            }
+        }
+
+        public void OnSelectStatusDataSaveFolder(object sender, EventArgs e)
+        {
+            FolderBrowserDialog saveFolderDlg = new FolderBrowserDialog();
+            saveFolderDlg.ShowNewFolderButton = true;
+            saveFolderDlg.Description = "请选择LED状态数据保存目录";
+            saveFolderDlg.SelectedPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "");
+
+            if (saveFolderDlg.ShowDialog() == DialogResult.OK)
+            {
+                statusDataFolder = saveFolderDlg.SelectedPath;
+                TextBox tbxStatusSaveFolder = (TextBox)(this._view.Controls.Find("tbxStatusSaveFolder", true)[0]);
+                tbxStatusSaveFolder.Text = statusDataFolder;
+            }
         }
 
         public void OnTurnOnLight(object sender, EventLightArgs e)
@@ -384,6 +415,9 @@ namespace LEDController.Presenter
 
             Button btnSendTestMsg = (Button)(this._view.Controls.Find("btnSendTestMsg", true)[0]);
             btnSendTestMsg.Enabled = false;
+
+            TextBox tbxStatusSaveFolder = (TextBox)(this._view.Controls.Find("tbxStatusSaveFolder", true)[0]);
+            tbxStatusSaveFolder.Text = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "");
         }
 
         public LEDControllerCfg GetUISettings(LEDControllerViewer thisView)
@@ -730,11 +764,26 @@ namespace LEDController.Presenter
             recWorker.CancelAsync();
         }
 
+        private void OnStopShowLEDStatus(object sender, EventArgs e)
+        {
+            if (statusDataFS != null)
+            {
+                statusDataFS.Close();
+                statusDataFS = null;
+            }
+        }
+
         private void OnShowLEDStatus(object sender, EventArgs e)
         {
             if (!connector.isAlive)
             {
                 return;
+            }
+
+            if ((statusDataFolder != null) && (statusDataFS == null))
+            {
+                string statusDataFile = Path.Combine(statusDataFolder, $"LED-Status-{GetCurrentTime().ToString("yyyymmdd-HHMMSS")}.txt");
+                statusDataFS = File.Create(statusDataFile);
             }
 
             AllLEDStatus status = this.connector.QueryAllLEDStatus();
@@ -743,6 +792,7 @@ namespace LEDController.Presenter
             if (status.isValidStatus)
             {
                 StatusStrip statusStrip1 = (StatusStrip)(this._view.Controls.Find("statusStrip1", true)[0]);
+
                 // showing total power
                 ToolStripStatusLabel tsslGreenLEDTotalPower = statusStrip1.Items[0] as ToolStripStatusLabel;
                 ToolStripStatusLabel tsslRedLEDTotalPower = statusStrip1.Items[1] as ToolStripStatusLabel;
@@ -750,6 +800,12 @@ namespace LEDController.Presenter
                 tsslGreenLEDTotalPower.Text = $"绿光实时总功率: {status.CalcTotalGreenLEDPower()} W";
                 tsslRedLEDTotalPower.Text = $"红光实时总功率: {status.CalcTotalRedLEDPower()} W";
                 tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: {status.CalcTotalDarkRedLEDPower()} W";
+
+                if (statusDataFS != null)
+                {
+                    byte[] info = new UTF8Encoding(true).GetBytes($"[{status.updatedTime.ToString("yyyy-mm-dd HH:MM:SS")}] 绿光总功率= {status.CalcTotalGreenLEDPower()} W; 红光总功率: {status.CalcTotalRedLEDPower()} W; 红外总功率: {status.CalcTotalDarkRedLEDPower()} W" + "\r\n");
+                    statusDataFS.Write(info, 0, info.Length);
+                }
 
                 try
                 {

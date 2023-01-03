@@ -450,6 +450,8 @@ namespace LEDController.View
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuConfiguration = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnStatusSaveFolder = new System.Windows.Forms.Button();
+            this.tbxStatusSaveFolder = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
@@ -3875,6 +3877,8 @@ namespace LEDController.View
             // 
             // tpgLEDStatus
             // 
+            this.tpgLEDStatus.Controls.Add(this.tbxStatusSaveFolder);
+            this.tpgLEDStatus.Controls.Add(this.btnStatusSaveFolder);
             this.tpgLEDStatus.Controls.Add(this.panelLEDStatus);
             this.tpgLEDStatus.Controls.Add(this.btnShowLEDStatus);
             this.tpgLEDStatus.Controls.Add(this.label48);
@@ -5236,7 +5240,7 @@ namespace LEDController.View
             // btnShowLEDStatus
             // 
             this.btnShowLEDStatus.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnShowLEDStatus.Location = new System.Drawing.Point(13, 134);
+            this.btnShowLEDStatus.Location = new System.Drawing.Point(13, 183);
             this.btnShowLEDStatus.Name = "btnShowLEDStatus";
             this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(1);
             this.btnShowLEDStatus.Size = new System.Drawing.Size(131, 32);
@@ -5248,7 +5252,7 @@ namespace LEDController.View
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(145, 102);
+            this.label48.Location = new System.Drawing.Point(145, 151);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(11, 12);
             this.label48.TabIndex = 8;
@@ -5257,7 +5261,7 @@ namespace LEDController.View
             // tbxMaxValue
             // 
             this.tbxMaxValue.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbxMaxValue.Location = new System.Drawing.Point(162, 95);
+            this.tbxMaxValue.Location = new System.Drawing.Point(162, 144);
             this.tbxMaxValue.Name = "tbxMaxValue";
             this.tbxMaxValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxMaxValue.Size = new System.Drawing.Size(48, 26);
@@ -5267,7 +5271,7 @@ namespace LEDController.View
             // tbxMinValue
             // 
             this.tbxMinValue.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbxMinValue.Location = new System.Drawing.Point(99, 95);
+            this.tbxMinValue.Location = new System.Drawing.Point(99, 144);
             this.tbxMinValue.Name = "tbxMinValue";
             this.tbxMinValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxMinValue.Size = new System.Drawing.Size(40, 26);
@@ -5279,7 +5283,7 @@ namespace LEDController.View
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.Color.Transparent;
             this.label47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label47.Location = new System.Drawing.Point(10, 100);
+            this.label47.Location = new System.Drawing.Point(10, 149);
             this.label47.Margin = new System.Windows.Forms.Padding(10);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(75, 16);
@@ -5290,7 +5294,7 @@ namespace LEDController.View
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label46.Location = new System.Drawing.Point(176, 66);
+            this.label46.Location = new System.Drawing.Point(176, 115);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(24, 16);
             this.label46.TabIndex = 4;
@@ -5306,7 +5310,7 @@ namespace LEDController.View
             "20",
             "30",
             "50"});
-            this.cbxQueryWaitTime.Location = new System.Drawing.Point(99, 62);
+            this.cbxQueryWaitTime.Location = new System.Drawing.Point(99, 111);
             this.cbxQueryWaitTime.Name = "cbxQueryWaitTime";
             this.cbxQueryWaitTime.Size = new System.Drawing.Size(61, 24);
             this.cbxQueryWaitTime.Sorted = true;
@@ -5317,7 +5321,7 @@ namespace LEDController.View
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label45.Location = new System.Drawing.Point(10, 66);
+            this.label45.Location = new System.Drawing.Point(10, 115);
             this.label45.Margin = new System.Windows.Forms.Padding(10);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(75, 16);
@@ -5333,7 +5337,7 @@ namespace LEDController.View
             "LED电压",
             "LED功率",
             "LED状态"});
-            this.cbxQueryParam.Location = new System.Drawing.Point(99, 29);
+            this.cbxQueryParam.Location = new System.Drawing.Point(99, 78);
             this.cbxQueryParam.Name = "cbxQueryParam";
             this.cbxQueryParam.Size = new System.Drawing.Size(121, 24);
             this.cbxQueryParam.Sorted = true;
@@ -5344,7 +5348,7 @@ namespace LEDController.View
             this.label44.AutoSize = true;
             this.label44.BackColor = System.Drawing.Color.Transparent;
             this.label44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label44.Location = new System.Drawing.Point(10, 33);
+            this.label44.Location = new System.Drawing.Point(10, 82);
             this.label44.Margin = new System.Windows.Forms.Padding(10);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(75, 16);
@@ -6049,6 +6053,27 @@ namespace LEDController.View
             this.toolStripMenuConfiguration.Text = "设置...";
             this.toolStripMenuConfiguration.Click += new System.EventHandler(this.toolStripMenuConfiguration_Click);
             // 
+            // btnStatusSaveFolder
+            // 
+            this.btnStatusSaveFolder.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnStatusSaveFolder.Location = new System.Drawing.Point(9, 28);
+            this.btnStatusSaveFolder.Name = "btnStatusSaveFolder";
+            this.btnStatusSaveFolder.Size = new System.Drawing.Size(113, 30);
+            this.btnStatusSaveFolder.TabIndex = 12;
+            this.btnStatusSaveFolder.Text = "数据保存目录";
+            this.btnStatusSaveFolder.UseVisualStyleBackColor = true;
+            this.btnStatusSaveFolder.Click += new System.EventHandler(this.btnStatusSaveFolder_Click);
+            // 
+            // tbxStatusSaveFolder
+            // 
+            this.tbxStatusSaveFolder.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbxStatusSaveFolder.Location = new System.Drawing.Point(128, 31);
+            this.tbxStatusSaveFolder.Name = "tbxStatusSaveFolder";
+            this.tbxStatusSaveFolder.Size = new System.Drawing.Size(91, 26);
+            this.tbxStatusSaveFolder.TabIndex = 13;
+            this.tbxStatusSaveFolder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxStatusSaveFolder_KeyDown);
+            this.tbxStatusSaveFolder.Leave += new System.EventHandler(this.tbxStatusSaveFolder_Leave);
+            // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6569,6 +6594,8 @@ namespace LEDController.View
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuConfiguration;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.TextBox tbxStatusSaveFolder;
+        private System.Windows.Forms.Button btnStatusSaveFolder;
     }
 }
 
