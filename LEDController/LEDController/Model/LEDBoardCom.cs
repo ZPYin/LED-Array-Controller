@@ -696,10 +696,25 @@ namespace LEDController.Model
             {
                 byte[] thisLEDData = new byte[2];
                 Array.Copy(recData, i * 2, thisLEDData, 0, 2);
-                LEDVoltages[i] = Convert.ToDouble(thisLEDData);
+                LEDVoltages[i] = Convert.ToDouble(thisLEDData) / 100.0;
             }
 
             return LEDVoltages;
+        }
+
+        public double[] ParseLEDCurrent(byte[] recData)
+        {
+            int nLED = recData.Length / 2;
+            double[] LEDCurrents = new double[nLED];
+
+            for (int i = 0; i < nLED; i++)
+            {
+                byte[] thisLEDData = new byte[2];
+                Array.Copy(recData, i * 2, thisLEDData, 0, 2);
+                LEDCurrents[i] = Convert.ToDouble(thisLEDData) / 1000.0;
+            }
+
+            return LEDCurrents;
         }
 
         public AllLEDStatus QueryAllLEDStatus()
@@ -841,21 +856,6 @@ namespace LEDController.Model
             status.updatedTime = DateTime.Now;
 
             return status;
-        }
-
-        public double[] ParseLEDCurrent(byte[] recData)
-        {
-            int nLED = recData.Length / 2;
-            double[] LEDCurrents = new double[nLED];
-
-            for (int i = 0; i < nLED; i++)
-            {
-                byte[] thisLEDData = new byte[2];
-                Array.Copy(recData, i * 2, thisLEDData, 0, 2);
-                LEDCurrents[i] = Convert.ToDouble(thisLEDData);
-            }
-
-            return LEDCurrents;
         }
 
         public LEDStatus QueryLEDStatus(int idx, QueryType qType)
