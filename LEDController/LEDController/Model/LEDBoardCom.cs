@@ -251,6 +251,21 @@ namespace LEDController.Model
             List<double> thisList = this.fixGreenLEDVoltage.ToList().Concat(this.dimGreenLEDVoltage.ToList()).Concat(this.fixRedLEDVoltage.ToList()).Concat(this.dimRedLEDVoltage.ToList()).Concat(this.fixDarkRedLEDVoltage.ToList()).Concat(this.dimDarkRedLEDVoltage.ToList()).ToList();
             return thisList.ToArray();
         }
+
+        public double CalcLEDTotalPower()
+        {
+            return CalcTotalGreenLEDPower() + CalcTotalRedLEDPower() + CalcTotalDarkRedLEDPower();
+        }
+
+        public double CalcLEDTotalVoltage()
+        {
+            return CalcTotalGreenLEDVoltage() + CalcTotalRedLEDVoltage() + CalcTotalDarkRedLEDVoltage();
+        }
+
+        public double CalcLEDTotalCurrent()
+        {
+            return CalcTotalGreenLEDCurrent() + CalcTotalRedLEDCurrent() + CalcTotalDarkRedLEDCurrent();
+        }
     }
 
     public class LEDControllerCfg : LEDBoardCom

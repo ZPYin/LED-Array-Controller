@@ -41,6 +41,7 @@ namespace LEDController.Presenter
         public string cfgFileName;
         public string statusDataFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "");
         FileStream statusDataFS = null;
+        private AllLEDStatus ledStatus;
 
         public LEDControllerPresenter(LEDControllerViewer newView)
         {
@@ -864,14 +865,10 @@ namespace LEDController.Presenter
         private void UpdateLEDLiveData(object state)
         {
             int thisIndex = (int)(sw.Elapsed.TotalSeconds) % 3600;
-            LEDPowerLiveData[thisIndex] = 1;
-            LEDVoltageLiveData[thisIndex] = 1;
-            LEDCurrentLiveData[thisIndex] = 1;
-            /* // Replace the upper part with below 3 lines
-            LEDPowerLiveData[thisIndex] = (this.currentLEDStatus.fixLEDPower + this.currentLEDStatus.dimLEDPower);
-            LEDVoltageLiveData[thisIndex] = (this.currentLEDStatus.fixLEDVoltage + this.currentLEDStatus.dimLEDVoltage);
-            LEDCurrentLiveData[thisIndex] = (this.currentLEDStatus.fixLEDCurrent + this.currentLEDStatus.dimLEDCurrent);
-            */
+            // Replace the upper part with below 3 lines
+            LEDPowerLiveData[thisIndex] = (this.ledStatus.CalcLEDTotalPower());
+            LEDVoltageLiveData[thisIndex] = (this.ledStatus.CalcLEDTotalVoltage());
+            LEDCurrentLiveData[thisIndex] = (this.ledStatus.CalcLEDTotalCurrent());
 
             if (_view.formsLEDStatusPlot.IsDisposed)
             {
@@ -906,10 +903,10 @@ namespace LEDController.Presenter
                 statusDataFS = File.Create(statusDataFile);
             }
 
-            AllLEDStatus status = this.connector.QueryAllLEDStatus();
+            this.ledStatus = this.connector.QueryAllLEDStatus();
 
             // Show LED status
-            if (status.isValidStatus)
+            if (this.ledStatus.isValidStatus)
             {
                 StatusStrip statusStrip1 = (StatusStrip)(this._view.Controls.Find("statusStrip1", true)[0]);
 
@@ -917,9 +914,9 @@ namespace LEDController.Presenter
                 ToolStripStatusLabel tsslGreenLEDTotalPower = statusStrip1.Items[0] as ToolStripStatusLabel;
                 ToolStripStatusLabel tsslRedLEDTotalPower = statusStrip1.Items[1] as ToolStripStatusLabel;
                 ToolStripStatusLabel tsslDarkRedLEDTotalPower = statusStrip1.Items[2] as ToolStripStatusLabel;
-                tsslGreenLEDTotalPower.Text = $"绿光实时总功率: {status.CalcTotalGreenLEDPower()} W";
-                tsslRedLEDTotalPower.Text = $"红光实时总功率: {status.CalcTotalRedLEDPower()} W";
-                tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: {status.CalcTotalDarkRedLEDPower()} W";
+                tsslGreenLEDTotalPower.Text = $"绿光实时总功率: {this.ledStatus.CalcTotalGreenLEDPower()} W";
+                tsslRedLEDTotalPower.Text = $"红光实时总功率: {this.ledStatus.CalcTotalRedLEDPower()} W";
+                tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: {this.ledStatus.CalcTotalDarkRedLEDPower()} W";
 
                 Label lblGreenLEDTempLU = (Label)(this._view.Controls.Find("lblGreenLEDTempLU", true)[0]);
                 Label lblGreenLEDTempRD = (Label)(this._view.Controls.Find("lblGreenLEDTempRD", true)[0]);
@@ -927,24 +924,24 @@ namespace LEDController.Presenter
                 Label lblRedLEDTempRD = (Label)(this._view.Controls.Find("lblRedLEDTempRD", true)[0]);
                 Label lblDarkRedLEDTempLU = (Label)(this._view.Controls.Find("lblDarkRedLEDTempLU", true)[0]);
                 Label lblDarkRedLEDTempRD = (Label)(this._view.Controls.Find("lblDarkRedLEDTempRD", true)[0]);
-                lblGreenLEDTempLU.Text = status.greenLEDTempLU.ToString();
-                lblGreenLEDTempRD.Text = status.greenLEDTempRD.ToString();
-                lblRedLEDTempLU.Text = status.redLEDTempLU.ToString();
-                lblRedLEDTempRD.Text = status.redLEDTempRD.ToString();
-                lblDarkRedLEDTempLU.Text = status.darkRedLEDTempLU.ToString();
-                lblDarkRedLEDTempRD.Text = status.darkRedLEDTempRD.ToString();
+                lblGreenLEDTempLU.Text = this.ledStatus.greenLEDTempLU.ToString();
+                lblGreenLEDTempRD.Text = this.ledStatus.greenLEDTempRD.ToString();
+                lblRedLEDTempLU.Text = this.ledStatus.redLEDTempLU.ToString();
+                lblRedLEDTempRD.Text = this.ledStatus.redLEDTempRD.ToString();
+                lblDarkRedLEDTempLU.Text = this.ledStatus.darkRedLEDTempLU.ToString();
+                lblDarkRedLEDTempRD.Text = this.ledStatus.darkRedLEDTempRD.ToString();
 
                 if (statusDataFS != null)
                 {
-                    byte[] info = new UTF8Encoding(true).GetBytes($"[{status.updatedTime.ToString("yyyy-mm-dd HH:MM:SS")}] 绿光总功率= {status.CalcTotalGreenLEDPower()} W; 红光总功率: {status.CalcTotalRedLEDPower()} W; 红外总功率: {status.CalcTotalDarkRedLEDPower()} W" + "\r\n");
+                    byte[] info = new UTF8Encoding(true).GetBytes($"[{this.ledStatus.updatedTime.ToString("yyyy-mm-dd HH:MM:SS")}] 绿光总功率= {this.ledStatus.CalcTotalGreenLEDPower()} W; 红光总功率: {this.ledStatus.CalcTotalRedLEDPower()} W; 红外总功率: {this.ledStatus.CalcTotalDarkRedLEDPower()} W" + "\r\n");
                     statusDataFS.Write(info, 0, info.Length);
                 }
 
                 try
                 {
-                    double[] LEDCurrent = status.GetLEDCurrentArray();
-                    double[] LEDVoltage = status.GetLEDVoltageArray();
-                    double[] LEDPower = status.GetLEDPowerArray();
+                    double[] LEDCurrent = this.ledStatus.GetLEDCurrentArray();
+                    double[] LEDVoltage = this.ledStatus.GetLEDVoltageArray();
+                    double[] LEDPower = this.ledStatus.GetLEDPowerArray();
 
                     TextBox tbxMinValue = (TextBox)(this._view.Controls.Find("tbxMinValue", true)[0]);
                     TextBox tbxMaxValue = (TextBox)(this._view.Controls.Find("tbxMaxValue", true)[0]);
@@ -986,7 +983,7 @@ namespace LEDController.Presenter
                     }
 
                     // Set Colors
-                    // _view.LEDStatusColors = LEDControlColors;
+                    _view.LEDStatusColors = LEDControlColors;
                 }
                 catch
                 {
