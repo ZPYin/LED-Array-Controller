@@ -90,6 +90,12 @@ namespace LEDController.Model
             this.updatedTime = DateTime.Now;
         }
 
+        public AllLEDStatus()
+        {
+            this.isValidStatus = false;
+            this.updatedTime = DateTime.Now;
+        }
+
         public double CalcTotalGreenLEDPower()
         {
             double power = 0.0;
@@ -254,17 +260,47 @@ namespace LEDController.Model
 
         public double CalcLEDTotalPower()
         {
-            return CalcTotalGreenLEDPower() + CalcTotalRedLEDPower() + CalcTotalDarkRedLEDPower();
+            double totalVal;
+            if (this.isValidStatus)
+            {
+                totalVal = CalcTotalGreenLEDPower() + CalcTotalRedLEDPower() + CalcTotalDarkRedLEDPower();
+            }
+            else
+            {
+                totalVal = 0.0;
+            }
+
+            return totalVal;
         }
 
         public double CalcLEDTotalVoltage()
         {
-            return CalcTotalGreenLEDVoltage() + CalcTotalRedLEDVoltage() + CalcTotalDarkRedLEDVoltage();
+            double totalVal;
+            if (this.isValidStatus)
+            {
+                totalVal = CalcTotalGreenLEDVoltage() + CalcTotalRedLEDVoltage() + CalcTotalDarkRedLEDVoltage();
+            }
+            else
+            {
+                totalVal = 0.0;
+            }
+
+            return totalVal;
         }
 
         public double CalcLEDTotalCurrent()
         {
-            return CalcTotalGreenLEDCurrent() + CalcTotalRedLEDCurrent() + CalcTotalDarkRedLEDCurrent();
+            double totalVal;
+            if (this.isValidStatus)
+            {
+                totalVal = CalcTotalGreenLEDCurrent() + CalcTotalRedLEDCurrent() + CalcTotalDarkRedLEDCurrent();
+            }
+            else
+            {
+                totalVal = 0.0;
+            }
+
+            return totalVal;
         }
     }
 
@@ -769,141 +805,276 @@ namespace LEDController.Model
                 return status;
             }
 
-            byte[] recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDPower[0], BitConverter.GetBytes((ushort)NumFixRedLED));
-            double[] values = ParseLEDPower(recData);
-            for (int i = 0; i < values.Length; i++)
+            byte[] recData;
+            double[] values;
+            try
             {
-                status.fixRedLEDPower[i] = values[i];
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDPower[0], BitConverter.GetBytes((ushort)NumFixRedLED));
+                values = ParseLEDPower(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixRedLEDPower[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixRedLED));
-            values = ParseLEDVoltage(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.fixRedLEDVoltage[i] = values[i];
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixRedLED));
+                values = ParseLEDVoltage(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixRedLEDVoltage[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixRedLED));
-            values = ParseLEDCurrent(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.fixRedLEDCurrent[i] = values[i];
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixRedLED));
+                values = ParseLEDCurrent(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixRedLEDCurrent[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDPower[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
-            values = ParseLEDPower(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.fixDarkRedLEDPower[i] = values[i];
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDPower[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
+                values = ParseLEDPower(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixDarkRedLEDPower[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
-            values = ParseLEDVoltage(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.fixDarkRedLEDVoltage[i] = values[i];
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
+                values = ParseLEDVoltage(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixDarkRedLEDVoltage[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
-            values = ParseLEDCurrent(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.fixDarkRedLEDCurrent[i] = values[i];
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
+                values = ParseLEDCurrent(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixDarkRedLEDCurrent[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDPower[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
-            values = ParseLEDPower(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.fixGreenLEDPower[i] = values[i];
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDPower[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
+                values = ParseLEDPower(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixGreenLEDPower[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
-            values = ParseLEDVoltage(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.fixGreenLEDVoltage[i] = values[i];
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
+                values = ParseLEDVoltage(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixGreenLEDVoltage[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
-            values = ParseLEDCurrent(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.fixGreenLEDCurrent[i] = values[i];
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
+                values = ParseLEDCurrent(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.fixGreenLEDCurrent[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDPower[0], BitConverter.GetBytes((ushort)NumDimRedLED));
-            values = ParseLEDPower(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimRedLEDPower[i] = values[i];
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDPower[0], BitConverter.GetBytes((ushort)NumDimRedLED));
+                values = ParseLEDPower(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimRedLEDPower[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimRedLED));
-            values = ParseLEDVoltage(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimRedLEDVoltage[i] = values[i];
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimRedLED));
+                values = ParseLEDVoltage(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimRedLEDVoltage[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimRedLED));
-            values = ParseLEDCurrent(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimRedLEDCurrent[i] = values[i];
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimRedLED));
+                values = ParseLEDCurrent(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimRedLEDCurrent[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDPower[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
-            values = ParseLEDPower(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimDarkRedLEDPower[i] = values[i];
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDPower[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
+                values = ParseLEDPower(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimDarkRedLEDPower[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
-            values = ParseLEDVoltage(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimDarkRedLEDVoltage[i] = values[i];
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
+                values = ParseLEDVoltage(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimDarkRedLEDVoltage[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
-            values = ParseLEDCurrent(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimDarkRedLEDCurrent[i] = values[i];
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
+                values = ParseLEDCurrent(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimDarkRedLEDCurrent[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDPower[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
-            values = ParseLEDPower(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimGreenLEDPower[i] = values[i];
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDPower[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
+                values = ParseLEDPower(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimGreenLEDPower[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
-            values = ParseLEDVoltage(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimGreenLEDVoltage[i] = values[i];
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
+                values = ParseLEDVoltage(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimGreenLEDVoltage[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
-            values = ParseLEDCurrent(recData);
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                status.dimGreenLEDCurrent[i] = values[i];
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
+                values = ParseLEDCurrent(recData);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    status.dimGreenLEDCurrent[i] = values[i];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
             // receive temperature sensor data
-            recData = this.device.WriteReceive((byte)1, 3, (ushort)addrTempSensor[0], BitConverter.GetBytes((ushort)6));
-            values = ParseTemperature(recData);
-            status.redLEDTempLU = values[0];
-            status.redLEDTempRD = values[1];
-            status.darkRedLEDTempLU = values[2];
-            status.darkRedLEDTempRD = values[3];
-            status.greenLEDTempLU = values[4];
-            status.greenLEDTempRD = values[5];
+            try
+            {
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrTempSensor[0], BitConverter.GetBytes((ushort)6));
+                values = ParseTemperature(recData);
+                status.redLEDTempLU = values[0];
+                status.redLEDTempRD = values[1];
+                status.darkRedLEDTempLU = values[2];
+                status.darkRedLEDTempRD = values[3];
+                status.greenLEDTempLU = values[4];
+                status.greenLEDTempRD = values[5];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             status.isValidStatus = true;
             status.updatedTime = DateTime.Now;
@@ -974,15 +1145,22 @@ namespace LEDController.Model
                     break;
             }
 
-            byte[] recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDPower, new byte[2] { 0x00, 0x01 });
-            double[] values = ParseLEDPower(recData);
-            recStatus.LEDPower = values[0];
-            recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDCurrent, new byte[2] { 0x00, 0x01 });
-            values = ParseLEDCurrent(recData);
-            recStatus.LEDCurrent = values[0];
-            recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDVoltage, new byte[2] { 0x00, 0x01 });
-            values = ParseLEDVoltage(recData);
-            recStatus.LEDCurrent = values[0];
+            try
+            {
+                byte[] recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDPower, new byte[2] { 0x00, 0x01 });
+                double[] values = ParseLEDPower(recData);
+                recStatus.LEDPower = values[0];
+                recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDCurrent, new byte[2] { 0x00, 0x01 });
+                values = ParseLEDCurrent(recData);
+                recStatus.LEDCurrent = values[0];
+                recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDVoltage, new byte[2] { 0x00, 0x01 });
+                values = ParseLEDVoltage(recData);
+                recStatus.LEDCurrent = values[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             recStatus.isValidStatus = true;
 
@@ -1015,8 +1193,15 @@ namespace LEDController.Model
         {
             bool[] chillerWarning;
 
-            byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)addrPlcAChillerWarn[chillerIndex], new byte[2] { 0x00, 0x01 });
-            chillerWarning = ParseChillerStatus(recData, 1);
+            try
+            {
+                byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)addrPlcAChillerWarn[chillerIndex], new byte[2] { 0x00, 0x01 });
+                chillerWarning = ParseChillerStatus(recData, 1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             return chillerWarning[0];
         }
@@ -1047,8 +1232,15 @@ namespace LEDController.Model
         {
             bool[] pumpWarning;
 
-            byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)addrPlcAPumpWarn[pumpIndex], new byte[2] { 0x00, 0x01 });
-            pumpWarning = ParsePumpStatus(recData, 1);
+            try
+            {
+                byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)addrPlcAPumpWarn[pumpIndex], new byte[2] { 0x00, 0x01 });
+                pumpWarning = ParsePumpStatus(recData, 1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             return pumpWarning[0];
         }

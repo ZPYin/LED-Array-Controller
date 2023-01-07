@@ -188,5 +188,17 @@
   <ItemGroup>
     <None Include="Resources\question-circle-fill.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light_off1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light_on1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power_off1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power_on1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

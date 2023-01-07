@@ -458,8 +458,7 @@ namespace LEDController.Model
             }
             catch
             {
-                return new byte[0];
-                // throw new IOException("ModBus RTU error: No data received.");
+                throw new IOException("ModBus RTU error: No data received.");
             }
 
             byte[] subArray = new byte[msgLen - 2];

@@ -1,5 +1,4 @@
-﻿using ScottPlot;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -12,16 +11,11 @@ namespace LEDController.View
     
     public partial class LEDControllerViewer : Form
     {
-        public FormsPlot formsLEDStatusPlot;
 
         public LEDControllerViewer()
         {
             InitializeComponent();
             this.KeyPreview = true;
-
-            cbxQueryParam.SelectedIndex = 0;
-            cbxQueryWaitTime.SelectedIndex = 0;
-            formsLEDStatusPlot = this.formsPlotRTD;
         }
 
         public event EventHandler<EventDimLEDArgs> ClearDimLEDStatus;
@@ -66,8 +60,11 @@ namespace LEDController.View
         public event EventHandler<EventArgs> TurnOffCamPower;
         public event EventHandler<EventArgs> TurnOnPCPower;
         public event EventHandler<EventArgs> TurnOffPCPower;
+        public event EventHandler<EventArgs> StartCountDown;
+        public event EventHandler<EventArgs> StopCountDown;
 
         public DispatcherTimer timer = new DispatcherTimer();
+        public DispatcherTimer timerCountDown = new DispatcherTimer();
 
         private Size m_szInit;   //初始窗体大小
         private Dictionary<Control, Rectangle> m_dicSize = new Dictionary<Control, Rectangle>();   // store control sizes
@@ -522,17 +519,27 @@ namespace LEDController.View
 
                 timer.Interval = TimeSpan.FromSeconds(Convert.ToDouble(cbxQueryWaitTime.GetItemText(cbxQueryWaitTime.SelectedItem)));
                 timer.Tick += StartShowLEDStatus;
+                timerCountDown.Interval = TimeSpan.FromSeconds(1.0);
+                timerCountDown.Tick += OnStartCountDown;
 
                 timer.Start();
+                timerCountDown.Start();
             }
             else
             {
                 btn.BackColor = Color.Empty;
                 btn.Text = "开始获取";
                 StopShowLEDStatus?.Invoke(sender, e);
+                StopCountDown?.Invoke(sender, e);
 
                 timer.Stop();
+                timerCountDown.Stop();
             }
+        }
+
+        private void OnStartCountDown(object sender, EventArgs e)
+        {
+            StartCountDown?.Invoke(sender, e);
         }
 
         private void StartShowLEDStatus(object sender, EventArgs e)

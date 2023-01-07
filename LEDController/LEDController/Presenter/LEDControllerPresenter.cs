@@ -1,5 +1,6 @@
 ﻿using LEDController.View;
 using LEDController.Model;
+using ScottPlot;
 using ScottPlot.Plottable;
 using System;
 using System.Collections.Generic;
@@ -97,31 +98,52 @@ namespace LEDController.Presenter
             _view.TurnOffCamPower += new EventHandler<EventArgs>(OnTurnOffCamPower);
             _view.TurnOnPCPower += new EventHandler<EventArgs>(OnTurnOnPCPower);
             _view.TurnOffPCPower += new EventHandler<EventArgs>(OnTurnOffPCPower);
+            _view.StartCountDown += new EventHandler<EventArgs>(OnStartCountDown);
+            _view.StopCountDown += new EventHandler<EventArgs>(OnStopCountDown);
 
             // Initialize Form
             InitialForm();
 
             // Initialize LED status plot
+            this.ledStatus = new AllLEDStatus();
             sw.Start();
             Random rand = new Random(0);
-            var sig = _view.formsLEDStatusPlot.Plot.AddSignal(LEDPowerLiveData, sampleRate: 3600 * 24.0, label: "功率");
-            _view.formsLEDStatusPlot.Plot.AddSignal(LEDCurrentLiveData, sampleRate: 3600 * 24.0, label: "电流");
-            _view.formsLEDStatusPlot.Plot.AddSignal(LEDVoltageLiveData, sampleRate: 3600 * 24.0, label: "电压");
-            _view.formsLEDStatusPlot.Plot.Title("LED状态");
-            _view.formsLEDStatusPlot.Plot.XLabel("时间");
-            _view.formsLEDStatusPlot.Plot.YLabel("强度");
-            _view.formsLEDStatusPlot.Plot.Grid(true);
-            _view.formsLEDStatusPlot.Plot.SetAxisLimitsY(0, 20);
+
+            FormsPlot formsLEDStatusPlot = (FormsPlot)(this._view.Controls.Find("formsLEDStatusPlot", true)[0]);
+            var sig = formsLEDStatusPlot.Plot.AddSignal(LEDPowerLiveData, sampleRate: 3600 * 24.0, label: "功率");
+            formsLEDStatusPlot.Plot.AddSignal(LEDCurrentLiveData, sampleRate: 3600 * 24.0, label: "电流");
+            formsLEDStatusPlot.Plot.AddSignal(LEDVoltageLiveData, sampleRate: 3600 * 24.0, label: "电压");
+            formsLEDStatusPlot.Plot.Title("LED状态");
+            formsLEDStatusPlot.Plot.XLabel("时间");
+            formsLEDStatusPlot.Plot.YLabel("强度");
+            formsLEDStatusPlot.Plot.Grid(true);
+            formsLEDStatusPlot.Plot.SetAxisLimitsY(0, 20);
             sig.OffsetX = GetCurrentTime().ToOADate();
-            _view.formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
-            _view.formsLEDStatusPlot.Plot.XAxis.ManualTickSpacing(5, ScottPlot.Ticks.DateTimeUnit.Minute);
-            _view.formsLEDStatusPlot.Plot.XAxis.TickLabelFormat("HH:mm", true);
-            _view.formsLEDStatusPlot.Plot.XAxis.DateTimeFormat(true);
-            var legend = _view.formsLEDStatusPlot.Plot.Legend(location: ScottPlot.Alignment.UpperRight);
-            _view.formsLEDStatusPlot.Refresh();
+            formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
+            formsLEDStatusPlot.Plot.XAxis.ManualTickSpacing(5, ScottPlot.Ticks.DateTimeUnit.Minute);
+            formsLEDStatusPlot.Plot.XAxis.TickLabelFormat("HH:mm", true);
+            formsLEDStatusPlot.Plot.XAxis.DateTimeFormat(true);
+            var legend = formsLEDStatusPlot.Plot.Legend(location: ScottPlot.Alignment.UpperRight);
+            formsLEDStatusPlot.Refresh();
 
             updateLEDStatusTimer = new System.Threading.Timer(this.UpdateLEDLiveData, 0, 0, 1000);
             renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, sig, 0, 3600 * 1000);
+        }
+
+        public void OnStopCountDown(object sender, EventArgs e)
+        {
+            Label lblCountDown = (Label)(this._view.Controls.Find("lblCountDown", true)[0]);
+            lblCountDown.Text = "0 s";
+        }
+
+        public void OnStartCountDown(object sender, EventArgs e)
+        {
+            Label lblCountDown = (Label)(this._view.Controls.Find("lblCountDown", true)[0]);
+            ComboBox cbxQueryWaitTime = (ComboBox)(this._view.Controls.Find("cbxQueryWaitTime", true)[0]);
+
+            double countTime = Convert.ToDouble(lblCountDown.Text.Replace(" s", "")) + 1;
+
+            lblCountDown.Text = $"{(countTime % Convert.ToDouble(cbxQueryWaitTime.Items[cbxQueryWaitTime.SelectedIndex].ToString()))} s";
         }
 
         public void OnTurnOnCamPower(object sender, EventArgs e)
@@ -539,6 +561,22 @@ namespace LEDController.Presenter
 
             TextBox tbxStatusSaveFolder = (TextBox)(this._view.Controls.Find("tbxStatusSaveFolder", true)[0]);
             tbxStatusSaveFolder.Text = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "");
+
+            ComboBox cbxQueryWaitTime = (ComboBox)(this._view.Controls.Find("cbxQueryWaitTime", true)[0]);
+            string[] waitTStr = {"1", "2", "5", "10", "15", "30", "60"};
+            foreach (string waitT in waitTStr)
+            {
+                cbxQueryWaitTime.Items.Add(waitT);
+            }
+            cbxQueryWaitTime.SelectedIndex = 2;
+
+            ComboBox cbxQueryParam = (ComboBox)(this._view.Controls.Find("cbxQueryParam", true)[0]);
+            string[] queryParams = {"LED电流", "LED电压", "LED功率", "LED状态"};
+            foreach (string queryParam in queryParams)
+            {
+                cbxQueryParam.Items.Add(queryParam);
+            }
+            cbxQueryParam.SelectedIndex = 0;
         }
 
         public LEDControllerCfg GetUISettings(LEDControllerViewer thisView)
@@ -858,21 +896,25 @@ namespace LEDController.Presenter
         {
             SignalPlot sig = state as SignalPlot;
             sig.OffsetX = GetCurrentTime().ToOADate();
-            _view.formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
-            _view.formsLEDStatusPlot.Refresh();
+
+            FormsPlot formsLEDStatusPlot = (FormsPlot)(this._view.Controls.Find("formsLEDStatusPlot", true)[0]);
+            formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
+            formsLEDStatusPlot.Refresh();
         }
 
         private void UpdateLEDLiveData(object state)
         {
             int thisIndex = (int)(sw.Elapsed.TotalSeconds) % 3600;
+
             // Replace the upper part with below 3 lines
             LEDPowerLiveData[thisIndex] = (this.ledStatus.CalcLEDTotalPower());
             LEDVoltageLiveData[thisIndex] = (this.ledStatus.CalcLEDTotalVoltage());
             LEDCurrentLiveData[thisIndex] = (this.ledStatus.CalcLEDTotalCurrent());
+            FormsPlot formsLEDStatusPlot = (FormsPlot)(this._view.Controls.Find("formsLEDStatusPlot", true)[0]);
 
-            if (_view.formsLEDStatusPlot.IsDisposed)
+            if (formsLEDStatusPlot.IsDisposed)
             {
-                _view.formsLEDStatusPlot.Refresh();
+                formsLEDStatusPlot.Refresh();
             }
         }
 
@@ -903,7 +945,14 @@ namespace LEDController.Presenter
                 statusDataFS = File.Create(statusDataFile);
             }
 
-            this.ledStatus = this.connector.QueryAllLEDStatus();
+            try
+            {
+                this.ledStatus = this.connector.QueryAllLEDStatus();
+            }
+            catch
+            {
+                // do something
+            }
 
             // Show LED status
             if (this.ledStatus.isValidStatus)

@@ -194,14 +194,8 @@ namespace LEDController.View
             this.btnOpenRedFixLED = new System.Windows.Forms.Button();
             this.btnCloseGreenFixLED = new System.Windows.Forms.Button();
             this.btnOpenGreenFixLED = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panelDarkRedFixLED = new System.Windows.Forms.Panel();
             this.btnDarkRedLED24 = new System.Windows.Forms.Button();
@@ -308,7 +302,7 @@ namespace LEDController.View
             this.btnStatusSaveFolder = new System.Windows.Forms.Button();
             this.panelLEDStatus = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.formsPlotRTD = new ScottPlot.FormsPlot();
+            this.formsLEDStatusPlot = new ScottPlot.FormsPlot();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -438,6 +432,7 @@ namespace LEDController.View
             this.pbxPump3 = new System.Windows.Forms.PictureBox();
             this.label57 = new System.Windows.Forms.Label();
             this.tpgSkylightControl = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
             this.btnCloseSkylight3 = new System.Windows.Forms.Button();
             this.btnOpenSkylight3 = new System.Windows.Forms.Button();
             this.label62 = new System.Windows.Forms.Label();
@@ -473,10 +468,10 @@ namespace LEDController.View
             this.btnPCOff = new System.Windows.Forms.Button();
             this.label68 = new System.Windows.Forms.Label();
             this.btnPCOn = new System.Windows.Forms.Button();
-            this.pbxPCPower = new System.Windows.Forms.PictureBox();
             this.btnCamOff = new System.Windows.Forms.Button();
             this.label67 = new System.Windows.Forms.Label();
             this.btnCamOn = new System.Windows.Forms.Button();
+            this.pbxPCPower = new System.Windows.Forms.PictureBox();
             this.pbxCamPower = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
@@ -489,6 +484,7 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
+            this.lblCountDown = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
@@ -1214,14 +1210,8 @@ namespace LEDController.View
             this.tpgLEDControl.Controls.Add(this.btnOpenRedFixLED);
             this.tpgLEDControl.Controls.Add(this.btnCloseGreenFixLED);
             this.tpgLEDControl.Controls.Add(this.btnOpenGreenFixLED);
-            this.tpgLEDControl.Controls.Add(this.label24);
-            this.tpgLEDControl.Controls.Add(this.label25);
             this.tpgLEDControl.Controls.Add(this.label26);
-            this.tpgLEDControl.Controls.Add(this.label21);
-            this.tpgLEDControl.Controls.Add(this.label22);
             this.tpgLEDControl.Controls.Add(this.label23);
-            this.tpgLEDControl.Controls.Add(this.label20);
-            this.tpgLEDControl.Controls.Add(this.label19);
             this.tpgLEDControl.Controls.Add(this.label18);
             this.tpgLEDControl.Controls.Add(this.panelDarkRedFixLED);
             this.tpgLEDControl.Controls.Add(this.panelRedFixLED);
@@ -1239,7 +1229,7 @@ namespace LEDController.View
             this.label43.AutoSize = true;
             this.label43.Location = new System.Drawing.Point(136, 37);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(26, 18);
+            this.label43.Size = new System.Drawing.Size(17, 12);
             this.label43.TabIndex = 94;
             this.label43.Text = "on";
             // 
@@ -1261,7 +1251,7 @@ namespace LEDController.View
             this.label42.AutoSize = true;
             this.label42.Location = new System.Drawing.Point(70, 37);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(35, 18);
+            this.label42.Size = new System.Drawing.Size(23, 12);
             this.label42.TabIndex = 92;
             this.label42.Text = "off";
             // 
@@ -1382,7 +1372,7 @@ namespace LEDController.View
             this.lblDarkRedLEDMinLeft.AutoSize = true;
             this.lblDarkRedLEDMinLeft.Location = new System.Drawing.Point(37, 108);
             this.lblDarkRedLEDMinLeft.Name = "lblDarkRedLEDMinLeft";
-            this.lblDarkRedLEDMinLeft.Size = new System.Drawing.Size(17, 18);
+            this.lblDarkRedLEDMinLeft.Size = new System.Drawing.Size(11, 12);
             this.lblDarkRedLEDMinLeft.TabIndex = 96;
             this.lblDarkRedLEDMinLeft.Text = "0";
             // 
@@ -1391,7 +1381,7 @@ namespace LEDController.View
             this.lblDarkRedLEDMinRight.AutoSize = true;
             this.lblDarkRedLEDMinRight.Location = new System.Drawing.Point(280, 107);
             this.lblDarkRedLEDMinRight.Name = "lblDarkRedLEDMinRight";
-            this.lblDarkRedLEDMinRight.Size = new System.Drawing.Size(17, 18);
+            this.lblDarkRedLEDMinRight.Size = new System.Drawing.Size(11, 12);
             this.lblDarkRedLEDMinRight.TabIndex = 96;
             this.lblDarkRedLEDMinRight.Text = "0";
             // 
@@ -1400,7 +1390,7 @@ namespace LEDController.View
             this.lblDarkRedLEDMaxLeft.AutoSize = true;
             this.lblDarkRedLEDMaxLeft.Location = new System.Drawing.Point(31, 56);
             this.lblDarkRedLEDMaxLeft.Name = "lblDarkRedLEDMaxLeft";
-            this.lblDarkRedLEDMaxLeft.Size = new System.Drawing.Size(26, 18);
+            this.lblDarkRedLEDMaxLeft.Size = new System.Drawing.Size(17, 12);
             this.lblDarkRedLEDMaxLeft.TabIndex = 95;
             this.lblDarkRedLEDMaxLeft.Text = "10";
             // 
@@ -1408,7 +1398,7 @@ namespace LEDController.View
             // 
             this.tbxDimDarkRedLED4.Location = new System.Drawing.Point(232, 31);
             this.tbxDimDarkRedLED4.Name = "tbxDimDarkRedLED4";
-            this.tbxDimDarkRedLED4.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimDarkRedLED4.Size = new System.Drawing.Size(30, 21);
             this.tbxDimDarkRedLED4.TabIndex = 199;
             this.tbxDimDarkRedLED4.Tag = "12";
             this.tbxDimDarkRedLED4.Text = "0";
@@ -1420,7 +1410,7 @@ namespace LEDController.View
             this.lblDarkRedLEDMaxRight.AutoSize = true;
             this.lblDarkRedLEDMaxRight.Location = new System.Drawing.Point(280, 55);
             this.lblDarkRedLEDMaxRight.Name = "lblDarkRedLEDMaxRight";
-            this.lblDarkRedLEDMaxRight.Size = new System.Drawing.Size(26, 18);
+            this.lblDarkRedLEDMaxRight.Size = new System.Drawing.Size(17, 12);
             this.lblDarkRedLEDMaxRight.TabIndex = 95;
             this.lblDarkRedLEDMaxRight.Text = "10";
             // 
@@ -1428,7 +1418,7 @@ namespace LEDController.View
             // 
             this.tbxDimDarkRedLED3.Location = new System.Drawing.Point(170, 31);
             this.tbxDimDarkRedLED3.Name = "tbxDimDarkRedLED3";
-            this.tbxDimDarkRedLED3.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimDarkRedLED3.Size = new System.Drawing.Size(30, 21);
             this.tbxDimDarkRedLED3.TabIndex = 196;
             this.tbxDimDarkRedLED3.Tag = "11";
             this.tbxDimDarkRedLED3.Text = "0";
@@ -1439,7 +1429,7 @@ namespace LEDController.View
             // 
             this.tbxDimDarkRedLED2.Location = new System.Drawing.Point(109, 31);
             this.tbxDimDarkRedLED2.Name = "tbxDimDarkRedLED2";
-            this.tbxDimDarkRedLED2.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimDarkRedLED2.Size = new System.Drawing.Size(30, 21);
             this.tbxDimDarkRedLED2.TabIndex = 193;
             this.tbxDimDarkRedLED2.Tag = "10";
             this.tbxDimDarkRedLED2.Text = "0";
@@ -1450,7 +1440,7 @@ namespace LEDController.View
             // 
             this.tbxDimDarkRedLED1.Location = new System.Drawing.Point(49, 31);
             this.tbxDimDarkRedLED1.Name = "tbxDimDarkRedLED1";
-            this.tbxDimDarkRedLED1.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimDarkRedLED1.Size = new System.Drawing.Size(30, 21);
             this.tbxDimDarkRedLED1.TabIndex = 190;
             this.tbxDimDarkRedLED1.Tag = "9";
             this.tbxDimDarkRedLED1.Text = "0";
@@ -1462,7 +1452,7 @@ namespace LEDController.View
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(20, 34);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(44, 18);
+            this.label33.Size = new System.Drawing.Size(29, 12);
             this.label33.TabIndex = 84;
             this.label33.Text = "功率";
             // 
@@ -1482,7 +1472,7 @@ namespace LEDController.View
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(265, 34);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(17, 18);
+            this.label34.Size = new System.Drawing.Size(11, 12);
             this.label34.TabIndex = 82;
             this.label34.Text = "W";
             // 
@@ -1533,7 +1523,7 @@ namespace LEDController.View
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(203, 34);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(17, 18);
+            this.label36.Size = new System.Drawing.Size(11, 12);
             this.label36.TabIndex = 77;
             this.label36.Text = "W";
             // 
@@ -1584,7 +1574,7 @@ namespace LEDController.View
             this.label38.AutoSize = true;
             this.label38.Location = new System.Drawing.Point(142, 34);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(17, 18);
+            this.label38.Size = new System.Drawing.Size(11, 12);
             this.label38.TabIndex = 72;
             this.label38.Text = "W";
             // 
@@ -1635,7 +1625,7 @@ namespace LEDController.View
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(81, 34);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(17, 18);
+            this.label40.Size = new System.Drawing.Size(11, 12);
             this.label40.TabIndex = 67;
             this.label40.Text = "W";
             // 
@@ -1708,7 +1698,7 @@ namespace LEDController.View
             this.lblRedLEDMinLeft.AutoSize = true;
             this.lblRedLEDMinLeft.Location = new System.Drawing.Point(37, 107);
             this.lblRedLEDMinLeft.Name = "lblRedLEDMinLeft";
-            this.lblRedLEDMinLeft.Size = new System.Drawing.Size(17, 18);
+            this.lblRedLEDMinLeft.Size = new System.Drawing.Size(11, 12);
             this.lblRedLEDMinLeft.TabIndex = 94;
             this.lblRedLEDMinLeft.Text = "0";
             // 
@@ -1717,7 +1707,7 @@ namespace LEDController.View
             this.lblRedLEDMinRight.AutoSize = true;
             this.lblRedLEDMinRight.Location = new System.Drawing.Point(279, 106);
             this.lblRedLEDMinRight.Name = "lblRedLEDMinRight";
-            this.lblRedLEDMinRight.Size = new System.Drawing.Size(17, 18);
+            this.lblRedLEDMinRight.Size = new System.Drawing.Size(11, 12);
             this.lblRedLEDMinRight.TabIndex = 94;
             this.lblRedLEDMinRight.Text = "0";
             // 
@@ -1726,7 +1716,7 @@ namespace LEDController.View
             this.lblRedLEDMaxLeft.AutoSize = true;
             this.lblRedLEDMaxLeft.Location = new System.Drawing.Point(31, 55);
             this.lblRedLEDMaxLeft.Name = "lblRedLEDMaxLeft";
-            this.lblRedLEDMaxLeft.Size = new System.Drawing.Size(26, 18);
+            this.lblRedLEDMaxLeft.Size = new System.Drawing.Size(17, 12);
             this.lblRedLEDMaxLeft.TabIndex = 93;
             this.lblRedLEDMaxLeft.Text = "10";
             // 
@@ -1734,7 +1724,7 @@ namespace LEDController.View
             // 
             this.tbxDimRedLED4.Location = new System.Drawing.Point(233, 30);
             this.tbxDimRedLED4.Name = "tbxDimRedLED4";
-            this.tbxDimRedLED4.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimRedLED4.Size = new System.Drawing.Size(30, 21);
             this.tbxDimRedLED4.TabIndex = 185;
             this.tbxDimRedLED4.Tag = "8";
             this.tbxDimRedLED4.Text = "0";
@@ -1746,7 +1736,7 @@ namespace LEDController.View
             this.lblRedLEDMaxRight.AutoSize = true;
             this.lblRedLEDMaxRight.Location = new System.Drawing.Point(279, 54);
             this.lblRedLEDMaxRight.Name = "lblRedLEDMaxRight";
-            this.lblRedLEDMaxRight.Size = new System.Drawing.Size(26, 18);
+            this.lblRedLEDMaxRight.Size = new System.Drawing.Size(17, 12);
             this.lblRedLEDMaxRight.TabIndex = 93;
             this.lblRedLEDMaxRight.Text = "10";
             // 
@@ -1754,7 +1744,7 @@ namespace LEDController.View
             // 
             this.tbxDimRedLED3.Location = new System.Drawing.Point(171, 30);
             this.tbxDimRedLED3.Name = "tbxDimRedLED3";
-            this.tbxDimRedLED3.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimRedLED3.Size = new System.Drawing.Size(30, 21);
             this.tbxDimRedLED3.TabIndex = 182;
             this.tbxDimRedLED3.Tag = "7";
             this.tbxDimRedLED3.Text = "0";
@@ -1766,7 +1756,7 @@ namespace LEDController.View
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(20, 33);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 18);
+            this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 84;
             this.label11.Text = "功率";
             // 
@@ -1774,7 +1764,7 @@ namespace LEDController.View
             // 
             this.tbxDimRedLED2.Location = new System.Drawing.Point(110, 30);
             this.tbxDimRedLED2.Name = "tbxDimRedLED2";
-            this.tbxDimRedLED2.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimRedLED2.Size = new System.Drawing.Size(30, 21);
             this.tbxDimRedLED2.TabIndex = 179;
             this.tbxDimRedLED2.Tag = "6";
             this.tbxDimRedLED2.Text = "0";
@@ -1796,7 +1786,7 @@ namespace LEDController.View
             // 
             this.tbxDimRedLED1.Location = new System.Drawing.Point(50, 30);
             this.tbxDimRedLED1.Name = "tbxDimRedLED1";
-            this.tbxDimRedLED1.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimRedLED1.Size = new System.Drawing.Size(30, 21);
             this.tbxDimRedLED1.TabIndex = 176;
             this.tbxDimRedLED1.Tag = "5";
             this.tbxDimRedLED1.Text = "0";
@@ -1808,7 +1798,7 @@ namespace LEDController.View
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(265, 33);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(17, 18);
+            this.label12.Size = new System.Drawing.Size(11, 12);
             this.label12.TabIndex = 82;
             this.label12.Text = "W";
             // 
@@ -1859,7 +1849,7 @@ namespace LEDController.View
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(203, 33);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(17, 18);
+            this.label27.Size = new System.Drawing.Size(11, 12);
             this.label27.TabIndex = 77;
             this.label27.Text = "W";
             // 
@@ -1910,7 +1900,7 @@ namespace LEDController.View
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(142, 33);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(17, 18);
+            this.label29.Size = new System.Drawing.Size(11, 12);
             this.label29.TabIndex = 72;
             this.label29.Text = "W";
             // 
@@ -1961,7 +1951,7 @@ namespace LEDController.View
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(81, 33);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(17, 18);
+            this.label31.Size = new System.Drawing.Size(11, 12);
             this.label31.TabIndex = 67;
             this.label31.Text = "W";
             // 
@@ -2034,7 +2024,7 @@ namespace LEDController.View
             this.lblGreenLEDMinRight.AutoSize = true;
             this.lblGreenLEDMinRight.Location = new System.Drawing.Point(278, 108);
             this.lblGreenLEDMinRight.Name = "lblGreenLEDMinRight";
-            this.lblGreenLEDMinRight.Size = new System.Drawing.Size(17, 18);
+            this.lblGreenLEDMinRight.Size = new System.Drawing.Size(11, 12);
             this.lblGreenLEDMinRight.TabIndex = 92;
             this.lblGreenLEDMinRight.Text = "0";
             // 
@@ -2043,7 +2033,7 @@ namespace LEDController.View
             this.lblGreenLEDMaxRight.AutoSize = true;
             this.lblGreenLEDMaxRight.Location = new System.Drawing.Point(278, 56);
             this.lblGreenLEDMaxRight.Name = "lblGreenLEDMaxRight";
-            this.lblGreenLEDMaxRight.Size = new System.Drawing.Size(26, 18);
+            this.lblGreenLEDMaxRight.Size = new System.Drawing.Size(17, 12);
             this.lblGreenLEDMaxRight.TabIndex = 91;
             this.lblGreenLEDMaxRight.Text = "10";
             // 
@@ -2052,7 +2042,7 @@ namespace LEDController.View
             this.lblGreenLEDMinLeft.AutoSize = true;
             this.lblGreenLEDMinLeft.Location = new System.Drawing.Point(39, 108);
             this.lblGreenLEDMinLeft.Name = "lblGreenLEDMinLeft";
-            this.lblGreenLEDMinLeft.Size = new System.Drawing.Size(17, 18);
+            this.lblGreenLEDMinLeft.Size = new System.Drawing.Size(11, 12);
             this.lblGreenLEDMinLeft.TabIndex = 90;
             this.lblGreenLEDMinLeft.Text = "0";
             // 
@@ -2061,7 +2051,7 @@ namespace LEDController.View
             this.lblGreenLEDMaxLeft.AutoSize = true;
             this.lblGreenLEDMaxLeft.Location = new System.Drawing.Point(33, 56);
             this.lblGreenLEDMaxLeft.Name = "lblGreenLEDMaxLeft";
-            this.lblGreenLEDMaxLeft.Size = new System.Drawing.Size(26, 18);
+            this.lblGreenLEDMaxLeft.Size = new System.Drawing.Size(17, 12);
             this.lblGreenLEDMaxLeft.TabIndex = 89;
             this.lblGreenLEDMaxLeft.Text = "10";
             // 
@@ -2069,7 +2059,7 @@ namespace LEDController.View
             // 
             this.tbxDimGreenLED4.Location = new System.Drawing.Point(233, 32);
             this.tbxDimGreenLED4.Name = "tbxDimGreenLED4";
-            this.tbxDimGreenLED4.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimGreenLED4.Size = new System.Drawing.Size(30, 21);
             this.tbxDimGreenLED4.TabIndex = 171;
             this.tbxDimGreenLED4.Tag = "4";
             this.tbxDimGreenLED4.Text = "0";
@@ -2080,7 +2070,7 @@ namespace LEDController.View
             // 
             this.tbxDimGreenLED3.Location = new System.Drawing.Point(171, 32);
             this.tbxDimGreenLED3.Name = "tbxDimGreenLED3";
-            this.tbxDimGreenLED3.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimGreenLED3.Size = new System.Drawing.Size(30, 21);
             this.tbxDimGreenLED3.TabIndex = 168;
             this.tbxDimGreenLED3.Tag = "3";
             this.tbxDimGreenLED3.Text = "0";
@@ -2091,7 +2081,7 @@ namespace LEDController.View
             // 
             this.tbxDimGreenLED2.Location = new System.Drawing.Point(110, 32);
             this.tbxDimGreenLED2.Name = "tbxDimGreenLED2";
-            this.tbxDimGreenLED2.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimGreenLED2.Size = new System.Drawing.Size(30, 21);
             this.tbxDimGreenLED2.TabIndex = 165;
             this.tbxDimGreenLED2.Tag = "2";
             this.tbxDimGreenLED2.Text = "0";
@@ -2102,7 +2092,7 @@ namespace LEDController.View
             // 
             this.tbxDimGreenLED1.Location = new System.Drawing.Point(50, 32);
             this.tbxDimGreenLED1.Name = "tbxDimGreenLED1";
-            this.tbxDimGreenLED1.Size = new System.Drawing.Size(30, 28);
+            this.tbxDimGreenLED1.Size = new System.Drawing.Size(30, 21);
             this.tbxDimGreenLED1.TabIndex = 161;
             this.tbxDimGreenLED1.Tag = "1";
             this.tbxDimGreenLED1.Text = "0";
@@ -2114,7 +2104,7 @@ namespace LEDController.View
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(20, 35);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 18);
+            this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 84;
             this.label10.Text = "功率";
             // 
@@ -2134,7 +2124,7 @@ namespace LEDController.View
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(265, 35);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 18);
+            this.label8.Size = new System.Drawing.Size(11, 12);
             this.label8.TabIndex = 82;
             this.label8.Text = "W";
             // 
@@ -2185,7 +2175,7 @@ namespace LEDController.View
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(203, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 18);
+            this.label6.Size = new System.Drawing.Size(11, 12);
             this.label6.TabIndex = 77;
             this.label6.Text = "W";
             // 
@@ -2236,7 +2226,7 @@ namespace LEDController.View
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(142, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 18);
+            this.label3.Size = new System.Drawing.Size(11, 12);
             this.label3.TabIndex = 72;
             this.label3.Text = "W";
             // 
@@ -2287,7 +2277,7 @@ namespace LEDController.View
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(81, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 18);
+            this.label2.Size = new System.Drawing.Size(11, 12);
             this.label2.TabIndex = 67;
             this.label2.Text = "W";
             // 
@@ -2420,91 +2410,31 @@ namespace LEDController.View
             this.btnOpenGreenFixLED.UseVisualStyleBackColor = true;
             this.btnOpenGreenFixLED.Click += new System.EventHandler(this.btnOpenGreenFixLED_Click);
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label24.Location = new System.Drawing.Point(909, 66);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(16, 16);
-            this.label24.TabIndex = 73;
-            this.label24.Text = "W";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(868, 66);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(34, 16);
-            this.label25.TabIndex = 72;
-            this.label25.Text = "100";
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label26.Location = new System.Drawing.Point(752, 66);
+            this.label26.Location = new System.Drawing.Point(782, 66);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(113, 16);
             this.label26.TabIndex = 71;
             this.label26.Text = "红外(810 nm)";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(588, 66);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(16, 16);
-            this.label21.TabIndex = 70;
-            this.label21.Text = "W";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label22.Location = new System.Drawing.Point(547, 66);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(34, 16);
-            this.label22.TabIndex = 69;
-            this.label22.Text = "100";
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.Location = new System.Drawing.Point(431, 66);
+            this.label23.Location = new System.Drawing.Point(461, 66);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(113, 16);
             this.label23.TabIndex = 68;
             this.label23.Text = "红光(630 nm)";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(247, 66);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(16, 16);
-            this.label20.TabIndex = 67;
-            this.label20.Text = "W";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(206, 66);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(34, 16);
-            this.label19.TabIndex = 66;
-            this.label19.Text = "300";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(90, 66);
+            this.label18.Location = new System.Drawing.Point(120, 66);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(113, 16);
             this.label18.TabIndex = 65;
@@ -3940,6 +3870,7 @@ namespace LEDController.View
             // 
             // tpgLEDStatus
             // 
+            this.tpgLEDStatus.Controls.Add(this.lblCountDown);
             this.tpgLEDStatus.Controls.Add(this.panel6);
             this.tpgLEDStatus.Controls.Add(this.tbxStatusSaveFolder);
             this.tpgLEDStatus.Controls.Add(this.btnStatusSaveFolder);
@@ -3992,7 +3923,7 @@ namespace LEDController.View
             this.lblDarkRedLEDTempRD.AutoSize = true;
             this.lblDarkRedLEDTempRD.Location = new System.Drawing.Point(131, 118);
             this.lblDarkRedLEDTempRD.Name = "lblDarkRedLEDTempRD";
-            this.lblDarkRedLEDTempRD.Size = new System.Drawing.Size(0, 18);
+            this.lblDarkRedLEDTempRD.Size = new System.Drawing.Size(0, 12);
             this.lblDarkRedLEDTempRD.TabIndex = 31;
             // 
             // label84
@@ -4000,7 +3931,7 @@ namespace LEDController.View
             this.label84.AutoSize = true;
             this.label84.Location = new System.Drawing.Point(175, 118);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(26, 18);
+            this.label84.Size = new System.Drawing.Size(17, 12);
             this.label84.TabIndex = 30;
             this.label84.Text = "℃";
             // 
@@ -4009,7 +3940,7 @@ namespace LEDController.View
             this.label85.AutoSize = true;
             this.label85.Location = new System.Drawing.Point(8, 118);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(170, 18);
+            this.label85.Size = new System.Drawing.Size(113, 12);
             this.label85.TabIndex = 29;
             this.label85.Text = "红外LED左下角温度:";
             // 
@@ -4018,7 +3949,7 @@ namespace LEDController.View
             this.lblDarkRedLEDTempLD.AutoSize = true;
             this.lblDarkRedLEDTempLD.Location = new System.Drawing.Point(131, 97);
             this.lblDarkRedLEDTempLD.Name = "lblDarkRedLEDTempLD";
-            this.lblDarkRedLEDTempLD.Size = new System.Drawing.Size(0, 18);
+            this.lblDarkRedLEDTempLD.Size = new System.Drawing.Size(0, 12);
             this.lblDarkRedLEDTempLD.TabIndex = 28;
             // 
             // label81
@@ -4026,7 +3957,7 @@ namespace LEDController.View
             this.label81.AutoSize = true;
             this.label81.Location = new System.Drawing.Point(175, 97);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(26, 18);
+            this.label81.Size = new System.Drawing.Size(17, 12);
             this.label81.TabIndex = 27;
             this.label81.Text = "℃";
             // 
@@ -4035,7 +3966,7 @@ namespace LEDController.View
             this.label82.AutoSize = true;
             this.label82.Location = new System.Drawing.Point(8, 97);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(170, 18);
+            this.label82.Size = new System.Drawing.Size(113, 12);
             this.label82.TabIndex = 26;
             this.label82.Text = "红外LED左上角温度:";
             // 
@@ -4044,7 +3975,7 @@ namespace LEDController.View
             this.lblRedLEDTempRD.AutoSize = true;
             this.lblRedLEDTempRD.Location = new System.Drawing.Point(131, 76);
             this.lblRedLEDTempRD.Name = "lblRedLEDTempRD";
-            this.lblRedLEDTempRD.Size = new System.Drawing.Size(0, 18);
+            this.lblRedLEDTempRD.Size = new System.Drawing.Size(0, 12);
             this.lblRedLEDTempRD.TabIndex = 25;
             // 
             // label78
@@ -4052,7 +3983,7 @@ namespace LEDController.View
             this.label78.AutoSize = true;
             this.label78.Location = new System.Drawing.Point(175, 76);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 18);
+            this.label78.Size = new System.Drawing.Size(17, 12);
             this.label78.TabIndex = 24;
             this.label78.Text = "℃";
             // 
@@ -4061,7 +3992,7 @@ namespace LEDController.View
             this.label79.AutoSize = true;
             this.label79.Location = new System.Drawing.Point(8, 76);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(170, 18);
+            this.label79.Size = new System.Drawing.Size(113, 12);
             this.label79.TabIndex = 23;
             this.label79.Text = "红色LED左下角温度:";
             // 
@@ -4070,7 +4001,7 @@ namespace LEDController.View
             this.lblRedLEDTempLU.AutoSize = true;
             this.lblRedLEDTempLU.Location = new System.Drawing.Point(131, 55);
             this.lblRedLEDTempLU.Name = "lblRedLEDTempLU";
-            this.lblRedLEDTempLU.Size = new System.Drawing.Size(0, 18);
+            this.lblRedLEDTempLU.Size = new System.Drawing.Size(0, 12);
             this.lblRedLEDTempLU.TabIndex = 22;
             // 
             // label75
@@ -4078,7 +4009,7 @@ namespace LEDController.View
             this.label75.AutoSize = true;
             this.label75.Location = new System.Drawing.Point(175, 55);
             this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(26, 18);
+            this.label75.Size = new System.Drawing.Size(17, 12);
             this.label75.TabIndex = 21;
             this.label75.Text = "℃";
             // 
@@ -4087,7 +4018,7 @@ namespace LEDController.View
             this.label76.AutoSize = true;
             this.label76.Location = new System.Drawing.Point(8, 55);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(170, 18);
+            this.label76.Size = new System.Drawing.Size(113, 12);
             this.label76.TabIndex = 20;
             this.label76.Text = "红色LED左上角温度:";
             // 
@@ -4096,7 +4027,7 @@ namespace LEDController.View
             this.lblGreenLEDTempRD.AutoSize = true;
             this.lblGreenLEDTempRD.Location = new System.Drawing.Point(131, 33);
             this.lblGreenLEDTempRD.Name = "lblGreenLEDTempRD";
-            this.lblGreenLEDTempRD.Size = new System.Drawing.Size(0, 18);
+            this.lblGreenLEDTempRD.Size = new System.Drawing.Size(0, 12);
             this.lblGreenLEDTempRD.TabIndex = 19;
             // 
             // label72
@@ -4104,7 +4035,7 @@ namespace LEDController.View
             this.label72.AutoSize = true;
             this.label72.Location = new System.Drawing.Point(175, 33);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(26, 18);
+            this.label72.Size = new System.Drawing.Size(17, 12);
             this.label72.TabIndex = 18;
             this.label72.Text = "℃";
             // 
@@ -4113,7 +4044,7 @@ namespace LEDController.View
             this.label73.AutoSize = true;
             this.label73.Location = new System.Drawing.Point(8, 33);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(170, 18);
+            this.label73.Size = new System.Drawing.Size(113, 12);
             this.label73.TabIndex = 17;
             this.label73.Text = "绿色LED右下角温度:";
             // 
@@ -4122,7 +4053,7 @@ namespace LEDController.View
             this.lblGreenLEDTempLU.AutoSize = true;
             this.lblGreenLEDTempLU.Location = new System.Drawing.Point(131, 11);
             this.lblGreenLEDTempLU.Name = "lblGreenLEDTempLU";
-            this.lblGreenLEDTempLU.Size = new System.Drawing.Size(0, 18);
+            this.lblGreenLEDTempLU.Size = new System.Drawing.Size(0, 12);
             this.lblGreenLEDTempLU.TabIndex = 16;
             // 
             // label70
@@ -4130,7 +4061,7 @@ namespace LEDController.View
             this.label70.AutoSize = true;
             this.label70.Location = new System.Drawing.Point(175, 11);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(26, 18);
+            this.label70.Size = new System.Drawing.Size(17, 12);
             this.label70.TabIndex = 15;
             this.label70.Text = "℃";
             // 
@@ -4139,7 +4070,7 @@ namespace LEDController.View
             this.label69.AutoSize = true;
             this.label69.Location = new System.Drawing.Point(8, 11);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(170, 18);
+            this.label69.Size = new System.Drawing.Size(113, 12);
             this.label69.TabIndex = 14;
             this.label69.Text = "绿色LED左上角温度:";
             // 
@@ -4169,7 +4100,7 @@ namespace LEDController.View
             this.panelLEDStatus.AutoSize = true;
             this.panelLEDStatus.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelLEDStatus.Controls.Add(this.pictureBox1);
-            this.panelLEDStatus.Controls.Add(this.formsPlotRTD);
+            this.panelLEDStatus.Controls.Add(this.formsLEDStatusPlot);
             this.panelLEDStatus.Controls.Add(this.label9);
             this.panelLEDStatus.Controls.Add(this.label7);
             this.panelLEDStatus.Controls.Add(this.label4);
@@ -4279,14 +4210,14 @@ namespace LEDController.View
             this.pictureBox1.TabIndex = 270;
             this.pictureBox1.TabStop = false;
             // 
-            // formsPlotRTD
+            // formsLEDStatusPlot
             // 
-            this.formsPlotRTD.BackColor = System.Drawing.Color.Transparent;
-            this.formsPlotRTD.Location = new System.Drawing.Point(4, 263);
-            this.formsPlotRTD.Margin = new System.Windows.Forms.Padding(4);
-            this.formsPlotRTD.Name = "formsPlotRTD";
-            this.formsPlotRTD.Size = new System.Drawing.Size(805, 247);
-            this.formsPlotRTD.TabIndex = 12;
+            this.formsLEDStatusPlot.BackColor = System.Drawing.Color.Transparent;
+            this.formsLEDStatusPlot.Location = new System.Drawing.Point(4, 263);
+            this.formsLEDStatusPlot.Margin = new System.Windows.Forms.Padding(4);
+            this.formsLEDStatusPlot.Name = "formsLEDStatusPlot";
+            this.formsLEDStatusPlot.Size = new System.Drawing.Size(805, 247);
+            this.formsLEDStatusPlot.TabIndex = 12;
             // 
             // label9
             // 
@@ -5521,7 +5452,7 @@ namespace LEDController.View
             this.label48.AutoSize = true;
             this.label48.Location = new System.Drawing.Point(145, 151);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(17, 18);
+            this.label48.Size = new System.Drawing.Size(11, 12);
             this.label48.TabIndex = 8;
             this.label48.Text = "-";
             // 
@@ -5571,16 +5502,9 @@ namespace LEDController.View
             // 
             this.cbxQueryWaitTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbxQueryWaitTime.FormattingEnabled = true;
-            this.cbxQueryWaitTime.Items.AddRange(new object[] {
-            "1",
-            "10",
-            "20",
-            "30",
-            "50"});
             this.cbxQueryWaitTime.Location = new System.Drawing.Point(99, 111);
             this.cbxQueryWaitTime.Name = "cbxQueryWaitTime";
             this.cbxQueryWaitTime.Size = new System.Drawing.Size(61, 24);
-            this.cbxQueryWaitTime.Sorted = true;
             this.cbxQueryWaitTime.TabIndex = 3;
             // 
             // label45
@@ -5599,15 +5523,9 @@ namespace LEDController.View
             // 
             this.cbxQueryParam.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbxQueryParam.FormattingEnabled = true;
-            this.cbxQueryParam.Items.AddRange(new object[] {
-            "LED电流",
-            "LED电压",
-            "LED功率",
-            "LED状态"});
             this.cbxQueryParam.Location = new System.Drawing.Point(99, 78);
             this.cbxQueryParam.Name = "cbxQueryParam";
             this.cbxQueryParam.Size = new System.Drawing.Size(121, 24);
-            this.cbxQueryParam.Sorted = true;
             this.cbxQueryParam.TabIndex = 1;
             // 
             // label44
@@ -5914,6 +5832,7 @@ namespace LEDController.View
             // 
             // tpgSkylightControl
             // 
+            this.tpgSkylightControl.Controls.Add(this.label19);
             this.tpgSkylightControl.Controls.Add(this.btnCloseSkylight3);
             this.tpgSkylightControl.Controls.Add(this.btnOpenSkylight3);
             this.tpgSkylightControl.Controls.Add(this.label62);
@@ -5932,6 +5851,17 @@ namespace LEDController.View
             this.tpgSkylightControl.TabIndex = 6;
             this.tpgSkylightControl.Text = "电动天窗";
             this.tpgSkylightControl.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.LightGray;
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(53, 33);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(71, 16);
+            this.label19.TabIndex = 20;
+            this.label19.Text = "暂未使用";
             // 
             // btnCloseSkylight3
             // 
@@ -6057,7 +5987,7 @@ namespace LEDController.View
             // 
             // pbxSkylight1
             // 
-            this.pbxSkylight1.ErrorImage = global::LEDController.Properties.Resources.window_closed;
+            this.pbxSkylight1.ErrorImage = global::LEDController.Properties.Resources.question_circle_fill;
             this.pbxSkylight1.Image = global::LEDController.Properties.Resources.question_circle_fill;
             this.pbxSkylight1.InitialImage = global::LEDController.Properties.Resources.window_closed;
             this.pbxSkylight1.Location = new System.Drawing.Point(323, 49);
@@ -6157,9 +6087,9 @@ namespace LEDController.View
             // 
             // pbxLight
             // 
-            this.pbxLight.ErrorImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxLight.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxLight.ErrorImage")));
             this.pbxLight.Image = global::LEDController.Properties.Resources.question_circle_fill;
-            this.pbxLight.InitialImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxLight.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxLight.InitialImage")));
             this.pbxLight.Location = new System.Drawing.Point(274, 105);
             this.pbxLight.Margin = new System.Windows.Forms.Padding(2);
             this.pbxLight.Name = "pbxLight";
@@ -6170,9 +6100,9 @@ namespace LEDController.View
             // 
             // pbxLightMainPower
             // 
-            this.pbxLightMainPower.ErrorImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxLightMainPower.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxLightMainPower.ErrorImage")));
             this.pbxLightMainPower.Image = global::LEDController.Properties.Resources.question_circle_fill;
-            this.pbxLightMainPower.InitialImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxLightMainPower.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxLightMainPower.InitialImage")));
             this.pbxLightMainPower.Location = new System.Drawing.Point(276, 52);
             this.pbxLightMainPower.Margin = new System.Windows.Forms.Padding(2);
             this.pbxLightMainPower.Name = "pbxLightMainPower";
@@ -6231,9 +6161,9 @@ namespace LEDController.View
             // 
             // pbxRTPower
             // 
-            this.pbxRTPower.ErrorImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxRTPower.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxRTPower.ErrorImage")));
             this.pbxRTPower.Image = global::LEDController.Properties.Resources.question_circle_fill;
-            this.pbxRTPower.InitialImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxRTPower.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxRTPower.InitialImage")));
             this.pbxRTPower.Location = new System.Drawing.Point(267, 23);
             this.pbxRTPower.Margin = new System.Windows.Forms.Padding(2);
             this.pbxRTPower.Name = "pbxRTPower";
@@ -6292,9 +6222,9 @@ namespace LEDController.View
             // 
             // pbxAirConditionerPower
             // 
-            this.pbxAirConditionerPower.ErrorImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxAirConditionerPower.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxAirConditionerPower.ErrorImage")));
             this.pbxAirConditionerPower.Image = global::LEDController.Properties.Resources.question_circle_fill;
-            this.pbxAirConditionerPower.InitialImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxAirConditionerPower.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxAirConditionerPower.InitialImage")));
             this.pbxAirConditionerPower.Location = new System.Drawing.Point(262, 21);
             this.pbxAirConditionerPower.Margin = new System.Windows.Forms.Padding(2);
             this.pbxAirConditionerPower.Name = "pbxAirConditionerPower";
@@ -6308,10 +6238,10 @@ namespace LEDController.View
             this.tpgCameraControl.Controls.Add(this.btnPCOff);
             this.tpgCameraControl.Controls.Add(this.label68);
             this.tpgCameraControl.Controls.Add(this.btnPCOn);
-            this.tpgCameraControl.Controls.Add(this.pbxPCPower);
             this.tpgCameraControl.Controls.Add(this.btnCamOff);
             this.tpgCameraControl.Controls.Add(this.label67);
             this.tpgCameraControl.Controls.Add(this.btnCamOn);
+            this.tpgCameraControl.Controls.Add(this.pbxPCPower);
             this.tpgCameraControl.Controls.Add(this.pbxCamPower);
             this.tpgCameraControl.Location = new System.Drawing.Point(4, 22);
             this.tpgCameraControl.Name = "tpgCameraControl";
@@ -6355,19 +6285,6 @@ namespace LEDController.View
             this.btnPCOn.UseVisualStyleBackColor = true;
             this.btnPCOn.Click += new System.EventHandler(this.btnPCOn_Click);
             // 
-            // pbxPCPower
-            // 
-            this.pbxPCPower.ErrorImage = global::LEDController.Properties.Resources.light_off;
-            this.pbxPCPower.Image = global::LEDController.Properties.Resources.question_circle_fill;
-            this.pbxPCPower.InitialImage = global::LEDController.Properties.Resources.light_off;
-            this.pbxPCPower.Location = new System.Drawing.Point(649, 20);
-            this.pbxPCPower.Margin = new System.Windows.Forms.Padding(2);
-            this.pbxPCPower.Name = "pbxPCPower";
-            this.pbxPCPower.Size = new System.Drawing.Size(40, 40);
-            this.pbxPCPower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxPCPower.TabIndex = 27;
-            this.pbxPCPower.TabStop = false;
-            // 
             // btnCamOff
             // 
             this.btnCamOff.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -6403,11 +6320,24 @@ namespace LEDController.View
             this.btnCamOn.UseVisualStyleBackColor = true;
             this.btnCamOn.Click += new System.EventHandler(this.btnCamOn_Click);
             // 
+            // pbxPCPower
+            // 
+            this.pbxPCPower.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxPCPower.ErrorImage")));
+            this.pbxPCPower.Image = global::LEDController.Properties.Resources.question_circle_fill;
+            this.pbxPCPower.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxPCPower.InitialImage")));
+            this.pbxPCPower.Location = new System.Drawing.Point(649, 20);
+            this.pbxPCPower.Margin = new System.Windows.Forms.Padding(2);
+            this.pbxPCPower.Name = "pbxPCPower";
+            this.pbxPCPower.Size = new System.Drawing.Size(40, 40);
+            this.pbxPCPower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxPCPower.TabIndex = 27;
+            this.pbxPCPower.TabStop = false;
+            // 
             // pbxCamPower
             // 
-            this.pbxCamPower.ErrorImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxCamPower.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxCamPower.ErrorImage")));
             this.pbxCamPower.Image = global::LEDController.Properties.Resources.question_circle_fill;
-            this.pbxCamPower.InitialImage = global::LEDController.Properties.Resources.light_off;
+            this.pbxCamPower.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxCamPower.InitialImage")));
             this.pbxCamPower.Location = new System.Drawing.Point(279, 20);
             this.pbxCamPower.Margin = new System.Windows.Forms.Padding(2);
             this.pbxCamPower.Name = "pbxCamPower";
@@ -6421,7 +6351,7 @@ namespace LEDController.View
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(256, 576);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 18);
+            this.label5.Size = new System.Drawing.Size(0, 12);
             this.label5.TabIndex = 6;
             // 
             // statusStrip2
@@ -6514,7 +6444,7 @@ namespace LEDController.View
             this.label52.AutoSize = true;
             this.label52.Location = new System.Drawing.Point(882, 596);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(44, 18);
+            this.label52.Size = new System.Drawing.Size(29, 12);
             this.label52.TabIndex = 14;
             this.label52.Text = "接收";
             // 
@@ -6524,9 +6454,19 @@ namespace LEDController.View
             this.label53.AutoSize = true;
             this.label53.Location = new System.Drawing.Point(959, 596);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(44, 18);
+            this.label53.Size = new System.Drawing.Size(29, 12);
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
+            // 
+            // lblCountDown
+            // 
+            this.lblCountDown.AutoSize = true;
+            this.lblCountDown.BackColor = System.Drawing.Color.LavenderBlush;
+            this.lblCountDown.Location = new System.Drawing.Point(160, 195);
+            this.lblCountDown.Name = "lblCountDown";
+            this.lblCountDown.Size = new System.Drawing.Size(23, 12);
+            this.lblCountDown.TabIndex = 16;
+            this.lblCountDown.Text = "0 s";
             // 
             // LEDControllerViewer
             // 
@@ -6675,11 +6615,7 @@ namespace LEDController.View
         private System.Windows.Forms.TextBox tbxTestRec;
         private System.Windows.Forms.TextBox tbxTestCmd;
         private System.Windows.Forms.Button btnSendTestMsg;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panelDarkRedFixLED;
         private System.Windows.Forms.Panel panelRedFixLED;
@@ -6706,8 +6642,6 @@ namespace LEDController.View
         private System.Windows.Forms.Button btnGreenLED1;
         private System.Windows.Forms.Button btnCloseGreenFixLED;
         private System.Windows.Forms.Button btnOpenGreenFixLED;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnCloseDarkRedFixLED;
         private System.Windows.Forms.Button btnOpenDarkRedFixLED;
@@ -6984,7 +6918,7 @@ namespace LEDController.View
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private ScottPlot.FormsPlot formsPlotRTD;
+        private ScottPlot.FormsPlot formsLEDStatusPlot;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbxLightMainPower;
         private System.Windows.Forms.Button btnLightMainSwitchOff;
@@ -7101,6 +7035,8 @@ namespace LEDController.View
         private System.Windows.Forms.Label lblGreenLEDTempLU;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblCountDown;
     }
 }
 
