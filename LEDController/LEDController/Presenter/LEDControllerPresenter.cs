@@ -77,13 +77,25 @@ namespace LEDController.Presenter
             _view.SaveAsCfgFile += new EventHandler<EventArgs>(OnSaveAsCfgFile);
             _view.ShowVersion += new EventHandler<EventArgs>(OnShowVersion);
             _view.ShowChillerStatus += new EventHandler<EventArgs>(OnShowChillerStatus);
+            _view.TurnOnChiller += new EventHandler<EventArgs>(OnTurnOnChiller);
+            _view.TurnOffChiller += new EventHandler<EventArgs>(OnTurnOffChiller);
             _view.TurnOnSkyLight += new EventHandler<EventSkyLightArgs>(OnTurnOnSkyLight);
             _view.TurnOffSkyLight += new EventHandler<EventSkyLightArgs>(OnTurnOffSkyLight);
-            _view.TurnOnLight += new EventHandler<EventLightArgs>(OnTurnOnLight);
-            _view.TurnOffLight += new EventHandler<EventLightArgs>(OnTurnOffLight);
+            _view.TurnOnLight += new EventHandler<EventArgs>(OnTurnOnLight);
+            _view.TurnOffLight += new EventHandler<EventArgs>(OnTurnOffLight);
+            _view.TurnOnLighMainSwitch += new EventHandler<EventArgs>(OnTurnOnLighMainSwitch);
+            _view.TurnOffLighMainSwitch += new EventHandler<EventArgs>(OnTurnOffLighMainSwitch);
             _view.SelectStatusDataSaveFolder += new EventHandler<EventArgs>(OnSelectStatusDataSaveFolder);
             _view.ChangeStatusDataSaveFolder += new EventHandler<EventArgs>(OnChangeStatusDataSaveFolder);
             _view.ChangeStatusDataSaveFolder += new EventHandler<EventArgs>(OnChangeStatusDataSaveFolder);
+            _view.TurnOnRTPower += new EventHandler<EventArgs>(OnTurnOnRTPower);
+            _view.TurnOffRTPower += new EventHandler<EventArgs>(OnTurnOffRTPower);
+            _view.TurnOnAirConditionerPower += new EventHandler<EventArgs>(OnTurnOnAirConditionerPower);
+            _view.TurnOffAirConditionerPower += new EventHandler<EventArgs>(OnTurnOffAirConditionerPower);
+            _view.TurnOnCamPower += new EventHandler<EventArgs>(OnTurnOnCamPower);
+            _view.TurnOffCamPower += new EventHandler<EventArgs>(OnTurnOffCamPower);
+            _view.TurnOnPCPower += new EventHandler<EventArgs>(OnTurnOnPCPower);
+            _view.TurnOffPCPower += new EventHandler<EventArgs>(OnTurnOffPCPower);
 
             // Initialize Form
             InitialForm();
@@ -111,6 +123,114 @@ namespace LEDController.Presenter
             renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, sig, 0, 3600 * 1000);
         }
 
+        public void OnTurnOnCamPower(object sender, EventArgs e)
+        {
+            this.connector.TurnOnCamPower(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxCamPower = (PictureBox)(this._view.Controls.Find("pbxCamPower", true)[0]);
+            pbxCamPower.Image = Properties.Resources.power_on;
+        }
+
+        public void OnTurnOffCamPower(object sender, EventArgs e)
+        {
+            this.connector.TurnOffCamPower(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxCamPower = (PictureBox)(this._view.Controls.Find("pbxCamPower", true)[0]);
+            pbxCamPower.Image = Properties.Resources.power_off;
+        }
+
+        public void OnTurnOnPCPower(object sender, EventArgs e)
+        {
+            this.connector.TurnOnPCPower(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxPCPower = (PictureBox)(this._view.Controls.Find("pbxPCPower", true)[0]);
+            pbxPCPower.Image = Properties.Resources.power_on;
+        }
+
+        public void OnTurnOffPCPower(object sender, EventArgs e)
+        {
+            this.connector.TurnOffPCPower(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxPCPower = (PictureBox)(this._view.Controls.Find("pbxPCPower", true)[0]);
+            pbxPCPower.Image = Properties.Resources.power_off;
+        }
+
+        public void OnTurnOnAirConditionerPower(object sender, EventArgs e)
+        {
+            this.connector.TurnOnAirConditionerPower(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxAirConditionerPower = (PictureBox)(this._view.Controls.Find("pbxAirConditionerPower", true)[0]);
+            pbxAirConditionerPower.Image = Properties.Resources.power_on;
+        }
+
+        public void OnTurnOffAirConditionerPower(object sender, EventArgs e)
+        {
+            this.connector.TurnOffAirConditionerPower(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxAirConditionerPower = (PictureBox)(this._view.Controls.Find("pbxAirConditionerPower", true)[0]);
+            pbxAirConditionerPower.Image = Properties.Resources.power_off;
+        }
+
+        public void OnTurnOnRTPower(object sender, EventArgs e)
+        {
+            this.connector.TurnOnRTPower(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxRTPower = (PictureBox)(this._view.Controls.Find("pbxRTPower", true)[0]);
+            pbxRTPower.Image = Properties.Resources.power_on;
+        }
+
+        public void OnTurnOffRTPower(object sender, EventArgs e)
+        {
+            this.connector.TurnOffRTPower(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxRTPower = (PictureBox)(this._view.Controls.Find("pbxRTPower", true)[0]);
+            pbxRTPower.Image = Properties.Resources.power_off;
+        }
+
+        public void OnTurnOffLighMainSwitch(object sender, EventArgs e)
+        {
+            this.connector.TurnOffLightMainSwitch(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxLightMainPower = (PictureBox)(this._view.Controls.Find("pbxLightMainPower", true)[0]);
+            pbxLightMainPower.Image = Properties.Resources.power_off;
+        }
+
+        public void OnTurnOnLighMainSwitch(object sender, EventArgs e)
+        {
+            this.connector.TurnOnLightMainSwitch(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxLightMainPower = (PictureBox)(this._view.Controls.Find("pbxLightMainPower", true)[0]);
+            pbxLightMainPower.Image = Properties.Resources.power_on;
+        }
+
+        public void OnTurnOnChiller(object sender, EventArgs e)
+        {
+            this.connector.TurnOnChiller(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxChillerPower = (PictureBox)(this._view.Controls.Find("pbxChillerPower", true)[0]);
+            pbxChillerPower.Image = Properties.Resources.power_on;
+        }
+
+        public void OnTurnOffChiller(object sender, EventArgs e)
+        {
+            this.connector.TurnOffChiller(1);
+            ShowSendStatusAsync();
+
+            PictureBox pbxChillerPower = (PictureBox)(this._view.Controls.Find("pbxChillerPower", true)[0]);
+            pbxChillerPower.Image = Properties.Resources.power_off;
+        }
+
         public void OnChangeStatusDataSaveFolder(object sender, EventArgs e)
         {
             TextBox tbxStatusSaveFolder = (TextBox)(this._view.Controls.Find("tbxStatusSaveFolder", true)[0]);
@@ -136,21 +256,21 @@ namespace LEDController.Presenter
             }
         }
 
-        public void OnTurnOnLight(object sender, EventLightArgs e)
+        public void OnTurnOnLight(object sender, EventArgs e)
         {
-            this.connector.TurnOnLight(1, e.LightIndex);
+            this.connector.TurnOnLight(1);
             ShowSendStatusAsync();
 
-            PictureBox pbxLight = (PictureBox)(this._view.Controls.Find($"pbxLight{e.LightIndex}", true)[0]);
+            PictureBox pbxLight = (PictureBox)(this._view.Controls.Find($"pbxLight", true)[0]);
             pbxLight.Image = Properties.Resources.light_on;
         }
 
-        public void OnTurnOffLight(object sender, EventLightArgs e)
+        public void OnTurnOffLight(object sender, EventArgs e)
         {
-            this.connector.TurnOffLight(1, e.LightIndex);
+            this.connector.TurnOffLight(1);
             ShowSendStatusAsync();
 
-            PictureBox pbxLight = (PictureBox)(this._view.Controls.Find($"pbxLight{e.LightIndex}", true)[0]);
+            PictureBox pbxLight = (PictureBox)(this._view.Controls.Find($"pbxLight", true)[0]);
             pbxLight.Image = Properties.Resources.light_off;
         }
 
@@ -800,6 +920,19 @@ namespace LEDController.Presenter
                 tsslGreenLEDTotalPower.Text = $"绿光实时总功率: {status.CalcTotalGreenLEDPower()} W";
                 tsslRedLEDTotalPower.Text = $"红光实时总功率: {status.CalcTotalRedLEDPower()} W";
                 tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: {status.CalcTotalDarkRedLEDPower()} W";
+
+                Label lblGreenLEDTempLU = (Label)(this._view.Controls.Find("lblGreenLEDTempLU", true)[0]);
+                Label lblGreenLEDTempRD = (Label)(this._view.Controls.Find("lblGreenLEDTempRD", true)[0]);
+                Label lblRedLEDTempLU = (Label)(this._view.Controls.Find("lblRedLEDTempLU", true)[0]);
+                Label lblRedLEDTempRD = (Label)(this._view.Controls.Find("lblRedLEDTempRD", true)[0]);
+                Label lblDarkRedLEDTempLU = (Label)(this._view.Controls.Find("lblDarkRedLEDTempLU", true)[0]);
+                Label lblDarkRedLEDTempRD = (Label)(this._view.Controls.Find("lblDarkRedLEDTempRD", true)[0]);
+                lblGreenLEDTempLU.Text = status.greenLEDTempLU.ToString();
+                lblGreenLEDTempRD.Text = status.greenLEDTempRD.ToString();
+                lblRedLEDTempLU.Text = status.redLEDTempLU.ToString();
+                lblRedLEDTempRD.Text = status.redLEDTempRD.ToString();
+                lblDarkRedLEDTempLU.Text = status.darkRedLEDTempLU.ToString();
+                lblDarkRedLEDTempRD.Text = status.darkRedLEDTempRD.ToString();
 
                 if (statusDataFS != null)
                 {

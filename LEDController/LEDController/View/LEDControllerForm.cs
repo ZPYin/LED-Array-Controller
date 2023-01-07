@@ -42,18 +42,30 @@ namespace LEDController.View
         public event EventHandler<EventDimLEDArgs> SetDimLED;
         public event EventHandler<EventDimLEDArgs> ShowDimLEDStatus;
         public event EventHandler<EventArgs> ShowChillerStatus;
+        public event EventHandler<EventArgs> TurnOnChiller;
+        public event EventHandler<EventArgs> TurnOffChiller;
         public event EventHandler<EventLEDArgs> ShowFixLEDStatus;
         public event EventHandler<EventArgs> ShowLEDStatus;
         public event EventHandler<EventArgs> StopShowLEDStatus;
         public event EventHandler<EventArgs> ShowVersion;
-        public event EventHandler<EventLightArgs> TurnOffLight;
+        public event EventHandler<EventArgs> TurnOffLight;
+        public event EventHandler<EventArgs> TurnOnLighMainSwitch;
+        public event EventHandler<EventArgs> TurnOffLighMainSwitch;
         public event EventHandler<EventSkyLightArgs> TurnOffSkyLight;
-        public event EventHandler<EventLightArgs> TurnOnLight;
+        public event EventHandler<EventArgs> TurnOnLight;
         public event EventHandler<EventSkyLightArgs> TurnOnSkyLight;
         public event EventHandler<EventDimLEDArgs> UpdateLEDTbx;
         public event EventHandler<EventDimLEDArgs> UpdateScrollBar;
         public event EventHandler<EventArgs> SelectStatusDataSaveFolder;
         public event EventHandler<EventArgs> ChangeStatusDataSaveFolder;
+        public event EventHandler<EventArgs> TurnOnRTPower;
+        public event EventHandler<EventArgs> TurnOffRTPower;
+        public event EventHandler<EventArgs> TurnOnAirConditionerPower;
+        public event EventHandler<EventArgs> TurnOffAirConditionerPower;
+        public event EventHandler<EventArgs> TurnOnCamPower;
+        public event EventHandler<EventArgs> TurnOffCamPower;
+        public event EventHandler<EventArgs> TurnOnPCPower;
+        public event EventHandler<EventArgs> TurnOffPCPower;
 
         public DispatcherTimer timer = new DispatcherTimer();
 
@@ -832,62 +844,32 @@ namespace LEDController.View
 
         private void btnOpenSkylight1_Click(object sender, EventArgs e)
         {
-            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
+            // TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
         }
 
         private void btnCloseSkylight1_Click(object sender, EventArgs e)
         {
-            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
+            // TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
         }
 
         private void btnOpenSkylight2_Click(object sender, EventArgs e)
         {
-            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
+            // TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
         }
 
         private void btnCloseSkylight2_Click(object sender, EventArgs e)
         {
-            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
+            // TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
         }
 
         private void btnOpenSkylight3_Click(object sender, EventArgs e)
         {
-            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
+            // TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
         }
 
         private void btnCloseSkylight3_Click(object sender, EventArgs e)
         {
-            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
-        }
-
-        private void btnOpenLight1_Click(object sender, EventArgs e)
-        {
-            TurnOnLight?.Invoke(sender, new EventLightArgs(1));
-        }
-
-        private void btnCloseLight1_Click(object sender, EventArgs e)
-        {
-            TurnOffLight?.Invoke(sender, new EventLightArgs(1));
-        }
-
-        private void btnOpenLight2_Click(object sender, EventArgs e)
-        {
-            TurnOnLight?.Invoke(sender, new EventLightArgs(2));
-        }
-
-        private void btnCloseLight2_Click(object sender, EventArgs e)
-        {
-            TurnOffLight?.Invoke(sender, new EventLightArgs(2));
-        }
-
-        private void btnOpenLight3_Click(object sender, EventArgs e)
-        {
-            TurnOnLight?.Invoke(sender, new EventLightArgs(3));
-        }
-
-        private void btnCloseLight3_Click(object sender, EventArgs e)
-        {
-            TurnOffLight?.Invoke(sender, new EventLightArgs(3));
+            // TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
         }
 
         private void toolStripMenuConfiguration_Click(object sender, EventArgs e)
@@ -911,6 +893,76 @@ namespace LEDController.View
         private void tbxStatusSaveFolder_Leave(object sender, EventArgs e)
         {
             ChangeStatusDataSaveFolder?.Invoke(sender, e);
+        }
+
+        private void btnTurnOnChiller_Click(object sender, EventArgs e)
+        {
+            TurnOnChiller?.Invoke(sender, e);
+        }
+
+        private void btnTurnOffChiller_Click(object sender, EventArgs e)
+        {
+            TurnOffChiller?.Invoke(sender, e);
+        }
+
+        private void btnLightMainSwitchOn_Click(object sender, EventArgs e)
+        {
+            TurnOnLighMainSwitch?.Invoke(sender, e);
+        }
+
+        private void btnLightMainSwitchOff_Click(object sender, EventArgs e)
+        {
+            TurnOffLighMainSwitch?.Invoke(sender, e);
+        }
+
+        private void btnOpenLight_Click(object sender, EventArgs e)
+        {
+            TurnOnLight?.Invoke(sender, e);
+        }
+
+        private void btnCloseLight_Click(object sender, EventArgs e)
+        {
+            TurnOffLight?.Invoke(sender, e);
+        }
+
+        private void btnRTPowerOn_Click(object sender, EventArgs e)
+        {
+            TurnOnRTPower?.Invoke(sender, e);
+        }
+
+        private void btnRTPowerOff_Click(object sender, EventArgs e)
+        {
+            TurnOffRTPower?.Invoke(sender, e);
+        }
+
+        private void btnAirConditionerOn_Click(object sender, EventArgs e)
+        {
+            TurnOnAirConditionerPower?.Invoke(sender, e);
+        }
+
+        private void btnAirConditionerOff_Click(object sender, EventArgs e)
+        {
+            TurnOffAirConditionerPower?.Invoke(sender, e);
+        }
+
+        private void btnCamOn_Click(object sender, EventArgs e)
+        {
+            TurnOnCamPower?.Invoke(sender, e);
+        }
+
+        private void btnCamOff_Click(object sender, EventArgs e)
+        {
+            TurnOffCamPower?.Invoke(sender, e);
+        }
+
+        private void btnPCOn_Click(object sender, EventArgs e)
+        {
+            TurnOnPCPower?.Invoke(sender, e);
+        }
+
+        private void btnPCOff_Click(object sender, EventArgs e)
+        {
+            TurnOffPCPower?.Invoke(sender, e);
         }
     }
 

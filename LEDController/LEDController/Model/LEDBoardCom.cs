@@ -51,6 +51,12 @@ namespace LEDController.Model
         public double[] dimDarkRedLEDPower;
         public double[] dimDarkRedLEDVoltage;
         public double[] dimDarkRedLEDCurrent;
+        public double greenLEDTempLU;
+        public double greenLEDTempRD;
+        public double redLEDTempLU;
+        public double redLEDTempRD;
+        public double darkRedLEDTempLU;
+        public double darkRedLEDTempRD;
         public bool isValidStatus;
         public DateTime updatedTime;
 
@@ -74,6 +80,12 @@ namespace LEDController.Model
             this.dimDarkRedLEDPower = new double[numDimDarkRedLED];
             this.dimDarkRedLEDCurrent = new double[numDimDarkRedLED];
             this.dimDarkRedLEDVoltage = new double[numDimDarkRedLED];
+            this.greenLEDTempLU = 0.0;
+            this.greenLEDTempRD = 0.0;
+            this.redLEDTempLU = 0.0;
+            this.redLEDTempRD = 0.0;
+            this.darkRedLEDTempLU = 0.0;
+            this.darkRedLEDTempRD = 0.0;
             this.isValidStatus = false;
             this.updatedTime = DateTime.Now;
         }
@@ -540,6 +552,7 @@ namespace LEDController.Model
             0x78, 0x79, 0x7A, 0x7B };
         public int[] addrPlcCMainSwitch = new int[1] { 0x1F };
         public int[] addrPlcCSpareSwitch = new int[1] { 0x10 };
+        public int[] addrTempSensor = new int[6] { 0x01FE, 0x01FF, 0x0200, 0x0201, 0x0202, 0x0203 };
 
         public LEDBoardCom(string SlaveIP, string SlavePort)
         {
@@ -717,6 +730,21 @@ namespace LEDController.Model
             return LEDCurrents;
         }
 
+        public double[] ParseTemperature(byte[] recData)
+        {
+            int nTemp = recData.Length / 2;
+            double[] temperatures = new double[nTemp];
+
+            for (int i = 0; i < nTemp; i++)
+            {
+                byte[] thisTempData = new byte[2];
+                Array.Copy(recData, i * 2, thisTempData, 0, 2);
+                temperatures[i] = Convert.ToDouble(thisTempData);
+            }
+
+            return temperatures;
+        }
+
         public AllLEDStatus QueryAllLEDStatus()
         {
             AllLEDStatus status = new AllLEDStatus(NumFixRedLED, NumFixDarkRedLED, NumFixGreenLED, NumDimRedLED, NumDimDarkRedLED, NumDimGreenLED);
@@ -851,6 +879,16 @@ namespace LEDController.Model
             {
                 status.dimGreenLEDCurrent[i] = values[i];
             }
+
+            // receive temperature sensor data
+            recData = this.device.WriteReceive((byte)1, 3, (ushort)addrTempSensor[0], BitConverter.GetBytes((ushort)6));
+            values = ParseTemperature(recData);
+            status.redLEDTempLU = values[0];
+            status.redLEDTempRD = values[1];
+            status.darkRedLEDTempLU = values[2];
+            status.darkRedLEDTempRD = values[3];
+            status.greenLEDTempLU = values[4];
+            status.greenLEDTempRD = values[5];
 
             status.isValidStatus = true;
             status.updatedTime = DateTime.Now;
@@ -1010,15 +1048,76 @@ namespace LEDController.Model
             SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0x00, 0x00 });
         }
 
-        public void TurnOnLight(int addrPLC, int LightIndex)
+        public void TurnOnLight(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[LightIndex + 3], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[5], new byte[2] { 0xFF, 0x00 });
         }
 
-        public void TurnOffLight(int addrPLC, int LightIndex)
+        public void TurnOffLight(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[LightIndex + 3], new byte[2] { 0x00, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[5], new byte[2] { 0x00, 0x00 });
         }
+
+        public void TurnOnChiller(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[1], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffChiller(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[1], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOnLightMainSwitch(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[0], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffLightMainSwitch(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[0], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOnRTPower(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[4], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffRTPower(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[4], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOnAirConditionerPower(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[3], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffAirConditionerPower(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[3], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOnCamPower(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[6], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffCamPower(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[6], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOnPCPower(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[2], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffPCPower(int addrPLC)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[2], new byte[2] { 0xFF, 0x00 });
+        }
+
     }
 
 }
