@@ -316,12 +316,12 @@ namespace LEDController.Model
         public string protocol;
         public bool isSendASCII;
         public bool isRecASCII;
-        public Boolean[] isFixGreenLEDOn = new Boolean[LEDBoardCom.NumFixGreenLED];
-        public Boolean[] isFixRedLEDOn = new Boolean[LEDBoardCom.NumFixRedLED];
-        public Boolean[] isFixDarkRedLEDOn = new Boolean[LEDBoardCom.NumFixDarkRedLED];
-        public double[] dimGreenLEDPower = new double[LEDBoardCom.NumDimGreenLED];
-        public double[] dimRedLEDPower = new double[LEDBoardCom.NumDimRedLED];
-        public double[] dimDarkRedLEDPower = new double[LEDBoardCom.NumDimDarkRedLED];
+        public Boolean[] isFixGreenLEDOn = new Boolean[LEDConfig.NumFixGreenLED];
+        public Boolean[] isFixRedLEDOn = new Boolean[LEDConfig.NumFixRedLED];
+        public Boolean[] isFixDarkRedLEDOn = new Boolean[LEDConfig.NumFixDarkRedLED];
+        public double[] dimGreenLEDPower = new double[LEDConfig.NumDimGreenLED];
+        public double[] dimRedLEDPower = new double[LEDConfig.NumDimRedLED];
+        public double[] dimDarkRedLEDPower = new double[LEDConfig.NumDimDarkRedLED];
 
         public LEDControllerCfg(string fileName)
         {
@@ -505,106 +505,6 @@ namespace LEDController.Model
         public Boolean isTCP = false;
         public Boolean isSerialPort = false;
 
-        private const double LEDVoltageConvertFactor = 1;
-        private const double LEDCurrentConvertFactor = 1;
-        private const double LEDPowerConvertFactor = 1;
-        public const int NumFixGreenLED = 26;
-        public const int NumFixRedLED = 26;
-        public const int NumFixDarkRedLED = 26;
-        public const int NumDimGreenLED = 4;
-        public const int NumDimRedLED = 4;
-        public const int NumDimDarkRedLED = 4;
-
-        // Define Modbus address according to Protocol
-        public int[] addrFixRedLEDPower = new int[NumFixRedLED] {
-            0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B,
-            0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
-            0x17, 0x18, 0x19, 0x1A };
-        public int[] addrFixRedLEDVoltage = new int[NumFixRedLED] {
-            0x29, 0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33,
-            0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x3A, 0x3B, 0x3C, 0x3D, 0x3E,
-            0x3F, 0x40, 0x41, 0x42 };
-        public int[] addrFixRedLEDCurrent = new int[NumFixRedLED] {
-            0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x58, 0x59, 0x5A, 0x5B,
-            0x5C, 0x5D, 0x5E, 0x5F, 0x60, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66,
-            0x67, 0x68, 0x69, 0x6A };
-        public int[] addrFixRedLEDSwitch = new int[NumFixRedLED] {
-            0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B,
-            0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
-            0x17, 0x18, 0x19, 0x1A };
-        public int[] addrDimRedLEDPower = new int[NumDimRedLED] {
-            0x1B, 0x1C, 0x1D, 0x1E };
-        public int[] addrDimRedLEDVoltage = new int[NumDimRedLED] {
-            0x43, 0x44, 0x45, 0x46 };
-        public int[] addrDimRedLEDCurrent = new int[NumDimRedLED] {
-            0x6B, 0x6C, 0x6D, 0x6E };
-        public int[] addrDimRedLEDSwitch = new int[NumDimRedLED] {
-            0x1B, 0x1C, 0x1D, 0x1E };
-        public int[] addrDimRedLEDPowerControl = new int[NumDimRedLED] {
-            0x78, 0x79, 0x7A, 0x7B };
-        public int[] addrPlcAChillerWarn = new int[2] { 0x3C, 0x3D };
-        public int[] addrPlcAPumpWarn = new int[3] { 0x3E, 0x3F, 0x40 };
-        public int[] addrPlcAMainSwitch = new int[1] { 0x1F };
-        public int[] addrPlcASpareSwitch = new int[9] {
-            0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18};
-        public int[] addrFixDarkRedLEDPower = new int[NumFixDarkRedLED] {
-            0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B,
-            0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
-            0x17, 0x18, 0x19, 0x1A };
-        public int[] addrFixDarkRedLEDVoltage = new int[NumFixDarkRedLED] {
-            0x29, 0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33,
-            0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x3A, 0x3B, 0x3C, 0x3D, 0x3E,
-            0x3F, 0x40, 0x41, 0x42 };
-        public int[] addrFixDarkRedLEDCurrent = new int[NumFixDarkRedLED] {
-            0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x58, 0x59, 0x5A, 0x5B,
-            0x5C, 0x5D, 0x5E, 0x5F, 0x60, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66,
-            0x67, 0x68, 0x69, 0x6A };
-        public int[] addrFixDarkRedLEDSwitch = new int[NumFixDarkRedLED] {
-            0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B,
-            0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
-            0x17, 0x18, 0x19, 0x1A };
-        public int[] addrDimDarkRedLEDPower = new int[NumDimDarkRedLED] {
-            0x1B, 0x1C, 0x1D, 0x1E };
-        public int[] addrDimDarkRedLEDVoltage = new int[NumDimDarkRedLED] {
-            0x43, 0x44, 0x45, 0x46 };
-        public int[] addrDimDarkRedLEDCurrent = new int[NumDimDarkRedLED] {
-            0x6B, 0x6C, 0x6D, 0x6E };
-        public int[] addrDimDarkRedLEDSwitch = new int[NumDimDarkRedLED] {
-            0x1B, 0x1C, 0x1D, 0x1E };
-        public int[] addrDimDarkRedLEDPowerControl = new int[NumDimDarkRedLED] {
-            0x78, 0x79, 0x7A, 0x7B };
-        public int[] addrPlcBMainSwitch = new int[1] { 0x1F };
-        public int[] addrPlcBSpareSwitch = new int[1] { 0x10 };
-        public int[] addrFixGreenLEDPower = new int[NumFixGreenLED] {
-            0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B,
-            0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
-            0x17, 0x18, 0x19, 0x1A };
-        public int[] addrFixGreenLEDVoltage = new int[NumFixGreenLED] {
-            0x29, 0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33,
-            0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x3A, 0x3B, 0x3C, 0x3D, 0x3E,
-            0x3F, 0x40, 0x41, 0x42 };
-        public int[] addrFixGreenLEDCurrent = new int[NumFixGreenLED] {
-            0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x58, 0x59, 0x5A, 0x5B,
-            0x5C, 0x5D, 0x5E, 0x5F, 0x60, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66,
-            0x67, 0x68, 0x69, 0x6A };
-        public int[] addrFixGreenLEDSwitch = new int[NumFixGreenLED] {
-            0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B,
-            0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
-            0x17, 0x18, 0x19, 0x1A };
-        public int[] addrDimGreenLEDPower = new int[NumDimGreenLED] {
-            0x1B, 0x1C, 0x1D, 0x1E };
-        public int[] addrDimGreenLEDVoltage = new int[NumDimGreenLED] {
-            0x43, 0x44, 0x45, 0x46 };
-        public int[] addrDimGreenLEDCurrent = new int[NumDimGreenLED] {
-            0x6B, 0x6C, 0x6D, 0x6E };
-        public int[] addrDimGreenLEDSwitch = new int[NumDimGreenLED] {
-            0x1B, 0x1C, 0x1D, 0x1E };
-        public int[] addrDimGreenLEDPowerControl = new int[NumDimGreenLED] {
-            0x78, 0x79, 0x7A, 0x7B };
-        public int[] addrPlcCMainSwitch = new int[1] { 0x1F };
-        public int[] addrPlcCSpareSwitch = new int[1] { 0x10 };
-        public int[] addrTempSensor = new int[6] { 0x01FE, 0x01FF, 0x0200, 0x0201, 0x0202, 0x0203 };
-
         public LEDBoardCom(string SlaveIP, string SlavePort)
         {
             device = new ModbusTCP(SlaveIP, Convert.ToInt32(SlavePort));
@@ -647,41 +547,50 @@ namespace LEDController.Model
 
         public void TurnOnFixLED(int addrPLC, int LEDInd)
         {
-            int addrLED = 0;
-            switch (addrPLC)
+            int addrLED;
+            int addrLEDMainSwitch;
+            if (addrPLC == LEDConfig.addrPLCGreenLED)
             {
-                case 1:
-                    addrLED = this.addrFixRedLEDSwitch[LEDInd - 1];
-                    break;
-
-                case 2:
-                    addrLED = this.addrFixDarkRedLEDSwitch[LEDInd - 1];
-                    break;
-
-                case 3:
-                    addrLED = this.addrFixGreenLEDSwitch[LEDInd - 1];
-                    break;
+                addrLED = LEDConfig.addrFixGreenLEDSwitch[LEDInd - 1];
+                addrLEDMainSwitch = LEDConfig.addrGreenMainSwitch[0];
+            }
+            else if (addrPLC == LEDConfig.addrPLCRedLED)
+            {
+                addrLED = LEDConfig.addrFixRedLEDSwitch[LEDInd - 1];
+                addrLEDMainSwitch = LEDConfig.addrRedMainSwitch[0];
+            }
+            else if (addrPLC == LEDConfig.addrPLCDarkRedLED)
+            {
+                addrLED = LEDConfig.addrFixDarkRedLEDSwitch[LEDInd - 1];
+                addrLEDMainSwitch = LEDConfig.addrDarkRedMainSwitch[0];
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
             }
 
+            SendCmd((byte)addrPLC, 5, (ushort)addrLEDMainSwitch, new byte[2] { 0xFF, 0x00 });
             SendCmd((byte)addrPLC, 5, (ushort)addrLED, new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffFixLED(int addrPLC, int LEDInd)
         {
-            int addrLED = 0;
-            switch (addrPLC)
+            int addrLED;
+            if (addrPLC == LEDConfig.addrPLCGreenLED)
             {
-                case 1:
-                    addrLED = this.addrFixRedLEDSwitch[LEDInd - 1];
-                    break;
-
-                case 2:
-                    addrLED = this.addrFixDarkRedLEDSwitch[LEDInd - 1];
-                    break;
-
-                case 3:
-                    addrLED = this.addrFixGreenLEDSwitch[LEDInd - 1];
-                    break;
+                addrLED = LEDConfig.addrFixGreenLEDSwitch[LEDInd - 1];
+            }
+            else if (addrPLC == LEDConfig.addrPLCRedLED)
+            {
+                addrLED = LEDConfig.addrFixRedLEDSwitch[LEDInd - 1];
+            }
+            else if (addrPLC == LEDConfig.addrPLCDarkRedLED)
+            {
+                addrLED = LEDConfig.addrFixDarkRedLEDSwitch[LEDInd - 1];
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
             }
 
             SendCmd((byte)addrPLC, 5, (ushort)addrLED, new byte[2] { 0x00, 0x00 });
@@ -689,26 +598,33 @@ namespace LEDController.Model
 
         public void SetDimLED(int addrPLC, int LEDInd, int LEDBrightness)
         {
-            int addrLEDSwitch = 0;
-            int addrLEDPowerControl = 0;
-            switch (addrPLC)
+            int addrLEDSwitch;
+            int addrLEDPowerControl;
+            int addrLEDMainSwitch;
+            if (addrPLC == LEDConfig.addrPLCGreenLED)
             {
-                case 1:
-                    addrLEDSwitch = this.addrDimRedLEDSwitch[LEDInd - 1];
-                    addrLEDPowerControl = this.addrDimRedLEDPowerControl[LEDInd - 1];
-                    break;
-
-                case 2:
-                    addrLEDSwitch = this.addrDimDarkRedLEDSwitch[LEDInd - 1];
-                    addrLEDPowerControl = this.addrDimDarkRedLEDPowerControl[LEDInd - 1];
-                    break;
-
-                case 3:
-                    addrLEDSwitch = this.addrDimGreenLEDSwitch[LEDInd - 1];
-                    addrLEDPowerControl = this.addrDimGreenLEDPowerControl[LEDInd - 1];
-                    break;
+                addrLEDSwitch = LEDConfig.addrDimGreenLEDSwitch[LEDInd - 1];
+                addrLEDPowerControl = LEDConfig.addrDimGreenLEDPowerControl[LEDInd - 1];
+                addrLEDMainSwitch = LEDConfig.addrGreenMainSwitch[0];
+            }
+            else if (addrPLC == LEDConfig.addrPLCRedLED)
+            {
+                addrLEDSwitch = LEDConfig.addrDimRedLEDSwitch[LEDInd - 1];
+                addrLEDPowerControl = LEDConfig.addrDimRedLEDPowerControl[LEDInd - 1];
+                addrLEDMainSwitch = LEDConfig.addrRedMainSwitch[0];
+            }
+            else if (addrPLC == LEDConfig.addrPLCDarkRedLED)
+            {
+                addrLEDSwitch = LEDConfig.addrDimDarkRedLEDSwitch[LEDInd - 1];
+                addrLEDPowerControl = LEDConfig.addrDimDarkRedLEDPowerControl[LEDInd - 1];
+                addrLEDMainSwitch = LEDConfig.addrDarkRedMainSwitch[0];
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
             }
 
+            SendCmd((byte)addrPLC, 5, (ushort)addrLEDMainSwitch, new byte[2] { 0xFF, 0x00 });
             SendCmd((byte)addrPLC, 5, (ushort)addrLEDSwitch, new byte[2] { 0xFF, 0x00 });
             byte[] dataSend = BitConverter.GetBytes(Convert.ToInt16(LEDBrightness));
             Array.Reverse(dataSend);
@@ -717,20 +633,22 @@ namespace LEDController.Model
 
         public void TurnOffDimLED(int addrPLC, int LEDInd)
         {
-            int addrLEDSwitch = 0;
-            switch (addrPLC)
+            int addrLEDSwitch;
+            if (addrPLC == LEDConfig.addrPLCGreenLED)
             {
-                case 1:
-                    addrLEDSwitch = this.addrDimRedLEDSwitch[LEDInd - 1];
-                    break;
-
-                case 2:
-                    addrLEDSwitch = this.addrDimDarkRedLEDSwitch[LEDInd - 1];
-                    break;
-
-                case 3:
-                    addrLEDSwitch = this.addrDimGreenLEDSwitch[LEDInd - 1];
-                    break;
+                addrLEDSwitch = LEDConfig.addrDimGreenLEDSwitch[LEDInd - 1];
+            }
+            else if (addrPLC == LEDConfig.addrPLCRedLED)
+            {
+                addrLEDSwitch = LEDConfig.addrDimRedLEDSwitch[LEDInd - 1];
+            }
+            else if (addrPLC == LEDConfig.addrPLCDarkRedLED)
+            {
+                addrLEDSwitch = LEDConfig.addrDimDarkRedLEDSwitch[LEDInd - 1];
+            }
+            else
+            {
+                throw new ArgumentException();
             }
 
             SendCmd((byte)addrPLC, 5, (ushort)addrLEDSwitch, new byte[2] { 0x00, 0x00 });
@@ -798,7 +716,7 @@ namespace LEDController.Model
 
         public AllLEDStatus QueryAllLEDStatus()
         {
-            AllLEDStatus status = new AllLEDStatus(NumFixRedLED, NumFixDarkRedLED, NumFixGreenLED, NumDimRedLED, NumDimDarkRedLED, NumDimGreenLED);
+            AllLEDStatus status = new AllLEDStatus(LEDConfig.NumFixRedLED, LEDConfig.NumFixDarkRedLED, LEDConfig.NumFixGreenLED, LEDConfig.NumDimRedLED, LEDConfig.NumDimDarkRedLED, LEDConfig.NumDimGreenLED);
 
             if (!this.isAlive)
             {
@@ -809,7 +727,7 @@ namespace LEDController.Model
             double[] values;
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDPower[0], BitConverter.GetBytes((ushort)NumFixRedLED));
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrFixRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -823,7 +741,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixRedLED));
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrFixRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -837,7 +755,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrFixRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixRedLED));
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrFixRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -851,7 +769,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDPower[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrFixDarkRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -865,7 +783,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrFixDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -879,7 +797,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrFixDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrFixDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -893,7 +811,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDPower[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrFixGreenLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -907,7 +825,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDVoltage[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrFixGreenLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -921,7 +839,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrFixGreenLEDCurrent[0], BitConverter.GetBytes((ushort)NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrFixGreenLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -935,7 +853,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDPower[0], BitConverter.GetBytes((ushort)NumDimRedLED));
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrDimRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -949,7 +867,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimRedLED));
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrDimRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -963,7 +881,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrDimRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimRedLED));
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrDimRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -977,7 +895,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDPower[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrDimDarkRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -991,7 +909,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrDimDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -1005,7 +923,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)addrDimDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimDarkRedLED));
+                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrDimDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -1019,7 +937,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDPower[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrDimGreenLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -1033,7 +951,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDVoltage[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrDimGreenLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -1047,7 +965,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)addrDimGreenLEDCurrent[0], BitConverter.GetBytes((ushort)NumDimGreenLED));
+                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrDimGreenLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -1062,7 +980,7 @@ namespace LEDController.Model
             // receive temperature sensor data
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)addrTempSensor[0], BitConverter.GetBytes((ushort)6));
+                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)6));
                 values = ParseTemperature(recData);
                 status.redLEDTempLU = values[0];
                 status.redLEDTempRD = values[1];
@@ -1103,45 +1021,45 @@ namespace LEDController.Model
             switch (qType)
             {
                 case QueryType.FixGreenLED:
-                    addrLEDPower = addrFixGreenLEDPower[idx - 1];
-                    addrLEDCurrent = addrFixGreenLEDCurrent[idx - 1];
-                    addrLEDVoltage = addrFixGreenLEDVoltage[idx - 1];
-                    addrPLC = 3;
+                    addrLEDPower = LEDConfig.addrFixGreenLEDPower[idx - 1];
+                    addrLEDCurrent = LEDConfig.addrFixGreenLEDCurrent[idx - 1];
+                    addrLEDVoltage = LEDConfig.addrFixGreenLEDVoltage[idx - 1];
+                    addrPLC = LEDConfig.addrPLCGreenLED;
                     break;
 
                 case QueryType.FixRedLED:
-                    addrLEDPower = addrFixRedLEDPower[idx - 1];
-                    addrLEDCurrent = addrFixRedLEDCurrent[idx - 1];
-                    addrLEDVoltage = addrFixRedLEDVoltage[idx - 1];
-                    addrPLC = 1;
+                    addrLEDPower = LEDConfig.addrFixRedLEDPower[idx - 1];
+                    addrLEDCurrent = LEDConfig.addrFixRedLEDCurrent[idx - 1];
+                    addrLEDVoltage = LEDConfig.addrFixRedLEDVoltage[idx - 1];
+                    addrPLC = LEDConfig.addrPLCRedLED;
                     break;
 
                 case QueryType.FixDarkRedLED:
-                    addrLEDPower = addrFixDarkRedLEDPower[idx - 1];
-                    addrLEDCurrent = addrFixDarkRedLEDCurrent[idx - 1];
-                    addrLEDVoltage = addrFixDarkRedLEDVoltage[idx - 1];
-                    addrPLC = 2;
+                    addrLEDPower = LEDConfig.addrFixDarkRedLEDPower[idx - 1];
+                    addrLEDCurrent = LEDConfig.addrFixDarkRedLEDCurrent[idx - 1];
+                    addrLEDVoltage = LEDConfig.addrFixDarkRedLEDVoltage[idx - 1];
+                    addrPLC = LEDConfig.addrPLCDarkRedLED;
                     break;
 
                 case QueryType.DimDarkRedLED:
-                    addrLEDPower = addrDimDarkRedLEDPower[idx - 1];
-                    addrLEDCurrent = addrDimDarkRedLEDCurrent[idx - 1];
-                    addrLEDVoltage = addrDimDarkRedLEDVoltage[idx - 1];
-                    addrPLC = 2;
+                    addrLEDPower = LEDConfig.addrDimDarkRedLEDPower[idx - 1];
+                    addrLEDCurrent = LEDConfig.addrDimDarkRedLEDCurrent[idx - 1];
+                    addrLEDVoltage = LEDConfig.addrDimDarkRedLEDVoltage[idx - 1];
+                    addrPLC = LEDConfig.addrPLCDarkRedLED;
                     break;
 
                 case QueryType.DimRedLED:
-                    addrLEDPower = addrDimRedLEDPower[idx - 1];
-                    addrLEDCurrent = addrDimRedLEDCurrent[idx - 1];
-                    addrLEDVoltage = addrDimRedLEDVoltage[idx - 1];
-                    addrPLC = 1;
+                    addrLEDPower = LEDConfig.addrDimRedLEDPower[idx - 1];
+                    addrLEDCurrent = LEDConfig.addrDimRedLEDCurrent[idx - 1];
+                    addrLEDVoltage = LEDConfig.addrDimRedLEDVoltage[idx - 1];
+                    addrPLC = LEDConfig.addrPLCRedLED;
                     break;
 
                 case QueryType.DimGreenLED:
-                    addrLEDPower = addrDimGreenLEDPower[idx - 1];
-                    addrLEDCurrent = addrDimGreenLEDCurrent[idx - 1];
-                    addrLEDVoltage = addrDimGreenLEDVoltage[idx - 1];
-                    addrPLC = 3;
+                    addrLEDPower = LEDConfig.addrDimGreenLEDPower[idx - 1];
+                    addrLEDCurrent = LEDConfig.addrDimGreenLEDCurrent[idx - 1];
+                    addrLEDVoltage = LEDConfig.addrDimGreenLEDVoltage[idx - 1];
+                    addrPLC = LEDConfig.addrPLCGreenLED;
                     break;
             }
 
@@ -1195,7 +1113,7 @@ namespace LEDController.Model
 
             try
             {
-                byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)addrPlcAChillerWarn[chillerIndex], new byte[2] { 0x00, 0x01 });
+                byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)LEDConfig.addrPlcAChillerWarn[chillerIndex], new byte[2] { 0x00, 0x01 });
                 chillerWarning = ParseChillerStatus(recData, 1);
             }
             catch (Exception ex)
@@ -1234,7 +1152,7 @@ namespace LEDController.Model
 
             try
             {
-                byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)addrPlcAPumpWarn[pumpIndex], new byte[2] { 0x00, 0x01 });
+                byte[] recData = this.device.WriteReceive((byte)addrPLC, 1, (ushort)LEDConfig.addrPlcAPumpWarn[pumpIndex], new byte[2] { 0x00, 0x01 });
                 pumpWarning = ParsePumpStatus(recData, 1);
             }
             catch (Exception ex)
@@ -1247,82 +1165,82 @@ namespace LEDController.Model
 
         public void TurnOnSkyLight(int addrPLC, int skyLightIndex)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffSkyLight(int addrPLC, int skyLightIndex)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0x00, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0x00, 0x00 });
         }
 
         public void TurnOnLight(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[5], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[5], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffLight(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[5], new byte[2] { 0x00, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[5], new byte[2] { 0x00, 0x00 });
         }
 
         public void TurnOnChiller(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[1], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[1], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffChiller(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[1], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[1], new byte[2] { 0x00, 0x00 });
         }
 
         public void TurnOnLightMainSwitch(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[0], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[0], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffLightMainSwitch(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[0], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[0], new byte[2] { 0x00, 0x00 });
         }
 
         public void TurnOnRTPower(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[4], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[4], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffRTPower(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[4], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[4], new byte[2] { 0x00, 0x00 });
         }
 
         public void TurnOnAirConditionerPower(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[3], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[3], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffAirConditionerPower(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[3], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[3], new byte[2] { 0x00, 0x00 });
         }
 
         public void TurnOnCamPower(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[6], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[6], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffCamPower(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[6], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[6], new byte[2] { 0x00, 0x00 });
         }
 
         public void TurnOnPCPower(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[2], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[2], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffPCPower(int addrPLC)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)addrPlcASpareSwitch[2], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[2], new byte[2] { 0x00, 0x00 });
         }
 
     }
