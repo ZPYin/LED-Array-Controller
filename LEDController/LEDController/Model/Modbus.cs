@@ -12,19 +12,12 @@ namespace LEDController.Model
 {
     public abstract class Modbus
     {
-
         public abstract bool Connect(int timeout);
-
         public abstract bool Disconnect();
-
         public abstract byte[] Read(byte addrPLC, byte function, ushort register, ushort count);
-
         public abstract void Write(byte addrPLC, byte function, ushort register, byte[] data);
-
         public abstract byte[] WriteReceive(byte addrPLC, byte function, ushort register, byte[] data);
-
         public abstract void WriteMsg(string msg, bool isSendHEX);
-
         public abstract byte[] ReadMsg(bool isReceiveHEX);
 
         public byte[] MakePacket(byte addrPLC, byte function, ushort register, ushort count)

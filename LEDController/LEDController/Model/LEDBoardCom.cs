@@ -721,271 +721,208 @@ namespace LEDController.Model
             double[] values;
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDPower[0], GetUShort((ushort)LEDConfig.NumFixRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDPower[0], GetUShort((ushort)(LEDConfig.NumFixRedLED + LEDConfig.NumDimRedLED)));
                 values = ParseLEDPower(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixRedLEDPower[i] = values[i];
                 }
+                for (int i = 19; i < 30; i++)
+                {
+                    status.fixRedLEDPower[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimRedLEDPower[i - 15] = values[i];
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDVoltage[0], GetUShort((ushort)LEDConfig.NumFixRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDVoltage[0], GetUShort((ushort)(LEDConfig.NumFixRedLED + LEDConfig.NumDimRedLED)));
                 values = ParseLEDVoltage(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixRedLEDVoltage[i] = values[i];
                 }
+                for (int i = 19; i < 30; i++)
+                {
+                    status.fixRedLEDVoltage[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimRedLEDVoltage[i - 15] = values[i];
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDCurrent[0], GetUShort((ushort)LEDConfig.NumFixRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDCurrent[0], GetUShort((ushort)(LEDConfig.NumFixRedLED + LEDConfig.NumDimRedLED)));
                 values = ParseLEDCurrent(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixRedLEDCurrent[i] = values[i];
                 }
+                for (int i = 19; i < 30; i++)
+                {
+                    status.fixRedLEDCurrent[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimRedLEDCurrent[i - 15] = values[i];
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDPower[0], GetUShort((ushort)LEDConfig.NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDPower[0], GetUShort((ushort)(LEDConfig.NumFixDarkRedLED + LEDConfig.NumDimDarkRedLED)));
                 values = ParseLEDPower(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixDarkRedLEDPower[i] = values[i];
                 }
+                for (int i = 19; i < 30; i++)
+                {
+                    status.fixDarkRedLEDPower[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimDarkRedLEDPower[i - 15] = values[i];
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDVoltage[0], GetUShort((ushort)LEDConfig.NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDVoltage[0], GetUShort((ushort)(LEDConfig.NumFixDarkRedLED + LEDConfig.NumDimDarkRedLED)));
                 values = ParseLEDVoltage(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixDarkRedLEDVoltage[i] = values[i];
                 }
+                for (int i = 19; i < 30; i++)
+                {
+                    status.fixDarkRedLEDVoltage[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimDarkRedLEDVoltage[i - 15] = values[i];
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDCurrent[0], GetUShort((ushort)LEDConfig.NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDCurrent[0], GetUShort((ushort)(LEDConfig.NumFixDarkRedLED + LEDConfig.NumDimDarkRedLED)));
                 values = ParseLEDCurrent(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixDarkRedLEDCurrent[i] = values[i];
                 }
+                for (int i = 19; i < 30; i++)
+                {
+                    status.fixDarkRedLEDCurrent[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimDarkRedLEDCurrent[i - 15] = values[i];
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDPower[0], GetUShort((ushort)LEDConfig.NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDPower[0], GetUShort((ushort)(LEDConfig.NumFixGreenLED + LEDConfig.NumDimGreenLED)));
                 values = ParseLEDPower(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixGreenLEDPower[i] = values[i];
                 }
+                for (int i = 19; i < 30; i++)
+                {
+                    status.fixGreenLEDPower[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimGreenLEDPower[i - 15] = values[i];
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDVoltage[0], GetUShort((ushort)LEDConfig.NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDVoltage[0], GetUShort((ushort)(LEDConfig.NumFixGreenLED + LEDConfig.NumDimGreenLED)));
                 values = ParseLEDVoltage(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixGreenLEDVoltage[i] = values[i];
                 }
+                for (int i = 19; i < 30; i++)
+                {
+                    status.fixGreenLEDVoltage[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimGreenLEDVoltage[i - 15] = values[i];
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDCurrent[0], GetUShort((ushort)LEDConfig.NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDCurrent[0], GetUShort((ushort)(LEDConfig.NumFixGreenLED + LEDConfig.NumDimGreenLED)));
                 values = ParseLEDCurrent(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     status.fixGreenLEDCurrent[i] = values[i];
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrDimRedLEDPower[0], GetUShort((ushort)LEDConfig.NumDimRedLED));
-                values = ParseLEDPower(recData);
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 19; i < 30; i++)
                 {
-                    status.dimRedLEDPower[i] = values[i];
+                    status.fixGreenLEDCurrent[i - 4] = values[i];
+                }
+                for (int i = 15; i < 19; i++)
+                {
+                    status.dimGreenLEDCurrent[i - 15] = values[i];
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrDimRedLEDVoltage[0], GetUShort((ushort)LEDConfig.NumDimRedLED));
-                values = ParseLEDVoltage(recData);
-                for (int i = 0; i < values.Length; i++)
-                {
-                    status.dimRedLEDVoltage[i] = values[i];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrDimRedLEDCurrent[0], GetUShort((ushort)LEDConfig.NumDimRedLED));
-                values = ParseLEDCurrent(recData);
-                for (int i = 0; i < values.Length; i++)
-                {
-                    status.dimRedLEDCurrent[i] = values[i];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrDimDarkRedLEDPower[0], GetUShort((ushort)LEDConfig.NumDimDarkRedLED));
-                values = ParseLEDPower(recData);
-                for (int i = 0; i < values.Length; i++)
-                {
-                    status.dimDarkRedLEDPower[i] = values[i];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrDimDarkRedLEDVoltage[0], GetUShort((ushort)LEDConfig.NumDimDarkRedLED));
-                values = ParseLEDVoltage(recData);
-                for (int i = 0; i < values.Length; i++)
-                {
-                    status.dimDarkRedLEDVoltage[i] = values[i];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrDimDarkRedLEDCurrent[0], GetUShort((ushort)LEDConfig.NumDimDarkRedLED));
-                values = ParseLEDCurrent(recData);
-                for (int i = 0; i < values.Length; i++)
-                {
-                    status.dimDarkRedLEDCurrent[i] = values[i];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrDimGreenLEDPower[0], GetUShort((ushort)LEDConfig.NumDimGreenLED));
-                values = ParseLEDPower(recData);
-                for (int i = 0; i < values.Length; i++)
-                {
-                    status.dimGreenLEDPower[i] = values[i];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrDimGreenLEDVoltage[0], GetUShort((ushort)LEDConfig.NumDimGreenLED));
-                values = ParseLEDVoltage(recData);
-                for (int i = 0; i < values.Length; i++)
-                {
-                    status.dimGreenLEDVoltage[i] = values[i];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            Thread.Sleep(50);
-
-            try
-            {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrDimGreenLEDCurrent[0], GetUShort((ushort)LEDConfig.NumDimGreenLED));
-                values = ParseLEDCurrent(recData);
-                for (int i = 0; i < values.Length; i++)
-                {
-                    status.dimGreenLEDCurrent[i] = values[i];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                // throw ex;
             }
             Thread.Sleep(50);
 
@@ -995,17 +932,31 @@ namespace LEDController.Model
                 recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrTempSensor[0], GetUShort((ushort)4));
                 status.tempGreenLED = ParseTemperature(recData);
                 Thread.Sleep(100);
+            }
+            catch (Exception ex)
+            {
+                // throw ex;
+            }
 
+            try
+            {
                 recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrTempSensor[0], GetUShort((ushort)4));
                 status.tempRedLED = ParseTemperature(recData);
                 Thread.Sleep(100);
+            }
+            catch (Exception ex)
+            {
+                // throw ex;
+            }
 
+            try
+            {
                 recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrTempSensor[0], GetUShort((ushort)4));
                 status.tempDarkRedLED = ParseTemperature(recData);
             }
             catch (Exception ex)
             {
-                throw ex;
+                // throw ex;
             }
 
             status.isValidStatus = true;

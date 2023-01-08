@@ -1,5 +1,6 @@
 ﻿using LEDController.View;
 using LEDController.Model;
+using NLog;
 using ScottPlot;
 using ScottPlot.Plottable;
 using System;
@@ -28,6 +29,8 @@ namespace LEDController.Presenter
         private const double MinDarkRedLEDPower = 0.0;
         private const int NumScrollBarLevel = 50;
         private const int NumLiveData = 3600;
+
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         private LEDControllerViewer _view;
         private LEDBoardCom connector;
@@ -176,7 +179,7 @@ namespace LEDController.Presenter
             else
             {
                 MessageBox.Show("Connection is not ready!", "Warning");
-                throw new IOException("Connection is not set up.");
+                logger.Error("Connection is not set up.");
             }
         }
 
@@ -224,7 +227,7 @@ namespace LEDController.Presenter
             else
             {
                 MessageBox.Show("Connection is not ready!", "Warning");
-                throw new IOException("Connection is not set up.");
+                logger.Error("Connection is not set up.");
             }
         }
 
@@ -548,6 +551,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Warn("Connection failure");
                 _view.toolStripConnectionStatusText = "连接失败";
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + " 串口连接失败\r\n");
                 tbxConnectMsg.AppendText(ex.ToString() + "\r\n");
@@ -602,6 +606,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Warn("Connection break");
                 _view.toolStripConnectionStatusText = "断开失败";
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + " 串口断开失败\r\n");
                 tbxConnectMsg.AppendText(ex.ToString() + "\r\n");
@@ -905,11 +910,13 @@ namespace LEDController.Presenter
                             break;
 
                         default:
-                            throw new ArgumentException($"Unknown protocol {LEDCfgReader.protocol}");
+                            logger.Error($"Unknown protocol {LEDCfgReader.protocol}");
+                            break;
                     }
                 }
                 catch (Exception ex)
                 {
+                    logger.Error(ex.ToString());
                     tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
                     return;
                 }
@@ -1221,6 +1228,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
         }
@@ -1250,6 +1258,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
         }
@@ -1279,6 +1288,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
         }
@@ -1306,6 +1316,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
         }
@@ -1333,6 +1344,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
         }
@@ -1360,6 +1372,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
         }
@@ -1507,7 +1520,7 @@ namespace LEDController.Presenter
             }
             else
             {
-                throw new ArgumentException("Wrong PLC number");
+                logger.Error("Wrong PLC number");
             }
 
             return sbarValue;
@@ -1530,6 +1543,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 TextBox tbxConnectMsg = (TextBox)(this._view.Controls.Find("tbxConnectMsg", true)[0]);
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
@@ -1570,6 +1584,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 TextBox tbxConnectMsg = (TextBox)(this._view.Controls.Find("tbxConnectMsg", true)[0]);
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
@@ -1610,6 +1625,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 TextBox tbxConnectMsg = (TextBox)(this._view.Controls.Find("tbxConnectMsg", true)[0]);
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
@@ -1647,6 +1663,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 TextBox tbxConnectMsg = (TextBox)(this._view.Controls.Find("tbxConnectMsg", true)[0]);
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
@@ -1673,6 +1690,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 TextBox tbxConnectMsg = (TextBox)(this._view.Controls.Find("tbxConnectMsg", true)[0]);
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
@@ -1699,6 +1717,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 TextBox tbxConnectMsg = (TextBox)(this._view.Controls.Find("tbxConnectMsg", true)[0]);
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
@@ -1828,16 +1847,19 @@ namespace LEDController.Presenter
                     }
                     else
                     {
+                        logger.Warn("Failure in requesting Green LED status");
                         _view.toolStripLEDStatusText = "获取LED状态失败";
                     }
                 }
                 catch
                 {
+                    logger.Warn("Failure in requesting Green LED status");
                     _view.toolStripLEDStatusText = "获取LED状态失败";
                 }
             }
             else
             {
+                logger.Warn("Connection break");
                 _view.toolStripLEDStatusText = "获取LED状态失败";
             }
         }
@@ -1860,16 +1882,19 @@ namespace LEDController.Presenter
                     }
                     else
                     {
+                        logger.Warn("Failure in requesting Red LED status");
                         _view.toolStripLEDStatusText = "获取LED状态失败";
                     }
                 }
                 catch
                 {
+                    logger.Warn("Failure in requesting Red LED status");
                     _view.toolStripLEDStatusText = "获取LED状态失败";
                 }
             }
             else
             {
+                logger.Warn("Connection break");
                 _view.toolStripLEDStatusText = "获取LED状态失败";
             }
         }
@@ -1892,16 +1917,19 @@ namespace LEDController.Presenter
                     }
                     else
                     {
+                        logger.Warn("Failure in requesting Infrared LED status");
                         _view.toolStripLEDStatusText = "获取LED状态失败";
                     }
                 }
                 catch
                 {
+                    logger.Warn("Failure in requesting Infrared LED status");
                     _view.toolStripLEDStatusText = "获取LED状态失败";
                 }
             }
             else
             {
+                logger.Warn("Connection break");
                 _view.toolStripLEDStatusText = "获取LED状态失败";
             }
         }
@@ -1924,16 +1952,19 @@ namespace LEDController.Presenter
                     }
                     else
                     {
+                        logger.Warn("Failure in requesting Green LED status");
                         _view.toolStripLEDStatusText = "获取LED状态失败";
                     }
                 }
                 catch
                 {
+                    logger.Warn("Failure in requesting Green LED status");
                     _view.toolStripLEDStatusText = "获取LED状态失败";
                 }
             }
             else
             {
+                logger.Warn("Connection break");
                 _view.toolStripLEDStatusText = "获取LED状态失败";
             }
         }
@@ -1956,16 +1987,19 @@ namespace LEDController.Presenter
                     }
                     else
                     {
+                        logger.Warn("Failure in requesting Red LED status");
                         _view.toolStripLEDStatusText = "获取LED状态失败";
                     }
                 }
                 catch
                 {
+                    logger.Warn("Failure in requesting Red LED status");
                     _view.toolStripLEDStatusText = "获取LED状态失败";
                 }
             }
             else
             {
+                logger.Warn("Connection break");
                 _view.toolStripLEDStatusText = "获取LED状态失败";
             }
         }
@@ -1988,16 +2022,19 @@ namespace LEDController.Presenter
                     }
                     else
                     {
+                        logger.Warn("Failure in requesting Infrared LED status");
                         _view.toolStripLEDStatusText = "获取LED状态失败";
                     }
                 }
                 catch
                 {
+                    logger.Warn("Failure in requesting Infrared LED status");
                     _view.toolStripLEDStatusText = "获取LED状态失败";
                 }
             }
             else
             {
+                logger.Warn("Connection break");
                 _view.toolStripLEDStatusText = "获取LED状态失败";
             }
         }
@@ -2032,6 +2069,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + ex.ToString() + "\r\n");
             }
         }
@@ -2074,7 +2112,9 @@ namespace LEDController.Presenter
                         worker.ReportProgress(1);
                     }
                     catch
-                    {}
+                    {
+                        logger.Error("Failure in receiving message");
+                    }
                 }
             }
         }
@@ -2151,6 +2191,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error("Failure in setting up connection");
                 _view.toolStripConnectionStatusText = "连接失败";
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + " 连接失败\r\n");
                 tbxConnectMsg.AppendText(ex.ToString() + "\r\n");
@@ -2185,6 +2226,7 @@ namespace LEDController.Presenter
             }
             catch (Exception ex)
             {
+                logger.Error("Failure in disconnection");
                 _view.toolStripConnectionStatusText = "断开失败";
                 tbxConnectMsg.AppendText("[" + GetCurrentTime() + "]" + " 断开失败\r\n");
                 tbxConnectMsg.AppendText(ex.ToString() + "\r\n");
