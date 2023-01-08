@@ -298,12 +298,6 @@ namespace LEDController.View
             this.lblRedLEDTempLU = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
-            this.lblGreenLEDTempRD = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.lblGreenLEDTempLU = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
             this.tbxStatusSaveFolder = new System.Windows.Forms.TextBox();
             this.btnStatusSaveFolder = new System.Windows.Forms.Button();
             this.panelLEDStatus = new System.Windows.Forms.Panel();
@@ -490,6 +484,16 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.lblGreenLEDTempRD = new System.Windows.Forms.Label();
+            this.lblGreenLEDTempRU = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblGreenLEDTempLD = new System.Windows.Forms.Label();
+            this.lblGreenLEDTempLU = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
@@ -548,6 +552,7 @@ namespace LEDController.View
             ((System.ComponentModel.ISupportInitialize)(this.pbxPCPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCamPower)).BeginInit();
             this.statusStrip2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripLEDStatus
@@ -558,6 +563,7 @@ namespace LEDController.View
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件,
@@ -777,7 +783,7 @@ namespace LEDController.View
             this.tabCtrlMain.Controls.Add(this.tpgAirConditionerControl);
             this.tabCtrlMain.Controls.Add(this.tpgCameraControl);
             this.tabCtrlMain.Location = new System.Drawing.Point(18, 42);
-            this.tabCtrlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabCtrlMain.Margin = new System.Windows.Forms.Padding(4);
             this.tabCtrlMain.Name = "tabCtrlMain";
             this.tabCtrlMain.SelectedIndex = 0;
             this.tabCtrlMain.Size = new System.Drawing.Size(1575, 840);
@@ -802,9 +808,9 @@ namespace LEDController.View
             this.tpgConnect.Controls.Add(this.tbxConnectMsg);
             this.tpgConnect.Controls.Add(this.label16);
             this.tpgConnect.Location = new System.Drawing.Point(4, 28);
-            this.tpgConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgConnect.Margin = new System.Windows.Forms.Padding(4);
             this.tpgConnect.Name = "tpgConnect";
-            this.tpgConnect.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgConnect.Padding = new System.Windows.Forms.Padding(4);
             this.tpgConnect.Size = new System.Drawing.Size(1567, 808);
             this.tpgConnect.TabIndex = 0;
             this.tpgConnect.Text = "连接测试";
@@ -838,7 +844,7 @@ namespace LEDController.View
             this.panel4.Controls.Add(this.rbnRecHEX);
             this.panel4.Controls.Add(this.label50);
             this.panel4.Location = new System.Drawing.Point(36, 518);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 40);
             this.panel4.TabIndex = 23;
@@ -848,7 +854,7 @@ namespace LEDController.View
             this.rbnRecASCII.AutoSize = true;
             this.rbnRecASCII.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rbnRecASCII.Location = new System.Drawing.Point(202, 6);
-            this.rbnRecASCII.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbnRecASCII.Margin = new System.Windows.Forms.Padding(4);
             this.rbnRecASCII.Name = "rbnRecASCII";
             this.rbnRecASCII.Size = new System.Drawing.Size(90, 25);
             this.rbnRecASCII.TabIndex = 23;
@@ -861,7 +867,7 @@ namespace LEDController.View
             this.rbnRecHEX.AutoSize = true;
             this.rbnRecHEX.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rbnRecHEX.Location = new System.Drawing.Point(130, 6);
-            this.rbnRecHEX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbnRecHEX.Margin = new System.Windows.Forms.Padding(4);
             this.rbnRecHEX.Name = "rbnRecHEX";
             this.rbnRecHEX.Size = new System.Drawing.Size(68, 25);
             this.rbnRecHEX.TabIndex = 22;
@@ -886,7 +892,7 @@ namespace LEDController.View
             this.panel3.Controls.Add(this.rbnSendHEX);
             this.panel3.Controls.Add(this.label49);
             this.panel3.Location = new System.Drawing.Point(36, 470);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 40);
             this.panel3.TabIndex = 22;
@@ -896,7 +902,7 @@ namespace LEDController.View
             this.rbnSendASCII.AutoSize = true;
             this.rbnSendASCII.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rbnSendASCII.Location = new System.Drawing.Point(200, 8);
-            this.rbnSendASCII.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbnSendASCII.Margin = new System.Windows.Forms.Padding(4);
             this.rbnSendASCII.Name = "rbnSendASCII";
             this.rbnSendASCII.Size = new System.Drawing.Size(90, 25);
             this.rbnSendASCII.TabIndex = 19;
@@ -909,7 +915,7 @@ namespace LEDController.View
             this.rbnSendHEX.AutoSize = true;
             this.rbnSendHEX.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rbnSendHEX.Location = new System.Drawing.Point(128, 8);
-            this.rbnSendHEX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbnSendHEX.Margin = new System.Windows.Forms.Padding(4);
             this.rbnSendHEX.Name = "rbnSendHEX";
             this.rbnSendHEX.Size = new System.Drawing.Size(68, 25);
             this.rbnSendHEX.TabIndex = 18;
@@ -945,7 +951,7 @@ namespace LEDController.View
             this.panel2.Controls.Add(this.cbxCOMPort);
             this.panel2.Controls.Add(this.label32);
             this.panel2.Location = new System.Drawing.Point(18, 39);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(335, 258);
             this.panel2.TabIndex = 14;
@@ -954,7 +960,7 @@ namespace LEDController.View
             // 
             this.btnCloseCOM.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseCOM.Location = new System.Drawing.Point(168, 204);
-            this.btnCloseCOM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseCOM.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseCOM.Name = "btnCloseCOM";
             this.btnCloseCOM.Size = new System.Drawing.Size(138, 44);
             this.btnCloseCOM.TabIndex = 11;
@@ -966,7 +972,7 @@ namespace LEDController.View
             // 
             this.btnOpenCOM.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenCOM.Location = new System.Drawing.Point(21, 204);
-            this.btnOpenCOM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenCOM.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenCOM.Name = "btnOpenCOM";
             this.btnOpenCOM.Size = new System.Drawing.Size(138, 44);
             this.btnOpenCOM.TabIndex = 10;
@@ -978,7 +984,7 @@ namespace LEDController.View
             // 
             this.cbxCheckBit.FormattingEnabled = true;
             this.cbxCheckBit.Location = new System.Drawing.Point(116, 87);
-            this.cbxCheckBit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxCheckBit.Margin = new System.Windows.Forms.Padding(4);
             this.cbxCheckBit.Name = "cbxCheckBit";
             this.cbxCheckBit.Size = new System.Drawing.Size(180, 26);
             this.cbxCheckBit.TabIndex = 9;
@@ -998,7 +1004,7 @@ namespace LEDController.View
             // 
             this.cbxStopBit.FormattingEnabled = true;
             this.cbxStopBit.Location = new System.Drawing.Point(116, 165);
-            this.cbxStopBit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxStopBit.Margin = new System.Windows.Forms.Padding(4);
             this.cbxStopBit.Name = "cbxStopBit";
             this.cbxStopBit.Size = new System.Drawing.Size(180, 26);
             this.cbxStopBit.TabIndex = 7;
@@ -1018,7 +1024,7 @@ namespace LEDController.View
             // 
             this.cbxDataBit.FormattingEnabled = true;
             this.cbxDataBit.Location = new System.Drawing.Point(116, 126);
-            this.cbxDataBit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxDataBit.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDataBit.Name = "cbxDataBit";
             this.cbxDataBit.Size = new System.Drawing.Size(180, 26);
             this.cbxDataBit.TabIndex = 5;
@@ -1038,7 +1044,7 @@ namespace LEDController.View
             // 
             this.cbxBaudRate.FormattingEnabled = true;
             this.cbxBaudRate.Location = new System.Drawing.Point(116, 48);
-            this.cbxBaudRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxBaudRate.Margin = new System.Windows.Forms.Padding(4);
             this.cbxBaudRate.Name = "cbxBaudRate";
             this.cbxBaudRate.Size = new System.Drawing.Size(180, 26);
             this.cbxBaudRate.TabIndex = 3;
@@ -1058,7 +1064,7 @@ namespace LEDController.View
             // 
             this.cbxCOMPort.FormattingEnabled = true;
             this.cbxCOMPort.Location = new System.Drawing.Point(116, 9);
-            this.cbxCOMPort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxCOMPort.Margin = new System.Windows.Forms.Padding(4);
             this.cbxCOMPort.Name = "cbxCOMPort";
             this.cbxCOMPort.Size = new System.Drawing.Size(180, 26);
             this.cbxCOMPort.TabIndex = 1;
@@ -1095,7 +1101,7 @@ namespace LEDController.View
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(18, 304);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(336, 158);
             this.panel1.TabIndex = 12;
@@ -1106,7 +1112,7 @@ namespace LEDController.View
             this.btnOpenTCP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenTCP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOpenTCP.Location = new System.Drawing.Point(21, 104);
-            this.btnOpenTCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenTCP.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenTCP.Name = "btnOpenTCP";
             this.btnOpenTCP.Size = new System.Drawing.Size(138, 44);
             this.btnOpenTCP.TabIndex = 10;
@@ -1118,7 +1124,7 @@ namespace LEDController.View
             // 
             this.btnCloseTCP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseTCP.Location = new System.Drawing.Point(168, 104);
-            this.btnCloseTCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseTCP.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseTCP.Name = "btnCloseTCP";
             this.btnCloseTCP.Size = new System.Drawing.Size(138, 44);
             this.btnCloseTCP.TabIndex = 11;
@@ -1130,7 +1136,7 @@ namespace LEDController.View
             // 
             this.tbxPort.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxPort.Location = new System.Drawing.Point(93, 56);
-            this.tbxPort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPort.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPort.Name = "tbxPort";
             this.tbxPort.Size = new System.Drawing.Size(121, 35);
             this.tbxPort.TabIndex = 9;
@@ -1140,7 +1146,7 @@ namespace LEDController.View
             // 
             this.tbxIP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxIP.Location = new System.Drawing.Point(93, 8);
-            this.tbxIP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxIP.Margin = new System.Windows.Forms.Padding(4);
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(228, 35);
             this.tbxIP.TabIndex = 8;
@@ -1178,7 +1184,7 @@ namespace LEDController.View
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(74, 560);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(196, 227);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1201,7 +1207,7 @@ namespace LEDController.View
             this.tbxTestRec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tbxTestRec.Location = new System.Drawing.Point(363, 584);
-            this.tbxTestRec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxTestRec.Margin = new System.Windows.Forms.Padding(4);
             this.tbxTestRec.Multiline = true;
             this.tbxTestRec.Name = "tbxTestRec";
             this.tbxTestRec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1214,7 +1220,7 @@ namespace LEDController.View
             this.tbxTestCmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tbxTestCmd.Location = new System.Drawing.Point(363, 346);
-            this.tbxTestCmd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxTestCmd.Margin = new System.Windows.Forms.Padding(4);
             this.tbxTestCmd.Multiline = true;
             this.tbxTestCmd.Name = "tbxTestCmd";
             this.tbxTestCmd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1225,7 +1231,7 @@ namespace LEDController.View
             // 
             this.btnSendTestMsg.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSendTestMsg.Location = new System.Drawing.Point(363, 282);
-            this.btnSendTestMsg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSendTestMsg.Margin = new System.Windows.Forms.Padding(4);
             this.btnSendTestMsg.Name = "btnSendTestMsg";
             this.btnSendTestMsg.Size = new System.Drawing.Size(165, 48);
             this.btnSendTestMsg.TabIndex = 6;
@@ -1236,7 +1242,7 @@ namespace LEDController.View
             // tbxConnectMsg
             // 
             this.tbxConnectMsg.Location = new System.Drawing.Point(363, 52);
-            this.tbxConnectMsg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxConnectMsg.Margin = new System.Windows.Forms.Padding(4);
             this.tbxConnectMsg.Multiline = true;
             this.tbxConnectMsg.Name = "tbxConnectMsg";
             this.tbxConnectMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1287,9 +1293,9 @@ namespace LEDController.View
             this.tpgLEDControl.Controls.Add(this.panelRedFixLED);
             this.tpgLEDControl.Controls.Add(this.panelGreenFixLED);
             this.tpgLEDControl.Location = new System.Drawing.Point(4, 28);
-            this.tpgLEDControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgLEDControl.Margin = new System.Windows.Forms.Padding(4);
             this.tpgLEDControl.Name = "tpgLEDControl";
-            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgLEDControl.Padding = new System.Windows.Forms.Padding(4);
             this.tpgLEDControl.Size = new System.Drawing.Size(1567, 808);
             this.tpgLEDControl.TabIndex = 1;
             this.tpgLEDControl.Text = " LED控制";
@@ -1300,7 +1306,7 @@ namespace LEDController.View
             this.cbxDarkRedLEDMainSwitch.AutoCheck = false;
             this.cbxDarkRedLEDMainSwitch.AutoSize = true;
             this.cbxDarkRedLEDMainSwitch.Location = new System.Drawing.Point(1366, 98);
-            this.cbxDarkRedLEDMainSwitch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxDarkRedLEDMainSwitch.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDarkRedLEDMainSwitch.Name = "cbxDarkRedLEDMainSwitch";
             this.cbxDarkRedLEDMainSwitch.Size = new System.Drawing.Size(88, 22);
             this.cbxDarkRedLEDMainSwitch.TabIndex = 205;
@@ -1313,7 +1319,7 @@ namespace LEDController.View
             this.cbxRedLEDMainSwitch.AutoCheck = false;
             this.cbxRedLEDMainSwitch.AutoSize = true;
             this.cbxRedLEDMainSwitch.Location = new System.Drawing.Point(884, 98);
-            this.cbxRedLEDMainSwitch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxRedLEDMainSwitch.Margin = new System.Windows.Forms.Padding(4);
             this.cbxRedLEDMainSwitch.Name = "cbxRedLEDMainSwitch";
             this.cbxRedLEDMainSwitch.Size = new System.Drawing.Size(88, 22);
             this.cbxRedLEDMainSwitch.TabIndex = 204;
@@ -1326,7 +1332,7 @@ namespace LEDController.View
             this.cbxGreenLEDMainSwitch.AutoCheck = false;
             this.cbxGreenLEDMainSwitch.AutoSize = true;
             this.cbxGreenLEDMainSwitch.Location = new System.Drawing.Point(410, 98);
-            this.cbxGreenLEDMainSwitch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxGreenLEDMainSwitch.Margin = new System.Windows.Forms.Padding(4);
             this.cbxGreenLEDMainSwitch.Name = "cbxGreenLEDMainSwitch";
             this.cbxGreenLEDMainSwitch.Size = new System.Drawing.Size(88, 22);
             this.cbxGreenLEDMainSwitch.TabIndex = 203;
@@ -1351,7 +1357,7 @@ namespace LEDController.View
             this.button130.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button130.ForeColor = System.Drawing.Color.ForestGreen;
             this.button130.Location = new System.Drawing.Point(165, 50);
-            this.button130.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button130.Margin = new System.Windows.Forms.Padding(4);
             this.button130.Name = "button130";
             this.button130.Size = new System.Drawing.Size(30, 30);
             this.button130.TabIndex = 93;
@@ -1375,7 +1381,7 @@ namespace LEDController.View
             this.button129.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button129.ForeColor = System.Drawing.Color.ForestGreen;
             this.button129.Location = new System.Drawing.Point(66, 50);
-            this.button129.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button129.Margin = new System.Windows.Forms.Padding(4);
             this.button129.Name = "button129";
             this.button129.Size = new System.Drawing.Size(30, 30);
             this.button129.TabIndex = 64;
@@ -1386,7 +1392,7 @@ namespace LEDController.View
             // 
             this.btnCloseDarkRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseDarkRedDimLED.Location = new System.Drawing.Point(1300, 738);
-            this.btnCloseDarkRedDimLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseDarkRedDimLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseDarkRedDimLED.Name = "btnCloseDarkRedDimLED";
             this.btnCloseDarkRedDimLED.Size = new System.Drawing.Size(136, 40);
             this.btnCloseDarkRedDimLED.TabIndex = 202;
@@ -1398,7 +1404,7 @@ namespace LEDController.View
             // 
             this.btnOpenDarkRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenDarkRedDimLED.Location = new System.Drawing.Point(1077, 738);
-            this.btnOpenDarkRedDimLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDarkRedDimLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDarkRedDimLED.Name = "btnOpenDarkRedDimLED";
             this.btnOpenDarkRedDimLED.Size = new System.Drawing.Size(136, 40);
             this.btnOpenDarkRedDimLED.TabIndex = 201;
@@ -1410,7 +1416,7 @@ namespace LEDController.View
             // 
             this.btnCloseRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseRedDimLED.Location = new System.Drawing.Point(818, 738);
-            this.btnCloseRedDimLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseRedDimLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseRedDimLED.Name = "btnCloseRedDimLED";
             this.btnCloseRedDimLED.Size = new System.Drawing.Size(136, 40);
             this.btnCloseRedDimLED.TabIndex = 188;
@@ -1422,7 +1428,7 @@ namespace LEDController.View
             // 
             this.btnOpenRedDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenRedDimLED.Location = new System.Drawing.Point(594, 738);
-            this.btnOpenRedDimLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenRedDimLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenRedDimLED.Name = "btnOpenRedDimLED";
             this.btnOpenRedDimLED.Size = new System.Drawing.Size(136, 40);
             this.btnOpenRedDimLED.TabIndex = 187;
@@ -1434,7 +1440,7 @@ namespace LEDController.View
             // 
             this.btnCloseGreenDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseGreenDimLED.Location = new System.Drawing.Point(339, 738);
-            this.btnCloseGreenDimLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseGreenDimLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseGreenDimLED.Name = "btnCloseGreenDimLED";
             this.btnCloseGreenDimLED.Size = new System.Drawing.Size(136, 40);
             this.btnCloseGreenDimLED.TabIndex = 174;
@@ -1446,7 +1452,7 @@ namespace LEDController.View
             // 
             this.btnOpenGreenDimLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenGreenDimLED.Location = new System.Drawing.Point(116, 738);
-            this.btnOpenGreenDimLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenGreenDimLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenGreenDimLED.Name = "btnOpenGreenDimLED";
             this.btnOpenGreenDimLED.Size = new System.Drawing.Size(136, 40);
             this.btnOpenGreenDimLED.TabIndex = 173;
@@ -1483,7 +1489,7 @@ namespace LEDController.View
             this.panelDimDarkRedLED.Controls.Add(this.sbarDimDarkRedLED1);
             this.panelDimDarkRedLED.Controls.Add(this.btnDimDarkRedLED1);
             this.panelDimDarkRedLED.Location = new System.Drawing.Point(1028, 470);
-            this.panelDimDarkRedLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDimDarkRedLED.Margin = new System.Windows.Forms.Padding(4);
             this.panelDimDarkRedLED.Name = "panelDimDarkRedLED";
             this.panelDimDarkRedLED.Size = new System.Drawing.Size(460, 249);
             this.panelDimDarkRedLED.TabIndex = 85;
@@ -1521,7 +1527,7 @@ namespace LEDController.View
             // tbxDimDarkRedLED4
             // 
             this.tbxDimDarkRedLED4.Location = new System.Drawing.Point(348, 46);
-            this.tbxDimDarkRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimDarkRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimDarkRedLED4.Name = "tbxDimDarkRedLED4";
             this.tbxDimDarkRedLED4.Size = new System.Drawing.Size(43, 28);
             this.tbxDimDarkRedLED4.TabIndex = 199;
@@ -1543,7 +1549,7 @@ namespace LEDController.View
             // tbxDimDarkRedLED3
             // 
             this.tbxDimDarkRedLED3.Location = new System.Drawing.Point(255, 46);
-            this.tbxDimDarkRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimDarkRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimDarkRedLED3.Name = "tbxDimDarkRedLED3";
             this.tbxDimDarkRedLED3.Size = new System.Drawing.Size(43, 28);
             this.tbxDimDarkRedLED3.TabIndex = 196;
@@ -1555,7 +1561,7 @@ namespace LEDController.View
             // tbxDimDarkRedLED2
             // 
             this.tbxDimDarkRedLED2.Location = new System.Drawing.Point(164, 46);
-            this.tbxDimDarkRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimDarkRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimDarkRedLED2.Name = "tbxDimDarkRedLED2";
             this.tbxDimDarkRedLED2.Size = new System.Drawing.Size(43, 28);
             this.tbxDimDarkRedLED2.TabIndex = 193;
@@ -1567,7 +1573,7 @@ namespace LEDController.View
             // tbxDimDarkRedLED1
             // 
             this.tbxDimDarkRedLED1.Location = new System.Drawing.Point(74, 46);
-            this.tbxDimDarkRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimDarkRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimDarkRedLED1.Name = "tbxDimDarkRedLED1";
             this.tbxDimDarkRedLED1.Size = new System.Drawing.Size(43, 28);
             this.tbxDimDarkRedLED1.TabIndex = 190;
@@ -1589,7 +1595,7 @@ namespace LEDController.View
             // btnOpenDimDarkRedLED4
             // 
             this.btnOpenDimDarkRedLED4.Location = new System.Drawing.Point(352, 196);
-            this.btnOpenDimDarkRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimDarkRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimDarkRedLED4.Name = "btnOpenDimDarkRedLED4";
             this.btnOpenDimDarkRedLED4.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimDarkRedLED4.TabIndex = 200;
@@ -1612,7 +1618,7 @@ namespace LEDController.View
             // 
             this.sbarDimDarkRedLED4.LargeChange = 20;
             this.sbarDimDarkRedLED4.Location = new System.Drawing.Point(352, 74);
-            this.sbarDimDarkRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimDarkRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimDarkRedLED4.Maximum = 50;
             this.sbarDimDarkRedLED4.Name = "sbarDimDarkRedLED4";
             this.sbarDimDarkRedLED4.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -1631,7 +1637,7 @@ namespace LEDController.View
             this.btnDimDarkRedLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimDarkRedLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimDarkRedLED4.Location = new System.Drawing.Point(364, 12);
-            this.btnDimDarkRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimDarkRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimDarkRedLED4.Name = "btnDimDarkRedLED4";
             this.btnDimDarkRedLED4.Size = new System.Drawing.Size(30, 30);
             this.btnDimDarkRedLED4.TabIndex = 198;
@@ -1644,7 +1650,7 @@ namespace LEDController.View
             // btnOpenDimDarkRedLED3
             // 
             this.btnOpenDimDarkRedLED3.Location = new System.Drawing.Point(260, 196);
-            this.btnOpenDimDarkRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimDarkRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimDarkRedLED3.Name = "btnOpenDimDarkRedLED3";
             this.btnOpenDimDarkRedLED3.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimDarkRedLED3.TabIndex = 197;
@@ -1667,7 +1673,7 @@ namespace LEDController.View
             // 
             this.sbarDimDarkRedLED3.LargeChange = 20;
             this.sbarDimDarkRedLED3.Location = new System.Drawing.Point(260, 74);
-            this.sbarDimDarkRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimDarkRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimDarkRedLED3.Maximum = 50;
             this.sbarDimDarkRedLED3.Name = "sbarDimDarkRedLED3";
             this.sbarDimDarkRedLED3.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -1686,7 +1692,7 @@ namespace LEDController.View
             this.btnDimDarkRedLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimDarkRedLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimDarkRedLED3.Location = new System.Drawing.Point(272, 12);
-            this.btnDimDarkRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimDarkRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimDarkRedLED3.Name = "btnDimDarkRedLED3";
             this.btnDimDarkRedLED3.Size = new System.Drawing.Size(30, 30);
             this.btnDimDarkRedLED3.TabIndex = 195;
@@ -1699,7 +1705,7 @@ namespace LEDController.View
             // btnOpenDimDarkRedLED2
             // 
             this.btnOpenDimDarkRedLED2.Location = new System.Drawing.Point(168, 196);
-            this.btnOpenDimDarkRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimDarkRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimDarkRedLED2.Name = "btnOpenDimDarkRedLED2";
             this.btnOpenDimDarkRedLED2.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimDarkRedLED2.TabIndex = 194;
@@ -1722,7 +1728,7 @@ namespace LEDController.View
             // 
             this.sbarDimDarkRedLED2.LargeChange = 20;
             this.sbarDimDarkRedLED2.Location = new System.Drawing.Point(168, 74);
-            this.sbarDimDarkRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimDarkRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimDarkRedLED2.Maximum = 50;
             this.sbarDimDarkRedLED2.Name = "sbarDimDarkRedLED2";
             this.sbarDimDarkRedLED2.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -1741,7 +1747,7 @@ namespace LEDController.View
             this.btnDimDarkRedLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimDarkRedLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimDarkRedLED2.Location = new System.Drawing.Point(180, 12);
-            this.btnDimDarkRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimDarkRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimDarkRedLED2.Name = "btnDimDarkRedLED2";
             this.btnDimDarkRedLED2.Size = new System.Drawing.Size(30, 30);
             this.btnDimDarkRedLED2.TabIndex = 192;
@@ -1754,7 +1760,7 @@ namespace LEDController.View
             // btnOpenDimDarkRedLED1
             // 
             this.btnOpenDimDarkRedLED1.Location = new System.Drawing.Point(76, 196);
-            this.btnOpenDimDarkRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimDarkRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimDarkRedLED1.Name = "btnOpenDimDarkRedLED1";
             this.btnOpenDimDarkRedLED1.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimDarkRedLED1.TabIndex = 191;
@@ -1777,7 +1783,7 @@ namespace LEDController.View
             // 
             this.sbarDimDarkRedLED1.LargeChange = 20;
             this.sbarDimDarkRedLED1.Location = new System.Drawing.Point(76, 74);
-            this.sbarDimDarkRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimDarkRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimDarkRedLED1.Maximum = 50;
             this.sbarDimDarkRedLED1.Name = "sbarDimDarkRedLED1";
             this.sbarDimDarkRedLED1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -1796,7 +1802,7 @@ namespace LEDController.View
             this.btnDimDarkRedLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimDarkRedLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimDarkRedLED1.Location = new System.Drawing.Point(88, 12);
-            this.btnDimDarkRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimDarkRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimDarkRedLED1.Name = "btnDimDarkRedLED1";
             this.btnDimDarkRedLED1.Size = new System.Drawing.Size(30, 30);
             this.btnDimDarkRedLED1.TabIndex = 189;
@@ -1835,7 +1841,7 @@ namespace LEDController.View
             this.panelDimRedLED.Controls.Add(this.sbarDimRedLED1);
             this.panelDimRedLED.Controls.Add(this.btnDimRedLED1);
             this.panelDimRedLED.Location = new System.Drawing.Point(544, 470);
-            this.panelDimRedLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDimRedLED.Margin = new System.Windows.Forms.Padding(4);
             this.panelDimRedLED.Name = "panelDimRedLED";
             this.panelDimRedLED.Size = new System.Drawing.Size(460, 249);
             this.panelDimRedLED.TabIndex = 85;
@@ -1873,7 +1879,7 @@ namespace LEDController.View
             // tbxDimRedLED4
             // 
             this.tbxDimRedLED4.Location = new System.Drawing.Point(350, 45);
-            this.tbxDimRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimRedLED4.Name = "tbxDimRedLED4";
             this.tbxDimRedLED4.Size = new System.Drawing.Size(43, 28);
             this.tbxDimRedLED4.TabIndex = 185;
@@ -1895,7 +1901,7 @@ namespace LEDController.View
             // tbxDimRedLED3
             // 
             this.tbxDimRedLED3.Location = new System.Drawing.Point(256, 45);
-            this.tbxDimRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimRedLED3.Name = "tbxDimRedLED3";
             this.tbxDimRedLED3.Size = new System.Drawing.Size(43, 28);
             this.tbxDimRedLED3.TabIndex = 182;
@@ -1917,7 +1923,7 @@ namespace LEDController.View
             // tbxDimRedLED2
             // 
             this.tbxDimRedLED2.Location = new System.Drawing.Point(165, 45);
-            this.tbxDimRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimRedLED2.Name = "tbxDimRedLED2";
             this.tbxDimRedLED2.Size = new System.Drawing.Size(43, 28);
             this.tbxDimRedLED2.TabIndex = 179;
@@ -1929,7 +1935,7 @@ namespace LEDController.View
             // btnOpenDimRedLED4
             // 
             this.btnOpenDimRedLED4.Location = new System.Drawing.Point(352, 195);
-            this.btnOpenDimRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimRedLED4.Name = "btnOpenDimRedLED4";
             this.btnOpenDimRedLED4.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimRedLED4.TabIndex = 186;
@@ -1941,7 +1947,7 @@ namespace LEDController.View
             // tbxDimRedLED1
             // 
             this.tbxDimRedLED1.Location = new System.Drawing.Point(75, 45);
-            this.tbxDimRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimRedLED1.Name = "tbxDimRedLED1";
             this.tbxDimRedLED1.Size = new System.Drawing.Size(43, 28);
             this.tbxDimRedLED1.TabIndex = 176;
@@ -1964,7 +1970,7 @@ namespace LEDController.View
             // 
             this.sbarDimRedLED4.LargeChange = 20;
             this.sbarDimRedLED4.Location = new System.Drawing.Point(352, 72);
-            this.sbarDimRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimRedLED4.Maximum = 50;
             this.sbarDimRedLED4.Name = "sbarDimRedLED4";
             this.sbarDimRedLED4.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -1983,7 +1989,7 @@ namespace LEDController.View
             this.btnDimRedLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimRedLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimRedLED4.Location = new System.Drawing.Point(364, 10);
-            this.btnDimRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimRedLED4.Name = "btnDimRedLED4";
             this.btnDimRedLED4.Size = new System.Drawing.Size(30, 30);
             this.btnDimRedLED4.TabIndex = 184;
@@ -1996,7 +2002,7 @@ namespace LEDController.View
             // btnOpenDimRedLED3
             // 
             this.btnOpenDimRedLED3.Location = new System.Drawing.Point(260, 195);
-            this.btnOpenDimRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimRedLED3.Name = "btnOpenDimRedLED3";
             this.btnOpenDimRedLED3.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimRedLED3.TabIndex = 183;
@@ -2019,7 +2025,7 @@ namespace LEDController.View
             // 
             this.sbarDimRedLED3.LargeChange = 20;
             this.sbarDimRedLED3.Location = new System.Drawing.Point(260, 72);
-            this.sbarDimRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimRedLED3.Maximum = 50;
             this.sbarDimRedLED3.Name = "sbarDimRedLED3";
             this.sbarDimRedLED3.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -2038,7 +2044,7 @@ namespace LEDController.View
             this.btnDimRedLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimRedLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimRedLED3.Location = new System.Drawing.Point(272, 10);
-            this.btnDimRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimRedLED3.Name = "btnDimRedLED3";
             this.btnDimRedLED3.Size = new System.Drawing.Size(30, 30);
             this.btnDimRedLED3.TabIndex = 181;
@@ -2051,7 +2057,7 @@ namespace LEDController.View
             // btnOpenDimRedLED2
             // 
             this.btnOpenDimRedLED2.Location = new System.Drawing.Point(168, 195);
-            this.btnOpenDimRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimRedLED2.Name = "btnOpenDimRedLED2";
             this.btnOpenDimRedLED2.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimRedLED2.TabIndex = 180;
@@ -2074,7 +2080,7 @@ namespace LEDController.View
             // 
             this.sbarDimRedLED2.LargeChange = 20;
             this.sbarDimRedLED2.Location = new System.Drawing.Point(168, 72);
-            this.sbarDimRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimRedLED2.Maximum = 50;
             this.sbarDimRedLED2.Name = "sbarDimRedLED2";
             this.sbarDimRedLED2.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -2093,7 +2099,7 @@ namespace LEDController.View
             this.btnDimRedLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimRedLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimRedLED2.Location = new System.Drawing.Point(180, 10);
-            this.btnDimRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimRedLED2.Name = "btnDimRedLED2";
             this.btnDimRedLED2.Size = new System.Drawing.Size(30, 30);
             this.btnDimRedLED2.TabIndex = 178;
@@ -2106,7 +2112,7 @@ namespace LEDController.View
             // btnOpenDimRedLED1
             // 
             this.btnOpenDimRedLED1.Location = new System.Drawing.Point(76, 195);
-            this.btnOpenDimRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimRedLED1.Name = "btnOpenDimRedLED1";
             this.btnOpenDimRedLED1.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimRedLED1.TabIndex = 177;
@@ -2129,7 +2135,7 @@ namespace LEDController.View
             // 
             this.sbarDimRedLED1.LargeChange = 20;
             this.sbarDimRedLED1.Location = new System.Drawing.Point(76, 72);
-            this.sbarDimRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimRedLED1.Maximum = 50;
             this.sbarDimRedLED1.Name = "sbarDimRedLED1";
             this.sbarDimRedLED1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -2148,7 +2154,7 @@ namespace LEDController.View
             this.btnDimRedLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimRedLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimRedLED1.Location = new System.Drawing.Point(88, 10);
-            this.btnDimRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimRedLED1.Name = "btnDimRedLED1";
             this.btnDimRedLED1.Size = new System.Drawing.Size(30, 30);
             this.btnDimRedLED1.TabIndex = 175;
@@ -2187,7 +2193,7 @@ namespace LEDController.View
             this.panelDimGreenLED.Controls.Add(this.sbarDimGreenLED1);
             this.panelDimGreenLED.Controls.Add(this.btnDimGreenLED1);
             this.panelDimGreenLED.Location = new System.Drawing.Point(66, 470);
-            this.panelDimGreenLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDimGreenLED.Margin = new System.Windows.Forms.Padding(4);
             this.panelDimGreenLED.Name = "panelDimGreenLED";
             this.panelDimGreenLED.Size = new System.Drawing.Size(460, 249);
             this.panelDimGreenLED.TabIndex = 82;
@@ -2235,7 +2241,7 @@ namespace LEDController.View
             // tbxDimGreenLED4
             // 
             this.tbxDimGreenLED4.Location = new System.Drawing.Point(350, 48);
-            this.tbxDimGreenLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimGreenLED4.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimGreenLED4.Name = "tbxDimGreenLED4";
             this.tbxDimGreenLED4.Size = new System.Drawing.Size(43, 28);
             this.tbxDimGreenLED4.TabIndex = 171;
@@ -2247,7 +2253,7 @@ namespace LEDController.View
             // tbxDimGreenLED3
             // 
             this.tbxDimGreenLED3.Location = new System.Drawing.Point(256, 48);
-            this.tbxDimGreenLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimGreenLED3.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimGreenLED3.Name = "tbxDimGreenLED3";
             this.tbxDimGreenLED3.Size = new System.Drawing.Size(43, 28);
             this.tbxDimGreenLED3.TabIndex = 168;
@@ -2259,7 +2265,7 @@ namespace LEDController.View
             // tbxDimGreenLED2
             // 
             this.tbxDimGreenLED2.Location = new System.Drawing.Point(165, 48);
-            this.tbxDimGreenLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimGreenLED2.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimGreenLED2.Name = "tbxDimGreenLED2";
             this.tbxDimGreenLED2.Size = new System.Drawing.Size(43, 28);
             this.tbxDimGreenLED2.TabIndex = 165;
@@ -2271,7 +2277,7 @@ namespace LEDController.View
             // tbxDimGreenLED1
             // 
             this.tbxDimGreenLED1.Location = new System.Drawing.Point(75, 48);
-            this.tbxDimGreenLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDimGreenLED1.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDimGreenLED1.Name = "tbxDimGreenLED1";
             this.tbxDimGreenLED1.Size = new System.Drawing.Size(43, 28);
             this.tbxDimGreenLED1.TabIndex = 161;
@@ -2293,7 +2299,7 @@ namespace LEDController.View
             // btnOpenDimGreenLED4
             // 
             this.btnOpenDimGreenLED4.Location = new System.Drawing.Point(352, 198);
-            this.btnOpenDimGreenLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimGreenLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimGreenLED4.Name = "btnOpenDimGreenLED4";
             this.btnOpenDimGreenLED4.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimGreenLED4.TabIndex = 172;
@@ -2316,7 +2322,7 @@ namespace LEDController.View
             // 
             this.sbarDimGreenLED4.LargeChange = 20;
             this.sbarDimGreenLED4.Location = new System.Drawing.Point(352, 75);
-            this.sbarDimGreenLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimGreenLED4.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimGreenLED4.Maximum = 50;
             this.sbarDimGreenLED4.Name = "sbarDimGreenLED4";
             this.sbarDimGreenLED4.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -2335,7 +2341,7 @@ namespace LEDController.View
             this.btnDimGreenLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimGreenLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimGreenLED4.Location = new System.Drawing.Point(364, 14);
-            this.btnDimGreenLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimGreenLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimGreenLED4.Name = "btnDimGreenLED4";
             this.btnDimGreenLED4.Size = new System.Drawing.Size(30, 30);
             this.btnDimGreenLED4.TabIndex = 170;
@@ -2348,7 +2354,7 @@ namespace LEDController.View
             // btnOpenDimGreenLED3
             // 
             this.btnOpenDimGreenLED3.Location = new System.Drawing.Point(260, 198);
-            this.btnOpenDimGreenLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimGreenLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimGreenLED3.Name = "btnOpenDimGreenLED3";
             this.btnOpenDimGreenLED3.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimGreenLED3.TabIndex = 169;
@@ -2371,7 +2377,7 @@ namespace LEDController.View
             // 
             this.sbarDimGreenLED3.LargeChange = 20;
             this.sbarDimGreenLED3.Location = new System.Drawing.Point(260, 75);
-            this.sbarDimGreenLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimGreenLED3.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimGreenLED3.Maximum = 50;
             this.sbarDimGreenLED3.Name = "sbarDimGreenLED3";
             this.sbarDimGreenLED3.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -2390,7 +2396,7 @@ namespace LEDController.View
             this.btnDimGreenLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimGreenLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimGreenLED3.Location = new System.Drawing.Point(272, 14);
-            this.btnDimGreenLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimGreenLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimGreenLED3.Name = "btnDimGreenLED3";
             this.btnDimGreenLED3.Size = new System.Drawing.Size(30, 30);
             this.btnDimGreenLED3.TabIndex = 167;
@@ -2403,7 +2409,7 @@ namespace LEDController.View
             // btnOpenDimGreenLED2
             // 
             this.btnOpenDimGreenLED2.Location = new System.Drawing.Point(168, 198);
-            this.btnOpenDimGreenLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimGreenLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimGreenLED2.Name = "btnOpenDimGreenLED2";
             this.btnOpenDimGreenLED2.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimGreenLED2.TabIndex = 166;
@@ -2426,7 +2432,7 @@ namespace LEDController.View
             // 
             this.sbarDimGreenLED2.LargeChange = 20;
             this.sbarDimGreenLED2.Location = new System.Drawing.Point(168, 75);
-            this.sbarDimGreenLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimGreenLED2.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimGreenLED2.Maximum = 50;
             this.sbarDimGreenLED2.Name = "sbarDimGreenLED2";
             this.sbarDimGreenLED2.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -2445,7 +2451,7 @@ namespace LEDController.View
             this.btnDimGreenLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimGreenLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimGreenLED2.Location = new System.Drawing.Point(180, 14);
-            this.btnDimGreenLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimGreenLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimGreenLED2.Name = "btnDimGreenLED2";
             this.btnDimGreenLED2.Size = new System.Drawing.Size(30, 30);
             this.btnDimGreenLED2.TabIndex = 164;
@@ -2458,7 +2464,7 @@ namespace LEDController.View
             // btnOpenDimGreenLED1
             // 
             this.btnOpenDimGreenLED1.Location = new System.Drawing.Point(76, 198);
-            this.btnOpenDimGreenLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDimGreenLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDimGreenLED1.Name = "btnOpenDimGreenLED1";
             this.btnOpenDimGreenLED1.Size = new System.Drawing.Size(68, 34);
             this.btnOpenDimGreenLED1.TabIndex = 163;
@@ -2481,7 +2487,7 @@ namespace LEDController.View
             // 
             this.sbarDimGreenLED1.LargeChange = 20;
             this.sbarDimGreenLED1.Location = new System.Drawing.Point(76, 75);
-            this.sbarDimGreenLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbarDimGreenLED1.Margin = new System.Windows.Forms.Padding(4);
             this.sbarDimGreenLED1.Maximum = 50;
             this.sbarDimGreenLED1.Name = "sbarDimGreenLED1";
             this.sbarDimGreenLED1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -2500,7 +2506,7 @@ namespace LEDController.View
             this.btnDimGreenLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDimGreenLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDimGreenLED1.Location = new System.Drawing.Point(88, 14);
-            this.btnDimGreenLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDimGreenLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnDimGreenLED1.Name = "btnDimGreenLED1";
             this.btnDimGreenLED1.Size = new System.Drawing.Size(30, 30);
             this.btnDimGreenLED1.TabIndex = 160;
@@ -2547,7 +2553,7 @@ namespace LEDController.View
             // 
             this.btnCloseDarkRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseDarkRedFixLED.Location = new System.Drawing.Point(1300, 402);
-            this.btnCloseDarkRedFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseDarkRedFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseDarkRedFixLED.Name = "btnCloseDarkRedFixLED";
             this.btnCloseDarkRedFixLED.Size = new System.Drawing.Size(136, 40);
             this.btnCloseDarkRedFixLED.TabIndex = 159;
@@ -2559,7 +2565,7 @@ namespace LEDController.View
             // 
             this.btnOpenDarkRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenDarkRedFixLED.Location = new System.Drawing.Point(1077, 402);
-            this.btnOpenDarkRedFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenDarkRedFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenDarkRedFixLED.Name = "btnOpenDarkRedFixLED";
             this.btnOpenDarkRedFixLED.Size = new System.Drawing.Size(136, 40);
             this.btnOpenDarkRedFixLED.TabIndex = 158;
@@ -2571,7 +2577,7 @@ namespace LEDController.View
             // 
             this.btnCloseRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseRedFixLED.Location = new System.Drawing.Point(818, 402);
-            this.btnCloseRedFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseRedFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseRedFixLED.Name = "btnCloseRedFixLED";
             this.btnCloseRedFixLED.Size = new System.Drawing.Size(136, 40);
             this.btnCloseRedFixLED.TabIndex = 157;
@@ -2583,7 +2589,7 @@ namespace LEDController.View
             // 
             this.btnOpenRedFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenRedFixLED.Location = new System.Drawing.Point(594, 402);
-            this.btnOpenRedFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenRedFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenRedFixLED.Name = "btnOpenRedFixLED";
             this.btnOpenRedFixLED.Size = new System.Drawing.Size(136, 40);
             this.btnOpenRedFixLED.TabIndex = 156;
@@ -2595,7 +2601,7 @@ namespace LEDController.View
             // 
             this.btnCloseGreenFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseGreenFixLED.Location = new System.Drawing.Point(339, 402);
-            this.btnCloseGreenFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseGreenFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseGreenFixLED.Name = "btnCloseGreenFixLED";
             this.btnCloseGreenFixLED.Size = new System.Drawing.Size(136, 40);
             this.btnCloseGreenFixLED.TabIndex = 155;
@@ -2607,7 +2613,7 @@ namespace LEDController.View
             // 
             this.btnOpenGreenFixLED.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenGreenFixLED.Location = new System.Drawing.Point(116, 402);
-            this.btnOpenGreenFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenGreenFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenGreenFixLED.Name = "btnOpenGreenFixLED";
             this.btnOpenGreenFixLED.Size = new System.Drawing.Size(136, 40);
             this.btnOpenGreenFixLED.TabIndex = 154;
@@ -2678,7 +2684,7 @@ namespace LEDController.View
             this.panelDarkRedFixLED.Controls.Add(this.btnDarkRedLED2);
             this.panelDarkRedFixLED.Controls.Add(this.btnDarkRedLED1);
             this.panelDarkRedFixLED.Location = new System.Drawing.Point(1028, 128);
-            this.panelDarkRedFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDarkRedFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.panelDarkRedFixLED.Name = "panelDarkRedFixLED";
             this.panelDarkRedFixLED.Size = new System.Drawing.Size(460, 256);
             this.panelDarkRedFixLED.TabIndex = 64;
@@ -2691,7 +2697,7 @@ namespace LEDController.View
             this.btnDarkRedLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED24.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED24.Location = new System.Drawing.Point(399, 138);
-            this.btnDarkRedLED24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED24.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED24.Name = "btnDarkRedLED24";
             this.btnDarkRedLED24.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED24.TabIndex = 137;
@@ -2709,7 +2715,7 @@ namespace LEDController.View
             this.btnDarkRedLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED16.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED16.Location = new System.Drawing.Point(399, 82);
-            this.btnDarkRedLED16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED16.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED16.Name = "btnDarkRedLED16";
             this.btnDarkRedLED16.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED16.TabIndex = 129;
@@ -2727,7 +2733,7 @@ namespace LEDController.View
             this.btnDarkRedLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED8.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED8.Location = new System.Drawing.Point(399, 28);
-            this.btnDarkRedLED8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED8.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED8.Name = "btnDarkRedLED8";
             this.btnDarkRedLED8.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED8.TabIndex = 121;
@@ -2745,7 +2751,7 @@ namespace LEDController.View
             this.btnDarkRedLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED20.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED20.Location = new System.Drawing.Point(189, 138);
-            this.btnDarkRedLED20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED20.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED20.Name = "btnDarkRedLED20";
             this.btnDarkRedLED20.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED20.TabIndex = 133;
@@ -2763,7 +2769,7 @@ namespace LEDController.View
             this.btnDarkRedLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED12.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED12.Location = new System.Drawing.Point(189, 82);
-            this.btnDarkRedLED12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED12.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED12.Name = "btnDarkRedLED12";
             this.btnDarkRedLED12.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED12.TabIndex = 125;
@@ -2781,7 +2787,7 @@ namespace LEDController.View
             this.btnDarkRedLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED4.Location = new System.Drawing.Point(189, 28);
-            this.btnDarkRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED4.Name = "btnDarkRedLED4";
             this.btnDarkRedLED4.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED4.TabIndex = 117;
@@ -2799,7 +2805,7 @@ namespace LEDController.View
             this.btnDarkRedLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED26.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED26.Location = new System.Drawing.Point(84, 192);
-            this.btnDarkRedLED26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED26.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED26.Name = "btnDarkRedLED26";
             this.btnDarkRedLED26.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED26.TabIndex = 139;
@@ -2817,7 +2823,7 @@ namespace LEDController.View
             this.btnDarkRedLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED25.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED25.Location = new System.Drawing.Point(32, 192);
-            this.btnDarkRedLED25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED25.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED25.Name = "btnDarkRedLED25";
             this.btnDarkRedLED25.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED25.TabIndex = 138;
@@ -2835,7 +2841,7 @@ namespace LEDController.View
             this.btnDarkRedLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED23.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED23.Location = new System.Drawing.Point(346, 138);
-            this.btnDarkRedLED23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED23.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED23.Name = "btnDarkRedLED23";
             this.btnDarkRedLED23.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED23.TabIndex = 136;
@@ -2853,7 +2859,7 @@ namespace LEDController.View
             this.btnDarkRedLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED22.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED22.Location = new System.Drawing.Point(294, 138);
-            this.btnDarkRedLED22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED22.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED22.Name = "btnDarkRedLED22";
             this.btnDarkRedLED22.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED22.TabIndex = 135;
@@ -2871,7 +2877,7 @@ namespace LEDController.View
             this.btnDarkRedLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED21.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED21.Location = new System.Drawing.Point(242, 138);
-            this.btnDarkRedLED21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED21.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED21.Name = "btnDarkRedLED21";
             this.btnDarkRedLED21.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED21.TabIndex = 134;
@@ -2889,7 +2895,7 @@ namespace LEDController.View
             this.btnDarkRedLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED19.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED19.Location = new System.Drawing.Point(136, 138);
-            this.btnDarkRedLED19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED19.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED19.Name = "btnDarkRedLED19";
             this.btnDarkRedLED19.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED19.TabIndex = 132;
@@ -2907,7 +2913,7 @@ namespace LEDController.View
             this.btnDarkRedLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED18.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED18.Location = new System.Drawing.Point(84, 138);
-            this.btnDarkRedLED18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED18.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED18.Name = "btnDarkRedLED18";
             this.btnDarkRedLED18.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED18.TabIndex = 131;
@@ -2925,7 +2931,7 @@ namespace LEDController.View
             this.btnDarkRedLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED17.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED17.Location = new System.Drawing.Point(32, 138);
-            this.btnDarkRedLED17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED17.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED17.Name = "btnDarkRedLED17";
             this.btnDarkRedLED17.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED17.TabIndex = 130;
@@ -2943,7 +2949,7 @@ namespace LEDController.View
             this.btnDarkRedLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED15.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED15.Location = new System.Drawing.Point(346, 82);
-            this.btnDarkRedLED15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED15.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED15.Name = "btnDarkRedLED15";
             this.btnDarkRedLED15.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED15.TabIndex = 128;
@@ -2961,7 +2967,7 @@ namespace LEDController.View
             this.btnDarkRedLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED14.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED14.Location = new System.Drawing.Point(294, 82);
-            this.btnDarkRedLED14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED14.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED14.Name = "btnDarkRedLED14";
             this.btnDarkRedLED14.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED14.TabIndex = 127;
@@ -2979,7 +2985,7 @@ namespace LEDController.View
             this.btnDarkRedLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED13.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED13.Location = new System.Drawing.Point(242, 82);
-            this.btnDarkRedLED13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED13.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED13.Name = "btnDarkRedLED13";
             this.btnDarkRedLED13.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED13.TabIndex = 126;
@@ -2997,7 +3003,7 @@ namespace LEDController.View
             this.btnDarkRedLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED11.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED11.Location = new System.Drawing.Point(136, 82);
-            this.btnDarkRedLED11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED11.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED11.Name = "btnDarkRedLED11";
             this.btnDarkRedLED11.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED11.TabIndex = 124;
@@ -3015,7 +3021,7 @@ namespace LEDController.View
             this.btnDarkRedLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED10.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED10.Location = new System.Drawing.Point(84, 82);
-            this.btnDarkRedLED10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED10.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED10.Name = "btnDarkRedLED10";
             this.btnDarkRedLED10.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED10.TabIndex = 123;
@@ -3033,7 +3039,7 @@ namespace LEDController.View
             this.btnDarkRedLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED9.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED9.Location = new System.Drawing.Point(32, 82);
-            this.btnDarkRedLED9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED9.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED9.Name = "btnDarkRedLED9";
             this.btnDarkRedLED9.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED9.TabIndex = 122;
@@ -3051,7 +3057,7 @@ namespace LEDController.View
             this.btnDarkRedLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED7.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED7.Location = new System.Drawing.Point(346, 28);
-            this.btnDarkRedLED7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED7.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED7.Name = "btnDarkRedLED7";
             this.btnDarkRedLED7.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED7.TabIndex = 120;
@@ -3069,7 +3075,7 @@ namespace LEDController.View
             this.btnDarkRedLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED6.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED6.Location = new System.Drawing.Point(294, 28);
-            this.btnDarkRedLED6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED6.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED6.Name = "btnDarkRedLED6";
             this.btnDarkRedLED6.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED6.TabIndex = 119;
@@ -3087,7 +3093,7 @@ namespace LEDController.View
             this.btnDarkRedLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED5.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED5.Location = new System.Drawing.Point(242, 28);
-            this.btnDarkRedLED5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED5.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED5.Name = "btnDarkRedLED5";
             this.btnDarkRedLED5.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED5.TabIndex = 118;
@@ -3105,7 +3111,7 @@ namespace LEDController.View
             this.btnDarkRedLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED3.Location = new System.Drawing.Point(136, 28);
-            this.btnDarkRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED3.Name = "btnDarkRedLED3";
             this.btnDarkRedLED3.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED3.TabIndex = 116;
@@ -3123,7 +3129,7 @@ namespace LEDController.View
             this.btnDarkRedLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED2.Location = new System.Drawing.Point(84, 28);
-            this.btnDarkRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED2.Name = "btnDarkRedLED2";
             this.btnDarkRedLED2.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED2.TabIndex = 115;
@@ -3141,7 +3147,7 @@ namespace LEDController.View
             this.btnDarkRedLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDarkRedLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDarkRedLED1.Location = new System.Drawing.Point(32, 28);
-            this.btnDarkRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDarkRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnDarkRedLED1.Name = "btnDarkRedLED1";
             this.btnDarkRedLED1.Size = new System.Drawing.Size(30, 30);
             this.btnDarkRedLED1.TabIndex = 114;
@@ -3181,7 +3187,7 @@ namespace LEDController.View
             this.panelRedFixLED.Controls.Add(this.btnRedLED2);
             this.panelRedFixLED.Controls.Add(this.btnRedLED1);
             this.panelRedFixLED.Location = new System.Drawing.Point(544, 128);
-            this.panelRedFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelRedFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.panelRedFixLED.Name = "panelRedFixLED";
             this.panelRedFixLED.Size = new System.Drawing.Size(460, 256);
             this.panelRedFixLED.TabIndex = 64;
@@ -3194,7 +3200,7 @@ namespace LEDController.View
             this.btnRedLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED24.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED24.Location = new System.Drawing.Point(399, 138);
-            this.btnRedLED24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED24.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED24.Name = "btnRedLED24";
             this.btnRedLED24.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED24.TabIndex = 97;
@@ -3212,7 +3218,7 @@ namespace LEDController.View
             this.btnRedLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED16.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED16.Location = new System.Drawing.Point(399, 82);
-            this.btnRedLED16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED16.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED16.Name = "btnRedLED16";
             this.btnRedLED16.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED16.TabIndex = 89;
@@ -3230,7 +3236,7 @@ namespace LEDController.View
             this.btnRedLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED8.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED8.Location = new System.Drawing.Point(399, 28);
-            this.btnRedLED8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED8.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED8.Name = "btnRedLED8";
             this.btnRedLED8.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED8.TabIndex = 81;
@@ -3248,7 +3254,7 @@ namespace LEDController.View
             this.btnRedLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED20.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED20.Location = new System.Drawing.Point(189, 138);
-            this.btnRedLED20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED20.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED20.Name = "btnRedLED20";
             this.btnRedLED20.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED20.TabIndex = 93;
@@ -3266,7 +3272,7 @@ namespace LEDController.View
             this.btnRedLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED12.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED12.Location = new System.Drawing.Point(189, 82);
-            this.btnRedLED12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED12.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED12.Name = "btnRedLED12";
             this.btnRedLED12.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED12.TabIndex = 85;
@@ -3284,7 +3290,7 @@ namespace LEDController.View
             this.btnRedLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED4.Location = new System.Drawing.Point(189, 28);
-            this.btnRedLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED4.Name = "btnRedLED4";
             this.btnRedLED4.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED4.TabIndex = 77;
@@ -3302,7 +3308,7 @@ namespace LEDController.View
             this.btnRedLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED26.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED26.Location = new System.Drawing.Point(84, 192);
-            this.btnRedLED26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED26.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED26.Name = "btnRedLED26";
             this.btnRedLED26.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED26.TabIndex = 99;
@@ -3320,7 +3326,7 @@ namespace LEDController.View
             this.btnRedLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED25.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED25.Location = new System.Drawing.Point(32, 192);
-            this.btnRedLED25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED25.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED25.Name = "btnRedLED25";
             this.btnRedLED25.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED25.TabIndex = 98;
@@ -3338,7 +3344,7 @@ namespace LEDController.View
             this.btnRedLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED23.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED23.Location = new System.Drawing.Point(346, 138);
-            this.btnRedLED23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED23.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED23.Name = "btnRedLED23";
             this.btnRedLED23.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED23.TabIndex = 96;
@@ -3356,7 +3362,7 @@ namespace LEDController.View
             this.btnRedLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED22.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED22.Location = new System.Drawing.Point(294, 138);
-            this.btnRedLED22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED22.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED22.Name = "btnRedLED22";
             this.btnRedLED22.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED22.TabIndex = 95;
@@ -3374,7 +3380,7 @@ namespace LEDController.View
             this.btnRedLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED21.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED21.Location = new System.Drawing.Point(242, 138);
-            this.btnRedLED21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED21.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED21.Name = "btnRedLED21";
             this.btnRedLED21.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED21.TabIndex = 94;
@@ -3392,7 +3398,7 @@ namespace LEDController.View
             this.btnRedLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED19.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED19.Location = new System.Drawing.Point(136, 138);
-            this.btnRedLED19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED19.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED19.Name = "btnRedLED19";
             this.btnRedLED19.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED19.TabIndex = 92;
@@ -3410,7 +3416,7 @@ namespace LEDController.View
             this.btnRedLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED18.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED18.Location = new System.Drawing.Point(84, 138);
-            this.btnRedLED18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED18.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED18.Name = "btnRedLED18";
             this.btnRedLED18.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED18.TabIndex = 91;
@@ -3428,7 +3434,7 @@ namespace LEDController.View
             this.btnRedLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED17.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED17.Location = new System.Drawing.Point(32, 138);
-            this.btnRedLED17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED17.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED17.Name = "btnRedLED17";
             this.btnRedLED17.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED17.TabIndex = 90;
@@ -3446,7 +3452,7 @@ namespace LEDController.View
             this.btnRedLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED15.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED15.Location = new System.Drawing.Point(346, 82);
-            this.btnRedLED15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED15.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED15.Name = "btnRedLED15";
             this.btnRedLED15.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED15.TabIndex = 88;
@@ -3464,7 +3470,7 @@ namespace LEDController.View
             this.btnRedLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED14.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED14.Location = new System.Drawing.Point(294, 82);
-            this.btnRedLED14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED14.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED14.Name = "btnRedLED14";
             this.btnRedLED14.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED14.TabIndex = 87;
@@ -3482,7 +3488,7 @@ namespace LEDController.View
             this.btnRedLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED13.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED13.Location = new System.Drawing.Point(242, 82);
-            this.btnRedLED13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED13.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED13.Name = "btnRedLED13";
             this.btnRedLED13.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED13.TabIndex = 86;
@@ -3500,7 +3506,7 @@ namespace LEDController.View
             this.btnRedLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED11.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED11.Location = new System.Drawing.Point(136, 82);
-            this.btnRedLED11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED11.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED11.Name = "btnRedLED11";
             this.btnRedLED11.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED11.TabIndex = 84;
@@ -3518,7 +3524,7 @@ namespace LEDController.View
             this.btnRedLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED10.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED10.Location = new System.Drawing.Point(84, 82);
-            this.btnRedLED10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED10.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED10.Name = "btnRedLED10";
             this.btnRedLED10.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED10.TabIndex = 83;
@@ -3536,7 +3542,7 @@ namespace LEDController.View
             this.btnRedLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED9.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED9.Location = new System.Drawing.Point(32, 82);
-            this.btnRedLED9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED9.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED9.Name = "btnRedLED9";
             this.btnRedLED9.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED9.TabIndex = 82;
@@ -3554,7 +3560,7 @@ namespace LEDController.View
             this.btnRedLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED7.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED7.Location = new System.Drawing.Point(346, 28);
-            this.btnRedLED7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED7.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED7.Name = "btnRedLED7";
             this.btnRedLED7.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED7.TabIndex = 80;
@@ -3572,7 +3578,7 @@ namespace LEDController.View
             this.btnRedLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED6.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED6.Location = new System.Drawing.Point(294, 28);
-            this.btnRedLED6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED6.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED6.Name = "btnRedLED6";
             this.btnRedLED6.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED6.TabIndex = 79;
@@ -3590,7 +3596,7 @@ namespace LEDController.View
             this.btnRedLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED5.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED5.Location = new System.Drawing.Point(242, 28);
-            this.btnRedLED5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED5.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED5.Name = "btnRedLED5";
             this.btnRedLED5.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED5.TabIndex = 78;
@@ -3608,7 +3614,7 @@ namespace LEDController.View
             this.btnRedLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED3.Location = new System.Drawing.Point(136, 28);
-            this.btnRedLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED3.Name = "btnRedLED3";
             this.btnRedLED3.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED3.TabIndex = 76;
@@ -3626,7 +3632,7 @@ namespace LEDController.View
             this.btnRedLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED2.Location = new System.Drawing.Point(84, 28);
-            this.btnRedLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED2.Name = "btnRedLED2";
             this.btnRedLED2.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED2.TabIndex = 75;
@@ -3644,7 +3650,7 @@ namespace LEDController.View
             this.btnRedLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRedLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnRedLED1.Location = new System.Drawing.Point(32, 28);
-            this.btnRedLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedLED1.Name = "btnRedLED1";
             this.btnRedLED1.Size = new System.Drawing.Size(30, 30);
             this.btnRedLED1.TabIndex = 74;
@@ -3684,7 +3690,7 @@ namespace LEDController.View
             this.panelGreenFixLED.Controls.Add(this.btnGreenLED2);
             this.panelGreenFixLED.Controls.Add(this.btnGreenLED1);
             this.panelGreenFixLED.Location = new System.Drawing.Point(66, 128);
-            this.panelGreenFixLED.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelGreenFixLED.Margin = new System.Windows.Forms.Padding(4);
             this.panelGreenFixLED.Name = "panelGreenFixLED";
             this.panelGreenFixLED.Size = new System.Drawing.Size(460, 256);
             this.panelGreenFixLED.TabIndex = 34;
@@ -3697,7 +3703,7 @@ namespace LEDController.View
             this.btnGreenLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED24.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED24.Location = new System.Drawing.Point(400, 138);
-            this.btnGreenLED24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED24.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED24.Name = "btnGreenLED24";
             this.btnGreenLED24.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED24.TabIndex = 57;
@@ -3715,7 +3721,7 @@ namespace LEDController.View
             this.btnGreenLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED16.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED16.Location = new System.Drawing.Point(400, 82);
-            this.btnGreenLED16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED16.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED16.Name = "btnGreenLED16";
             this.btnGreenLED16.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED16.TabIndex = 49;
@@ -3733,7 +3739,7 @@ namespace LEDController.View
             this.btnGreenLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED8.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED8.Location = new System.Drawing.Point(400, 28);
-            this.btnGreenLED8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED8.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED8.Name = "btnGreenLED8";
             this.btnGreenLED8.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED8.TabIndex = 41;
@@ -3751,7 +3757,7 @@ namespace LEDController.View
             this.btnGreenLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED20.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED20.Location = new System.Drawing.Point(190, 138);
-            this.btnGreenLED20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED20.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED20.Name = "btnGreenLED20";
             this.btnGreenLED20.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED20.TabIndex = 53;
@@ -3769,7 +3775,7 @@ namespace LEDController.View
             this.btnGreenLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED12.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED12.Location = new System.Drawing.Point(190, 82);
-            this.btnGreenLED12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED12.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED12.Name = "btnGreenLED12";
             this.btnGreenLED12.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED12.TabIndex = 45;
@@ -3787,7 +3793,7 @@ namespace LEDController.View
             this.btnGreenLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED4.Location = new System.Drawing.Point(190, 28);
-            this.btnGreenLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED4.Name = "btnGreenLED4";
             this.btnGreenLED4.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED4.TabIndex = 37;
@@ -3805,7 +3811,7 @@ namespace LEDController.View
             this.btnGreenLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED26.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED26.Location = new System.Drawing.Point(86, 192);
-            this.btnGreenLED26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED26.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED26.Name = "btnGreenLED26";
             this.btnGreenLED26.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED26.TabIndex = 59;
@@ -3823,7 +3829,7 @@ namespace LEDController.View
             this.btnGreenLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED25.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED25.Location = new System.Drawing.Point(33, 192);
-            this.btnGreenLED25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED25.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED25.Name = "btnGreenLED25";
             this.btnGreenLED25.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED25.TabIndex = 58;
@@ -3841,7 +3847,7 @@ namespace LEDController.View
             this.btnGreenLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED23.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED23.Location = new System.Drawing.Point(348, 138);
-            this.btnGreenLED23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED23.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED23.Name = "btnGreenLED23";
             this.btnGreenLED23.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED23.TabIndex = 56;
@@ -3859,7 +3865,7 @@ namespace LEDController.View
             this.btnGreenLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED22.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED22.Location = new System.Drawing.Point(296, 138);
-            this.btnGreenLED22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED22.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED22.Name = "btnGreenLED22";
             this.btnGreenLED22.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED22.TabIndex = 55;
@@ -3877,7 +3883,7 @@ namespace LEDController.View
             this.btnGreenLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED21.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED21.Location = new System.Drawing.Point(243, 138);
-            this.btnGreenLED21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED21.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED21.Name = "btnGreenLED21";
             this.btnGreenLED21.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED21.TabIndex = 54;
@@ -3895,7 +3901,7 @@ namespace LEDController.View
             this.btnGreenLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED19.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED19.Location = new System.Drawing.Point(138, 138);
-            this.btnGreenLED19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED19.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED19.Name = "btnGreenLED19";
             this.btnGreenLED19.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED19.TabIndex = 52;
@@ -3913,7 +3919,7 @@ namespace LEDController.View
             this.btnGreenLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED18.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED18.Location = new System.Drawing.Point(86, 138);
-            this.btnGreenLED18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED18.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED18.Name = "btnGreenLED18";
             this.btnGreenLED18.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED18.TabIndex = 51;
@@ -3931,7 +3937,7 @@ namespace LEDController.View
             this.btnGreenLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED17.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED17.Location = new System.Drawing.Point(33, 138);
-            this.btnGreenLED17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED17.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED17.Name = "btnGreenLED17";
             this.btnGreenLED17.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED17.TabIndex = 50;
@@ -3949,7 +3955,7 @@ namespace LEDController.View
             this.btnGreenLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED15.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED15.Location = new System.Drawing.Point(348, 82);
-            this.btnGreenLED15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED15.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED15.Name = "btnGreenLED15";
             this.btnGreenLED15.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED15.TabIndex = 48;
@@ -3967,7 +3973,7 @@ namespace LEDController.View
             this.btnGreenLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED14.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED14.Location = new System.Drawing.Point(296, 82);
-            this.btnGreenLED14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED14.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED14.Name = "btnGreenLED14";
             this.btnGreenLED14.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED14.TabIndex = 47;
@@ -3985,7 +3991,7 @@ namespace LEDController.View
             this.btnGreenLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED13.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED13.Location = new System.Drawing.Point(243, 82);
-            this.btnGreenLED13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED13.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED13.Name = "btnGreenLED13";
             this.btnGreenLED13.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED13.TabIndex = 46;
@@ -4003,7 +4009,7 @@ namespace LEDController.View
             this.btnGreenLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED11.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED11.Location = new System.Drawing.Point(138, 82);
-            this.btnGreenLED11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED11.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED11.Name = "btnGreenLED11";
             this.btnGreenLED11.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED11.TabIndex = 44;
@@ -4021,7 +4027,7 @@ namespace LEDController.View
             this.btnGreenLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED10.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED10.Location = new System.Drawing.Point(86, 82);
-            this.btnGreenLED10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED10.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED10.Name = "btnGreenLED10";
             this.btnGreenLED10.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED10.TabIndex = 43;
@@ -4039,7 +4045,7 @@ namespace LEDController.View
             this.btnGreenLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED9.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED9.Location = new System.Drawing.Point(33, 82);
-            this.btnGreenLED9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED9.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED9.Name = "btnGreenLED9";
             this.btnGreenLED9.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED9.TabIndex = 42;
@@ -4057,7 +4063,7 @@ namespace LEDController.View
             this.btnGreenLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED7.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED7.Location = new System.Drawing.Point(348, 28);
-            this.btnGreenLED7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED7.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED7.Name = "btnGreenLED7";
             this.btnGreenLED7.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED7.TabIndex = 40;
@@ -4075,7 +4081,7 @@ namespace LEDController.View
             this.btnGreenLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED6.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED6.Location = new System.Drawing.Point(296, 28);
-            this.btnGreenLED6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED6.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED6.Name = "btnGreenLED6";
             this.btnGreenLED6.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED6.TabIndex = 39;
@@ -4093,7 +4099,7 @@ namespace LEDController.View
             this.btnGreenLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED5.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED5.Location = new System.Drawing.Point(243, 28);
-            this.btnGreenLED5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED5.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED5.Name = "btnGreenLED5";
             this.btnGreenLED5.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED5.TabIndex = 38;
@@ -4111,7 +4117,7 @@ namespace LEDController.View
             this.btnGreenLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED3.Location = new System.Drawing.Point(138, 28);
-            this.btnGreenLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED3.Name = "btnGreenLED3";
             this.btnGreenLED3.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED3.TabIndex = 36;
@@ -4129,7 +4135,7 @@ namespace LEDController.View
             this.btnGreenLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED2.Location = new System.Drawing.Point(86, 28);
-            this.btnGreenLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED2.Name = "btnGreenLED2";
             this.btnGreenLED2.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED2.TabIndex = 35;
@@ -4147,7 +4153,7 @@ namespace LEDController.View
             this.btnGreenLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGreenLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGreenLED1.Location = new System.Drawing.Point(33, 28);
-            this.btnGreenLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGreenLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnGreenLED1.Name = "btnGreenLED1";
             this.btnGreenLED1.Size = new System.Drawing.Size(30, 30);
             this.btnGreenLED1.TabIndex = 34;
@@ -4159,6 +4165,7 @@ namespace LEDController.View
             // 
             // tpgLEDStatus
             // 
+            this.tpgLEDStatus.Controls.Add(this.panel7);
             this.tpgLEDStatus.Controls.Add(this.lblCountDown);
             this.tpgLEDStatus.Controls.Add(this.panel6);
             this.tpgLEDStatus.Controls.Add(this.tbxStatusSaveFolder);
@@ -4175,7 +4182,7 @@ namespace LEDController.View
             this.tpgLEDStatus.Controls.Add(this.cbxQueryParam);
             this.tpgLEDStatus.Controls.Add(this.label44);
             this.tpgLEDStatus.Location = new System.Drawing.Point(4, 28);
-            this.tpgLEDStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgLEDStatus.Margin = new System.Windows.Forms.Padding(4);
             this.tpgLEDStatus.Name = "tpgLEDStatus";
             this.tpgLEDStatus.Size = new System.Drawing.Size(1567, 808);
             this.tpgLEDStatus.TabIndex = 2;
@@ -4208,14 +4215,8 @@ namespace LEDController.View
             this.panel6.Controls.Add(this.lblRedLEDTempLU);
             this.panel6.Controls.Add(this.label75);
             this.panel6.Controls.Add(this.label76);
-            this.panel6.Controls.Add(this.lblGreenLEDTempRD);
-            this.panel6.Controls.Add(this.label72);
-            this.panel6.Controls.Add(this.label73);
-            this.panel6.Controls.Add(this.lblGreenLEDTempLU);
-            this.panel6.Controls.Add(this.label70);
-            this.panel6.Controls.Add(this.label69);
             this.panel6.Location = new System.Drawing.Point(6, 573);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(326, 216);
             this.panel6.TabIndex = 15;
@@ -4336,69 +4337,11 @@ namespace LEDController.View
             this.label76.TabIndex = 20;
             this.label76.Text = "红色LED左上角温度:";
             // 
-            // lblGreenLEDTempRD
-            // 
-            this.lblGreenLEDTempRD.AutoSize = true;
-            this.lblGreenLEDTempRD.Location = new System.Drawing.Point(196, 50);
-            this.lblGreenLEDTempRD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGreenLEDTempRD.Name = "lblGreenLEDTempRD";
-            this.lblGreenLEDTempRD.Size = new System.Drawing.Size(0, 18);
-            this.lblGreenLEDTempRD.TabIndex = 19;
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(262, 50);
-            this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(26, 18);
-            this.label72.TabIndex = 18;
-            this.label72.Text = "℃";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(12, 50);
-            this.label73.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(170, 18);
-            this.label73.TabIndex = 17;
-            this.label73.Text = "绿色LED右下角温度:";
-            // 
-            // lblGreenLEDTempLU
-            // 
-            this.lblGreenLEDTempLU.AutoSize = true;
-            this.lblGreenLEDTempLU.Location = new System.Drawing.Point(196, 16);
-            this.lblGreenLEDTempLU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGreenLEDTempLU.Name = "lblGreenLEDTempLU";
-            this.lblGreenLEDTempLU.Size = new System.Drawing.Size(0, 18);
-            this.lblGreenLEDTempLU.TabIndex = 16;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(262, 16);
-            this.label70.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(26, 18);
-            this.label70.TabIndex = 15;
-            this.label70.Text = "℃";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(12, 16);
-            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(170, 18);
-            this.label69.TabIndex = 14;
-            this.label69.Text = "绿色LED左上角温度:";
-            // 
             // tbxStatusSaveFolder
             // 
             this.tbxStatusSaveFolder.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxStatusSaveFolder.Location = new System.Drawing.Point(192, 46);
-            this.tbxStatusSaveFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxStatusSaveFolder.Margin = new System.Windows.Forms.Padding(4);
             this.tbxStatusSaveFolder.Name = "tbxStatusSaveFolder";
             this.tbxStatusSaveFolder.Size = new System.Drawing.Size(134, 35);
             this.tbxStatusSaveFolder.TabIndex = 13;
@@ -4409,7 +4352,7 @@ namespace LEDController.View
             // 
             this.btnStatusSaveFolder.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnStatusSaveFolder.Location = new System.Drawing.Point(14, 42);
-            this.btnStatusSaveFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusSaveFolder.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusSaveFolder.Name = "btnStatusSaveFolder";
             this.btnStatusSaveFolder.Size = new System.Drawing.Size(170, 45);
             this.btnStatusSaveFolder.TabIndex = 12;
@@ -4518,7 +4461,7 @@ namespace LEDController.View
             this.panelLEDStatus.Controls.Add(this.btnStatusLED2);
             this.panelLEDStatus.Controls.Add(this.btnStatusLED1);
             this.panelLEDStatus.Location = new System.Drawing.Point(339, 18);
-            this.panelLEDStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLEDStatus.Margin = new System.Windows.Forms.Padding(4);
             this.panelLEDStatus.Name = "panelLEDStatus";
             this.panelLEDStatus.Size = new System.Drawing.Size(1240, 778);
             this.panelLEDStatus.TabIndex = 11;
@@ -4528,7 +4471,7 @@ namespace LEDController.View
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(268, 350);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(720, 30);
             this.pictureBox1.TabIndex = 270;
@@ -4538,7 +4481,7 @@ namespace LEDController.View
             // 
             this.formsLEDStatusPlot.BackColor = System.Drawing.Color.Transparent;
             this.formsLEDStatusPlot.Location = new System.Drawing.Point(6, 394);
-            this.formsLEDStatusPlot.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.formsLEDStatusPlot.Margin = new System.Windows.Forms.Padding(6);
             this.formsLEDStatusPlot.Name = "formsLEDStatusPlot";
             this.formsLEDStatusPlot.Size = new System.Drawing.Size(1208, 370);
             this.formsLEDStatusPlot.TabIndex = 12;
@@ -4600,7 +4543,7 @@ namespace LEDController.View
             this.btnStatusLED90.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED90.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED90.Location = new System.Drawing.Point(1124, 290);
-            this.btnStatusLED90.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED90.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED90.Name = "btnStatusLED90";
             this.btnStatusLED90.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED90.TabIndex = 265;
@@ -4614,7 +4557,7 @@ namespace LEDController.View
             this.btnStatusLED89.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED89.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED89.Location = new System.Drawing.Point(1040, 290);
-            this.btnStatusLED89.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED89.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED89.Name = "btnStatusLED89";
             this.btnStatusLED89.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED89.TabIndex = 264;
@@ -4628,7 +4571,7 @@ namespace LEDController.View
             this.btnStatusLED88.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED88.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED88.Location = new System.Drawing.Point(960, 290);
-            this.btnStatusLED88.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED88.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED88.Name = "btnStatusLED88";
             this.btnStatusLED88.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED88.TabIndex = 263;
@@ -4642,7 +4585,7 @@ namespace LEDController.View
             this.btnStatusLED87.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED87.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED87.Location = new System.Drawing.Point(876, 290);
-            this.btnStatusLED87.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED87.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED87.Name = "btnStatusLED87";
             this.btnStatusLED87.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED87.TabIndex = 262;
@@ -4656,7 +4599,7 @@ namespace LEDController.View
             this.btnStatusLED60.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED60.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED60.Location = new System.Drawing.Point(723, 290);
-            this.btnStatusLED60.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED60.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED60.Name = "btnStatusLED60";
             this.btnStatusLED60.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED60.TabIndex = 261;
@@ -4670,7 +4613,7 @@ namespace LEDController.View
             this.btnStatusLED59.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED59.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED59.Location = new System.Drawing.Point(639, 290);
-            this.btnStatusLED59.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED59.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED59.Name = "btnStatusLED59";
             this.btnStatusLED59.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED59.TabIndex = 260;
@@ -4684,7 +4627,7 @@ namespace LEDController.View
             this.btnStatusLED58.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED58.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED58.Location = new System.Drawing.Point(560, 290);
-            this.btnStatusLED58.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED58.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED58.Name = "btnStatusLED58";
             this.btnStatusLED58.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED58.TabIndex = 259;
@@ -4698,7 +4641,7 @@ namespace LEDController.View
             this.btnStatusLED57.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED57.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED57.Location = new System.Drawing.Point(476, 290);
-            this.btnStatusLED57.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED57.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED57.Name = "btnStatusLED57";
             this.btnStatusLED57.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED57.TabIndex = 258;
@@ -4712,7 +4655,7 @@ namespace LEDController.View
             this.btnStatusLED30.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED30.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED30.Location = new System.Drawing.Point(345, 290);
-            this.btnStatusLED30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED30.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED30.Name = "btnStatusLED30";
             this.btnStatusLED30.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED30.TabIndex = 257;
@@ -4726,7 +4669,7 @@ namespace LEDController.View
             this.btnStatusLED29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED29.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED29.Location = new System.Drawing.Point(284, 290);
-            this.btnStatusLED29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED29.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED29.Name = "btnStatusLED29";
             this.btnStatusLED29.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED29.TabIndex = 256;
@@ -4740,7 +4683,7 @@ namespace LEDController.View
             this.btnStatusLED28.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED28.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED28.Location = new System.Drawing.Point(219, 290);
-            this.btnStatusLED28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED28.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED28.Name = "btnStatusLED28";
             this.btnStatusLED28.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED28.TabIndex = 255;
@@ -4754,7 +4697,7 @@ namespace LEDController.View
             this.btnStatusLED27.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED27.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED27.Location = new System.Drawing.Point(154, 290);
-            this.btnStatusLED27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED27.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED27.Name = "btnStatusLED27";
             this.btnStatusLED27.Size = new System.Drawing.Size(45, 45);
             this.btnStatusLED27.TabIndex = 254;
@@ -4768,7 +4711,7 @@ namespace LEDController.View
             this.btnStatusLED86.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED86.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED86.Location = new System.Drawing.Point(864, 212);
-            this.btnStatusLED86.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED86.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED86.Name = "btnStatusLED86";
             this.btnStatusLED86.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED86.TabIndex = 239;
@@ -4782,7 +4725,7 @@ namespace LEDController.View
             this.btnStatusLED85.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED85.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED85.Location = new System.Drawing.Point(814, 212);
-            this.btnStatusLED85.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED85.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED85.Name = "btnStatusLED85";
             this.btnStatusLED85.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED85.TabIndex = 238;
@@ -4796,7 +4739,7 @@ namespace LEDController.View
             this.btnStatusLED84.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED84.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED84.Location = new System.Drawing.Point(1161, 162);
-            this.btnStatusLED84.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED84.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED84.Name = "btnStatusLED84";
             this.btnStatusLED84.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED84.TabIndex = 237;
@@ -4810,7 +4753,7 @@ namespace LEDController.View
             this.btnStatusLED80.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED80.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED80.Location = new System.Drawing.Point(963, 162);
-            this.btnStatusLED80.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED80.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED80.Name = "btnStatusLED80";
             this.btnStatusLED80.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED80.TabIndex = 236;
@@ -4824,7 +4767,7 @@ namespace LEDController.View
             this.btnStatusLED83.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED83.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED83.Location = new System.Drawing.Point(1112, 162);
-            this.btnStatusLED83.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED83.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED83.Name = "btnStatusLED83";
             this.btnStatusLED83.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED83.TabIndex = 235;
@@ -4838,7 +4781,7 @@ namespace LEDController.View
             this.btnStatusLED82.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED82.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED82.Location = new System.Drawing.Point(1062, 162);
-            this.btnStatusLED82.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED82.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED82.Name = "btnStatusLED82";
             this.btnStatusLED82.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED82.TabIndex = 234;
@@ -4852,7 +4795,7 @@ namespace LEDController.View
             this.btnStatusLED81.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED81.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED81.Location = new System.Drawing.Point(1012, 162);
-            this.btnStatusLED81.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED81.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED81.Name = "btnStatusLED81";
             this.btnStatusLED81.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED81.TabIndex = 233;
@@ -4866,7 +4809,7 @@ namespace LEDController.View
             this.btnStatusLED79.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED79.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED79.Location = new System.Drawing.Point(914, 162);
-            this.btnStatusLED79.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED79.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED79.Name = "btnStatusLED79";
             this.btnStatusLED79.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED79.TabIndex = 232;
@@ -4880,7 +4823,7 @@ namespace LEDController.View
             this.btnStatusLED78.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED78.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED78.Location = new System.Drawing.Point(864, 162);
-            this.btnStatusLED78.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED78.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED78.Name = "btnStatusLED78";
             this.btnStatusLED78.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED78.TabIndex = 231;
@@ -4894,7 +4837,7 @@ namespace LEDController.View
             this.btnStatusLED77.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED77.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED77.Location = new System.Drawing.Point(814, 162);
-            this.btnStatusLED77.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED77.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED77.Name = "btnStatusLED77";
             this.btnStatusLED77.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED77.TabIndex = 230;
@@ -4908,7 +4851,7 @@ namespace LEDController.View
             this.btnStatusLED76.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED76.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED76.Location = new System.Drawing.Point(1161, 114);
-            this.btnStatusLED76.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED76.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED76.Name = "btnStatusLED76";
             this.btnStatusLED76.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED76.TabIndex = 229;
@@ -4922,7 +4865,7 @@ namespace LEDController.View
             this.btnStatusLED72.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED72.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED72.Location = new System.Drawing.Point(963, 114);
-            this.btnStatusLED72.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED72.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED72.Name = "btnStatusLED72";
             this.btnStatusLED72.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED72.TabIndex = 228;
@@ -4936,7 +4879,7 @@ namespace LEDController.View
             this.btnStatusLED75.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED75.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED75.Location = new System.Drawing.Point(1112, 114);
-            this.btnStatusLED75.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED75.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED75.Name = "btnStatusLED75";
             this.btnStatusLED75.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED75.TabIndex = 227;
@@ -4950,7 +4893,7 @@ namespace LEDController.View
             this.btnStatusLED74.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED74.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED74.Location = new System.Drawing.Point(1062, 114);
-            this.btnStatusLED74.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED74.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED74.Name = "btnStatusLED74";
             this.btnStatusLED74.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED74.TabIndex = 226;
@@ -4964,7 +4907,7 @@ namespace LEDController.View
             this.btnStatusLED73.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED73.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED73.Location = new System.Drawing.Point(1012, 114);
-            this.btnStatusLED73.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED73.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED73.Name = "btnStatusLED73";
             this.btnStatusLED73.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED73.TabIndex = 225;
@@ -4978,7 +4921,7 @@ namespace LEDController.View
             this.btnStatusLED71.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED71.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED71.Location = new System.Drawing.Point(914, 114);
-            this.btnStatusLED71.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED71.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED71.Name = "btnStatusLED71";
             this.btnStatusLED71.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED71.TabIndex = 224;
@@ -4992,7 +4935,7 @@ namespace LEDController.View
             this.btnStatusLED70.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED70.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED70.Location = new System.Drawing.Point(864, 114);
-            this.btnStatusLED70.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED70.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED70.Name = "btnStatusLED70";
             this.btnStatusLED70.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED70.TabIndex = 223;
@@ -5006,7 +4949,7 @@ namespace LEDController.View
             this.btnStatusLED69.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED69.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED69.Location = new System.Drawing.Point(814, 114);
-            this.btnStatusLED69.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED69.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED69.Name = "btnStatusLED69";
             this.btnStatusLED69.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED69.TabIndex = 222;
@@ -5020,7 +4963,7 @@ namespace LEDController.View
             this.btnStatusLED68.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED68.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED68.Location = new System.Drawing.Point(1161, 64);
-            this.btnStatusLED68.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED68.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED68.Name = "btnStatusLED68";
             this.btnStatusLED68.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED68.TabIndex = 221;
@@ -5034,7 +4977,7 @@ namespace LEDController.View
             this.btnStatusLED64.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED64.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED64.Location = new System.Drawing.Point(963, 64);
-            this.btnStatusLED64.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED64.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED64.Name = "btnStatusLED64";
             this.btnStatusLED64.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED64.TabIndex = 220;
@@ -5048,7 +4991,7 @@ namespace LEDController.View
             this.btnStatusLED67.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED67.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED67.Location = new System.Drawing.Point(1112, 64);
-            this.btnStatusLED67.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED67.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED67.Name = "btnStatusLED67";
             this.btnStatusLED67.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED67.TabIndex = 219;
@@ -5062,7 +5005,7 @@ namespace LEDController.View
             this.btnStatusLED66.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED66.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED66.Location = new System.Drawing.Point(1062, 64);
-            this.btnStatusLED66.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED66.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED66.Name = "btnStatusLED66";
             this.btnStatusLED66.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED66.TabIndex = 218;
@@ -5076,7 +5019,7 @@ namespace LEDController.View
             this.btnStatusLED65.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED65.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED65.Location = new System.Drawing.Point(1012, 64);
-            this.btnStatusLED65.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED65.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED65.Name = "btnStatusLED65";
             this.btnStatusLED65.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED65.TabIndex = 217;
@@ -5090,7 +5033,7 @@ namespace LEDController.View
             this.btnStatusLED63.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED63.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED63.Location = new System.Drawing.Point(914, 64);
-            this.btnStatusLED63.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED63.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED63.Name = "btnStatusLED63";
             this.btnStatusLED63.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED63.TabIndex = 216;
@@ -5104,7 +5047,7 @@ namespace LEDController.View
             this.btnStatusLED62.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED62.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED62.Location = new System.Drawing.Point(864, 64);
-            this.btnStatusLED62.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED62.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED62.Name = "btnStatusLED62";
             this.btnStatusLED62.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED62.TabIndex = 215;
@@ -5118,7 +5061,7 @@ namespace LEDController.View
             this.btnStatusLED61.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED61.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED61.Location = new System.Drawing.Point(814, 64);
-            this.btnStatusLED61.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED61.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED61.Name = "btnStatusLED61";
             this.btnStatusLED61.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED61.TabIndex = 214;
@@ -5132,7 +5075,7 @@ namespace LEDController.View
             this.btnStatusLED56.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED56.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED56.Location = new System.Drawing.Point(466, 212);
-            this.btnStatusLED56.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED56.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED56.Name = "btnStatusLED56";
             this.btnStatusLED56.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED56.TabIndex = 191;
@@ -5146,7 +5089,7 @@ namespace LEDController.View
             this.btnStatusLED55.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED55.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED55.Location = new System.Drawing.Point(417, 212);
-            this.btnStatusLED55.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED55.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED55.Name = "btnStatusLED55";
             this.btnStatusLED55.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED55.TabIndex = 190;
@@ -5160,7 +5103,7 @@ namespace LEDController.View
             this.btnStatusLED26.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED26.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED26.Location = new System.Drawing.Point(70, 212);
-            this.btnStatusLED26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED26.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED26.Name = "btnStatusLED26";
             this.btnStatusLED26.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED26.TabIndex = 183;
@@ -5174,7 +5117,7 @@ namespace LEDController.View
             this.btnStatusLED25.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED25.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED25.Location = new System.Drawing.Point(21, 212);
-            this.btnStatusLED25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED25.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED25.Name = "btnStatusLED25";
             this.btnStatusLED25.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED25.TabIndex = 182;
@@ -5188,7 +5131,7 @@ namespace LEDController.View
             this.btnStatusLED54.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED54.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED54.Location = new System.Drawing.Point(764, 162);
-            this.btnStatusLED54.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED54.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED54.Name = "btnStatusLED54";
             this.btnStatusLED54.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED54.TabIndex = 181;
@@ -5202,7 +5145,7 @@ namespace LEDController.View
             this.btnStatusLED50.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED50.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED50.Location = new System.Drawing.Point(566, 162);
-            this.btnStatusLED50.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED50.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED50.Name = "btnStatusLED50";
             this.btnStatusLED50.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED50.TabIndex = 180;
@@ -5216,7 +5159,7 @@ namespace LEDController.View
             this.btnStatusLED53.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED53.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED53.Location = new System.Drawing.Point(714, 162);
-            this.btnStatusLED53.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED53.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED53.Name = "btnStatusLED53";
             this.btnStatusLED53.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED53.TabIndex = 179;
@@ -5230,7 +5173,7 @@ namespace LEDController.View
             this.btnStatusLED52.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED52.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED52.Location = new System.Drawing.Point(664, 162);
-            this.btnStatusLED52.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED52.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED52.Name = "btnStatusLED52";
             this.btnStatusLED52.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED52.TabIndex = 178;
@@ -5244,7 +5187,7 @@ namespace LEDController.View
             this.btnStatusLED51.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED51.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED51.Location = new System.Drawing.Point(615, 162);
-            this.btnStatusLED51.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED51.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED51.Name = "btnStatusLED51";
             this.btnStatusLED51.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED51.TabIndex = 177;
@@ -5258,7 +5201,7 @@ namespace LEDController.View
             this.btnStatusLED49.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED49.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED49.Location = new System.Drawing.Point(516, 162);
-            this.btnStatusLED49.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED49.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED49.Name = "btnStatusLED49";
             this.btnStatusLED49.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED49.TabIndex = 176;
@@ -5272,7 +5215,7 @@ namespace LEDController.View
             this.btnStatusLED48.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED48.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED48.Location = new System.Drawing.Point(466, 162);
-            this.btnStatusLED48.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED48.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED48.Name = "btnStatusLED48";
             this.btnStatusLED48.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED48.TabIndex = 175;
@@ -5286,7 +5229,7 @@ namespace LEDController.View
             this.btnStatusLED47.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED47.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED47.Location = new System.Drawing.Point(417, 162);
-            this.btnStatusLED47.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED47.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED47.Name = "btnStatusLED47";
             this.btnStatusLED47.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED47.TabIndex = 174;
@@ -5300,7 +5243,7 @@ namespace LEDController.View
             this.btnStatusLED24.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED24.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED24.Location = new System.Drawing.Point(368, 162);
-            this.btnStatusLED24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED24.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED24.Name = "btnStatusLED24";
             this.btnStatusLED24.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED24.TabIndex = 173;
@@ -5314,7 +5257,7 @@ namespace LEDController.View
             this.btnStatusLED20.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED20.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED20.Location = new System.Drawing.Point(170, 162);
-            this.btnStatusLED20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED20.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED20.Name = "btnStatusLED20";
             this.btnStatusLED20.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED20.TabIndex = 172;
@@ -5328,7 +5271,7 @@ namespace LEDController.View
             this.btnStatusLED23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED23.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED23.Location = new System.Drawing.Point(318, 162);
-            this.btnStatusLED23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED23.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED23.Name = "btnStatusLED23";
             this.btnStatusLED23.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED23.TabIndex = 171;
@@ -5342,7 +5285,7 @@ namespace LEDController.View
             this.btnStatusLED22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED22.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED22.Location = new System.Drawing.Point(268, 162);
-            this.btnStatusLED22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED22.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED22.Name = "btnStatusLED22";
             this.btnStatusLED22.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED22.TabIndex = 170;
@@ -5356,7 +5299,7 @@ namespace LEDController.View
             this.btnStatusLED21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED21.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED21.Location = new System.Drawing.Point(219, 162);
-            this.btnStatusLED21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED21.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED21.Name = "btnStatusLED21";
             this.btnStatusLED21.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED21.TabIndex = 169;
@@ -5370,7 +5313,7 @@ namespace LEDController.View
             this.btnStatusLED19.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED19.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED19.Location = new System.Drawing.Point(120, 162);
-            this.btnStatusLED19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED19.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED19.Name = "btnStatusLED19";
             this.btnStatusLED19.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED19.TabIndex = 168;
@@ -5384,7 +5327,7 @@ namespace LEDController.View
             this.btnStatusLED18.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED18.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED18.Location = new System.Drawing.Point(70, 162);
-            this.btnStatusLED18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED18.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED18.Name = "btnStatusLED18";
             this.btnStatusLED18.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED18.TabIndex = 167;
@@ -5398,7 +5341,7 @@ namespace LEDController.View
             this.btnStatusLED17.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED17.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED17.Location = new System.Drawing.Point(21, 162);
-            this.btnStatusLED17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED17.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED17.Name = "btnStatusLED17";
             this.btnStatusLED17.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED17.TabIndex = 166;
@@ -5412,7 +5355,7 @@ namespace LEDController.View
             this.btnStatusLED46.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED46.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED46.Location = new System.Drawing.Point(764, 114);
-            this.btnStatusLED46.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED46.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED46.Name = "btnStatusLED46";
             this.btnStatusLED46.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED46.TabIndex = 165;
@@ -5426,7 +5369,7 @@ namespace LEDController.View
             this.btnStatusLED42.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED42.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED42.Location = new System.Drawing.Point(566, 114);
-            this.btnStatusLED42.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED42.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED42.Name = "btnStatusLED42";
             this.btnStatusLED42.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED42.TabIndex = 164;
@@ -5440,7 +5383,7 @@ namespace LEDController.View
             this.btnStatusLED45.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED45.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED45.Location = new System.Drawing.Point(714, 114);
-            this.btnStatusLED45.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED45.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED45.Name = "btnStatusLED45";
             this.btnStatusLED45.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED45.TabIndex = 163;
@@ -5454,7 +5397,7 @@ namespace LEDController.View
             this.btnStatusLED44.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED44.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED44.Location = new System.Drawing.Point(664, 114);
-            this.btnStatusLED44.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED44.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED44.Name = "btnStatusLED44";
             this.btnStatusLED44.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED44.TabIndex = 162;
@@ -5468,7 +5411,7 @@ namespace LEDController.View
             this.btnStatusLED43.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED43.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED43.Location = new System.Drawing.Point(615, 114);
-            this.btnStatusLED43.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED43.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED43.Name = "btnStatusLED43";
             this.btnStatusLED43.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED43.TabIndex = 161;
@@ -5482,7 +5425,7 @@ namespace LEDController.View
             this.btnStatusLED41.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED41.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED41.Location = new System.Drawing.Point(516, 114);
-            this.btnStatusLED41.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED41.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED41.Name = "btnStatusLED41";
             this.btnStatusLED41.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED41.TabIndex = 160;
@@ -5496,7 +5439,7 @@ namespace LEDController.View
             this.btnStatusLED40.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED40.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED40.Location = new System.Drawing.Point(466, 114);
-            this.btnStatusLED40.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED40.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED40.Name = "btnStatusLED40";
             this.btnStatusLED40.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED40.TabIndex = 159;
@@ -5510,7 +5453,7 @@ namespace LEDController.View
             this.btnStatusLED39.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED39.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED39.Location = new System.Drawing.Point(417, 114);
-            this.btnStatusLED39.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED39.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED39.Name = "btnStatusLED39";
             this.btnStatusLED39.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED39.TabIndex = 158;
@@ -5524,7 +5467,7 @@ namespace LEDController.View
             this.btnStatusLED16.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED16.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED16.Location = new System.Drawing.Point(368, 114);
-            this.btnStatusLED16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED16.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED16.Name = "btnStatusLED16";
             this.btnStatusLED16.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED16.TabIndex = 157;
@@ -5538,7 +5481,7 @@ namespace LEDController.View
             this.btnStatusLED12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED12.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED12.Location = new System.Drawing.Point(170, 114);
-            this.btnStatusLED12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED12.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED12.Name = "btnStatusLED12";
             this.btnStatusLED12.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED12.TabIndex = 156;
@@ -5552,7 +5495,7 @@ namespace LEDController.View
             this.btnStatusLED15.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED15.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED15.Location = new System.Drawing.Point(318, 114);
-            this.btnStatusLED15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED15.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED15.Name = "btnStatusLED15";
             this.btnStatusLED15.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED15.TabIndex = 155;
@@ -5566,7 +5509,7 @@ namespace LEDController.View
             this.btnStatusLED14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED14.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED14.Location = new System.Drawing.Point(268, 114);
-            this.btnStatusLED14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED14.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED14.Name = "btnStatusLED14";
             this.btnStatusLED14.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED14.TabIndex = 154;
@@ -5580,7 +5523,7 @@ namespace LEDController.View
             this.btnStatusLED13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED13.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED13.Location = new System.Drawing.Point(219, 114);
-            this.btnStatusLED13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED13.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED13.Name = "btnStatusLED13";
             this.btnStatusLED13.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED13.TabIndex = 153;
@@ -5594,7 +5537,7 @@ namespace LEDController.View
             this.btnStatusLED11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED11.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED11.Location = new System.Drawing.Point(120, 114);
-            this.btnStatusLED11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED11.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED11.Name = "btnStatusLED11";
             this.btnStatusLED11.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED11.TabIndex = 152;
@@ -5608,7 +5551,7 @@ namespace LEDController.View
             this.btnStatusLED10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED10.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED10.Location = new System.Drawing.Point(70, 114);
-            this.btnStatusLED10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED10.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED10.Name = "btnStatusLED10";
             this.btnStatusLED10.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED10.TabIndex = 151;
@@ -5622,7 +5565,7 @@ namespace LEDController.View
             this.btnStatusLED9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED9.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED9.Location = new System.Drawing.Point(21, 114);
-            this.btnStatusLED9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED9.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED9.Name = "btnStatusLED9";
             this.btnStatusLED9.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED9.TabIndex = 150;
@@ -5636,7 +5579,7 @@ namespace LEDController.View
             this.btnStatusLED38.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED38.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED38.Location = new System.Drawing.Point(764, 64);
-            this.btnStatusLED38.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED38.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED38.Name = "btnStatusLED38";
             this.btnStatusLED38.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED38.TabIndex = 149;
@@ -5650,7 +5593,7 @@ namespace LEDController.View
             this.btnStatusLED34.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED34.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED34.Location = new System.Drawing.Point(566, 64);
-            this.btnStatusLED34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED34.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED34.Name = "btnStatusLED34";
             this.btnStatusLED34.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED34.TabIndex = 144;
@@ -5664,7 +5607,7 @@ namespace LEDController.View
             this.btnStatusLED37.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED37.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED37.Location = new System.Drawing.Point(714, 64);
-            this.btnStatusLED37.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED37.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED37.Name = "btnStatusLED37";
             this.btnStatusLED37.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED37.TabIndex = 119;
@@ -5678,7 +5621,7 @@ namespace LEDController.View
             this.btnStatusLED36.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED36.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED36.Location = new System.Drawing.Point(664, 64);
-            this.btnStatusLED36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED36.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED36.Name = "btnStatusLED36";
             this.btnStatusLED36.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED36.TabIndex = 118;
@@ -5692,7 +5635,7 @@ namespace LEDController.View
             this.btnStatusLED35.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED35.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED35.Location = new System.Drawing.Point(615, 64);
-            this.btnStatusLED35.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED35.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED35.Name = "btnStatusLED35";
             this.btnStatusLED35.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED35.TabIndex = 117;
@@ -5706,7 +5649,7 @@ namespace LEDController.View
             this.btnStatusLED33.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED33.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED33.Location = new System.Drawing.Point(516, 64);
-            this.btnStatusLED33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED33.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED33.Name = "btnStatusLED33";
             this.btnStatusLED33.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED33.TabIndex = 116;
@@ -5720,7 +5663,7 @@ namespace LEDController.View
             this.btnStatusLED32.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED32.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED32.Location = new System.Drawing.Point(466, 64);
-            this.btnStatusLED32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED32.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED32.Name = "btnStatusLED32";
             this.btnStatusLED32.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED32.TabIndex = 115;
@@ -5734,7 +5677,7 @@ namespace LEDController.View
             this.btnStatusLED31.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED31.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED31.Location = new System.Drawing.Point(417, 64);
-            this.btnStatusLED31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED31.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED31.Name = "btnStatusLED31";
             this.btnStatusLED31.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED31.TabIndex = 114;
@@ -5748,7 +5691,7 @@ namespace LEDController.View
             this.btnStatusLED8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED8.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED8.Location = new System.Drawing.Point(368, 64);
-            this.btnStatusLED8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED8.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED8.Name = "btnStatusLED8";
             this.btnStatusLED8.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED8.TabIndex = 109;
@@ -5762,7 +5705,7 @@ namespace LEDController.View
             this.btnStatusLED4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED4.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED4.Location = new System.Drawing.Point(170, 64);
-            this.btnStatusLED4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED4.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED4.Name = "btnStatusLED4";
             this.btnStatusLED4.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED4.TabIndex = 104;
@@ -5776,7 +5719,7 @@ namespace LEDController.View
             this.btnStatusLED7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED7.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED7.Location = new System.Drawing.Point(318, 64);
-            this.btnStatusLED7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED7.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED7.Name = "btnStatusLED7";
             this.btnStatusLED7.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED7.TabIndex = 79;
@@ -5790,7 +5733,7 @@ namespace LEDController.View
             this.btnStatusLED6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED6.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED6.Location = new System.Drawing.Point(268, 64);
-            this.btnStatusLED6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED6.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED6.Name = "btnStatusLED6";
             this.btnStatusLED6.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED6.TabIndex = 78;
@@ -5804,7 +5747,7 @@ namespace LEDController.View
             this.btnStatusLED5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED5.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED5.Location = new System.Drawing.Point(219, 64);
-            this.btnStatusLED5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED5.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED5.Name = "btnStatusLED5";
             this.btnStatusLED5.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED5.TabIndex = 77;
@@ -5818,7 +5761,7 @@ namespace LEDController.View
             this.btnStatusLED3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED3.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED3.Location = new System.Drawing.Point(120, 64);
-            this.btnStatusLED3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED3.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED3.Name = "btnStatusLED3";
             this.btnStatusLED3.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED3.TabIndex = 76;
@@ -5832,7 +5775,7 @@ namespace LEDController.View
             this.btnStatusLED2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED2.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED2.Location = new System.Drawing.Point(70, 64);
-            this.btnStatusLED2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED2.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED2.Name = "btnStatusLED2";
             this.btnStatusLED2.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED2.TabIndex = 75;
@@ -5846,7 +5789,7 @@ namespace LEDController.View
             this.btnStatusLED1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStatusLED1.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStatusLED1.Location = new System.Drawing.Point(21, 64);
-            this.btnStatusLED1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusLED1.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusLED1.Name = "btnStatusLED1";
             this.btnStatusLED1.Size = new System.Drawing.Size(30, 30);
             this.btnStatusLED1.TabIndex = 74;
@@ -5857,9 +5800,9 @@ namespace LEDController.View
             // 
             this.btnShowLEDStatus.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnShowLEDStatus.Location = new System.Drawing.Point(20, 274);
-            this.btnShowLEDStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowLEDStatus.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowLEDStatus.Name = "btnShowLEDStatus";
-            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowLEDStatus.Padding = new System.Windows.Forms.Padding(2);
             this.btnShowLEDStatus.Size = new System.Drawing.Size(196, 48);
             this.btnShowLEDStatus.TabIndex = 9;
             this.btnShowLEDStatus.Text = "开始获取";
@@ -5880,7 +5823,7 @@ namespace LEDController.View
             // 
             this.tbxMaxValue.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxMaxValue.Location = new System.Drawing.Point(243, 216);
-            this.tbxMaxValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxMaxValue.Margin = new System.Windows.Forms.Padding(4);
             this.tbxMaxValue.Name = "tbxMaxValue";
             this.tbxMaxValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxMaxValue.Size = new System.Drawing.Size(70, 35);
@@ -5891,7 +5834,7 @@ namespace LEDController.View
             // 
             this.tbxMinValue.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbxMinValue.Location = new System.Drawing.Point(148, 216);
-            this.tbxMinValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxMinValue.Margin = new System.Windows.Forms.Padding(4);
             this.tbxMinValue.Name = "tbxMinValue";
             this.tbxMinValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxMinValue.Size = new System.Drawing.Size(58, 35);
@@ -5904,7 +5847,7 @@ namespace LEDController.View
             this.label47.BackColor = System.Drawing.Color.Transparent;
             this.label47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label47.Location = new System.Drawing.Point(15, 224);
-            this.label47.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.label47.Margin = new System.Windows.Forms.Padding(15);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(110, 24);
             this.label47.TabIndex = 5;
@@ -5926,7 +5869,7 @@ namespace LEDController.View
             this.cbxQueryWaitTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbxQueryWaitTime.FormattingEnabled = true;
             this.cbxQueryWaitTime.Location = new System.Drawing.Point(148, 166);
-            this.cbxQueryWaitTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxQueryWaitTime.Margin = new System.Windows.Forms.Padding(4);
             this.cbxQueryWaitTime.Name = "cbxQueryWaitTime";
             this.cbxQueryWaitTime.Size = new System.Drawing.Size(90, 32);
             this.cbxQueryWaitTime.TabIndex = 3;
@@ -5937,7 +5880,7 @@ namespace LEDController.View
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label45.Location = new System.Drawing.Point(15, 172);
-            this.label45.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.label45.Margin = new System.Windows.Forms.Padding(15);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(110, 24);
             this.label45.TabIndex = 2;
@@ -5948,7 +5891,7 @@ namespace LEDController.View
             this.cbxQueryParam.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbxQueryParam.FormattingEnabled = true;
             this.cbxQueryParam.Location = new System.Drawing.Point(148, 117);
-            this.cbxQueryParam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxQueryParam.Margin = new System.Windows.Forms.Padding(4);
             this.cbxQueryParam.Name = "cbxQueryParam";
             this.cbxQueryParam.Size = new System.Drawing.Size(180, 32);
             this.cbxQueryParam.TabIndex = 1;
@@ -5959,7 +5902,7 @@ namespace LEDController.View
             this.label44.BackColor = System.Drawing.Color.Transparent;
             this.label44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label44.Location = new System.Drawing.Point(15, 123);
-            this.label44.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.label44.Margin = new System.Windows.Forms.Padding(15);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(110, 24);
             this.label44.TabIndex = 0;
@@ -5974,7 +5917,7 @@ namespace LEDController.View
             this.tpgChiller.Controls.Add(this.label28);
             this.tpgChiller.Controls.Add(this.panel5);
             this.tpgChiller.Location = new System.Drawing.Point(4, 28);
-            this.tpgChiller.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgChiller.Margin = new System.Windows.Forms.Padding(4);
             this.tpgChiller.Name = "tpgChiller";
             this.tpgChiller.Size = new System.Drawing.Size(1567, 808);
             this.tpgChiller.TabIndex = 8;
@@ -5997,7 +5940,7 @@ namespace LEDController.View
             // 
             this.btnTurnOffChiller.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnTurnOffChiller.Location = new System.Drawing.Point(357, 96);
-            this.btnTurnOffChiller.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTurnOffChiller.Margin = new System.Windows.Forms.Padding(4);
             this.btnTurnOffChiller.Name = "btnTurnOffChiller";
             this.btnTurnOffChiller.Size = new System.Drawing.Size(112, 45);
             this.btnTurnOffChiller.TabIndex = 28;
@@ -6009,7 +5952,7 @@ namespace LEDController.View
             // 
             this.btnTurnOnChiller.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnTurnOnChiller.Location = new System.Drawing.Point(218, 96);
-            this.btnTurnOnChiller.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTurnOnChiller.Margin = new System.Windows.Forms.Padding(4);
             this.btnTurnOnChiller.Name = "btnTurnOnChiller";
             this.btnTurnOnChiller.Size = new System.Drawing.Size(112, 45);
             this.btnTurnOnChiller.TabIndex = 27;
@@ -6060,7 +6003,7 @@ namespace LEDController.View
             this.panel5.Controls.Add(this.pbxPump3);
             this.panel5.Controls.Add(this.label57);
             this.panel5.Location = new System.Drawing.Point(942, 96);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(579, 660);
             this.panel5.TabIndex = 24;
@@ -6126,7 +6069,7 @@ namespace LEDController.View
             // 
             this.btnUpdateChiller.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUpdateChiller.Location = new System.Drawing.Point(58, 584);
-            this.btnUpdateChiller.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdateChiller.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateChiller.Name = "btnUpdateChiller";
             this.btnUpdateChiller.Size = new System.Drawing.Size(152, 51);
             this.btnUpdateChiller.TabIndex = 21;
@@ -6277,7 +6220,7 @@ namespace LEDController.View
             this.tpgSkylightControl.Controls.Add(this.pbxSkylight2);
             this.tpgSkylightControl.Controls.Add(this.pbxSkylight1);
             this.tpgSkylightControl.Location = new System.Drawing.Point(4, 28);
-            this.tpgSkylightControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgSkylightControl.Margin = new System.Windows.Forms.Padding(4);
             this.tpgSkylightControl.Name = "tpgSkylightControl";
             this.tpgSkylightControl.Size = new System.Drawing.Size(1567, 808);
             this.tpgSkylightControl.TabIndex = 6;
@@ -6300,7 +6243,7 @@ namespace LEDController.View
             // 
             this.btnCloseSkylight3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseSkylight3.Location = new System.Drawing.Point(316, 378);
-            this.btnCloseSkylight3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseSkylight3.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseSkylight3.Name = "btnCloseSkylight3";
             this.btnCloseSkylight3.Size = new System.Drawing.Size(112, 42);
             this.btnCloseSkylight3.TabIndex = 19;
@@ -6312,7 +6255,7 @@ namespace LEDController.View
             // 
             this.btnOpenSkylight3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenSkylight3.Location = new System.Drawing.Point(177, 378);
-            this.btnOpenSkylight3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenSkylight3.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenSkylight3.Name = "btnOpenSkylight3";
             this.btnOpenSkylight3.Size = new System.Drawing.Size(112, 42);
             this.btnOpenSkylight3.TabIndex = 18;
@@ -6335,7 +6278,7 @@ namespace LEDController.View
             // 
             this.btnCloseSkylight2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseSkylight2.Location = new System.Drawing.Point(316, 242);
-            this.btnCloseSkylight2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseSkylight2.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseSkylight2.Name = "btnCloseSkylight2";
             this.btnCloseSkylight2.Size = new System.Drawing.Size(112, 42);
             this.btnCloseSkylight2.TabIndex = 15;
@@ -6347,7 +6290,7 @@ namespace LEDController.View
             // 
             this.btnOpenSkylight2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenSkylight2.Location = new System.Drawing.Point(177, 242);
-            this.btnOpenSkylight2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenSkylight2.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenSkylight2.Name = "btnOpenSkylight2";
             this.btnOpenSkylight2.Size = new System.Drawing.Size(112, 42);
             this.btnOpenSkylight2.TabIndex = 14;
@@ -6370,7 +6313,7 @@ namespace LEDController.View
             // 
             this.btnCloseSkylight1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseSkylight1.Location = new System.Drawing.Point(316, 104);
-            this.btnCloseSkylight1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseSkylight1.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseSkylight1.Name = "btnCloseSkylight1";
             this.btnCloseSkylight1.Size = new System.Drawing.Size(112, 42);
             this.btnCloseSkylight1.TabIndex = 11;
@@ -6382,7 +6325,7 @@ namespace LEDController.View
             // 
             this.btnOpenSkylight1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOpenSkylight1.Location = new System.Drawing.Point(177, 104);
-            this.btnOpenSkylight1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenSkylight1.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenSkylight1.Name = "btnOpenSkylight1";
             this.btnOpenSkylight1.Size = new System.Drawing.Size(112, 42);
             this.btnOpenSkylight1.TabIndex = 10;
@@ -6448,7 +6391,7 @@ namespace LEDController.View
             this.tpgLightControl.Controls.Add(this.pbxLight);
             this.tpgLightControl.Controls.Add(this.pbxLightMainPower);
             this.tpgLightControl.Location = new System.Drawing.Point(4, 28);
-            this.tpgLightControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgLightControl.Margin = new System.Windows.Forms.Padding(4);
             this.tpgLightControl.Name = "tpgLightControl";
             this.tpgLightControl.Size = new System.Drawing.Size(1567, 808);
             this.tpgLightControl.TabIndex = 4;
@@ -6550,7 +6493,7 @@ namespace LEDController.View
             this.tpgRTControl.Controls.Add(this.btnRTPowerOn);
             this.tpgRTControl.Controls.Add(this.pbxRTPower);
             this.tpgRTControl.Location = new System.Drawing.Point(4, 28);
-            this.tpgRTControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgRTControl.Margin = new System.Windows.Forms.Padding(4);
             this.tpgRTControl.Name = "tpgRTControl";
             this.tpgRTControl.Size = new System.Drawing.Size(1567, 808);
             this.tpgRTControl.TabIndex = 3;
@@ -6608,7 +6551,7 @@ namespace LEDController.View
             this.tpgAirConditionerControl.Controls.Add(this.btnAirConditionerOn);
             this.tpgAirConditionerControl.Controls.Add(this.pbxAirConditionerPower);
             this.tpgAirConditionerControl.Location = new System.Drawing.Point(4, 28);
-            this.tpgAirConditionerControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgAirConditionerControl.Margin = new System.Windows.Forms.Padding(4);
             this.tpgAirConditionerControl.Name = "tpgAirConditionerControl";
             this.tpgAirConditionerControl.Size = new System.Drawing.Size(1567, 808);
             this.tpgAirConditionerControl.TabIndex = 5;
@@ -6670,7 +6613,7 @@ namespace LEDController.View
             this.tpgCameraControl.Controls.Add(this.pbxPCPower);
             this.tpgCameraControl.Controls.Add(this.pbxCamPower);
             this.tpgCameraControl.Location = new System.Drawing.Point(4, 28);
-            this.tpgCameraControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgCameraControl.Margin = new System.Windows.Forms.Padding(4);
             this.tpgCameraControl.Name = "tpgCameraControl";
             this.tpgCameraControl.Size = new System.Drawing.Size(1567, 808);
             this.tpgCameraControl.TabIndex = 7;
@@ -6887,6 +6830,109 @@ namespace LEDController.View
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel7.Controls.Add(this.label22);
+            this.panel7.Controls.Add(this.label21);
+            this.panel7.Controls.Add(this.lblGreenLEDTempRD);
+            this.panel7.Controls.Add(this.lblGreenLEDTempRU);
+            this.panel7.Controls.Add(this.label20);
+            this.panel7.Controls.Add(this.lblGreenLEDTempLD);
+            this.panel7.Controls.Add(this.lblGreenLEDTempLU);
+            this.panel7.Controls.Add(this.label70);
+            this.panel7.Controls.Add(this.label69);
+            this.panel7.Location = new System.Drawing.Point(6, 396);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(330, 69);
+            this.panel7.TabIndex = 17;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(193, 41);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(17, 18);
+            this.label22.TabIndex = 45;
+            this.label22.Text = "|";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(287, 40);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(26, 18);
+            this.label21.TabIndex = 44;
+            this.label21.Text = "℃";
+            // 
+            // lblGreenLEDTempRD
+            // 
+            this.lblGreenLEDTempRD.AutoSize = true;
+            this.lblGreenLEDTempRD.Location = new System.Drawing.Point(273, 43);
+            this.lblGreenLEDTempRD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGreenLEDTempRD.Name = "lblGreenLEDTempRD";
+            this.lblGreenLEDTempRD.Size = new System.Drawing.Size(0, 18);
+            this.lblGreenLEDTempRD.TabIndex = 43;
+            // 
+            // lblGreenLEDTempRU
+            // 
+            this.lblGreenLEDTempRU.AutoSize = true;
+            this.lblGreenLEDTempRU.Location = new System.Drawing.Point(273, 14);
+            this.lblGreenLEDTempRU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGreenLEDTempRU.Name = "lblGreenLEDTempRU";
+            this.lblGreenLEDTempRU.Size = new System.Drawing.Size(0, 18);
+            this.lblGreenLEDTempRU.TabIndex = 42;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(193, 11);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(17, 18);
+            this.label20.TabIndex = 41;
+            this.label20.Text = "|";
+            // 
+            // lblGreenLEDTempLD
+            // 
+            this.lblGreenLEDTempLD.AutoSize = true;
+            this.lblGreenLEDTempLD.Location = new System.Drawing.Point(179, 43);
+            this.lblGreenLEDTempLD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGreenLEDTempLD.Name = "lblGreenLEDTempLD";
+            this.lblGreenLEDTempLD.Size = new System.Drawing.Size(0, 18);
+            this.lblGreenLEDTempLD.TabIndex = 40;
+            // 
+            // lblGreenLEDTempLU
+            // 
+            this.lblGreenLEDTempLU.AutoSize = true;
+            this.lblGreenLEDTempLU.Location = new System.Drawing.Point(179, 11);
+            this.lblGreenLEDTempLU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGreenLEDTempLU.Name = "lblGreenLEDTempLU";
+            this.lblGreenLEDTempLU.Size = new System.Drawing.Size(0, 18);
+            this.lblGreenLEDTempLU.TabIndex = 39;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(287, 11);
+            this.label70.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(26, 18);
+            this.label70.TabIndex = 38;
+            this.label70.Text = "℃";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(17, 11);
+            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(116, 18);
+            this.label69.TabIndex = 37;
+            this.label69.Text = "绿色LED温度:";
+            // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -6906,7 +6952,7 @@ namespace LEDController.View
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LEDControllerViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LED-Controller";
@@ -6995,6 +7041,8 @@ namespace LEDController.View
             ((System.ComponentModel.ISupportInitialize)(this.pbxCamPower)).EndInit();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7449,12 +7497,6 @@ namespace LEDController.View
         private System.Windows.Forms.Label lblRedLEDTempLU;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label lblGreenLEDTempRD;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label lblGreenLEDTempLU;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label lblCountDown;
         private System.Windows.Forms.Button btnStartReceive;
@@ -7462,6 +7504,16 @@ namespace LEDController.View
         private System.Windows.Forms.CheckBox cbxDarkRedLEDMainSwitch;
         private System.Windows.Forms.CheckBox cbxRedLEDMainSwitch;
         private System.Windows.Forms.CheckBox cbxGreenLEDMainSwitch;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblGreenLEDTempRD;
+        private System.Windows.Forms.Label lblGreenLEDTempRU;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblGreenLEDTempLD;
+        private System.Windows.Forms.Label lblGreenLEDTempLU;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label69;
     }
 }
 

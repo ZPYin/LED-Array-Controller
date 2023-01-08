@@ -109,6 +109,6 @@ namespace LEDController.Model
             0x78, 0x79, 0x7A, 0x7B };
         public static int[] addrGreenMainSwitch = new int[] { 0x1F };
         public static int[] addrPlcCSpareSwitch = new int[] { 0x10 };
-        public static int[] addrTempSensor = new int[] { 0x01FE, 0x01FF, 0x0200, 0x0201, 0x0202, 0x0203 };
+        public static int[] addrTempSensor = new int[] { 0x01FE, 0x01FF, 0x0200, 0x0201 };
     }
 }

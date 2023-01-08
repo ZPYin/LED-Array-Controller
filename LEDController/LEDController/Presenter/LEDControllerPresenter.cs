@@ -1110,17 +1110,29 @@ namespace LEDController.Presenter
                 tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: {this.ledStatus.CalcTotalDarkRedLEDPower()} W";
 
                 Label lblGreenLEDTempLU = (Label)(this._view.Controls.Find("lblGreenLEDTempLU", true)[0]);
+                Label lblGreenLEDTempLD = (Label)(this._view.Controls.Find("lblGreenLEDTempLD", true)[0]);
                 Label lblGreenLEDTempRD = (Label)(this._view.Controls.Find("lblGreenLEDTempRD", true)[0]);
+                Label lblGreenLEDTempRU = (Label)(this._view.Controls.Find("lblGreenLEDTempRU", true)[0]);
                 Label lblRedLEDTempLU = (Label)(this._view.Controls.Find("lblRedLEDTempLU", true)[0]);
+                Label lblRedLEDTempLD = (Label)(this._view.Controls.Find("lblRedLEDTempLD", true)[0]);
                 Label lblRedLEDTempRD = (Label)(this._view.Controls.Find("lblRedLEDTempRD", true)[0]);
+                Label lblRedLEDTempRU = (Label)(this._view.Controls.Find("lblRedLEDTempRU", true)[0]);
                 Label lblDarkRedLEDTempLU = (Label)(this._view.Controls.Find("lblDarkRedLEDTempLU", true)[0]);
+                Label lblDarkRedLEDTempLD = (Label)(this._view.Controls.Find("lblDarkRedLEDTempLD", true)[0]);
                 Label lblDarkRedLEDTempRD = (Label)(this._view.Controls.Find("lblDarkRedLEDTempRD", true)[0]);
-                lblGreenLEDTempLU.Text = this.ledStatus.greenLEDTempLU.ToString();
-                lblGreenLEDTempRD.Text = this.ledStatus.greenLEDTempRD.ToString();
-                lblRedLEDTempLU.Text = this.ledStatus.redLEDTempLU.ToString();
-                lblRedLEDTempRD.Text = this.ledStatus.redLEDTempRD.ToString();
-                lblDarkRedLEDTempLU.Text = this.ledStatus.darkRedLEDTempLU.ToString();
-                lblDarkRedLEDTempRD.Text = this.ledStatus.darkRedLEDTempRD.ToString();
+                Label lblDarkRedLEDTempRU = (Label)(this._view.Controls.Find("lblDarkRedLEDTempRU", true)[0]);
+                lblGreenLEDTempLU.Text = this.ledStatus.tempGreenLED[0].ToString();
+                lblGreenLEDTempLD.Text = this.ledStatus.tempGreenLED[1].ToString();
+                lblGreenLEDTempRD.Text = this.ledStatus.tempGreenLED[2].ToString();
+                lblGreenLEDTempRU.Text = this.ledStatus.tempGreenLED[3].ToString();
+                lblRedLEDTempLU.Text = this.ledStatus.tempRedLED[0].ToString();
+                lblRedLEDTempLD.Text = this.ledStatus.tempRedLED[1].ToString();
+                lblRedLEDTempRD.Text = this.ledStatus.tempRedLED[2].ToString();
+                lblRedLEDTempRU.Text = this.ledStatus.tempRedLED[3].ToString();
+                lblDarkRedLEDTempLU.Text = this.ledStatus.tempDarkRedLED[0].ToString();
+                lblDarkRedLEDTempLD.Text = this.ledStatus.tempDarkRedLED[1].ToString();
+                lblDarkRedLEDTempRD.Text = this.ledStatus.tempDarkRedLED[2].ToString();
+                lblDarkRedLEDTempRU.Text = this.ledStatus.tempDarkRedLED[3].ToString();
 
                 if (statusDataFS != null)
                 {

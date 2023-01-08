@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -51,12 +52,9 @@ namespace LEDController.Model
         public double[] dimDarkRedLEDPower;
         public double[] dimDarkRedLEDVoltage;
         public double[] dimDarkRedLEDCurrent;
-        public double greenLEDTempLU;
-        public double greenLEDTempRD;
-        public double redLEDTempLU;
-        public double redLEDTempRD;
-        public double darkRedLEDTempLU;
-        public double darkRedLEDTempRD;
+        public double[] tempGreenLED;   // 0: left-up; 1: left-down; 2: right-down; 3: right-up
+        public double[] tempRedLED;
+        public double[] tempDarkRedLED;
         public bool isValidStatus;
         public DateTime updatedTime;
 
@@ -80,12 +78,9 @@ namespace LEDController.Model
             this.dimDarkRedLEDPower = new double[numDimDarkRedLED];
             this.dimDarkRedLEDCurrent = new double[numDimDarkRedLED];
             this.dimDarkRedLEDVoltage = new double[numDimDarkRedLED];
-            this.greenLEDTempLU = 0.0;
-            this.greenLEDTempRD = 0.0;
-            this.redLEDTempLU = 0.0;
-            this.redLEDTempRD = 0.0;
-            this.darkRedLEDTempLU = 0.0;
-            this.darkRedLEDTempRD = 0.0;
+            this.tempGreenLED = new double[4] { 0.0, 0.0, 0.0, 0.0 };
+            this.tempRedLED = new double[4] { 0.0, 0.0, 0.0, 0.0 };
+            this.tempDarkRedLED = new double[4] { 0.0, 0.0, 0.0, 0.0 };
             this.isValidStatus = false;
             this.updatedTime = DateTime.Now;
         }
@@ -616,6 +611,7 @@ namespace LEDController.Model
             }
 
             SendCmd((byte)addrPLC, 5, (ushort)addrLEDSwitch, new byte[2] { 0xFF, 0x00 });
+            Thread.Sleep(100);
             byte[] dataSend = BitConverter.GetBytes(Convert.ToInt16(LEDBrightness));
             Array.Reverse(dataSend);
             SendCmd((byte)addrPLC, 6, (ushort)addrLEDPowerControl, dataSend);
@@ -728,6 +724,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -742,6 +739,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -756,6 +754,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -770,6 +769,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -784,6 +784,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -798,6 +799,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -812,6 +814,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -826,6 +829,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -840,6 +844,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -854,6 +859,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -868,6 +874,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -882,6 +889,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -896,6 +904,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -910,6 +919,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -924,6 +934,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -938,6 +949,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -952,6 +964,7 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             try
             {
@@ -966,18 +979,19 @@ namespace LEDController.Model
             {
                 throw ex;
             }
+            Thread.Sleep(50);
 
             // receive temperature sensor data
             try
             {
-                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)6));
-                values = ParseTemperature(recData);
-                status.redLEDTempLU = values[0];
-                status.redLEDTempRD = values[1];
-                status.darkRedLEDTempLU = values[2];
-                status.darkRedLEDTempRD = values[3];
-                status.greenLEDTempLU = values[4];
-                status.greenLEDTempRD = values[5];
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)4));
+                status.tempGreenLED = ParseTemperature(recData);
+                Thread.Sleep(100);
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)4));
+                status.tempRedLED = ParseTemperature(recData);
+                Thread.Sleep(100);
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)4));
+                status.tempDarkRedLED = ParseTemperature(recData);
             }
             catch (Exception ex)
             {
@@ -1060,9 +1074,13 @@ namespace LEDController.Model
                 recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDPower, new byte[2] { 0x00, 0x01 });
                 values = ParseLEDPower(recData);
                 recStatus.LEDPower = values[0];
+
+                Thread.Sleep(100);
                 recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDCurrent, new byte[2] { 0x00, 0x01 });
                 values = ParseLEDCurrent(recData);
                 recStatus.LEDCurrent = values[0];
+
+                Thread.Sleep(100);
                 recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDVoltage, new byte[2] { 0x00, 0x01 });
                 values = ParseLEDVoltage(recData);
                 recStatus.LEDCurrent = values[0];
