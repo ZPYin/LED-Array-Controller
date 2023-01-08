@@ -1085,7 +1085,7 @@ namespace LEDController.Model
                 Thread.Sleep(100);
                 recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDVoltage, new byte[2] { 0x00, 0x01 });
                 values = ParseLEDVoltage(recData);
-                recStatus.LEDCurrent = values[0];
+                recStatus.LEDVoltage = values[0];
             }
             catch (Exception ex)
             {
