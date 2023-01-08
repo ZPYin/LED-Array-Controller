@@ -808,7 +808,7 @@ namespace LEDController.View
         private void btnDimDarkRedLED_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            int idxLED = GetLEDIndex(btn.Name, "btnDarkRedLED");
+            int idxLED = GetLEDIndex(btn.Name, "btnDimDarkRedLED");
             TextBox tbx = (TextBox)(this.Controls.Find($"tbxDimDarkRedLED{idxLED}", true)[0]);
 
             HandleDimDarkRedLED?.Invoke(sender, new EventDimLEDArgs(idxLED, Convert.ToDouble(tbx.Text)));

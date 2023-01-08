@@ -2081,7 +2081,6 @@ namespace LEDController.Presenter
 
         private async void ShowSendStatusAsync()
         {
-
             // Sync
             _view.btnSendStatus1Color = Color.Green;
             _view.btnSendStatus2Color = Color.Green;
