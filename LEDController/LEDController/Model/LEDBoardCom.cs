@@ -548,28 +548,23 @@ namespace LEDController.Model
         public void TurnOnFixLED(int addrPLC, int LEDInd)
         {
             int addrLED;
-            int addrLEDMainSwitch;
             if (addrPLC == LEDConfig.addrPLCGreenLED)
             {
                 addrLED = LEDConfig.addrFixGreenLEDSwitch[LEDInd - 1];
-                addrLEDMainSwitch = LEDConfig.addrGreenMainSwitch[0];
             }
             else if (addrPLC == LEDConfig.addrPLCRedLED)
             {
                 addrLED = LEDConfig.addrFixRedLEDSwitch[LEDInd - 1];
-                addrLEDMainSwitch = LEDConfig.addrRedMainSwitch[0];
             }
             else if (addrPLC == LEDConfig.addrPLCDarkRedLED)
             {
                 addrLED = LEDConfig.addrFixDarkRedLEDSwitch[LEDInd - 1];
-                addrLEDMainSwitch = LEDConfig.addrDarkRedMainSwitch[0];
             }
             else
             {
                 throw new ArgumentOutOfRangeException();
             }
 
-            SendCmd((byte)addrPLC, 5, (ushort)addrLEDMainSwitch, new byte[2] { 0xFF, 0x00 });
             SendCmd((byte)addrPLC, 5, (ushort)addrLED, new byte[2] { 0xFF, 0x00 });
         }
 
@@ -600,31 +595,26 @@ namespace LEDController.Model
         {
             int addrLEDSwitch;
             int addrLEDPowerControl;
-            int addrLEDMainSwitch;
             if (addrPLC == LEDConfig.addrPLCGreenLED)
             {
                 addrLEDSwitch = LEDConfig.addrDimGreenLEDSwitch[LEDInd - 1];
                 addrLEDPowerControl = LEDConfig.addrDimGreenLEDPowerControl[LEDInd - 1];
-                addrLEDMainSwitch = LEDConfig.addrGreenMainSwitch[0];
             }
             else if (addrPLC == LEDConfig.addrPLCRedLED)
             {
                 addrLEDSwitch = LEDConfig.addrDimRedLEDSwitch[LEDInd - 1];
                 addrLEDPowerControl = LEDConfig.addrDimRedLEDPowerControl[LEDInd - 1];
-                addrLEDMainSwitch = LEDConfig.addrRedMainSwitch[0];
             }
             else if (addrPLC == LEDConfig.addrPLCDarkRedLED)
             {
                 addrLEDSwitch = LEDConfig.addrDimDarkRedLEDSwitch[LEDInd - 1];
                 addrLEDPowerControl = LEDConfig.addrDimDarkRedLEDPowerControl[LEDInd - 1];
-                addrLEDMainSwitch = LEDConfig.addrDarkRedMainSwitch[0];
             }
             else
             {
                 throw new ArgumentOutOfRangeException();
             }
 
-            SendCmd((byte)addrPLC, 5, (ushort)addrLEDMainSwitch, new byte[2] { 0xFF, 0x00 });
             SendCmd((byte)addrPLC, 5, (ushort)addrLEDSwitch, new byte[2] { 0xFF, 0x00 });
             byte[] dataSend = BitConverter.GetBytes(Convert.ToInt16(LEDBrightness));
             Array.Reverse(dataSend);
@@ -708,7 +698,7 @@ namespace LEDController.Model
             for (int i = 0; i < nTemp; i++)
             {
                 value = (recData[i * 2] << 8) | (recData[i * 2 + 1]);
-                temperatures[i] = Convert.ToDouble(value);
+                temperatures[i] = Convert.ToDouble(value) / 10;
             }
 
             return temperatures;
@@ -727,7 +717,7 @@ namespace LEDController.Model
             double[] values;
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrFixRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -741,7 +731,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrFixRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -755,7 +745,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrFixRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrFixRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixRedLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -769,7 +759,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrFixDarkRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -783,7 +773,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrFixDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -797,7 +787,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrFixDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrFixDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixDarkRedLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -811,7 +801,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrFixGreenLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -825,7 +815,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrFixGreenLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -839,7 +829,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrFixGreenLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrFixGreenLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumFixGreenLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -853,7 +843,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrDimRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrDimRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -867,7 +857,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrDimRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrDimRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -881,7 +871,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrDimRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrDimRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimRedLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -895,7 +885,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrDimDarkRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrDimDarkRedLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -909,7 +899,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrDimDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrDimDarkRedLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -923,7 +913,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)2, 3, (ushort)LEDConfig.addrDimDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrDimDarkRedLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimDarkRedLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -937,7 +927,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrDimGreenLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrDimGreenLEDPower[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
                 values = ParseLEDPower(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -951,7 +941,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrDimGreenLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrDimGreenLEDVoltage[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
                 values = ParseLEDVoltage(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -965,7 +955,7 @@ namespace LEDController.Model
 
             try
             {
-                recData = this.device.WriteReceive((byte)3, 3, (ushort)LEDConfig.addrDimGreenLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrDimGreenLEDCurrent[0], BitConverter.GetBytes((ushort)LEDConfig.NumDimGreenLED));
                 values = ParseLEDCurrent(recData);
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -980,7 +970,7 @@ namespace LEDController.Model
             // receive temperature sensor data
             try
             {
-                recData = this.device.WriteReceive((byte)1, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)6));
+                recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)6));
                 values = ParseTemperature(recData);
                 status.redLEDTempLU = values[0];
                 status.redLEDTempRD = values[1];
@@ -1063,10 +1053,12 @@ namespace LEDController.Model
                     break;
             }
 
+            byte[] recData;
+            double[] values;
             try
             {
-                byte[] recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDPower, new byte[2] { 0x00, 0x01 });
-                double[] values = ParseLEDPower(recData);
+                recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDPower, new byte[2] { 0x00, 0x01 });
+                values = ParseLEDPower(recData);
                 recStatus.LEDPower = values[0];
                 recData = this.device.WriteReceive((byte)addrPLC, 3, (ushort)addrLEDCurrent, new byte[2] { 0x00, 0x01 });
                 values = ParseLEDCurrent(recData);
@@ -1241,6 +1233,36 @@ namespace LEDController.Model
         public void TurnOffPCPower(int addrPLC)
         {
             SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[2], new byte[2] { 0x00, 0x00 });
+        }
+
+        public void TurnOnGreenLEDMainSwitch()
+        {
+            SendCmd((byte)LEDConfig.addrPLCGreenLED, 5, (ushort)LEDConfig.addrGreenMainSwitch[0], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffGreenLEDMainSwitch()
+        {
+            SendCmd((byte)LEDConfig.addrPLCGreenLED, 5, (ushort)LEDConfig.addrGreenMainSwitch[0], new byte[2] { 0x00, 0x00 });
+        }
+
+        public void TurnOnRedLEDMainSwitch()
+        {
+            SendCmd((byte)LEDConfig.addrPLCRedLED, 5, (ushort)LEDConfig.addrRedMainSwitch[0], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffRedLEDMainSwitch()
+        {
+            SendCmd((byte)LEDConfig.addrPLCRedLED, 5, (ushort)LEDConfig.addrRedMainSwitch[0], new byte[2] { 0x00, 0x00 });
+        }
+
+        public void TurnOnDarkRedLEDMainSwitch()
+        {
+            SendCmd((byte)LEDConfig.addrPLCDarkRedLED, 5, (ushort)LEDConfig.addrDarkRedMainSwitch[0], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void TurnOffDarkRedLEDMainSwitch()
+        {
+            SendCmd((byte)LEDConfig.addrPLCDarkRedLED, 5, (ushort)LEDConfig.addrDarkRedMainSwitch[0], new byte[2] { 0x00, 0x00 });
         }
 
     }

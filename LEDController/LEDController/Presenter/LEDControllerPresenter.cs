@@ -123,6 +123,9 @@ namespace LEDController.Presenter
             _view.StartReceive += new EventHandler<EventArgs>(OnStartReceive);
             _view.StopReceive += new EventHandler<EventArgs>(OnStopReceive);
             _view.ChangeTabIndex += new EventHandler<EventArgs>(OnChangeTabIndex);
+            _view.ChangeGreenLEDMainSwitch += new EventHandler<EventArgs>(OnChangeGreenLEDMainSwitch);
+            _view.ChangeRedLEDMainSwitch += new EventHandler<EventArgs>(OnChangeRedLEDMainSwitch);
+            _view.ChangeDarkRedLEDMainSwitch += new EventHandler<EventArgs>(OnChangeDarkRedLEDMainSwitch);
 
             // Initialize Form
             InitialForm();
@@ -151,6 +154,78 @@ namespace LEDController.Presenter
 
             updateLEDStatusTimer = new System.Threading.Timer(this.UpdateLEDLiveData, 0, 0, 1000);
             renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, sig, 0, 3600 * 1000);
+        }
+
+        public void OnChangeGreenLEDMainSwitch(object sender, EventArgs e)
+        {
+            CheckBox cbxGreenLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxGreenLEDMainSwitch", true)[0]);
+
+            if (this.connector.isAlive)
+            {
+                if (cbxGreenLEDMainSwitch.Checked)
+                {
+                    this.connector.TurnOffGreenLEDMainSwitch();
+                    cbxGreenLEDMainSwitch.Checked = false;
+                }
+                else
+                {
+                    this.connector.TurnOnGreenLEDMainSwitch();
+                    cbxGreenLEDMainSwitch.Checked = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection is not ready!", "Warning");
+                throw new IOException("Connection is not set up.");
+            }
+        }
+
+        public void OnChangeRedLEDMainSwitch(object sender, EventArgs e)
+        {
+            CheckBox cbxRedLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxRedLEDMainSwitch", true)[0]);
+
+            if (this.connector.isAlive)
+            {
+                if (cbxRedLEDMainSwitch.Checked)
+                {
+                    this.connector.TurnOffRedLEDMainSwitch();
+                    cbxRedLEDMainSwitch.Checked = false;
+                }
+                else
+                {
+                    this.connector.TurnOnRedLEDMainSwitch();
+                    cbxRedLEDMainSwitch.Checked = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection is not ready!", "Warning");
+                throw new IOException("Connection is not set up.");
+            }
+        }
+
+        public void OnChangeDarkRedLEDMainSwitch(object sender, EventArgs e)
+        {
+            CheckBox cbxDarkRedLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxDarkRedLEDMainSwitch", true)[0]);
+
+            if (this.connector.isAlive)
+            {
+                if (cbxDarkRedLEDMainSwitch.Checked)
+                {
+                    this.connector.TurnOffDarkRedLEDMainSwitch();
+                    cbxDarkRedLEDMainSwitch.Checked = false;
+                }
+                else
+                {
+                    this.connector.TurnOnDarkRedLEDMainSwitch();
+                    cbxDarkRedLEDMainSwitch.Checked = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection is not ready!", "Warning");
+                throw new IOException("Connection is not set up.");
+            }
         }
 
         public void OnChangeTabIndex(object sender, EventArgs e)
@@ -209,7 +284,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOnCamPower(object sender, EventArgs e)
         {
-            this.connector.TurnOnCamPower(1);
+            this.connector.TurnOnCamPower(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxCamPower = (PictureBox)(this._view.Controls.Find("pbxCamPower", true)[0]);
@@ -218,7 +293,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOffCamPower(object sender, EventArgs e)
         {
-            this.connector.TurnOffCamPower(1);
+            this.connector.TurnOffCamPower(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxCamPower = (PictureBox)(this._view.Controls.Find("pbxCamPower", true)[0]);
@@ -227,7 +302,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOnPCPower(object sender, EventArgs e)
         {
-            this.connector.TurnOnPCPower(1);
+            this.connector.TurnOnPCPower(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxPCPower = (PictureBox)(this._view.Controls.Find("pbxPCPower", true)[0]);
@@ -236,7 +311,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOffPCPower(object sender, EventArgs e)
         {
-            this.connector.TurnOffPCPower(1);
+            this.connector.TurnOffPCPower(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxPCPower = (PictureBox)(this._view.Controls.Find("pbxPCPower", true)[0]);
@@ -245,7 +320,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOnAirConditionerPower(object sender, EventArgs e)
         {
-            this.connector.TurnOnAirConditionerPower(1);
+            this.connector.TurnOnAirConditionerPower(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxAirConditionerPower = (PictureBox)(this._view.Controls.Find("pbxAirConditionerPower", true)[0]);
@@ -254,7 +329,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOffAirConditionerPower(object sender, EventArgs e)
         {
-            this.connector.TurnOffAirConditionerPower(1);
+            this.connector.TurnOffAirConditionerPower(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxAirConditionerPower = (PictureBox)(this._view.Controls.Find("pbxAirConditionerPower", true)[0]);
@@ -263,7 +338,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOnRTPower(object sender, EventArgs e)
         {
-            this.connector.TurnOnRTPower(1);
+            this.connector.TurnOnRTPower(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxRTPower = (PictureBox)(this._view.Controls.Find("pbxRTPower", true)[0]);
@@ -272,7 +347,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOffRTPower(object sender, EventArgs e)
         {
-            this.connector.TurnOffRTPower(1);
+            this.connector.TurnOffRTPower(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxRTPower = (PictureBox)(this._view.Controls.Find("pbxRTPower", true)[0]);
@@ -281,7 +356,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOffLighMainSwitch(object sender, EventArgs e)
         {
-            this.connector.TurnOffLightMainSwitch(1);
+            this.connector.TurnOffLightMainSwitch(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxLightMainPower = (PictureBox)(this._view.Controls.Find("pbxLightMainPower", true)[0]);
@@ -290,7 +365,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOnLighMainSwitch(object sender, EventArgs e)
         {
-            this.connector.TurnOnLightMainSwitch(1);
+            this.connector.TurnOnLightMainSwitch(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxLightMainPower = (PictureBox)(this._view.Controls.Find("pbxLightMainPower", true)[0]);
@@ -299,7 +374,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOnChiller(object sender, EventArgs e)
         {
-            this.connector.TurnOnChiller(1);
+            this.connector.TurnOnChiller(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxChillerPower = (PictureBox)(this._view.Controls.Find("pbxChillerPower", true)[0]);
@@ -308,7 +383,7 @@ namespace LEDController.Presenter
 
         public void OnTurnOffChiller(object sender, EventArgs e)
         {
-            this.connector.TurnOffChiller(1);
+            this.connector.TurnOffChiller(LEDConfig.addrPLCDarkRedLED);
             ShowSendStatusAsync();
 
             PictureBox pbxChillerPower = (PictureBox)(this._view.Controls.Find("pbxChillerPower", true)[0]);
@@ -1430,7 +1505,9 @@ namespace LEDController.Presenter
 
         private void OnSetDimGreenLED(object sender, EventDimLEDArgs e)
         {
-            if (!connector.isAlive)
+            CheckBox cbxGreenLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxGreenLEDMainSwitch", true)[0]);
+            
+            if ((!cbxGreenLEDMainSwitch.Checked) || (!connector.isAlive))
             {
                 return;
             }
@@ -1468,7 +1545,9 @@ namespace LEDController.Presenter
 
         private void OnSetDimRedLED(object sender, EventDimLEDArgs e)
         {
-            if (!connector.isAlive)
+            CheckBox cbxRedLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxRedLEDMainSwitch", true)[0]);
+
+            if ((!cbxRedLEDMainSwitch.Checked) || (!connector.isAlive))
             {
                 return;
             }
@@ -1506,7 +1585,9 @@ namespace LEDController.Presenter
 
         private void OnSetDimDarkRedLED(object sender, EventDimLEDArgs e)
         {
-            if (!connector.isAlive)
+            CheckBox cbxDarkRedLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxDarkRedLEDMainSwitch", true)[0]);
+            
+            if ((!cbxDarkRedLEDMainSwitch.Checked) || (!connector.isAlive))
             {
                 return;
             }
@@ -1622,7 +1703,9 @@ namespace LEDController.Presenter
 
         private void OnOpenFixGreenLED(object sender, EventLEDArgs e)
         {
-            if (connector.isAlive)
+            CheckBox cbxGreenLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxGreenLEDMainSwitch", true)[0]);
+
+            if (connector.isAlive && cbxGreenLEDMainSwitch.Checked)
             {
                 // Turn on Fix LED
                 connector.TurnOnFixLED(LEDConfig.addrPLCGreenLED, e.LEDIndex);
@@ -1637,7 +1720,9 @@ namespace LEDController.Presenter
 
         private void OnOpenFixRedLED(object sender, EventLEDArgs e)
         {
-            if (connector.isAlive)
+            CheckBox cbxRedLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxRedLEDMainSwitch", true)[0]);
+
+            if (connector.isAlive && cbxRedLEDMainSwitch.Checked)
             {
                 // Turn on Fix LED
                 connector.TurnOnFixLED(LEDConfig.addrPLCRedLED, e.LEDIndex);
@@ -1652,7 +1737,9 @@ namespace LEDController.Presenter
 
         private void OnOpenFixDarkRedLED(object sender, EventLEDArgs e)
         {
-            if (connector.isAlive)
+            CheckBox cbxDarkRedLEDMainSwitch = (CheckBox)(this._view.Controls.Find("cbxDarkRedLEDMainSwitch", true)[0]);
+
+            if (connector.isAlive && cbxDarkRedLEDMainSwitch.Checked)
             {
                 // Turn on Fix LED
                 connector.TurnOnFixLED(LEDConfig.addrPLCDarkRedLED, e.LEDIndex);

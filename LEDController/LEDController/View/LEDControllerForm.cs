@@ -88,6 +88,9 @@ namespace LEDController.View
         public event EventHandler<EventArgs> StartReceive;
         public event EventHandler<EventArgs> StopReceive;
         public event EventHandler<EventArgs> ChangeTabIndex;
+        public event EventHandler<EventArgs> ChangeGreenLEDMainSwitch;
+        public event EventHandler<EventArgs> ChangeRedLEDMainSwitch;
+        public event EventHandler<EventArgs> ChangeDarkRedLEDMainSwitch;
 
         public DispatcherTimer timer = new DispatcherTimer();
         public DispatcherTimer timerCountDown = new DispatcherTimer();
@@ -1019,6 +1022,21 @@ namespace LEDController.View
         private void tabCtrlMain_TabIndexChanged(object sender, EventArgs e)
         {
             ChangeTabIndex?.Invoke(sender, e);
+        }
+
+        private void cbxDarkRedLEDMainSwitch_Click(object sender, EventArgs e)
+        {
+            ChangeDarkRedLEDMainSwitch?.Invoke(sender, e);
+        }
+
+        private void cbxRedLEDMainSwitch_Click(object sender, EventArgs e)
+        {
+            ChangeRedLEDMainSwitch?.Invoke(sender, e);
+        }
+
+        private void cbxGreenLEDMainSwitch_Click(object sender, EventArgs e)
+        {
+            ChangeGreenLEDMainSwitch?.Invoke(sender, e);
         }
     }
 
