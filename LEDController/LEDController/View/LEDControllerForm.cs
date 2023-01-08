@@ -85,6 +85,9 @@ namespace LEDController.View
         public event EventHandler<EventArgs> TurnOffPCPower;
         public event EventHandler<EventArgs> StartCountDown;
         public event EventHandler<EventArgs> StopCountDown;
+        public event EventHandler<EventArgs> StartReceive;
+        public event EventHandler<EventArgs> StopReceive;
+        public event EventHandler<EventArgs> ChangeTabIndex;
 
         public DispatcherTimer timer = new DispatcherTimer();
         public DispatcherTimer timerCountDown = new DispatcherTimer();
@@ -494,41 +497,49 @@ namespace LEDController.View
         private void tsmLEDControl_Click(object sender, EventArgs e)
         {
             tabCtrlMain.SelectedIndex = 1;
+            StopReceive?.Invoke(sender, e);
         }
 
         private void tsmLEDStatus_Click(object sender, EventArgs e)
         {
             tabCtrlMain.SelectedIndex = 2;
+            StopReceive?.Invoke(sender, e);
         }
 
         private void tsmChillerControl_Click(object sender, EventArgs e)
         {
             tabCtrlMain.SelectedIndex = 3;
+            StopReceive?.Invoke(sender, e);
         }
 
         private void tsmSkylightControl_Click(object sender, EventArgs e)
         {
             tabCtrlMain.SelectedIndex = 4;
+            StopReceive?.Invoke(sender, e);
         }
 
         private void tsmLightControl_Click(object sender, EventArgs e)
         {
             tabCtrlMain.SelectedIndex = 5;
+            StopReceive?.Invoke(sender, e);
         }
 
         private void tsmRTControl_Click(object sender, EventArgs e)
         {
             tabCtrlMain.SelectedIndex = 6;
+            StopReceive?.Invoke(sender, e);
         }
 
         private void tsmAirConditionerControl_Click(object sender, EventArgs e)
         {
             tabCtrlMain.SelectedIndex = 7;
+            StopReceive?.Invoke(sender, e);
         }
 
         private void tsmCameraControl_Click(object sender, EventArgs e)
         {
             tabCtrlMain.SelectedIndex = 8;
+            StopReceive?.Invoke(sender, e);
         }
 
         private void btnShowLEDStatus_Click(object sender, EventArgs e)
@@ -993,6 +1004,21 @@ namespace LEDController.View
         private void btnPCOff_Click(object sender, EventArgs e)
         {
             TurnOffPCPower?.Invoke(sender, e);
+        }
+
+        private void btnStartReceive_Click(object sender, EventArgs e)
+        {
+            StartReceive?.Invoke(sender, e);
+        }
+
+        private void btnStopReceive_Click(object sender, EventArgs e)
+        {
+            StopReceive?.Invoke(sender, e);
+        }
+
+        private void tabCtrlMain_TabIndexChanged(object sender, EventArgs e)
+        {
+            ChangeTabIndex?.Invoke(sender, e);
         }
     }
 

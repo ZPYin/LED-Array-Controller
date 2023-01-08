@@ -48,11 +48,6 @@ namespace LEDController.Presenter
         {
             this.sw = Stopwatch.StartNew();
             this.connector = new LEDBoardCom();
-            recWorker.WorkerReportsProgress = true;
-            recWorker.WorkerSupportsCancellation = true;
-            recWorker.DoWork += ReceiveMsg;
-            recWorker.ProgressChanged += ShowReceiveStatusAsync;
-            recWorker.RunWorkerCompleted += OnConnectionBreak;
 
             _view = newView;
             _view.ConnectTCP += new EventHandler<EventArgs>(OnConnectTCP);
@@ -125,6 +120,9 @@ namespace LEDController.Presenter
             _view.TurnOffPCPower += new EventHandler<EventArgs>(OnTurnOffPCPower);
             _view.StartCountDown += new EventHandler<EventArgs>(OnStartCountDown);
             _view.StopCountDown += new EventHandler<EventArgs>(OnStopCountDown);
+            _view.StartReceive += new EventHandler<EventArgs>(OnStartReceive);
+            _view.StopReceive += new EventHandler<EventArgs>(OnStopReceive);
+            _view.ChangeTabIndex += new EventHandler<EventArgs>(OnChangeTabIndex);
 
             // Initialize Form
             InitialForm();
@@ -153,6 +151,44 @@ namespace LEDController.Presenter
 
             updateLEDStatusTimer = new System.Threading.Timer(this.UpdateLEDLiveData, 0, 0, 1000);
             renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, sig, 0, 3600 * 1000);
+        }
+
+        public void OnChangeTabIndex(object sender, EventArgs e)
+        {
+            TabControl tabCtrlMain = sender as TabControl;
+
+            if ((tabCtrlMain.SelectedIndex != 0) && (recWorker.IsBusy))
+            {
+                OnStopReceive(sender, e);
+            }
+        }
+
+        public void OnStopReceive(object sender, EventArgs e)
+        {
+            Button btnStartReceive = (Button)(this._view.Controls.Find("btnStartReceive", true)[0]);
+            btnStartReceive.BackColor = Color.Transparent;
+
+            if (recWorker.IsBusy)
+            {
+                recWorker.CancelAsync();
+            }
+        }
+
+        public void OnStartReceive(object sender, EventArgs e)
+        {
+            Button btnStartReceive = (Button)(this._view.Controls.Find("btnStartReceive", true)[0]);
+            btnStartReceive.BackColor = Color.Green;
+
+            recWorker.WorkerReportsProgress = true;
+            recWorker.WorkerSupportsCancellation = true;
+            recWorker.DoWork += ReceiveMsg;
+            recWorker.ProgressChanged += ShowReceiveStatusAsync;
+            recWorker.RunWorkerCompleted += OnConnectionBreak;
+
+            if (!recWorker.IsBusy)
+            {
+                recWorker.RunWorkerAsync();
+            }
         }
 
         public void OnStopCountDown(object sender, EventArgs e)
@@ -434,11 +470,6 @@ namespace LEDController.Presenter
                 rbnRecHEX.Enabled = false;
                 rbnRecASCII.Enabled = false;
                 btnSendTestMsg.Enabled = true;
-
-                if (!recWorker.IsBusy)
-                {
-                    recWorker.RunWorkerAsync();
-                }
             }
             catch (Exception ex)
             {
@@ -464,12 +495,17 @@ namespace LEDController.Presenter
             Button btnOpenCOM = (Button)(this._view.Controls.Find("btnOpenCOM", true)[0]);
             Button btnCloseCOM = (Button)(this._view.Controls.Find("btnCloseCOM", true)[0]);
             Button btnSendTestMsg = (Button)(this._view.Controls.Find("btnSendTestMsg", true)[0]);
+            Button btnStartReceive = (Button)(this._view.Controls.Find("btnStartReceive", true)[0]);
 
             // Close connection
             try
             {
                 this.connector.Disconnect();
-                recWorker.CancelAsync();
+                if (recWorker.IsBusy)
+                {
+                    recWorker.CancelAsync();
+                }
+                btnStartReceive.BackColor = Color.Transparent;
                 ShowSendStatusAsync();
                 _view.toolStripConnectionStatusText = "断开成功";
                 // show disconnect message
@@ -550,10 +586,10 @@ namespace LEDController.Presenter
             }
             cbxStopBit.SelectedIndex = 0;
 
-            RadioButton rbnSendASCII = (RadioButton)(this._view.Controls.Find("rbnSendASCII", true)[0]);
-            RadioButton rbnRecASCII = (RadioButton)(this._view.Controls.Find("rbnRecASCII", true)[0]);
-            rbnSendASCII.Checked = true;
-            rbnRecASCII.Checked = true;
+            RadioButton rbnSendHEX = (RadioButton)(this._view.Controls.Find("rbnSendHEX", true)[0]);
+            RadioButton rbnRecHEX = (RadioButton)(this._view.Controls.Find("rbnRecHEX", true)[0]);
+            rbnSendHEX.Checked = true;
+            rbnRecHEX.Checked = true;
 
             // Initialize LED min/max values
             Label lblGreenLEDMaxLeft = (Label)(this._view.Controls.Find("lblGreenLEDMaxLeft", true)[0]);
@@ -945,7 +981,13 @@ namespace LEDController.Presenter
 
         private void OnConnectionBreak(object sender, RunWorkerCompletedEventArgs args)
         {
-            recWorker.CancelAsync();
+            if (recWorker.IsBusy)
+            {
+                recWorker.CancelAsync();
+            }
+            
+            Button btnStartReceive = (Button)(this._view.Controls.Find("btnStartReceive", true)[0]);
+            btnStartReceive.BackColor = Color.Transparent;
         }
 
         private void OnStopShowLEDStatus(object sender, EventArgs e)
@@ -1676,7 +1718,7 @@ namespace LEDController.Presenter
             // Show LED status
             QueryType qType = QueryType.FixGreenLED;
 
-            if ((connector != null) && (receiveBytes != null))
+            if (this.connector.isAlive)
             {
                 try
                 {
@@ -1708,7 +1750,7 @@ namespace LEDController.Presenter
             // Show LED status
             QueryType qType = QueryType.FixRedLED;
 
-            if ((connector != null) && (receiveBytes != null))
+            if (this.connector.isAlive)
             {
                 try
                 {
@@ -1740,7 +1782,7 @@ namespace LEDController.Presenter
             // Show LED status
             QueryType qType = QueryType.FixDarkRedLED;
 
-            if ((connector != null) && (receiveBytes != null))
+            if (this.connector.isAlive)
             {
                 try
                 {
@@ -1772,7 +1814,7 @@ namespace LEDController.Presenter
             // Show LED status
             QueryType qType = QueryType.DimGreenLED;
 
-            if ((connector != null) && (receiveBytes != null))
+            if (this.connector.isAlive)
             {
                 try
                 {
@@ -1804,7 +1846,7 @@ namespace LEDController.Presenter
             // Show LED status
             QueryType qType = QueryType.DimRedLED;
 
-            if ((connector != null) && (receiveBytes != null))
+            if (this.connector.isAlive)
             {
                 try
                 {
@@ -1836,7 +1878,7 @@ namespace LEDController.Presenter
             // Show LED status
             QueryType qType = QueryType.DimDarkRedLED;
 
-            if ((connector != null) && (receiveBytes != null))
+            if (this.connector.isAlive)
             {
                 try
                 {
@@ -2010,11 +2052,6 @@ namespace LEDController.Presenter
                 btnOpenTCP.BackColor = Color.Green;
                 btnCloseTCP.BackColor = Color.Empty;
                 btnSendTestMsg.Enabled = true;
-
-                if (!recWorker.IsBusy)
-                {
-                    recWorker.RunWorkerAsync();
-                }
             }
             catch (Exception ex)
             {
@@ -2031,12 +2068,17 @@ namespace LEDController.Presenter
             Button btnOpenTCP = (Button)(this._view.Controls.Find("btnOpenTCP", true)[0]);
             Button btnCloseTCP = (Button)(this._view.Controls.Find("btnCloseTCP", true)[0]);
             Button btnSendTestMsg = (Button)(this._view.Controls.Find("btnSendTestMsg", true)[0]);
+            Button btnStartReceive = (Button)(this._view.Controls.Find("btnStartReceive", true)[0]);
 
             // Close connection
             try
             {
                 connector.Disconnect();
-                recWorker.CancelAsync();
+                if (recWorker.IsBusy)
+                {
+                    recWorker.CancelAsync();
+                }
+                btnStartReceive.BackColor = Color.Transparent;
                 ShowSendStatusAsync();
                 _view.toolStripConnectionStatusText = "断开成功";
                 // show disconnect message

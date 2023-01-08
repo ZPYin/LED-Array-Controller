@@ -59,6 +59,8 @@ namespace LEDController.View
             this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabCtrlMain = new System.Windows.Forms.TabControl();
             this.tpgConnect = new System.Windows.Forms.TabPage();
+            this.btnStopReceive = new System.Windows.Forms.Button();
+            this.btnStartReceive = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rbnRecASCII = new System.Windows.Forms.RadioButton();
             this.rbnRecHEX = new System.Windows.Forms.RadioButton();
@@ -279,6 +281,7 @@ namespace LEDController.View
             this.btnGreenLED2 = new System.Windows.Forms.Button();
             this.btnGreenLED1 = new System.Windows.Forms.Button();
             this.tpgLEDStatus = new System.Windows.Forms.TabPage();
+            this.lblCountDown = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblDarkRedLEDTempRD = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
@@ -484,7 +487,6 @@ namespace LEDController.View
             this.btnSendStatus1 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.lblCountDown = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabCtrlMain.SuspendLayout();
             this.tpgConnect.SuspendLayout();
@@ -778,9 +780,12 @@ namespace LEDController.View
             this.tabCtrlMain.Size = new System.Drawing.Size(1050, 560);
             this.tabCtrlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabCtrlMain.TabIndex = 0;
+            this.tabCtrlMain.SelectedIndexChanged += new System.EventHandler(this.tabCtrlMain_TabIndexChanged);
             // 
             // tpgConnect
             // 
+            this.tpgConnect.Controls.Add(this.btnStopReceive);
+            this.tpgConnect.Controls.Add(this.btnStartReceive);
             this.tpgConnect.Controls.Add(this.panel4);
             this.tpgConnect.Controls.Add(this.panel3);
             this.tpgConnect.Controls.Add(this.panel2);
@@ -800,6 +805,30 @@ namespace LEDController.View
             this.tpgConnect.TabIndex = 0;
             this.tpgConnect.Text = "连接测试";
             this.tpgConnect.UseVisualStyleBackColor = true;
+            // 
+            // btnStopReceive
+            // 
+            this.btnStopReceive.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnStopReceive.Location = new System.Drawing.Point(414, 354);
+            this.btnStopReceive.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStopReceive.Name = "btnStopReceive";
+            this.btnStopReceive.Size = new System.Drawing.Size(75, 30);
+            this.btnStopReceive.TabIndex = 25;
+            this.btnStopReceive.Text = "停止";
+            this.btnStopReceive.UseVisualStyleBackColor = true;
+            this.btnStopReceive.Click += new System.EventHandler(this.btnStopReceive_Click);
+            // 
+            // btnStartReceive
+            // 
+            this.btnStartReceive.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnStartReceive.Location = new System.Drawing.Point(326, 354);
+            this.btnStartReceive.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStartReceive.Name = "btnStartReceive";
+            this.btnStartReceive.Size = new System.Drawing.Size(75, 30);
+            this.btnStartReceive.TabIndex = 24;
+            this.btnStartReceive.Text = "开始";
+            this.btnStartReceive.UseVisualStyleBackColor = true;
+            this.btnStartReceive.Click += new System.EventHandler(this.btnStartReceive_Click);
             // 
             // panel4
             // 
@@ -3892,6 +3921,16 @@ namespace LEDController.View
             this.tpgLEDStatus.Text = "LED状态";
             this.tpgLEDStatus.UseVisualStyleBackColor = true;
             // 
+            // lblCountDown
+            // 
+            this.lblCountDown.AutoSize = true;
+            this.lblCountDown.BackColor = System.Drawing.Color.LavenderBlush;
+            this.lblCountDown.Location = new System.Drawing.Point(160, 195);
+            this.lblCountDown.Name = "lblCountDown";
+            this.lblCountDown.Size = new System.Drawing.Size(23, 12);
+            this.lblCountDown.TabIndex = 16;
+            this.lblCountDown.Text = "0 s";
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.PapayaWhip;
@@ -6458,16 +6497,6 @@ namespace LEDController.View
             this.label53.TabIndex = 15;
             this.label53.Text = "发送";
             // 
-            // lblCountDown
-            // 
-            this.lblCountDown.AutoSize = true;
-            this.lblCountDown.BackColor = System.Drawing.Color.LavenderBlush;
-            this.lblCountDown.Location = new System.Drawing.Point(160, 195);
-            this.lblCountDown.Name = "lblCountDown";
-            this.lblCountDown.Size = new System.Drawing.Size(23, 12);
-            this.lblCountDown.TabIndex = 16;
-            this.lblCountDown.Text = "0 s";
-            // 
             // LEDControllerViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -7037,6 +7066,8 @@ namespace LEDController.View
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label lblCountDown;
+        private System.Windows.Forms.Button btnStartReceive;
+        private System.Windows.Forms.Button btnStopReceive;
     }
 }
 

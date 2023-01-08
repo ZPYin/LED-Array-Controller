@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace LEDController.Model
 {
@@ -328,7 +329,7 @@ namespace LEDController.Model
     public class ModbusRTU : Modbus
     {
         private SerialPort serialPort;
-        private int modbusTimeout = 30;
+        private int modbusTimeout = 100;
         private string _portName;
         private string _baudRate;
         private string _dataBit;
@@ -443,27 +444,26 @@ namespace LEDController.Model
 
         private byte[] SendReceive(byte[] packet)
         {
-            byte[] buffer = new byte[ReceiveBufferSize];
             byte[] rtn;
-            int msgLen;
-            int timeoutTmp;
-            try
+            int msgLen = 0;
+            serialPort.Write(packet, 0, packet.Count());
+            Thread.Sleep(modbusTimeout);
+            DateTime dt = DateTime.Now;
+            while (serialPort.BytesToRead < 3)
             {
-                serialPort.Write(packet, 0, packet.Count());
-                Thread.Sleep(modbusTimeout);
-                msgLen = serialPort.Read(buffer, 0, 1);
-                timeoutTmp = serialPort.ReadTimeout;
-                serialPort.ReadTimeout = modbusTimeout;
-                msgLen += serialPort.Read(buffer, 1, ReceiveBufferSize - 1);
+                Thread.Sleep(1);
+                if (DateTime.Now.Subtract(dt).TotalMilliseconds > 1000)
+                {
+                    throw new IOException("No response.");
+                }
             }
-            catch
-            {
-                throw new IOException("ModBus RTU error: No data received.");
-            }
+            byte[] buffer = new byte[serialPort.BytesToRead];
+            msgLen = serialPort.Read(buffer, 0, buffer.Length);
 
-            byte[] subArray = new byte[msgLen - 2];
+            byte[] subArray;
             if (msgLen > 3)
             {
+                subArray = new byte[msgLen - 2];
                 Array.Copy(buffer, 0, subArray, 0, msgLen - 2);
             }
             else
@@ -485,8 +485,6 @@ namespace LEDController.Model
                 rtn = new byte[4];
                 Array.Copy(buffer, 2, rtn, 0, 4);
             }
-
-            serialPort.ReadTimeout = timeoutTmp;
 
             return rtn;
         }

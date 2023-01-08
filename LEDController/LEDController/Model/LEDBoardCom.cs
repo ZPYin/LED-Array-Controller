@@ -659,11 +659,11 @@ namespace LEDController.Model
             int nLED = recData.Length / 2;
             double[] LEDPowers = new double[nLED];
 
+            int value;
             for (int i = 0; i < nLED; i++)
             {
-                byte[] thisLEDData = new byte[2];
-                Array.Copy(recData, i * 2, thisLEDData, 0, 2);
-                LEDPowers[i] = Convert.ToDouble(thisLEDData);
+                value = (recData[i * 2] << 8) | (recData[i * 2 + 1]);
+                LEDPowers[i] = Convert.ToDouble(value);
             }
 
             return LEDPowers;
@@ -674,11 +674,11 @@ namespace LEDController.Model
             int nLED = recData.Length / 2;
             double[] LEDVoltages = new double[nLED];
 
+            int value;
             for (int i = 0; i < nLED; i++)
             {
-                byte[] thisLEDData = new byte[2];
-                Array.Copy(recData, i * 2, thisLEDData, 0, 2);
-                LEDVoltages[i] = Convert.ToDouble(thisLEDData) / 100.0;
+                value = (recData[i * 2] << 8) | (recData[i * 2 + 1]);
+                LEDVoltages[i] = Convert.ToDouble(value) / 100.0;
             }
 
             return LEDVoltages;
@@ -689,11 +689,11 @@ namespace LEDController.Model
             int nLED = recData.Length / 2;
             double[] LEDCurrents = new double[nLED];
 
+            int value;
             for (int i = 0; i < nLED; i++)
             {
-                byte[] thisLEDData = new byte[2];
-                Array.Copy(recData, i * 2, thisLEDData, 0, 2);
-                LEDCurrents[i] = Convert.ToDouble(thisLEDData) / 1000.0;
+                value = (recData[i * 2] << 8) | (recData[i * 2 + 1]);
+                LEDCurrents[i] = Convert.ToDouble(value) / 1000.0;
             }
 
             return LEDCurrents;
@@ -704,11 +704,11 @@ namespace LEDController.Model
             int nTemp = recData.Length / 2;
             double[] temperatures = new double[nTemp];
 
+            int value;
             for (int i = 0; i < nTemp; i++)
             {
-                byte[] thisTempData = new byte[2];
-                Array.Copy(recData, i * 2, thisTempData, 0, 2);
-                temperatures[i] = Convert.ToDouble(thisTempData);
+                value = (recData[i * 2] << 8) | (recData[i * 2 + 1]);
+                temperatures[i] = Convert.ToDouble(value);
             }
 
             return temperatures;
