@@ -967,7 +967,7 @@ namespace LEDController.Presenter
                 {
                     int dimLEDIndex = i + 1;
                     int LEDIndex = dimLEDIndex;
-                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimGreenLEDPower[i], LEDIndex, 3) / (double)NumScrollBarLevel * 255);
+                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimGreenLEDPower[i], LEDIndex, 3) / (double)NumScrollBarLevel * 1000);
 
                     // configure dimmable LED textbox and scrollbar
                     TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimGreenLED{dimLEDIndex}", true)[0]);
@@ -988,7 +988,7 @@ namespace LEDController.Presenter
                 {
                     int dimLEDIndex = i + 1;
                     int LEDIndex = dimLEDIndex;
-                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimRedLEDPower[i], LEDIndex, 1) / (double)NumScrollBarLevel * 255);
+                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimRedLEDPower[i], LEDIndex, 1) / (double)NumScrollBarLevel * 1000);
 
                     // configure dimmable LED textbox and scrollbar
                     TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimRedLED{dimLEDIndex}", true)[0]);
@@ -1009,7 +1009,7 @@ namespace LEDController.Presenter
                 {
                     int dimLEDIndex = i + 1;
                     int LEDIndex = dimLEDIndex;
-                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimDarkRedLEDPower[i], LEDIndex, 2) / (double)NumScrollBarLevel * 255);
+                    int LEDPowerBit = (Int16)((double)CalcSbarValue(LEDCfgReader.dimDarkRedLEDPower[i], LEDIndex, 2) / (double)NumScrollBarLevel * 1000);
 
                     // configure dimmable LED textbox and scrollbar
                     TextBox tbx = (TextBox)(_view.Controls.Find($"tbxDimDarkRedLED{dimLEDIndex}", true)[0]);
@@ -1466,50 +1466,48 @@ namespace LEDController.Presenter
             // Calculate scroll bar value for Dimmable LED
             int sbarValue = 0;
 
-            switch (addrPLC)
+            if (addrPLC == LEDConfig.addrPLCRedLED)
             {
-                case 1:
-                    // Red LED
-                    if ((LEDPower < MinRedLEDPower) || (LEDPower > MaxRedLEDPower))
-                    {
-                        MessageBox.Show($"红光设定功率超出范围 (设定值:{LEDPower})", "警告");
-                        return sbarValue;
-                    }
-                    else
-                    {
-                        sbarValue = Convert.ToInt32((LEDPower - MinRedLEDPower) / (MaxRedLEDPower - MinRedLEDPower) * NumScrollBarLevel);
-                    }
-                    break;
-
-                case 2:
-                    // DarkRed LED
-                    if ((LEDPower < MinDarkRedLEDPower) || (LEDPower > MaxDarkRedLEDPower))
-                    {
-                        MessageBox.Show($"红外设定功率超出范围 (设定值:{LEDPower})", "警告");
-                        return sbarValue;
-                    }
-                    else
-                    {
-                        sbarValue = Convert.ToInt32((LEDPower - MinDarkRedLEDPower) / (MaxDarkRedLEDPower - MinDarkRedLEDPower) * NumScrollBarLevel);
-                    }
-                    break;
-
-                case 3:
-                    // Green LED
-                    if ((LEDPower < MinGreenLEDPower) || (LEDPower > MaxGreenLEDPower))
-                    {
-                        MessageBox.Show($"绿光LED设定功率超出范围 (设定值:{LEDPower})", "警告");
-                        return sbarValue;
-                    }
-                    else
-                    {
-                        sbarValue = Convert.ToInt32((LEDPower - MinGreenLEDPower) / (MaxGreenLEDPower - MinGreenLEDPower) * NumScrollBarLevel);
-                    }
-                    break;
-
-                default:
-                    sbarValue = 0;
-                    break;
+                // Red LED
+                if ((LEDPower < MinRedLEDPower) || (LEDPower > MaxRedLEDPower))
+                {
+                    MessageBox.Show($"红光设定功率超出范围 (设定值:{LEDPower})", "警告");
+                    return sbarValue;
+                }
+                else
+                {
+                    sbarValue = Convert.ToInt32((LEDPower - MinRedLEDPower) / (MaxRedLEDPower - MinRedLEDPower) * NumScrollBarLevel);
+                }
+            }
+            else if (addrPLC == LEDConfig.addrPLCDarkRedLED)
+            {
+                // DarkRed LED
+                if ((LEDPower < MinDarkRedLEDPower) || (LEDPower > MaxDarkRedLEDPower))
+                {
+                    MessageBox.Show($"红外设定功率超出范围 (设定值:{LEDPower})", "警告");
+                    return sbarValue;
+                }
+                else
+                {
+                    sbarValue = Convert.ToInt32((LEDPower - MinDarkRedLEDPower) / (MaxDarkRedLEDPower - MinDarkRedLEDPower) * NumScrollBarLevel);
+                }
+            }
+            else if (addrPLC == LEDConfig.addrPLCGreenLED)
+            {
+                // Green LED
+                if ((LEDPower < MinGreenLEDPower) || (LEDPower > MaxGreenLEDPower))
+                {
+                    MessageBox.Show($"绿光LED设定功率超出范围 (设定值:{LEDPower})", "警告");
+                    return sbarValue;
+                }
+                else
+                {
+                    sbarValue = Convert.ToInt32((LEDPower - MinGreenLEDPower) / (MaxGreenLEDPower - MinGreenLEDPower) * NumScrollBarLevel);
+                }
+            }
+            else
+            {
+                throw new ArgumentException("Wrong PLC number");
             }
 
             return sbarValue;
@@ -1525,7 +1523,7 @@ namespace LEDController.Presenter
             }
 
             // Turn on Dimmable LED
-            int LEDPowerBit = (Int16)(CalcSbarValue(e.LEDPower, e.LEDIndex, LEDConfig.addrPLCGreenLED) / (double)NumScrollBarLevel * 255);   // Convert to 0-255
+            int LEDPowerBit = (Int16)(CalcSbarValue(e.LEDPower, e.LEDIndex, LEDConfig.addrPLCGreenLED) / (double)NumScrollBarLevel * 1000);
             try
             {
                 connector.SetDimLED(LEDConfig.addrPLCGreenLED, e.LEDIndex, LEDPowerBit);
@@ -1565,7 +1563,7 @@ namespace LEDController.Presenter
             }
 
             // Turn on Dimmable LED
-            int LEDPowerBit = (Int16)(CalcSbarValue(e.LEDPower, e.LEDIndex, LEDConfig.addrPLCRedLED) / (double)NumScrollBarLevel * 255);   // Convert to 0-255
+            int LEDPowerBit = (Int16)(CalcSbarValue(e.LEDPower, e.LEDIndex, LEDConfig.addrPLCRedLED) / (double)NumScrollBarLevel * 1000);
             try
             {
                 connector.SetDimLED(LEDConfig.addrPLCRedLED, e.LEDIndex, LEDPowerBit);
@@ -1605,7 +1603,7 @@ namespace LEDController.Presenter
             }
 
             // Turn on Dimmable LED
-            int LEDPowerBit = (Int16)(CalcSbarValue(e.LEDPower, e.LEDIndex, LEDConfig.addrPLCDarkRedLED) / (double)NumScrollBarLevel * 255);   // Convert to 0-255
+            int LEDPowerBit = (Int16)(CalcSbarValue(e.LEDPower, e.LEDIndex, LEDConfig.addrPLCDarkRedLED) / (double)NumScrollBarLevel * 1000);
             try
             {
                 connector.SetDimLED(LEDConfig.addrPLCDarkRedLED, e.LEDIndex, LEDPowerBit);

@@ -987,9 +987,11 @@ namespace LEDController.Model
                 recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)4));
                 status.tempGreenLED = ParseTemperature(recData);
                 Thread.Sleep(100);
+
                 recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)4));
                 status.tempRedLED = ParseTemperature(recData);
                 Thread.Sleep(100);
+
                 recData = this.device.WriteReceive((byte)LEDConfig.addrPLCDarkRedLED, 3, (ushort)LEDConfig.addrTempSensor[0], BitConverter.GetBytes((ushort)4));
                 status.tempDarkRedLED = ParseTemperature(recData);
             }
