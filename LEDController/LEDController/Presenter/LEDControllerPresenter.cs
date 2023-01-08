@@ -22,9 +22,9 @@ namespace LEDController.Presenter
         private const int SendBufferSize = 2 * 1024;
         private const double MaxGreenLEDPower = 10.0;
         private const double MinGreenLEDPower = 0.0;
-        private const double MaxRedLEDPower = 20.0;
+        private const double MaxRedLEDPower = 10.0;
         private const double MinRedLEDPower = 0.0;
-        private const double MaxDarkRedLEDPower = 30.0;
+        private const double MaxDarkRedLEDPower = 10.0;
         private const double MinDarkRedLEDPower = 0.0;
         private const int NumScrollBarLevel = 50;
         private const int NumLiveData = 3600;
@@ -1824,7 +1824,7 @@ namespace LEDController.Presenter
 
                     if (thisLEDStatus.isValidStatus)
                     {
-                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} mV | 电流: {thisLEDStatus.LEDCurrent} mA | 功率: {thisLEDStatus.LEDPower} mW";
+                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} V | 电流: {thisLEDStatus.LEDCurrent} A | 功率: {thisLEDStatus.LEDPower} W";
                     }
                     else
                     {
