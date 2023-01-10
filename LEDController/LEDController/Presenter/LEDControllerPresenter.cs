@@ -129,6 +129,8 @@ namespace LEDController.Presenter
             _view.ChangeGreenLEDMainSwitch += new EventHandler<EventArgs>(OnChangeGreenLEDMainSwitch);
             _view.ChangeRedLEDMainSwitch += new EventHandler<EventArgs>(OnChangeRedLEDMainSwitch);
             _view.ChangeDarkRedLEDMainSwitch += new EventHandler<EventArgs>(OnChangeDarkRedLEDMainSwitch);
+            _view.ChangeMinValue += new EventHandler<EventArgs>(OnChangeMinValue);
+            _view.ChangeMaxValue += new EventHandler<EventArgs>(OnChangeMaxValue);
 
             // Initialize Form
             InitialForm();
@@ -136,27 +138,26 @@ namespace LEDController.Presenter
             // Initialize LED status plot
             this.ledStatus = new AllLEDStatus();
             sw.Start();
-            Random rand = new Random(0);
+        }
 
+        public void OnChangeMaxValue(object sender, EventArgs e)
+        {
             FormsPlot formsLEDStatusPlot = (FormsPlot)(this._view.Controls.Find("formsLEDStatusPlot", true)[0]);
-            var sig = formsLEDStatusPlot.Plot.AddSignal(LEDPowerLiveData, sampleRate: 3600 * 24.0, label: "功率");
-            formsLEDStatusPlot.Plot.AddSignal(LEDCurrentLiveData, sampleRate: 3600 * 24.0, label: "电流");
-            formsLEDStatusPlot.Plot.AddSignal(LEDVoltageLiveData, sampleRate: 3600 * 24.0, label: "电压");
-            formsLEDStatusPlot.Plot.Title("LED状态");
-            formsLEDStatusPlot.Plot.XLabel("时间");
-            formsLEDStatusPlot.Plot.YLabel("强度");
-            formsLEDStatusPlot.Plot.Grid(true);
-            formsLEDStatusPlot.Plot.SetAxisLimitsY(0, 20);
-            sig.OffsetX = GetCurrentTime().ToOADate();
-            formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
-            formsLEDStatusPlot.Plot.XAxis.ManualTickSpacing(5, ScottPlot.Ticks.DateTimeUnit.Minute);
-            formsLEDStatusPlot.Plot.XAxis.TickLabelFormat("HH:mm", true);
-            formsLEDStatusPlot.Plot.XAxis.DateTimeFormat(true);
-            var legend = formsLEDStatusPlot.Plot.Legend(location: ScottPlot.Alignment.UpperRight);
-            formsLEDStatusPlot.Refresh();
+            TextBox tbxMinValue = (TextBox)(this._view.Controls.Find("tbxMinValue", true)[0]);
+            TextBox tbxMaxValue = (TextBox)(this._view.Controls.Find("tbxMaxValue", true)[0]);
+            formsLEDStatusPlot.Plot.SetAxisLimitsY(Convert.ToDouble(tbxMinValue.Text), Convert.ToDouble(tbxMaxValue.Text));
 
-            updateLEDStatusTimer = new System.Threading.Timer(this.UpdateLEDLiveData, 0, 0, 1000);
-            renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, sig, 0, 3600 * 1000);
+            formsLEDStatusPlot.Refresh();
+        }
+
+        public void OnChangeMinValue(object sender, EventArgs e)
+        {
+            FormsPlot formsLEDStatusPlot = (FormsPlot)(this._view.Controls.Find("formsLEDStatusPlot", true)[0]);
+            TextBox tbxMinValue = (TextBox)(this._view.Controls.Find("tbxMinValue", true)[0]);
+            TextBox tbxMaxValue = (TextBox)(this._view.Controls.Find("tbxMaxValue", true)[0]);
+            formsLEDStatusPlot.Plot.SetAxisLimitsY(Convert.ToDouble(tbxMinValue.Text), Convert.ToDouble(tbxMaxValue.Text));
+
+            formsLEDStatusPlot.Refresh();
         }
 
         public void OnChangeGreenLEDMainSwitch(object sender, EventArgs e)
@@ -712,12 +713,34 @@ namespace LEDController.Presenter
             cbxQueryWaitTime.SelectedIndex = 2;
 
             ComboBox cbxQueryParam = (ComboBox)(this._view.Controls.Find("cbxQueryParam", true)[0]);
-            string[] queryParams = {"LED电流", "LED电压", "LED功率", "LED状态"};
+            string[] queryParams = {"LED电流", "LED电压", "LED功率"};
             foreach (string queryParam in queryParams)
             {
                 cbxQueryParam.Items.Add(queryParam);
             }
             cbxQueryParam.SelectedIndex = 0;
+
+            FormsPlot formsLEDStatusPlot = (FormsPlot)(this._view.Controls.Find("formsLEDStatusPlot", true)[0]);
+            TextBox tbxMinValue = (TextBox)(this._view.Controls.Find("tbxMinValue", true)[0]);
+            TextBox tbxMaxValue = (TextBox)(this._view.Controls.Find("tbxMaxValue", true)[0]);
+            var sig = formsLEDStatusPlot.Plot.AddSignal(LEDPowerLiveData, sampleRate: 3600 * 24.0, label: "功率");
+            formsLEDStatusPlot.Plot.AddSignal(LEDCurrentLiveData, sampleRate: 3600 * 24.0, label: "电流");
+            formsLEDStatusPlot.Plot.AddSignal(LEDVoltageLiveData, sampleRate: 3600 * 24.0, label: "电压");
+            formsLEDStatusPlot.Plot.Title("LED状态");
+            formsLEDStatusPlot.Plot.XLabel("时间");
+            formsLEDStatusPlot.Plot.YLabel("强度");
+            formsLEDStatusPlot.Plot.Grid(true);
+            formsLEDStatusPlot.Plot.SetAxisLimitsY(Convert.ToDouble(tbxMinValue.Text), (Convert.ToDouble(tbxMaxValue.Text)));
+            sig.OffsetX = GetCurrentTime().ToOADate();
+            formsLEDStatusPlot.Plot.SetAxisLimitsX(GetCurrentTime().ToOADate(), GetCurrentTime().AddHours(1.0).ToOADate());
+            formsLEDStatusPlot.Plot.XAxis.ManualTickSpacing(5, ScottPlot.Ticks.DateTimeUnit.Minute);
+            formsLEDStatusPlot.Plot.XAxis.TickLabelFormat("HH:mm", true);
+            formsLEDStatusPlot.Plot.XAxis.DateTimeFormat(true);
+            var legend = formsLEDStatusPlot.Plot.Legend(location: ScottPlot.Alignment.UpperRight);
+            formsLEDStatusPlot.Refresh();
+
+            updateLEDStatusTimer = new System.Threading.Timer(this.UpdateLEDLiveData, 0, 0, 1000);
+            renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, sig, 0, 3600 * 1000);
         }
 
         public LEDControllerCfg GetUISettings(LEDControllerViewer thisView)
@@ -1112,9 +1135,9 @@ namespace LEDController.Presenter
                 ToolStripStatusLabel tsslGreenLEDTotalPower = statusStrip1.Items[0] as ToolStripStatusLabel;
                 ToolStripStatusLabel tsslRedLEDTotalPower = statusStrip1.Items[1] as ToolStripStatusLabel;
                 ToolStripStatusLabel tsslDarkRedLEDTotalPower = statusStrip1.Items[2] as ToolStripStatusLabel;
-                tsslGreenLEDTotalPower.Text = $"绿光实时总功率: {this.ledStatus.CalcTotalGreenLEDPower()} W";
-                tsslRedLEDTotalPower.Text = $"红光实时总功率: {this.ledStatus.CalcTotalRedLEDPower()} W";
-                tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: {this.ledStatus.CalcTotalDarkRedLEDPower()} W";
+                tsslGreenLEDTotalPower.Text = $"绿光实时总功率: " + string.Format("{0,6:F3}", this.ledStatus.CalcTotalGreenLEDPower()) + " V";
+                tsslRedLEDTotalPower.Text = $"红光实时总功率: " + string.Format("{0,6:F3}", this.ledStatus.CalcTotalRedLEDPower()) + " V";
+                tsslDarkRedLEDTotalPower.Text = $"红外实时总功率: " + string.Format("{0,6:F3}", this.ledStatus.CalcTotalDarkRedLEDPower()) + " V";
 
                 Label lblGreenLEDTempLU = (Label)(this._view.Controls.Find("lblGreenLEDTempLU", true)[0]);
                 Label lblGreenLEDTempLD = (Label)(this._view.Controls.Find("lblGreenLEDTempLD", true)[0]);
@@ -1128,22 +1151,22 @@ namespace LEDController.Presenter
                 Label lblDarkRedLEDTempLD = (Label)(this._view.Controls.Find("lblDarkRedLEDTempLD", true)[0]);
                 Label lblDarkRedLEDTempRD = (Label)(this._view.Controls.Find("lblDarkRedLEDTempRD", true)[0]);
                 Label lblDarkRedLEDTempRU = (Label)(this._view.Controls.Find("lblDarkRedLEDTempRU", true)[0]);
-                lblGreenLEDTempLU.Text = this.ledStatus.tempGreenLED[0].ToString();
-                lblGreenLEDTempLD.Text = this.ledStatus.tempGreenLED[1].ToString();
-                lblGreenLEDTempRD.Text = this.ledStatus.tempGreenLED[2].ToString();
-                lblGreenLEDTempRU.Text = this.ledStatus.tempGreenLED[3].ToString();
-                lblRedLEDTempLU.Text = this.ledStatus.tempRedLED[0].ToString();
-                lblRedLEDTempLD.Text = this.ledStatus.tempRedLED[1].ToString();
-                lblRedLEDTempRD.Text = this.ledStatus.tempRedLED[2].ToString();
-                lblRedLEDTempRU.Text = this.ledStatus.tempRedLED[3].ToString();
-                lblDarkRedLEDTempLU.Text = this.ledStatus.tempDarkRedLED[0].ToString();
-                lblDarkRedLEDTempLD.Text = this.ledStatus.tempDarkRedLED[1].ToString();
-                lblDarkRedLEDTempRD.Text = this.ledStatus.tempDarkRedLED[2].ToString();
-                lblDarkRedLEDTempRU.Text = this.ledStatus.tempDarkRedLED[3].ToString();
+                lblGreenLEDTempLU.Text = this.ledStatus.tempGreenLED[0].ToString("F1");
+                lblGreenLEDTempLD.Text = this.ledStatus.tempGreenLED[1].ToString("F1");
+                lblGreenLEDTempRD.Text = this.ledStatus.tempGreenLED[2].ToString("F1");
+                lblGreenLEDTempRU.Text = this.ledStatus.tempGreenLED[3].ToString("F1");
+                lblRedLEDTempLU.Text = this.ledStatus.tempRedLED[0].ToString("F1");
+                lblRedLEDTempLD.Text = this.ledStatus.tempRedLED[1].ToString("F1");
+                lblRedLEDTempRD.Text = this.ledStatus.tempRedLED[2].ToString("F1");
+                lblRedLEDTempRU.Text = this.ledStatus.tempRedLED[3].ToString("F1");
+                lblDarkRedLEDTempLU.Text = this.ledStatus.tempDarkRedLED[0].ToString("F1");
+                lblDarkRedLEDTempLD.Text = this.ledStatus.tempDarkRedLED[1].ToString("F1");
+                lblDarkRedLEDTempRD.Text = this.ledStatus.tempDarkRedLED[2].ToString("F1");
+                lblDarkRedLEDTempRU.Text = this.ledStatus.tempDarkRedLED[3].ToString("F1");
 
                 if (statusDataFS != null)
                 {
-                    byte[] info = new UTF8Encoding(true).GetBytes($"[{this.ledStatus.updatedTime.ToString("yyyy-mm-dd HH:MM:SS")}] 绿光总功率= {this.ledStatus.CalcTotalGreenLEDPower()} W; 红光总功率: {this.ledStatus.CalcTotalRedLEDPower()} W; 红外总功率: {this.ledStatus.CalcTotalDarkRedLEDPower()} W" + "\r\n");
+                    byte[] info = new UTF8Encoding(true).GetBytes($"[{this.ledStatus.updatedTime.ToString("yyyy-mm-dd HH:MM:SS")}] 绿光总功率= {this.ledStatus.CalcTotalGreenLEDPower().ToString("F3")} V; 红光总功率: {this.ledStatus.CalcTotalRedLEDPower().ToString("F3")} V; 红外总功率: {this.ledStatus.CalcTotalDarkRedLEDPower().ToString("F03")} V" + "\r\n");
                     statusDataFS.Write(info, 0, info.Length);
                 }
 
@@ -1153,10 +1176,10 @@ namespace LEDController.Presenter
                     double[] LEDVoltage = this.ledStatus.GetLEDVoltageArray();
                     double[] LEDPower = this.ledStatus.GetLEDPowerArray();
 
-                    TextBox tbxMinValue = (TextBox)(this._view.Controls.Find("tbxMinValue", true)[0]);
-                    TextBox tbxMaxValue = (TextBox)(this._view.Controls.Find("tbxMaxValue", true)[0]);
-                    double minValue = Convert.ToDouble(tbxMinValue.Text);
-                    double maxValue = Convert.ToDouble(tbxMaxValue.Text);
+                    TextBox tbxMinNormValue = (TextBox)(this._view.Controls.Find("tbxMinNormValue", true)[0]);
+                    TextBox tbxMaxNormValue = (TextBox)(this._view.Controls.Find("tbxMaxNormValue", true)[0]);
+                    double minValue = Convert.ToDouble(tbxMinNormValue.Text);
+                    double maxValue = Convert.ToDouble(tbxMaxNormValue.Text);
 
                     ComboBox cbxQueryParam = (ComboBox)(this._view.Controls.Find("cbxQueryParam", true)[0]);
                     string queryType = (string)cbxQueryParam.SelectedItem;
@@ -1166,34 +1189,48 @@ namespace LEDController.Presenter
                     Panel panelLEDStatus = (Panel)(this._view.Controls.Find("panelLEDStatus", true)[0]);
                     this._view.GetAllControl(panelLEDStatus, btnList, "btnStatusLED");
                     Color[] LEDControlColors = new Color[btnList.Count()];
-                    double normLEDValue = 0.0;
+                    bool isLEDWarning = false;
+                    bool isUpdate = false;
                     for (int i = 0; i < btnList.Count(); i++)
                     {
-
                         switch (queryType)
                         {
                             case "LED电流":
-                                normLEDValue = (LEDCurrent[i] - minValue) / (maxValue - minValue);
+                                isLEDWarning = (LEDCurrent[i] > maxValue) || (LEDCurrent[i] < minValue) ? true : false;
                                 break;
 
                             case "LED电压":
-                                normLEDValue = (LEDVoltage[i] - minValue) / (maxValue - minValue);
+                                isLEDWarning = (LEDVoltage[i] > maxValue) || (LEDVoltage[i] < minValue) ? true : false;
                                 break;
 
                             case "LED功率":
-                                normLEDValue = (LEDPower[i] - minValue) / (maxValue - minValue);
-                                break;
-                            case "LED状态":
-                                normLEDValue = 0.0;
+                                isLEDWarning = (LEDPower[i] > maxValue) || (LEDPower[i] < minValue) ? true : false;
                                 break;
                         }
 
-                        // specify LED status according to the showing message type
-                        LEDControlColors[i] = ColorConv.HSL2RGB(normLEDValue, 0.5, 0.5);
-                    }
+                        if (isLEDWarning)
+                        {
+                            isUpdate = (btnList[i].BackColor.ToArgb().Equals(Color.Purple.ToArgb())) ? false : true;
+                        }
+                        else
+                        {
+                            isUpdate = (btnList[i].BackColor.ToArgb().Equals(Color.Transparent.ToArgb())) ? false : true;
+                        }
 
-                    // Set Colors
-                    _view.LEDStatusColors = LEDControlColors;
+                        if (isUpdate)
+                        {
+                            if (isLEDWarning)
+                            {
+                                btnList[i].BackColor = Color.Purple;
+                            }
+                            else
+                            {
+                                btnList[i].BackColor = Color.Transparent;
+                            }
+
+                            btnList[i].Refresh();
+                        }
+                    }
                 }
                 catch
                 {
@@ -1843,7 +1880,7 @@ namespace LEDController.Presenter
 
                     if (thisLEDStatus.isValidStatus)
                     {
-                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} V | 电流: {thisLEDStatus.LEDCurrent} A | 功率: {thisLEDStatus.LEDPower} W";
+                        this._view.toolStripLEDStatusText = $"电压:{string.Format("{0,6:F2}", thisLEDStatus.LEDVoltage)} V | 电流: {string.Format("{0,6:F3}", thisLEDStatus.LEDCurrent)} A | 功率: {string.Format("{0,6:F3}", thisLEDStatus.LEDPower)} V";
                     }
                     else
                     {
@@ -1878,7 +1915,7 @@ namespace LEDController.Presenter
 
                     if (thisLEDStatus.isValidStatus)
                     {
-                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} mV | 电流: {thisLEDStatus.LEDCurrent} mA | 功率: {thisLEDStatus.LEDPower} mW";
+                        this._view.toolStripLEDStatusText = $"电压:{string.Format("{0,6:F2}", thisLEDStatus.LEDVoltage)} V | 电流: {string.Format("{0,6:F3}", thisLEDStatus.LEDCurrent)} A | 功率: {string.Format("{0,6:F3}", thisLEDStatus.LEDPower)} V";
                     }
                     else
                     {
@@ -1913,7 +1950,7 @@ namespace LEDController.Presenter
 
                     if (thisLEDStatus.isValidStatus)
                     {
-                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} mV | 电流: {thisLEDStatus.LEDCurrent} mA | 功率: {thisLEDStatus.LEDPower} mW";
+                        this._view.toolStripLEDStatusText = $"电压:{string.Format("{0,6:F2}", thisLEDStatus.LEDVoltage)} V | 电流: {string.Format("{0,6:F3}", thisLEDStatus.LEDCurrent)} A | 功率: {string.Format("{0,6:F3}", thisLEDStatus.LEDPower)} V";
                     }
                     else
                     {
@@ -1948,7 +1985,7 @@ namespace LEDController.Presenter
 
                     if (thisLEDStatus.isValidStatus)
                     {
-                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} mV | 电流: {thisLEDStatus.LEDCurrent} mA | 功率: {thisLEDStatus.LEDPower} mW";
+                        this._view.toolStripLEDStatusText = $"电压:{string.Format("{0,6:F2}", thisLEDStatus.LEDVoltage)} V | 电流: {string.Format("{0,6:F3}", thisLEDStatus.LEDCurrent)} A | 功率: {string.Format("{0,6:F3}", thisLEDStatus.LEDPower)} V";
                     }
                     else
                     {
@@ -1983,7 +2020,7 @@ namespace LEDController.Presenter
 
                     if (thisLEDStatus.isValidStatus)
                     {
-                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} mV | 电流: {thisLEDStatus.LEDCurrent} mA | 功率: {thisLEDStatus.LEDPower} mW";
+                        this._view.toolStripLEDStatusText = $"电压:{string.Format("{0,6:F2}", thisLEDStatus.LEDVoltage)} V | 电流: {string.Format("{0,6:F3}", thisLEDStatus.LEDCurrent)} A | 功率: {string.Format("{0,6:F3}", thisLEDStatus.LEDPower)} V";
                     }
                     else
                     {
@@ -2018,7 +2055,7 @@ namespace LEDController.Presenter
 
                     if (thisLEDStatus.isValidStatus)
                     {
-                        this._view.toolStripLEDStatusText = $"电压:{thisLEDStatus.LEDVoltage} mV | 电流: {thisLEDStatus.LEDCurrent} mA | 功率: {thisLEDStatus.LEDPower} mW";
+                        this._view.toolStripLEDStatusText = $"电压:{string.Format("{0,6:F2}", thisLEDStatus.LEDVoltage)} V | 电流: {string.Format("{0,6:F3}", thisLEDStatus.LEDCurrent)} A | 功率: {string.Format("{0,6:F3}", thisLEDStatus.LEDPower)} V";
                     }
                     else
                     {

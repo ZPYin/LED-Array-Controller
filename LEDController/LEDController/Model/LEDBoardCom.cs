@@ -657,7 +657,7 @@ namespace LEDController.Model
             for (int i = 0; i < nLED; i++)
             {
                 value = (recData[i * 2] << 8) | (recData[i * 2 + 1]);
-                LEDPowers[i] = Convert.ToDouble(value);
+                LEDPowers[i] = Convert.ToDouble(value) / 1000.0;
             }
 
             return LEDPowers;

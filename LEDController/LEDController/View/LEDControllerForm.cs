@@ -91,6 +91,10 @@ namespace LEDController.View
         public event EventHandler<EventArgs> ChangeGreenLEDMainSwitch;
         public event EventHandler<EventArgs> ChangeRedLEDMainSwitch;
         public event EventHandler<EventArgs> ChangeDarkRedLEDMainSwitch;
+        public event EventHandler<EventArgs> ChangeMinValue;
+        public event EventHandler<EventArgs> ChangeMaxValue;
+        public event EventHandler<EventArgs> ChangeMinNormValue;
+        public event EventHandler<EventArgs> ChangeMaxNormValue;
 
         public DispatcherTimer timer = new DispatcherTimer();
         public DispatcherTimer timerCountDown = new DispatcherTimer();
@@ -163,38 +167,38 @@ namespace LEDController.View
             }
         }
 
-        public Color[] LEDStatusColors
-        {
-            get 
-            {
-                List<Control> list = new List<Control>();
-                GetAllControl(this.panelLEDStatus, list, "LED");
-                Color[] LEDColors = new Color[list.Count()];
+        // public Color[] LEDStatusColors
+        // {
+        //     get 
+        //     {
+        //         List<Control> list = new List<Control>();
+        //         GetAllControl(this.panelLEDStatus, list, "LED");
+        //         Color[] LEDColors = new Color[list.Count()];
                 
-                foreach (Control control in list)
-                {
-                    if (control.GetType() == typeof(Button))
-                    {
-                        LEDColors[Convert.ToInt32(control.Tag) - 1] = control.BackColor;
-                    }
-                }
+        //         foreach (Control control in list)
+        //         {
+        //             if (control.GetType() == typeof(Button))
+        //             {
+        //                 LEDColors[Convert.ToInt32(control.Tag) - 1] = control.BackColor;
+        //             }
+        //         }
 
-                return LEDColors;
-            }
-            set 
-            {
-                List<Control> list = new List<Control>();
-                GetAllControl(this.panelLEDStatus, list, "LED");
+        //         return LEDColors;
+        //     }
+        //     set 
+        //     {
+        //         List<Control> list = new List<Control>();
+        //         GetAllControl(this.panelLEDStatus, list, "LED");
 
-                foreach (Control control in list)
-                {
-                    if (control.GetType() == typeof(Button))
-                    {
-                        control.BackColor = value[Convert.ToInt32(control.Tag) - 1];
-                    }
-                }
-            }
-        }
+        //         foreach (Control control in list)
+        //         {
+        //             if (control.GetType() == typeof(Button))
+        //             {
+        //                 control.BackColor = value[Convert.ToInt32(control.Tag) - 1];
+        //             }
+        //         }
+        //     }
+        // }
 
         public string toolStripConnectionStatusText
         {
@@ -1037,6 +1041,58 @@ namespace LEDController.View
         private void cbxGreenLEDMainSwitch_Click(object sender, EventArgs e)
         {
             ChangeGreenLEDMainSwitch?.Invoke(sender, e);
+        }
+
+        private void tbxMinValue_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ChangeMinValue?.Invoke(sender, e);
+            }
+        }
+
+        private void tbxMinValue_Leave(object sender, EventArgs e)
+        {
+            ChangeMinValue?.Invoke(sender, e);
+        }
+
+        private void tbxMaxValue_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ChangeMaxValue.Invoke(sender, e);
+            }
+        }
+
+        private void tbxMaxValue_Leave(object sender, EventArgs e)
+        {
+            ChangeMaxValue?.Invoke(sender, e);
+        }
+
+        private void tbxMinNormValue_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ChangeMinNormValue?.Invoke(sender, e);
+            }
+        }
+
+        private void tbxMinNormValue_Leave(object sender, EventArgs e)
+        {
+            ChangeMinNormValue?.Invoke(sender, e);
+        }
+
+        private void tbxMaxNormValue_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ChangeMaxNormValue?.Invoke(sender, e);
+            }
+        }
+
+        private void tbxMaxNormValue_Leave(object sender, EventArgs e)
+        {
+            ChangeMaxNormValue?.Invoke(sender, e);
         }
     }
 

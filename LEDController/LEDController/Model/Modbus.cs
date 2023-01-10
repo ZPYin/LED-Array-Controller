@@ -445,7 +445,7 @@ namespace LEDController.Model
             while (serialPort.BytesToRead < 3)
             {
                 Thread.Sleep(1);
-                if (DateTime.Now.Subtract(dt).TotalMilliseconds > 1000)
+                if (DateTime.Now.Subtract(dt).TotalMilliseconds > 500)
                 {
                     throw new IOException("No response.");
                 }

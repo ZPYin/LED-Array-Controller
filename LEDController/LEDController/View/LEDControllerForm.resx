@@ -1406,37 +1406,6 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>137, 17</value>
   </metadata>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>137, 17</value>
-  </metadata>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAA2wAAAAZCAIAAADCCTrpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAAAd0SU1FB+YEBwIMGNjDz3IAAAUoSURBVHhe7dbVkSBXEERRmVbLzMzMzMzMzMzM
-        MMvPhDFjP+WCWlnzqku9FijiRlwXMvL81fP7t5Viv1I/1Y9i31Pf1NdiX1I96nOxT6mP6kOx9+pd6m2x
-        N+p16lWxl+pF6nmxZ+qpelJ7rB6ph7UH6r66V7ur7qjbtVvqprqhrteuqavqSu2yuqQu1i6o8+pcsbOp
-        M+p0sVOpk+pEseOpY+posSOpw+pQsYPqQGp/sX1qb2pPsd1qV2pnsR1qe2pbsa1qi9pc26Q2qg219Wqd
-        Wltbo1arVcVWplao5cWWpZaqJcUWpxaphcUWpOarecXmqjmp2cVmqZmpGcWmq2mpqcWmqMlqUm2imqDG
-        18apsWpMbbQapUbWRqjhapgaWhuiBqtBtYFqgOpf66esrZ+V/mpAaqCVQWpwaoiVoWpYariVEWqkGlUb
-        rcaosbVxaryaUJuoJqnJtSlqqpqmptdmqJlqVm22mqPm1uap+WqBlYWpRWqxlSWppWqZleWpFWqllVWp
-        1WqNlbVqXWq9lQ1qY2qTlc1qS2qrlW1qu9pR26l2qd21PWqv2lfbrw6og7VD6rA6oo7WjqnjVk6kTqpT
-        Vk6nzqizVs6p86kLVi6qS6nLVq6oq6lrVq6rG6mbVm6p2+pO7a66p+7XHqiH6lHtsXqinqpntefqhXpZ
-        e6Veqze1t+qdel/7oD6qT1Y+p3rUFytfU9/Udys/Uj/Vr3+fLJf/zC8tXs3/zC8tXs3/zC8tXs3PLIpX
-        a84sildrziyKV2vOLIpXy38Wr5b/LF4t/1m82p9/1rk0/7POpfmfdS7N/yxfWrya/5lfWrya/5lfWrya
-        /5lfWryan1kUr9acWRSv1pxZFJfWnFkUl9acWfxZ59L8zzqX5n/WuTT/s3xp8Wr+Z35p8Wr+Z35p8Wr+
-        Z35p8Wp+ZlG8WnNmUbxac2ZRvFpzZlG8Wv6zeLX8Z/Fq+c/i1f78s86l+Z91Ls3/rHNp/md9l/Z3by+I
-        BJEgEkSCSBAJIkEkiIw/A5EgMuYGIn13IBJEgkgQCSLbPwORIBJEgkgQCSJBJIgEkSDyP4KMVwORIBJE
-        gkgQCSJBJIgEkSASRIJIENn3aiASRIJIHx2IBJEgEkSCSBAJIkEkiASR7ehAJIgEkSASRIJIEAkiQSSI
-        BJEgEkSCSBAJIkEkiGwCkSASRIJIEAkiQWT8GYgEkSASRIJIEAkiQSSIBJEgEkSCSBAJIkFkG4gEkSAS
-        RIJIEAkiQSSIbAXpowORIBJEgkgQCSL7Xg1EgkgQCSJBZB4diASRIBJEgshWkP5qIBJEgkgfHYgMQcbo
-        QGSMDkSCSBAJIkFkK0h/NRAJIkGkjw5EhiBjdCAyRgciQSSIBJEgshWkvxqIBJEg0kcHIkOQMToQGaMD
-        kSASRIJIENkK0l8NRIJIEOmjA5EhyBgdiIzRgUgQCSJBJIhsBemvBiJBJIj00YHIEGSMDkTG6EAkiASR
-        IBJEtoL0VwORIBJE+uhAZAgyRgciY3QgEkSCSBAJIltB+quBSBAJIn10IDIEGaMDkTE6EAkiQSSIBJGt
-        IP3VQCSIBJE+OhAZgozRgcgYHYgEkSASRILIVpD+aiASRIJIHx2IDEHG6EBkjA5EgkgQCSJBZCtIfzUQ
-        CSJBpI8ORIYgY3QgMkYHIkEkiASRILIVpL8aiASRINJHByJDkDE6EBmjA5EgEkSCSBDZCtJfDUSCSBDp
-        owORIcgYHYiM0YFIEAkiQSSIbAXprwYiQeT/DZG9vf8AQQQKNT5DrPgAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="pbxLight.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
