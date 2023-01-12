@@ -58,7 +58,6 @@ namespace LEDController.View
         public event EventHandler<EventArgs> TurnOnChiller;
         public event EventHandler<EventArgs> TurnOffChiller;
         public event EventHandler<EventArgs> ShowLEDStatus;
-        public event EventHandler<EventArgs> StopShowLEDStatus;
         public event EventHandler<EventArgs> ShowVersion;
         public event EventHandler<EventArgs> TurnOffLight;
         public event EventHandler<EventArgs> TurnOnLighMainSwitch;
@@ -82,10 +81,6 @@ namespace LEDController.View
         public event EventHandler<EventArgs> TurnOffCamPower;
         public event EventHandler<EventArgs> TurnOnPCPower;
         public event EventHandler<EventArgs> TurnOffPCPower;
-        // public event EventHandler<EventArgs> StartCountDown;
-        // public event EventHandler<EventArgs> StopCountDown;
-        // public event EventHandler<EventArgs> StartQueryLEDStatus;
-        // public event EventHandler<EventArgs> StopQueryLEDStatus;
         public event EventHandler<EventArgs> StartReceive;
         public event EventHandler<EventArgs> StopReceive;
         public event EventHandler<EventArgs> ChangeTabIndex;
@@ -551,21 +546,6 @@ namespace LEDController.View
         {
             ShowLEDStatus?.Invoke(sender, e);
         }
-
-        // public void OnStartQueryLEDStatus(object sender, EventArgs e)
-        // {
-        //     StartQueryLEDStatus?.Invoke(sender, e);
-        // }
-
-        // private void OnStartCountDown(object sender, EventArgs e)
-        // {
-        //     StartCountDown?.Invoke(sender, e);
-        // }
-
-        // private void StartShowLEDStatus(object sender, EventArgs e)
-        // {
-        //     ShowLEDStatus?.Invoke(sender, e);
-        // }
 
         private void Open_Click(object sender, EventArgs e)
         {

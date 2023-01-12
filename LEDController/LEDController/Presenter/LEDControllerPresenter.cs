@@ -138,7 +138,6 @@ namespace LEDController.Presenter
             // Initialize Form
             InitialForm();
 
-            // Initialize LED status plot
             this.ledStatus = new AllLEDStatus();
             sw.Start();
         }
@@ -320,6 +319,30 @@ namespace LEDController.Presenter
             double countTime = Convert.ToDouble(lblCountDown.Text.Replace(" s", "")) + 1;
 
             lblCountDown.Text = $"{(countTime % Convert.ToDouble(cbxQueryWaitTime.Items[cbxQueryWaitTime.SelectedIndex].ToString()))} s";
+
+            if (!this.connector.isAlive)
+            {
+                lblCountDown.Text = "0 s";
+                Button btnShowLEDStatus = (Button)(this._view.Controls.Find("btnShowLEDStatus", true)[0]);
+
+                _view.toolStripConnectionStatusText = "连接断开";
+                btnShowLEDStatus.BackColor = Color.Empty;
+                btnShowLEDStatus.Text = "开始获取";
+                btnShowLEDStatus.Refresh();
+
+                timer.Tick -= StartShowLEDStatus;
+                StopShowLEDStatus();
+                timerCountDown.Tick -= OnStartCountDown;
+                StopCountDown();
+
+                timer.Stop();
+                timerCountDown.Stop();
+                if (queryLEDStatus.IsBusy)
+                {
+                    StopQueryLEDStatus();
+                    queryLEDStatus.CancelAsync();
+                }
+            }
         }
 
         public void OnTurnOnCamPower(object sender, EventArgs e)
@@ -783,6 +806,10 @@ namespace LEDController.Presenter
 
             updateLEDStatusTimer = new System.Threading.Timer(this.UpdateLEDLiveData, 0, 0, 1000);
             renderLEDStatusTimer = new System.Threading.Timer(this.RenderLEDStatus, this._sigs[0], 0, 3600 * 1000);
+
+            queryLEDStatus.WorkerReportsProgress = true;
+            queryLEDStatus.WorkerSupportsCancellation = true;
+            queryLEDStatus.DoWork += UpdateLEDStatus;
         }
 
         public LEDControllerCfg GetUISettings(LEDControllerViewer thisView)
@@ -1283,11 +1310,6 @@ namespace LEDController.Presenter
 
         private void OnShowLEDStatus(object sender, EventArgs e)
         {
-            if ((!connector.isAlive) || (connector.device.IsBusy))
-            {
-                return;
-            }
-
             Button btn = sender as Button;
             ComboBox cbxQueryWaitTime = (ComboBox)(this._view.Controls.Find("cbxQueryWaitTime", true)[0]);
 
@@ -1295,13 +1317,10 @@ namespace LEDController.Presenter
             {
                 btn.BackColor = Color.Green;
                 btn.Text = "停止获取";
+                btn.Refresh();
 
                 timer.Interval = TimeSpan.FromSeconds(Convert.ToDouble(cbxQueryWaitTime.GetItemText(cbxQueryWaitTime.SelectedItem)));
                 timer.Tick += StartShowLEDStatus;
-
-                queryLEDStatus.WorkerReportsProgress = true;
-                queryLEDStatus.WorkerSupportsCancellation = true;
-                queryLEDStatus.DoWork += UpdateLEDStatus;
                 if (!queryLEDStatus.IsBusy)
                 {
                     queryLEDStatus.RunWorkerAsync();
@@ -1317,7 +1336,11 @@ namespace LEDController.Presenter
             {
                 btn.BackColor = Color.Empty;
                 btn.Text = "开始获取";
+                btn.Refresh();
+
+                timer.Tick -= StartShowLEDStatus;
                 StopShowLEDStatus();
+                timerCountDown.Tick -= OnStartCountDown;
                 StopCountDown();
 
                 timer.Stop();
