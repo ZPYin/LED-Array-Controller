@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using System.Windows.Threading;
 
 namespace LEDController.View
 {
@@ -83,8 +82,10 @@ namespace LEDController.View
         public event EventHandler<EventArgs> TurnOffCamPower;
         public event EventHandler<EventArgs> TurnOnPCPower;
         public event EventHandler<EventArgs> TurnOffPCPower;
-        public event EventHandler<EventArgs> StartCountDown;
-        public event EventHandler<EventArgs> StopCountDown;
+        // public event EventHandler<EventArgs> StartCountDown;
+        // public event EventHandler<EventArgs> StopCountDown;
+        // public event EventHandler<EventArgs> StartQueryLEDStatus;
+        // public event EventHandler<EventArgs> StopQueryLEDStatus;
         public event EventHandler<EventArgs> StartReceive;
         public event EventHandler<EventArgs> StopReceive;
         public event EventHandler<EventArgs> ChangeTabIndex;
@@ -95,9 +96,6 @@ namespace LEDController.View
         public event EventHandler<EventArgs> ChangeMaxValue;
         public event EventHandler<EventArgs> ChangeMinNormValue;
         public event EventHandler<EventArgs> ChangeMaxNormValue;
-
-        public DispatcherTimer timer = new DispatcherTimer();
-        public DispatcherTimer timerCountDown = new DispatcherTimer();
 
         private Size m_szInit;   //初始窗体大小
         private Dictionary<Control, Rectangle> m_dicSize = new Dictionary<Control, Rectangle>();   // store control sizes
@@ -551,42 +549,23 @@ namespace LEDController.View
 
         private void btnShowLEDStatus_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-
-            if (btn.Text == "开始获取")
-            {
-                btn.BackColor = Color.Green;
-                btn.Text = "停止获取";
-
-                timer.Interval = TimeSpan.FromSeconds(Convert.ToDouble(cbxQueryWaitTime.GetItemText(cbxQueryWaitTime.SelectedItem)));
-                timer.Tick += StartShowLEDStatus;
-                timerCountDown.Interval = TimeSpan.FromSeconds(1.0);
-                timerCountDown.Tick += OnStartCountDown;
-
-                timer.Start();
-                timerCountDown.Start();
-            }
-            else
-            {
-                btn.BackColor = Color.Empty;
-                btn.Text = "开始获取";
-                StopShowLEDStatus?.Invoke(sender, e);
-                StopCountDown?.Invoke(sender, e);
-
-                timer.Stop();
-                timerCountDown.Stop();
-            }
-        }
-
-        private void OnStartCountDown(object sender, EventArgs e)
-        {
-            StartCountDown?.Invoke(sender, e);
-        }
-
-        private void StartShowLEDStatus(object sender, EventArgs e)
-        {
             ShowLEDStatus?.Invoke(sender, e);
         }
+
+        // public void OnStartQueryLEDStatus(object sender, EventArgs e)
+        // {
+        //     StartQueryLEDStatus?.Invoke(sender, e);
+        // }
+
+        // private void OnStartCountDown(object sender, EventArgs e)
+        // {
+        //     StartCountDown?.Invoke(sender, e);
+        // }
+
+        // private void StartShowLEDStatus(object sender, EventArgs e)
+        // {
+        //     ShowLEDStatus?.Invoke(sender, e);
+        // }
 
         private void Open_Click(object sender, EventArgs e)
         {

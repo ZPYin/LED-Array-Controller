@@ -740,7 +740,6 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             try
             {
@@ -763,7 +762,6 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             try
             {
@@ -786,7 +784,6 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             try
             {
@@ -809,7 +806,6 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             try
             {
@@ -832,7 +828,6 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             try
             {
@@ -855,7 +850,6 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             try
             {
@@ -878,7 +872,6 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             try
             {
@@ -901,7 +894,6 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             try
             {
@@ -924,14 +916,13 @@ namespace LEDController.Model
             {
                 // throw ex;
             }
-            Thread.Sleep(50);
 
             // receive temperature sensor data
             try
             {
                 recData = this.device.WriteReceive((byte)LEDConfig.addrPLCGreenLED, 3, (ushort)LEDConfig.addrTempSensor[0], GetUShort((ushort)4));
                 status.tempGreenLED = ParseTemperature(recData);
-                Thread.Sleep(100);
+                Thread.Sleep(50);
             }
             catch (Exception ex)
             {
@@ -942,7 +933,7 @@ namespace LEDController.Model
             {
                 recData = this.device.WriteReceive((byte)LEDConfig.addrPLCRedLED, 3, (ushort)LEDConfig.addrTempSensor[0], GetUShort((ushort)4));
                 status.tempRedLED = ParseTemperature(recData);
-                Thread.Sleep(100);
+                Thread.Sleep(50);
             }
             catch (Exception ex)
             {

@@ -4068,19 +4068,21 @@ namespace LEDController.View
             // lblDarkRedLEDTempRD
             // 
             this.lblDarkRedLEDTempRD.AutoSize = true;
-            this.lblDarkRedLEDTempRD.Location = new System.Drawing.Point(182, 27);
+            this.lblDarkRedLEDTempRD.Location = new System.Drawing.Point(148, 27);
             this.lblDarkRedLEDTempRD.Name = "lblDarkRedLEDTempRD";
-            this.lblDarkRedLEDTempRD.Size = new System.Drawing.Size(0, 12);
+            this.lblDarkRedLEDTempRD.Size = new System.Drawing.Size(35, 12);
             this.lblDarkRedLEDTempRD.TabIndex = 43;
+            this.lblDarkRedLEDTempRD.Text = "NaN  ";
             this.lblDarkRedLEDTempRD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblDarkRedLEDTempRU
             // 
             this.lblDarkRedLEDTempRU.AutoSize = true;
-            this.lblDarkRedLEDTempRU.Location = new System.Drawing.Point(182, 9);
+            this.lblDarkRedLEDTempRU.Location = new System.Drawing.Point(148, 9);
             this.lblDarkRedLEDTempRU.Name = "lblDarkRedLEDTempRU";
-            this.lblDarkRedLEDTempRU.Size = new System.Drawing.Size(0, 12);
+            this.lblDarkRedLEDTempRU.Size = new System.Drawing.Size(35, 12);
             this.lblDarkRedLEDTempRU.TabIndex = 42;
+            this.lblDarkRedLEDTempRU.Text = "NaN  ";
             this.lblDarkRedLEDTempRU.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label81
@@ -4095,19 +4097,21 @@ namespace LEDController.View
             // lblDarkRedLEDTempLD
             // 
             this.lblDarkRedLEDTempLD.AutoSize = true;
-            this.lblDarkRedLEDTempLD.Location = new System.Drawing.Point(121, 27);
+            this.lblDarkRedLEDTempLD.Location = new System.Drawing.Point(89, 27);
             this.lblDarkRedLEDTempLD.Name = "lblDarkRedLEDTempLD";
-            this.lblDarkRedLEDTempLD.Size = new System.Drawing.Size(0, 12);
+            this.lblDarkRedLEDTempLD.Size = new System.Drawing.Size(35, 12);
             this.lblDarkRedLEDTempLD.TabIndex = 40;
+            this.lblDarkRedLEDTempLD.Text = "NaN  ";
             this.lblDarkRedLEDTempLD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblDarkRedLEDTempLU
             // 
             this.lblDarkRedLEDTempLU.AutoSize = true;
-            this.lblDarkRedLEDTempLU.Location = new System.Drawing.Point(121, 9);
+            this.lblDarkRedLEDTempLU.Location = new System.Drawing.Point(89, 9);
             this.lblDarkRedLEDTempLU.Name = "lblDarkRedLEDTempLU";
-            this.lblDarkRedLEDTempLU.Size = new System.Drawing.Size(0, 12);
+            this.lblDarkRedLEDTempLU.Size = new System.Drawing.Size(35, 12);
             this.lblDarkRedLEDTempLU.TabIndex = 39;
+            this.lblDarkRedLEDTempLU.Text = "NaN  ";
             this.lblDarkRedLEDTempLU.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label85
@@ -4122,7 +4126,7 @@ namespace LEDController.View
             // label86
             // 
             this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(11, 7);
+            this.label86.Location = new System.Drawing.Point(6, 7);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(77, 12);
             this.label86.TabIndex = 37;
@@ -4167,19 +4171,21 @@ namespace LEDController.View
             // lblRedLEDTempRD
             // 
             this.lblRedLEDTempRD.AutoSize = true;
-            this.lblRedLEDTempRD.Location = new System.Drawing.Point(182, 27);
+            this.lblRedLEDTempRD.Location = new System.Drawing.Point(147, 27);
             this.lblRedLEDTempRD.Name = "lblRedLEDTempRD";
-            this.lblRedLEDTempRD.Size = new System.Drawing.Size(0, 12);
+            this.lblRedLEDTempRD.Size = new System.Drawing.Size(35, 12);
             this.lblRedLEDTempRD.TabIndex = 43;
+            this.lblRedLEDTempRD.Text = "NaN  ";
             this.lblRedLEDTempRD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblRedLEDTempRU
             // 
             this.lblRedLEDTempRU.AutoSize = true;
-            this.lblRedLEDTempRU.Location = new System.Drawing.Point(182, 9);
+            this.lblRedLEDTempRU.Location = new System.Drawing.Point(147, 9);
             this.lblRedLEDTempRU.Name = "lblRedLEDTempRU";
-            this.lblRedLEDTempRU.Size = new System.Drawing.Size(0, 12);
+            this.lblRedLEDTempRU.Size = new System.Drawing.Size(35, 12);
             this.lblRedLEDTempRU.TabIndex = 42;
+            this.lblRedLEDTempRU.Text = "NaN  ";
             this.lblRedLEDTempRU.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label73
@@ -4194,19 +4200,21 @@ namespace LEDController.View
             // lblRedLEDTempLD
             // 
             this.lblRedLEDTempLD.AutoSize = true;
-            this.lblRedLEDTempLD.Location = new System.Drawing.Point(119, 27);
+            this.lblRedLEDTempLD.Location = new System.Drawing.Point(90, 27);
             this.lblRedLEDTempLD.Name = "lblRedLEDTempLD";
-            this.lblRedLEDTempLD.Size = new System.Drawing.Size(0, 12);
+            this.lblRedLEDTempLD.Size = new System.Drawing.Size(35, 12);
             this.lblRedLEDTempLD.TabIndex = 40;
+            this.lblRedLEDTempLD.Text = "NaN  ";
             this.lblRedLEDTempLD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblRedLEDTempLU
             // 
             this.lblRedLEDTempLU.AutoSize = true;
-            this.lblRedLEDTempLU.Location = new System.Drawing.Point(119, 9);
+            this.lblRedLEDTempLU.Location = new System.Drawing.Point(90, 9);
             this.lblRedLEDTempLU.Name = "lblRedLEDTempLU";
-            this.lblRedLEDTempLU.Size = new System.Drawing.Size(0, 12);
+            this.lblRedLEDTempLU.Size = new System.Drawing.Size(35, 12);
             this.lblRedLEDTempLU.TabIndex = 39;
+            this.lblRedLEDTempLU.Text = "NaN  ";
             this.lblRedLEDTempLU.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label80
@@ -4221,7 +4229,7 @@ namespace LEDController.View
             // label83
             // 
             this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(11, 7);
+            this.label83.Location = new System.Drawing.Point(6, 7);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(77, 12);
             this.label83.TabIndex = 37;
@@ -4266,19 +4274,21 @@ namespace LEDController.View
             // lblGreenLEDTempRD
             // 
             this.lblGreenLEDTempRD.AutoSize = true;
-            this.lblGreenLEDTempRD.Location = new System.Drawing.Point(182, 27);
+            this.lblGreenLEDTempRD.Location = new System.Drawing.Point(149, 27);
             this.lblGreenLEDTempRD.Name = "lblGreenLEDTempRD";
-            this.lblGreenLEDTempRD.Size = new System.Drawing.Size(0, 12);
+            this.lblGreenLEDTempRD.Size = new System.Drawing.Size(35, 12);
             this.lblGreenLEDTempRD.TabIndex = 43;
+            this.lblGreenLEDTempRD.Text = "NaN  ";
             this.lblGreenLEDTempRD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblGreenLEDTempRU
             // 
             this.lblGreenLEDTempRU.AutoSize = true;
-            this.lblGreenLEDTempRU.Location = new System.Drawing.Point(182, 9);
+            this.lblGreenLEDTempRU.Location = new System.Drawing.Point(149, 9);
             this.lblGreenLEDTempRU.Name = "lblGreenLEDTempRU";
-            this.lblGreenLEDTempRU.Size = new System.Drawing.Size(0, 12);
+            this.lblGreenLEDTempRU.Size = new System.Drawing.Size(35, 12);
             this.lblGreenLEDTempRU.TabIndex = 42;
+            this.lblGreenLEDTempRU.Text = "NaN  ";
             this.lblGreenLEDTempRU.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label20
@@ -4293,19 +4303,21 @@ namespace LEDController.View
             // lblGreenLEDTempLD
             // 
             this.lblGreenLEDTempLD.AutoSize = true;
-            this.lblGreenLEDTempLD.Location = new System.Drawing.Point(119, 27);
+            this.lblGreenLEDTempLD.Location = new System.Drawing.Point(90, 27);
             this.lblGreenLEDTempLD.Name = "lblGreenLEDTempLD";
-            this.lblGreenLEDTempLD.Size = new System.Drawing.Size(0, 12);
+            this.lblGreenLEDTempLD.Size = new System.Drawing.Size(35, 12);
             this.lblGreenLEDTempLD.TabIndex = 40;
+            this.lblGreenLEDTempLD.Text = "NaN  ";
             this.lblGreenLEDTempLD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblGreenLEDTempLU
             // 
             this.lblGreenLEDTempLU.AutoSize = true;
-            this.lblGreenLEDTempLU.Location = new System.Drawing.Point(119, 9);
+            this.lblGreenLEDTempLU.Location = new System.Drawing.Point(90, 9);
             this.lblGreenLEDTempLU.Name = "lblGreenLEDTempLU";
-            this.lblGreenLEDTempLU.Size = new System.Drawing.Size(0, 12);
+            this.lblGreenLEDTempLU.Size = new System.Drawing.Size(35, 12);
             this.lblGreenLEDTempLU.TabIndex = 39;
+            this.lblGreenLEDTempLU.Text = "NaN  ";
             this.lblGreenLEDTempLU.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label70
@@ -4320,7 +4332,7 @@ namespace LEDController.View
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(11, 7);
+            this.label69.Location = new System.Drawing.Point(6, 7);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(77, 12);
             this.label69.TabIndex = 37;

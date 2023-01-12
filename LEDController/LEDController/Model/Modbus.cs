@@ -12,6 +12,7 @@ namespace LEDController.Model
 {
     public abstract class Modbus
     {
+        public bool IsBusy;
         public abstract bool Connect(int timeout);
         public abstract bool Disconnect();
         public abstract byte[] Read(byte addrPLC, byte function, ushort register, ushort count);
@@ -151,6 +152,7 @@ namespace LEDController.Model
         {
             this._ipAddress = ipAddress;
             this._port = port.ToString();
+            this.IsBusy = false;
         }
 
         public override bool Connect(int timeout)
@@ -204,6 +206,7 @@ namespace LEDController.Model
 
         private byte[] SendReceive(byte[] packet)
         {
+            this.IsBusy = true;
             byte[] mbap = new byte[7];
             byte[] response;
             ushort count;
@@ -220,14 +223,17 @@ namespace LEDController.Model
             }
             catch
             {
+                this.IsBusy = false;
                 throw new SocketException(10060);
             }
 
             if (response[0] > 128)
             {
+                this.IsBusy = false;
                 throw new SocketException();
             }
 
+            this.IsBusy = false;
             return response;
         }
 
@@ -262,6 +268,7 @@ namespace LEDController.Model
 
         public override void WriteMsg(string msg, bool isSendHEX)
         {
+            this.IsBusy = false;
             if (isSendHEX)
             {
                 char[] msgChars = msg.ToCharArray();
@@ -277,10 +284,12 @@ namespace LEDController.Model
             {
                 this.socket.Send(Encoding.UTF8.GetBytes(msg));
             }
+            this.IsBusy = true;
         }
 
         public override byte[] ReadMsg(bool isReceiveHEX)
         {
+            this.IsBusy = true;
             byte[] buffer = new byte[SendBufferSize];
             int msgLen = 0;
 
@@ -315,6 +324,7 @@ namespace LEDController.Model
                 }
             }
 
+            this.IsBusy = false;
             return recData;
         }
     }
@@ -338,6 +348,7 @@ namespace LEDController.Model
             this._dataBit = dataBit;
             this._checkBit = checkBit;
             this._stopBit = stopBit;
+            this.IsBusy = false;
         }
 
         public override bool Connect(int timeout)
@@ -437,6 +448,7 @@ namespace LEDController.Model
 
         private byte[] SendReceive(byte[] packet)
         {
+            this.IsBusy = true;
             byte[] rtn;
             int msgLen = 0;
             serialPort.Write(packet, 0, packet.Count());
@@ -447,6 +459,7 @@ namespace LEDController.Model
                 Thread.Sleep(1);
                 if (DateTime.Now.Subtract(dt).TotalMilliseconds > 500)
                 {
+                    this.IsBusy = false;
                     throw new IOException("No response.");
                 }
             }
@@ -461,11 +474,13 @@ namespace LEDController.Model
             }
             else
             {
+                this.IsBusy = false;
                 throw new IOException("ModBus RTU error: wrong data package.");
             }
 
             if ((buffer[1] > 128) || (MakeCRC(subArray, subArray.Length) == BitConverter.ToInt16(new byte[4] {buffer[msgLen - 4], buffer[msgLen - 3], buffer[msgLen - 2], buffer[msgLen - 1]}, 0)))
             {
+                this.IsBusy = false;
                 throw new IOException("ModBus RTU error(" + (buffer[2]) + ")");
             }
             else if (buffer[1] < 5)
@@ -479,6 +494,7 @@ namespace LEDController.Model
                 Array.Copy(buffer, 2, rtn, 0, 4);
             }
 
+            this.IsBusy = false;
             return rtn;
         }
 
@@ -493,13 +509,16 @@ namespace LEDController.Model
 
         public override void Write(byte addrPLC, byte function, ushort register, byte[] data)
         {
+            this.IsBusy = true;
             byte[] packet;
             packet = MakePacket(addrPLC, function, register, data);
             ushort crc = MakeCRC(packet, packet.Count());
             byte[] crcBytes = new byte[] { (byte)(crc & 0xFF), (byte)((crc >> 8) & 0xFF) };
             
             byte[] sendData = packet.Concat(crcBytes).ToArray();
+
             serialPort.Write(sendData, 0, sendData.Count());
+            this.IsBusy = false;
         }
 
         public override byte[] WriteReceive(byte addrPLC, byte function, ushort register, byte[] data)
@@ -514,6 +533,7 @@ namespace LEDController.Model
 
         public override void WriteMsg(string msg, bool isSendHEX)
         {
+            this.IsBusy = true;
             if (isSendHEX)
             {
                 char[] msgChars = msg.ToCharArray();
@@ -531,11 +551,13 @@ namespace LEDController.Model
             {
                 this.serialPort.Write(msg);
             }
+            this.IsBusy = false;
         }
         
 
         public override byte[] ReadMsg(bool isReceiveHEX)
         {
+            this.IsBusy = true;
             byte[] buffer = new byte[SendBufferSize];
             int msgLen = 0;
 
@@ -549,6 +571,7 @@ namespace LEDController.Model
             }
             catch(Exception ex)
             {
+                this.IsBusy = false;
                 throw ex;
             }
 
@@ -570,6 +593,7 @@ namespace LEDController.Model
                 }
             }
 
+            this.IsBusy = false;
             return recData;
         }
     }
