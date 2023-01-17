@@ -55,6 +55,7 @@ namespace LEDController.View
         public event EventHandler<EventLEDArgs> ShowFixRedLEDStatus;
         public event EventHandler<EventLEDArgs> ShowFixDarkRedLEDStatus;
         public event EventHandler<EventArgs> ShowChillerStatus;
+        public event EventHandler<EventSkyLightArgs> StopSkyLight;
         public event EventHandler<EventArgs> TurnOnChiller;
         public event EventHandler<EventArgs> TurnOffChiller;
         public event EventHandler<EventArgs> ShowLEDStatus;
@@ -851,32 +852,47 @@ namespace LEDController.View
 
         private void btnOpenSkylight1_Click(object sender, EventArgs e)
         {
-            // TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
         }
 
         private void btnCloseSkylight1_Click(object sender, EventArgs e)
         {
-            // TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
         }
 
         private void btnOpenSkylight2_Click(object sender, EventArgs e)
         {
-            // TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
         }
 
         private void btnCloseSkylight2_Click(object sender, EventArgs e)
         {
-            // TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
         }
 
         private void btnOpenSkylight3_Click(object sender, EventArgs e)
         {
-            // TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
+            TurnOnSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
         }
 
         private void btnCloseSkylight3_Click(object sender, EventArgs e)
         {
-            // TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
+            TurnOffSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
+        }
+
+        private void btnStopSkylight1_Click(object sender, EventArgs e)
+        {
+            StopSkyLight?.Invoke(sender, new EventSkyLightArgs(1));
+        }
+
+        private void btnStopSkylight2_Click(object sender, EventArgs e)
+        {
+            StopSkyLight?.Invoke(sender, new EventSkyLightArgs(2));
+        }
+
+        private void btnStopSkylight3_Click(object sender, EventArgs e)
+        {
+            StopSkyLight?.Invoke(sender, new EventSkyLightArgs(3));
         }
 
         private void toolStripMenuConfiguration_Click(object sender, EventArgs e)

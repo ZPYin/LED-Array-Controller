@@ -248,5 +248,8 @@
   <ItemGroup>
     <None Include="Resources\power_on1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window-stop.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

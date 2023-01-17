@@ -1127,12 +1127,17 @@ namespace LEDController.Model
 
         public void TurnOnSkyLight(int addrPLC, int skyLightIndex)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0xFF, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrSkylight[(skyLightIndex - 1) * 3 + 0], new byte[2] { 0xFF, 0x00 });
+        }
+
+        public void StopSkyLight(int addrPLC, int skyLightIndex)
+        {
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrSkylight[(skyLightIndex - 1) * 3 + 1], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOffSkyLight(int addrPLC, int skyLightIndex)
         {
-            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrPlcASpareSwitch[skyLightIndex], new byte[2] { 0x00, 0x00 });
+            SendCmd((byte)addrPLC, 5, (ushort)LEDConfig.addrSkylight[(skyLightIndex - 1) * 3 + 2], new byte[2] { 0xFF, 0x00 });
         }
 
         public void TurnOnLight(int addrPLC)

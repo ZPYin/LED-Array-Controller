@@ -111,6 +111,7 @@ namespace LEDController.Presenter
             _view.TurnOffChiller += new EventHandler<EventArgs>(OnTurnOffChiller);
             _view.TurnOnSkyLight += new EventHandler<EventSkyLightArgs>(OnTurnOnSkyLight);
             _view.TurnOffSkyLight += new EventHandler<EventSkyLightArgs>(OnTurnOffSkyLight);
+            _view.StopSkyLight += new EventHandler<EventSkyLightArgs>(OnStopSkyLight);
             _view.TurnOnLight += new EventHandler<EventArgs>(OnTurnOnLight);
             _view.TurnOffLight += new EventHandler<EventArgs>(OnTurnOffLight);
             _view.TurnOnLighMainSwitch += new EventHandler<EventArgs>(OnTurnOnLighMainSwitch);
@@ -545,16 +546,25 @@ namespace LEDController.Presenter
 
         public void OnTurnOnSkyLight(object sender, EventSkyLightArgs e)
         {
-            this.connector.TurnOnSkyLight(LEDConfig.addrPLCGreenLED, e.SkyLightIndex);
+            this.connector.TurnOnSkyLight(LEDConfig.SkyLightPLC, e.SkyLightIndex);
             ShowSendStatusAsync();
 
             PictureBox pbxSkyLight = (PictureBox)(this._view.Controls.Find($"pbxSkyLight{e.SkyLightIndex}", true)[0]);
             pbxSkyLight.Image = Properties.Resources.window_open;
         }
 
+        public void OnStopSkyLight(object sender, EventSkyLightArgs e)
+        {
+            this.connector.StopSkyLight(LEDConfig.SkyLightPLC, e.SkyLightIndex);
+            ShowSendStatusAsync();
+
+            PictureBox pbxSkyLight = (PictureBox)(this._view.Controls.Find($"pbxSkyLight{e.SkyLightIndex}", true)[0]);
+            pbxSkyLight.Image = Properties.Resources.window_stop;
+        }
+
         public void OnTurnOffSkyLight(object sender, EventSkyLightArgs e)
         {
-            this.connector.TurnOffSkyLight(LEDConfig.addrPLCGreenLED, e.SkyLightIndex);
+            this.connector.TurnOffSkyLight(LEDConfig.SkyLightPLC, e.SkyLightIndex);
             ShowSendStatusAsync();
 
             PictureBox pbxSkyLight = (PictureBox)(this._view.Controls.Find($"pbxSkyLight{e.SkyLightIndex}", true)[0]);

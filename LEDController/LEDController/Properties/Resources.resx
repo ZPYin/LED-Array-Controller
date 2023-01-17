@@ -121,26 +121,14 @@
   <data name="chiller_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chiller_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="light_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\light_off1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="door_open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\door_open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="door_closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\door_closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chiller_error" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chiller_error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="question-circle-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\question-circle-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="window-open" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\window-open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="window-closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\window-closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="light_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\light_off1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="light_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\light_on1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,5 +138,20 @@
   </data>
   <data name="power_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\power_on1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="window-open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\window-open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question-circle-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\question-circle-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chiller_error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chiller_error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="window-closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\window-closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="window-stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\window-stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
