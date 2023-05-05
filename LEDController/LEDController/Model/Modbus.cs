@@ -145,7 +145,7 @@ namespace LEDController.Model
         private Socket socket;
         private string _ipAddress;
         private string _port;
-        public const int SendBufferSize = 2 * 1024;
+        // public const int SendBufferSize = 2 * 1024;
         public const int ReceiveBufferSize = 2 * 1024;
 
         public ModbusTCP(string ipAddress, int port = 502)
@@ -558,7 +558,7 @@ namespace LEDController.Model
         public override byte[] ReadMsg(bool isReceiveHEX)
         {
             this.IsBusy = true;
-            byte[] buffer = new byte[SendBufferSize];
+            byte[] buffer = new byte[ReceiveBufferSize];
             int msgLen = 0;
 
             try
