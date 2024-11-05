@@ -8,3 +8,6 @@ TestResults
 LEDController/.vs
 .vscode
 .vs
+
+# exclude folders
+docs
